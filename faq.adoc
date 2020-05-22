@@ -1,0 +1,9 @@
+---
+sidebar: sidebar
+permalink: faq.html
+summary: Astra FAQs
+---
+
+= FAQs
+
+coming soon
