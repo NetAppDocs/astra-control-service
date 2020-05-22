@@ -1,0 +1,9 @@
+---
+sidebar: sidebar
+permalink: local-snapshot-create.html
+summary: Lorem ipsum dolor sit amet
+---
+
+== Create a Local Snapshot
+
+???? we don't have a jira ticket for this.
