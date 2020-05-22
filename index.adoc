@@ -1,0 +1,14 @@
+---
+sidebar: sidebar
+permalink: index.html
+summary: Welcome to the documentation portal for Project Astra (Alpha).
+---
+
+= Project Astra Alpha Documentation
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis faucibus orci. Duis fringilla scelerisque consectetur. Nulla eleifend, dolor at gravida varius, libero nunc efficitur urna, nec efficitur justo urna in neque. Aenean mollis libero vel neque venenatis vestibulum. Aenean condimentum varius sem, ac feugiat turpis porttitor sed. Etiam in nunc ipsum. Quisque vel nulla placerat, lacinia lectus non, semper massa. Integer porta nec diam a tincidunt. Quisque tempor, eros in maximus lobortis, diam enim pharetra felis, a tincidunt mauris felis eget diam. Integer semper gravida pulvinar. In sodales lectus a arcu sollicitudin, vitae pulvinar est accumsan. Sed eget sagittis nisi. In fringilla ultricies ligula id mattis.

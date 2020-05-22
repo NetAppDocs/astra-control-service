@@ -1,0 +1,11 @@
+---
+sidebar: sidebar
+permalink: migrate-between-two-existing.html
+summary: Lorem ipsum dolor sit amet
+---
+
+POLARIS-357
+
+Article: How to migrate data between two existing clusters and verify the migration of both data and k8s app configuration was successful.
+
+User Story 16: As a k8s Developer/App Admin, on the Polaris portal I want to initiate Application migration with the same namespace information from the current k8s cluster to another existing k8s cluster in the same region that is already registered with Polaris so that I can transfer the Application without any data loss. Note: Polaris Portal shall show both the clusters; before and after states and associated resource changes.

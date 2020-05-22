@@ -1,0 +1,13 @@
+---
+sidebar: sidebar
+permalink: getting-started.html
+summary: Get up and running with Astra
+---
+
+https://cloud.google.com/iam/docs/service-accounts
+
+create a new service account for alpha
+
+if failed but activity log was successful, check the cluster to see if trident was deployed
+
+IAM > Service Accounts > click on your service account > create key, will be saved locally. Provide this to Astra in step 1.

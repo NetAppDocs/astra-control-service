@@ -1,0 +1,45 @@
+entries:
+  - title: Astra Alpha Documentation
+    url: /index.html
+  - title: Best Practices
+    url: /database-best-practices.html
+  - title: Getting Started
+    url: /getting-started.html
+  - title: Local Snapshots
+    entries:
+      - title: Create a Local Snapshot
+        url: /local-snapshot-create.html
+      - title: View Local Snapshots
+        url: /local-snapshot-view.html
+      - title: Add Data to a Local Snapshot
+        url: /local-snapshot-add-data.html
+      - title: Restore from a Local Snapshot
+        url: /local-snapshot-restore.html
+  - title: Remote Snapshots
+    entries:
+      - title: Create a Remote Snapshot
+        url: /remote-snapshot-create.html
+      - title: View Remote Snapshots
+        url: /remote-snapshot-view.html
+      - title: Add Data to a Remote Snapshot
+        url: /remote-snapshot-add-data.html
+      - title: Restore from a Remote Snapshot
+        url: /remote-snapshot-restore.html
+  - title: Migration
+    entries:
+      - title: Migrate Between Two Existing Clusters
+        url: /migrate-between-two-existing.html
+      - title: Migrate Between Existing and New Clusters
+        url: /migrate-between-existing-and-new.html
+  - title: Deploy Apps
+    entries:
+      - title: Deploy MySQL/MariaDB from Helm
+        url: /deploy-mysql-mariadb-from-helm-chart.html
+      - title: Deploy Postgres from Helm
+        url: /deploy-postgres-from-helm-chart.html
+  - title: Credentials
+    entries:
+      - title: GCP
+        url: /gcp-credentials.html
+  - title: FAQ
+    url: /faq.html
