@@ -1,0 +1,14 @@
+---
+sidebar: sidebar
+permalink: index.html
+summary: Welcome to the documentation portal for Project Astra (Alpha).
+---
+
+= Project Astra Alpha Documentation
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+Coming soon.

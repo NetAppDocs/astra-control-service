@@ -1,0 +1,7 @@
+---
+sidebar: sidebar
+permalink: local-snapshot-restore.html
+summary: Lorem ipsum dolor sit amet
+---
+
+Coming soon.
