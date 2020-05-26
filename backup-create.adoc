@@ -1,11 +1,26 @@
 ---
 sidebar: sidebar
 permalink: backup-create.html
-summary: Lorem ipsum dolor sit amet
+summary: Learn how to create a backup of your app.
 ---
 
-POLARIS-353
+== Create a Backup
+:imagesdir: assets/backups/
 
-Article: How to create a remote backup snapshot without disrupting operations by losing connection to the database. Note: Creating a local snapshot will cause a temporary slowdown.
+Learn how to create a remote backup of your application. This creates a recovery point for your app, in case of a failure.
 
-User Story 14: As a k8s Developer/App Admin, on the Polaris portal I want to initiate an Application-consistent remote backup snapshot of the application so that I can create a recovery point in case of a failure.
+NOTE: When you create a backup, you will not lose connection to the database. However, creating a backup will cause a temporary slowdown to your operations.
+
+Click **Apps**, then click on the name of your app to select that cluster.
+
+image::select-cluster.png[Select Astra cluster]
+
+Click the **Available** menu on the right. Select **Backup** from the drop-down menu.
+
+image::click-available-menu.png[Click the Available menu]
+
+Fill out the details for your backup in the pop-up window. This defaults to a system-generated name for the backup. Click **Backup App** to continue to the second step.
+
+Click **Backup App** to create the backup.
+
+After the backup has finished being built, you can view it on the **Data Protection** tab for your cluster.
