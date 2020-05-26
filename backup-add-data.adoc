@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: remote-snapshot-add-data.html
+permalink: backup-add-data.html
 summary: Lorem ipsum dolor sit amet
 ---
 

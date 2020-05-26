@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: local-snapshot-view.html
+permalink: snapshot-view.html
 summary: Lorem ipsum dolor sit amet
 ---
 
