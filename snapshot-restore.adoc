@@ -1,11 +1,12 @@
 ---
 sidebar: sidebar
 permalink: snapshot-restore.html
-summary: Lorem ipsum dolor sit amet
+summary: Learn how to restore your app from a snapshot.
 ---
 
-  POLARIS-352
+= Restore From a Snapshot
 
-Article: How to find older local snapshots and use them to restore data without disrupting operations by losing connection to the database. Note: Creating a local snapshot will cause a temporary slowdown.
+Coming soon.
+POLARIS-352
 
-User Story 13: As a k8s Developer/App Admin, on the Polaris Portal I want to restore the Application to an earlier point in time on the same k8s cluster so that I have restored the data to the available local snapshot's time.
+Learn how to locate an older snapshot and use it to restore data without disrupting operations by losing connection to the database. This process lets you restore your application to an earlier point in time on the same Kubernetes cluster.
