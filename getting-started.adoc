@@ -53,7 +53,7 @@ In order to access GCP CVS, the cluster must be provisioned one of these zones.
 Make a selection under "Location type" by choosing your preferred **Zone** from
 the drop-down.
 
-Project Alpha utilizes features that are only available in Kubernetes v1.17 and
+Project Astra utilizes features that are only available in Kubernetes v1.17 and
 higher. (*EJK - verify this language*)
 
 In the "Master version" section, activate the "Release channel" radio button and
@@ -68,7 +68,7 @@ image::assets/gcp-gke-nodes.png[GCP GKE Nodes]
 Under "Image type" select *Ubuntu*.
 
 You are welcome to adjust the other values as you see fit. The defaults should
-work fine. (*EJK - verify*)
+work fine.
 
 Before hitting the "CREATE" button, you may want to switch to the "Metadata"
 section (under CLUSTER, not NODE POOLS) and add one or more labels to this
@@ -77,8 +77,8 @@ cluster.
 image::assets/gcp-gke-metadata-labels.png[GCP GKE Metadata Labels]
 
 In the example image, a label has been added with *creator* as the key and a
-first initial plus last name as the value. (*EJK - HCL requires this for NetApp
-   users*)
+first initial plus last name as the value. (*EJK - HCL strongly recommends this
+for NetApp users*)
 
 When you are done with the configuration, press the "CREATE" button to continue.
 
