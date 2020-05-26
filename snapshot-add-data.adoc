@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: local-snapshot-add-data.html
+permalink: snapshot-add-data.html
 summary: Lorem ipsum dolor sic amet
 ---
 

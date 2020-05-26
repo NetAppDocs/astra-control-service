@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: remote-snapshot-restore.html
+permalink: backup-restore.html
 summary: Lorem ipsum dolor sit amet
 ---
 

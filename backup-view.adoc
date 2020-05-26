@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: remote-snapshot-create.html
+permalink: backup-view.html
 summary: Lorem ipsum dolor sit amet
 ---
 
-POLARIS-353
+POLARIS-354
 
-Article: How to create a remote backup snapshot without disrupting operations by losing connection to the database. Note: Creating a local snapshot will cause a temporary slowdown.
+Article: How to see the remote snapshots arranged by timestamps.
 
 User Story 14: As a k8s Developer/App Admin, on the Polaris portal I want to initiate an Application-consistent remote backup snapshot of the application so that I can create a recovery point in case of a failure.
