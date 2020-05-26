@@ -4,8 +4,268 @@ permalink: getting-started.html
 summary: Get up and running with Astra
 ---
 
-= Getting Started Guide
+= Getting Started
 
-Coming Soon
+This document is intended for users that are evaluating Project Astra during the
+alpha phase running from June 4th to July 4th 2020.
 
-Jira: POLARIS-397
+== Requirements
+
+A TLDR; list of items needed for the Alpa.
+
+* Register with Cloud Central.
+* Get invited to an Astra Organization.
+* Provision one or more GKE (Google Kubernetes Engine) cluster(s).
+** Kubernetes version >= 1.17.0 (from Rapid Release Channel).
+** Ubuntu worker nodes w/rpc.statd enabled.
+** Zonal deployment in a CVS supported region. (us-east4, us-west2, us-central1)
+* GCP Service Account token (JSON)
+** Grant required Service Account permissions. (*EJK - enumerate*)
+* Kubeconfig with an admin token and context
+
+== Provision a Cluster Using GKE
+
+Evaluating Project Astra requires one or more GKE clusters. To provision a
+cluster that will work with Project Astra, please follow these steps.
+
+Log into the https://console.cloud.google.com[Google Cloud Platform Console]
+
+Please confirm that you have the correct project selected. The current project
+is circled in yellow in the image below.
+
+image::assets/gcp-gke-dashboard.png[GCP GKE Dashboard]
+
+Use the left navigation menu to choose **Kubernetes Engine->Clusters**
+
+Use the "+Create Cluster" link (circled in green in the image above) to start
+configuring a GKE cluster.
+
+image::assets/gcp-gke-cluster-basics.png[GCP GKE Cluster Basics]
+
+Give your cluster a name or accept the supplied value.
+
+In order to access GCP CVS, the cluster must be provisioned one of these zones.
+
+* us-east4
+* us-central1
+* us-west2
+
+Make a selection under "Location type" by choosing your preferred **Zone** from
+the drop-down.
+
+Project Astra utilizes features that are only available in Kubernetes v1.17 and
+higher. (*EJK - verify this language*)
+
+In the "Master version" section, activate the "Release channel" radio button and
+then choose **Rapid channel-1.17.5-gke-0**. The exact value may change as Google
+releases updates.
+
+Using the left navigation menu, expand *default-pool* under "NODE POOLS" and
+select *Nodes*.
+
+image::assets/gcp-gke-nodes.png[GCP GKE Nodes]
+
+Under "Image type" select *Ubuntu*.
+
+You are welcome to adjust the other values as you see fit. The defaults should
+work fine.
+
+Before hitting the "CREATE" button, you may want to switch to the "Metadata"
+section (under CLUSTER, not NODE POOLS) and add one or more labels to this
+cluster.
+
+image::assets/gcp-gke-metadata-labels.png[GCP GKE Metadata Labels]
+
+In the example image, a label has been added with *creator* as the key and a
+first initial plus last name as the value. (*EJK - HCL strongly recommends this
+for NetApp users*)
+
+When you are done with the configuration, press the "CREATE" button to continue.
+
+Once the cluster has been provisioned it will appear in the list.
+
+== KUBECONFIG
+
+image::assets/gcp-gke-clusters.png[GCP GKE Clusters]
+
+Pressing the *Connect* button on the right side of the line containing your
+cluster will open a window containing instructions on how to get a kubeconfig
+file for accessing the cluster. This file will need to be modified and can then
+used to register the cluster with Project Astra.
+
+image::assets/gcp-gke-connect-gcloud.png[GCP GKE Connect Gcloud]
+
+The `gcloud` CLI (Command Line Interface) tool will be used.
+
+(*EJK - maybe there is an easier way?*)
+
+Quickstart guides for installing and configuring `gcloud` are available from
+https://cloud.google.com/sdk/docs/quickstarts[Google Cloud Docs]
+
+(*EJK - do we want to provide per OS instructions?*)
+
+=== MacOS
+
+The following steps are one method for generating a kubeconfig file compatible with Project Astra.
+
+Enter the following into a command prompt:
+
+`curl https://sdk.cloud.google.com | bash`
+
+Restart your shell
+
+Run `gcloud init` in the command prompt to initialize the gcloud environment.
+
+If you are using zsh then you can set your local environment variable like this:
+
+`export KUBECONFIG=/Users/username/path/cluster-name.yaml`
+
+Verify that the file was populated.
+
+`echo $KUBECONFIG`
+
+`cat /Users/username/path/cluster-name.yaml`
+
+Then run the `gcloud` command which will write out the config for the cluster to
+the file specified above.
+
+Create your service account token by running `make_sa_token_kubeconfig.sh`.
+
+```
+#!/usr/bin/env bash
+
+
+CLUSTER=$(kubectl config view --flatten --minify -o=jsonpath='{range .clusters[*]}{.name}')
+echo Cluster: $CLUSTER
+CERT_AUTH_DATA=$(kubectl config view --flatten --minify -o=jsonpath='{range .clusters[*]}{.cluster.certificate-authority-data}')
+echo Cert Auth Data: $CERT_AUTH_DATA
+SERVER=$(kubectl config view --flatten --minify -o=jsonpath='{range .clusters[*]}{.cluster.server}')
+echo Server: $SERVER
+
+
+ACCOUNT=admin-account
+NAMESPACE=default
+
+
+kubectl apply -f - << EOF
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: $ACCOUNT
+  namespace: $NAMESPACE
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-binding
+subjects:
+  - kind: ServiceAccount
+    name: $ACCOUNT
+    namespace: $NAMESPACE
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+EOF
+
+
+SECRET=$(kubectl -n $NAMESPACE get sa $ACCOUNT -o=jsonpath='{.secrets[0].name}')
+TOKEN=$(kubectl -n $NAMESPACE get secret $SECRET --output=jsonpath="{.data.token}" | base64 --decode)
+echo Client Token: $TOKEN
+
+
+CONTEXT=admin-context
+
+
+cat << EOF | tee kubeconfig.yaml
+apiVersion: v1
+kind: Config
+users:
+  - name: $ACCOUNT
+    user:
+      token: $TOKEN
+clusters:
+  - cluster:
+      certificate-authority-data: $CERT_AUTH_DATA
+      server: $SERVER
+    name: $CLUSTER
+contexts:
+  - context:
+      cluster: $CLUSTER
+      user: $ACCOUNT
+    name: $CONTEXT
+current-context: $CONTEXT
+EOF
+```
+
+*EJK-what do we do for Windows users?*
+
+
+You will end up with a `kubeconfig.yaml` file that will be used when registering
+the cluster with Project Astra. Here is a slightly redacted sample.
+
+```
+apiVersion: v1
+kind: Config
+users:
+  - name: admin-account
+    user:
+      token: eyJhbGciOiJSUzI1NiIsImtpZCI6InRuSmd1QWU3QUtpT0dTdGNkSmZxajh4Q_uJRrd7Qu0OJFiVCgPcKoDeMTnzz4gsV84sADC60oAJWthIY4IGfA7t4ajX0WB8JS0bMVMTtjZKTsg5BvRLnsX9vqUSg
+clusters:
+  - cluster:
+      certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURDekNDQWZPZ0F3SUJBZ0lRRUZZajhEMld3QU40OWkvdmcra1RqekFOQmdrcWhraUc5dzBCQVFzTgKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+      server: https://aa.bb.cc.dd
+    name: gke_astra-tme-sandbox_us-central1-c_astra-alpha-01
+contexts:
+  - context:
+      cluster: gke_astra-tme-sandbox_us-central1-c_astra-alpha-01
+      user: admin-account
+    name: admin-context
+current-context: admin-context
+```
+
+
+== Register the Cluster with Project Astra
+
+For best results, please use the Chrome browser.
+
+You will be invited into a Project Astra organization by an existing user.
+
+The invitation will come via e-mail and contains a link. You'll need to have a
+valid https://cloud.netapp.com[Cloud Central] account matching the e-mail
+address that was invited in order to accept.
+
+Project Astra is available at https://preview.astra.netapp.com during the Alpha
+phase.
+
+When logged in you are greeted with the dashboard.
+
+image::assets/astra-welcome-dashboard.png[Astra Welcome Dashboard]
+
+image::assets/astra-compute-add-cluster.png[Astra Compute Add Cluster]
+
+image::assets/astra-select-provider.png[Astra Select Provider]
+
+image::assets/astra-credentials-add-new.png[Astra Credentials Add New]
+
+"GCP Credential" is whatever name you want to identify the service account
+credentials that are being provided below.
+
+Service Account JSON - this is generated in the GCP console IAM section.
+
+*EJK - Add or link to instructions for this*
+
+Region is the location you provisioned the GKE cluster in. Select from the
+drop-down.
+
+Project number is a twelve-digit numeric value that is associated with your
+project. Google provides additional details at
+https://cloud.google.com/resource-manager/docs/creating-managing-projects.
+
+You can also use `gcloud` to locate the project number.
+
+`gcloud projects list`
+
+"Select Compute" will take you to the next section where you will provide the
+modified kubeconfig, etc.
+
