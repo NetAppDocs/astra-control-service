@@ -1,11 +1,30 @@
 ---
 sidebar: sidebar
 permalink: backup-view.html
-summary: Lorem ipsum dolor sit amet
+summary: Learn how to find and view a backup you created.
 ---
 
-POLARIS-354
+== View Backups
+:imagesdir: assets/backups/
 
-Article: How to see the remote snapshots arranged by timestamps.
+Learn how to find the backups for your app, arranged by timestamp.
 
-User Story 14: As a k8s Developer/App Admin, on the Polaris portal I want to initiate an Application-consistent remote backup snapshot of the application so that I can create a recovery point in case of a failure.
+Backups are available immediately on the Data Protection tab for the relevant cluster. During the alpha preview program, new backups will not be available immediately on the Storage tab. They will appear on the Storage tab within 24 hours.
+
+Click **Apps**, then click on the name of your app to select that cluster.
+
+image::select-cluster.png[Select Astra cluster]
+
+Click the **Data Protection** tab.
+
+image::click-data-protection-tab.png[Click Data Protection]
+
+Click **Backups** to see your backups.
+
+image::click-backups-button.png[Click the Backups button]
+
+Click the **Created** column header to toggle the sort order.
+
+image::click-created-to-sort-by-timestamp.png[Click Created to sort by timestamp]
+
+You can sort backups in either ascending or descending order by timestamp.

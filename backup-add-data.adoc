@@ -1,11 +1,12 @@
 ---
 sidebar: sidebar
 permalink: backup-add-data.html
-summary: Lorem ipsum dolor sit amet
+summary: Learn how to add data to an existing backup.
 ---
 
-POLARIS-355
+= Add Data to an Existing Backup
+:imagesdir: assets/backups/
 
-Article: How to add more data after the remote snapshots are taken.
+Coming soon.
 
-User Story 14: As a k8s Developer/App Admin, on the Polaris portal I want to initiate an Application-consistent remote backup snapshot of the application so that I can create a recovery point in case of a failure.
+Jira: POLARIS-355
