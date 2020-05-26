@@ -1,7 +1,0 @@
----
-sidebar: sidebar
-permalink: local-snapshot-add-data.html
-summary: Lorem ipsum dolor sic amet
----
-
-Coming soon.
