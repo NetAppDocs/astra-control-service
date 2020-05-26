@@ -6,4 +6,6 @@ summary: Astra FAQs
 
 = FAQs
 
-coming soon
+Coming soon.
+
+Jira: POLARIS-396
