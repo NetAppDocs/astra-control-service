@@ -1,7 +1,0 @@
----
-sidebar: sidebar
-permalink: remote-snapshot-create.html
-summary: Lorem ipsum dolor sit amet
----
-
-Coming soon.

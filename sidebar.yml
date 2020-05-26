@@ -5,26 +5,26 @@ entries:
     url: /database-best-practices.html
   - title: Getting Started
     url: /getting-started.html
-  - title: Local Snapshots
+  - title: Snapshots
     entries:
-      - title: Create a Local Snapshot
-        url: /local-snapshot-create.html
-      - title: View Local Snapshots
-        url: /local-snapshot-view.html
-      - title: Add Data to a Local Snapshot
-        url: /local-snapshot-add-data.html
-      - title: Restore from a Local Snapshot
-        url: /local-snapshot-restore.html
-  - title: Remote Snapshots
+      - title: Create a Snapshot
+        url: /snapshot-create.html
+      - title: View Snapshots
+        url: /snapshot-view.html
+      - title: Add Data to a Snapshot
+        url: /snapshot-add-data.html
+      - title: Restore from a Snapshot
+        url: /snapshot-restore.html
+  - title: Backups
     entries:
-      - title: Create a Remote Snapshot
-        url: /remote-snapshot-create.html
-      - title: View Remote Snapshots
-        url: /remote-snapshot-view.html
-      - title: Add Data to a Remote Snapshot
-        url: /remote-snapshot-add-data.html
-      - title: Restore from a Remote Snapshot
-        url: /remote-snapshot-restore.html
+      - title: Create a Backup
+        url: /backup-create.html
+      - title: View Backups
+        url: /backup-view.html
+      - title: Add Data to a Backup
+        url: /backup-add-data.html
+      - title: Restore from a Backup
+        url: /backup-restore.html
   - title: Migration
     entries:
       - title: Migrate Between Two Existing Clusters
@@ -43,3 +43,5 @@ entries:
         url: /gcp-credentials.html
   - title: FAQ
     url: /faq.html
+  - title: Test Plan
+    url: /test-plan.html

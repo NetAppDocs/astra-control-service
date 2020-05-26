@@ -1,0 +1,19 @@
+---
+sidebar: sidebar
+permalink: snapshot-create.html
+summary: Lorem ipsum dolor sit amet
+---
+
+== Create a Snapshot
+
+POLARIS-349
+
+Article: How to create a local snapshot without disrupting operations by losing connection to the database. Note: Creating a local snapshot will cause a temporary slowdown.
+
+User Story 12: As a k8s Developer/App Admin, on the Polaris portal I want to initiate an Application-consistent local snapshot of the application so that I can create a recovery point in case of a failure.
+
+snapshot controller available (run script)
+
+drill down on cluster and click available to create snapshot and do stuff
+
+we are creating CVS snapshots, but we had a "feature" which polled the snapshots every hour. to reduce overhead, will only be invoked after every backup. thus, new snapshots may not be visible on the Storage tab for a while. But you can drill down through the cluster and see snapshots on the Data Protection tab

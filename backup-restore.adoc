@@ -1,0 +1,11 @@
+---
+sidebar: sidebar
+permalink: backup-restore.html
+summary: Lorem ipsum dolor sit amet
+---
+
+POLARIS-356
+
+Article: How to find older remote snapshots and use them to restore data without disrupting operations by losing connection to the database. Note: Creating a local snapshot will cause a temporary slowdown.
+
+User Story 15: As a k8s Developer/App Admin, on the Polaris Portal I want to restore the Application to an earlier point in time on the same k8s cluster so that I have restored the data to the available remote backup snapshots time.
