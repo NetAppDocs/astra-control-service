@@ -1,0 +1,14 @@
+---
+sidebar: sidebar
+permalink: backup-restore.html
+summary: Learn how to restore your app from a backup.
+---
+
+= Restore From a Backup
+:imagesdir: assets/backups/
+
+Coming soon.
+
+Jira: POLARIS-356
+
+Learn how to locate an older backup and use it to restore data without disrupting operations by losing connection to the database. This process lets you restore your application to an earlier point in time on the same Kubernetes cluster.

@@ -1,0 +1,30 @@
+---
+sidebar: sidebar
+permalink: snapshot-view.html
+summary: Learn how to find and view a snapshot you created.
+---
+
+== View Snapshots 
+:imagesdir: assets/snapshots/
+
+Learn how to find the snapshots for your app, arranged by timestamp.
+
+Snapshots are available immediately on the Data Protection tab for the relevant cluster. During the alpha preview program, new snapshots will not be available immediately on the Storage tab. They will appear on the Storage tab within 24 hours.
+
+Click **Apps**, then click on the name of your app to select that cluster.
+
+image::create-snapshot-select-cluster.png[Select Astra cluster]
+
+Click the **Data Protection** tab.
+
+image::click-data-protection-tab.png[Click Data Protection]
+
+Click **Snapshots** to see your snapshots.
+
+image::click-snapshots-button.png[Click the Snapshots button]
+
+Click the **Created** column header to toggle the sort order.
+
+image::click-created-to-sort-by-timestamp.png[Click Created to sort by timestamp]
+
+You can sort snapshots in either ascending or descending order by timestamp.

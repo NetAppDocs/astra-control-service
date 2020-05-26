@@ -1,0 +1,28 @@
+---
+sidebar: sidebar
+permalink: snapshot-create.html
+summary: How to create an Astra snapshot.
+---
+
+== Create a Snapshot
+:imagesdir: assets/snapshots/
+
+Learn how to create a snapshot of your application. This creates a recovery point for your app, in case of a failure.
+
+NOTE: When you create a snapshot, you will not lose connection to the database. However, creating a snapshot will cause a temporary slowdown to your operations.
+
+Click **Apps**, then click on the name of your app to select that cluster.
+
+image::create-snapshot-select-cluster.png[Select Astra cluster]
+
+Click the **Available** menu on the right. Select **Snapshot** from the drop-down menu.
+
+image::create-snapshot-available-menu.png[Click the Available menu]
+
+Fill out the details for your snapshot in the pop-up window. These will default to a system-generated name for the snapshot, and the current name of your app and cluster. Click **Review & Approve** to continue to the second step.
+
+Click **Snapshot App** to create the snapshot.
+
+After the snapshot has finished being built, you can view it on the **Data Protection** tab for your cluster.
+
+NOTE: Snapshots are available immediately on the Data Protection tab for the relevant cluster. During the alpha preview program, new snapshots will not be available immediately on the Storage tab. They will appear on the Storage tab within 24 hours.

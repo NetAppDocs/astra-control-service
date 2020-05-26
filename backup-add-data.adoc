@@ -1,0 +1,12 @@
+---
+sidebar: sidebar
+permalink: backup-add-data.html
+summary: Learn how to add data to an existing backup.
+---
+
+= Add Data to an Existing Backup
+:imagesdir: assets/backups/
+
+Coming soon.
+
+Jira: POLARIS-355
