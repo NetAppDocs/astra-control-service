@@ -94,20 +94,18 @@ image::invitation-confirm-remove-user.png[Invitiation Confirm Remove User]
 
 == Provision a Cluster Using GKE
 
-Evaluating Project Astra requires one or more GKE clusters. To provision a
-cluster that will work with Project Astra, please follow these steps.
+Evaluating Project Astra requires one or more GKE clusters. There are multiple ways to provision a cluster that will work with Project Astra. First we will demonstrate one method using the Google Cloud Platform console.
 
 Log into the https://console.cloud.google.com[Google Cloud Platform Console]
 
 Please confirm that you have the correct project selected. The current project
-is circled in yellow in the image below.
+is highlighted in yellow in the image below.
 
 image::gcp-gke-dashboard.png[GCP GKE Dashboard]
 
 Use the left navigation menu to choose **Kubernetes Engine->Clusters**
 
-Use the "+Create Cluster" link (circled in green in the image above) to start
-configuring a GKE cluster.
+Use the "+Create Cluster" link to start configuring a GKE cluster.
 
 image::gcp-gke-cluster-basics.png[GCP GKE Cluster Basics]
 
@@ -119,15 +117,14 @@ In order to access GCP CVS, the cluster must be provisioned one of these zones.
 * us-central1
 * us-west2
 
-Make a selection under "Location type" by choosing your preferred **Zone** from
-the drop-down.
+The location should remain set to *Zonal*. Make a selection under "Location type" by choosing your preferred *Zone* from the drop-down.
 
 Project Astra utilizes features that are only available in Kubernetes v1.17 and
-higher. (*EJK - verify this language*)
+higher. As of this writing, Kubernetes 1.17 is not available as a selectable option in the default "Static version" drop-down menu.
 
-In the "Master version" section, activate the "Release channel" radio button and
-then choose **Rapid channel-1.17.5-gke-0**. The exact value may change as Google
-releases updates.
+In the "Master version" section, activate the *Release channel* radio button and
+then choose *Rapid channel-1.17.5-gke-0*. The exact value will change as Google
+deploys new releases of Kubernetes.
 
 Using the left navigation menu, expand *default-pool* under "NODE POOLS" and
 select *Nodes*.
@@ -137,25 +134,27 @@ image::gcp-gke-nodes.png[GCP GKE Nodes]
 Under "Image type" select *Ubuntu*.
 
 You are welcome to adjust the other values as you see fit. The defaults should
-work fine.
+work fine for evaluating Project Astra.
 
-Before hitting the "CREATE" button, you may want to switch to the "Metadata"
+NOTE: Before hitting the "CREATE" button, you may want to switch to the "Metadata"
 section (under CLUSTER, not NODE POOLS) and add one or more labels to this
 cluster.
 
 image::gcp-gke-metadata-labels.png[GCP GKE Metadata Labels]
 
-In the example image, a label has been added with *creator* as the key and a
-first initial plus last name as the value. (*EJK - HCL strongly recommends this
-for NetApp users*)
+In the example image, a label has been added with `creator` as the key.
 
-When you are done with the configuration, press the "CREATE" button to continue.
+When you are done with the configuration, press the *CREATE* button to continue.
 
 Once the cluster has been provisioned it will appear in the list.
 
-== KUBECONFIG
-
 image::gcp-gke-clusters.png[GCP GKE Clusters]
+
+=== Create a Cluster Using `gcloud`
+
+Consider providing instructions to use `gcloud` for cluster creation instead of the GUI. *EJK - Maybe this should be broken out to another section/document?*
+
+== Retrieve and Modify the Cluster Kubeconfig
 
 Pressing the *Connect* button on the right side of the line containing your
 cluster will open a window containing instructions on how to get a kubeconfig
