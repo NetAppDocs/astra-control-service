@@ -150,6 +150,20 @@ Once the cluster has been provisioned it will appear in the list.
 
 image::gcp-gke-clusters.png[GCP GKE Clusters]
 
+=== Enable rpc-statd on Worker Nodes
+
+*EJK-Decide how much to share*
+
+....
+n6vx:~$ sudo systemctl enable rpc-statd --now
+Created symlink /etc/systemd/system/nfs-server.service.wants/rpc-statd.service → /lib/systemd/system/rpc-statd.service.
+
+n6vx:~$ systemctl list-units --state=running |grep rpc
+rpc-statd.service                      loaded active running NFS status monitor for NFSv2/3 locking.
+rpcbind.service                        loaded active running RPC bind portmap service
+rpcbind.socket                         loaded active running RPCbind Server Activation Socket
+....
+
 === Create a Cluster Using `gcloud`
 
 Consider providing instructions to use `gcloud` for cluster creation instead of the GUI.
@@ -173,12 +187,12 @@ image::gcp-gke-connect-gcloud.png[GCP GKE Connect Gcloud]
 
 The `gcloud` CLI (Command Line Interface) tool will be used.
 
-(*EJK - maybe there is an easier way?*)
+*EJK - maybe there is an easier way?*
 
 Quickstart guides for installing and configuring `gcloud` are available from
 https://cloud.google.com/sdk/docs/quickstarts[Google Cloud Docs]
 
-(*EJK - do we want to provide per OS instructions?*)
+*EJK - do we want to provide per OS instructions?*
 
 === MacOS
 
@@ -328,11 +342,11 @@ image::astra-select-provider.png[Astra Select Provider]
 
 "Service account JSON" is generated in the GCP console IAM section. If you have it saved as a file, use the first "Upload file" option. Otherwise, choose "Paste from Clipboard" or "Use existing."
 
-*EJK - Add or link to detailed instructions for generating the SA JSON - maybe a section before this?
+*EJK - Add or link to detailed instructions for generating the SA JSON - maybe a section before this?*
 
-"Service account name" will be automatically generated, but you may change it if you wish. This value will appear in "Use existing" to identify available service account credentials.
+"Service account name" will be automatically generated based on the `client_email` value contained in the service account JSON. You may change it if you wish. This value will appear under "Use existing" to identify the available service account credentials.
 
-*EJK - This next screen may have changed - verify!
+*EJK - This next screen may have changed - verify!*
 
 image::astra-credentials-add-new.png[Astra Credentials Add New]
 
