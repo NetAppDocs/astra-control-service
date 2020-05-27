@@ -5,6 +5,7 @@ summary: Get up and running with Astra
 ---
 
 = Getting Started
+:imagesdir: assets/getting-started/
 
 This document is intended for users that are evaluating Project Astra during the
 alpha phase running from June 4th to July 4th 2020.
@@ -33,14 +34,14 @@ Log into the https://console.cloud.google.com[Google Cloud Platform Console]
 Please confirm that you have the correct project selected. The current project
 is circled in yellow in the image below.
 
-image::assets/gcp-gke-dashboard.png[GCP GKE Dashboard]
+image::gcp-gke-dashboard.png[GCP GKE Dashboard]
 
 Use the left navigation menu to choose **Kubernetes Engine->Clusters**
 
 Use the "+Create Cluster" link (circled in green in the image above) to start
 configuring a GKE cluster.
 
-image::assets/gcp-gke-cluster-basics.png[GCP GKE Cluster Basics]
+image::gcp-gke-cluster-basics.png[GCP GKE Cluster Basics]
 
 Give your cluster a name or accept the supplied value.
 
@@ -63,7 +64,7 @@ releases updates.
 Using the left navigation menu, expand *default-pool* under "NODE POOLS" and
 select *Nodes*.
 
-image::assets/gcp-gke-nodes.png[GCP GKE Nodes]
+image::gcp-gke-nodes.png[GCP GKE Nodes]
 
 Under "Image type" select *Ubuntu*.
 
@@ -74,7 +75,7 @@ Before hitting the "CREATE" button, you may want to switch to the "Metadata"
 section (under CLUSTER, not NODE POOLS) and add one or more labels to this
 cluster.
 
-image::assets/gcp-gke-metadata-labels.png[GCP GKE Metadata Labels]
+image::gcp-gke-metadata-labels.png[GCP GKE Metadata Labels]
 
 In the example image, a label has been added with *creator* as the key and a
 first initial plus last name as the value. (*EJK - HCL strongly recommends this
@@ -86,14 +87,14 @@ Once the cluster has been provisioned it will appear in the list.
 
 == KUBECONFIG
 
-image::assets/gcp-gke-clusters.png[GCP GKE Clusters]
+image::gcp-gke-clusters.png[GCP GKE Clusters]
 
 Pressing the *Connect* button on the right side of the line containing your
 cluster will open a window containing instructions on how to get a kubeconfig
 file for accessing the cluster. This file will need to be modified and can then
 used to register the cluster with Project Astra.
 
-image::assets/gcp-gke-connect-gcloud.png[GCP GKE Connect Gcloud]
+image::gcp-gke-connect-gcloud.png[GCP GKE Connect Gcloud]
 
 The `gcloud` CLI (Command Line Interface) tool will be used.
 
@@ -240,13 +241,13 @@ phase.
 
 When logged in you are greeted with the dashboard.
 
-image::assets/astra-welcome-dashboard.png[Astra Welcome Dashboard]
+image::astra-welcome-dashboard.png[Astra Welcome Dashboard]
 
-image::assets/astra-compute-add-cluster.png[Astra Compute Add Cluster]
+image::astra-compute-add-cluster.png[Astra Compute Add Cluster]
 
-image::assets/astra-select-provider.png[Astra Select Provider]
+image::astra-select-provider.png[Astra Select Provider]
 
-image::assets/astra-credentials-add-new.png[Astra Credentials Add New]
+image::astra-credentials-add-new.png[Astra Credentials Add New]
 
 "GCP Credential" is whatever name you want to identify the service account
 credentials that are being provided below.
@@ -268,4 +269,3 @@ You can also use `gcloud` to locate the project number.
 
 "Select Compute" will take you to the next section where you will provide the
 modified kubeconfig, etc.
-
