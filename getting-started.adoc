@@ -152,9 +152,44 @@ image::gcp-gke-clusters.png[GCP GKE Clusters]
 
 === Enable rpc-statd on Worker Nodes
 
-*EJK-Decide how much to share*
+*EJK-Decide how much to share, do we stick with manual 3x nodes, or script?*
+*From POLARISCLD confluence page*
 
 ....
+Until a fix in trident is released, must run systemcl enable now rpc.statd on each ubuntu node in case trident cannot get PVs mounted:
+
+    kubectl get nodes -o wide
+
+    gcloud compute ssh gke-stage-01-us-cent-default-node-poo-4d96d577-c5o6  --zone us-central1-a
+
+    sudo systemctl enable rpc-statd --now
+
+    Repeat for each worker node
+
+
+Script to start statd:
+#!/bin/bash
+
+gkeName="${1}"
+gkeRegion="${2}"
+
+for i in $(kubectl get no -o wide | grep -vi name | awk '{print $1}'); do
+    gcloud compute ssh "${i}" --zone "${gkeRegion}" --command "sudo systemctl enable rpc-statd --now;sudo systemctl status rpc-statd"
+done
+
+
+Running the statd-script:
+$ bash setup-gke.sh <cluster-name> <cluster-zone>
+
+Example:
+
+$ bash setup-gke.sh adalton-c2 us-central1-a
+....
+
+
+....
+
+
 n6vx:~$ sudo systemctl enable rpc-statd --now
 Created symlink /etc/systemd/system/nfs-server.service.wants/rpc-statd.service → /lib/systemd/system/rpc-statd.service.
 
@@ -162,6 +197,86 @@ n6vx:~$ systemctl list-units --state=running |grep rpc
 rpc-statd.service                      loaded active running NFS status monitor for NFSv2/3 locking.
 rpcbind.service                        loaded active running RPC bind portmap service
 rpcbind.socket                         loaded active running RPCbind Server Activation Socket
+
+nc41:~$ sudo systemctl enable rpc-statd --now
+Created symlink /etc/systemd/system/nfs-server.service.wants/rpc-statd.service → /lib/systemd/system/rpc-statd.service.
+
+nc41:~$ sudo systemctl status rpc-statd
+● rpc-statd.service - NFS status monitor for NFSv2/3 locking.
+   Loaded: loaded (/lib/systemd/system/rpc-statd.service; enabled; vendor preset: enabled)
+   Active: active (running) since Wed 2020-05-27 22:16:22 UTC; 31s ago
+  Process: 13297 ExecStart=/sbin/rpc.statd --no-notify $STATDARGS (code=exited, status=0/SUCCESS)
+ Main PID: 13303 (rpc.statd)
+    Tasks: 1 (limit: 4388)
+   CGroup: /system.slice/rpc-statd.service
+           └─13303 /sbin/rpc.statd --no-notify
+
+May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 systemd[1]: Starting NFS status monitor for NFSv2/3 locking....
+May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 rpc.statd[13303]: Version 1.3.3 starting
+May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 rpc.statd[13303]: Flags: TI-RPC
+May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 rpc.statd[13303]: Failed to read /var/lib/nfs/state: Success
+May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 rpc.statd[13303]: Initializing NSM state
+May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 systemd[1]: Started NFS status monitor for NFSv2/3 locking..
+
+
+eknauer@eknauer-mac-0 gkeconfigs % kubectl get nodes
+NAME                                             STATUS   ROLES    AGE   VERSION
+gke-ejk-doc-test-01-default-pool-af8f8ec6-n6vx   Ready    <none>   30m   v1.17.5-gke.0
+gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41   Ready    <none>   30m   v1.17.5-gke.0
+gke-ejk-doc-test-01-default-pool-af8f8ec6-s9pf   Ready    <none>   30m   v1.17.5-gke.0
+
+
+eknauer@eknauer-mac-0 gkeconfigs % gcloud compute ssh gke-ejk-doc-test-01-default-pool-af8f8ec6-s9pf --zone us-central1-c
+Warning: Permanently added 'compute.7441670908565217579' (ECDSA) to the list of known hosts.
+##############################################################################
+# WARNING: Any changes on the boot disk of the node must be made via
+#          DaemonSet in order to preserve them across node (re)creations.
+#          Node will be (re)created during manual-upgrade, auto-upgrade,
+#          auto-repair or auto-scaling.
+#          See https://cloud.google.com/kubernetes-engine/docs/concepts/node-images#modifications
+#          for more information.
+##############################################################################
+Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 5.3.0-1016-gke x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+
+Welcome to Kubernetes v1.17.5-gke.0!
+
+You can find documentation for Kubernetes at:
+  http://docs.kubernetes.io/
+
+The source for this release can be found at:
+  /home/kubernetes/kubernetes-src.tar.gz
+Or you can download it at:
+  https://storage.googleapis.com/kubernetes-release-gke/release/v1.17.5-gke.0/kubernetes-src.tar.gz
+
+It is based on the Kubernetes source at:
+  https://github.com/kubernetes/kubernetes/tree/v1.17.5-gke.0
+
+For Kubernetes copyright and licensing information, see:
+  /home/kubernetes/LICENSES
+
+s9pf:~$
+
 ....
 
 === Create a Cluster Using `gcloud`
@@ -210,14 +325,18 @@ If you are using zsh then you can set your local environment variable like this:
 
 `export KUBECONFIG=/Users/username/path/cluster-name.yaml`
 
-Verify that the file was populated.
+Verify that the environment variable was set.
 
 `echo $KUBECONFIG`
 
-`cat /Users/username/path/cluster-name.yaml`
-
 Then run the `gcloud` command which will write out the config for the cluster to
 the file specified above.
+
+`gcloud container clusters get-credentials ejk-doc-test-01 --zone us-central1-c --project astra-tme-sandbox`
+
+
+
+`cat /Users/username/path/cluster-name.yaml`
 
 Create your service account token by running `make_sa_token_kubeconfig.sh`.
 
