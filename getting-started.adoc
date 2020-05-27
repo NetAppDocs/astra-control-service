@@ -152,7 +152,15 @@ image::gcp-gke-clusters.png[GCP GKE Clusters]
 
 === Create a Cluster Using `gcloud`
 
-Consider providing instructions to use `gcloud` for cluster creation instead of the GUI. *EJK - Maybe this should be broken out to another section/document?*
+Consider providing instructions to use `gcloud` for cluster creation instead of the GUI.
+
+This is an example of the `command line` provided in the GKE UI once you have configured a cluster following the steps above.
+
+....
+gcloud beta container --project "astra-tme-sandbox" clusters create "cluster-1" --zone "us-central1-c" --no-enable-basic-auth --release-channel "regular" --machine-type "n1-standard-1" --image-type "UBUNTU" --disk-type "pd-standard" --disk-size "100" --metadata disable-legacy-endpoints=true --scopes "https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --num-nodes "3" --enable-stackdriver-kubernetes --enable-ip-alias --network "projects/astra-tme-sandbox/global/networks/default" --subnetwork "projects/astra-tme-sandbox/regions/us-central1/subnetworks/default" --default-max-pods-per-node "110" --no-enable-master-authorized-networks --addons HorizontalPodAutoscaling,HttpLoadBalancing --enable-autoupgrade --enable-autorepair --max-surge-upgrade 1 --max-unavailable-upgrade 0
+....
+
+*EJK - Maybe this should be broken out to another section/document?*
 
 == Retrieve and Modify the Cluster Kubeconfig
 
@@ -199,7 +207,7 @@ the file specified above.
 
 Create your service account token by running `make_sa_token_kubeconfig.sh`.
 
-```
+....
 #!/usr/bin/env bash
 
 
@@ -264,7 +272,7 @@ contexts:
     name: $CONTEXT
 current-context: $CONTEXT
 EOF
-```
+....
 
 *EJK-what do we do for Windows users?*
 
@@ -272,7 +280,7 @@ EOF
 You will end up with a `kubeconfig.yaml` file that will be used when registering
 the cluster with Project Astra. Here is a slightly redacted sample.
 
-```
+....
 apiVersion: v1
 kind: Config
 users:
@@ -290,12 +298,12 @@ contexts:
       user: admin-account
     name: admin-context
 current-context: admin-context
-```
+....
 
 
 == Register the Cluster with Project Astra
 
-For best results, please use the Chrome browser.
+For best results, please use the Chrome browser when evaluating Project Astra.
 
 You will be invited into a Project Astra organization by an existing user.
 
@@ -310,18 +318,23 @@ When logged in you are greeted with the dashboard.
 
 image::astra-welcome-dashboard.png[Astra Welcome Dashboard]
 
+Use the left navigation menu to select *Compute* under *DATA*. You may see a list of Kubernetes clusters that are already registered with Project Astra. Click the *+ Add cluster* button to begin the cluster registration process.
+
 image::astra-compute-add-cluster.png[Astra Compute Add Cluster]
+
+The default provider is set to "Google Cloud Platform." Microsoft Azure and AWS will be enabled at a future date.
 
 image::astra-select-provider.png[Astra Select Provider]
 
+"Service account JSON" is generated in the GCP console IAM section. If you have it saved as a file, use the first "Upload file" option. Otherwise, choose "Paste from Clipboard" or "Use existing."
+
+*EJK - Add or link to detailed instructions for generating the SA JSON - maybe a section before this?
+
+"Service account name" will be automatically generated, but you may change it if you wish. This value will appear in "Use existing" to identify available service account credentials.
+
+*EJK - This next screen may have changed - verify!
+
 image::astra-credentials-add-new.png[Astra Credentials Add New]
-
-"GCP Credential" is whatever name you want to identify the service account
-credentials that are being provided below.
-
-Service Account JSON - this is generated in the GCP console IAM section.
-
-*EJK - Add or link to instructions for this*
 
 Region is the location you provisioned the GKE cluster in. Select from the
 drop-down.
