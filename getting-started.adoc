@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: getting-started.html
-summary: Get up and running with Astra
+summary: Get up and running with Project Astra
 ---
 
 = Getting Started
@@ -23,6 +23,48 @@ A TLDR; list of items needed for the Alpa.
 * GCP Service Account token (JSON)
 ** Grant required Service Account permissions. (*EJK - enumerate*)
 * Kubeconfig with an admin token and context
+
+== Register with Cloud Central
+
+If you don't have an account at https://cloud.netapp.com/home[NetApp Cloud Central] yet, please create one.
+
+Open Cloud Central using the link above and accept the notice regarding browser cookies.
+
+image::cloud-central-register-accept-cookies.png[Cloud Central Accept Cookies]
+
+Use the *SIGN UP* link in the upper right corner to begin the sign up process.
+
+image::cloud-central-sign-up.png[Cloud Central Sign Up]
+
+You will be redirected to https://netapp-cloud-account.auth0.com[NetApp Cloud Account at Auth0]
+
+image::cloud-central-account-sign-up.png[Cloud Central Account Sign Up]
+
+Complete the required form fields and your NetApp Cloud Central account will be created.
+
+=== Verify Email Address
+
+If you already have an account, please verify the email address that you have registered with by expanding the *User Settings* sidebar. Your email address should appear in the area highlighted below labeled "Email."
+
+image::cloud-central-user-settings.png[Cloud Central User Settings]
+
+Provide this exact email address to whomever is inviting you to Project Astra.
+
+=== Invitation to Preview Project Astra
+
+Your invitation to preview Project Astra will arrive by e-mail.
+
+image::email-invitation-to-join.png[Email Invitation]
+
+The *Join Now* button will prompt you to accept the invitation.
+
+image::accept-invitation.png[Accept Invitation]
+
+Welcome to the Project Astra dashboard!
+
+image::invitation-welcome-dashboard.png[Welcome Dashboard]
+
+=== Invite Someone to Project Astra
 
 == Provision a Cluster Using GKE
 
