@@ -21,7 +21,7 @@ A TLDR; list of items needed for the Alpa.
 ** Ubuntu worker nodes w/rpc.statd enabled.
 ** Zonal deployment in a CVS supported region. (us-east4, us-west2, us-central1)
 * GCP Service Account token (JSON)
-** Grant required Service Account permissions. (*EJK - enumerate*)
+** Grant required Service Account permissions. (*EJK - in gcp-credentials.adoc?*)
 * Kubeconfig with an admin token and context
 
 == Register with Cloud Central
@@ -461,7 +461,7 @@ image::astra-select-provider.png[Astra Select Provider]
 
 "Service account JSON" is generated in the GCP console IAM section. If you have it saved as a file, use the first "Upload file" option. Otherwise, choose "Paste from Clipboard" or "Use existing."
 
-*EJK - Add or link to detailed instructions for generating the SA JSON - maybe a section before this?*
+*EJK - Add or link to detailed instructions for generating the SA JSON - looks like this will be included in the gcp-credentials.adoc*
 
 "Service account name" will be automatically generated based on the `client_email` value contained in the service account JSON. You may change it if you wish. This value will appear under "Use existing" to identify the available service account credentials.
 
