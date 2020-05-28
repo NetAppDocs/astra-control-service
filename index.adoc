@@ -11,4 +11,56 @@ summary: Welcome to the documentation portal for Project Astra (Alpha).
 :linkattrs:
 :imagesdir: ./media/
 
-Welcome to the Project Astra documentation.
+Welcome to the Project Astra documentation. We are still in the process of building out content, so many articles are "coming soon."
+
+== Finished Articles
+
+As of May 28, 2020, the following articles have content beyond a "coming soon" placeholder. Please note, all documentation is under active development. If you have corrections or suggestions for improvement, please email mailto:ng-astra-tme@netapp.com[the Astra TME team].
+
+* link:getting-started.html[Getting Started (Onboarding Guide)]
+* link:database-best-practices.html[Database Best Practices]
+* link:test-plan.html[Test Plan]
+
+**Snapshots**
+
+* link:snapshot-create.html[Create a Snapshot]
+* link:snapshot-view.html[View a Snapshot]
+
+**Backups**
+
+* link:backup-create.html[Create a Backup]
+* link:backup-view.html[View a Backup]
+
+**Credentials**
+
+* link:gcp-credentials.html[Create and Find Your GCP Credentials]
+
+== Unfinished Articles
+
+As of May 28, 2020, these articles are "coming soon."
+
+* link:faq.html[FAQs]
+
+**Snapshots**
+
+* link:snapshot-add-data.html[Add Data to an Existing Snapshot]
+* link:snapshot-restore.html[Restore From a Snapshot]
+
+**Backups**
+
+* link:backup-add-data.html[Add Data to an Existing Backup]
+* link:backup-restore.html[Restore From a Backup]
+
+**Credentials**
+
+* link:cvs-credentials.html[Create and Find Your CVS Credentials]
+
+**Migration**
+
+* link:migrate-between-two-existing.html[Migrate Between Two Existing Clusters]
+* link:migrate-between-existing-and-new.html[Migrate Between Existing and New Clusters]
+
+**Deploy Apps**
+
+* link:deploy-mysql-mariadb-from-helm-chart.html[Deploy MySQL/MariaDB from Helm]
+* link:deploy-postgres-from-helm-chart.html[Deploy Postgres from Helm]
