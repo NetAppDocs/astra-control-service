@@ -4,7 +4,7 @@ permalink: snapshot-create.html
 summary: How to create an Astra snapshot.
 ---
 
-== Create a Snapshot
+= Create a Snapshot
 :imagesdir: assets/snapshots/
 
 Learn how to create a snapshot of your application. This creates a recovery point for your app, in case of a failure.

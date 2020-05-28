@@ -4,7 +4,7 @@ permalink: backup-create.html
 summary: Learn how to create a backup of your app.
 ---
 
-== Create a Backup
+= Create a Backup
 :imagesdir: assets/backups/
 
 Learn how to create a remote backup of your application. This creates a recovery point for your app, in case of a failure.
