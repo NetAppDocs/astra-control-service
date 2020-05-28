@@ -41,6 +41,8 @@ entries:
     entries:
       - title: GCP
         url: /gcp-credentials.html
+      - title: CVS
+        url: /cvs-credentials.html
   - title: FAQ
     url: /faq.html
   - title: Test Plan
