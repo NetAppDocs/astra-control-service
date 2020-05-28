@@ -4,7 +4,7 @@ permalink: snapshot-view.html
 summary: Learn how to find and view a snapshot you created.
 ---
 
-== View Snapshots 
+= View Snapshots 
 :imagesdir: assets/snapshots/
 
 Learn how to find the snapshots for your app, arranged by timestamp.

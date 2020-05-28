@@ -4,7 +4,7 @@ permalink: backup-view.html
 summary: Learn how to find and view a backup you created.
 ---
 
-== View Backups
+= View Backups
 :imagesdir: assets/backups/
 
 Learn how to find the backups for your app, arranged by timestamp.
