@@ -11,11 +11,13 @@ summary: Welcome to the documentation portal for Project Astra (Alpha).
 :linkattrs:
 :imagesdir: ./media/
 
-Welcome to the Project Astra documentation. We are still in the process of building out content, so many articles are "coming soon."
+Welcome to the Project Astra documentation. We are still in the process of building out content. Some articles are "coming soon."
 
 == Finished Articles
 
-As of May 28, 2020, the following articles have content beyond a "coming soon" placeholder. Please note, all documentation is under active development. If you have corrections or suggestions for improvement, please email mailto:ng-astra-tme@netapp.com[the Astra TME team].
+As of May 28, 2020, the following articles have content beyond a "coming soon" placeholder.
+
+All Astra documentation is under active development. If you have corrections or suggestions for improvement, please email mailto:ng-astra-tme@netapp.com[the Astra TME team].
 
 * link:getting-started.html[Getting Started (Onboarding Guide)]
 * link:database-best-practices.html[Database Best Practices]
