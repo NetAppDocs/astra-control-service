@@ -11,7 +11,7 @@ summary: Welcome to the documentation portal for Project Astra (Alpha).
 :linkattrs:
 :imagesdir: ./media/
 
-Welcome to the Project Astra documentation. We are still in the process of building out content. Some articles are "coming soon."
+Welcome to the Project Astra documentation. We are still in the process of building out content. Some articles are "coming soon." 
 
 == Finished Articles
 
