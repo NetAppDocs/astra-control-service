@@ -20,13 +20,15 @@ Combining Project Astra with a stateful app (like a database) is intended to sav
  
 For the first iteration, this guide will focus on Helm as the preferred way to deploy Postgres apps. Plain YAML and Operator based deployments may be covered in future guides. 
 
-== Requirements
+== Setup
 
 In order to follow along with this guide, a few components are required. We’ll need an up-to-date Kubernetes cluster (version 1.17+), kubectl installed, and kubeconfig downloaded and setup. We will also need to connect our Kubernetes cluster with Project Astra.
 
 The link:getting-started.html[Getting Started (Onboarding Guide)] is the best option for creating your GKE cluster, and connecting to Project Astra. The following links are provided in addition, in case instructions are unclear, or you need to troubleshoot your installation.
 
-=== GKE 
+=== Pre-requisites Covered in the Getting Started Guide
+
+==== GKE 
 
 You will need to follow instructions in the link:getting-started.html[Getting Started (Onboarding Guide)] for connecting Project Astra to your cluster.
 
@@ -34,25 +36,42 @@ GKE is supported for the current release (alpha) of Project Astra. In the event 
 
 Additional Kubernetes distributions are planned to be added as Project Astra matures.
 
-=== Kubectl 
+==== Kubectl 
 
 Downloading kubectl should be covered as a step in the link:getting-started.html[Getting Started (Onboarding Guide)]. 
 
 Kubectl is a standard tool for interacting with Kubernetes. We’ll use kubectl to deploy our initial database application. To get kubectl on your computer, follow this guide to https://kubernetes.io/docs/tasks/tools/install-kubectl/[download and install kubectl]. 
 
-=== Kubeconfig 
+==== Kubeconfig 
 
 Downloading and configuring kubeconfig should be covered as a step in the link:getting-started.html[Getting Started (Onboarding Guide)]
 
-Kubeconfig is a file that contains credentials to allow kubectl to communicate with the Kubernetes cluster (eg GKE). To download your kubeconfig, follow this guide for https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#generate_kubeconfig_entry[configuring cluster access for kubectl]. 
+Kubeconfig is a file that contains credentials to allow kubectl to communicate with the Kubernetes cluster (eg GKE). To download your kubeconfig, you could also follow this guide for https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#generate_kubeconfig_entry[configuring cluster access for kubectl]. 
 
 
-=== Helm (v3) 
-
-=== CVS and Cloud Central
+==== CVS and Cloud Central
 
 Connecting CVS and Cloud Central should be covered as a step in the link:getting-started.html[Getting Started (Onboarding Guide)]. 
 
-CVS and Cloud Central are the storage layer and connective elements for Project Astra respectively. More details on how to configure CVS on GCP may be found in their https://cloud.google.com/solutions/partners/netapp-cloud-volumes/workflow[workflow guide for CVS].
+CVS and Cloud Central are the storage layer and connective elements for Project Astra, respectively. More details on how to configure CVS on GCP may be found in their https://cloud.google.com/solutions/partners/netapp-cloud-volumes/workflow[workflow guide for CVS].
 
+=== Pre-requisites for This Guide
 
+==== Helm (v3) 
+
+Helm is a popular way to organize and install apps on Kubernetes. If you need to install Helm on your local CLI, you can follow https://helm.sh/docs/intro/install/[their handy install guide].  
+
+== Installing Postgres Apps
+
+Installing Postgres or an app backed by Postgres should be as easy as any other Helm chart. The values just need to be set to consume the volumes provisioned by CVS, and your stateful app should be available for Project Astra to work its magic on.
+
+For instance, the https://hub.helm.sh/charts/bitnami/postgresql[Bitnami Postgres chart] is a popular way to deploy Postgres. The chart is designed to require as few priviliges as possible, and makes use of init containers to accomplish that goal.
+
+To install the Bitnami Postgres chart, you'd need to follow the instructions on the right side for `helm repo add` and `helm install`. At the moment, the Alpha version of Project Astra does not support replicas or failovers. For testing Project Astra in Alpha, we would want to leave replication off, and check that the `global.storageClass` value in `values.yaml` is pointing to the correct storageClass. By default the Bitnami Postgres chart uses a cluster's default dynamic provisioner. You can see what your cluster's storageClasses are by running `kubectl get sc`. That command will produce output like the following.
+
+```
+NAME                 PROVISIONER            RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+standard (default)   kubernetes.io/gce-pd   Delete          Immediate           true                   2m24s
+```
+
+If your default storage class is NetApp CVS backed by Trident, you should be in good shape to install Postgres through Helm.
