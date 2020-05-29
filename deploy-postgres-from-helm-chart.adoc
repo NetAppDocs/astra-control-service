@@ -24,18 +24,35 @@ For the first iteration, this guide will focus on Helm as the preferred way to d
 
 In order to follow along with this guide, a few components are required. We’ll need an up-to-date Kubernetes cluster (version 1.17+), kubectl installed, and kubeconfig downloaded and setup. We will also need to connect our Kubernetes cluster with Project Astra.
 
-The link:getting-started.html[Getting Started (Onboarding Guide)] is the best option for creating your GKE cluster, and connecting to Project Astra. 
+The link:getting-started.html[Getting Started (Onboarding Guide)] is the best option for creating your GKE cluster, and connecting to Project Astra. The following links are provided in addition, in case instructions are unclear, or you need to troubleshoot your installation.
 
 === GKE 
 
-GKE is supported for the current release (alpha) of Project Astra. Google Cloud has great docs for creating a new GKE cluster. 
+You will need to follow instructions in the link:getting-started.html[Getting Started (Onboarding Guide)] for connecting Project Astra to your cluster.
+
+GKE is supported for the current release (alpha) of Project Astra. In the event that you need help beyond the Getting Started guide, Google Cloud has great https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-cluster[docs for creating a new GKE cluster]. 
+
+Additional Kubernetes distributions are planned to be added as Project Astra matures.
 
 === Kubectl 
 
-Kubectl is a standard tool for interacting with Kubernetes. We’ll use kubectl to deploy our initial database application. To get kubectl on your computer, follow this guide to download and install kubectl. 
+Downloading kubectl should be covered as a step in the link:getting-started.html[Getting Started (Onboarding Guide)]. 
+
+Kubectl is a standard tool for interacting with Kubernetes. We’ll use kubectl to deploy our initial database application. To get kubectl on your computer, follow this guide to https://kubernetes.io/docs/tasks/tools/install-kubectl/[download and install kubectl]. 
 
 === Kubeconfig 
 
-Kubeconfig is a file that contains credentials to allow kubectl to communicate with the Kubernetes cluster (eg GKE). To download your kubeconfig, follow this guide for configuring cluster access for kubectl. 
+Downloading and configuring kubeconfig should be covered as a step in the link:getting-started.html[Getting Started (Onboarding Guide)]
+
+Kubeconfig is a file that contains credentials to allow kubectl to communicate with the Kubernetes cluster (eg GKE). To download your kubeconfig, follow this guide for https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#generate_kubeconfig_entry[configuring cluster access for kubectl]. 
+
 
 === Helm (v3) 
+
+=== CVS and Cloud Central
+
+Connecting CVS and Cloud Central should be covered as a step in the link:getting-started.html[Getting Started (Onboarding Guide)]. 
+
+CVS and Cloud Central are the storage layer and connective elements for Project Astra respectively. More details on how to configure CVS on GCP may be found in their https://cloud.google.com/solutions/partners/netapp-cloud-volumes/workflow[workflow guide for CVS].
+
+
