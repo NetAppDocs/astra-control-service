@@ -54,7 +54,7 @@ Provide this exact email address to whomever is inviting you to Project Astra.
 
 === Invitation to Preview Project Astra
 
-Your invitation to preview Project Astra will arrive by e-mail.
+Your invitation to preview Project Astra will arrive by email.
 
 image::email-invitation-to-join.png[Email Invitation]
 
@@ -150,7 +150,7 @@ For best results, please use the Chrome browser when evaluating Project Astra.
 
 You will be invited into a Project Astra organization by an existing user.
 
-The invitation will come via e-mail and contains a link. You'll need to have avalid https://cloud.netapp.com[Cloud Central] account matching the e-mailaddress that was invited in order to accept.
+The invitation will come via email and contains a link. You'll need to have a valid https://cloud.netapp.com[Cloud Central] account matching the email address that was invited in order to accept.
 
 Project Astra is available at https://astra.netapp.com.
 
