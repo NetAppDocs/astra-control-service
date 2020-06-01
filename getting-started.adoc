@@ -152,13 +152,13 @@ You will be invited into a Project Astra organization by an existing user.
 
 The invitation will come via e-mail and contains a link. You'll need to have avalid https://cloud.netapp.com[Cloud Central] account matching the e-mailaddress that was invited in order to accept.
 
-Project Astra is available at https://preview.astra.netapp.com during the Alpha phase.
+Project Astra is available at https://astra.netapp.com.
 
 When logged in you will see the dashboard.
 
 image::astra-welcome-dashboard.png[Astra Welcome Dashboard]
 
-Use the left navigation menu to select *Compute* under *DATA*. You may see a list of Kubernetes clusters that are already registered with Project Astra. Click the *+ Add cluster* button to begin the cluster registration process.
+Use the left navigation menu to select *Compute* under *DATA*. The main window will either be empty or display a list of Kubernetes clusters that are already registered with Project Astra. Click the *+ Add cluster* button to begin the cluster registration process.
 
 image::astra-compute-add-cluster.png[Astra Compute Add Cluster]
 
@@ -166,9 +166,9 @@ The default provider is set to "Google Cloud Platform." Microsoft Azure and AWS 
 
 image::astra-select-provider.png[Astra Select Provider]
 
-"Service account JSON" is generated in the GCP console IAM section. If you have it saved as a file, use the first "Upload file" option. Otherwise, choose "Paste from Clipboard" or "Use existing."
+"Service account JSON" is generated in the GCP console IAM section. If you have it saved as a file, use the first "Upload file" option. Choose the appropriate file and upload it. Otherwise, choose "Paste from Clipboard" or "Use existing."
 
-"Service account name" will be automatically generated based on the `client_email` value contained in the service account JSON. You may change it if you wish. This value will appear under "Use existing" to identify the available service account credentials.
+"Service account name" will be automatically generated based on the `client_email` value contained in the service account JSON. You may change it if you wish. This value will appear under "Use existing" to identify this set of service account credentials.
 
 Press the *Discover clusters* button to continue. You will see a list of Kubernetes clusters that are currently provisioned.
 
@@ -183,7 +183,3 @@ image::add-compute-select-storage-type.png[Add Compute Select Storage Type]
 image::add-compute-review-selection.png[Add Compute Review Selection]
 
 image::add-compute-complete.png[Add Compute Complete]
-
-image::astra-select-a-cluster.png[Astra Select a Cluster]
-
-image::astra-select-configure-storage.png[Astra Select Configure Storage]
