@@ -166,9 +166,17 @@ The default provider is set to "Google Cloud Platform." Microsoft Azure and AWS 
 
 image::astra-select-provider.png[Astra Select Provider]
 
-"Service account JSON" is generated in the GCP console IAM section. If you have it saved as a file, use the first "Upload file" option. Choose the appropriate file and upload it. Otherwise, choose "Paste from Clipboard" or "Use existing."
+"Service account JSON" is generated in the GCP console IAM section. More information on creating the service account are found in this can be found in link:credentials-gcp.adoc[Credentials GCP].
 
-"Service account name" will be automatically generated based on the `client_email` value contained in the service account JSON. You may change it if you wish. This value will appear under "Use existing" to identify this set of service account credentials.
+Once you have the service account JSON saved as a file, use the "Upload file" option. (Highlighted in yellow in the image above.)
+
+image::astra-sa-upload-file.png[Service Account JSON Upload File]
+
+Choose the appropriate `.json` file and upload it. Otherwise, choose "Paste from Clipboard" or "Use existing."
+
+image::astra-sa-file-uploaded.png[Service Account JSON File Uploaded]
+
+"Service account name" will be automatically generated based on the `client_email` value contained in the service account JSON. You are welcome to change it if you wish. This value will appear under "Use existing" to identify this set of service account credentials.
 
 Press the *Discover clusters* button to continue. You will see a list of Kubernetes clusters that are currently provisioned.
 
