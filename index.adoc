@@ -35,7 +35,7 @@ All Astra documentation is under active development. If you have corrections or 
 
 **Credentials**
 
-* link:gcp-credentials.html[Create and Find Your GCP Credentials]
+* link:credentials-gcp.html[Create and Find Your GCP Credentials]
 
 == Unfinished Articles
 
@@ -55,7 +55,7 @@ As of May 28, 2020, these articles are "coming soon."
 
 **Credentials**
 
-* link:cvs-credentials.html[Create and Find Your CVS Credentials]
+* link:credentials-cvs.html[Create and Find Your CVS Credentials]
 
 **Migration**
 

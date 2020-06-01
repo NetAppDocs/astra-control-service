@@ -40,9 +40,9 @@ entries:
   - title: Credentials
     entries:
       - title: GCP
-        url: /gcp-credentials.html
+        url: /credentials-gcp.html
       - title: CVS
-        url: /cvs-credentials.html
+        url: /credentials-cvs.html
   - title: FAQ
     url: /faq.html
   - title: Test Plan
