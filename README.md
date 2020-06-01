@@ -1,3 +1,3 @@
 # astra
 
-Welcome to the Astra repo. Hope you enjoy your stay.
+Welcome to the Project Astra (internal) repo. Hope you enjoy your stay.
