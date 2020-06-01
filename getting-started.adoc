@@ -12,19 +12,19 @@ alpha phase running from June 4th to July 4th 2020.
 
 == Requirements
 
-A TLDR; list of items needed for the Alpa.
+This is a quick summary of the steps to get up and running with Project Astra.
 
 * Register with Cloud Central.
 * Get invited to an Astra Organization.
 * Setup GCP account and Project.
-** GCP Service Account token (JSON)
 ** Grant required Service Account permissions.
-** VPC / CVS setup. (*Covered in gcp-credentials.adoc?*)
+** Generate a GCP (Google Compute Platform) Service Account token (JSON).
+** VPC / CVS setup.
 * Provision one or more GKE (Google Kubernetes Engine) cluster(s).
 ** Kubernetes version >= 1.17.0 (from Rapid Release Channel).
-** Ubuntu worker nodes w/rpc.statd enabled.
+** Ubuntu worker nodes.
 ** Zonal deployment in a CVS supported region. (us-east4, us-west2, us-central1)
-* Start evaluating / apps. (*Covered in?*)
+* Start evaluating / apps.
 
 == Register with Cloud Central
 
@@ -54,7 +54,7 @@ Provide this exact email address to whomever is inviting you to Project Astra.
 
 === Invitation to Preview Project Astra
 
-Your invitation to preview Project Astra will arrive by e-mail.
+Your invitation to preview Project Astra will arrive by email.
 
 image::email-invitation-to-join.png[Email Invitation]
 
@@ -80,7 +80,7 @@ In the *ADD TO TEAM* section, press the button labeled *Not selected* in the *St
 
 image::invite-select-team.png[Select Team]
 
-Once you have at least one user to invite and one team selected, press the *Send invite/s* button in the lower right corner.
+Once you have at least one user to invite and one team selected, press the *Send invite's* button in the lower right corner.
 
 You will be returned to the *Organization* screen and see that your new user's details have been added with the *State* column showing as *Pending*.
 
@@ -106,7 +106,7 @@ image::gcp-gke-dashboard.png[GCP GKE Dashboard]
 
 Use the left navigation menu to choose *Kubernetes Engine->Clusters*
 
-Use the "+Create Cluster" link to start configuring a GKE cluster.
+Use the *+Create Cluster* link to start configuring a GKE cluster.
 
 image::gcp-gke-cluster-basics.png[GCP GKE Cluster Basics]
 
@@ -130,10 +130,9 @@ image::gcp-gke-nodes.png[GCP GKE Nodes]
 
 Under "Image type" select *Ubuntu*.
 
-You are welcome to adjust the other values as you see fit. The defaults should
-work fine for evaluating Project Astra.
+You are welcome to adjust the other values as you see fit. The defaults should work fine for evaluating Project Astra.
 
-NOTE: Before hitting the "CREATE" button, you may want to switch to the "Metadata" section (under CLUSTER, not NODE POOLS) and add one or more labels to this cluster.
+TIP: Before hitting the "CREATE" button, you may want to switch to the "Metadata" section (under CLUSTER, not NODE POOLS) and add one or more labels to this cluster.
 
 image::gcp-gke-metadata-labels.png[GCP GKE Metadata Labels]
 
@@ -145,162 +144,21 @@ Once the cluster has been provisioned it will appear in the list.
 
 image::gcp-gke-clusters.png[GCP GKE Clusters]
 
-=== Enable rpc-statd on Worker Nodes
-
-*EJK-Decide how much to share, do we stick with manual 3x nodes, or script?*
-*From POLARISCLD confluence page*
-
-....
-Until a fix in trident is released, must run systemcl enable now rpc.statd on each ubuntu node in case trident cannot get PVs mounted:
-
-    kubectl get nodes -o wide
-
-    gcloud compute ssh gke-stage-01-us-cent-default-node-poo-4d96d577-c5o6  --zone us-central1-a
-
-    sudo systemctl enable rpc-statd --now
-
-    Repeat for each worker node
-
-
-Script to start statd:
-#!/bin/bash
-
-gkeName="${1}"
-gkeRegion="${2}"
-
-for i in $(kubectl get no -o wide | grep -vi name | awk '{print $1}'); do
-    gcloud compute ssh "${i}" --zone "${gkeRegion}" --command "sudo systemctl enable rpc-statd --now;sudo systemctl status rpc-statd"
-done
-
-
-Running the statd-script:
-$ bash setup-gke.sh <cluster-name> <cluster-zone>
-
-Example:
-
-$ bash setup-gke.sh adalton-c2 us-central1-a
-....
-
-
-....
-
-
-n6vx:~$ sudo systemctl enable rpc-statd --now
-Created symlink /etc/systemd/system/nfs-server.service.wants/rpc-statd.service → /lib/systemd/system/rpc-statd.service.
-
-n6vx:~$ systemctl list-units --state=running |grep rpc
-rpc-statd.service                      loaded active running NFS status monitor for NFSv2/3 locking.
-rpcbind.service                        loaded active running RPC bind portmap service
-rpcbind.socket                         loaded active running RPCbind Server Activation Socket
-
-nc41:~$ sudo systemctl enable rpc-statd --now
-Created symlink /etc/systemd/system/nfs-server.service.wants/rpc-statd.service → /lib/systemd/system/rpc-statd.service.
-
-nc41:~$ sudo systemctl status rpc-statd
-● rpc-statd.service - NFS status monitor for NFSv2/3 locking.
-   Loaded: loaded (/lib/systemd/system/rpc-statd.service; enabled; vendor preset: enabled)
-   Active: active (running) since Wed 2020-05-27 22:16:22 UTC; 31s ago
-  Process: 13297 ExecStart=/sbin/rpc.statd --no-notify $STATDARGS (code=exited, status=0/SUCCESS)
- Main PID: 13303 (rpc.statd)
-    Tasks: 1 (limit: 4388)
-   CGroup: /system.slice/rpc-statd.service
-           └─13303 /sbin/rpc.statd --no-notify
-
-May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 systemd[1]: Starting NFS status monitor for NFSv2/3 locking....
-May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 rpc.statd[13303]: Version 1.3.3 starting
-May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 rpc.statd[13303]: Flags: TI-RPC
-May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 rpc.statd[13303]: Failed to read /var/lib/nfs/state: Success
-May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 rpc.statd[13303]: Initializing NSM state
-May 27 22:16:22 gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41 systemd[1]: Started NFS status monitor for NFSv2/3 locking..
-
-
-eknauer@eknauer-mac-0 gkeconfigs % kubectl get nodes
-NAME                                             STATUS   ROLES    AGE   VERSION
-gke-ejk-doc-test-01-default-pool-af8f8ec6-n6vx   Ready    <none>   30m   v1.17.5-gke.0
-gke-ejk-doc-test-01-default-pool-af8f8ec6-nc41   Ready    <none>   30m   v1.17.5-gke.0
-gke-ejk-doc-test-01-default-pool-af8f8ec6-s9pf   Ready    <none>   30m   v1.17.5-gke.0
-
-
-eknauer@eknauer-mac-0 gkeconfigs % gcloud compute ssh gke-ejk-doc-test-01-default-pool-af8f8ec6-s9pf --zone us-central1-c
-Warning: Permanently added 'compute.7441670908565217579' (ECDSA) to the list of known hosts.
-##############################################################################
-# WARNING: Any changes on the boot disk of the node must be made via
-#          DaemonSet in order to preserve them across node (re)creations.
-#          Node will be (re)created during manual-upgrade, auto-upgrade,
-#          auto-repair or auto-scaling.
-#          See https://cloud.google.com/kubernetes-engine/docs/concepts/node-images#modifications
-#          for more information.
-##############################################################################
-Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 5.3.0-1016-gke x86_64)
-
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/advantage
-
-This system has been minimized by removing packages and content that are
-not required on a system that users do not log into.
-
-To restore this content, you can run the 'unminimize' command.
-
-0 packages can be updated.
-0 updates are security updates.
-
-
-The programs included with the Ubuntu system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
-applicable law.
-
-
-Welcome to Kubernetes v1.17.5-gke.0!
-
-You can find documentation for Kubernetes at:
-  http://docs.kubernetes.io/
-
-The source for this release can be found at:
-  /home/kubernetes/kubernetes-src.tar.gz
-Or you can download it at:
-  https://storage.googleapis.com/kubernetes-release-gke/release/v1.17.5-gke.0/kubernetes-src.tar.gz
-
-It is based on the Kubernetes source at:
-  https://github.com/kubernetes/kubernetes/tree/v1.17.5-gke.0
-
-For Kubernetes copyright and licensing information, see:
-  /home/kubernetes/LICENSES
-
-s9pf:~$
-
-....
-
-=== Create a Cluster Using `gcloud`
-
-Consider providing instructions to use `gcloud` for cluster creation instead of the GUI.
-
-This is an example of the `command line` provided in the GKE UI once you have configured a cluster following the steps above.
-
-....
-gcloud beta container --project "astra-tme-sandbox" clusters create "cluster-1" --zone "us-central1-c" --no-enable-basic-auth --release-channel "regular" --machine-type "n1-standard-1" --image-type "UBUNTU" --disk-type "pd-standard" --disk-size "100" --metadata disable-legacy-endpoints=true --scopes "https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --num-nodes "3" --enable-stackdriver-kubernetes --enable-ip-alias --network "projects/astra-tme-sandbox/global/networks/default" --subnetwork "projects/astra-tme-sandbox/regions/us-central1/subnetworks/default" --default-max-pods-per-node "110" --no-enable-master-authorized-networks --addons HorizontalPodAutoscaling,HttpLoadBalancing --enable-autoupgrade --enable-autorepair --max-surge-upgrade 1 --max-unavailable-upgrade 0
-....
-
-*EJK - Maybe this should be broken out to another section/document?*
-
 == Register the Cluster with Project Astra
 
 For best results, please use the Chrome browser when evaluating Project Astra.
 
 You will be invited into a Project Astra organization by an existing user.
 
-The invitation will come via e-mail and contains a link. You'll need to have avalid https://cloud.netapp.com[Cloud Central] account matching the e-mailaddress that was invited in order to accept.
+The invitation will come via email and contains a link. You'll need to have a valid https://cloud.netapp.com[Cloud Central] account matching the email address that was invited in order to accept.
 
-Project Astra is available at https://preview.astra.netapp.com during the Alpha phase.
+Project Astra is available at https://astra.netapp.com.
 
 When logged in you will see the dashboard.
 
 image::astra-welcome-dashboard.png[Astra Welcome Dashboard]
 
-Use the left navigation menu to select *Compute* under *DATA*. You may see a list of Kubernetes clusters that are already registered with Project Astra. Click the *+ Add cluster* button to begin the cluster registration process.
+Use the left navigation menu to select *Compute* under *DATA*. The main window will either be empty or display a list of Kubernetes clusters that are already registered with Project Astra. Click the *+ Add cluster* button to begin the cluster registration process.
 
 image::astra-compute-add-cluster.png[Astra Compute Add Cluster]
 
@@ -308,24 +166,40 @@ The default provider is set to "Google Cloud Platform." Microsoft Azure and AWS 
 
 image::astra-select-provider.png[Astra Select Provider]
 
-"Service account JSON" is generated in the GCP console IAM section. If you have it saved as a file, use the first "Upload file" option. Otherwise, choose "Paste from Clipboard" or "Use existing."
+"Service account JSON" is generated in the GCP console IAM section. More information on creating the service account are found in this can be found in link:credentials-gcp.adoc[Credentials GCP].
 
-"Service account name" will be automatically generated based on the `client_email` value contained in the service account JSON. You may change it if you wish. This value will appear under "Use existing" to identify the available service account credentials.
+Once you have the service account JSON saved as a file, use the "Upload file" option. (Highlighted in yellow in the image above.)
+
+image::astra-sa-upload-file.png[Service Account JSON Upload File]
+
+Choose the appropriate `.json` file and upload it. If you prefer to copy and paste the service account JSON, choose "Paste from Clipboard." If you have previously added a service account, you can select it from the "Use existing" tab.
+
+image::astra-sa-file-uploaded.png[Service Account JSON File Uploaded]
+
+"Service account name" will be automatically generated based on the `client_email` value contained in the service account JSON. You are welcome to change it if you wish. This value will appear later under "Use existing" to identify this set of service account credentials.
 
 Press the *Discover clusters* button to continue. You will see a list of Kubernetes clusters that are currently provisioned.
 
-image::add-compute-cluster-status-updating.png[Add Compute Cluster Status Updating]
+image::astra-add-compute-select-a-cluster.png[Add Compute Select a Cluster]
 
-image::add-compute-complete.png[Add Compute Complete]
+Choose a cluster by clicking the *Not selected* button. *Not selected* will update to *Selected* with a blue checkmark. Continue by pressing the *Configure storage* button.
 
-image::add-compute-select-a-cluster.png[Add Compute Select a Cluster]
+image::astra-add-compute-cluster-selected.png[Add Compute Cluster Selected]
+
+In this configuration step, choose a storage class and press *Review information*. (*EJK - Do we want to explain any details about these here, or link to another document?*)
 
 image::add-compute-select-storage-type.png[Add Compute Select Storage Type]
 
+Please review the information presented on the summary screen.
+
 image::add-compute-review-selection.png[Add Compute Review Selection]
+
+You can navigate back to previous steps if you notice something that needs to be changed. When it all looks good, press *Add compute*.
+
+image::add-compute-cluster-status-updating.png[Add Compute Cluster Status Updating]
+
+An information block will provide some status updates as the Kubernetes cluster is registered with Project Astra. When the process completes, you should see your cluster showing as *Available*.
 
 image::add-compute-complete.png[Add Compute Complete]
 
-image::astra-select-a-cluster.png[Astra Select a Cluster]
-
-image::astra-select-configure-storage.png[Astra Select Configure Storage]
+END (*EJK where do we send users next?*)
