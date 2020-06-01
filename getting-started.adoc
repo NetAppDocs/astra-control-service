@@ -172,22 +172,34 @@ Once you have the service account JSON saved as a file, use the "Upload file" op
 
 image::astra-sa-upload-file.png[Service Account JSON Upload File]
 
-Choose the appropriate `.json` file and upload it. Otherwise, choose "Paste from Clipboard" or "Use existing."
+Choose the appropriate `.json` file and upload it. If you prefer to copy and paste the service account JSON, choose "Paste from Clipboard." If you have previously added a service account, you can select it from the "Use existing" tab.
 
 image::astra-sa-file-uploaded.png[Service Account JSON File Uploaded]
 
-"Service account name" will be automatically generated based on the `client_email` value contained in the service account JSON. You are welcome to change it if you wish. This value will appear under "Use existing" to identify this set of service account credentials.
+"Service account name" will be automatically generated based on the `client_email` value contained in the service account JSON. You are welcome to change it if you wish. This value will appear later under "Use existing" to identify this set of service account credentials.
 
 Press the *Discover clusters* button to continue. You will see a list of Kubernetes clusters that are currently provisioned.
 
-image::add-compute-cluster-status-updating.png[Add Compute Cluster Status Updating]
+image::astra-add-compute-select-a-cluster.png[Add Compute Select a Cluster]
 
-image::add-compute-complete.png[Add Compute Complete]
+Choose a cluster by clicking the *Not selected* button. *Not selected* will update to *Selected* with a blue checkmark. Continue by pressing the *Configure storage* button.
 
-image::add-compute-select-a-cluster.png[Add Compute Select a Cluster]
+image::astra-add-compute-cluster-selected.png[Add Compute Cluster Selected]
+
+In this configuration step, choose a storage class and press *Review information*. (*EJK - Do we want to explain any details about these here, or link to another document?*)
 
 image::add-compute-select-storage-type.png[Add Compute Select Storage Type]
 
+Please review the information presented on the summary screen.
+
 image::add-compute-review-selection.png[Add Compute Review Selection]
 
+You can navigate back to previous steps if you notice something that needs to be changed. When it all looks good, press *Add compute*.
+
+image::add-compute-cluster-status-updating.png[Add Compute Cluster Status Updating]
+
+An information block will provide some status updates as the Kubernetes cluster is registered with Project Astra. When the process completes, you should see your cluster showing as *Available*.
+
 image::add-compute-complete.png[Add Compute Complete]
+
+END (*EJK where do we send users next?*)
