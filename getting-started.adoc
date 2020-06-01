@@ -1,7 +1,0 @@
----
-sidebar: sidebar
-permalink: getting-started.html
-summary: Get up and running with Astra
----
-
-Coming soon.

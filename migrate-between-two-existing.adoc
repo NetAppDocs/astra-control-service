@@ -1,7 +1,0 @@
----
-sidebar: sidebar
-permalink: migrate-between-two-existing.html
-summary: Lorem ipsum dolor sit amet
----
-
-Coming soon.
