@@ -1,10 +1,12 @@
 entries:
   - title: Astra Alpha Documentation
     url: /index.html
-  - title: Best Practices
-    url: /database-best-practices.html
   - title: Getting Started
-    url: /getting-started.html
+    entries:
+      - title: Getting Started Guide
+        url: /getting-started.html
+      - title: Test Plan
+        url: /test-plan.html
   - title: Snapshots
     entries:
       - title: Create a Snapshot
@@ -45,5 +47,5 @@ entries:
         url: /credentials-cvs.html
   - title: FAQ
     url: /faq.html
-  - title: Test Plan
-    url: /test-plan.html
+  - title: Best Practices
+    url: /database-best-practices.html
