@@ -5,6 +5,8 @@ entries:
     entries:
       - title: Getting Started Guide
         url: /getting-started.html
+      - title: Install Kubectl
+        url: /install-kubect.html
       - title: Test Plan
         url: /test-plan.html
   - title: Credentials
