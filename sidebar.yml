@@ -7,6 +7,18 @@ entries:
         url: /getting-started.html
       - title: Test Plan
         url: /test-plan.html
+  - title: Credentials
+    entries:
+      - title: GCP
+        url: /credentials-gcp.html
+      - title: CVS on GCP
+        url: /credentials-cvs.html
+  - title: Deploy Apps
+    entries:
+      - title: Deploy MySQL/MariaDB from Helm
+        url: /deploy-mysql-mariadb-from-helm-chart.html
+      - title: Deploy Postgres from Helm
+        url: /deploy-postgres-from-helm-chart.html
   - title: Snapshots
     entries:
       - title: Create a Snapshot
@@ -33,18 +45,6 @@ entries:
         url: /migrate-between-two-existing.html
       - title: Migrate Between Existing and New Clusters
         url: /migrate-between-existing-and-new.html
-  - title: Deploy Apps
-    entries:
-      - title: Deploy MySQL/MariaDB from Helm
-        url: /deploy-mysql-mariadb-from-helm-chart.html
-      - title: Deploy Postgres from Helm
-        url: /deploy-postgres-from-helm-chart.html
-  - title: Credentials
-    entries:
-      - title: GCP
-        url: /credentials-gcp.html
-      - title: CVS on GCP
-        url: /credentials-cvs.html
   - title: FAQ
     url: /faq.html
   - title: Best Practices
