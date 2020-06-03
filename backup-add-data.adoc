@@ -8,5 +8,3 @@ summary: Learn how to add data to an existing backup.
 :imagesdir: assets/backups/
 
 Coming soon.
-
-Jira: POLARIS-355

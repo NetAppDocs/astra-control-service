@@ -7,9 +7,3 @@ summary: How to migrate data between an existing and a new cluster and verify th
 = Migrate Data Between an Existing and a New Cluster
 
 Coming soon.
-
-Jira: POLARIS-358
-
-How to migrate data between an existing and a new cluster and verify the migration of both data and k8s app configuration was successful.
-
-User Story 17:  As a k8s Developer/App Admin, on the Polaris portal I want to initiate Application migration with the same namespace information from the current k8s cluster to a new k8s cluster in the same region so that I can transfer the Application without any data loss. Note: Polaris Portal shall show both the old and new clusters; before and after states and associated resource changes.
