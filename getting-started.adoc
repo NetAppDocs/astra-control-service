@@ -18,15 +18,15 @@ This is a quick summary of the steps to get up and running with Project Astra.
 * Get invited to an Astra Organization.
 * Setup a GCP (Google Compute Platform) account and/or Project.
 ** Grant required Service Account permissions.
-** Generate a GCP Service Account token (JSON).
-** Verify CVS setup.
-* Provision one or more GKE (Google Kubernetes Engine) clusters.
+** Generate a GCP Service Account key (JSON).
+** Configure Cloud Volumes Service for Google Cloud.
+* Provision two or more GKE (Google Kubernetes Engine) clusters.
 ** Select Kubernetes version >= 1.17.0 from the Rapid Release Channel.
 ** Use Ubuntu worker nodes.
-** Choose a "zonal" deployment in a CVS supported region. (us-east4, us-west2, us-central1)
+** Choose a "Zonal" location type in a Cloud Volumes Service supported region. (i.e., us-west2-a, us-central1-b)
 * Provision some applications and then create snapshots, backups, and clones.
 
-For the best experience, please use the Chrome browser when evaluating Project Astra.
+Project Astra is supported only with the Chrome browser during the alpha phase.
 
 == Register with Cloud Central
 
@@ -44,7 +44,7 @@ You will be redirected to https://netapp-cloud-account.auth0.com[NetApp Cloud Ac
 
 image::cloud-central-account-sign-up.png[Cloud Central Account Sign Up]
 
-Complete the required form fields and your NetApp Cloud Central account will be created.
+Complete the required form fields and review the terms and conditions before pressing *SIGN UP*. Your NetApp Cloud Central account will be created.
 
 === Verify Email Address
 
@@ -66,11 +66,11 @@ image::accept-invitation.png[Accept Invitation]
 
 Welcome to the Project Astra dashboard!
 
-image::invitation-welcome-dashboard.png[Welcome Dashboard]
+image::astra-welcome-dashboard-revised.png[Welcome Dashboard]
 
 == Provision a Cluster Using GKE
 
-Evaluating Project Astra requires one or more GKE clusters. There are multiple ways to provision a cluster that will work with Project Astra. This is one method using the Google Cloud Platform web UI.
+Evaluating Project Astra requires two or more GKE clusters. There are multiple ways to provision a cluster that will work with Project Astra. This is one method using the Google Cloud Platform web UI.
 
 Log into the https://console.cloud.google.com[Google Cloud Platform Console]
 
@@ -86,7 +86,7 @@ image::gcp-gke-cluster-basics.png[GCP GKE Cluster Basics]
 
 Give your cluster a name or accept the supplied value.
 
-In order to access GCP CVS, the cluster must be provisioned one of these three zones.
+Project Astra requires Cloud Volumes Service for Google Cloud to perform application data management in your clusters. Provision the cluster in a https://cloud.netapp.com/cloud-volumes-global-regions[region supported] by the Cloud Volumes Service, such as:
 
 * us-east4
 * us-central1
@@ -104,13 +104,9 @@ image::gcp-gke-nodes.png[GCP GKE Nodes]
 
 Under "Image type" select *Ubuntu*.
 
-You are welcome to adjust the other values as you see fit. The defaults should work fine for evaluating Project Astra.
+You are welcome to adjust the other values as you see fit. The remaining defaults should work fine for evaluating Project Astra.
 
-TIP: Before hitting the "CREATE" button, you may want to switch to the "Metadata" section (under CLUSTER, not NODE POOLS) and add one or more labels to this cluster.
-
-image::gcp-gke-metadata-labels.png[GCP GKE Metadata Labels]
-
-In the example image, a label has been added with `creator` as the key.
+TIP: Consider using `n1-standard-2` instances as a minimum. This will reduce the chance of encountering issues due to unexpected resource contention.
 
 When you are done with the configuration, press the *CREATE* button to continue.
 
@@ -124,19 +120,21 @@ Log into Project Astra at https://astra.netapp.com. The first time you log in yo
 
 image::astra-welcome-dashboard.png[Astra Welcome Dashboard]
 
-Use the left navigation menu to select *Compute* under *DATA*. The main window will either be empty
+Use the left navigation menu to select *Compute* under *DATA*.
+
+Click the *+ Add compute* button to begin the cluster registration process.
 
 image::astra-compute-add-cluster-empty.png[Astra Compute Add Cluster Empty]
-
-or display a list of Kubernetes clusters that are already registered with Project Astra. Click the *+ Add cluster* button to begin the cluster registration process.
-
-image::astra-compute-add-cluster.png[Astra Compute Add Cluster]
 
 The default provider is set to "Google Cloud Platform." Microsoft Azure and AWS are not available during the alpha.
 
 image::astra-select-provider.png[Astra Select Provider]
 
-"Service account JSON" is generated in the GCP console IAM section. More information on creating the service account are found in this can be found in link:credentials-gcp.adoc[Credentials GCP].
+The cluster registration process requires a GCP service account file. This may be generated in the GCP console - IAM section.
+
+Project Astra will automatically validate the service account to verify it has access to the necessary APIs and roles.
+
+ More information on creating the service account with the required roles can can be found in link:credentials-gcp.html[Credentials GCP].
 
 Once you have the service account JSON saved as a file, use the "Upload file" option. (Highlighted in yellow in the image above.)
 
@@ -168,8 +166,13 @@ You can navigate back to previous steps if you notice something that needs to be
 
 image::add-compute-cluster-status-updating.png[Add Compute Cluster Status Updating]
 
-An information block will provide some status updates as the Kubernetes cluster is registered with Project Astra. When the process completes, you should see your cluster showing as *Available*.
+An information block will provide progress updates as the Kubernetes cluster is registered with Project Astra. When the process completes, the Add Compute wizard will close by itself and you will see your cluster showing as *Available*.
 
 image::add-compute-complete.png[Add Compute Complete]
 
-Now that at least one cluster is available please continue to the test plan and explore Project Astra.
+Register a second cluster by repeating the steps. Once you have two clusters showing as *Available* please continue to the test plan and explore Project Astra.
+
+(C)2020 NetApp, Inc. All rights reserved.
+— NETAPP CONFIDENTIAL —
+NetApp Confidential Information Subject to the Mutual Nondisclosure Agreement
+All information disclosed in this document is furnished in confidence by NetApp to you with the understanding that it is NetApp confidential information pursuant to the Mutual Nondisclosure Agreement between the parties and shall be treated as such by you. The information provided in this document is for exploratory purposes only and is subject to change without notice and without liability or obligation to NetApp. NetApp retains all right, title, and interest in and to all information contained in this document, all derivative works of such information and all intellectual property rights embodied therein.
