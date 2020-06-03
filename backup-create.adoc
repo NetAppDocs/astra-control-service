@@ -23,4 +23,6 @@ Fill out the details for your backup in the pop-up window. This defaults to a sy
 
 Click **Backup App** to create the backup.
 
+NOTE: The first backup you create for a cluster will take substantially longer to build than subsequent backups. Future backups will take much less time to complete, due to the way they are processed.
+
 After the backup has finished being built, you can view it on the **Data Protection** tab for your cluster.
