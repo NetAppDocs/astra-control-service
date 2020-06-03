@@ -7,6 +7,8 @@ entries:
         url: /getting-started.html
       - title: Install Kubectl
         url: /install-kubect.html
+      - title: Invite Users
+        url: /invite-users.html
       - title: Test Plan
         url: /test-plan.html
   - title: Credentials
