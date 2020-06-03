@@ -28,3 +28,11 @@ NOTE: The first backup you create for a cluster will take substantially longer t
 After the snapshot has finished being built, you can view it on the **Data Protection** tab for your cluster.
 
 NOTE: Snapshots are available immediately on the Data Protection tab for the relevant cluster. During the alpha preview program, new snapshots will not be available immediately on the Storage tab. They will appear on the Storage tab within 24 hours.
+
+(C) 2020 NetApp, Inc. All rights reserved.
+
+— NETAPP CONFIDENTIAL —
+
+NetApp Confidential Information Subject to the Mutual Nondisclosure Agreement
+
+All information disclosed in this document is furnished in confidence by NetApp to you with the understanding that it is NetApp confidential information pursuant to the Mutual Nondisclosure Agreement between the parties and shall be treated as such by you. The information provided in this document is for exploratory purposes only and is subject to change without notice and without liability or obligation to NetApp. NetApp retains all right, title, and interest in and to all information contained in this document, all derivative works of such information and all intellectual property rights embodied therein.
