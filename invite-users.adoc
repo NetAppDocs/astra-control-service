@@ -1,0 +1,34 @@
+---
+sidebar: sidebar
+permalink: invite-users.html
+summary: Invite users to an organization
+---
+
+= Invite a User to an Organization
+:imagesdir: assets/getting-started/
+
+If you would like to invite additional users to see Project Astra, choose *Organization* from the left navigation menu. Then press the *+ Invite users* button.
+
+image::invite-organization.png[Invite Organization]
+
+There are two sections on the *Invite users* page. In the *USERS TO INVITE* section, provide the name and email address of the user you would like to invite. Multiple invitations can be sent simultaneously by using the *+ Add another user* button.
+
+image::invite-users.png[Invite Users]
+
+In the *ADD TO TEAM* section, press the button labeled *Not selected* in the *Status* column to select the team that the users should be invited to join. The button will toggle between *Not Selected* and *Selected*.
+
+image::invite-select-team.png[Select Team]
+
+Once you have at least one user to invite and one team selected, press the *Send invite's* button in the lower right corner.
+
+You will be returned to the *Organization* screen and see that your new user's details have been added with the *State* column showing as *Pending*.
+
+image::invitation-pending.png[Invitation Pending]
+
+If you want to cancel the invitation, change the *State* to *Remove user*.
+
+image::invitation-pending-remove.png[Invitation Pending Remove]
+
+You will be prompted to type the name of the user. Then press the red *Yes, Remove User* button to complete the removal request.
+
+image::invitation-confirm-remove-user.png[Invitation Confirm Remove User]
