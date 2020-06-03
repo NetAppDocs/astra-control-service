@@ -128,7 +128,7 @@ Use the left navigation menu to select *Compute* under *DATA*. The main window w
 
 image::astra-compute-add-cluster-empty.png[Astra Compute Add Cluster Empty]
 
-or display a list of Kubernetes clusters that are already registered with Project Astra. Click the *+ Add cluster* button to begin the cluster registration process.
+or display a list of Kubernetes clusters that are already registered with Project Astra. Click the *+ Add compute* button to begin the cluster registration process.
 
 image::astra-compute-add-cluster.png[Astra Compute Add Cluster]
 
