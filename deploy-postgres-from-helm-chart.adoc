@@ -32,7 +32,7 @@ Additional Kubernetes distributions are planned to be added as Project Astra mat
 
 Downloading kubectl should be covered as a step in the link:getting-started.html[Getting Started (Onboarding Guide)].
 
-Kubectl is a standard tool for interacting with Kubernetes. We’ll use kubectl to deploy our initial database application. To get kubectl on your computer, follow this guide to https://kubernetes.io/docs/tasks/tools/install-kubectl/[download and install kubectl].
+Kubectl is a standard tool for interacting with Kubernetes. We’ll use kubectl to manage our initial database application. To get kubectl on your computer, follow this guide to https://kubernetes.io/docs/tasks/tools/install-kubectl/[download and install kubectl].
 
 ==== Kubeconfig
 
@@ -55,11 +55,11 @@ Helm is a popular way to organize and install apps on Kubernetes. If you need to
 
 == Installing Postgres Apps
 
-Installing Postgres or an app backed by Postgres should be as easy as any other Helm chart. The values just need to be set to consume the volumes provisioned by CVS, and your stateful app should be available for Project Astra to work its magic on.
+Installing Postgres or an app backed by Postgres should be as easy as any other Helm chart. The values just need to be set to consume the volumes provisioned by CVS, be deployed in a namespace other than default, and your stateful app should be available for Project Astra to work its magic on.
 
 For instance, the https://hub.helm.sh/charts/bitnami/postgresql[Bitnami Postgres chart] is a popular way to deploy Postgres. The chart is designed to require as few priviliges as possible, and makes use of init containers to accomplish that goal.
 
-To install the Bitnami Postgres chart, you'd need to follow the instructions on the right side for `helm repo add` and `helm install`. At the moment, the Alpha version of Project Astra does not support replicas or failovers. For testing Project Astra in Alpha, we would want to leave replication off, and check that the `global.storageClass` value in `values.yaml` is pointing to the correct storageClass. By default the Bitnami Postgres chart uses a cluster's default dynamic provisioner. You can see what your cluster's storageClasses are by running `kubectl get sc`. That command will produce output like the following.
+To install the Bitnami Postgres chart, you'd need to follow the instructions on the top-right sidebar for `helm repo add` and `helm install`. At the moment, the Alpha version of Project Astra does not support replicas or failovers. For testing Project Astra in Alpha, we would want to leave replication off, and check that the `global.storageClass` value in `values.yaml` is pointing to the correct storageClass. By default the Bitnami Postgres chart uses a cluster's default dynamic provisioner. You can see what your cluster's storageClasses are by running `kubectl get sc`. That command will produce output like the following.
 
 ```
 NAME                 PROVISIONER            RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
@@ -67,3 +67,28 @@ standard (default)   kubernetes.io/gce-pd   Delete          Immediate           
 ```
 
 If your default storage class is NetApp CVS backed by Trident, you should be in good shape to install Postgres through Helm.
+
+To change settings in your `values.yaml` you have two options. The first is opening the file, and editing it directly. The second is adding an extra argument to your usual Helm CLI command.
+
+To view and export `values.yaml`, we can use the `helm show` command.
+
+```
+helm show values bitnami/postgresql
+```
+or
+
+```
+helm show values bitnami/postgresql > my-values.yaml
+```
+
+The above command should create a `my-values.yaml` file in your local directory. That file is a copy of the official `values.yaml`. You may edit the values there and test your deployment using the `-f my-values.yaml` and `--dry-run` flags.
+
+```
+helm install -f my-values.yaml --namespace my-test-namespace --generate-name bitnami/postgresql --dry-run
+```
+
+If the output looks correct, you may deploy to your cluster by removing `--dry-run`. Please remember that Project Astra Alpha requires 
+
+.Bulleted
+* `global.storageClass` value to be set to the storageClass representing either CVS or Trident (or, that storageClass is set as your cluster's default provisioner)
+* The namespace to be set to something other than default, using the `--namespace` argument
