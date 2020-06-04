@@ -4,21 +4,28 @@ permalink: alpha-workflows.html
 summary: A set of example steps to work through to test out the Project Astra alpha program.
 ---
 
-= Test Plan
+= Project Astra Alpha Workflows
 
-If you are getting started with Project Astra, we recommend the following steps as a way of testing out the service.
+If you are getting started with Project Astra, we recommend the following steps as a way of exercising the service.
 
 == Getting Started
 
-* Read about link:database-best-practices.html[database best practices for Kubernetes].
-* Add your cluster to Project Astra.
+These articles will help you get up and running with the Project Astra alpha program.
 
-== Deploy App
+* link:getting-started.html[Getting Started Guide]
+* link:faq.html[FAQ]
+* link:invite-users.html[Invite Users]
+
+== Deploy an App
+
+Learn how to deploy MySQL/MariaDB or Postgres from a Helm chart.
 
 * link:deploy-mysql-mariadb-from-helm-chart.html[Deploy MySQL/MariaDB from a Helm chart].
 * link:deploy-postgres-from-helm-chart.html[Deploy Postgres from a Helm chart].
 
 == Snapshots
+
+Create and manage point-in-time snapshots of your application.
 
 * link:snapshot-create.html[Create a snapshot].
 * link:snapshot-view.html[View your snapshots].
@@ -27,12 +34,16 @@ If you are getting started with Project Astra, we recommend the following steps 
 
 == Backups
 
+Create and manage backups of your application.
+
 * link:backup-create.html[Create a backup].
 * link:backup-view.html[View your backups].
 * link:backup-add-data.html[Add data to a backup].
 * link:backup-restore.html[Restore from a backup].
 
 == Migrate Clusters
+
+Use the Clone feature to migrate data between clusters.
 
 * link:migrate-between-two-existing.html[Migrate between two existing clusters].
 * link:migrate-between-existing-and-new.html[Migrate between an existing and a new cluster].
