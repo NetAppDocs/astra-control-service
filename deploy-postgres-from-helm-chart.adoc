@@ -99,6 +99,13 @@ If you need to generate test data, we recommend using the methods outlined https
 
 NOTE: For the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
 
+== Using psql
+
+During the Project Astra alpha program, if you need to perform operations on Postgres pods (such as creating or restoring from backup), be sure to exit out of the psql client if you are using it on the pod. 
+
+Project Astra requires psql access to freeze and thaw the databases. If there is a pre-existing connection the snapshot/backup/clone operation will fail.
+
+
 (C) 2020 NetApp, Inc. All rights reserved.
 
 — NETAPP CONFIDENTIAL —
