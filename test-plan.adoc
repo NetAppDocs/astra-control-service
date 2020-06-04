@@ -36,3 +36,11 @@ If you are getting started with Astra, we recommend the following steps as a way
 
 * link:migrate-between-two-existing.html[Migrate between two existing clusters].
 * link:migrate-between-existing-and-new.html[Migrate between an existing and a new cluster].
+
+(C) 2020 NetApp, Inc. All rights reserved.
+
+— NETAPP CONFIDENTIAL —
+
+NetApp Confidential Information Subject to the Mutual Nondisclosure Agreement
+
+All information disclosed in this document is furnished in confidence by NetApp to you with the understanding that it is NetApp confidential information pursuant to the Mutual Nondisclosure Agreement between the parties and shall be treated as such by you. The information provided in this document is for exploratory purposes only and is subject to change without notice and without liability or obligation to NetApp. NetApp retains all right, title, and interest in and to all information contained in this document, all derivative works of such information and all intellectual property rights embodied therein.

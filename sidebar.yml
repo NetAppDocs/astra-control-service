@@ -7,14 +7,16 @@ entries:
         url: /getting-started.html
       - title: Install Kubectl
         url: /install-kubect.html
+      - title: Invite Users
+        url: /invite-users.html
       - title: Test Plan
         url: /test-plan.html
   - title: Credentials
     entries:
-      - title: GCP
-        url: /credentials-gcp.html
       - title: CVS on GCP
         url: /credentials-cvs.html
+      - title: GCP
+        url: /credentials-gcp.html
   - title: Deploy Apps
     entries:
       - title: Deploy MySQL/MariaDB from Helm
