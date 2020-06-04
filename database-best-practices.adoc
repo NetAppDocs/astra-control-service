@@ -20,15 +20,6 @@ If there's one thing you can count on, it's unexpected failures. We recommend th
 
 TIP: Use the https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/[Kubernetes affinity/anti-affinity feature] to lock your data copies to the zones you set up. This ensures your data copies stay where you want them to be.
 
-== Choose NAS Instead of Local Volume Storage
-
-For this item, you will want to consider the difference between performance and data security for your project.
-
-* Local volume storage has better performance, but if your pod dies and can’t be reattached to the same host, your data is lost.
-* Network-attached storage (NAS) provides better data security, but at a cost to your performance.
-
-To avoid data loss, we recommend you use NAS whenever feasible. In many cases, the reduced performance versus local volume storage is negligible, and the performance cost is worth the additional security.
-
 == Check Your Persistent Volume Allocation and Size
 
 After you provision a cluster, it's important to verify that your Persistent Volume (PV) has been correctly allocated.
