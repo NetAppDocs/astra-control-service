@@ -6,7 +6,120 @@ summary: Astra FAQs
 
 = FAQs
 
-Coming soon.
+== General Questions
+
+**What is Project Astra**
+
+Containerization is increasingly becoming the de facto architecture for portable next generation applications and Kubernetes has become the standard for automating application deployment, scaling, and management. The biggest challenge to adopting Kubernetes for many organizations is, while the applications may be portable, the associated data and data services are not. NetApp is fulfilling the promise of containerization, by making the applications and its data and data services portable and manageable with Astra.
+
+**What data management operations does Astra provides in alpha?**
+
+The Astra alpha program includes:
+
+* On-demand, application-consistent snapshots and backups.
+* Cloning from backup or snapshot to the same cluster or a different cluster.
+
+== Requirements
+
+**What are the requirements for using Astra?**
+
+The Astra alpha program only supports the following:
+
+* Kubernetes clusters (GKE) from GCP.
+* Do not deploy any applications or drivers to the cluster before adding it to Astra.
+* Kubernetes version `Rapid channel - 1.17.5-gke.0`.
+* Worker nodes must use Ubuntu.
+* You must add a minimum of two clusters to Astra in order to use all the features.
+* Service account JSON file for a service account with the following privileges:
+** Kubernetes Engine Admin
+** NetApp Cloud Volumes Admin
+** Service Usage Viewer
+** Storage Admin
+
+== Applications
+
+**Which applications does Astra support in alpha?**
+
+The Astra alpha program only supports stateful applications using PostgreSQL and MySQL/MariaDB.
+
+**What do I do after I deploy the application?**
+
+If you deploy the application in a Kubernetes cluster managed by Astra, the default storage class will be Cloud Volumes Services for GCP. After successful deployment, the application will be automatically discovered by Astra. You will need to register the application with Astra in order to use the data management capabilities of Astra.
+
+**Does Astra deploy an application for me?**
+
+Astra does not deploy applications itself. During the alpha program, you can deploy applications outside Astra using Helm charts. After the application has finished being deployed, Astra automatically detects the application. You can then decide whether or not you want to register the applications with Astra, which will allow you to use Astra's rich data management capabilities.
+
+**Can I use my existing GKE cluster with existing application?**
+
+No. The Astra alpha program is only compatible with a fresh GKE cluster with no application or specific driver deployment.
+
+**Which PVC will be used for my application?**
+
+During the process of adding your cluster to Astra, the Trident operator and CSI drivers are automatically deployed. After Trident has been deployed, the default storage class is `Cloud Volumes Services for GCP` and the preferred storage type is `premium`.
+
+**Can I clone my application to another GKE cluster in a different GCP project?**
+
+This operation is not available in the Astra alpha program. It may be available in a future release.
+
+== Clusters
+
+**Can I use my existing GKE cluster with existing application?**
+
+No. The Astra alpha program is only compatible with a fresh GKE cluster with no application or specific driver deployment.
+
+**How do I verify my cluster was successfully added to Astra?**
+
+The Astra user interface will show your cluster's status and any failure notifications. Alternatively, you can check to see if the Trident operator and CSI drivers have been deployed in the `trident` namespace by running either `kubectl get pods -n trident` or `kubectl get pods -|grep trident`.
+
+**Does Astra support on-prem Kubernetes clusters?**
+
+The Astra alpha program is a cloud-only release for GCP and does not support on-premises Kubernetes clusters.
+
+**Which CSI drivers and Can I use any CSI drivers and other Persistent Volumes?**
+
+The Astra alpha program only supports Trident (CSI driver for NetApp on-prem and SDS storage) Cloud Volumes Service for GCP.
+
+**Can I add two different clusters from different GCP projects to same organization within Astra?**
+
+Yes, as long as you have:
+
+* A service account with the required privileges
+* Network connectivity to the same object store used for back
+
+== Snapshots and Backups
+
+**Does Astra support scheduling backups and snapshots?**
+
+The Astra alpha program does not support scheduling application snapshots or backups. These features will be available in a future release.
+
+**What's the difference between a snapshot and a backup?**
+
+A **snapshot** is an application-consistent, point-in-time copy of the application data and metadata. Snapshots will be kept along with the PVC from cloud volumes service.
+
+A **backup** is an application-consistent copy of the application data and metadata. You can create a backup from either the application's current state, or from an existing snapshot. Backups are stored in the object store bucket within GCP.
+
+**Can I restore my application from a snapshot or backup to the source application?**
+
+You can restore from a snapshot or backup by using the clone functionality. The clone operation will deploy the same application as a different pod in the destination you select.
+
+**Can I use the Astra snapshot or backup to clone or restore individual containers?**
+
+The ability to restore an individual container or service within the application pod is not currently available. This feature may be available in a future release.
+
+**Can I set a retention policy for the Astra snapshot or backup?**
+
+Retention policies are not currently available. This ability may be available in a future release.
+
+**How many parallel backup/snapshot/clone activities I can do at a time?**
+
+You can only snapshot/backup/clone one application at a time.
+
+== De-Registration
+
+**What happens to my application after I de-register from Astra?**
+
+The applications will not be managed by Astra anymore. The application and the data will remain in the Kubernetes cluster.
 
 (C) 2020 NetApp, Inc. All rights reserved.
 
