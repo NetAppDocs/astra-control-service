@@ -29,8 +29,6 @@ entries:
         url: /snapshot-create.html
       - title: View Snapshots
         url: /snapshot-view.html
-      - title: Add Data to a Snapshot
-        url: /snapshot-add-data.html
       - title: Restore from a Snapshot
         url: /snapshot-restore.html
   - title: Backups
