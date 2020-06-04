@@ -105,7 +105,7 @@ kubectl create namespace my-test-namespace
 
 If the output looks correct, deploy to your cluster by removing `--dry-run`.
 
-NOTE: For the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.a)
+NOTE: For the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
 
 
 (C) 2020 NetApp, Inc. All rights reserved.
