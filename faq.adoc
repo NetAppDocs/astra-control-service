@@ -10,9 +10,11 @@ summary: Astra FAQs
 
 **What is Project Astra**
 
-Containerization is increasingly becoming the de facto architecture for portable next generation applications and Kubernetes has become the standard for automating application deployment, scaling, and management. The biggest challenge to adopting Kubernetes for many organizations is, while the applications may be portable, the associated data and data services are not. NetApp is fulfilling the promise of containerization, by making the applications and its data and data services portable and manageable with Astra.
+Containerization is increasingly becoming the preferred architecture for portable next-generation applications, and Kubernetes has become the standard for automating application deployment, scaling, and management. The biggest challenge to adopting Kubernetes for many organizations is that while the applications may be portable, the associated data and data services are not.
 
-**What data management operations does Astra provides in alpha?**
+NetApp is fulfilling the promise of containerization by making applications and their data and data services portable and manageable with Astra.
+
+**What data management operations does Astra provide in alpha?**
 
 The Astra alpha program includes:
 
@@ -48,7 +50,9 @@ If you deploy the application in a Kubernetes cluster managed by Astra, the defa
 
 **Does Astra deploy an application for me?**
 
-Astra does not deploy applications itself. During the alpha program, you can deploy applications outside Astra using Helm charts. After the application has finished being deployed, Astra automatically detects the application. You can then decide whether or not you want to register the applications with Astra, which will allow you to use Astra's rich data management capabilities.
+Astra does not deploy applications itself. During the alpha program, you can deploy applications outside Astra using Helm charts.
+
+After the application is deployed, Astra automatically detects the application. You can then decide whether or not you want to register the applications with Astra. Doing so will allow you to use Astra's rich data management capabilities.
 
 **Can I use my existing GKE cluster with existing application?**
 
@@ -70,22 +74,24 @@ No. The Astra alpha program is only compatible with a fresh GKE cluster with no 
 
 **How do I verify my cluster was successfully added to Astra?**
 
-The Astra user interface will show your cluster's status and any failure notifications. Alternatively, you can check to see if the Trident operator and CSI drivers have been deployed in the `trident` namespace by running either `kubectl get pods -n trident` or `kubectl get pods -|grep trident`.
+The Astra user interface will show your cluster's status and any failure notifications.
+
+If you need to, you can check to see if the Trident operator and CSI drivers have been deployed in the `trident` namespace by running either `kubectl get pods -n trident` or `kubectl get pods -|grep trident`.
 
 **Does Astra support on-prem Kubernetes clusters?**
 
 The Astra alpha program is a cloud-only release for GCP and does not support on-premises Kubernetes clusters.
 
-**Which CSI drivers and Can I use any CSI drivers and other Persistent Volumes?**
+**Can I use any CSI drivers and other Persistent Volumes?**
 
 The Astra alpha program only supports Trident (CSI driver for NetApp on-prem and SDS storage) Cloud Volumes Service for GCP.
 
-**Can I add two different clusters from different GCP projects to same organization within Astra?**
+**Can I add two different clusters from different GCP projects to the same organization within Astra?**
 
 Yes, as long as you have:
 
-* A service account with the required privileges
-* Network connectivity to the same object store used for back
+* A service account with the required privileges.
+* Network connectivity to the same object store used for back.
 
 == Snapshots and Backups
 
