@@ -9,7 +9,7 @@ summary: Learn how to create a backup of your app.
 
 Learn how to create a remote backup of your application. This creates a recovery point for your app, in case of a failure.
 
-NOTE: When you create a backup, you will not lose connection to the database. However, creating a backup will cause a temporary slowdown to your operations.
+NOTE: When you create a backup, you will not lose connection to the database. However, creating a backup may cause a temporary slowdown to your operations.
 
 Click **Apps**, then click on the name of your app to select that cluster.
 
