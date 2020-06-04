@@ -20,7 +20,7 @@ Welcome to the Project Astra documentation.
 * link:invite-users.html[Invite Users]
 * link:test-plan.html[Test Plan]
 
-Access the Astra alpha program at: https://astra.netapp.io
+Access the Project Astra alpha program at: https://astra.netapp.io
 
 (C) 2020 NetApp, Inc. All rights reserved.
 

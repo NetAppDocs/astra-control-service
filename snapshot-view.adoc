@@ -9,7 +9,7 @@ summary: Learn how to find and view a snapshot you created.
 
 Learn how to find the snapshots for your app, arranged by timestamp.
 
-Snapshots are available immediately on the Data Protection tab for the relevant cluster. During the alpha preview program, new snapshots will not be available immediately on the Storage tab. They will appear on the Storage tab within 24 hours.
+Snapshots are available immediately on the Data Protection tab for the relevant cluster. During the Project Astra alpha  program, new snapshots will not be available immediately on the Storage tab. They will appear on the Storage tab within 24 hours.
 
 Click **Apps**, then click on the name of your app to select that cluster.
 

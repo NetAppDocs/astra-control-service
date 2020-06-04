@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: snapshot-create.html
-summary: How to create an Astra snapshot.
+summary: How to create a Project Astra snapshot.
 ---
 
 = Create a Snapshot
