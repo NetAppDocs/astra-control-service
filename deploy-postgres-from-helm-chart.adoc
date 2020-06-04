@@ -86,7 +86,16 @@ To do this, edit the values in the `my-values.yaml` file you created in the prev
 helm install -f my-values.yaml --namespace my-test-namespace --generate-name bitnami/postgresql --dry-run
 ----
 
-If the output looks correct, deploy to your cluster by removing `--dry-run`.
+Before we can run the helm charts for real, we need to first create the namespace. We've chosen `my-test-namespace` and may use kubectl to create that namespace.
+
+----
+kubectl create namespace my-test-namespace
+----
+
+If the output from our dry run looks correct, we may deploy to your cluster by removing `--dry-run`.
+
+If you need to generate test data, we recommend using the methods outlined https://www.postgresql.org/docs/11/functions-srf.html[here in the Postgres documentation].
+
 
 NOTE: For the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
 
