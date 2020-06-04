@@ -15,7 +15,7 @@ Click **Apps**, then click on the name of your app to select that cluster.
 
 image::select-cluster.png[Select Astra cluster]
 
-Click the **Available** menu on the right. Select **Backup** from the drop-down menu.
+Click the **Available** menu on the right. Select **Backup** from the drop-down menu. If you have a pod in an unhealthy state, new backup operations cannot be performed on it.
 
 image::click-available-menu.png[Click the Available menu]
 
