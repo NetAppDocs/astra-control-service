@@ -5,12 +5,12 @@ entries:
     entries:
       - title: Getting Started Guide
         url: /getting-started.html
-      - title: Install Kubectl
-        url: /install-kubect.html
+      - title: FAQ
+        url: /faq.html
       - title: Invite Users
         url: /invite-users.html
-      - title: Test Plan
-        url: /test-plan.html
+      - title: Alpha Workflows
+        url: /alpha-workflows.html
   - title: Credentials
     entries:
       - title: CVS on GCP
@@ -49,7 +49,5 @@ entries:
         url: /migrate-between-two-existing.html
       - title: Migrate Between Existing and New Clusters
         url: /migrate-between-existing-and-new.html
-  - title: FAQ
-    url: /faq.html
   - title: Best Practices
     url: /database-best-practices.html
