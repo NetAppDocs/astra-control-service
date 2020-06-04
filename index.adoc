@@ -16,9 +16,9 @@ Welcome to the Project Astra documentation.
 == Getting Started
 
 * link:getting-started.html[Getting Started Guide]
-* link:install-kubectl.html[Install Kubectl]
+* link:faq.html[FAQ]
 * link:invite-users.html[Invite Users]
-* link:test-plan.html[Test Plan]
+* link:alpha-workflows.html[Alpha Workflows]
 
 Access the Project Astra alpha program at: https://astra.netapp.io
 

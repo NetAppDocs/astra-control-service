@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: test-plan.html
-summary: An example test plan for getting set up with Astra
+permalink: alpha-workflows.html
+summary: A set of example steps to work through to test out the Project Astra alpha program.
 ---
 
 = Test Plan
