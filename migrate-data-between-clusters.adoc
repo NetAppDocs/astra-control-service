@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: migrate-between-two.html
+permalink: migrate-data-between-clusters.html
 summary: How to migrate data between two clusters and verify the migration of both data and k8s app configuration was successful.
 ---
 
