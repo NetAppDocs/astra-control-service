@@ -5,8 +5,31 @@ summary: Learn how to restore your app from a snapshot.
 ---
 
 = Restore From a Snapshot
+:imagesdir: assets/snapshots/
 
-Coming soon.
+To restore your app from a point-in-time snapshot, go to **Apps**. Click **Actions** for your app and select **Clone** from the drop-down menu.
+
+image::clone-app.png[Clone your app]
+
+In the pop-up window which appears, click the **From backup or snapshot** tab.
+
+image::choose-clone-action.png[Choose the clone action]
+
+Choose a name for your clone operation, and select the destination cluster. This can be either the same cluster or a different cluster.
+
+image::choose-destination-cluster.png[Choose the destination cluster]
+
+Select the source snapshot you wish to restore from. To choose the source snapshot, click **Not selected** to toggle to **Selected**.
+
+image::choose-source-snapshot.png[Choose the source snapshot]
+
+Click **Review & Approve** to proceed to the final review step before restoring the app.
+
+image::review-snapshot-clone.png[Review snapshot restore details]
+
+When you have verified that the details are correct, click **Clone App** to clone the app. This launches the cloning process which will restore your app from the snapshot you selected.
+
+
 
 (C) 2020 NetApp, Inc. All rights reserved.
 
