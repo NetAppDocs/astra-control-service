@@ -6,7 +6,7 @@ summary: Learn how to deploy MySQL/MariaDB from a Helm chart
 
 = Deploy MySQL/MariaDB From a Helm Chart
 
-This guide focuses on Helm as the preferred way to deploy Postgres apps. Plain YAML and Operator-based deployments may be covered in future guides.
+This guide focuses on Helm as the preferred way to deploy MySQL/MariaDB apps. Plain YAML and Operator-based deployments may be covered in future guides.
 
 NOTE: MySQL 0.3.22 and MariaDB 14.14 are the only versions supported in the Project Astra alpha program.
 
