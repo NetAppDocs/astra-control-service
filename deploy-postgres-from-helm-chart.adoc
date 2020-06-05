@@ -10,100 +10,72 @@ This guide focuses on Helm as the preferred way to deploy Postgres apps. Plain Y
 
 NOTE: Postgres 11.7 is the only version supported in the Project Astra alpha program.
 
-== Requirements
+== System Requirements
 
-In order to deploy Postgres from a Helm chart on a cluster registered with Project Astra, you will need the following:
+In order to deploy Postgres from a Helm chart for the Project Astra alpha program, you need the following:
 
-**GKE Cluster**
+* A GKE cluster which has been added to Project Astra.
+* Kubectl installed.
+* Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
+* Helm installed.
 
-An up-to-date Kubernetes cluster (version 1.17+) which is connected to Project Astra. For help creating your GKE cluster and connecting it to Project Astra, see the link:getting-started.html[Getting Started Guide].
+NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
 
-**Kubectl**
+**External Resources**
 
-Kubectl is a standard tool for interacting with Kubernetes. For more information, see the guide https://kubernetes.io/docs/tasks/tools/install-kubectl/[Install and Set Up kubectl] in the official Kubernetes documentation.
+We recommend the following guides for help with the requirements:
 
-**Kubeconfig**
+* For help creating your GKE cluster and connecting it to Project Astra, see the link:getting-started.html[Getting Started Guide].
+* Kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/[Install and Set Up kubectl]
+* Kubeconfig: Google Cloud guide for https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#generate_kubeconfig_entry[configuring cluster access for kubectl].
+* CVS: Details on how to configure CVS on GCP in the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/workflow[workflow guide for CVS].
+* To install Helm on your local computer, follow https://helm.sh/docs/intro/install/[their handy install guide].
 
-The Kubeconfig file contains the credentials which let kubectl communicate with your Kubernetes cluster. to learn how to download your GKE Kubeconfig file, see the Google Cloud guide for https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#generate_kubeconfig_entry[configuring cluster access for kubectl].
+== Install Postgres
 
-**CVS and Cloud Central**
+To exercise the Project Astra alpha workflow, we recommend the https://hub.helm.sh/charts/bitnami/postgresql[Bitnami Postgres chart].
 
-CVS and Cloud Central are the storage layer and connective elements for Project Astra, respectively. More details on how to configure CVS on GCP may be found in the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/workflow[workflow guide for CVS].
+To install this chart, first add the repo:
 
-**Helm (v3)**
+----
+helm repo add bitnami https://charts.bitnami.com/bitnami
+----
 
-Helm is a popular way to organize and install apps on Kubernetes. To install Helm on your local computer, follow https://helm.sh/docs/intro/install/[their handy install guide].
+You must deploy the chart in a namespace other than the default. Create a namespace `my-test-namespace`:
 
-**Postgres Requirements**
+```
+kubectl create namespace my-test-namespace
+```
 
-For a Posgres application, Project Astra Alpha requires:
+Export the default Bitnami values into a file named `my-values.yaml`. You can edit this file to change the default Bitnami values later, if necessary:
+
+----
+helm show values bitnami/postgresql > my-values.yaml
+----
+
+Deploy the Helm chart to your cluster:
+
+----
+helm install -f my-values.yaml --namespace my-test-namespace --generate-name bitnami/postgresql
+----
+
+After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
+
+== Using psql
+
+During the Project Astra alpha program, if you need to perform operations on Postgres pods (such as creating or restoring from backup), be sure to exit out of the psql client if you are using it on the pod.
+
+Project Astra requires psql access to freeze and thaw the databases. If there is a pre-existing connection the snapshot/backup/clone operation will fail.
+
+== Custom Postgres Requirements
+
+If you wish to deploy your own Postgres application, please note that Project Astra Alpha requires:
 
 * `global.storageClass` value to be set to the storageClass representing either CVS or Trident (or, that storageClass is set as your cluster's default provisioner).
 * The namespace set to something other than default, using the `--namespace` argument.
 * A single node deployment. Multi-node and HA deployments will be supported in future releases.
 
 The Project Astra alpha program does not support replicas or failovers. Only single instance versions of the databases are supported. For testing Project Astra in Alpha, leave replication off, and check that the `global.storageClass` value in `values.yaml` is pointing to the correct storageClass.
-
-== Install Postgres
-
-For the Project Astra alpha program, we recommend the https://hub.helm.sh/charts/bitnami/postgresql[Bitnami Postgres chart]. To install this chart, follow https://hub.helm.sh/charts/bitnami/postgresql[the instructions on Bitnami] for `helm repo add` and `helm install`.
-
-The values need to be set to consume the volumes provisioned by CVS, be deployed in a namespace other than default, and your stateful app needs to be available to Project Astra.
-
-By default the Bitnami Postgres chart uses a cluster's default dynamic provisioner. Since Trident (part of Project Astra) automatically sets CVS as the default storage class, you should be in good shape. Use `kubectl get sc` to see what your cluster's storageClasses are. This produces output like the following:
-
-----
-NAME                           PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
-netapp-cvs-extreme             csi.trident.netapp.io   Delete          Immediate           true                   26h
-netapp-cvs-premium (default)   csi.trident.netapp.io   Delete          Immediate           true                   26h
-netapp-cvs-standard            csi.trident.netapp.io   Delete          Immediate           true                   26h
-standard                       kubernetes.io/gce-pd    Delete          Immediate           true                   27h
-----
-
-You have two options for changing settings in your `values.yaml`. The first option is to open the file and edit it directly. The second option is to add an extra argument to your usual Helm CLI command.
-
-To view and export `values.yaml`, use the `helm show` command:
-
-----
-helm show values bitnami/postgresql
-----
-
-or
-
-----
-helm show values bitnami/postgresql > my-values.yaml
-----
-
-This creates a `my-values.yaml` file in your local directory. That file is a copy of the official `values.yaml`.
-
-== Dry Run
-
-Before deploying, you can do a dry run to make sure everything is set up correctly.
-
-To do this, edit the values in the `my-values.yaml` file you created in the previous step. Test your deployment using the `-f my-values.yaml` and `--dry-run` flags:
-
-----
-helm install -f my-values.yaml --namespace my-test-namespace --generate-name bitnami/postgresql --dry-run
-----
-
-Before you run the Helm charts for real, you need to create the namespace. Here is the kubectl command to create the `my-test-namespace` used in the previous example:
-
-----
-kubectl create namespace my-test-namespace
-----
-
-If the output looks correct, deploy to your cluster by removing `--dry-run`.
-
-If you need to generate test data, we recommend using the methods outlined https://www.postgresql.org/docs/11/functions-srf.html[here in the Postgres documentation].
-
-
-NOTE: For the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
-
-== Using psql
-
-During the Project Astra alpha program, if you need to perform operations on Postgres pods (such as creating or restoring from backup), be sure to exit out of the psql client if you are using it on the pod. 
-
-Project Astra requires psql access to freeze and thaw the databases. If there is a pre-existing connection the snapshot/backup/clone operation will fail.
 
 
 (C) 2020 NetApp, Inc. All rights reserved.
