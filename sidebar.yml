@@ -37,15 +37,11 @@ entries:
         url: /backup-create.html
       - title: View Backups
         url: /backup-view.html
-      - title: Add Data to a Backup
-        url: /backup-add-data.html
       - title: Restore from a Backup
         url: /backup-restore.html
   - title: Migration
     entries:
-      - title: Migrate Between Two Existing Clusters
-        url: /migrate-between-two-existing.html
-      - title: Migrate Between Existing and New Clusters
-        url: /migrate-between-existing-and-new.html
+      - title: Migrate Data Between Clusters
+        url: /migrate-data-between-clusters.html
   - title: Best Practices
     url: /database-best-practices.html
