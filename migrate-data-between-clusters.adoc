@@ -1,0 +1,54 @@
+---
+sidebar: sidebar
+permalink: migrate-data-between-clusters.html
+summary: How to migrate data between two clusters and verify the migration of both data and k8s app configuration was successful.
+---
+
+= Migrate Data Between Clusters
+:imagesdir: assets/backups/
+
+Migrating data between clusters is a two-step process:
+
+1. Create a backup of the original cluster with the data you want to migrate.
+2. Restore this backup to the destination cluster where you want to migrate the data.
+
+To learn how to create a backup, see the article link:backup-create.html[Create a Backup].
+
+To migrate data between clusters,  go to **Apps**. Click **Actions** for your app and select **Clone** from the drop-down menu.
+
+image::clone-app.png[Clone your app]
+
+In the pop-up window which appears, click the **From backup or snapshot** tab.
+
+image::choose-clone-action.png[Choose the clone action]
+
+
+Choose a name for your clone operation, and select the destination cluster. This is the cluster where you want to migrate the data.
+
+image::choose-destination-cluster.png[Choose the destination cluster]
+
+Click to select **Backup** as the clone source.
+
+image::choose-clone-source-type.png[Choose the clone source type]
+
+Select the source backup with the data you wish to migrate. To choose the source backup, click **Not selected** to toggle to **Selected**.
+
+image::choose-source-backup.png[Choose the source snapshot]
+
+Click **Review & Approve** to proceed to the final review step before restoring the app. Be sure the **original cluster** and **destination cluster** are correct. In this example, we are migrating data from `alpha-cluster-2` to `alpha-cluster-1`.
+
+image::confirm-data-migration.png[Review snapshot restore details]
+
+When you have verified that the details are correct, click **Clone App** to start the data migration. This launches the cloning process which will migrate your data from the original cluster to the new cluster.
+
+
+
+
+
+(C) 2020 NetApp, Inc. All rights reserved.
+
+— NETAPP CONFIDENTIAL —
+
+NetApp Confidential Information Subject to the Mutual Nondisclosure Agreement
+
+All information disclosed in this document is furnished in confidence by NetApp to you with the understanding that it is NetApp confidential information pursuant to the Mutual Nondisclosure Agreement between the parties and shall be treated as such by you. The information provided in this document is for exploratory purposes only and is subject to change without notice and without liability or obligation to NetApp. NetApp retains all right, title, and interest in and to all information contained in this document, all derivative works of such information and all intellectual property rights embodied therein.
