@@ -23,7 +23,7 @@ In the pop-up window which appears, click the **From backup or snapshot** tab.
 image::choose-clone-action.png[Choose the clone action]
 
 
-Choose a name for your clone operation, and select the destination cluster. This is the cluster where you want to migrate the data.
+Choose a name for your clone operation, and select the destination cluster. This is the cluster where you want to migrate the data. In this example, we are migrating data to `alpha-cluster-1`.
 
 image::choose-destination-cluster.png[Choose the destination cluster]
 
@@ -33,11 +33,11 @@ image::choose-clone-source-type.png[Choose the clone source type]
 
 Select the source backup with the data you wish to migrate. To choose the source backup, click **Not selected** to toggle to **Selected**.
 
-image::choose-source-backup.png[Choose the source snapshot]
+image::choose-source-backup.png[Choose the source backup]
 
 Click **Review & Approve** to proceed to the final review step before restoring the app. Be sure the **original cluster** and **destination cluster** are correct. In this example, we are migrating data from `alpha-cluster-2` to `alpha-cluster-1`.
 
-image::confirm-data-migration.png[Review snapshot restore details]
+image::confirm-data-migration.png[Confirm data migration details]
 
 When you have verified that the details are correct, click **Clone App** to start the data migration. This launches the cloning process which will migrate your data from the original cluster to the new cluster.
 
