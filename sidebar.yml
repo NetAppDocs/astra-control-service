@@ -39,9 +39,7 @@ entries:
         url: /backup-view.html
       - title: Restore from a Backup
         url: /backup-restore.html
-  - title: Migration
-    entries:
-      - title: Migrate Data Between Clusters
-        url: /migrate-data-between-clusters.html
+  - title: Migrate Data Between Clusters
+    url: /migrate-data-between-clusters.html
   - title: Best Practices
     url: /database-best-practices.html
