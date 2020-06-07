@@ -6,30 +6,20 @@ summary: Learn how to deploy Postgres from a Helm chart
 
 = Deploy Postgres From a Helm Chart
 
-This guide focuses on Helm as the preferred way to deploy Postgres apps. Plain YAML and Operator-based deployments may be covered in future guides.
+Learn how to exercise the Project Astra workflow by deploying Postgres from a Helm chart. After you deploy Postgres on your cluster, you can register the application with Project Astra.
 
-NOTE: Postgres 11.7 is the only version supported in the Project Astra alpha program.
+
+NOTE: The Project Astra Alpha Program only supports Postgres 11.7.
 
 == System Requirements
 
 In order to deploy Postgres from a Helm chart for the Project Astra alpha program, you need the following:
 
-* A GKE cluster which has been added to Project Astra.
-* Kubectl installed.
+* A fresh GKE cluster which has been added to Project Astra.
+* Kubectl and Helm installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
-* Helm installed.
 
 NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
-
-**External Resources**
-
-We recommend the following guides for help with the requirements:
-
-* For help creating your GKE cluster and connecting it to Project Astra, see the link:getting-started.html[Getting Started Guide].
-* Kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/[Install and Set Up kubectl]
-* Kubeconfig: Google Cloud guide for https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#generate_kubeconfig_entry[configuring cluster access for kubectl].
-* CVS: Details on how to configure CVS on GCP in the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/workflow[workflow guide for CVS].
-* To install Helm on your local computer, follow https://helm.sh/docs/intro/install/[their handy install guide].
 
 == Install Postgres
 
@@ -41,11 +31,11 @@ To install this chart, first add the repo:
 helm repo add bitnami https://charts.bitnami.com/bitnami
 ----
 
-You must deploy the chart in a namespace other than the default. Create a namespace `my-test-namespace`:
+You must deploy the chart in a namespace other than the default. Create a namespace `my-postgres-namespace`:
 
-```
-kubectl create namespace my-test-namespace
-```
+----
+kubectl create namespace my-postgres-namespace
+----
 
 Export the default Bitnami values into a file named `my-values.yaml`. You can edit this file to change the default Bitnami values later, if necessary:
 
@@ -56,7 +46,7 @@ helm show values bitnami/postgresql > my-values.yaml
 Deploy the Helm chart to your cluster:
 
 ----
-helm install -f my-values.yaml --namespace my-test-namespace --generate-name bitnami/postgresql
+helm install -f my-values.yaml --namespace my-postgres-namespace --generate-name bitnami/postgresql
 ----
 
 After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
@@ -75,7 +65,7 @@ If you wish to deploy your own Postgres application, please note that Project As
 * The namespace set to something other than default, using the `--namespace` argument.
 * A single node deployment. Multi-node and HA deployments will be supported in future releases.
 
-The Project Astra alpha program does not support replicas or failovers. Only single instance versions of the databases are supported. For testing Project Astra in Alpha, leave replication off, and check that the `global.storageClass` value in `values.yaml` is pointing to the correct storageClass.
+The Project Astra alpha program does not support replicas or failovers. Only single instance versions of the databases are supported. For testing Project Astra in Alpha, leave replication off, and check that the `global.storageClass` value in the Helm values is pointing to the correct storageClass.
 
 
 (C) 2020 NetApp, Inc. All rights reserved.
