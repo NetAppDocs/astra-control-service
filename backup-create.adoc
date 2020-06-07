@@ -9,9 +9,9 @@ summary: Learn how to create a backup of your app.
 
 Learn how to create a remote backup of your application. This creates a recovery point for your app, in case of a failure.
 
-NOTE: When you create a backup, you will not lose connection to the database. However, creating a backup may cause a temporary slowdown to your operations.
+NOTE: When you create a backup, access to your application will remain available. However, creating a backup may cause a temporary slowdown for a short period of time.
 
-Click **Apps**, then click on the name of your app to select that cluster.
+Click **Apps**, then click on the name of your app.
 
 image::select-cluster.png[Select Astra cluster]
 
@@ -19,13 +19,13 @@ Click the **Available** menu on the right. Select **Backup** from the drop-down 
 
 image::click-available-menu.png[Click the Available menu]
 
-Fill out the details for your backup in the pop-up window. This defaults to a system-generated name for the backup. Click **Backup App** to continue to the second step.
+Provide the name of the backup. Otherwise, this will default to a system-generated name. Click **Backup App** to review the details for the backup.
 
 Click **Backup App** to create the backup.
 
-NOTE: The first backup you create for a cluster will take substantially longer to build than subsequent backups. Future backups will take much less time to complete, due to the way they are processed.
+NOTE: The first backup you create for a cluster may take longer to complete than subsequent backups. Future backups will take much less time to complete. However, the time to complete a backup also depends on the amount of data being backed up, and how many changes have been made since the previous backup.
 
-After the backup has finished being built, you can view it on the **Data Protection** tab for your cluster.
+After the backup has finished, you can view it on the **Data Protection** tab for your cluster.
 
 (C) 2020 NetApp, Inc. All rights reserved.
 
