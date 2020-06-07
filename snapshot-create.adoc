@@ -23,11 +23,9 @@ Fill out the details for your snapshot in the pop-up window. These will default 
 
 Click **Snapshot App** to create the snapshot.
 
-NOTE: The first backup you create for a cluster will take substantially longer to build than subsequent backups. Future backups will take much less time to complete, due to the way they are processed.
-
 After the snapshot has finished being built, you can view it on the **Data Protection** tab for your cluster.
 
-NOTE: Snapshots are available immediately on the Data Protection tab for the relevant cluster. During the alpha preview program, new snapshots will not be available immediately on the Storage tab. They will appear on the Storage tab within 24 hours.
+NOTE: Snapshots are available on the Data Protection tab for the relevant cluster. During the alpha preview program, new snapshots will not be available immediately on the Storage tab. They will appear on the Storage tab within 24 hours.
 
 (C) 2020 NetApp, Inc. All rights reserved.
 

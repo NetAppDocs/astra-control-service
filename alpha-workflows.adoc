@@ -6,52 +6,64 @@ summary: A set of example steps to work through to test out the Project Astra al
 
 = Project Astra Alpha Workflows
 
-If you are getting started with Project Astra, we recommend the following steps as a way of exercising the service.
+We recommend the following steps as a way of exercising the service.
 
-== Getting Started
+== Requirements
 
-These articles will help you get up and running with the Project Astra alpha program.
+Before you can begin working with Project Astra, you will need to get your account set up. These articles will help you get up and running.
 
 * link:getting-started.html[Getting Started Guide]
 * link:faq.html[FAQ]
 * link:invite-users.html[Invite Users]
+* link:credentials-cvs.html[Set Up NetApp Cloud Volumes Service]
+* link:credentials-gcp.html[Get your GCP Credentials]
 
-== Deploy an App
+== Add a Cluster
+
+Begin by adding a cluster to Project Astra. We cover this process in the link:getting-started.html[Getting Started Guide].
+
+== Deploy an Application
 
 Learn how to deploy MySQL/MariaDB or Postgres from a Helm chart.
 
 * link:deploy-mysql-mariadb-from-helm-chart.html[Deploy MySQL/MariaDB from a Helm chart].
 * link:deploy-postgres-from-helm-chart.html[Deploy Postgres from a Helm chart].
 
-== Snapshots
+== Register an Application
+
+After you deploy an application to your cluster, Project Alpha will detect it. You can then register the application with Project Astra, so that you can use Project Astra to manage your application's data.
+
+== Data Management Operations
+
+Project Astra lets you manage your data with snapshots and backups.
+
+=== Snapshots
 
 Create and manage point-in-time snapshots of your application.
 
 * link:snapshot-create.html[Create a snapshot].
 * link:snapshot-view.html[View your snapshots].
-* link:snapshot-add-data.html[Add data to a snapshot].
 * link:snapshot-restore.html[Restore from a snapshot].
 
-== Backups
+=== Backups
 
 Create and manage backups of your application.
 
 * link:backup-create.html[Create a backup].
 * link:backup-view.html[View your backups].
-* link:backup-add-data.html[Add data to a backup].
 * link:backup-restore.html[Restore from a backup].
 
-== Migrate Clusters
+=== Migrate Data
 
 Use the Clone feature to migrate data between clusters.
 
 * link:migrate-data-between-clusters.html[Migrate data between clusters].
 
-== Deregister a Cluster
+== Deregister
 
 When you are done with the alpha workflow, remove your assets from Project Astra.
 
-1. Deregister the app. Go to **Apps**, select your app, then under **Actions** click **De-register**. This will end your app being managed by Project Astra. It will not remove the app from your cluster.
+1. Deregister the application. Go to **Apps**, select your app, then under **Actions** click **De-register**. This will end your app being managed by Project Astra. It will not remove the app from your cluster.
 
 2. Deregister the cluster. Go to **Compute** select your cluster, under **Actions** click **Deregister**. This will remove your cluster from Project Astra. It will not delete the GKE cluster from your Google Cloud Platform (GCP) account.
 

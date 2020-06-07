@@ -9,7 +9,7 @@ summary: Learn how to find and view a backup you created.
 
 Learn how to find the backups for your app, arranged by timestamp.
 
-Learn how to find the backups for your app, arranged by timestamp. Backups can be seen on the Data Protection tab for the relevant cluster as soon as they are created.
+Learn how to find the backups for your app, arranged by timestamp. Backups can be seen on the Data Protection tab for the relevant application as soon as they are created.
 
 NOTE: During the Project Astra alpha  program, new backups will not be available immediately on the Storage tab. They will appear on the Storage tab within 24 hours.
 
