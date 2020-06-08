@@ -26,33 +26,33 @@ This is a quick summary of the steps to get up and running with Project Astra.
 ** Choose a "Zonal" location type in a Cloud Volumes Service supported region. (i.e., us-west2-a, us-central1-b)
 * Provision some applications and then create snapshots, backups, and clones.
 
-Project Astra is supported only with the Chrome browser during the alpha phase.
+NOTE: Chrome is the only supported browser for the Project Astra alpha program.
 
 == Register with Cloud Central
 
-If you don't have an account registered at https://cloud.netapp.com/home[NetApp Cloud Central] yet, please create one.
+If you don't have an account registered at https://cloud.netapp.com/home[NetApp Cloud Central] yet, you will need to create one before you begin using Project Astra.
 
-Open Cloud Central using the link above and accept the notice regarding browser cookies.
+Go to https://cloud.netapp.com/home[NetApp Cloud Central] and accept the notice regarding browser cookies.
 
 image::cloud-central-register-accept-cookies.png[Cloud Central Accept Cookies]
 
-Use the *SIGN UP* link in the upper right corner to begin the sign up process.
+Click *SIGN UP*.
 
 image::cloud-central-sign-up.png[Cloud Central Sign Up]
 
-You will be redirected to https://netapp-cloud-account.auth0.com[NetApp Cloud Account at Auth0]
+This redirects you to https://netapp-cloud-account.auth0.com[NetApp Cloud Account at Auth0]
 
 image::cloud-central-account-sign-up.png[Cloud Central Account Sign Up]
 
-Complete the required form fields and review the terms and conditions before pressing *SIGN UP*. Your NetApp Cloud Central account will be created.
+Complete the required form fields and review the terms and conditions, then click *SIGN UP* to create your NetApp Cloud Central account.
 
 === Verify Email Address
 
-If you already have an account, please verify the email address that you have registered with by expanding the *User Settings* sidebar. Your email address should appear in the area highlighted below labeled "Email."
+If you already have an account, expand the **User Settings** sidebar to verify your registration email address.
 
 image::cloud-central-user-settings.png[Cloud Central User Settings]
 
-Provide this exact email address to whomever is inviting you to Project Astra.
+IMPORTANT: Provide this exact email address to whomever is inviting you to Project Astra.
 
 === Invitation to Preview Project Astra
 
@@ -60,7 +60,7 @@ Your invitation to preview Project Astra will arrive by email.
 
 image::email-invitation-to-join.png[Email Invitation]
 
-The *Join Now* button will prompt you to accept the invitation.
+Click *Join Now* to accept the invitation.
 
 image::accept-invitation.png[Accept Invitation]
 
@@ -70,17 +70,17 @@ image::astra-welcome-dashboard-revised.png[Welcome Dashboard]
 
 == Provision a Cluster Using GKE
 
-Evaluating Project Astra requires two or more GKE clusters. There are multiple ways to provision a cluster that will work with Project Astra. This is one method using the Google Cloud Platform web UI.
+To evaluate Project Astra, you need two or more GKE clusters. There are multiple ways to provision a cluster that will work with Project Astra. This method uses the Google Cloud Platform web UI.
 
 Log into the https://console.cloud.google.com[Google Cloud Platform Console]
 
-Please confirm that you have the correct project selected. The current project is highlighted in yellow in the image below.
+Confirm that you have selected the correct project.
 
 image::gcp-gke-dashboard.png[GCP GKE Dashboard]
 
-Use the left navigation menu to choose *Kubernetes Engine->Clusters*
+Go to *Kubernetes Engine > Clusters*
 
-Use the *+Create Cluster* link to start configuring a GKE cluster.
+Click *+Create Cluster*.
 
 image::gcp-gke-cluster-basics.png[GCP GKE Cluster Basics]
 
@@ -92,23 +92,21 @@ Project Astra requires Cloud Volumes Service for Google Cloud to perform applica
 * us-central1
 * us-west2
 
-The location should remain set to *Zonal*. Make a selection under "Location type" by choosing your preferred *Zone* from the drop-down.
+Leave the location in the default *Zonal*. Choose your preferred zone from the **Location type** drop-down menu.
 
-Project Astra utilizes features that are only available in Kubernetes v1.17 and higher. As of this writing, Kubernetes 1.17 is not available as a selectable option in the default "Static version" drop-down menu.
+Project Astra requires Kubernetes version 1.17 and higher, and Ubuntu image type.
 
-In the "Master version" section, activate the *Release channel* radio button and then choose *Rapid channel-1.17.5-gke-0*. The exact value will change as Google deploys new releases of Kubernetes.
+To set the Kubernetes version, click **Master Version: Release channel**. Select *Rapid channel-1.17.5-gke-0*.
 
-Using the left navigation menu, expand *default-pool* under "NODE POOLS" and select *Nodes*.
+To set the image type, click **NODE POOLS: default-pool** on the left. For **Image type** set **Ubuntu**.
 
 image::gcp-gke-nodes.png[GCP GKE Nodes]
 
-Under "Image type" select *Ubuntu*.
-
-You are welcome to adjust the other values as you see fit. The remaining defaults should work fine for evaluating Project Astra.
+Adjust the other values as you see fit. The remaining defaults should work fine for evaluating Project Astra.
 
 TIP: Consider using `n1-standard-2` instances as a minimum. This will reduce the chance of encountering issues due to unexpected resource contention.
 
-When you are done with the configuration, press the *CREATE* button to continue.
+When you are done with the configuration, click *CREATE* to continue.
 
 Once the cluster has been provisioned it will appear in the list.
 
@@ -116,13 +114,13 @@ image::gcp-gke-clusters.png[GCP GKE Clusters]
 
 == Register the Cluster with Project Astra
 
-Log into Project Astra at https://astra.netapp.com. The first time you log in you'll be notified to accept cookies.
+Log in to https://astra.netapp.com[Project Astra]. The first time you log in you'll be notified to accept cookies.
 
 image::astra-welcome-dashboard.png[Astra Welcome Dashboard]
 
 Use the left navigation menu to select *Compute* under *DATA*.
 
-Click the *+ Add compute* button to begin the cluster registration process.
+Click *+ Add compute* to start the cluster registration process.
 
 image::astra-compute-add-cluster-empty.png[Astra Compute Add Cluster Empty]
 
@@ -130,31 +128,31 @@ The default provider is set to "Google Cloud Platform." Microsoft Azure and AWS 
 
 image::astra-select-provider.png[Astra Select Provider]
 
-The cluster registration process requires a GCP service account file. This may be generated in the GCP console - IAM section.
+The cluster registration process requires a GCP service account file. You can generate this in the **IAM** section of the GCP console.
 
 Project Astra will automatically validate the service account to verify it has access to the necessary APIs and roles.
 
- More information on creating the service account with the required roles can can be found in link:credentials-gcp.html[Credentials GCP].
+ More information on creating the service account with the required roles can can be found in link:credentials-gcp.html[our article on GCP credentials].
 
-Once you have the service account JSON saved as a file, use the "Upload file" option. (Highlighted in yellow in the image above.)
+After you have downloaded the service account JSON file, use the "Upload file" option.
 
 image::astra-sa-upload-file.png[Service Account JSON Upload File]
 
-Choose the appropriate `.json` file and upload it. If you prefer to copy and paste the service account JSON, choose "Paste from Clipboard." If you have previously added a service account, you can select it from the "Use existing" tab.
+Find the `.json` file and upload it. If you prefer to copy and paste the service account JSON, choose "Paste from Clipboard." If you have previously added a service account, select it from the "Use existing" tab.
 
 image::astra-sa-file-uploaded.png[Service Account JSON File Uploaded]
 
 "Service account name" will be automatically generated based on the `client_email` value contained in the service account JSON. You are welcome to change it if you wish. This value will appear later under "Use existing" to identify this set of service account credentials.
 
-Press the *Discover clusters* button to continue. You will see a list of Kubernetes clusters that are currently provisioned.
+Click *Discover clusters* to continue. This shows a list of Kubernetes clusters that are currently provisioned.
 
 image::astra-add-compute-select-a-cluster.png[Add Compute Select a Cluster]
 
-Choose a cluster by clicking the *Not selected* button. *Not selected* will update to *Selected* with a blue checkmark. Continue by pressing the *Configure storage* button.
+Click *Not selected* for the cluster you want to add. *Not selected* will update to *Selected* with a blue checkmark. Click *Configure storage* to continue.
 
 image::astra-add-compute-cluster-selected.png[Add Compute Cluster Selected]
 
-In this configuration step, choose a storage class and press *Review information*.
+Choose a storage class and click *Review information*.
 
 image::add-compute-select-storage-type.png[Add Compute Select Storage Type]
 
@@ -162,15 +160,21 @@ Please review the information presented on the summary screen.
 
 image::add-compute-review-selection.png[Add Compute Review Selection]
 
-You can navigate back to previous steps if you notice something that needs to be changed. When it all looks good, press *Add compute*.
+You can navigate back to previous steps if you notice something that needs to be changed. When it all looks good, click *Add compute*.
 
 image::add-compute-cluster-status-updating.png[Add Compute Cluster Status Updating]
 
-An information block will provide progress updates as the Kubernetes cluster is registered with Project Astra. When the process completes, the Add Compute wizard will close by itself and you will see your cluster showing as *Available*.
+An information block will provide progress updates as the Kubernetes cluster is registered with Project Astra:
+
+* Astra creates a Google Cloud Object store to store the backups.
+* NetApp Trident is deployed as the Container Storage Interface (CSI).
+* The Storage Classes for NetApp Cloud Volume Services are configured.
+
+When the process completes, the Add Compute wizard will close by itself and you will see your cluster showing as *Available*.
 
 image::add-compute-complete.png[Add Compute Complete]
 
-Register a second cluster by repeating the steps. Once you have two clusters showing as *Available* please continue to the test plan and explore Project Astra.
+Repeat these steps to register a second cluster. Once you have two clusters showing as *Available* please continue to the link:alpha-workflows.html[Alpha Workflows] to explore Project Astra.
 
 (C)2020 NetApp, Inc. All rights reserved.
 — NETAPP CONFIDENTIAL —
