@@ -38,6 +38,14 @@ You can ask them to check their spam folder, or search their inbox for “invita
 
 == Registering Kubernetes Clusters
 
+**Can I add a private cluster to Project Astra?**
+
+No. Only publicly-accessible Kubernetes clusters are compatible with the Project Astra alpha program.
+
+**Can I use a custom network?**
+
+Custom networks are not supported by the Project Astra alpha program. Only the default VPC will work.
+
 **Where can I find my service account credentials on GCP?**
 
 After you log in to https://console.cloud.google.com/[Google Cloud Console], your service account details will be in the **IAM and Admin** section. For more details, refer to link:credentials-gcp.html[our article on creating and managing GCP service accounts].

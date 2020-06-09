@@ -58,6 +58,8 @@ image::astra-welcome-dashboard-revised.png[Welcome Dashboard]
 
 == Provision a Cluster Using GKE
 
+NOTE: Private Kubernetes clusters are not supported in the Project Astra alpha program. Only publicly-available Kubernetes clusters will work.
+
 To evaluate Project Astra, you need two or more GKE clusters. There are multiple ways to provision a cluster that will work with Project Astra. This method uses the Google Cloud Platform web UI.
 
 Log into the https://console.cloud.google.com[Google Cloud Platform Console]
@@ -85,7 +87,11 @@ To set the image type, click **NODE POOLS: default-pool** on the left. For **Ima
 
 image::gcp-gke-nodes.png[GCP GKE Nodes]
 
-Adjust the other values as you see fit. The remaining defaults should work fine for evaluating Project Astra.
+Adjust the other values as you see fit.
+
+NOTE: Custom networks are not supported in the Project Astra alpha program. Only the default VPC will work.
+
+The remaining defaults should work fine for evaluating Project Astra.
 
 TIP: For the alpha program, we recommend `n1-standard-2` as a minimum instance size. This reduces the chance you will encountering issues due to unexpected resource contention.
 

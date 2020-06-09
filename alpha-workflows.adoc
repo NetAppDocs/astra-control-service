@@ -18,6 +18,8 @@ Before you can begin working with Project Astra, you will need to get your accou
 * link:credentials-cvs.html[Set Up NetApp Cloud Volumes Service]
 * link:credentials-gcp.html[Get your GCP Credentials]
 
+NOTE: Private Kubernetes clusters and custom networks are not supported by the Project Astra alpha program. Only publicly-accessible Kubernetes clusters and the default VPC will work in alpha.
+
 == Add a Cluster
 
 Begin by adding a cluster to Project Astra. We cover this process in the link:getting-started.html[Getting Started Guide].
