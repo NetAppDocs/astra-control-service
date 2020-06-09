@@ -39,7 +39,7 @@ This command does the following:
 * Creates a database named `test_db`
 * Creates a user `test_db_user` with password `NKhjs2wQPt8`
 
-WARNING: This method of setting the password at deployment is insecure. Only use this command when setting up Postgres for a sandbox deployment to use Project Astra alpha program. We do not recommend this for a production environment.
+WARNING: This method of setting the password at deployment is insecure. Only use this command when setting up MySQL/MariaDB for a sandbox deployment to use Project Astra alpha program. We do not recommend this for a production environment.
 
 After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
 
