@@ -11,12 +11,18 @@ entries:
         url: /invite-users.html
       - title: Alpha Workflows
         url: /alpha-workflows.html
-  - title: Credentials
+  - title: GCP
     entries:
-      - title: CVS on GCP
+      - title: Set Up NetApp CVS
         url: /credentials-cvs.html
-      - title: GCP
+      - title: GCP Credentials Overview
         url: /credentials-gcp.html
+      - title: Create a Service Account (gcloud)
+        url: /gcp-create-service-account-cli.html
+      - title: Create a Service Account (browser)
+        url: /gcp-create-service-account-browser.html
+      - title: Create a New Service Account Key
+        url: /gcp-create-new-service-account-key.html
   - title: Deploy Apps
     entries:
       - title: Deploy MySQL/MariaDB from Helm
