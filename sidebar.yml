@@ -33,8 +33,8 @@ entries:
         url: /snapshots.html
       - title: Backups
         url: /backups.html
-      - title: Migrate Data Between Clusters
-        url: /migrate-data-between-clusters.html
+      - title: Clone
+        url: /clone.html
   - title: MySQL/MariaDB
     entries:
       - title: Deploy MySQL/MariaDB from Helm
