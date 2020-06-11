@@ -17,6 +17,8 @@ entries:
         url: /credentials-cvs.html
       - title: GCP Credentials Overview
         url: /credentials-gcp.html
+      - title: Create a Project
+        url: /gcp-create-project.html      
       - title: Create a Service Account (gcloud)
         url: /gcp-create-service-account-gcloud.html
       - title: Create a Service Account (browser)
