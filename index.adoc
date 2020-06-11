@@ -22,6 +22,8 @@ Welcome to the Project Astra documentation.
 
 Access the Project Astra alpha program at: https://astra.netapp.io
 
+'''
+
 (C) 2020 NetApp, Inc. All rights reserved.
 
 — NETAPP CONFIDENTIAL —

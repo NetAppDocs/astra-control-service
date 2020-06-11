@@ -40,6 +40,8 @@ If you set "Retain" as the reclaim policy, the PV is not deleted if the PVC is d
 
 You may also want to add tags to your PVs. This makes the PVs easier to find and reattach if you have to recreate the cluster.
 
+'''
+
 (C) 2020 NetApp, Inc. All rights reserved.
 
 — NETAPP CONFIDENTIAL —

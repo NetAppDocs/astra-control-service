@@ -17,7 +17,7 @@ There are two sections on the *Invite users* page. In the *USERS TO INVITE* sect
 
 image::invite-users.png[Invite Users]
 
-IMPORTANT: NetApp internal users only. When sending a Project Astra invitation to a netapp.com address, you have the choice to either send the invite to their sso@netapp.com or first.last@netapp.com email address.  Depending on which email is set for the user in the Auth0, NetApp internal users may be blocked by a blank page with the Project Astra logo. If this happens, remove the user and re-invite using their other email address.  
+IMPORTANT: NetApp internal users only. When sending a Project Astra invitation to a netapp.com address, you have the choice to either send the invite to their sso@netapp.com or first.last@netapp.com email address.  Depending on which email is set for the user in the Auth0, NetApp internal users may be blocked by a blank page with the Project Astra logo. If this happens, remove the user and re-invite using their other email address.
 
 In the *ADD TO TEAM* section, press the button labeled *Not selected* in the *Status* column to select the team that the users should be invited to join. The button will toggle between *Not Selected* and *Selected*.
 
@@ -38,6 +38,8 @@ image::invitation-pending-remove.png[Invitation Pending Remove]
 You will be prompted to type the name of the user. Then press the red *Yes, Remove User* button to complete the removal request.
 
 image::invitation-confirm-remove-user.png[Invitation Confirm Remove User]
+
+'''
 
 (C) 2020 NetApp, Inc. All rights reserved.
 

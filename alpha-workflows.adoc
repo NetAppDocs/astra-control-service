@@ -71,6 +71,8 @@ When you are done with the alpha workflow, remove your assets from Project Astra
 
 3. Optional: Delete the cluster on GCP. Log in to the https://console.cloud.google.com/[Google Cloud Console], click **Kubernetes Engine > Clusters**, select your cluster, then click **Delete**.
 
+'''
+
 (C) 2020 NetApp, Inc. All rights reserved.
 
 — NETAPP CONFIDENTIAL —

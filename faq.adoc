@@ -208,6 +208,8 @@ The Application/Storage section of the UI available by clicking on a registered 
 
 The Storage section of the UI available by clicking on Storage from the navigation on th eleft is a representation of all the Cloud Volumes available from the first GCP project added.  This is a mirror of what is seen from the Google Cloud Console when searching for Cloud Volumes.
 
+'''
+
 (C) 2020 NetApp, Inc. All rights reserved.
 
 — NETAPP CONFIDENTIAL —

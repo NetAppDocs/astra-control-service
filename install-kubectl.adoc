@@ -149,6 +149,8 @@ For example:
 export KUBECONFIG=/usr/home/jdoe/kubeconfig
 ----
 
+'''
+
 (C) 2020 NetApp, Inc. All rights reserved.
 
 — NETAPP CONFIDENTIAL —
