@@ -1,0 +1,57 @@
+---
+sidebar: sidebar
+permalink: gcp-create-project.html
+summary: Learn how to create a GCP project so you can use Project Astra.
+---
+
+= Create a GCP Project
+:imagesdir: assets/gcp-credentials/
+
+To use Project Astra you will need to have a GCP project created with the correct APIs enabled. If you don't already have a GCP project, follow these steps to create a new one.
+
+== Create a Project
+
+Log in to the https://console.cloud.google.com[Google Cloud Console]. Click *Select a Project* on the top left navigation bar.
+
+image::click-project.png[Google Container Engine: Click Project]
+
+In the pop-up window which appears, click *NEW PROJECT* to create a new project.
+
+Fill in "Project Astra" as the Project name, select the organization you want to use, then click *CREATE* to create the project.
+
+image::create-new-project.png[Create new GCP project]
+
+It may take a few moments for the project to be created. After the task is complete, you will be redirected to your dashboard.
+
+== Enable APIs
+
+Next, use the API Manager to enable the APIs used by Project Astra.. From the https://console.cloud.google.com[Google Cloud Console], click *APIs & Services > Dashboard*.
+
+image::click-api-manager.png[Google Container Engine: API Manager]
+
+This takes you to the API Manager Dashboard. Click *+ENABLE APIS AND SERVICES*.
+
+image::enable-api.png[GCP: Enable API]
+
+This takes you to the API Library.
+
+image::api-library-search.png[GCP API Library Search]
+
+First, search for *Kubernetes*. The returned search results should include "Google Kubernetes Engine", and "NetApp Cloud Volumes Service". Both of those should be "Enabled" by clicking into them and pressing *Enable*.
+
+image::api-library-search-kubernetes.png[GCP API Search Kubernetes]
+
+Repeat the process only this time the search term is *Storage*. Enable both "Cloud Storage" and "Cloud Storage JSON API"
+
+image::api-library-search-storage.png[GCP API Search Storage]
+
+Finally search for and enable the *Service Usage* API:
+
+image::api-library-search-service-usage.png[GCP API Search Service Usage]
+
+== Next Steps
+
+After you create a project, you will need to create a service account. You can create a new service account through the Google Cloud Console, or on the command line with the `gcloud` tool:
+
+* link:gcp-create-service-account-cli.html[Command Line (gcloud)]
+* link:gcp-create-service-account-browser.html[Google Cloud Console (browser)]
