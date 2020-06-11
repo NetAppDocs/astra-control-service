@@ -37,17 +37,15 @@ This takes you to the API Library.
 
 image::api-library-search.png[GCP API Library Search]
 
-First, search for *Kubernetes*. The returned search results should include "Google Kubernetes Engine", and "NetApp Cloud Volumes Service". Both of those should be "Enabled" by clicking into them and pressing *Enable*.
+Search for and enable the following APIs and services:
 
-image::api-library-search-kubernetes.png[GCP API Search Kubernetes]
+* Google Kubernetes Engine
+* NetApp Cloud Volumes Service
+* Cloud Storage
+* Cloud Storage JSON API
+* Service Usage
+* Cloud Resource Manager API
 
-Repeat the process only this time the search term is *Storage*. Enable both "Cloud Storage" and "Cloud Storage JSON API"
-
-image::api-library-search-storage.png[GCP API Search Storage]
-
-Finally search for and enable the *Service Usage* API:
-
-image::api-library-search-service-usage.png[GCP API Search Service Usage]
 
 == Next Steps
 
