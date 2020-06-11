@@ -44,6 +44,8 @@ WARNING: This method of setting the password at deployment is insecure. Only use
 After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
 
 
+'''
+
 
 (C) 2020 NetApp, Inc. All rights reserved.
 
