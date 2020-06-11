@@ -27,30 +27,22 @@ entries:
         url: /gcp-create-new-service-account-key.html
       - title: GCP Permissions Checklist
         url: /gcp-permissions-checklist.html
-  - title: Deploy Apps
+  - title: Data Management
+    entries:
+      - title: Snapshots
+        url: /snapshots.html
+      - title: Backups
+        url: /backups.html
+      - title: Migrate Data Between Clusters
+        url: /migrate-data-between-clusters.html
+  - title: MySQL/MariaDB
     entries:
       - title: Deploy MySQL/MariaDB from Helm
         url: /deploy-mysql-mariadb-from-helm-chart.html
+  - title: Postgres
+    entries:
       - title: Deploy Postgres from Helm
         url: /deploy-postgres-from-helm-chart.html
-  - title: Snapshots
-    entries:
-      - title: Create a Snapshot
-        url: /snapshot-create.html
-      - title: View Snapshots
-        url: /snapshot-view.html
-      - title: Restore from a Snapshot
-        url: /snapshot-restore.html
-  - title: Backups
-    entries:
-      - title: Create a Backup
-        url: /backup-create.html
-      - title: View Backups
-        url: /backup-view.html
-      - title: Restore from a Backup
-        url: /backup-restore.html
-  - title: Migrate Data Between Clusters
-    url: /migrate-data-between-clusters.html
   - title: Best Practices
     url: /database-best-practices.html
   - title: Legal Notices
