@@ -20,7 +20,7 @@ Your project needs to have the following APIs enabled:
 * NetApp Cloud Volumes Service
 * Cloud Storage
 * Cloud Storage JSON API
-* Service Usage
+* Service Usage 
 * Cloud Resource Manager API
 
 **Related Article**
