@@ -43,6 +43,8 @@ entries:
     entries:
       - title: Deploy Postgres from Helm
         url: /deploy-postgres-from-helm-chart.html
+  - title: Remove Your App and Cluster
+    url: /remove-app-and-cluster.html
   - title: Best Practices
     url: /database-best-practices.html
   - title: Legal Notices

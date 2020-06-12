@@ -65,11 +65,7 @@ Use the Clone feature to migrate data between clusters.
 
 When you are done with the alpha workflow, remove your assets from Project Astra.
 
-1. Deregister the application. Go to **Apps**, select your app, then under **Actions** click **De-register**. This will end your app being managed by Project Astra. It will not remove the app from your cluster.
-
-2. Deregister the cluster. Go to **Compute** select your cluster, under **Actions** click **Deregister**. This will remove your cluster from Project Astra. It will not delete the GKE cluster from your Google Cloud Platform (GCP) account.
-
-3. Optional: Delete the cluster on GCP. Log in to the https://console.cloud.google.com/[Google Cloud Console], click **Kubernetes Engine > Clusters**, select your cluster, then click **Delete**.
+* link:remove-app-and-cluster.html[Remove Your App and Cluster]
 
 '''
 
