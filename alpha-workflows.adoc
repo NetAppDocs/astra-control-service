@@ -28,8 +28,8 @@ Begin by adding a cluster to Project Astra. We cover this process in the link:ge
 
 Learn how to deploy MySQL/MariaDB or Postgres from a Helm chart.
 
-* link:deploy-mysql-mariadb-from-helm-chart.html[Deploy MySQL/MariaDB from a Helm chart].
-* link:deploy-postgres-from-helm-chart.html[Deploy Postgres from a Helm chart].
+* link:mysql-mariadb-deploy-from-helm-chart.html[Deploy MySQL/MariaDB from a Helm chart].
+* link:postgres-deploy-from-helm-chart.html[Deploy Postgres from a Helm chart].
 
 == Register an Application
 

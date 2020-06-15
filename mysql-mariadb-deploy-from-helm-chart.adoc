@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: deploy-mysql-mariadb-from-helm-chart.html
+permalink: mysql-mariadb-deploy-from-helm-chart.html
 summary: Learn how to deploy MySQL/MariaDB from a Helm chart
 ---
 
