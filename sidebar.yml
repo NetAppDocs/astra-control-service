@@ -38,11 +38,15 @@ entries:
   - title: MySQL/MariaDB
     entries:
       - title: Deploy MySQL/MariaDB from Helm
-        url: /deploy-mysql-mariadb-from-helm-chart.html
+        url: /mysql-mariadb-deploy-from-helm-chart.html
+      - title: Work With MySQL/MariaDB on Project Astra
+        url: /mysql-mariadb-work-wtih-project-astra.html
   - title: Postgres
     entries:
       - title: Deploy Postgres from Helm
-        url: /deploy-postgres-from-helm-chart.html
+        url: /postgres-deploy-from-helm-chart.html
+      - title: Work With Postgres on Project Astra
+        url: /postgres-work-with-project-astra.html
   - title: Remove Your App and Cluster
     url: /remove-app-and-cluster.html
   - title: Best Practices
