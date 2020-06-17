@@ -40,7 +40,7 @@ entries:
       - title: Deploy MySQL/MariaDB from Helm
         url: /mysql-mariadb-deploy-from-helm-chart.html
       - title: Work With MySQL/MariaDB on Project Astra
-        url: /mysql-mariadb-work-wtih-project-astra.html
+        url: /mysql-mariadb-work-with-project-astra.html
   - title: Postgres
     entries:
       - title: Deploy Postgres from Helm
