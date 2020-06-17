@@ -85,13 +85,13 @@ Before deploying, you can do a dry run to make sure everything is set up correct
 To do this, edit the values in the `my-values.yaml` file you created in the previous step. Test your deployment using the `-f my-values.yaml` and `--dry-run` flags:
 
 ----
-helm install -f my-values.yaml --namespace my-test-namespace --generate-name bitnami/postgresql --dry-run
+helm install -f my-values.yaml --namespace testdb --generate-name bitnami/postgresql --dry-run
 ----
 
-Before we can run the helm charts for real, we need to first create the namespace. We've chosen `my-test-namespace` and may use kubectl to create that namespace.
+Before we can run the helm charts for real, we need to first create the namespace. We've chosen `testdb` and may use kubectl to create that namespace.
 
 ----
-kubectl create namespace my-test-namespace
+kubectl create namespace testdb
 ----
 
 If the output from our dry run looks correct, we may deploy to your cluster by removing `--dry-run`.

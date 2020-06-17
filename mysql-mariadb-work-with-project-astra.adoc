@@ -93,16 +93,17 @@ Before deploying, you can do a dry run to make sure everything is set up correct
 To do this, edit the values in the `my-values.yaml` file you created in the previous step. Test your deployment using the `-f my-values.yaml` and `--dry-run` flags:
 
 ----
-# mariaDB
-helm install -f my-values.yaml --namespace my-test-namespace --generate-name bitnami/mariadb --dry-run
-# mySQL
-helm install -f my-values.yaml --namespace my-test-namespace --generate-name bitnami/mysql --dry-run
+# MariaDB
+helm install -f my-values.yaml --namespace testdb --generate-name bitnami/mariadb --dry-run
+
+# MySQL
+helm install -f my-values.yaml --namespace testdb --generate-name bitnami/mysql --dry-run
 ----
 
-Before we can run the helm charts for real, we need to first create the namespace. We've chosen `my-test-namespace` and may use kubectl to create that namespace.
+Before we can run the helm charts for real, we need to first create the namespace. We've chosen `testdb` and may use kubectl to create that namespace.
 
 ----
-kubectl create namespace my-test-namespace
+kubectl create namespace testdb
 ----
 
 If the output from our dry run looks correct, we may deploy to your cluster by removing `--dry-run`.

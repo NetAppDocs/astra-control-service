@@ -36,12 +36,12 @@ NOTE: You must deploy the Helm chart in a namespace other than the default.
 Deploy Postgres with the command:
 
 ----
-helm install bitnami/postgresql --namespace my-postgres-namespace --create-namespace --set postgresqlPassword=U9dH9HT4pWS,postgresqlDatabase=test_db --generate-name
+helm install bitnami/postgresql --namespace testdb --create-namespace --set postgresqlPassword=U9dH9HT4pWS,postgresqlDatabase=test_db --generate-name
 ----
 
 This command does the following:
 
-* Creates a new namespace `my-postgres-namespace`.
+* Creates a new namespace `testdb`.
 * Deploys Postgres on that namespace.
 * Creates a database named `test_db`
 * Creates a user `test_db_user` with password `U9dH9HT4pWS`
