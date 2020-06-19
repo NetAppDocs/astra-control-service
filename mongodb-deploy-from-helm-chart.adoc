@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: deploy-mongodb-from-helm-chart.html
+permalink: mongodb-deploy-from-helm-chart.html
 summary: Learn how to deploy MongoDB from a Helm chart
 ---
 

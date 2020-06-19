@@ -35,6 +35,10 @@ entries:
         url: /backups.html
       - title: Clone
         url: /clone.html
+  - title: MongoDB
+    entries:
+      - title: Deploy MongoDB from Helm
+        url: /mongodb-deploy-from-helm-chart.html
   - title: MySQL/MariaDB
     entries:
       - title: Deploy MySQL/MariaDB from Helm
