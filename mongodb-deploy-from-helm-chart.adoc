@@ -30,17 +30,17 @@ helm repo add stable https://kubernetes-charts.storage.googleapis.com
 
 NOTE: You must deploy the Helm chart in a namespace other than the default.
 
+Create the namespace:
+
+----
+kubectl create namespace testdb
+----
+
 Deploy MongoDB with the command:
 
 ----
-helm install stable/mongodb --namespace testdb --create-namespace --generate-name
+helm install stable/mongodb --namespace testdb --generate-name
 ----
-
-This command does the following:
-
-* Creates a new namespace `testdb`.
-* Deploys MongoDB on that namespace.
-
 
 After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, it can take up to 5 minutes for applications to show up in the Discovered Applications list after being installed.
 
