@@ -15,7 +15,7 @@ NOTE: The Project Astra alpha program only supports MySQL 0.3.22 and MariaDB 14.
 In order to deploy MariaDB from a Helm chart for the Project Astra alpha program, you need the following:
 
 * A fresh GKE cluster which has been added to Project Astra.
-* Kubectl and Helm installed.
+* Updated versions of Helm (version 3.2+) and Kubectl installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
 
 NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
