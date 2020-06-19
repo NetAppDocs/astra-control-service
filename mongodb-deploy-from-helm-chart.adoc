@@ -1,52 +1,46 @@
 ---
 sidebar: sidebar
-permalink: postgres-deploy-from-helm-chart.html
-summary: Learn how to deploy Postgres from a Helm chart
+permalink: deploy-mongodb-from-helm-chart.html
+summary: Learn how to deploy MongoDB from a Helm chart
 ---
 
-= Deploy Postgres From a Helm Chart
+= Deploy MongoDB From a Helm Chart
 
-Learn how to exercise the Project Astra workflow by deploying Postgres from a Helm chart. After you deploy Postgres on your cluster, you can register the application with Project Astra.
-
-
-NOTE: The Project Astra Alpha Program only supports Postgres 11.7.
+Learn how to exercise the Project Astra workflow by deploying MongoDB from a Helm chart. After you deploy MongoDB on your cluster, you can register the application with Project Astra.
 
 == System Requirements
 
-In order to deploy Postgres from a Helm chart for the Project Astra alpha program, you need the following:
+In order to deploy MongoDB from a Helm chart for the Project Astra alpha program, you need the following:
 
 * A fresh GKE cluster which has been added to Project Astra.
-* Updated versions of Helm (version 3.2+) and Kubectl installed.
+* Kubectl and Helm installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
 
 NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
 
-== Install Postgres
+== Install MongoDB
 
-To exercise the Project Astra alpha workflow, we recommend the https://hub.helm.sh/charts/bitnami/postgresql[Bitnami Postgres chart].
+To exercise the Project Astra alpha workflow, we recommend the Helm chart from the default repo.
 
 To install this chart, first add the repo:
 
 ----
-helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo add stable https://kubernetes-charts.storage.googleapis.com
 ----
 
 NOTE: You must deploy the Helm chart in a namespace other than the default.
 
-Deploy Postgres with the command:
+Deploy MongoDB with the command:
 
 ----
-helm install bitnami/postgresql --namespace testdb --create-namespace --set postgresqlPassword=U9dH9HT4pWS,postgresqlDatabase=test_db --generate-name
+helm install stable/mongodb --namespace testdb --create-namespace --generate-name
 ----
 
 This command does the following:
 
 * Creates a new namespace `testdb`.
-* Deploys Postgres on that namespace.
-* Creates a database named `test_db`
-* Creates a user `test_db_user` with password `U9dH9HT4pWS`
+* Deploys MongoDB on that namespace.
 
-WARNING: This method of setting the password at deployment is insecure. Only use this command when setting up Postgres for a sandbox deployment to use Project Astra alpha program. We do not recommend this for a production environment.
 
 After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, it can take up to 5 minutes for applications to show up in the Discovered Applications list after being installed.
 
