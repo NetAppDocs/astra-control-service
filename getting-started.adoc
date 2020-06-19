@@ -93,7 +93,7 @@ NOTE: Custom networks are not supported in the Project Astra alpha program. Only
 
 The remaining defaults should work fine for evaluating Project Astra.
 
-TIP: For the alpha program, we recommend `n1-standard-2` as a minimum instance size. This reduces the chance you will encountering issues due to unexpected resource contention.
+TIP: For the alpha program, we recommend `n1-standard-2` as a minimum instance size. This reduces the chance you will encounter issues due to unexpected resource contention.
 
 When you are done with the configuration, click *CREATE* to continue.
 
