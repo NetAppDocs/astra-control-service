@@ -36,7 +36,7 @@ CVS and Cloud Central are the storage layer and connective elements for Project 
 
 Helm is a popular way to organize and install apps on Kubernetes. To install Helm on your local computer, follow https://helm.sh/docs/intro/install/[their handy install guide].
 
-**Postgres Requirements**
+=== Postgres Requirements
 
 For a Posgres application, Project Astra Alpha requires:
 
@@ -45,6 +45,22 @@ For a Posgres application, Project Astra Alpha requires:
 * A single node deployment. Multi-node and HA deployments will be supported in future releases.
 
 The Project Astra alpha program does not support replicas or failovers. Only single instance versions of the databases are supported. For testing Project Astra in Alpha, leave replication off, and check that the `global.storageClass` value in `values.yaml` is pointing to the correct storageClass.
+
+=== Namespace Requirements
+
+**You must deploy your app in a namespace other than the default.** In the following example, we create and use the namespace `testdb` for the deployment.
+
+**A namespace which is empty for more than 60 seconds will be ignored by Project Astra.** Thus, you want to be sure to deploy your app into your namespace within one minute after you create the namespace.
+
+In the following example, we use `&&` to concatenate the commands for creating the namespace and deploying the app. We recommend this approach, as it ensures the commands are run in sequence even if you get interrupted.
+
+We recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
+
+== Using psql on Project Astra
+
+During the Project Astra alpha program, if you need to perform operations on Postgres pods (such as creating or restoring from backup), be sure to exit out of the psql client if you are using it on the pod.
+
+Project Astra requires psql access to freeze and thaw the databases. If there is a pre-existing connection the snapshot/backup/clone operation will fail.
 
 == Install Postgres
 
@@ -88,17 +104,20 @@ To do this, edit the values in the `my-values.yaml` file you created in the prev
 helm install -f my-values.yaml --namespace testdb --generate-name bitnami/postgresql --dry-run
 ----
 
+If the output from our dry run looks correct, we may deploy to your cluster by removing `--dry-run`.
+
 Before we can run the helm charts for real, we need to first create the namespace. We've chosen `testdb` and may use kubectl to create that namespace.
 
 ----
-kubectl create namespace testdb
+kubectl create namespace testdb && helm install -f my-values.yaml --namespace testdb --generate-name bitnami/postgresql
 ----
 
-If the output from our dry run looks correct, we may deploy to your cluster by removing `--dry-run`.
+After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
 
-=== Generate test data
 
-Helm provides instructions for connecting to newly installed Postgres apps. These instructions should contain a few different methods for connecting to the database.
+== Generate test data
+
+Helm provides instructions for connecting to newly-installed Postgres apps. These instructions should contain a few different methods for connecting to the database.
 
 This process is also discussed https://www.postgresql.org/docs/11/functions-srf.html[here in the Postgres documentation].
 
@@ -141,28 +160,6 @@ FROM generate_series(1, 10000) g_s(i);
 -- check that data looks correct
 SELECT * FROM junk LIMIT 20;
 ----
-
-== Using psql
-
-During the Project Astra alpha program, if you need to perform operations on Postgres pods (such as creating or restoring from backup), be sure to exit out of the psql client if you are using it on the pod.
-
-Project Astra requires psql access to freeze and thaw the databases. If there is a pre-existing connection the snapshot/backup/clone operation will fail.
-
-== Custom Postgres Requirements
-
-If you wish to deploy your own Postgres application, please note that Project Astra Alpha requires:
-
-* `global.storageClass` value to be set to the storageClass representing either CVS or Trident (or, that storageClass is set as your cluster's default provisioner).
-* The namespace set to something other than default, using the `--namespace` argument.
-* A single node deployment. Multi-node and HA deployments will be supported in future releases.
-
-The Project Astra alpha program does not support replicas or failovers. Only single instance versions of the databases are supported. For testing Project Astra in Alpha, leave replication off, and check that the `global.storageClass` value in the Helm values is pointing to the correct storageClass.
-
-
-NOTE: For the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
-
-
-
 
 
 '''

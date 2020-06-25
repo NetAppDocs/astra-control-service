@@ -13,8 +13,19 @@ Learn how to exercise the Project Astra workflow by deploying MongoDB from a Hel
 In order to deploy MongoDB from a Helm chart for the Project Astra alpha program, you need the following:
 
 * A fresh GKE cluster which has been added to Project Astra.
-* Kubectl and Helm installed.
+* Updated versions of Helm (version 3.2+) and Kubectl installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
+
+== Namespace Requirements
+
+**You must deploy your app in a namespace other than the default.** In the following example, we create and use the namespace `testdb` for the deployment.
+
+**A namespace which is empty for more than 60 seconds will be ignored by Project Astra.** Thus, you want to be sure to deploy your app into your namespace within one minute after you create the namespace.
+
+In the following example, we use `&&` to concatenate the commands for creating the namespace and deploying the app. We recommend this approach, as it ensures the commands are run in sequence even if you get interrupted.
+
+We recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
+
 
 NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
 
@@ -28,18 +39,10 @@ To install this chart, first add the repo:
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
 ----
 
-NOTE: You must deploy the Helm chart in a namespace other than the default.
-
-Create the namespace:
+Create the namespace and deploy MongoDB with the command:
 
 ----
-kubectl create namespace testdb
-----
-
-Deploy MongoDB with the command:
-
-----
-helm install stable/mongodb --namespace testdb --generate-name
+kubectl create namespace testdb && helm install stable/mongodb --namespace testdb --generate-name
 ----
 
 After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, it can take up to 5 minutes for applications to show up in the Discovered Applications list after being installed.
