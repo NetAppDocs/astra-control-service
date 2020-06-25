@@ -37,7 +37,7 @@ CVS and Cloud Central are the storage layer and connective elements for Project 
 
 Helm is a popular way to organize and install apps on Kubernetes. To install Helm on your local computer, follow https://helm.sh/docs/intro/install/[their handy install guide].
 
-**MySQL/MariaDB Requirements**
+=== MySQL/MariaDB Requirements
 
 For a MySQL/MariaDB application, Project Astra Alpha requires:
 
@@ -47,6 +47,15 @@ For a MySQL/MariaDB application, Project Astra Alpha requires:
 
 The Project Astra alpha program does not support replicas or failovers. Only single instance versions of the databases are supported. For testing Project Astra in Alpha, leave replication off, and check that the `global.storageClass` value in `values.yaml` is pointing to the correct storageClass.
 
+=== Namespace Requirements
+
+**You must deploy your app in a namespace other than the default.** In the following example, we create and use the namespace `testdb` for the deployment.
+
+**A namespace which is empty for more than 60 seconds will be ignored by Project Astra.** Thus, you want to be sure to deploy your app into your namespace within one minute after you create the namespace.
+
+In the following example, we use `&&` to concatenate the commands for creating the namespace and deploying the app. We recommend this approach, as it ensures the commands are run in sequence even if you get interrupted.
+
+We also recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
 
 == Install MariaDB/MySQL
 
@@ -100,16 +109,19 @@ helm install -f my-values.yaml --namespace testdb --generate-name bitnami/mariad
 helm install -f my-values.yaml --namespace testdb --generate-name bitnami/mysql --dry-run
 ----
 
+If the output from our dry run looks correct, we may deploy to your cluster by removing `--dry-run`.
+
 Before we can run the helm charts for real, we need to first create the namespace. We've chosen `testdb` and may use kubectl to create that namespace.
 
 ----
-kubectl create namespace testdb
+# MariaDB
+kubectl create namespace testdb && helm install -f my-values.yaml --namespace testdb --generate-name bitnami/mariadb --dry-run
+
+# MySQL
+kubectl create namespace testdb && helm install -f my-values.yaml --namespace testdb --generate-name bitnami/mysql --dry-run
 ----
 
-If the output from our dry run looks correct, we may deploy to your cluster by removing `--dry-run`.
-
-NOTE: For the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.a)
-
+After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
 
 
 

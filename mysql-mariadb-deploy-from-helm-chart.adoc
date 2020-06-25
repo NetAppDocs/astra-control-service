@@ -18,6 +18,16 @@ In order to deploy MariaDB from a Helm chart for the Project Astra alpha program
 * Updated versions of Helm (version 3.2+) and Kubectl installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
 
+== Namespace Requirements
+
+**You must deploy your app in a namespace other than the default.** In the following example, we create and use the namespace `testdb` for the deployment.
+
+**A namespace which is empty for more than 60 seconds will be ignored by Project Astra.** Thus, you want to be sure to deploy your app into your namespace within one minute after you create the namespace.
+
+In the following example, we use `&&` to concatenate the commands for creating the namespace and deploying the app. We recommend this approach, as it ensures the commands are run in sequence even if you get interrupted.
+
+We also recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
+
 NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
 
 == Install MariaDB
@@ -26,20 +36,15 @@ To exercise the Project Astra alpha workflow, we recommend you use the Helm char
 
 NOTE: You must deploy the Helm chart in a namespace other than the default.
 
-Create the namespace:
-
-----
-kubectl create namespace testdb
-----
-
 Deploy MariaDB with the command:
 
 ----
-helm install mariadb ./mariadb --namespace testdb --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8 > /dev/null 2>&1
+kubectl create namespace testdb && helm install mariadb ./mariadb --namespace testdb --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8 > /dev/null 2>&1
 ----
 
-This command:
+This does the following:
 
+* Creates the `testdb` namespace.
 * Deploys MariaDB on the `testdb` namespace.
 * Creates a database named `test_db`
 * Creates a user `test_db_user` with password `NKhjs2wQPt8`
