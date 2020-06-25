@@ -38,6 +38,8 @@ You can ask them to check their spam folder, or search their inbox for “invita
 
 == Registering Kubernetes Clusters
 
+
+
 **Can I add a private cluster to Project Astra?**
 
 No. Only publicly-accessible Kubernetes clusters are compatible with the Project Astra alpha program.
@@ -141,6 +143,18 @@ Removing a GKE cluster from Project Astra will not make any changes to the on-cl
 Trident will not be uninstalled from a cluster when you remove it from Project Astra.
 
 == Registering Applications
+
+**Why isn't my app showing up?**
+
+Project Astra has a 60-second timeout for an empty namespace. If it does not detect an app in that namespace within 60 seconds, it will ignore the namespace. If this happens, the namespace will not show up in the list of **Discovered Apps**.
+
+If you encounter this problem during the alpha program, deregister your cluster in Project Astra and then register it again.
+
+One way to avoid this issue is to concatenate your commands for creating a namespace and deploying an app. In the examples in our tutorials, we use `&&` to concatenate the commands for creating the namespace and deploying the app. We recommend this approach, as it ensures the commands are run in sequence even if you get interrupted.
+
+We recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
+
+
 
 **I have deployed my applications using Helm and kubectl. My newly-deployed application is not showing up on the Discovered Apps list. What can I check to identify the problem?**
 

@@ -26,7 +26,7 @@ In order to deploy MariaDB from a Helm chart for the Project Astra alpha program
 
 In the following example, we use `&&` to concatenate the commands for creating the namespace and deploying the app. We recommend this approach, as it ensures the commands are run in sequence even if you get interrupted.
 
-We also recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
+We recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
 
 NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
 
