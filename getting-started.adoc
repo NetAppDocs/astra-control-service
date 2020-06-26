@@ -62,6 +62,8 @@ NOTE: Private Kubernetes clusters are not supported in the Project Astra alpha p
 
 To evaluate Project Astra, you need two or more GKE clusters. There are multiple ways to provision a cluster that will work with Project Astra. This method uses the Google Cloud Platform web UI.
 
+WARNING: The free introductory tier for Google Cloud Platform only allows you to create one Kubernetes cluster at a time, among other limitations.
+
 Log into the https://console.cloud.google.com[Google Cloud Platform Console]
 
 Confirm that you have selected the correct project.

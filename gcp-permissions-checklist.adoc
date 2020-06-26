@@ -12,6 +12,8 @@ Before you add your GCP account to Project Astra, check to be sure you have all 
 * API access for your Project
 * Roles for your service account
 
+WARNING: The free introductory tier for Google Cloud Platform only allows you to create one Kubernetes cluster at a time, among other limitations.
+
 == Project: API Access
 
 Your project needs to have the following APIs enabled:
@@ -20,7 +22,7 @@ Your project needs to have the following APIs enabled:
 * NetApp Cloud Volumes Service
 * Cloud Storage
 * Cloud Storage JSON API
-* Service Usage 
+* Service Usage
 * Cloud Resource Manager API
 
 **Related Article**
