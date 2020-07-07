@@ -144,6 +144,10 @@ Trident will not be uninstalled from a cluster when you remove it from Project A
 
 == Registering Applications
 
+**How many apps per namespace?**
+
+Although you can deploy multiple applications per namespace, we strongly recommend you only deploy one app per namespace. Astra will treat all the apps on a namespace as a single object, which can have unexpected consequences if you try to restore from backup or clone the cluster.
+
 **Why isn't my app showing up?**
 
 Project Astra has a 60-second timeout for an empty namespace. If it does not detect an app in that namespace within 60 seconds, it will ignore the namespace. If this happens, the namespace will not show up in the list of **Discovered Apps**.
