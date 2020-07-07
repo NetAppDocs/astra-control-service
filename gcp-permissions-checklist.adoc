@@ -33,10 +33,11 @@ Your project needs to have the following APIs enabled:
 
 Your service account needs to have the following roles enabled:
 
+* Compute Network Viewer
 * Kubernetes Engine Admin
-* Cloud Volumes Admin
-* Storage Admin
+* NetApp Cloud Volumes Admin
 * Service Usage Viewer
+* Storage Admin
 
 **Related Articles**
 

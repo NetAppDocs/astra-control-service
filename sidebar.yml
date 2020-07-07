@@ -19,10 +19,10 @@ entries:
         url: /credentials-gcp.html
       - title: Create a Project
         url: /gcp-create-project.html
-      - title: Create a Service Account (gcloud)
-        url: /gcp-create-service-account-gcloud.html
       - title: Create a Service Account (browser)
         url: /gcp-create-service-account-browser.html
+      - title: Create a Service Account (gcloud)
+        url: /gcp-create-service-account-gcloud.html
       - title: Create a New Service Account Key
         url: /gcp-create-new-service-account-key.html
       - title: GCP Permissions Checklist
