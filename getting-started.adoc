@@ -8,7 +8,7 @@ summary: Get up and running with Project Astra
 :imagesdir: assets/getting-started/
 
 This document is intended for users that are evaluating Project Astra during the
-alpha phase. (June 2020)
+alpha phase. 
 
 == Requirements
 
