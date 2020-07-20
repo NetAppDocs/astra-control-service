@@ -31,18 +31,14 @@ NOTE: You must deploy your app after the cluster is added to Project Astra, not 
 
 == Install MongoDB
 
-To exercise the Project Astra alpha workflow, we recommend the Helm chart from the default repo.
+To exercise the Project Astra alpha workflow, we recommend you use the Helm chart which we have customized for Project Astra. Contact our TME team to get a copy of this chart.
 
-To install this chart, first add the repo:
-
-----
-helm repo add stable https://kubernetes-charts.storage.googleapis.com
-----
+NOTE: You must deploy the Helm chart in a namespace other than the default.
 
 Create the namespace and deploy MongoDB with the command:
 
 ----
-kubectl create namespace testdb && helm install stable/mongodb --namespace testdb --generate-name
+kubectl create namespace testdb && helm install ./mongodb --namespace testdb --generate-name
 ----
 
 After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, it can take up to 5 minutes for applications to show up in the Discovered Applications list after being installed.

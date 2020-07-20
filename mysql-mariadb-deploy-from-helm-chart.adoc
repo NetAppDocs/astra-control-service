@@ -32,7 +32,7 @@ NOTE: You must deploy your app after the cluster is added to Project Astra, not 
 
 == Install MariaDB
 
-To exercise the Project Astra alpha workflow, we recommend you use the Helm chart which we have customized for Project Astra. link:assets/mariadb.zip[Click here to download the compressed folder].
+To exercise the Project Astra alpha workflow, we recommend you use the Helm chart which we have customized for Project Astra. Contact our TME team to get a copy of this chart.
 
 NOTE: You must deploy the Helm chart in a namespace other than the default.
 
