@@ -33,14 +33,14 @@ NOTE: You must deploy your app after the cluster is added to Project Astra, not 
 
 == Install Postgres
 
-To exercise the Project Astra alpha workflow, we recommend you use the Helm chart which we have customized for Project Astra. Contact our TME team to get a copy of this chart.
+To exercise the Project Astra alpha workflow, we recommend the https://github.com/helm/charts/tree/master/stable/postgresql[standard stable chart].
 
 NOTE: You must deploy the Helm chart in a namespace other than the default.
 
 Deploy Postgres with the command:
 
 ----
-kubectl create namespace testdb && helm install ./postgresql --namespace testdb --set postgresqlPassword=U9dH9HT4pWS,postgresqlDatabase=test_db --generate-name
+kubectl create namespace testdb && helm install stable/postgresql --namespace testdb --set postgresqlPassword=U9dH9HT4pWS,postgresqlDatabase=test_db --generate-name
 ----
 
 This does the following:

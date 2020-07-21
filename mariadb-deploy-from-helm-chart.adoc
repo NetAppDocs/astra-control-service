@@ -1,16 +1,18 @@
 ---
 sidebar: sidebar
-permalink: mongodb-deploy-from-helm-chart.html
-summary: Learn how to deploy MongoDB from a Helm chart
+permalink: mariadb-deploy-from-helm-chart.html
+summary: Learn how to deploy MariaDB from a Helm chart
 ---
 
-= Deploy MongoDB From a Helm Chart
+= Deploy MariaDB From a Helm Chart
 
-Learn how to exercise the Project Astra workflow by deploying MongoDB from a Helm chart. After you deploy MongoDB on your cluster, you can register the application with Project Astra.
+Learn how to exercise the Project Astra workflow by deploying MariaDB from a Helm chart. After you deploy MariaDB on your cluster, you can register the application with Project Astra.
+
+NOTE: The Project Astra alpha program only supports MySQL 0.3.22 and MariaDB 14.14.
 
 == System Requirements
 
-In order to deploy MongoDB from a Helm chart for the Project Astra alpha program, you need the following:
+In order to deploy MariaDB from a Helm chart for the Project Astra alpha program, you need the following:
 
 * A fresh GKE cluster which has been added to Project Astra.
 * Updated versions of Helm (version 3.2+) and Kubectl installed.
@@ -26,23 +28,30 @@ In the following example, we use `&&` to concatenate the commands for creating t
 
 We recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
 
-
 NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
 
-== Install MongoDB
+== Install MariaDB
 
 To exercise the Project Astra alpha workflow, we recommend you use the Helm chart which we have customized for Project Astra. Contact our TME team to get a copy of this chart.
 
 NOTE: You must deploy the Helm chart in a namespace other than the default.
 
-Create the namespace and deploy MongoDB with the command:
+Deploy MariaDB with the command:
 
 ----
-kubectl create namespace testdb && helm install ./mongodb --namespace testdb --generate-name
+kubectl create namespace testdb && helm install mariadb ./mariadb --namespace testdb --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8 > /dev/null 2>&1
 ----
 
-After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, it can take up to 5 minutes for applications to show up in the Discovered Applications list after being installed.
+This does the following:
 
+* Creates the `testdb` namespace.
+* Deploys MariaDB on the `testdb` namespace.
+* Creates a database named `test_db`
+* Creates a user `test_db_user` with password `NKhjs2wQPt8`
+
+WARNING: This method of setting the password at deployment is insecure. Only use this command when setting up MariaDB for a sandbox deployment to use Project Astra alpha program. We do not recommend this for a production environment.
+
+After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
 
 
 '''

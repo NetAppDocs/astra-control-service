@@ -35,14 +35,12 @@ entries:
         url: /backups.html
       - title: Clone
         url: /clone.html
-  - title: MongoDB
-    entries:
-      - title: Deploy MongoDB from Helm
-        url: /mongodb-deploy-from-helm-chart.html
   - title: MySQL/MariaDB
     entries:
-      - title: Deploy MySQL/MariaDB from Helm
-        url: /mysql-mariadb-deploy-from-helm-chart.html
+      - title: Deploy MariaDB from Helm
+        url: /mariadb-deploy-from-helm-chart.html
+      - title: Deploy MySQL from Helm
+        url: /mysql-deploy-from-helm-chart.html
       - title: Work With MySQL/MariaDB on Project Astra
         url: /mysql-mariadb-work-with-project-astra.html
   - title: Postgres
