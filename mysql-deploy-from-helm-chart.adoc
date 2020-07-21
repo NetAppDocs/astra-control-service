@@ -1,18 +1,18 @@
 ---
 sidebar: sidebar
-permalink: mysql-mariadb-deploy-from-helm-chart.html
-summary: Learn how to deploy MariaDB from a Helm chart
+permalink: mysql-deploy-from-helm-chart.html
+summary: Learn how to deploy MySQL from a Helm chart
 ---
 
-= Deploy MariaDB From a Helm Chart
+= Deploy MySQL From a Helm Chart
 
-Learn how to exercise the Project Astra workflow by deploying MariaDB from a Helm chart. After you deploy MariaDB on your cluster, you can register the application with Project Astra.
+Learn how to exercise the Project Astra workflow by deploying MySQL from a Helm chart. After you deploy MySQL on your cluster, you can register the application with Project Astra.
 
 NOTE: The Project Astra alpha program only supports MySQL 0.3.22 and MariaDB 14.14.
 
 == System Requirements
 
-In order to deploy MariaDB from a Helm chart for the Project Astra alpha program, you need the following:
+In order to deploy MySQL from a Helm chart for the Project Astra alpha program, you need the following:
 
 * A fresh GKE cluster which has been added to Project Astra.
 * Updated versions of Helm (version 3.2+) and Kubectl installed.
@@ -30,22 +30,22 @@ We recommend the use of `&&` instead of `;` to concatenate commands. `&&` is con
 
 NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
 
-== Install MariaDB
+== Install MySQL
 
-To exercise the Project Astra alpha workflow, we recommend you use the Helm chart which we have customized for Project Astra. Contact our TME team to get a copy of this chart.
+To exercise the Project Astra alpha workflow, we recommend the https://github.com/helm/charts/tree/master/stable/mysql[standard stable chart].
 
 NOTE: You must deploy the Helm chart in a namespace other than the default.
 
-Deploy MariaDB with the command:
+Deploy MySQL with the command:
 
 ----
-kubectl create namespace testdb && helm install mariadb ./mariadb --namespace testdb --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8 > /dev/null 2>&1
+kubectl create namespace testdb && helm install mysql stable/mysql --namespace testdb --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8 > /dev/null 2>&1
 ----
 
 This does the following:
 
 * Creates the `testdb` namespace.
-* Deploys MariaDB on the `testdb` namespace.
+* Deploys MySQL on the `testdb` namespace.
 * Creates a database named `test_db`
 * Creates a user `test_db_user` with password `NKhjs2wQPt8`
 
