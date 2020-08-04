@@ -63,7 +63,7 @@ For the Project Astra alpha program, we recommend the custom Helm chart we have 
 
 The values need to be set to consume the volumes provisioned by CVS, be deployed in a namespace other than default, and your stateful app needs to be available to Project Astra.
 
-By default the Bitnami Postgres chart uses a cluster's default dynamic provisioner. Since Trident (part of Project Astra) automatically sets CVS as the default storage class, you should be in good shape. Use `kubectl get sc` to see what your cluster's storageClasses are. This produces output like the following:
+By default the Bitnami chart uses a cluster's default dynamic provisioner. Since Trident (part of Project Astra) automatically sets CVS as the default storage class, you should be in good shape. Use `kubectl get sc` to see what your cluster's storageClasses are. This produces output like the following:
 
 ----
 NAME                           PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
