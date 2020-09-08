@@ -1,0 +1,9 @@
+section: solutions
+title: Solutions
+entries:
+  - title: MongoDB
+    url: /someurl.html
+  - title: MySQL/MariaDB
+    url: /someurl.html
+  - title: Postgres
+    url: /someurl.html

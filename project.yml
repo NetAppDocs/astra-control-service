@@ -1,0 +1,50 @@
+sidebar:
+  entries:
+    - title: Astra docs
+      url: /index.html
+    - section: get-started
+    - section: use
+    - section: learn
+    - section: solutions
+    - section: apis
+    - section: training
+    - section: support
+
+homepage:
+  tiles:
+    - title: Get Started
+      links:
+        - title: Learn about Astra
+          summary: Understand how Astra works.
+          url: /someurl.html
+        - title: Quick start
+          summary: Get started quickly with Astra.
+          url: /someurl.html
+        - title: FAQ
+          summary: Read frequently asked questions about Astra.
+          url: /someurl.html
+    - title: Use Astra
+      links:
+        - title: Register applications
+          summary: Enable Astra to manage and protect your apps.
+          url: /someurl.html
+        - title: Back up your apps
+          summary: Create recovery points for your apps in case of failure.
+          url: /someurl.html
+        - title: Migrate an app
+          summary: Migrate an app to another cluster.
+          url: /someurl.html
+    - title: Demos & tutorials
+      links:
+        - title: Deploy MariaDB (video)
+          summary: Deploy MariaDB from a Helm chart and register it with Astra.
+        - title: Deploy MySQL (video)
+          summary: Deploy MySQL from a Helm chart and register it with Astra.
+        - title: Deploy Postgres
+          summary: Deploy Postgres from a Helm chart and register it with Astra.
+    - title: Blogs & community
+      links:
+        - title: The Promise of Stateful Applications in the Cloud
+          summary: How Astra provides robust storage, easy-to-consume data services, and application and data portability.
+        - title: Astra Community
+          summary: Connect with peers, ask questions, exchange ideas, and share best practices.
