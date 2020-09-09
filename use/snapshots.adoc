@@ -1,11 +1,14 @@
 ---
 sidebar: sidebar
-permalink: snapshots.html
+permalink: get-started/snapshots.html
+keywords:
 summary: How to create a Project Astra snapshot.
 ---
 
 = Snapshots
-:imagesdir: assets/snapshots/
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/snapshots/
 
 Learn how to create, manage, and restore from snapshots.
 
@@ -77,13 +80,3 @@ Click **Review & Approve** to proceed to the final review step before restoring 
 image::review-snapshot-clone.png[Review snapshot restore details]
 
 When you have verified that the details are correct, click **Clone App** to clone the app. This launches the cloning process which will restore your app from the snapshot you selected.
-
-'''
-
-(C) 2020 NetApp, Inc. All rights reserved.
-
-— NETAPP CONFIDENTIAL —
-
-NetApp Confidential Information Subject to the Mutual Nondisclosure Agreement
-
-All information disclosed in this document is furnished in confidence by NetApp to you with the understanding that it is NetApp confidential information pursuant to the Mutual Nondisclosure Agreement between the parties and shall be treated as such by you. The information provided in this document is for exploratory purposes only and is subject to change without notice and without liability or obligation to NetApp. NetApp retains all right, title, and interest in and to all information contained in this document, all derivative works of such information and all intellectual property rights embodied therein.

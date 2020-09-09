@@ -1,6 +1,6 @@
 sidebar:
   entries:
-    - title: Astra docs
+    - title: Project Astra docs
       url: /index.html
     - section: get-started
     - section: use
@@ -14,19 +14,19 @@ homepage:
   tiles:
     - title: Get Started
       links:
-        - title: Learn about Astra
-          summary: Understand how Astra works.
+        - title: Learn about Project Astra
+          summary: Understand how Project Astra works.
           url: /someurl.html
         - title: Quick start
-          summary: Get started quickly with Astra.
+          summary: Get started quickly with Project Astra.
           url: /someurl.html
         - title: FAQ
-          summary: Read frequently asked questions about Astra.
+          summary: Read frequently asked questions about Project Astra.
           url: /someurl.html
-    - title: Use Astra
+    - title: Use Project Astra
       links:
         - title: Register applications
-          summary: Enable Astra to manage and protect your apps.
+          summary: Enable Project Astra to manage and protect your apps.
           url: /someurl.html
         - title: Back up your apps
           summary: Create recovery points for your apps in case of failure.
@@ -37,14 +37,14 @@ homepage:
     - title: Demos & tutorials
       links:
         - title: Deploy MariaDB (video)
-          summary: Deploy MariaDB from a Helm chart and register it with Astra.
+          summary: Deploy MariaDB from a Helm chart and register it with Project Astra.
         - title: Deploy MySQL (video)
-          summary: Deploy MySQL from a Helm chart and register it with Astra.
+          summary: Deploy MySQL from a Helm chart and register it with Project Astra.
         - title: Deploy Postgres
-          summary: Deploy Postgres from a Helm chart and register it with Astra.
+          summary: Deploy Postgres from a Helm chart and register it with Project Astra.
     - title: Blogs & community
       links:
         - title: The Promise of Stateful Applications in the Cloud
-          summary: How Astra provides robust storage, easy-to-consume data services, and application and data portability.
-        - title: Astra Community
+          summary: How Rroject Astra provides robust storage, easy-to-consume data services, and application and data portability.
+        - title: Project Astra Community
           summary: Connect with peers, ask questions, exchange ideas, and share best practices.

@@ -1,9 +1,17 @@
 section: solutions
 title: Solutions
 entries:
-  - title: MongoDB
-    url: /someurl.html
-  - title: MySQL/MariaDB
-    url: /someurl.html
-  - title: Postgres
-    url: /someurl.html
+   - title: MySQL/MariaDB
+     entries:
+      - title: Deploy MariaDB from Helm
+        url: /mariadb-deploy-from-helm-chart.html
+      - title: Deploy MySQL from Helm
+        url: /mysql-deploy-from-helm-chart.html
+      - title: Work With MySQL/MariaDB on Project Astra
+        url: /mysql-mariadb-work-with-project-astra.html
+   - title: Postgres
+     entries:
+      - title: Deploy Postgres from Helm
+        url: /postgres-deploy-from-helm-chart.html
+      - title: Work With Postgres on Project Astra
+        url: /postgres-work-with-project-astra.html

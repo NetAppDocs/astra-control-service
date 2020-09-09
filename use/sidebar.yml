@@ -6,12 +6,16 @@ entries:
   - title: Discover apps
     url: /someurl.html
   - title: Back up apps
-    url: /someurl.html
+    url: /backups.html
   - title: Restore from backups
     url: /someurl.html
   - title: Clone apps
-    url: /someurl.html
+    url: /clone.html
   - title: Migrate apps
     url: /someurl.html
   - title: Update clusters
     url: /someurl.html
+  - title: Manage snapshots
+    url: /snapshots.html
+  - title: Remove apps and clusters
+    url: /remove-app-and-cluster.html

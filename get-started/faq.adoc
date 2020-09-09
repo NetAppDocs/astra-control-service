@@ -1,10 +1,14 @@
 ---
 sidebar: sidebar
-permalink: faq.html
+permalink: get-started/faq.html
+keywords:
 summary: Astra FAQs
 ---
 
 = Project Astra Alpha Frequently Asked Questions
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
 
 == Overview
 
@@ -225,13 +229,3 @@ Snapshots and backups taken through Project Astra can only be managed through Pr
 The Application/Storage section of the UI available by clicking on a registered Application, shows the persistent storage as Project Astra knows it and will display for all persistent volumes regardless of where the storage lives.
 
 The Storage section of the UI available by clicking on Storage from the navigation on th eleft is a representation of all the Cloud Volumes available from the first GCP project added.  This is a mirror of what is seen from the Google Cloud Console when searching for Cloud Volumes.
-
-'''
-
-(C) 2020 NetApp, Inc. All rights reserved.
-
-— NETAPP CONFIDENTIAL —
-
-NetApp Confidential Information Subject to the Mutual Nondisclosure Agreement
-
-All information disclosed in this document is furnished in confidence by NetApp to you with the understanding that it is NetApp confidential information pursuant to the Mutual Nondisclosure Agreement between the parties and shall be treated as such by you. The information provided in this document is for exploratory purposes only and is subject to change without notice and without liability or obligation to NetApp. NetApp retains all right, title, and interest in and to all information contained in this document, all derivative works of such information and all intellectual property rights embodied therein.
