@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/postgres-work-with-project-astra.html
+permalink: solutions/postgres-work-with-project-astra.html
 keywords:
 summary: Learn how to deploy Postgres from a Helm chart
 ---

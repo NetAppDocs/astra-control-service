@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/snapshots.html
+permalink: use/snapshots.html
 keywords:
 summary: How to create a Project Astra snapshot.
 ---

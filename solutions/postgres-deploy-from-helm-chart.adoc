@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/postgres-deploy-from-helm-chart.html
+permalink: solutions/postgres-deploy-from-helm-chart.html
 keywords:
 summary: Learn how to deploy Postgres from a Helm chart
 ---

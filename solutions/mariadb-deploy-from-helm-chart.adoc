@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/mariadb-deploy-from-helm-chart.html
+permalink: solutions/mariadb-deploy-from-helm-chart.html
 keywords:
 summary: Learn how to deploy MariaDB from a Helm chart
 ---

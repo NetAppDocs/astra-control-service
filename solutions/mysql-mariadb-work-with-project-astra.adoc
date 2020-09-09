@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/mysql-mariadb-work-with-project-astra.html
+permalink: solutions/mysql-mariadb-work-with-project-astra.html
 keywords:
 summary: Learn how to deploy MySQL/MariaDB from a Helm chart
 ---

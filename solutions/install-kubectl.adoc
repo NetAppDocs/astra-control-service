@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/install-kubectl.html
+permalink: solutions/install-kubectl.html
 keywords:
 summary: Learn how to install kubectl to control a Kubernetes cluster.
 ---

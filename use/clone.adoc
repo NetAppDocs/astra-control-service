@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/clone.html
+permalink: use/clone.html
 keywords:
 summary: Learn how to use the Clone functionality
 ---

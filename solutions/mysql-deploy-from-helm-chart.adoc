@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/mysql-deploy-from-helm-chart.html
+permalink: solutions/mysql-deploy-from-helm-chart.html
 keywords:
 summary: Learn how to deploy MySQL from a Helm chart
 ---

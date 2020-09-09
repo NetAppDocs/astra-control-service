@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/remove-app-and-cluster.html
+permalink: use/remove-app-and-cluster.html
 keywords:
 summary: Learn how to remove your app and cluster to remove your assets from Project Astra
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/database-best-practices.html
+permalink: solutions/database-best-practices.html
 keywords:
 summary: Lorem ipsum dolor sic amet
 ---
