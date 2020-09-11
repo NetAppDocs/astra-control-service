@@ -13,9 +13,9 @@ sidebar:
 homepage:
   tiles:
     - title: Get Started
+      image: ./media/outline_directions_run_black_18dp.png
       links:
         - title: Learn about Project Astra
-          image: ./media/outline_directions_run_black_18dp.png
           summary: Understand how Project Astra works.
           url: /someurl.html
         - title: Quick start
