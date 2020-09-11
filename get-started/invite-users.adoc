@@ -1,11 +1,14 @@
 ---
 sidebar: sidebar
-permalink: invite-users.html
+permalink: get-started/invite-users.html
+keywords:
 summary: Invite users to an organization
 ---
 
 = Invite a User to an Organization
-:imagesdir: assets/getting-started/
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/getting-started/
 
 Learn how to invite additional users to your Project Astra alpha program organization.
 
@@ -38,13 +41,3 @@ image::invitation-pending-remove.png[Invitation Pending Remove]
 You will be prompted to type the name of the user. Then press the red *Yes, Remove User* button to complete the removal request.
 
 image::invitation-confirm-remove-user.png[Invitation Confirm Remove User]
-
-'''
-
-(C) 2020 NetApp, Inc. All rights reserved.
-
-— NETAPP CONFIDENTIAL —
-
-NetApp Confidential Information Subject to the Mutual Nondisclosure Agreement
-
-All information disclosed in this document is furnished in confidence by NetApp to you with the understanding that it is NetApp confidential information pursuant to the Mutual Nondisclosure Agreement between the parties and shall be treated as such by you. The information provided in this document is for exploratory purposes only and is subject to change without notice and without liability or obligation to NetApp. NetApp retains all right, title, and interest in and to all information contained in this document, all derivative works of such information and all intellectual property rights embodied therein.

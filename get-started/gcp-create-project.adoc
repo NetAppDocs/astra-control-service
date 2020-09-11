@@ -1,11 +1,14 @@
 ---
 sidebar: sidebar
-permalink: gcp-create-project.html
+permalink: get-started/gcp-create-project.html
+keywords:
 summary: Learn how to create a GCP project so you can use Project Astra.
 ---
 
 = Create a GCP Project
-:imagesdir: assets/gcp-credentials/
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/gcp-credentials/
 
 To use Project Astra you will need to have a GCP project created with the correct APIs enabled. If you don't already have a GCP project, follow these steps to create a new one.
 
@@ -53,13 +56,3 @@ After you create a project, you will need to create a service account. You can c
 
 * link:gcp-create-service-account-cli.html[Command Line (gcloud)]
 * link:gcp-create-service-account-browser.html[Google Cloud Console (browser)]
-
-
-'''
-
-(C) 2020 NetApp, Inc. All rights reserved.
-
-— NETAPP CONFIDENTIAL —
-
-NetApp Confidential Information Subject to the Mutual Nondisclosure Agreement
-All information disclosed in this document is furnished in confidence by NetApp to you with the understanding that it is NetApp confidential information pursuant to the Mutual Nondisclosure Agreement between the parties and shall be treated as such by you. The information provided in this document is for exploratory purposes only and is subject to change without notice and without liability or obligation to NetApp. NetApp retains all right, title, and interest in and to all information contained in this document, all derivative works of such information and all intellectual property rights embodied therein.

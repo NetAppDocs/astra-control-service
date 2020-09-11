@@ -1,10 +1,14 @@
 ---
 sidebar: sidebar
-permalink: postgres-deploy-from-helm-chart.html
+permalink: solutions/postgres-deploy-from-helm-chart.html
+keywords:
 summary: Learn how to deploy Postgres from a Helm chart
 ---
 
 = Deploy Postgres From a Helm Chart
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
 
 Learn how to exercise the Project Astra workflow by deploying Postgres from a Helm chart. After you deploy Postgres on your cluster, you can register the application with Project Astra.
 
@@ -53,16 +57,3 @@ This does the following:
 WARNING: This method of setting the password at deployment is insecure. Only use this command when setting up Postgres for a sandbox deployment to use Project Astra alpha program. We do not recommend this for a production environment.
 
 After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, it can take up to 5 minutes for applications to show up in the Discovered Applications list after being installed.
-
-
-
-'''
-
-
-(C) 2020 NetApp, Inc. All rights reserved.
-
-— NETAPP CONFIDENTIAL —
-
-NetApp Confidential Information Subject to the Mutual Nondisclosure Agreement
-
-All information disclosed in this document is furnished in confidence by NetApp to you with the understanding that it is NetApp confidential information pursuant to the Mutual Nondisclosure Agreement between the parties and shall be treated as such by you. The information provided in this document is for exploratory purposes only and is subject to change without notice and without liability or obligation to NetApp. NetApp retains all right, title, and interest in and to all information contained in this document, all derivative works of such information and all intellectual property rights embodied therein.

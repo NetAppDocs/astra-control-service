@@ -2,14 +2,14 @@ section: get-started
 title: Get started
 entries:
   - title: Learn about Astra
-    url: /someurl.html
+    url: get-started/someurl.html
   - title: Release notes
-    url: /someurl.html
+    url: get-started/someurl.html
   - title: Get started with Astra
-    url: /someurl.html
+    url: get-started/getting-started.html
   - title: Learn best practices
-    url: /someurl.html
+    url: get-started/someurl.html
   - title: FAQ
-    url: /someurl.html
+    url: get-started/faq.html
   - title: Videos
-    url: /someurl.html
+    url: get-started/someurl.html

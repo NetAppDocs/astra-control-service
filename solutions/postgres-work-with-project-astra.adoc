@@ -1,10 +1,14 @@
 ---
 sidebar: sidebar
-permalink: postgres-work-with-project-astra.html
+permalink: solutions/postgres-work-with-project-astra.html
+keywords:
 summary: Learn how to deploy Postgres from a Helm chart
 ---
 
 = Work With Postgres on Project Astra
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
 
 This guide focuses on Helm as the preferred way to deploy Postgres apps. Plain YAML and Operator-based deployments may be covered in future guides.
 
@@ -160,14 +164,3 @@ FROM generate_series(1, 10000) g_s(i);
 -- check that data looks correct
 SELECT * FROM junk LIMIT 20;
 ----
-
-
-'''
-
-(C) 2020 NetApp, Inc. All rights reserved.
-
-— NETAPP CONFIDENTIAL —
-
-NetApp Confidential Information Subject to the Mutual Nondisclosure Agreement
-
-All information disclosed in this document is furnished in confidence by NetApp to you with the understanding that it is NetApp confidential information pursuant to the Mutual Nondisclosure Agreement between the parties and shall be treated as such by you. The information provided in this document is for exploratory purposes only and is subject to change without notice and without liability or obligation to NetApp. NetApp retains all right, title, and interest in and to all information contained in this document, all derivative works of such information and all intellectual property rights embodied therein.
