@@ -15,7 +15,7 @@ entries:
         url: solutions/postgres-deploy-from-helm-chart.html
       - title: Work With Postgres on Project Astra
         url: solutions/postgres-work-with-project-astra.html
-    - title: Install Kubectl
-      url: install-kubectl.html
-    - title: Database Best Practices
-      url: database-best-practices.html
+   - title: Install Kubectl
+     url: install-kubectl.html
+   - title: Database Best Practices
+     url: database-best-practices.html
