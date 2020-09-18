@@ -2,20 +2,20 @@ section: use
 title: Use Astra
 entries:
   - title: Add clusters
-    url: use/someurl.html
+    url: coming-soon.html
   - title: Discover apps
-    url: use/someurl.html
+    url: coming-soon.html
   - title: Back up apps
-    url: use/backups.html
+    url: backups.html
   - title: Restore from backups
-    url: use/someurl.html
+    url: backups.html
   - title: Clone apps
-    url: use/clone.html
+    url: clone.html
   - title: Migrate apps
-    url: use/someurl.html
+    url: clone.html
   - title: Update clusters
-    url: use/someurl.html
+    url: coming-soon.html
   - title: Manage snapshots
-    url: use/snapshots.html
+    url: snapshots.html
   - title: Remove apps and clusters
-    url: use/remove-app-and-cluster.html
+    url: coming-soon.html
