@@ -20,41 +20,37 @@ Get started with Project Astra in a few steps.
 * A cluster must be running Kubernetes version 1.17 or later.
 * The image type for each worker node must be Ubuntu.
 
+[role="quick-margin-para"]
 link:requirements.html[Learn more].
 
 ==== image:number2.png[Number 2] Set up Google Cloud
 
 [role="quick-margin-list"]
-. Set up a Google Cloud account and project
+. Set up a Google Cloud account and project.
 . Create a service account that has the required permissions:
 ** Kubernetes Engine Admin
 ** Cloud Volumes Admin
 ** Storage Admin
 ** Service Usage Viewer
 ** Compute Network Viewer
-. Create a service account key
-. Enable APIs
-. Enable networking for Cloud Volumes Service for Google Cloud
+. Create a service account key.
+. Enable the required APIs.
+. Enable networking for Cloud Volumes Service for Google Cloud.
 
+[role="quick-margin-para"]
 link:set-up-google-cloud.html[Learn more].
 
 ==== image:number3.png[Number 3] Sign up to Cloud Central
 
 [role="quick-margin-para"]
-Sign up to Cloud Central so you can access Project Astra and NetApp’s other cloud services.
-
-link:cloud-central.html[Learn more].
+Sign up to Cloud Central so you can access Project Astra and NetApp’s other cloud services. link:cloud-central.html[Learn more].
 
 ==== image:number4.png[Number 4] Accept your Beta invitation
 
 [role="quick-margin-para"]
-After you've been accepted into the Project Astra Beta program, you'll receive an invitation to join a Project Astra account. Accept this invitation to join the account and log in to the Project Astra interface.
-
-link:invitation.html[Learn more].
+After you've been accepted into the Project Astra Beta program, you'll receive an invitation to join a Project Astra account. Accept this invitation to join the account and log in to the Project Astra interface. link:invitation.html[Learn more].
 
 ==== image:number5.png[Number 5] Add your first cluster
 
 [role="quick-margin-para"]
-After you log in, click *Add a Kubernetes Cluster* to start managing your first cluster with Project Astra.
-
-link:add-first-cluster.html[Learn more].
+After you log in, click *Add a Kubernetes Cluster* to start managing your first cluster with Project Astra. link:add-first-cluster.html[Learn more].
