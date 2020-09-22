@@ -26,24 +26,24 @@ homepage:
       links:
         - title: Register applications
           summary: Start managing your apps from Project Astra.
-          url: ../use/manage-apps.html
+          url: /use/manage-apps.html
         - title: Protect your apps
           summary: Create recovery points for your apps in case of failure.
-          url: ../use/protect-apps.html
+          url: /use/protect-apps.html
         - title: Migrate an app
           summary: Migrate an app to another cluster.
-          url: ../use/coming-soon.html
+          url: /use/coming-soon.html
     - title: Demos & tutorials
       links:
         - title: Project Astra videos
           summary: Watch videos that show how to use Project Astra.
-          url: ./get-started/videos.html
+          url: /get-started/videos.html
         - title: Deploy MariaDB
           summary: Deploy MariaDB from a Helm chart and register it with Project Astra.
-          url: ./solutions/mariadb-deploy-from-helm-chart.html
+          url: /solutions/mariadb-deploy-from-helm-chart.html
         - title: Deploy MySQL
           summary: Deploy MySQL from a Helm chart and register it with Project Astra.
-          url: ./solutions/mysql-deploy-from-helm-chart.html
+          url: /solutions/mysql-deploy-from-helm-chart.html
     - title: Blogs & community
       links:
         - title: Project Astra - Stateful Lessons for a Multi-Cloud World
