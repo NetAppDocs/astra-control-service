@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/set-up-google-cloud.html
+permalink: get-started/quick-start.html
 keywords: get started, quick start
 summary: Get started with Project Astra in a few steps.
 ---
