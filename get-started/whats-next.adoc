@@ -12,6 +12,8 @@ summary: Now that you’ve logged in and added your first cluster to Project Ast
 
 Now that you’ve logged in and added your first cluster to Project Astra, you're ready to start using Project Astra's application data management features.
 
+(These links aren't working right now. They'll point to the pages in the Use Project Astra section.)
+
 * link:/use/manage-apps.html[Start managing apps]
 * link:/use/protect-apps.html[Protect apps]
 * link:/use/clone-apps.html[Clone apps]
