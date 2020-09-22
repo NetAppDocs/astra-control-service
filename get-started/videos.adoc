@@ -12,7 +12,7 @@ summary: Many of the pages on this doc site include videos that show how to comp
 
 Many of the pages on this doc site include videos that show how to complete a task for Project Astra. If you're just interested in videos, we've made it easier for you by collecting all of the videos on this single page (kind of like a playlist).
 
-=== Videos for setting up Google Cloud
+== Videos for setting up Google Cloud
 
 The following videos show how to complete set up requirements in Google Cloud before you can discover Kubernetes clusters running in GCP.
 
@@ -40,13 +40,13 @@ TIP: link:set-up-google-cloud.html#Enable-APIs-in-your-Google-Cloud-project[Clic
 
 The following videos show how to complete a few common tasks using Project Astra.
 
-== coming soon
+=== coming soon
 
 <description>
 
 <embedded video>
 
-== coming soon
+=== coming soon
 
 <description>
 

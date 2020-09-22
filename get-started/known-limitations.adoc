@@ -16,19 +16,13 @@ Known limitations identify platforms, devices, or functions that are not support
 
 You can have up to 100 volumes per Google Cloud region. If you reach this limit, creation of new clones or volumes will fail.
 
-== Snapshot limit
-
-You can have up to 255 snapshots for CVS-PO and up to 16 backups for CVS-SO.
-
-(This terminology isn't user friendly. I have a question out to Hadrian.)
-
 == Unhealthy pods affect app management
 
 If a managed app has pods in an unhealthy state, Project Astra can't create new backups and clones.
 
 == Trident isn't uninstalled from a cluster
 
-When you unmanage a cluster from Project Astra, Trident isn't uninstalled from the cluster. If you want to uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
+When you unmanage a cluster from Project Astra, Trident isn't uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
 
 == Existing connections to a Postgres pod causes failures
 

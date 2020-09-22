@@ -16,10 +16,6 @@ A few steps are required to prepare your Google Cloud project before you can man
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-The following image depicts the steps that you'll need to complete.
-
-image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud project, a service account with IAM roles and a key, enabled APIs, and private service access to Cloud Volumes Service for Google Cloud.]
-
 ==== image:number1.png[Number 1] Set up a Google Cloud account and project
 
 [role="quick-margin-para"]
@@ -62,6 +58,10 @@ https://cloud.google.com/endpoints/docs/openapi/enable-api[Enable the following 
 [role="quick-margin-para"]
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[Set up private service access^] for https://cloud.google.com/netapp[Cloud Volumes Service for Google Cloud^].
 
+The following image depicts the steps that you'll need to complete.
+
+image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud project, a service account with IAM roles and a key, enabled APIs, and private service access to Cloud Volumes Service for Google Cloud.]
+
 == Create a service account that has the required permissions
 
 Project Astra uses a Google Cloud service account to facilitate Kubernetes application data management on your behalf.
@@ -70,27 +70,17 @@ Project Astra uses a Google Cloud service account to facilitate Kubernetes appli
 
 . Go to Google Cloud and https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[create a service account by using the console, gcloud command, or another preferred method^].
 
-. Grant the service account with the following roles:
+. Grant the service account the following roles:
 +
-* Kubernetes Engine Admin
-+
-To list clusters and create admin access to manage apps.
+* *Kubernetes Engine Admin* - Used to list clusters and create admin access to manage apps.
 
-* Cloud Volumes Admin
-+
-To manage persistent storage for apps.
+* *Cloud Volumes Admin* - Used to manage persistent storage for apps.
 
-* Cloud Storage Admin
-+
-To manage buckets and objects for backups of apps.
+* *Cloud Storage Admin* - Used to manage buckets and objects for backups of apps.
 
-* Service Usage Viewer
-+
-To check if the required Cloud Volumes Service for Google Cloud APIs are enabled.
+* *Service Usage Viewer* - Used to check if the required Cloud Volumes Service for Google Cloud APIs are enabled.
 
-* Compute Network Viewer
-+
-To check if the Kubernetes VPC is allowed to reach Cloud Volumes Service for Google Cloud.
+* *Compute Network Viewer* - Used to check if the Kubernetes VPC is allowed to reach Cloud Volumes Service for Google Cloud.
 
 The following video shows how to create the service account from the Google Cloud console.
 
@@ -131,7 +121,7 @@ Your project needs permissions to access specific Google Cloud APIs. APIs are us
 * Service Networking API
 * Service Management API
 +
-The last two APIs are required specifically for Cloud Volumes Service for Google Cloud.
+The last two APIs are required for Cloud Volumes Service for Google Cloud.
 
 The following video shows how to enable the APIs from the Google Cloud console.
 
@@ -140,5 +130,7 @@ video::video-enable-gcp-apis.mp4[width=848, height=480]
 == Enable private service access to Cloud Volumes Service for Google Cloud
 
 Project Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. Other than the APIs that you enabled in the previous step, the only other requirement is to enable private service access to Cloud Volumes Service.
+
+.Step
 
 . Set up private service access from your project to create a high-throughput and low-latency data-path connection, https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[as described in the Cloud Volumes Service for Google Cloud documentation^].

@@ -12,9 +12,11 @@ summary: Now that you’ve logged in and added your first cluster to Project Ast
 
 Now that you’ve logged in and added your first cluster to Project Astra, you're ready to start using Project Astra's application data management features.
 
-* link:manage-apps.html[Start managing apps]
-* link:protect-apps.html[Protect apps]
-* link:clone-apps.html[Clone apps]
-* link:manage-users.html[Invite and manage users]
-* link:manage-credentials.html[Manage cloud provider credentials]
-* link:manage-notifications.html[Manage notifications]
+(These links aren't working right now. They'll point to the pages in the Use Project Astra section.)
+
+* link:/use/manage-apps.html[Start managing apps]
+* link:/use/protect-apps.html[Protect apps]
+* link:/use/clone-apps.html[Clone apps]
+* link:/use/manage-users.html[Invite and manage users]
+* link:/use/manage-credentials.html[Manage cloud provider credentials]
+* link:/use/manage-notifications.html[Manage notifications]
