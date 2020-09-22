@@ -6,13 +6,13 @@ entries:
   - title: Release notes
     entries:
       - title: Known issues
-        url: known-issues.html
+        url: ./get-started/known-issues.html
       - title: Known limitations
-        url: known-limitations.html
+        url: /get-started/known-limitations.html
   - title: Get started with Project Astra
     entries:
       - title: Quick start
-        url: quick-start.html
+        url: get-started/quick-start.html
       - title: Cluster and app requirements
         url: requirements.html
       - title: Set up Google Cloud
