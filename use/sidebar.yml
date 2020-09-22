@@ -6,18 +6,18 @@ entries:
   - title: Protect and manage apps
     entries:
       - title: Start managing apps
-        url: manage-apps.html
+        url: /use/manage-apps.html
       - title: Protect apps
-        url: protect-apps.html
+        url: /use/protect-apps.html
       - title: Clone apps
-        url: clone-apps.html
+        url: /use/clone-apps.html
       - title: Stop managing an app
-        url: unmanage-apps.html
+        url: /use/unmanage-apps.html
   - title: Manage your account
     entries:
       - title: Invite and manage users
-        url: manage-users.html
+        url: /use/manage-users.html
       - title: Manage cloud provider credentials
-        url: manage-credentials.html
+        url: /use/manage-credentials.html
       - title: Manage notifications
-        url: manage-notifications.html
+        url: /use/manage-notifications.html
