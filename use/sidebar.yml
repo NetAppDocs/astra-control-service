@@ -1,23 +1,23 @@
 section: use
 title: Use Astra
 entries:
-  - title: Add and manage clusters (add clusters, view details about a cluster, stop managing a cluster)
-    url: use/manage-clusters.html
+  - title: Add and manage clusters
+    url: manage-clusters.html
   - title: Protect and manage apps
     entries:
       - title: Start managing apps
-        url: use/manage-apps.html
+        url: manage-apps.html
       - title: Protect apps
-        url: use/protect-apps.html
+        url: protect-apps.html
       - title: Clone apps
-        url: use/clone-apps.html
+        url: clone-apps.html
       - title: Stop managing an app
-        url: use/unmanage-apps.html
+        url: unmanage-apps.html
   - title: Manage your account
     entries:
       - title: Invite and manage users
-        url: /use/manage-users.html
+        url: manage-users.html
       - title: Manage cloud provider credentials
-        url: /use/manage-credentials.html
+        url: manage-credentials.html
       - title: Manage notifications
-        url: /use/manage-notifications.html
+        url: manage-notifications.html

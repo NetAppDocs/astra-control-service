@@ -4,14 +4,14 @@ entries:
    - title: MySQL/MariaDB
      entries:
       - title: Deploy MariaDB from Helm
-        url: solutions/mariadb-deploy-from-helm-chart.html
+        url: mariadb-deploy-from-helm-chart.html
       - title: Deploy MySQL from Helm
-        url: solutions/mysql-deploy-from-helm-chart.html
+        url: mysql-deploy-from-helm-chart.html
       - title: Work With MySQL/MariaDB on Project Astra
-        url: solutions/mysql-mariadb-work-with-project-astra.html
+        url: mysql-mariadb-work-with-project-astra.html
    - title: Postgres
      entries:
       - title: Deploy Postgres from Helm
-        url: solutions/postgres-deploy-from-helm-chart.html
+        url: postgres-deploy-from-helm-chart.html
       - title: Work With Postgres on Project Astra
-        url: solutions/postgres-work-with-project-astra.html
+        url: postgres-work-with-project-astra.html
