@@ -2,8 +2,8 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-lead: Learn how to use Project Astra to backup and restore your data or migrate your applications from one Kubernetes cluster to another in a multi-cloud environment.
-summary: Welcome to the documentation portal for Project Astra (Alpha).
+lead: Project Astra is a Kubernetes application data lifecycle management service that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
+summary: Project Astra is a Kubernetes application data lifecycle management service that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
 ---
 
 = Project Astra Documentation

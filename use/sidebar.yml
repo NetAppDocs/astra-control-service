@@ -1,21 +1,23 @@
 section: use
 title: Use Astra
 entries:
-  - title: Add clusters
-    url: coming-soon.html
-  - title: Discover apps
-    url: coming-soon.html
-  - title: Back up apps
-    url: backups.html
-  - title: Restore from backups
-    url: backups.html
-  - title: Clone apps
-    url: clone.html
-  - title: Migrate apps
-    url: clone.html
-  - title: Update clusters
-    url: coming-soon.html
-  - title: Manage snapshots
-    url: snapshots.html
-  - title: Remove apps and clusters
-    url: coming-soon.html
+  - title: Add and manage clusters
+    url: use/manage-clusters.html
+  - title: Protect and manage apps
+    entries:
+      - title: Start managing apps
+        url: use/manage-apps.html
+      - title: Protect apps
+        url: use/protect-apps.html
+      - title: Clone apps
+        url: use/clone-apps.html
+      - title: Stop managing an app
+        url: use/unmanage-apps.html
+  - title: Manage your account
+    entries:
+      - title: Invite and manage users
+        url: /use/manage-users.html
+      - title: Manage cloud provider credentials
+        url: /use/manage-credentials.html
+      - title: Manage notifications
+        url: /use/manage-notifications.html
