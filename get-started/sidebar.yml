@@ -2,30 +2,30 @@ section: get-started
 title: Get started
 entries:
   - title: Intro to Project Astra
-    url: intro.html
+    url: /get-started/intro.html
   - title: Release notes
     entries:
       - title: Known issues
-        url: ./get-started/known-issues.html
+        url: /get-started/known-issues.html
       - title: Known limitations
         url: /get-started/known-limitations.html
   - title: Get started with Project Astra
     entries:
       - title: Quick start
-        url: get-started/quick-start.html
+        url: /get-started/quick-start.html
       - title: Cluster and app requirements
-        url: requirements.html
+        url: /get-started/requirements.html
       - title: Set up Google Cloud
-        url: set-up-google-cloud.html
+        url: /get-started/set-up-google-cloud.html
       - title: Sign up to Cloud Central
-        url: cloud-central.html
+        url: /get-started/cloud-central.html
       - title: Accept your Beta invitation
-        url: invitation.html
+        url: /get-started/invitation.html
       - title: Add your first cluster
-        url: add-first-cluster.html
+        url: /get-started/add-first-cluster.html
       - title: What's next?
-        url: whats-next.html
+        url: /get-started/whats-next.html
   - title: Videos
-    url: videos.html
+    url: /get-started/videos.html
   - title: FAQ
-    url: faq.html
+    url: /get-started/faq.html
