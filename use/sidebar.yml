@@ -1,7 +1,7 @@
 section: use
 title: Use Astra
 entries:
-  - title: Add and manage clusters (add clusters, view details about a cluster, stop managing a cluster)
+  - title: Add and manage clusters
     url: use/manage-clusters.html
   - title: Protect and manage apps
     entries:
