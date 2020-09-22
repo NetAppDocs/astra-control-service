@@ -15,24 +15,24 @@ homepage:
       links:
         - title: Learn about Project Astra
           summary: Understand how Project Astra works.
-          url: ./get-started/intro.html
+          url: /get-started/intro.html
         - title: Quick start
           summary: Get started quickly with Project Astra.
-          url: ./get-started/quick-start.html
+          url: /get-started/quick-start.html
         - title: FAQ
           summary: Read frequently asked questions.
-          url: ./get-started/faq.html
+          url: /get-started/faq.html
     - title: Use Project Astra
       links:
         - title: Register applications
           summary: Start managing your apps from Project Astra.
-          url: ./use/manage-apps.html
+          url: ../use/manage-apps.html
         - title: Protect your apps
           summary: Create recovery points for your apps in case of failure.
-          url: ./use/protect-apps.html
+          url: ../use/protect-apps.html
         - title: Migrate an app
           summary: Migrate an app to another cluster.
-          url: /coming-soon.html
+          url: ../use/coming-soon.html
     - title: Demos & tutorials
       links:
         - title: Project Astra videos
