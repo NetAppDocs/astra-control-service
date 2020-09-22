@@ -1,0 +1,35 @@
+---
+sidebar: sidebar
+permalink: use/unmanage-apps.html
+keywords: unmanage app, remove app, stop managing app
+summary: Stop managing apps that you no longer want to back up, snapshot, or clone from Project Astra.
+---
+
+= Stop managing an app
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+Stop managing apps that you no longer want to back up, snapshot, or clone from Project Astra.
+
+.About this task
+
+* This action stops your app from being managed by Project Astra. It doesn't remove the app from your cluster.
+
+* Existing backups and snapshots aren't deleted, but data management operations aren't available from Project Astra.
+
+* If you remove an app from your cluster, Project Astra will identify that it was removed, but the app remains in a managed state. That means you can still clone the app from a backup until you explicitly unmanage the app.
+
+.Steps
+
+. Click *Apps*.
+
+. Click the checkbox for the apps that you no longer want to manage.
+
+. Click the *Actions* drop-down and select *Unmanage application/s*.
+
+. Confirm that you want to unmanage the apps by typing the app name and then click *Yes, Unmanage Apps*.
+
+.Result
+
+Project Astra stops managing the app.

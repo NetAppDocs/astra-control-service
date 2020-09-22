@@ -1,0 +1,53 @@
+---
+sidebar: sidebar
+permalink: get-started/videos.html
+keywords: videos, project astra videos
+summary: Many of the pages on this doc site include videos that show how to complete a task using Project Astra. If you're just interested in videos, we've made it easier for you by collecting all of the videos on this single page (kind of like a playlist).
+---
+
+= Project Astra videos
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+Many of the pages on this doc site include videos that show how to complete a task for Project Astra. If you're just interested in videos, we've made it easier for you by collecting all of the videos on this single page (kind of like a playlist).
+
+=== Videos for setting up Google Cloud
+
+The following videos show how to complete set up requirements in Google Cloud before you can discover Kubernetes clusters running in GCP.
+
+=== Create a service account
+
+Project Astra uses a Google Cloud service account to facilitate Kubernetes application data management on your behalf. The following video shows how to create the service account from the Google Cloud console.
+
+video::video-create-gcp-service-account.mp4[width=848, height=480]
+
+=== Create a service account key
+
+Project Astra uses a service account key to establish the identity of the service account that you just set up. The following video shows how to create the service account key from the Google Cloud console.
+
+video::video-create-gcp-service-account-key.mp4[width=848, height=480]
+
+=== Enable APIs
+
+Your project needs permissions to access specific Google Cloud APIs. The following video shows how to enable the APIs from the Google Cloud console.
+
+video::video-enable-gcp-apis.mp4[width=848, height=480]
+
+TIP: link:set-up-google-cloud.html#Enable-APIs-in-your-Google-Cloud-project[Click here to view the full list of required APIs].
+
+== Videos for using Project Astra
+
+The following videos show how to complete a few common tasks using Project Astra.
+
+== coming soon
+
+<description>
+
+<embedded video>
+
+== coming soon
+
+<description>
+
+<embedded video>

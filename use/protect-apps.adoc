@@ -1,0 +1,153 @@
+---
+sidebar: sidebar
+permalink: use/protect-apps.html
+keywords:
+summary:
+---
+
+= Protect apps with snapshots and backups
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+<intro coming soon>
+
+== Overview of snapshots and backups
+
+<overview coming soon>
+
+== Configure a protection policy
+
+Configure a protection policy to protect an app by creating snapshots, backups, or both at a defined schedule and with a specified number of copies to retain.
+
+.Steps
+
+. Click *Apps* and then click the name of an app.
+
+. Click *Data Protection*.
+
+. Click *Configure Protection Policy*.
++
+image:screenshot-configure-protection-policy.gif[A screenshot of the Data protection tab for an app which enables you to configure a protection policy.]
+
+. Define a protection schedule by choosing the number of snapshots and backups to keep hourly, daily, weekly, and monthly.
++
+You can define the hourly, daily, weekly, and monthly schedules concurrently. A schedule won't turn active until you set a retention level.
++
+The following sample policy sets a schedule to take snapshots daily and weekly, while retaining the last 14 hourly snapshots and the last 26 weekly snapshots. It also takes backups and retains the last 12 copies. Because 0 copies were selected for hourly, no hourly snapshots or backups are taken.
++
+image:screenshot-protection-policy.gif["A screenshot of a sample configuration policy where you can choose to take snapshots and backups on an hourly, daily, weekly, or monthly basis."]
+
+. Click *Review Information*.
+
+. Click *Set Protection Policy.*
+
+.Result
+
+Project Astra implements the data protection policy by creating and retaining snapshots and backups using the schedule and retention policy that you defined.
+
+== Create a snapshot
+
+You can create an on-demand snapshot at any time.
+
+.Steps
+
+. Click *Apps*.
+
+. Click the drop-down list in the *Action* column for the desired app.
+
+. Click *Snapshot*.
++
+image:screenshot-create-snapshot.gif["A screenshot of the app page where you can click the drop-down list in the actions column and select Snapshot."]
+
+. Customize the name of the snapshot and then click *Review Information*.
+
+. Review the snapshot summary and click *Snapshot App*.
+
+.Result
+
+Project Astra creates a snapshot of the app.
+
+== Create a backup
+
+You can also back up an app at any time.
+
+.Steps
+
+. Click *Apps*.
+
+. Click the drop-down list in the *Action* column for the desired app.
+
+. Click *Backup*.
++
+image:screenshot-create-backup.gif["A screenshot of the app page where you can click the drop-down list in the actions column and select Backup."]
+
+. Customize the name of the backup, choose whether to clone from an existing snapshot, and then click *Review Information*.
+
+. Review the backup summary and click *Backup App*.
+
+.Result
+
+Project Astra creates a backup of the app.
+
+== View snapshots and backups
+
+You can view the snapshots and backups of an app from the Data Protection tab.
+
+.Steps
+
+. Click *Apps* and then click the name of an app.
+
+. Click *Data Protection*.
++
+The snapshots display by default.
++
+image:screenshot-snapshots.gif[A screenshot of the data protection tab for an app where you can view the list of the current snapshots and backups.]
+
+. Click *Backups* to see the list of backups.
+
+== Delete snapshots
+
+Delete the scheduled or on-demand snapshots that you no longer need.
+
+.Steps
+
+. Click *Apps* and then click the name of an app.
+
+. Click *Data Protection*.
+
+. Click the drop-down list in the *Actions* column for the desired snapshot.
+
+. Click *Delete*.
++
+image:screenshot-delete-snapshot.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
+
+. Type the name of the snapshot to confirm deletion and then click *Yes, Delete snapshot*.
+
+.Result
+
+Project Astra deletes the snapshot.
+
+== Delete backups
+
+Delete the scheduled or on-demand backups that you no longer need.
+
+. Click *Apps* and then click the name of an app.
+
+. Click *Data Protection*.
+
+. Click *Backups*.
++
+image:screenshot-data-protection-backups.gif[A screenshot of the Backups option that's available in the far right of the data protection tab.]
+
+. Click the drop-down list in the *Actions* column for the desired backup.
+
+. Click *Delete*.
++
+image:screenshot-delete-backup.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
+
+. Type the name of the backup to confirm deletion and then click *Yes, Delete backup*.
+
+.Result
+
+Project Astra deletes the backup.

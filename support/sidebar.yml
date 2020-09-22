@@ -6,6 +6,6 @@ entries:
   - title: Register for support
     url: /someurl.html
   - title: Troubleshoot issues
-    url: /someurl.html
+    url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra
   - title: Contact support
     url: /someurl.html

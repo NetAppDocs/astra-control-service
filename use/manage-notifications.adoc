@@ -1,0 +1,31 @@
+---
+sidebar: sidebar
+permalink: use/manage-notifications.html
+keywords: notifications, delete notifications, mark notifications as read
+summary: Project Astra notifies you when actions have completed or failed. For example, you'll see a notification if a backup of an app completed successfully.
+---
+
+= View and manage notifications
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+Project Astra notifies you when actions have completed or failed. For example, you'll see a notification if a backup of an app completed successfully.
+
+The number of unread notifications is available in the top right of the interface:
+
+image:screenshot-unread-notifications.gif[A screenshot that shows the Project Astra interface where you can view the number of unread notifications.]
+
+You can view these notifications and mark them as read (this can come in handy if you like to clear unread notifications like we do.)
+
+.Steps
+
+. Click the number of unread notifications in the top right.
++
+image:screenshot-expand-notifications.gif[A screenshot that shows the expanded notifications in the Project Astra interface.]
+
+. Review the notifications and then click *Mark as read* or *Show all notifications*.
++
+If you clicked *Show all notifications*, the Notifications page loads.
+
+. On the *Notifications* page, view the notifications, select the ones that you want to mark as read, click *Action* and select *Mark as read*.
