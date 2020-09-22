@@ -26,7 +26,7 @@ If you delete a backup that's used for an active clone operation, the clone fail
 
 == Clusters don't get removed immediately
 
-When removing a cluster, the Project Astra interface continues to show the removed cluster for 60 seconds until it vanishes.
+When removing a cluster, the Project Astra interface continues to show the removed cluster for 60 seconds until it's removed.
 
 == Credentials invalidated after upgrade to GKE master nodes
 
