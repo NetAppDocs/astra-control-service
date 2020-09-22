@@ -15,20 +15,24 @@ After you log in to Project Astra, your first step is to add a Kubernetes cluste
 .Steps
 
 . On the Dashboard, click *Add a Kubernetes Cluster*.
++
+Follow the prompts to add the cluster.
 
-. *Step 1: Provider*: Provide the service account key file either by uploading the file or by pasting the contents from your clipboard.
+. *Provider*: Provide the service account key file either by uploading the file or by pasting the contents from your clipboard.
 +
 image:screenshot-compute-select-credentials.gif[]
 +
 Project Astra uses the service account to discover the clusters running in the Google Kubernetes Engine projects that are associated with the service account.
 
-. *Step 2: Compute*: Select the cluster that you'd like to add and click *Configure storage*.
+. *Compute*: Select the cluster that you'd like to add and click *Configure storage*.
++
+Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify the cluster doesn't have a worker node.
 
-. *Step 3: Storage*: Select the default storage class that you'd like to use with this cluster and click *Review information*.
+. *Storage*: Select the default storage class that you'd like to use with this cluster and click *Review information*.
 +
 Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^].
 
-. *Step 4: Review & Approve*: Review the configuration details and click *Add compute*.
+. *Review & Approve*: Review the configuration details and click *Add compute*.
 +
 image:screenshot-compute-approve.gif[]
 
