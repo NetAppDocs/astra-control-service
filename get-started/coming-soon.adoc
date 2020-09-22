@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: coming-soon.html
+permalink: get-started/coming-soon.html
 keywords:
 summary: Lorem ipsum dolor sit amet
 ---
