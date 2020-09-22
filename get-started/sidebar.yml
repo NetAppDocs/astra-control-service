@@ -2,7 +2,7 @@ section: get-started
 title: Get started
 entries:
   - title: Intro to Project Astra
-    url: get-started/intro.html
+    url: intro.html
   - title: Release notes
     entries:
       - title: Known issues
@@ -26,6 +26,6 @@ entries:
       - title: What's next?
         url: /get-started/whats-next.html
   - title: Videos
-    url: get-started/videos.html
+    url: videos.html
   - title: FAQ
-    url: get-started/faq.html
+    url: faq.html
