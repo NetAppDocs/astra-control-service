@@ -131,4 +131,6 @@ video::video-enable-gcp-apis.mp4[width=848, height=480]
 
 Project Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. Other than the APIs that you enabled in the previous step, the only other requirement is to enable private service access to Cloud Volumes Service.
 
+.Step
+
 . Set up private service access from your project to create a high-throughput and low-latency data-path connection, https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[as described in the Cloud Volumes Service for Google Cloud documentation^].

@@ -34,8 +34,8 @@ link:requirements.html[Learn more].
 ** Service Usage Viewer
 ** Compute Network Viewer
 . Create a service account key.
-. Enable the required APIs.
-. Enable networking for Cloud Volumes Service for Google Cloud.
+. link:set-up-google-cloud.html#enable-apis-in-your-google-cloud-project[Enable the required APIs].
+. https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[Enable networking for Cloud Volumes Service for Google Cloud^].
 
 [role="quick-margin-para"]
 link:set-up-google-cloud.html[Learn more].
