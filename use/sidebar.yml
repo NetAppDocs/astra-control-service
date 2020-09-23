@@ -14,7 +14,7 @@ entries:
   - title: View app and cluster health
     entries:
       - title: Dashboard summary
-        url: /use/dashboard.html
+        url: /use/view-dashboard.html
       - title: Cluster health and details
         url: /use/view-clusters.html
       - title: App health and details
