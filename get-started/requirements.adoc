@@ -5,12 +5,12 @@ keywords: kubernetes cluster, cluster requirements, version requirements, suppor
 summary: Get started by verifying support for your Kubernetes clusters and apps.
 ---
 
-= Kubernetes cluster and app requirements
+= Requirements
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
-Get started by verifying support for your Kubernetes clusters and apps.
+Get started by verifying support for your Kubernetes clusters, apps, and web browser.
 
 == Supported Kubernetes clusters
 
@@ -30,6 +30,10 @@ On-prem Kubernetes clusters and clusters running in other cloud providers are no
 
 Project Astra supports all applications running on your Kubernetes clusters.
 
-NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups. link:/learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
+NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
 No matter which type of app that you use with Project Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
+
+== Supported web browsers
+
+Project Astra supports recent versions of Firefox, Safari, and Chrome with a minimum resolution of 1280x720.
