@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: use/protect-apps.html
-keywords:
-summary:
+keywords: backup, back up, backup apps, back up apps, snapshots, snapshot an app, take a snapshot, take a backup, view backups, view snapshots, set policy, set schedule, schedule backups, schedule snapshots
+summary: Protect your apps by taking snapshots and backups using an automated protection policy or on an ad-hoc basis.
 ---
 
 = Protect apps with snapshots and backups
@@ -10,11 +10,11 @@ summary:
 :icons: font
 :imagesdir: ../media/use/
 
-<intro coming soon>
+Protect your apps by taking snapshots and backups using an automated protection policy or on an ad-hoc basis.
 
 == Overview of snapshots and backups
 
-<overview coming soon>
+<short comparison coming soon with a link to more information in the learn section>
 
 == Configure a protection policy
 
@@ -82,7 +82,7 @@ You can also back up an app at any time.
 +
 image:screenshot-create-backup.gif["A screenshot of the app page where you can click the drop-down list in the actions column and select Backup."]
 
-. Customize the name of the backup, choose whether to clone from an existing snapshot, and then click *Review Information*.
+. Customize the name of the backup, choose whether to back up the app from an existing snapshot, and then click *Review Information*.
 
 . Review the backup summary and click *Backup App*.
 
