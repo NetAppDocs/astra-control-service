@@ -10,6 +10,7 @@ summary: Clone an existing app to create a duplicate app on the same Kubernetes 
 :icons: font
 :imagesdir: ../media/use/
 
+[.lead]
 Clone an existing app to create a duplicate app on the same Kubernetes cluster or on another cluster. Cloning can help if you need to move applications and storage from one Kubernetes cluster to another. For example, you might want to move workloads through a CI/CD pipeline and across Kubernetes namespaces.
 
 When Project Astra clones an app, it creates a clone of your application configuration and persistent storage.

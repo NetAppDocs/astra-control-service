@@ -10,6 +10,7 @@ summary: Click Dashboard to see a high-level view of your apps, clusters, and th
 :icons: font
 :imagesdir: ../media/use/
 
+[.lead]
 Click *Dashboard* to see a high-level view of your apps, clusters, and their health.
 
 image:screenshot-dashboard.gif[]

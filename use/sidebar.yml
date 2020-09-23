@@ -7,10 +7,10 @@ entries:
         url: /use/manage-apps.html
       - title: Protect apps
         url: /use/protect-apps.html
-      - title: Clone and migrate apps
-        url: /use/clone-apps.html
       - title: Restore apps
         url: /use/restore-apps.html
+      - title: Clone and migrate apps
+        url: /use/clone-apps.html
   - title: View app and cluster health
     entries:
       - title: Dashboard summary

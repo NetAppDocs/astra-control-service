@@ -12,7 +12,7 @@ summary: Protect your apps by taking snapshots and backups using an automated pr
 
 Protect your apps by taking snapshots and backups using an automated protection policy or on an ad-hoc basis.
 
-== Overview of snapshots and backups
+== Snapshots and backups
 
 <short comparison coming soon with a link to more information in the learn section>
 

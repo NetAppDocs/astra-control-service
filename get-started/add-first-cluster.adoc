@@ -10,6 +10,7 @@ summary: After you log in to Project Astra, your first step is to add a Kubernet
 :icons: font
 :imagesdir: ../media/get-started/
 
+[.lead]
 After you log in to Project Astra, your first step is to add a Kubernetes cluster.
 
 .Steps
@@ -38,7 +39,7 @@ image:screenshot-compute-approve.gif[]
 
 The following video shows how to add a cluster.
 
-<video coming soon>
+video::video-manage-cluster.mp4[width=848, height=480]
 
 .Result
 

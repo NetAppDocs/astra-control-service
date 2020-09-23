@@ -5,11 +5,12 @@ keywords: view cluster, cluster storage, cluster overview
 summary: After you add a cluster to Project Astra, you can view details about the cluster, such as its location, the worker nodes, persistent volumes, and storage classes.
 ---
 
-= View details about a cluster
+= View the health and details of a cluster
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/use/
 
+[.lead]
 After you add a cluster to Project Astra, you can view details about the cluster, such as its location, the worker nodes, persistent volumes, and storage classes.
 
 .Steps

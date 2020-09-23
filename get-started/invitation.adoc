@@ -10,6 +10,7 @@ summary: After you've been accepted into the Project Astra Beta program, you'll 
 :icons: font
 :imagesdir: ../media/get-started/
 
+[.lead]
 After you've been accepted into the Project Astra Beta program, you'll receive an invitation to join a Project Astra account. Accept this invitation to gain access to the Project Astra interface.
 
 .Steps
