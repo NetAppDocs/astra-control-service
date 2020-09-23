@@ -1,0 +1,81 @@
+---
+sidebar: sidebar
+permalink: use/unmanage-apps.html
+keywords: unmanage app, remove app, stop managing app
+summary: Remove any apps or clusters that you no longer want to manage from Project Astra.
+---
+
+= Unmanage apps and clusters
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+Remove any apps or clusters that you no longer want to manage from Project Astra.
+
+== Stop managing an app
+
+Stop managing apps that you no longer want to back up, snapshot, or clone from Project Astra.
+
+.About this task
+
+* This action stops your app from being managed by Project Astra. It doesn't remove the app from your cluster.
+
+* Existing backups and snapshots aren't deleted, but data management operations aren't available from Project Astra.
+
+* If you remove an app from your cluster, Project Astra will identify that it was removed, but the app remains in a managed state. That means you can still clone the app from a backup until you explicitly unmanage the app.
+
+.Steps
+
+. Click *Apps*.
+
+. Click the checkbox for the apps that you no longer want to manage.
+
+. Click the *Actions* drop-down and select *Unmanage application/s*.
+
+. Confirm that you want to unmanage the apps and then click *Yes, Unmanage Apps*.
+
+.Result
+
+Project Astra stops managing the app.
+
+== Stop managing clusters
+
+Stop managing the clusters that you no longer want to manage from Project Astra.
+
+.About this task
+
+* This action stops your cluster from being managed by Project Astra. It doesn't make any changes to the cluster's configuration and it doesn't delete the cluster.
++
+Trident won't be uninstalled from the cluster.
+
+* Apps associated with this cluster will no longer be managed and will go into a Detached state.
+
+* Any snapshots or backups associated with applications on the cluster aren't deleted, but data management operations aren't available from Project Astra.
+
+.Steps
+
+. Delete any snapshots or backups and stop managing the cluster's applications before removing the cluster.
++
+link:protect-apps.html[Protect apps with snapshots and backups]
+
+. Click *Compute*.
+
+. Click the checkbox for the clusters that you no longer want to manage.
+
+. Click the *Actions* drop-down and select *Unmanage cluster/s*.
+
+. Confirm that you want to unmanage the clusters and then click *Yes, Unmanage Compute*.
+
+.Result
+
+Project Astra stops managing the cluster.
+
+== Cleaning up after the Beta
+
+A few things remain after you've removed apps and clusters from Project Astra:
+
+* The object store that was created in your Google Cloud account
+* The Admin role that was installed on each managed Kubernetes cluster
+* The service account that you created
+
+You'll need to manually remove these.

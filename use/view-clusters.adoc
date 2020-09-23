@@ -1,0 +1,26 @@
+---
+sidebar: sidebar
+permalink: use/manage-clusters.html
+keywords: view cluster, cluster storage, cluster overview
+summary: After you add a cluster to Project Astra, you can view details about the cluster, such as its location, the worker nodes, persistent volumes, and storage classes.
+---
+
+= View details about a cluster
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+After you add a cluster to Project Astra, you can view details about the cluster, such as its location, the worker nodes, persistent volumes, and storage classes.
+
+.Steps
+
+. Click *Compute*.
+
+. Click the name of a cluster.
+
+. View the information in the *Overview* and *Storage* tabs to find the information that you're looking for.
++
+* *Overview*: Details about the worker nodes, including their state.
+* *Storage*: The persistent volumes associated with the cluster, including the storage class and state.
++
+image:screenshot-cluster-overview.gif[A screenshot of the Overview tab for a cluster.]

@@ -1,0 +1,35 @@
+---
+sidebar: sidebar
+permalink: use/manage-apps.html
+keywords: view app, view app status, view app protection status, view app pods, view persistent storage
+summary: After you start managing an app, Project Astra provides details about the app that enables you to identify its status, its protection status, the pods, persistent storage, and more.
+---
+
+= View the status and in-depth details of an app
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+After you start managing an app, Project Astra provides details about the app that enables you to identify its status (whether it's healthy), its protection status (whether it's fully protected in case of failure), the pods, persistent storage, and more.
+
+image:screenshot-app-overview.gif[]
+
+.Steps
+
+. Click *Apps* and then click the name of an app.
+
+. Click around to find the information that you're looking for:
++
+App Status:: Provides a status that reflects the app's state in Kubernetes. For example, are pods and persistent volumes online? If an app is unhealthy, you'll need to go and troubleshoot the issue on the cluster by looking at Kubernetes logs. Project Astra doesn't provide information to help you fix a broken app.
+
+App Protection Status:: Provides a status of how well the app is protected. An app is either Fully Protected (it has a recent backup), Partially Protected (it has a data protection schedule or active snapshots, but no recently successful backup), or it's Unprotected.
++
+_You can't be fully protected until you have a recent backup_. This is important because backups are stored in an object store away from the persistent volumes. If a failure or accident wipes out the cluster and it's persistent storage, then you need a backup to recover.
+
+Overview:: Information about the state of the pods that are associated with the app.
+
+Data protection:: Enables you to configure a data protection policy and to view the existing snapshots and backups.
+
+Storage:: Shows you the app level persistent volumes. The state of a persistent volume is from the perspective of the Kubernetes cluster.
+
+Resources:: Enables you to verify which resources are being backed up and managed.
