@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: use/manage-clusters.html
+permalink: use/view-clusters.html
 keywords: view cluster, cluster storage, cluster overview
 summary: After you add a cluster to Project Astra, you can view details about the cluster, such as its location, the worker nodes, persistent volumes, and storage classes.
 ---

@@ -16,7 +16,7 @@ Get started with Project Astra in a few steps.
 
 [role="quick-margin-list"]
 * Project Astra supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
-* Clusters must be running a healthy state, with at least one online worker node, and in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region that supports Cloud Volumes Service for Google Cloud^].
+* Clusters must be running a healthy state, with at least one online worker node, and in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region that supports Cloud Volumes Service^].
 * A cluster must be running Kubernetes version 1.17 or later.
 * The image type for each worker node must be Ubuntu.
 

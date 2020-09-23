@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: use/unmanage-apps.html
-keywords: unmanage app, remove app, stop managing app
+permalink: use/unmanage.html
+keywords: unmanage app, remove app, stop managing app, stop managing clusters, unmanage cluster, remove cluster
 summary: Remove any apps or clusters that you no longer want to manage from Project Astra.
 ---
 

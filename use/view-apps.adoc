@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: use/manage-apps.html
+permalink: use/view-apps.html
 keywords: view app, view app status, view app protection status, view app pods, view persistent storage
 summary: After you start managing an app, Project Astra provides details about the app that enables you to identify its status, its protection status, the pods, persistent storage, and more.
 ---
