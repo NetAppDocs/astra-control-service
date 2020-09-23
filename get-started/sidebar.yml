@@ -9,6 +9,8 @@ entries:
         url: /get-started/known-issues.html
       - title: Known limitations
         url: /get-started/known-limitations.html
+  - title: Join the Beta release
+    url: /join-beta.html
   - title: Get started with Project Astra
     entries:
       - title: Quick start
