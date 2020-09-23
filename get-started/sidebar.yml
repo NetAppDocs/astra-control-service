@@ -3,14 +3,14 @@ title: Get started
 entries:
   - title: Intro to Project Astra
     url: intro.html
+  - title: Join the Beta release
+    url: /join-beta.html
   - title: Release notes
     entries:
       - title: Known issues
         url: /get-started/known-issues.html
       - title: Known limitations
         url: /get-started/known-limitations.html
-  - title: Join the Beta release
-    url: /join-beta.html
   - title: Get started with Project Astra
     entries:
       - title: Quick start
