@@ -15,7 +15,7 @@ entries:
     entries:
       - title: Quick start
         url: /get-started/quick-start.html
-      - title: Cluster and app requirements
+      - title: Requirements
         url: /get-started/requirements.html
       - title: Set up Google Cloud
         url: /get-started/set-up-google-cloud.html

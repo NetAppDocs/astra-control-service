@@ -19,8 +19,6 @@ entries:
         url: /use/view-clusters.html
       - title: App health and details
         url: /use/view-apps.html
-  - title: Unmanage apps and clusters
-    url: unmanage.html
   - title: Manage your account
     entries:
       - title: Invite and manage users
@@ -29,3 +27,5 @@ entries:
         url: /use/manage-credentials.html
       - title: Manage notifications
         url: /use/manage-notifications.html
+  - title: Unmanage apps and clusters
+    url: unmanage.html
