@@ -31,6 +31,6 @@ Overview:: Information about the state of the pods that are associated with the 
 
 Data protection:: Enables you to configure a data protection policy and to view the existing snapshots and backups.
 
-Storage:: Shows you the app level persistent volumes. The state of a persistent volume is from the perspective of the Kubernetes cluster.
+Storage:: Shows you the app-level persistent volumes. The state of a persistent volume is from the perspective of the Kubernetes cluster.
 
 Resources:: Enables you to verify which resources are being backed up and managed.

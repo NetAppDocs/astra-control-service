@@ -10,7 +10,7 @@ summary: Many of the pages on this doc site include videos that show how to comp
 :icons: font
 :imagesdir: ../media/get-started/
 
-Many of the pages on this doc site include videos that show how to complete a task for Project Astra. If you're just interested in videos, we've made it easier for you by collecting all of the videos on this single page (kind of like a playlist).
+Many of the pages on this doc site include videos that show you how to complete a task for Project Astra. If you're just interested in videos, we've made it easy for you by collecting all of the videos on this single page (kind of like a playlist).
 
 == Videos for setting up Google Cloud
 

@@ -34,7 +34,7 @@ homepage:
           url: /use/protect-apps.html
         - title: Migrate an app
           summary: Migrate an app to another cluster.
-          url: /use/coming-soon.html
+          url: /use/clone-apps.html
     - title: Demos & tutorials
       links:
         - title: Project Astra videos

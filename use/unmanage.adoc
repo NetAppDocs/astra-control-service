@@ -46,7 +46,7 @@ Stop managing the clusters that you no longer want to manage from Project Astra.
 
 * This action stops your cluster from being managed by Project Astra. It doesn't make any changes to the cluster's configuration and it doesn't delete the cluster.
 +
-Trident won't be uninstalled from the cluster.
+Trident won't be uninstalled from the cluster. https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[Learn how to uninstall Trident^].
 
 * Apps associated with this cluster will no longer be managed and will go into a Detached state.
 
@@ -56,7 +56,7 @@ Trident won't be uninstalled from the cluster.
 
 . Delete any snapshots or backups and stop managing the cluster's applications before removing the cluster.
 +
-link:protect-apps.html[Protect apps with snapshots and backups]
+link:protect-apps.html[Learn how to delete snapshots and backups].
 
 . Click *Compute*.
 
@@ -68,7 +68,7 @@ link:protect-apps.html[Protect apps with snapshots and backups]
 
 .Result
 
-Project Astra stops managing the cluster.
+Project Astra stops managing the clusters.
 
 == Cleaning up after the Beta
 

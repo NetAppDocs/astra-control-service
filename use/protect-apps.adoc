@@ -36,7 +36,7 @@ image:screenshot-configure-protection-policy.gif[A screenshot of the Data protec
 +
 You can define the hourly, daily, weekly, and monthly schedules concurrently. A schedule won't turn active until you set a retention level.
 +
-The following sample policy sets a schedule to take snapshots daily and weekly, while retaining the last 14 hourly snapshots and the last 26 weekly snapshots. It also takes backups and retains the last 12 copies. Because 0 copies were selected for hourly, no hourly snapshots or backups are taken.
+The following example sets a schedule to take snapshots daily and weekly, while retaining the last 14 hourly snapshots and the last 26 weekly snapshots. It also takes monthly backups and retains the last 12 copies. Because 0 copies were selected for hourly, no hourly snapshots or backups are taken.
 +
 image:screenshot-protection-policy.gif["A screenshot of a sample configuration policy where you can choose to take snapshots and backups on an hourly, daily, weekly, or monthly basis."]
 
@@ -56,7 +56,7 @@ You can create an on-demand snapshot at any time.
 
 . Click *Apps*.
 
-. Click the drop-down list in the *Action* column for the desired app.
+. Click the drop-down list in the *Actions* column for the desired app.
 
 . Click *Snapshot*.
 +
@@ -68,7 +68,7 @@ image:screenshot-create-snapshot.gif["A screenshot of the app page where you can
 
 .Result
 
-Project Astra creates a snapshot of the app.
+Project Astra creates a snapshot of the apps.
 
 == Create a backup
 
@@ -78,7 +78,7 @@ You can also back up an app at any time.
 
 . Click *Apps*.
 
-. Click the drop-down list in the *Action* column for the desired app.
+. Click the drop-down list in the *Actions* column for the desired app.
 
 . Click *Backup*.
 +

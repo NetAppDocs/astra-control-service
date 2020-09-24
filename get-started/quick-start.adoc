@@ -40,10 +40,10 @@ link:requirements.html[Learn more].
 [role="quick-margin-para"]
 link:set-up-google-cloud.html[Learn more].
 
-==== image:number3.png[Number 3] Sign up to Cloud Central
+==== image:number3.png[Number 3] Sign up to NetApp Cloud Central
 
 [role="quick-margin-para"]
-Sign up to Cloud Central so you can access Project Astra and NetApp’s other cloud services. link:cloud-central.html[Learn more].
+Sign up to https://cloud.netapp.com[NetApp Cloud Central^] so you can access Project Astra and NetApp’s other cloud services. link:cloud-central.html[Learn more].
 
 ==== image:number4.png[Number 4] Accept your Beta invitation
 
