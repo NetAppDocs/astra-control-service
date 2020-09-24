@@ -10,7 +10,7 @@ summary: After you add a Kubernetes cluster to Project Astra, go to the Apps pag
 :icons: font
 :imagesdir: ../media/use/
 
-After you add a Kubernetes cluster to Project Astra, go to the Apps page to start managing the apps that run on the cluster.
+After you link:../get-started/add-first-cluster.html[a Kubernetes cluster to Project Astra], go to the Apps page to start managing the apps that run on the cluster.
 
 == Start managing an app
 
@@ -40,7 +40,7 @@ image:screenshot-group.gif[]
 +
 This information can be helpful because you might want to manage everything in the namespace, or you might want to manage the app using labels that you've already set up. You'll see how to use these labels in a few steps.
 
-. Click the drop-down list in the *Action* column for the desired app and click *Manage*.
+. Click the drop-down list in the *Actions* column for the desired app and click *Manage*.
 +
 image:screenshot-app-manage.gif[]
 
@@ -55,7 +55,7 @@ image:screenshot-selected-resources.gif[]
 There are two primary ways to use the Selected Resources field:
 +
 * View the resources to validate that the Kubernetes resources that you want to protect are listed.
-* If a namespace contains multiple discrete applications and you use Kubernetes labels to split apart the apps, then you can choose a label to register the app based on that label.
+* If a namespace contains multiple discrete applications and you use Kubernetes labels to split apart the apps, then you can choose a label to register the app with, based on that label.
 +
 ** View the available labels by expanding a resource and clicking the number of labels.
 +
@@ -85,7 +85,7 @@ image:screenshot-app-managed.gif[]
 
 .What's next?
 
-Repeat these steps for additional apps. Choose *Ignore* for any of the apps that you don't want to manage from Project Astra. Those apps will move to the *Ignored* tab.
+Repeat these steps for additional apps. Choose *Ignore* for any of the apps that you don't want to manage from Project Astra. Those apps will move to the *Ignored* tab. Ideally, you'd have zero clusters listed in the Discovered tab after you're done.
 
 == Manage an app using a custom label
 

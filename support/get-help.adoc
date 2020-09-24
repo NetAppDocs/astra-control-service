@@ -1,0 +1,67 @@
+---
+sidebar: sidebar
+permalink: support/get-help.html
+keywords: get help, get support, knowledgebase, slack, phone, web, ticket, contact support, support ticket
+summary: NetApp provides support for Project Astra in a variety of ways. Extensive free self-support options are available 24x7, such as KB articles or a Slack channel. Your Project Astra account includes remote technical support via email, web ticketing, or phone. You must first activate support for your NetApp serial number in order to use these non self-service support options. A NetApp Support Site account is required for chat and web ticketing along with case management.
+---
+
+= Get help
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/support/
+
+NetApp provides support for Project Astra in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles or a Slack channel. Your Project Astra account includes remote technical support via email, web ticketing, or phone.
+
+You must first link:register-support.html[activate support for your NetApp serial number] in order to use these non self-service support options. A NetApp Support Site (NSS) SSO account is required for chat and web ticketing along with case management.
+
+You can access support options from the Project Astra UI by selecting the *Support* tab from the main menu.
+
+image::diagram_support_obtain.png[Obtaining support information]
+
+== Self support
+
+These options are available for free 24x7:
+
+* https://kb.netapp.com/[Knowledge base]
++
+Selecting the links in this section takes you to the NetApp Knowledgebase, where you can search for articles, How-to’s, FAQ’s, or Break Fix information related to Project Astra.
+
+* https://docs.netapp.com/us-en/cloud_volumes/aws/[User manual]
++
+Selecting the **Click here** link takes you to the Cloud Volumes Service for AWS documentation center.
+
+* http://community.netapp.com/t5/Cloud-Volumes/bd-p/CloudVolumes[Communities]
++
+Selecting the **Click here** link takes you to the Cloud Volumes Service community, where you can connect with peers and experts.
+
+* Email
++
+Selecting the **Click here** link in the Feedback section initiates an email to support through cvs-support@netapp.com. This a great place to ask general questions about service, provide feedback and suggestions, or seek assistance for onboarding related problems.
+
+== Subscription support
+
+In addition to the self-support options above, if you have a Cloud Volumes Service paid subscription, you can work with a NetApp Support Engineer to resolve any issues.
+
+Once your Project Astra serial number is activated, you can access NetApp technical support resources by any of the following methods.
+
+* https://mysupport.netapp.com/site/cases/mine/create[Support Ticket]
++
+Select *Cloud Data Services > Project Astra*
++
+image:screenshot-web-ticket.gif[]
+
+* https://www.netapp.com/us/contact-us/support.aspx[Phone]
++
+For reporting new issues or calling about existing tickets. This method is best for P1 or immediate assistance.
+
+* https://www.netapp.com/us/forms/sales-contact.aspx[Contact sales]
++
+You can also request sales support.
+
+Your Project Astra serial number is visible within the service from the Support menu option. If you are experiencing issues accessing the service and have registered a serial number with NetApp previously, you can contact projectastra.support@netapp.com for assistance. You can also view your Project Astra serial number from the NetApp Support Site as follows:
+
+. Login to https://mysupport.netapp.com/[mysupport.netapp.com].
+
+.	From the Products > My Products menu tab, select the Product Family *SaaS Cloud Volume* to locate all your registered serial numbers:
+
+image::diagram_support_list_registered_systems.png[View Installed Systems]

@@ -34,7 +34,7 @@ homepage:
           url: /use/protect-apps.html
         - title: Migrate an app
           summary: Migrate an app to another cluster.
-          url: /use/coming-soon.html
+          url: /use/clone-apps.html
     - title: Demos & tutorials
       links:
         - title: Project Astra videos
@@ -48,7 +48,7 @@ homepage:
           url: /solutions/mysql-deploy-from-helm-chart.html
     - title: Blogs & community
       links:
-        - title: Project Astra - Stateful Lessons for a Multi-Cloud World
+        - title: Stateful Lessons for a Multi-Cloud World
           summary: How Project Astra provides robust storage, easy-to-consume data services, and application and data portability.
           url: https://blog.netapp.com/project-astra-stateful-lessons
         - title: Kubernetes Hub

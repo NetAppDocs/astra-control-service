@@ -42,7 +42,7 @@ Ask them to check their spam folder, or search their inbox for “invitation”.
 
 **Can I add a private cluster to Project Astra?**
 
-Yes, you can add private clusters in project Astra beta. To create a Google Kubernetes Engine (GKE) private cluster, https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra[follow the instructions in this knowledgebase article^].
+Yes, you can add private clusters in Project Astra beta. To create a Google Kubernetes Engine (GKE) private cluster, https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra[follow the instructions in this knowledgebase article^].
 
 **Can I use a custom network?**
 
@@ -50,7 +50,7 @@ Yes, custom Virtual Private Cloud (VPC) networks are supported and Project Astra
 
 **Where can I find my service account credentials on GCP?**
 
-After you log in to https://console.cloud.google.com/[Google Cloud Console], your service account details will be in the *IAM and Admin* section. For more details, refer to link:set-up-google-cloud.html[how to set up Google Cloud for Project Astra.].
+After you log in to the https://console.cloud.google.com/[Google Cloud Console^], your service account details will be in the *IAM and Admin* section. For more details, refer to link:set-up-google-cloud.html[how to set up Google Cloud for Project Astra].
 
 **How can I disable the service credentials I’ve registered with Project Astra?**
 
@@ -96,7 +96,7 @@ There are two ways you can verify the GKE Kubernetes cluster version:
 
 **How do I know the worker nodes in the GKE Kubernetes cluster are running a supported image type?**
 
-The cluster discovery phase will not add a GKE cluster if the worker nodes are running an unsupported image type. If this happens, Project Astra will provide details on the supported image version (Ubuntu) in the Add compute user interface. Alternatively, you can verify the worker node image version from https://console.cloud.google.com/[Google Cloud Console^].
+The cluster discovery phase will not add a GKE cluster if the worker nodes are running an unsupported image type. If this happens, Project Astra will provide details on the supported image version (Ubuntu) in the Add compute user interface. Alternatively, you can verify the worker node image version from the https://console.cloud.google.com/[Google Cloud Console^].
 
 **How do I create a GKE cluster with a supported worker node image type?**
 
@@ -196,9 +196,9 @@ Yes, you can use the Configure Protection Policy option to set a retention polic
 
 **What is the difference between snapshots and backups?**
 
-**Snapshot** refers to local snapshots, where data is stored as part of the provisioned volumes. Given that they are stored on the same provisioned volume, they are usually faster. Local snapshots are used to restore the application to an earlier point in time.
+_Snapshot_ refers to local snapshots, where data is stored as part of the provisioned volumes. Given that they are stored on the same provisioned volume, they are usually faster. Local snapshots are used to restore the application to an earlier point in time.
 
-**Backups** are stored on object storage. They could be slower compared to the local snapshots. However, they can be accessed across regions in the cloud. Backups are used for migrating applications across regions in the cloud. Also, a user can choose to have longer retention period for backups.
+_Backups_ are stored on object storage. They could be slower compared to the local snapshots. However, they can be accessed across regions in the cloud. Backups are used for migrating applications across regions in the cloud. Also, a user can choose to have longer retention period for backups.
 
 **Can I manage snapshots taken by Project Astra directly through the Cloud Volumes Service snapshot management interface or object storage?**
 

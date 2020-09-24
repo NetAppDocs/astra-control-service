@@ -36,4 +36,4 @@ No matter which type of app that you use with Project Astra, you should always t
 
 == Supported web browsers
 
-Project Astra supports recent versions of Firefox, Safari, and Chrome with a minimum resolution of 1280x720.
+Project Astra supports recent versions of Firefox, Safari, and Chrome with a minimum resolution of 1280 x 720.
