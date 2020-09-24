@@ -73,7 +73,7 @@ image:screenshot-selected-label.gif[]
 
 . Click *Manage App*.
 
-The following video shows how to add a cluster.
+The following video shows how to start managing an app.
 
 video::video-manage-app.mp4[width=848, height=480]
 
