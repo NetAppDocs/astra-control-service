@@ -54,7 +54,9 @@ image:screenshot-web-ticket.gif[]
 +
 For reporting new issues or calling about existing tickets. This method is best for P1 or immediate assistance.
 
-You can also request sales support by clicking on the https://www.netapp.com/us/forms/sales-contact.aspx[Contact sales] link.
+* https://www.netapp.com/us/forms/sales-contact.aspx[Contact sales]
++
+You can also request sales support.
 
 Your Project Astra serial number is visible within the service from the Support menu option. If you are experiencing issues accessing the service and have registered a serial number with NetApp previously, you can contact projectastra.support@netapp.com for assistance. You can also view your Project Astra serial number from the NetApp Support Site as follows:
 

@@ -8,16 +8,11 @@ summary: Project Astra attempts to automatically register your account for suppo
 = Register for support
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/getting-started/
+:imagesdir: ../media/support/
 
 Project Astra attempts to automatically register your account for support when you sign up. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
 
-You must register the NetApp serial number associated with Project Astra to activate support entitlement. We offer 2 options for support registration:
-
-. Current NetApp customer with existing NetApp Support Site (NSS) SSO account
-. New NetApp customer with no existing NetApp Support Site (NSS) SSO account
-
-== Serial number
+== Obtain your serial number
 
 During the initial subscription process, Project Astra generates a 20-digit NetApp serial number that starts with "941". The NetApp serial number represents your Project Astra account.
 
@@ -25,7 +20,14 @@ You can find your serial number in the Project Astra interface from the *Support
 
 image:screenshot-support.gif[]
 
-== Option 1: Current NetApp customer with an existing NetApp Support Site (NSS) account
+== Activate support entitlement
+
+You must register the NetApp serial number associated with Project Astra to activate support entitlement. We offer 2 options for support registration:
+
+. Current NetApp customer with existing NetApp Support Site (NSS) SSO account
+. New NetApp customer with no existing NetApp Support Site (NSS) SSO account
+
+=== Option 1: Current NetApp customer with an existing NetApp Support Site (NSS) account
 
 .Steps
 
@@ -55,7 +57,7 @@ You should be redirected to a "Registration Submitted Successfully" page. The em
 
 This is a one-time support registration for the applicable serial number.
 
-== Option 2: New NetApp customer with no existing NetApp Support Site (NSS) account
+=== Option 2: New NetApp customer with no existing NetApp Support Site (NSS) account
 
 .Steps
 
