@@ -2,6 +2,6 @@ section: support
 title: Knowledge and support
 entries:
   - title: Register for support
-    url: register-support.html
+    url: /support/register-support.html
   - title: Get help
-    url: get-help.html
+    url: /support/get-help.html

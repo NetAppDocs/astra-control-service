@@ -28,4 +28,4 @@ entries:
       - title: Manage notifications
         url: /use/manage-notifications.html
   - title: Unmanage apps and clusters
-    url: unmanage.html
+    url: /use/unmanage.html
