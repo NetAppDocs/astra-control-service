@@ -1,0 +1,31 @@
+---
+sidebar: sidebar
+permalink: use/view-dashboard.html
+keywords: dashboard, cluster health, unhealthy apps, protected apps, discovered apps
+summary: Click Dashboard to see a high-level view of your apps, clusters, and their health.
+---
+
+= View app and cluster health
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+[.lead]
+Click *Dashboard* to see a high-level view of your apps, clusters, and their health.
+
+image:screenshot-dashboard.gif[]
+
+The Apps tile helps you identify the following:
+
+* How many apps you're currently managing with Project Astra.
+* Whether those managed apps are healthy.
+* Whether the apps are protected fully protected (they have recent backups).
+* The number of apps that were discovered, but are not yet managed.
++
+Ideally, this number would be zero because you would either manage or ignore apps after they're discovered. And then you would monitor the number of discovered apps to identify when developers add new apps to a cluster.
+
+Note that these aren't just numbers or statuses--you can drill down from each of these. For example, if you have an unhealthy app, you can hover over the icon to identify which app has an issue and what the issue is. You can then go to the cluster to correct the issue.
+
+image:screenshot-dashboard-healthy.gif[]
+
+The Compute tile provides similar details about the health of your clusters and you can drill down to get more details just like you can with an app.

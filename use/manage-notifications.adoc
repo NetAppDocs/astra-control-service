@@ -10,6 +10,7 @@ summary: Project Astra notifies you when actions have completed or failed. For e
 :icons: font
 :imagesdir: ../media/use/
 
+[.lead]
 Project Astra notifies you when actions have completed or failed. For example, you'll see a notification if a backup of an app completed successfully.
 
 The number of unread notifications is available in the top right of the interface:

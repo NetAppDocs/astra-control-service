@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: use/manage-apps.html
-keywords:
-summary:
+keywords: manage app, discover app, ignore app
+summary: After you add a Kubernetes cluster to Project Astra, go to the Apps page to start managing the apps that run on the cluster.
 ---
 
 = Start managing apps
@@ -10,32 +10,115 @@ summary:
 :icons: font
 :imagesdir: ../media/use/
 
-<intro coming soon>
+After you add a Kubernetes cluster to Project Astra, go to the Apps page to start managing the apps that run on the cluster.
 
 == Start managing an app
 
-<steps coming soon with a video>
-
-== View the status and in-depth details of an app
-
-After you start managing an app, Project Astra provides details about the app that enables you to identify the its status (whether it's healthy), its protection status (whether it's fully protected in case of failure), the pods, persistent storage, and more.
+View the apps that you can discover from the *Discovered* section of the Apps page and then click *Manage*.
 
 .Steps
 
-. Click *Apps* and then click the name of an app.
-
-. Click around to find the information that you're looking for:
+. Click *Apps* and then click *Discovered*.
 +
-App Status:: Provides a status that reflects the app's state in Kubernetes. For example, are pods and persistent volumes online? If an app is unhealthy, you'll need to go and troubleshoot the issue on the cluster by looking at Kubernetes logs. Project Astra doesn't provide information to help you fix a broken app.
-
-App Protection Status:: Provides a status of how well the app is protected. An app is either Fully Protected (it has a recent backup), Partially Protected (it has a data protection schedule or active snapshots, but no recently successful backup), or it's Unprotected.
+If you just added the cluster to Project Astra, you'll notice that some apps are in the process of being discovered.
 +
-_You can't be fully protected until you have a recent backup_. This is important because backups are stored in an object store away from the persistent volumes. If a failure or accident wipes out the cluster and it's persistent storage, then you need a backup to recover.
+image:screenshot-app-discovery.gif[]
++
+If there are any issues with discovery, you can hover over the icon in the Ready column to view details about the issue.
++
+In the following image, you can see that Project Astra is still in the process of discovering the app. Hovering over the Ready column shows the current status.
++
+image:screenshot-app-discovery-status.gif[]
++
+After Project Astra discovers an app, you have the option to either manage the app or ignore it.
 
-Overview:: Information about the state of the pods that are associated with the app.
+. Look at the *Group* column to see which namespace the application is running in (it's designated with the folder icon) and whether any Kubernetes labels are available (those are designated with a tag icon).
++
+Here's an example:
++
+image:screenshot-group.gif[]
++
+This information can be helpful because you might want to manage everything in the namespace, or you might want to manage the app using labels that you've already set up. You'll see how to use these labels in a few steps.
 
-Data protection:: Enables you to configure a data protection policy and to view the existing snapshots and backups.
+. Click the drop-down list in the *Action* column for the desired app and click *Manage*.
++
+image:screenshot-app-manage.gif[]
 
-Storage:: Shows you the app level persistent volumes. The state of a persistent volume is from the perspective of the Kubernetes cluster.
+. In the *Manage Application* dialog box, provide the required information to manage the app:
++
+.. *New App*: Customize the name of the app.
 
-Resources:: Enables you to verify which resources are being backed up and managed.
+.. *Selected Resources*: View and manage the selected Kubernetes resources that you'd like to protect (pods, secrets, persistent volumes, and more). Here's an example:
++
+image:screenshot-selected-resources.gif[]
++
+There are two primary ways to use the Selected Resources field:
++
+* View the resources to validate that the Kubernetes resources that you want to protect are listed.
+* If a namespace contains multiple discrete applications and you use Kubernetes labels to split apart the apps, then you can choose a label to register the app based on that label.
++
+** View the available labels by expanding a resource and clicking the number of labels.
++
+image:screenshot-view-labels.gif[]
++
+** Select one of the labels.
++
+image:screenshot-select-label.gif[]
++
+After you choose a label, it displays in the *Label* field. Project Astra also updates the *Unselected Resources* section to show the resources that don't match the selected label.
++
+** View *Unselected Resources* to verify the app resources that you don't want to protect.
++
+image:screenshot-selected-label.gif[]
+
+. Click *Manage App*.
+
+The following video shows how to start managing an app.
+
+video::video-manage-app.mp4[width=848, height=480]
+
+.Result
+
+Project Astra enables management of the app. You can now find it in the *Managed* tab.
+
+image:screenshot-app-managed.gif[]
+
+.What's next?
+
+Repeat these steps for additional apps. Choose *Ignore* for any of the apps that you don't want to manage from Project Astra. Those apps will move to the *Ignored* tab.
+
+== Manage an app using a custom label
+
+Project Astra includes an action at the top of the Apps page named *Manage new app*. You can use this action to manage an app by using a _custom_ label. For example, you might not want to use one of the discovered Helm labels to manage the app.
+
+.Steps
+
+. Click *Apps > Manage new app*.
+
+. In the *Manage Application* dialog box, provide the required information to manage the app:
+
+.. *New App*: Customize the name of the app.
+
+.. *Compute*: Select the compute where the app resides.
+
+.. *Namespace:* Select the namespace for the app.
+
+.. *Label:* Enter a custom label.
+
+.. *Selected Resources:* View and manage the Kubernetes resources that you'd like to protect.
+
+.. *Unselected Resources*: Verify the app resources that you don't want to protect.
+
+. Click *Manage App*.
+
+.Result
+
+Project Astra enables management of the app. You can now find it in the *Managed* tab.
+
+== What about system apps?
+
+When you add a Kubernetes cluster, Project Astra also discovers the system apps running on the cluster. You can view them by filtering the Apps list.
+
+image:screenshot-system-apps.gif[]
+
+We don't show you these system apps by default because it's rare that you'd need to back them up.

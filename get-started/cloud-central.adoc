@@ -10,6 +10,7 @@ summary: Project Astra is integrated within NetApp Cloud Central's authenticatio
 :icons: font
 :imagesdir: ../media/get-started/
 
+[.lead]
 Project Astra is integrated within NetApp Cloud Central's authentication service. Sign up to Cloud Central so you can access Project Astra and NetApp’s other cloud services.
 
 .Steps

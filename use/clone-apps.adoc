@@ -2,15 +2,16 @@
 sidebar: sidebar
 permalink: use/clone-apps.html
 keywords: clone app, clone storage, clone persistent storage, clone data, move workload, clone data, migrate data, data migration, move storage, move application, move data
-summary: Clone an app to move applications and storage from one Kubernetes cluster to another. For example, you might want to move workloads through a CI/CD pipeline and across Kubernetes namespaces.
+summary: Clone an existing app to create a duplicate app on the same Kubernetes cluster or on another cluster. Cloning can help if you need to move applications and storage from one Kubernetes cluster to another. For example, you might want to move workloads through a CI CD pipeline and across Kubernetes namespaces.
 ---
 
-= Clone apps
+= Clone and migrate apps
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/use/
 
-Clone an app to move applications and storage from one Kubernetes cluster to another. For example, you might want to move workloads through a CI/CD pipeline and across Kubernetes namespaces.
+[.lead]
+Clone an existing app to create a duplicate app on the same Kubernetes cluster or on another cluster. Cloning can help if you need to move applications and storage from one Kubernetes cluster to another. For example, you might want to move workloads through a CI/CD pipeline and across Kubernetes namespaces.
 
 When Project Astra clones an app, it creates a clone of your application configuration and persistent storage.
 
@@ -24,18 +25,20 @@ When Project Astra clones an app, it creates a clone of your application configu
 +
 image:screenshot-create-clone.gif["A screenshot of the app page where you can click the drop-down list in the actions column and select Clone."]
 
-. *Step 1: Clone details*: Specify details for the clone:
+. *Clone details*: Specify details for the clone:
 +
 * Enter a name.
 * Choose a destination cluster for the clone.
 * Choose whether you want to create the clone from an existing snapshot or backup. If you don't select this option, Project Astra creates the clone from the app's current state.
 
-. *Step 2: Source*: If you chose to clone from an existing snapshot or backup, choose the snapshot or backup that you'd like to use.
+. *Source*: If you chose to clone from an existing snapshot or backup, choose the snapshot or backup that you'd like to use.
 +
-<screenshot coming soon>
+image:screenshot-clone-source.gif[]
 
-. *Step 3: Clone Summary*: Review the details about the clone and click *Clone App*.
+. *Clone Summary*: Review the details about the clone and click *Clone App*.
++
+image:screenshot-clone-summary.gif[]
 
 .Result
 
-Project Astra clones that app based on the information that you specified.
+Project Astra clones that app based on the information that you provided.

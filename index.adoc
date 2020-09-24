@@ -6,7 +6,7 @@ lead: Project Astra is a Kubernetes application data lifecycle management servic
 summary: Project Astra is a Kubernetes application data lifecycle management service that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
 ---
 
-= Project Astra Documentation
+= Project Astra Documentation for the Beta release
 :hardbreaks:
 :nofooter:
 :icons: font

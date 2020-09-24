@@ -7,11 +7,13 @@ sidebar:
     - section: learn
     - section: solutions
     - section: support
+    - title: Legal notices
+      url: /legal-notices.html
 
 homepage:
   tiles:
     - title: Get Started
-      image: ./media/outline_directions_run_black_18dp.png
+      #image: ./media/outline_directions_run_black_18dp.png
       links:
         - title: Learn about Project Astra
           summary: Understand how Project Astra works.
