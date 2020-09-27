@@ -1,0 +1,90 @@
+---
+sidebar: sidebar
+permalink: support/register-support.html
+keywords: support, register for support, support registration
+summary: Project Astra attempts to automatically register your account for support when you sign up. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
+---
+
+= Register for support
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/support/
+
+Project Astra attempts to automatically register your account for support when you sign up. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
+
+== Obtain your serial number
+
+During the initial subscription process, Project Astra generates a 20-digit NetApp serial number that starts with "941". The NetApp serial number represents your Project Astra account.
+
+You can find your serial number in the Project Astra interface from the *Support* page.
+
+//image:screenshot-support.gif[]
+
+== Activate support entitlement
+
+You must register the NetApp serial number associated with Project Astra to activate support entitlement. We offer 2 options for support registration:
+
+. Current NetApp customer with existing NetApp Support Site (NSS) SSO account
+. New NetApp customer with no existing NetApp Support Site (NSS) SSO account
+
+=== Option 1: Current NetApp customer with an existing NetApp Support Site (NSS) account
+
+.Steps
+
+. Navigate to the https://register.netapp.com[Cloud Data Services Support Registration^] page to create an NSS account.
+
+. Click *I am already registered as a NetApp customer*.
+
+. Enter your NetApp Support Site credentials to log in.
++
+The Existing Customer Registration page displays.
++
+image:screenshot-existing-registration.gif[Existing Customer Registration Form]
+
+. Complete the required information on the form:
+
+.. Enter your name, company, and email address.
+
+.. Select *Project Astra* as the product line.
+
+.. Enter your serial number.
+
+.. Click *Submit Registration*.
+
+.Result
+
+You should be redirected to a "Registration Submitted Successfully" page. The email address associated with your registration will receive an email within a couple minutes stating that "your product is now eligible for support."
+
+This is a one-time support registration for the applicable serial number.
+
+=== Option 2: New NetApp customer with no existing NetApp Support Site (NSS) account
+
+.Steps
+
+. Navigate to the https://register.netapp.com[Cloud Data Services Support Registration^] page to create an NSS account.
+
+. Click *I am not a registered NetApp Customer*.
++
+The New Customer Registration page displays.
++
+image:screenshot-new-registration.gif[New Customer Registration Form]
+
+. Complete the required information on the form:
+
+.. Enter your name and company information.
+
+.. Select *Project Astra* as the Product Line.
+
+.. Enter your serial number.
+
+.. Click *Submit Registration*.
+
+.Result
+
+You will receive a confirmation email from your submitted registration. If no errors occur, you will be re-directed to a "Registration Submitted Successfully" page. You will also receive an email within an hour stating that "your product is now eligible for support".
+
+This is a one-time support registration for the applicable serial number.
+
+.What's next?
+
+As a new NetApp customer, you also need to create a NetApp Support Site (NSS) user account for future support activations and for access to the support portal for technical support chat and web ticketing. Go to the http://now.netapp.com/newuser/[NetApp Support Registration site^] to perform this task. You can provide your newly registered Project Astra serial number to expedite the process.

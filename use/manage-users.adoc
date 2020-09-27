@@ -1,0 +1,60 @@
+---
+sidebar: sidebar
+permalink: use/manage-users.html
+keywords: invite users, add users, remove users, delete users
+summary: Invite users to join your Project Astra account and remove users that should no longer have access to your account.
+---
+
+= Invite and remove users
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+Invite users to join your Project Astra account and remove users that should no longer have access to your account.
+
+== Invite users
+
+Account Owners and Admins can invite other users to join the Project Astra account.
+
+.Steps
+
+. Click *Account*.
+
+. In the *Users* tab, click *+ Invite users*.
+
+. Enter the user's name, email address, and their role.
++
+Note the following:
++
+* The email address must match the email address that the user used to sign up to Cloud Central.
+* Each role provides the following permissions:
+** An *Owner* has Admin permissions and can delete accounts.
+** An *Admin* has Member permissions and can invite other users.
+** A *Member* can fully manage apps and clusters.
+** A *Viewer* can view resources.
++
+image:screenshot-invite-users.gif[A screenshot of the Invite Users screen where you enter a name, email address, and select a role.]
+
+. Click *Send invite/s*.
+
+.Result
+
+The user will receive an email that invites them to join your account.
+
+== Remove users
+
+An Account Owner can remove other users from the account at any time.
+
+.Steps
+
+. Click *Account*.
+
+. In the *Users* tab, select the users that you want to remove.
+
+. Click *Actions* and select *Remove user/s*.
+
+. When you're prompted, confirm deletion by typing the user's name and then click *Yes, Remove User*.
+
+.Result
+
+Project Astra removes the user from the account.

@@ -1,0 +1,36 @@
+---
+sidebar: sidebar
+permalink: get-started/invitation.html
+keywords: invitation, join, email invitation
+summary: After you've been accepted into the Project Astra Beta program, you'll receive an invitation to join a Project Astra account. Accept this invitation to gain access to the Project Astra interface.
+---
+
+= Accept your Beta invitation
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+[.lead]
+After you've been accepted into the Project Astra Beta program, you'll receive an invitation to join a Project Astra account. Accept this invitation to gain access to the Project Astra interface.
+
+.Steps
+
+. Open the email invitation to join a Project Astra account.
++
+image:screenshot-invitation.gif[A screenshot of an email that invites you to join a Project Astra account. It includes a Join Now button that you can click to accept the invitation.]
+
+. Confirm that the email address in the invitation matches the email address that you used to sign up to Cloud Central.
++
+If they don't match, then contact the person who added you to the account and let them know the email address that's associated with your Cloud Central account.
+
+. Click *Join Now*.
++
+A prompt should load in your web browser.
++
+image:screenshot-accept-invitation.gif[A screenshot that shows the Accept Invitation dialog box that appears in a web browser after you click the Join Now button from the email invitation.]
+
+. Click *Accept Invitation*.
++
+You should now see the Project Astra interface.
++
+image:screenshot-dashboard.gif[A screenshot that shoes the Project Astra Dashboard.]

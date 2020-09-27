@@ -1,0 +1,21 @@
+---
+sidebar: sidebar
+permalink: get-started/whats-next.html
+keywords: get started, manage apps, manage account
+summary: Now that you’ve logged in and added your first cluster to Project Astra, you're ready to start using Project Astra's application data management features.
+---
+
+= What's next?
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+[.lead]
+Now that you’ve logged in and added your first cluster to Project Astra, you're ready to start using Project Astra's application data management features.
+
+* link:../use/manage-apps.html[Start managing apps]
+* link:../use/protect-apps.html[Protect apps]
+* link:../use/clone-apps.html[Clone apps]
+* link:../use/manage-users.html[Invite and manage users]
+* link:../use/manage-credentials.html[Manage cloud provider credentials]
+* link:../use/manage-notifications.html[Manage notifications]

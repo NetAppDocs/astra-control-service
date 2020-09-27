@@ -1,0 +1,45 @@
+---
+sidebar: sidebar
+permalink: solutions/database-best-practices.html
+keywords:
+summary: Lorem ipsum dolor sic amet
+---
+
+= Database Best Practices
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+The following suggestions are considered "best practices" for deploying a database on Kubernetes, regardless of which database system you choose to deploy. These tips can help you plan ahead to avoid the most common causes of data loss.
+
+== Avoid a Single Point of Failure
+
+WARNING: The Project Astra alpha release only supports a single database instance.
+
+If there's one thing you can count on, it's unexpected failures. We recommend the following steps to help limit the scope of a failure.
+
+* Use live replicas that automatically share changes.
+* Create and implement a backup strategy.
+* Put your data copies in different zones. Ideally, in different geographic zones, not just different availability zones.
+
+TIP: Use the https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/[Kubernetes affinity/anti-affinity feature] to lock your data copies to the zones you set up. This ensures your data copies stay where you want them to be.
+
+== Check Your Persistent Volume Allocation and Size
+
+After you provision a cluster, it's important to verify that your Persistent Volume (PV) has been correctly allocated.
+
+In some cases, a PV can silently fail to be allocated. If this happens, everything can seem fine right up until the pod fails – at which point you lose all your data.
+
+We also recommend you check your pods to verify that the file system mount points match the persistent volume size.
+
+TIP: To help ensure success, use a https://kubernetes.io/docs/concepts/extend-kubernetes/operator/[Kubernetes operator] designed for your database system. Use this operator to allocate and manage your cluster's storage.
+
+== Set a Reclaim Policy
+
+To protect your data against accidental deletion, set “Retain” as the https://kubernetes.io/docs/tasks/administer-cluster/change-pv-reclaim-policy/[reclaim policy] for your PV.
+
+"Delete" is the default reclaim policy. This means if you accidentally delete the Persistent Volume Claim (PVC), the corresponding PV is automatically deleted, along with all the data stored there.
+
+If you set "Retain" as the reclaim policy, the PV is not deleted if the PVC is deleted. Instead, the PV is moved to the `Released` phase, which lets you manually recover all of its data.
+
+You may also want to add tags to your PVs. This makes the PVs easier to find and reattach if you have to recreate the cluster.

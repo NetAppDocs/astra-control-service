@@ -1,0 +1,205 @@
+---
+sidebar: sidebar
+permalink: get-started/faq.html
+keywords: faq, frequently asked questions
+summary: Astra FAQ
+---
+
+= Project Astra frequently asked questions for Beta
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+== Overview
+
+Welcome to Project Astra Beta!
+
+Project Astra aims to simplify your application data lifecycle management operations for Kubernetes native applications. In the Beta, Project Astra support is limited to Kubernetes clusters running on Google Kubernetes Engine (GKE) on Google Compute Platform (GCP). Other cloud providers will be added in later phases of the project.
+
+The following sections provide answers to some additional questions that you might come across as you use Project Astra. For any additional clarifications, please reach out to projectastra.support@netapp.com
+
+== Access to Project Astra
+
+**How can I access Project Astra?**
+
+Visit Project Astra at https://astra.netapp.io.
+
+**How can I get an invitation to the Beta?**
+
+Beta preview access is limited to a select few parties. Please register at https://cloud.netapp.com/project-astra-register.
+
+**I received an invitation to participate in the Beta. Where do I register my company?**
+
+Project Astra access is granted to your organization email address. This is the same email address that is registered with NetApp Cloud Central.
+
+If you don't have a NetApp Cloud Central account yet, sign up using the **same** email in the invitation. You can create a NetApp Cloud Central account here: https://cloud.netapp.com.
+
+**I’ve added my colleagues to Project Astra, but they haven’t received an email yet. What should I do?**
+
+Ask them to check their spam folder, or search their inbox for “invitation”.  You can also remove the user and attempt to re-add them. If neither of these work, please contact NetApp technical support with your organization name and the email addresses of people who haven't received the email invitation.
+
+== Registering Kubernetes Clusters
+
+**Can I add a private cluster to Project Astra?**
+
+Yes, you can add private clusters in Project Astra beta. To create a Google Kubernetes Engine (GKE) private cluster, https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra[follow the instructions in this knowledgebase article^].
+
+**Can I use a custom network?**
+
+Yes, custom Virtual Private Cloud (VPC) networks are supported and Project Astra Beta will identify the right network peering and automate the required configuration.
+
+**Where can I find my service account credentials on GCP?**
+
+After you log in to the https://console.cloud.google.com/[Google Cloud Console^], your service account details will be in the *IAM and Admin* section. For more details, refer to link:set-up-google-cloud.html[how to set up Google Cloud for Project Astra].
+
+**How can I disable the service credentials I’ve registered with Project Astra?**
+
+When the Beta workflow testing is complete and you want to completely remove all credentials and objects from Project Astra, please contact NetApp Technical support  and request to remove the Account. You can also invalidate any credentials stored with Project Astra by deleting the service account from the Google Cloud Console.
+
+**I’ve set permissions on the service account credentials in my GCP account, but it still doesn't work. What should I do?**
+
+Contact NetApp Technical Support with a description of your problem and any error messages that you received.
+
+**I’ve changed my GCP service account roles. How do I update them in Project Astra?**
+
+Service account details are used when adding a GKE Kubernetes cluster to Project Astra. If the required roles and permissions are retained in the service account, you will not need to update anything in Project Astra.
+
+If you rename or delete the service account, this will impact the application and cluster management features of Project Astra. You should contact projectastra.support@netapp.com to get help.
+
+**How many GCP service accounts can I register?**
+
+Different service accounts can be used when adding GKE clusters to Project Astra as long as they have the required roles and permissions. At a minimum, for each project, you need to provide one service account with the required roles and permissions.
+
+**How many Kubernetes clusters can I register?**
+
+You will need to register a minimum of two GKE Kubernetes clusters in order to exercise the Project Astra features. The maximum number of clusters for the Beta program is 100.
+
+**Do I need to install CSI drivers on my GKE cluster before adding it to Project Astra?**
+
+No. When your GKE cluster is added to Project Astra, the service will automatically install NetApp’s Trident Container Storage Interface (CSI) driver on the Kubernetes cluster. This CSI driver is used to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud.
+
+**I have a GKE cluster that’s running a different Kubernetes version than supported by Project Astra. Can I add that cluster to Project Astra?**
+
+The cluster discovery phase will not add a GKE cluster with an unsupported Kubernetes version. Project Astra provides information about supported Kubernetes version when it discovers a cluster running an unsupported Kubernetes version.
+
+**Can Project Astra validate the required GCP service account permissions?**
+
+Yes, Project Astra verifies that the required permissions are enabled before registering a GKE cluster, and will attempt to provide information about missing permissions.
+
+**How do I verify my GKE Kubernetes cluster is running supported Kubernetes version for Project Astra?**
+
+There are two ways you can verify the GKE Kubernetes cluster version:
+
+1. Verify it from Google cloud console. Go to **Kubernetes Engine > Cluster** and select the relevant cluster. Check the Release Channel and Master Version.
+
+2. Project Astra checks the GKE cluster version when the cluster is added. If Project Astra identifies an unsupported Kubernetes version, it provides more information in the Add compute user interface.
+
+**How do I know the worker nodes in the GKE Kubernetes cluster are running a supported image type?**
+
+The cluster discovery phase will not add a GKE cluster if the worker nodes are running an unsupported image type. If this happens, Project Astra will provide details on the supported image version (Ubuntu) in the Add compute user interface. Alternatively, you can verify the worker node image version from the https://console.cloud.google.com/[Google Cloud Console^].
+
+**How do I create a GKE cluster with a supported worker node image type?**
+
+When you create a GKE cluster or node pool, you can choose the operating system image that runs on each node. You can also upgrade an existing cluster to use a different node image type.
+
+**I would like to add different GKE clusters from different GCP projects. Is this supported in Project Astra?**
+
+Yes, you can add different GKE clusters from different GCP projects as long as all of the following are true:
+
+* The clusters and worker nodes are running a supported version.
+* Service accounts have the required roles and permissions.
+* The network configuration of the different GCP projects allows for communication with the GCP object store created within the first project.
+
+**How do I verify my GKE cluster was added successfully to Project Astra?**
+
+When you add the cluster, the user interface will show the status update and any error messages. When the cluster is added successfully, the status of the GKE cluster in the **Compute** section will be _Available_.
+
+Alternatively, you can also verify if the Trident operator and CSI drivers deployed successfully under the namespace _trident_ by running the kubectl commands:
+
+`kubectl get pods -n trident`
+
+or
+
+`kubectl get pods -|grep trident`
+
+**I need to add worker nodes to my GKE cluster after adding to Project Astra. What should I do?**
+
+New worker nodes can be added to existing pools, or new pools can be created as long as they are the Ubuntu image type. These will be automatically discovered by Project Astra. If the new nodes are not visible in Project Astra, check if the new worker nodes are running the supported image type. You can also verify the health of the new worker nodes by using the `kubectl get nodes` command.
+
+**Can I unmanage my Kubernetes cluster from Project Astra?**
+
+Yes, you can remove one or more Kubernetes cluster from Project Astra at the same time. All managed applications from the unamanged cluster will be removed and Project Astra snapshots or backups taken of applications on that cluster will be unavailable to restore.
+
+**What happens to my applications and data after removing the GKE cluster from Project Astra?**
+
+Removing a GKE cluster from Project Astra will not make any changes to the cluster's configuration (applications and persistent storage). Any Project Astra snapshots or backups taken of applications on that cluster will be unavailable to restore. Volume snapshot data stored within Cloud Volumes Service will not be removed. Persistent Storage backups created by Project Astra will remain within the Google Cloud object store, but they are unavailable for restore.
+
+**Will NetApp Trident be uninstalled when I remove a GKE cluster from Project Astra?**
+
+Trident will not be uninstalled from a cluster when you remove it from Project Astra.
+
+== Managing Applications
+
+**How many apps per namespace?**
+
+There is no limitation about number applications under a namespace. Project Astra will discover all application in the name space by application name.
+
+**I have deployed my applications using Helm and kubectl. My newly-deployed application is not showing up on the Discovered Apps list. What can I check to identify the problem?**
+
+When an application is successfully deployed, Project Astra will automatically discover the application and add it to the Discovered Apps list. When applications are not listed in **Discovered Apps**, check the status and health of the Kubernetes pod by running `kubectl get pod -A |grep [pod name]`. If the pods are healthy and running, check to see if the application is listed under **Ignored Apps**.
+
+**I've deployed my applications using Helm and kubectl. I don’t see any of my application’s PVCs bound to GCP CVS. What's wrong?**
+
+The NetApp Trident operator sets the default storage class to `netapp-cvs-premium` after it's successfully added to Project Astra. When an application's PVCs are not bound to Cloud Volumes Services for Google Cloud, there are a few steps that you can take:
+
+* Run `kubectl get sc` and check to see if the default storage class is set to _netapp-cvs_.
+* Check the yaml file or Helm chart that was used to deploy the application and see if a different storage class is defined.
+* Check to make sure that the worker node image type is Ubuntu and the NFS mount succeeded.
+
+**I have an existing cluster that has applications using GCP persistent disks. Can I register those applications with Astra?**
+
+Applications using GCP PVCs will be discovered and registered by Project Astra. And it's allowed to perform Project Astra data management operations. But snapshots and backups taken with Project Astra for those applications will not be application consistent.
+
+**How many applications can I simultaneously manage with Project Astra?**
+
+Multiple applications from different GKE cluster can be managed at the same time.
+
+**I moved my application to the Ignored list by mistake. Can I manage the applications that are on the Ignore list?**
+
+Yes, applications on the Ignored list can be registered successfully. Data management operations will function as usual after you start managing the application.
+
+**Can I register applications that are not MySQL, Jenkins, or PostgreSQL?**
+
+Yes, we can use data management services offered by Project Astra on any persistent volumes managed by Cloud Volumes Service for Google Cloud. However, application-level consistent snapshots, backup, migration, etc. will not be orchestrated through Project Astra.
+
+**Can Project Astra deploy an application?**
+
+Project Astra doesn't deploy an application. Applications must be deployed outside of Project Astra by using kubectl or Helm charts.
+
+**What storage classes can I use in my PVCs to support Project Astra data management operations?**
+
+As part of adding the GKE cluster to Project Astra, NetApp Trident will create three different storage classes for Cloud Volume Services in GCP. Astra data management operations are only supported on storage class _netapp-cvs-extreme_, _netapp-cvs-premium_, and _netapp-cvs-standard_. And you can choose either of these storage class as default when adding a Kubernetes cluster to Project Astra.
+
+**What happens to applications after I stop managing them from Project Astra?**
+
+Applications, data, and any existing backups or snapshots remain available. Data management operations will not be available for unmanaged applications or any backups or snapshots that belong to it. When the application is managed by Project Astra again, the existing snapshots and backups will be available for data management operations.
+
+== Data Management Operations
+
+**My application uses several PVs. Will Project Astra take snapshots and backups of all these PVCs?**
+
+Project Astra aims to simplify application data lifecycle management. Using Project Astra eliminates the need for individual volume-level data management operations. A snapshot operation on an application by Project Astra includes snapshot of all the PVs that are bound to the application’s PVCs.
+
+**Can I create snapshot schedules and assign retention schedules?**
+
+Yes, you can use the Configure Protection Policy option to set a retention policy for each individual application.
+
+**What is the difference between snapshots and backups?**
+
+_Snapshot_ refers to local snapshots, where data is stored as part of the provisioned volumes. Given that they are stored on the same provisioned volume, they are usually faster. Local snapshots are used to restore the application to an earlier point in time.
+
+_Backups_ are stored on object storage. They could be slower compared to the local snapshots. However, they can be accessed across regions in the cloud. Backups are used for migrating applications across regions in the cloud. Also, a user can choose to have longer retention period for backups.
+
+**Can I manage snapshots taken by Project Astra directly through the Cloud Volumes Service snapshot management interface or object storage?**
+
+Snapshots and backups taken through Project Astra can only be managed through Project Astra. Project Astra provides interfaces to create, view, and delete the snapshots and backups. If data objects associated with these snapshots are managed outside of the Project Astra interface, it can result in intermittent behavior.

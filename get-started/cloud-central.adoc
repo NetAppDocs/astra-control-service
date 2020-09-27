@@ -1,0 +1,34 @@
+---
+sidebar: sidebar
+permalink: get-started/cloud-central.html
+keywords: cloud central, sign up, log in, login
+summary: Project Astra is integrated within NetApp Cloud Central's authentication service. Sign up to Cloud Central so you can access Project Astra and NetApp’s other cloud services.
+---
+
+= Sign up to Cloud Central
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+[.lead]
+Project Astra is integrated within NetApp Cloud Central's authentication service. Sign up to Cloud Central so you can access Project Astra and NetApp’s other cloud services.
+
+.Steps
+
+. Open your web browser and go to https://cloud.netapp.com[NetApp Cloud Central^].
+
+. In the top right, click *Sign up*.
+
+. Fill out the form and click *Sign up*.
++
+TIP: You'll need to provide the email address that you enter in this form to the person who adds you to Project Astra.
++
+image:screenshot-cloud-central-signup.gif["A screenshot of the Cloud Central sign up page where you need to enter your email address, password, name, company, and your phone number, which is optional."]
+
+. Wait for an email from NetApp Cloud Central.
+
+. Click the link in the email to verify your email address.
+
+.Result
+
+You now have an active Cloud Central user login.

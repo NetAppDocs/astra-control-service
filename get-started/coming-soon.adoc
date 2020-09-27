@@ -1,0 +1,13 @@
+---
+sidebar: sidebar
+permalink: get-started/coming-soon.html
+keywords:
+summary: Lorem ipsum dolor sit amet
+---
+
+= Placeholder
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/getting-started/
+
+Coming soon.

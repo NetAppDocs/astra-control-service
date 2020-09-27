@@ -1,0 +1,31 @@
+section: use
+title: Use Project Astra
+entries:
+  - title: Manage and protect apps
+    entries:
+      - title: Start managing apps
+        url: /use/manage-apps.html
+      - title: Protect apps
+        url: /use/protect-apps.html
+      - title: Restore apps
+        url: /use/restore-apps.html
+      - title: Clone and migrate apps
+        url: /use/clone-apps.html
+  - title: View app and cluster health
+    entries:
+      - title: Dashboard summary
+        url: /use/view-dashboard.html
+      - title: Cluster health and details
+        url: /use/view-clusters.html
+      - title: App health and details
+        url: /use/view-apps.html
+  - title: Manage your account
+    entries:
+      - title: Invite and manage users
+        url: /use/manage-users.html
+      - title: Manage cloud provider credentials
+        url: /use/manage-credentials.html
+      - title: Manage notifications
+        url: /use/manage-notifications.html
+  - title: Unmanage apps and clusters
+    url: /use/unmanage.html

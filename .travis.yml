@@ -1,6 +1,5 @@
 sudo: false
-dist: trusty
-group: deprecated-2017Q4 # To fix NPM timeout errors
+dist: xenial
 language: ruby
 rvm:
 - 2.4.3
@@ -10,5 +9,18 @@ before_install:
 - git submodule add https://github.com/NetAppDocs/jekyll dependencies/jekyll
 - gem update --system && gem install bundler && gem update bundler
 - mv dependencies/jekyll/prod-build.sh ./ && ./prod-build.sh
+- sudo apt-get -y install graphicsmagick graphicsmagick-libmagick-dev-compat libmagickwand-dev
 script:
-- bundle exec rake deploy
+- if [[ ! -z "$FEATURE_FLAG" ]]; then bundle exec rake buildAll; fi
+- mkdir -p /tmp/output && bundle exec jekyll build --trace --destination /tmp/output --config _config.yml,project.yml
+- touch /tmp/output/.nojekyll
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  keep_history: false
+  local_dir: /tmp/output
+  target_branch: $DEPLOY_BRANCH
+  verbose: true
+  on:
+    all_branches: true
