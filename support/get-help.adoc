@@ -16,17 +16,17 @@ You must first link:register-support.html[activate support for your NetApp seria
 
 You can access support options from the Project Astra UI by selecting the *Support* tab from the main menu.
 
-image::diagram_support_obtain.png[Obtaining support information]
+//image::diagram_support_obtain.png[Obtaining support information]
 
 == Self support
 
 These options are available for free 24x7:
 
-* https://kb.netapp.com/[Knowledge base]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra[Knowledge base^]
 +
 Search for articles, FAQ’s, or Break Fix information related to Project Astra.
 
-* https://netapppub.slack.com/archives/C1E3QH84C[Slack]
+* https://netapppub.slack.com/archives/C1E3QH84C[Slack^]
 +
 Go to the containers channel in thePub workspace to connect with peers and experts.
 
