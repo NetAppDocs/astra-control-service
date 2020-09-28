@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: jenkins-deploy-from-helm-chart.html
+permalink: solutions/jenkins-deploy-from-helm-chart.html
 keywords:
 summary: Learn how to install Jenkins from a Helm chart on Project Astra
 ---
@@ -18,7 +18,7 @@ The following requirements are necessary for installing and running Jenkins on a
 
 === Compatibility Requirements
 
-Only the current version of Jenkins (5.0.26) has been officially validated for use with Project Astra. Other versions may work, but may only run as a standard application. 
+Only the current version of Jenkins (5.0.26) has been officially validated for use with Project Astra. Other versions may work, but may only run as a standard application.
 
 Project Astra does not support the https://plugins.jenkins.io/kubernetes/[Kubernetes plugin for Jenkins] at this time. This functionality will be added soon. You can run Jenkins in a Kubernetes cluster without the plugin. The plugin provides scalability to your Jenkins cluster.
 
