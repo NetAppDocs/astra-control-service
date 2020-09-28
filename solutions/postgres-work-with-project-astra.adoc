@@ -14,7 +14,7 @@ This guide focuses on Helm as the preferred way to deploy Postgres apps. Plain Y
 
 For express instructions on launching Postgres on Project Astra, see link:postgres-deploy-from-helm-chart.html[Deploy Postgres from a Helm Chart].
 
-NOTE: Postgres 11.7 is the only version supported in the Project Astra alpha program.
+NOTE: Postgres 11.7 is the only version supported in the Project Astra beta program.
 
 == Requirements
 

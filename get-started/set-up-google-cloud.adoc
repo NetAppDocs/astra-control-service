@@ -10,7 +10,7 @@ summary: A few steps are required to prepare your Google Cloud project before yo
 :icons: font
 :imagesdir: ../media/get-started/
 
-A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with Project Astra.
+A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with the Project Astra beta program.
 
 == Quick start
 

@@ -12,11 +12,11 @@ summary: Astra FAQ
 
 == Overview
 
-Welcome to Project Astra Beta!
+Welcome to the Project Astra Beta program!
 
 Project Astra aims to simplify your application data lifecycle management operations for Kubernetes native applications. In the Beta, Project Astra support is limited to Kubernetes clusters running on Google Kubernetes Engine (GKE) on Google Compute Platform (GCP). Other cloud providers will be added in later phases of the project.
 
-The following sections provide answers to some additional questions that you might come across as you use Project Astra. For any additional clarifications, please reach out to projectastra.support@netapp.com
+The following sections provide answers to some additional questions that you might come across as you use Project Astra. For any additional clarifications, please reach out to projectastra.feedback@netapp.com
 
 == Access to Project Astra
 

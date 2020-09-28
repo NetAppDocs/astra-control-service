@@ -10,7 +10,7 @@ summary: NetApp provides support for Project Astra in a variety of ways. Extensi
 :icons: font
 :imagesdir: ../media/support/
 
-NetApp provides support for Project Astra in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles or a Slack channel. Your Project Astra account includes remote technical support via email, web ticketing, or phone.
+NetApp provides support for the Project Astra beta program in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles or a Slack channel. Your Project Astra account includes remote technical support via email, web ticketing, or phone.
 
 You must first link:register-support.html[activate support for your NetApp serial number] in order to use these non self-service support options. A NetApp Support Site (NSS) SSO account is required for chat and web ticketing along with case management.
 
@@ -32,7 +32,7 @@ Go to the containers channel in thePub workspace to connect with peers and exper
 
 * Email
 +
-Send an email to support through projectastra.support@netapp.com. This a great place to ask general questions about service, provide feedback and suggestions, or seek assistance for onboarding related problems.
+Send an email to support through projectastra.feedback@netapp.com. This a great place to ask general questions about service, provide feedback and suggestions, or seek assistance for onboarding related problems.
 
 == Subscription support
 

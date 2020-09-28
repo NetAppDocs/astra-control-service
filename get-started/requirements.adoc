@@ -14,7 +14,7 @@ Get started by verifying support for your Kubernetes clusters, apps, and web bro
 
 == Supported Kubernetes clusters
 
-* Project Astra supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
+* The Project Astra beta program supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
 +
 On-prem Kubernetes clusters and clusters running in other cloud providers are not supported at this time.
 

@@ -5,7 +5,7 @@ keywords:
 summary: Lorem ipsum dolor sit amet
 ---
 
-= Placeholder
+= Coming Soon
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/getting-started/
