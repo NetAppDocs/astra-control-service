@@ -32,7 +32,7 @@ Go to the containers channel in thePub workspace to connect with peers and exper
 
 * Email
 +
-Send an email to support through projectastra.support@netapp.com. This a great place to ask general questions about service, provide feedback and suggestions, or seek assistance for onboarding related problems.
+Send an email to support through projectastra.feedback@netapp.com. This a great place to ask general questions about service, provide feedback and suggestions, or seek assistance for onboarding related problems.
 
 == Subscription support
 
