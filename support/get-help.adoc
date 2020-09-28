@@ -10,13 +10,13 @@ summary: NetApp provides support for Project Astra in a variety of ways. Extensi
 :icons: font
 :imagesdir: ../media/support/
 
-NetApp provides support for the Project Astra beta program in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles or a Slack channel. Your Project Astra account includes remote technical support via email, web ticketing, or phone.
+NetApp provides support for the Project Astra beta program in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles and a Slack channel. Your Project Astra account includes remote technical support via web ticketing.
 
 You must first link:register-support.html[activate support for your NetApp serial number] in order to use these non self-service support options. A NetApp Support Site (NSS) SSO account is required for chat and web ticketing along with case management.
 
 You can access support options from the Project Astra UI by selecting the *Support* tab from the main menu.
 
-//image::diagram_support_obtain.png[Obtaining support information]
+image:screenshot-support.gif[]
 
 == Self support
 
@@ -26,29 +26,33 @@ These options are available for free 24x7:
 +
 Search for articles, FAQ’s, or Break Fix information related to Project Astra.
 
+* Documentation
++
+This is the doc site that you're currently viewing.
+
 * https://netapppub.slack.com/archives/C1E3QH84C[Slack^]
 +
 Go to the containers channel in thePub workspace to connect with peers and experts.
 
-* Email
+* Feedback email
 +
-Send an email to support through projectastra.feedback@netapp.com. This a great place to ask general questions about service, provide feedback and suggestions, or seek assistance for onboarding related problems.
+Send an email to projectastra.feedback@netapp.com to let us know your thoughts, ideas, or concerns.
 
 == Subscription support
 
 In addition to the self-support options above, you can work with a NetApp Support Engineer to resolve any issues after you link:register-support.html[activate support for your NetApp serial number].
 
-Once your Project Astra serial number is activated, you can access NetApp technical support resources by any of the following methods.
-
-* https://mysupport.netapp.com/site/cases/mine/create[Support Ticket]
+Once your Project Astra serial number is activated, you can access NetApp technical support resources by creating a https://mysupport.netapp.com/site/cases/mine/create[Support ticket].
 +
-Select *Cloud Data Services > Project Astra*
+Select *Cloud Data Services > Project Astra*.
++
+Use your "941" serial number to open the web ticket. link:register-support.html[Learn more about your serial number].
 +
 image:screenshot-web-ticket.gif[]
 
-* https://www.netapp.com/us/contact-us/support.aspx[Phone]
-+
-For reporting new issues or calling about existing tickets. This method is best for P1 or immediate assistance.
+//* https://www.netapp.com/us/contact-us/support.aspx[Phone]
+//+
+//For reporting new issues or calling about existing tickets. This method is best for P1 or immediate assistance.
 
 //* https://www.netapp.com/us/forms/sales-contact.aspx[Contact sales]
 //+

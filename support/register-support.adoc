@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: support/register-support.html
 keywords: support, register for support, support registration
-summary: Project Astra attempts to automatically register your account for support when you sign up. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
+summary: Project Astra attempts to automatically register your account for support when you set up your account. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
 ---
 
 = Register for support
@@ -10,19 +10,37 @@ summary: Project Astra attempts to automatically register your account for suppo
 :icons: font
 :imagesdir: ../media/support/
 
-Project Astra attempts to automatically register your account for support when you sign up. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
+Project Astra attempts to automatically register your account for support when you set up your account. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
+
+== Verify your support registration
+
+Project Astra includes a Support Status field that enables you to confirm your support registration.
+
+.Steps
+
+. Click *Support*.
+
+. Take a look at the Support Status field.
++
+The Support Status starts off as "Not Registered" but then moves to "In-Progress" and finally to "Registered" once complete.
++
+You can refresh your screen to get a current snapshot of process.
++
+If you have any issues registering your serial number, contact us at projectastra.feedback@netapp.com.
 
 == Obtain your serial number
 
-During the initial subscription process, Project Astra generates a 20-digit NetApp serial number that starts with "941". The NetApp serial number represents your Project Astra account.
+When you accept your Beta invitation, Project Astra prompts you to set up your account. Project Astra uses the information that you provide about your company to generate a 20-digit NetApp serial number that starts with "941".
+
+The NetApp serial number represents your Project Astra account. You'll need to use this serial number when opening a web ticket.
 
 You can find your serial number in the Project Astra interface from the *Support* page.
 
-//image:screenshot-support.gif[]
+image:screenshot-support.gif[]
 
 == Activate support entitlement
 
-You must register the NetApp serial number associated with Project Astra to activate support entitlement. We offer 2 options for support registration:
+If Project Astra was unable to automatically register your account for support, then you must register the NetApp serial number associated with Project Astra to activate support entitlement. We offer 2 options for support registration:
 
 . Current NetApp customer with existing NetApp Support Site (NSS) SSO account
 . New NetApp customer with no existing NetApp Support Site (NSS) SSO account
