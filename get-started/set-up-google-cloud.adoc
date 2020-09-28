@@ -28,8 +28,8 @@ https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_
 
 [role="quick-margin-list"]
 * Kubernetes Engine Admin
-* Cloud Volumes Admin
-* Cloud Storage Admin
+* NetApp Cloud Volumes Admin
+* Storage Admin
 * Service Usage Viewer
 * Compute Network Viewer
 
@@ -74,9 +74,9 @@ Project Astra uses a Google Cloud service account to facilitate Kubernetes appli
 +
 * *Kubernetes Engine Admin* - Used to list clusters and create admin access to manage apps.
 
-* *Cloud Volumes Admin* - Used to manage persistent storage for apps.
+* *NetApp Cloud Volumes Admin* - Used to manage persistent storage for apps.
 
-* *Cloud Storage Admin* - Used to manage buckets and objects for backups of apps.
+* *Storage Admin* - Used to manage buckets and objects for backups of apps.
 
 * *Service Usage Viewer* - Used to check if the required Cloud Volumes Service for Google Cloud APIs are enabled.
 
