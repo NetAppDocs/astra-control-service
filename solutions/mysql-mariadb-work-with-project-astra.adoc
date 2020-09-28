@@ -14,7 +14,7 @@ This guide focuses on Helm as the preferred way to deploy Postgres apps. Plain Y
 
 For express instructions on launching MySQL/MariaDB on Project Astra, see link:mysql-mariadb-deploy-from-helm-chart.html[Deploy MySQL/MariaDB from a Helm Chart].
 
-NOTE: MySQL 0.3.22 and MariaDB 14.14 are the only versions supported in the Project Astra alpha program.
+NOTE: MySQL 0.3.22 and MariaDB 14.14 are the only versions supported in the Project Astra beta program.
 
 
 == Requirements

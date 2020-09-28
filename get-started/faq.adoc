@@ -12,7 +12,7 @@ summary: Astra FAQ
 
 == Overview
 
-Welcome to Project Astra Beta!
+Welcome to the Project Astra Beta program!
 
 Project Astra aims to simplify your application data lifecycle management operations for Kubernetes native applications. In the Beta, Project Astra support is limited to Kubernetes clusters running on Google Kubernetes Engine (GKE) on Google Compute Platform (GCP). Other cloud providers will be added in later phases of the project.
 

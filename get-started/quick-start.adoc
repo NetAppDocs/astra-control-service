@@ -10,7 +10,7 @@ summary: Get started with Project Astra in a few steps.
 :icons: font
 :imagesdir: ../media/get-started/
 
-Get started with Project Astra in a few steps.
+Get started with the Project Astra beta program in a few steps.
 
 ==== image:number1.png[Number 1] Review Kubernetes cluster requirements
 

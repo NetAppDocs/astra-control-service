@@ -10,7 +10,7 @@ summary: Learn how to create a GCP project so you can use Project Astra.
 :icons: font
 :imagesdir: ../media/gcp-credentials/
 
-To use Project Astra you will need to have a GCP project created with the correct APIs enabled. If you don't already have a GCP project, follow these steps to create a new one.
+To use the Project Astra beta program you will need to have a GCP project created with the correct APIs enabled. If you don't already have a GCP project, follow these steps to create a new one.
 
 == Create a Project
 
