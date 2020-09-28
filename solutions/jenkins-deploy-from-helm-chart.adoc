@@ -1,0 +1,63 @@
+---
+sidebar: sidebar
+permalink: jenkins-deploy-from-helm-chart.html
+keywords:
+summary: Learn how to install Jenkins from a Helm chart on Project Astra
+---
+
+= Deploy Jenkins From a Helm Chart
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+Learn how to exercise the Project Astra beta program workflow by deploying Jenkins from a Helm chart. After you deploy Jenkins on your cluster, you can register the application with Project Astra.
+
+== Requirements
+
+The following requirements are necessary for installing and running Jenkins on a Kubernetes cluster for the Project Astra beta program.
+
+=== Compatibility Requirements
+
+Only the current version of Jenkins (5.0.26) has been officially validated for use with Project Astra. Other versions may work, but may only run as a standard application. 
+
+Project Astra does not support the https://plugins.jenkins.io/kubernetes/[Kubernetes plugin for Jenkins] at this time. This functionality will be added soon. You can run Jenkins in a Kubernetes cluster without the plugin. The plugin provides scalability to your Jenkins cluster.
+
+=== System Requirements
+
+* A new Kubernetes cluster which has been added to Project Astra.
+* https://helm.sh/docs/intro/install/[Helm (version 3.2+)] and https://kubernetes.io/docs/tasks/tools/install-kubectl/[kubectl] installed on your local computer.
+* Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
+
+=== Namespace Requirements
+
+**You must deploy your app in a namespace other than the default.** In the following example, we create and use the namespace `jenkins` for the deployment.
+
+In the following example, we use `&&` to concatenate the commands for creating the namespace and deploying the app. We recommend this approach, as it ensures the commands are run in sequence even if you get interrupted.
+
+We recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
+
+NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
+
+== Install Jenkins
+
+To exercise the Project Astra beta workflow, we recommend you use the Bitnami Helm chart. Add the Bitnami chart repo:
+
+----
+helm repo add bitnami https://charts.bitnami.com/bitnami
+----
+
+NOTE: You must deploy the Helm chart in a namespace other than the default.
+
+Create the `jenkins` namespace and deploy Jenkins into it with the command:
+
+----
+kubectl create namespace jenkins && helm install jenkins --namespace jenkins --set persistence.storageClass=netapp-cvs-perf-premium,persistence.size=100Gi bitnami/jenkins
+----
+
+This does the following:
+
+* Creates the `jenkins` namespace.
+* Sets the correct storage class.
+* Sets the persistent volume storage size to 100Gi.
+
+After the Helm chart is deployed, it will be automatically detected by Project Astra. You can then register the app with Project Astra.
