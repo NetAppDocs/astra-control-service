@@ -11,7 +11,7 @@ summary: After you log in to Project Astra, your first step is to add a Kubernet
 :imagesdir: ../media/get-started/
 
 [.lead]
-After you log in to Project Astra, your first step is to add a Kubernetes cluster.
+After you log in to the Project Astra beta program, your first step is to add a Kubernetes cluster.
 
 .Steps
 

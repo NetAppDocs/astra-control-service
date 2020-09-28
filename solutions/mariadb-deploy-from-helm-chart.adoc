@@ -10,9 +10,9 @@ summary: Learn how to deploy MariaDB from a Helm chart
 :icons: font
 :imagesdir: ../media/
 
-Learn how to exercise the Project Astra workflow by deploying MariaDB from a Helm chart. After you deploy MariaDB on your cluster, you can register the application with Project Astra.
+Learn how to exercise the Project Astra beta program workflow by deploying MariaDB from a Helm chart. After you deploy MariaDB on your cluster, you can register the application with Project Astra.
 
-NOTE: The Project Astra alpha program only supports MySQL 0.3.22 and MariaDB 14.14.
+NOTE: The Project Astra beta program only supports MySQL 0.3.22 and MariaDB 14.14.
 
 == System Requirements
 
