@@ -15,3 +15,7 @@ entries:
         url: /solutions/postgres-deploy-from-helm-chart.html
       - title: Work With Postgres on Project Astra
         url: /solutions/postgres-work-with-project-astra.html
+   - title: Jenkins
+     entries:
+      - title: Deploy Jenkins from Helm
+        url: /solutions/jenkins-deploy-from-helm-chart.html
