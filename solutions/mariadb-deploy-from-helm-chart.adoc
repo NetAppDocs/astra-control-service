@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: solutions/mariadb-deploy-from-helm-chart.html
-keywords:
-summary: Learn how to deploy MariaDB from a Helm chart
+keywords: helm chart, mariadb
+summary: Learn how to exercise the Project Astra Beta program workflow by deploying MariaDB from a Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Project Astra.
 ---
 
 = Deploy MariaDB From a Helm Chart
@@ -10,40 +10,26 @@ summary: Learn how to deploy MariaDB from a Helm chart
 :icons: font
 :imagesdir: ../media/
 
-Learn how to exercise the Project Astra beta program workflow by deploying MariaDB from a Helm chart. After you deploy MariaDB on your cluster, you can register the application with Project Astra.
+Learn how to exercise the Project Astra Beta program workflow by deploying MariaDB from a Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Project Astra.
 
-NOTE: The Project Astra beta program only supports MySQL 0.3.22 and MariaDB 14.14.
+NOTE: The Project Astra Beta program only supports MySQL 0.3.22 and MariaDB 14.14.
 
 == System Requirements
 
-In order to deploy MariaDB from a Helm chart for the Project Astra alpha program, you need the following:
+In order to deploy MariaDB from a Helm chart for the Project Astra Beta program, you need the following:
 
-* A fresh GKE cluster which has been added to Project Astra.
+* A GKE cluster which has been added to Project Astra.
 * Updated versions of Helm (version 3.2+) and Kubectl installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
 
-== Namespace Requirements
-
-**You must deploy your app in a namespace other than the default.** In the following example, we create and use the namespace `testdb` for the deployment.
-
-**A namespace which is empty for more than 60 seconds will be ignored by Project Astra.** Thus, you want to be sure to deploy your app into your namespace within one minute after you create the namespace.
-
-In the following example, we use `&&` to concatenate the commands for creating the namespace and deploying the app. We recommend this approach, as it ensures the commands are run in sequence even if you get interrupted.
-
-We recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
-
-NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
-
 == Install MariaDB
 
-To exercise the Project Astra alpha workflow, we recommend you use the Helm chart which we have customized for Project Astra. Contact our TME team to get a copy of this chart.
-
-NOTE: You must deploy the Helm chart in a namespace other than the default.
+To exercise the Project Astra Beta program workflow, we recommend you use the Helm chart.
 
 Deploy MariaDB with the command:
 
 ----
-kubectl create namespace testdb && helm install mariadb ./mariadb --namespace testdb --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8 > /dev/null 2>&1
+helm install mariadb bitnami/mariadb --namespace testdb --create-namespace --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8 > /dev/null 2>&1
 ----
 
 This does the following:
@@ -53,6 +39,6 @@ This does the following:
 * Creates a database named `test_db`
 * Creates a user `test_db_user` with password `NKhjs2wQPt8`
 
-WARNING: This method of setting the password at deployment is insecure. Only use this command when setting up MariaDB for a sandbox deployment to use Project Astra alpha program. We do not recommend this for a production environment.
+WARNING: This method of setting the password at deployment is insecure. Only use this command when setting up MariaDB for a sandbox deployment to use Project Astra Beta program. We do not recommend this for a production environment.
 
-After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, installed applications can take up to 5 minutes to show up in the Discovered Applications list.
+After the Helm chart is deployed, it will be automatically discovered by Project Astra, at which point you can manage the app with Project Astra.
