@@ -43,11 +43,11 @@ Send an email to projectastra.feedback@netapp.com to let us know your thoughts, 
 In addition to the self-support options above, you can work with a NetApp Support Engineer to resolve any issues after you link:register-support.html[activate support for your NetApp serial number].
 
 Once your Project Astra serial number is activated, you can access NetApp technical support resources by creating a https://mysupport.netapp.com/site/cases/mine/create[Support ticket].
-+
+
 Select *Cloud Data Services > Project Astra*.
-+
+
 Use your "941" serial number to open the web ticket. link:register-support.html[Learn more about your serial number].
-+
+
 image:screenshot-web-ticket.gif[]
 
 //* https://www.netapp.com/us/contact-us/support.aspx[Phone]

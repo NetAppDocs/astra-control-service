@@ -96,13 +96,11 @@ image:screenshot-new-registration.gif[New Customer Registration Form]
 .. Enter your serial number.
 
 .. Click *Submit Registration*.
-
-.Result
-
++
 You will receive a confirmation email from your submitted registration. If no errors occur, you will be re-directed to a "Registration Submitted Successfully" page. You will also receive an email within an hour stating that "your product is now eligible for support".
-
++
 This is a one-time support registration for the applicable serial number.
 
-.What's next?
-
-As a new NetApp customer, you also need to create a NetApp Support Site (NSS) user account for future support activations and for access to the support portal for technical support chat and web ticketing. Go to the http://now.netapp.com/newuser/[NetApp Support Registration site^] to perform this task. You can provide your newly registered Project Astra serial number to expedite the process.
+. As a new NetApp customer, you also need to create a NetApp Support Site (NSS) user account for future support activations and for access to the support portal for technical support chat and web ticketing.
++
+Go to the http://now.netapp.com/newuser/[NetApp Support Registration site^] to perform this task. You can provide your newly registered Project Astra serial number to expedite the process.
