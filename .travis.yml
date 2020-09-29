@@ -8,6 +8,7 @@ before_install:
 - echo -e "machine github.com\n login $GH_TOKEN" >> ~/.netrc && chmod 600 ~/.netrc
 - git submodule add https://github.com/NetAppDocs/jekyll dependencies/jekyll
 - gem update --system && gem install bundler && gem update bundler
+- if [[ -z "$DEPLOY_BRANCH" ]]; then export DEPLOY_BRANCH=gh-pages; fi
 - mv dependencies/jekyll/prod-build.sh ./ && ./prod-build.sh
 - sudo apt-get -y install graphicsmagick graphicsmagick-libmagick-dev-compat libmagickwand-dev
 script:
