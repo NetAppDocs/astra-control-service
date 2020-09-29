@@ -14,7 +14,7 @@ Known limitations identify platforms, devices, or functions that are not support
 
 == Persistent volume limit
 
-You can have up to 100 volumes per Google Cloud region. If you reach this limit, creation of new clones or volumes will fail.
+You can have up to 100 volumes per Google Cloud region. If you reach this limit, creation of new clones or volumes will fail. link:../support/get-help.html[Contact support to increase the volume limit].
 
 == Unhealthy pods affect app management
 
@@ -22,7 +22,7 @@ If a managed app has pods in an unhealthy state, Project Astra can't create new 
 
 == Trident isn't uninstalled from a cluster
 
-When you unmanage a cluster from Project Astra, Trident isn't uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
+When you unmanage a cluster from Project Astra, Trident isn't automatically uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
 
 == Existing connections to a Postgres pod causes failures
 
