@@ -11,4 +11,4 @@ summary: There's still time to sign up for the Project Astra Beta release.
 :imagesdir: ../media/get-started/
 
 [.lead]
-There's still time to sign up for the Project Astra Beta release. Just go to https://cloud.netapp.com/project-astra-register and fill out the form to request participation. A NetApp representative will contact you soon after.
+There's still time to sign up for the Project Astra Beta program. https://cloud.netapp.com/project-astra-register[Click this link^] and fill out the form to request participation. A NetApp representative will contact you soon after.

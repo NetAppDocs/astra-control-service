@@ -10,7 +10,7 @@ summary: Learn how to remove your app and cluster to remove your assets from Pro
 :icons: font
 :imagesdir: ../media/deregister/
 
-After you are done exploring the functionality of Project Astra, you will want to remove your assets from the service.
+After you are done exploring the functionality of the Project Astra beta program, you will want to remove your assets from the service.
 
 == Deregister Your App(s)
 
