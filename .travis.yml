@@ -9,6 +9,16 @@ before_install:
 - git submodule add https://github.com/NetAppDocs/jekyll dependencies/jekyll
 - gem update --system && gem install bundler && gem update bundler
 - if [[ -z "$DEPLOY_BRANCH" ]]; then export DEPLOY_BRANCH=gh-pages; fi
+- cp -rl dependencies/jekyll/search.html ./get-started/search.html
+- sed -i 's/permalink\:\s*\/search\.html/permalink\:\ get-started\/search\.html/g' ./get-started/search.html
+- cp -rl dependencies/jekyll/search.html ./use/search.html
+- sed -i 's/permalink\:\s*\/search\.html/permalink\:\ use\/search\.html/g' ./use/search.html
+- cp -rl dependencies/jekyll/search.html ./learn/search.html
+- sed -i 's/permalink\:\s*\/search\.html/permalink\:\ learn\/search\.html/g' ./learn/search.html
+- cp -rl dependencies/jekyll/search.html ./solutions/search.html
+- sed -i 's/permalink\:\s*\/search\.html/permalink\:\ solutions\/search\.html/g' ./solutions/search.html
+- cp -rl dependencies/jekyll/search.html ./support/search.html
+- sed -i 's/permalink\:\s*\/search\.html/permalink\:\ support\/search\.html/g' ./support/search.html
 - mv dependencies/jekyll/prod-build.sh ./ && ./prod-build.sh
 - sudo apt-get -y install graphicsmagick graphicsmagick-libmagick-dev-compat libmagickwand-dev
 script:
