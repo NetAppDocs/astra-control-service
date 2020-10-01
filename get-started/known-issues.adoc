@@ -16,22 +16,6 @@ Known issues identify problems that might prevent you from using this release of
 
 Clones of very large and consumed persistent volumes might be intermittently slow, dependent on cluster access to the object store. If the clone is hung and no data has been copied for more than 30 minutes, Project Astra terminates the clone action.
 
-== Storage classes might be out of date
-
-When viewing compute details, the storage class screen might be out of date. Currently, Project Astra discovers the storage class details only during the initial registration.
-
 == Clone fails after deleting a backup
 
 If you delete a backup that's used for an active clone operation, the clone fails and the newly cloned app gets stuck in a provisioning state. Contact NetApp support to clear the stuck app from the application listing.
-
-== Clusters don't get removed immediately
-
-When removing a cluster, the Project Astra interface continues to show the removed cluster for 60 seconds until it's removed.
-
-== Credentials invalidated after upgrade to GKE master nodes
-
-Google Kubernetes Engine (GKE) credentials are invalidated when Google Cloud upgrades GKE master nodes. We don't expect Google Cloud to update master nodes frequently, but if access to the cluster is lost, then the workaround is to re-add the cluster to Project Astra. Re-adding the cluster invalidates the old registered app details and snapshot details.
-
-You can determine whether an upgrade occurred by issuing the following:
-
-`bash; gcloud beta container operations list | grep -i myclusterName`
