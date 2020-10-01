@@ -23,7 +23,7 @@ Follow the prompts to add the cluster.
 +
 image:screenshot-compute-select-credentials.gif[]
 +
-Project Astra uses the service account to discover the clusters running in the Google Kubernetes Engine projects that are associated with the service account.
+Project Astra uses the service account to discover the clusters running in Google Kubernetes Engine.
 
 . *Compute*: Select the cluster that you'd like to add and click *Configure storage*.
 +
