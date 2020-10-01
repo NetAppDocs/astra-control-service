@@ -31,6 +31,6 @@ image:screenshot-accept-invitation.gif[A screenshot that shows the Accept Invita
 
 . Click *Accept Invitation*.
 +
-If you are the first person to join the Project Astra organization, you will be prompted to provide your address and serial number. **Be sure to use a valid physical address.** If you are being added to an existing account, you should now see the Project Astra interface.
+If you are the first person to join the Project Astra organization, you will be prompted to provide your address and serial number. **Be sure to use a valid physical address.** Please note the account name must be between 5 and 19 characters long. If you are being added to an existing account, you should now see the Project Astra interface.
 +
 image:screenshot-dashboard.gif[A screenshot that shoes the Project Astra Dashboard.]
