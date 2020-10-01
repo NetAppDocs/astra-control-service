@@ -12,6 +12,14 @@ summary: Known limitations identify platforms, devices, or functions that are no
 
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
+== One GCP project and one service account are supported
+
+The Project Astra Beta program supports one Google Cloud Platform project and one service account. You should not add more than one service account to Project Astra and you shouldn’t rotate service account credentials.
+
+If you want to change the GCP project that you’re using with Project Astra, then we will need to set up a new account for you.
+
+We intend to address this limitation in a future release.
+
 == Persistent volume limit
 
 You can have up to 100 volumes per Google Cloud region. If you reach this limit, creation of new clones or volumes will fail. link:../support/get-help.html[Contact support to increase the volume limit].
