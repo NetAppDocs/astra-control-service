@@ -14,7 +14,7 @@ This guide focuses on Helm as the preferred way to deploy Postgres apps. Plain Y
 
 For express instructions on launching MySQL/MariaDB on Project Astra, see link:mariadb-deploy-from-helm-chart.html[Deploy MySQL/MariaDB from a Helm Chart].
 
-MariaDB and MySQL are validated apps for the Project Astra Beta program. link:../validated-vs-standard.html[Learn the difference between Validated and Standard apps]
+MariaDB and MySQL are validated apps for the Project Astra Beta program. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps]
 
 NOTE: MySQL 0.3.22 and MariaDB 14.14 are the only versions supported in the Project Astra Beta program.
 
