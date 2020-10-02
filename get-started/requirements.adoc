@@ -32,7 +32,7 @@ Project Astra supports all applications running on your Kubernetes clusters.
 
 NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups.
 
-//link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
+link:../learn/validated-vs-standard.html[Learn the difference between a Validated and a Standard app].
 
 No matter which type of app that you use with Project Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
