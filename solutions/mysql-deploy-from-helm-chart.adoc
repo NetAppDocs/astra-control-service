@@ -12,7 +12,7 @@ summary: Learn how to exercise the Project Astra Beta workflow by deploying MySQ
 
 Learn how to exercise the Project Astra Beta workflow by deploying MySQL from a Helm chart. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Project Astra.
 
-MariaDB and MySQL are validated apps for the Project Astra Beta program. link:/learn/validated-vs-standard.html[Learn the difference between Validated and Standard app
+MariaDB and MySQL are validated apps for the Project Astra Beta program. link:validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
 NOTE: The Project Astra beta program only supports MySQL 0.3.22 and MariaDB 14.14.
 

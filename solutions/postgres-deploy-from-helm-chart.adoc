@@ -12,7 +12,7 @@ summary: Learn how to deploy Postgres from a Helm chart
 
 Learn how to exercise the Project Astra beta program workflow by deploying Postgres from a Helm chart. After you deploy Postgres on your cluster, you can register the application with Project Astra.
 
-Postgres is a validated app for the Project Astra Beta program. link:/learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
+Postgres is a validated app for the Project Astra Beta program. link:validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
 NOTE: The Project Astra Beta Program only supports Postgres 11.7.
 
