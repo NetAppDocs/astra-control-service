@@ -48,8 +48,6 @@ Stop managing the clusters that you no longer want to manage from Project Astra.
 +
 Trident won't be uninstalled from the cluster. https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[Learn how to uninstall Trident^].
 
-* Always remove your cluster from Project Astra before deleting it with the GCP console. Deleting the cluster from GCP first can cause problems with your Astra account.
-
 * Apps associated with this cluster will no longer be managed and will go into a Detached state.
 
 * Any snapshots or backups associated with applications on the cluster aren't deleted, but data management operations aren't available from Project Astra.
