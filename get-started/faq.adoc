@@ -130,13 +130,13 @@ New worker nodes can be added to existing pools, or new pools can be created as 
 
 Yes, you can remove one or more Kubernetes cluster from Project Astra at the same time. All managed applications from the unamanged cluster will be removed and Project Astra snapshots or backups taken of applications on that cluster will be unavailable to restore.
 
-WARNING: It's important to remove a cluster from Project Astra before you delete it through GCP. Deleting a cluster from GCP while it's still being managed by Project Astra can cause problems for your Project Astra account.
+WARNING: Always remove a cluster from Project Astra before you delete it through GCP. Deleting a cluster from GCP while it's still being managed by Project Astra can cause problems for your Project Astra account.
 
 **What happens to my applications and data after removing the GKE cluster from Project Astra?**
 
 Removing a GKE cluster from Project Astra will not make any changes to the cluster's configuration (applications and persistent storage). Any Project Astra snapshots or backups taken of applications on that cluster will be unavailable to restore. Volume snapshot data stored within Cloud Volumes Service will not be removed. Persistent Storage backups created by Project Astra will remain within the Google Cloud object store, but they are unavailable for restore.
 
-WARNING: It's important to remove a cluster from Project Astra before you delete it through GCP. Deleting a cluster from GCP while it's still being managed by Project Astra can cause problems for your Project Astra account.
+WARNING: Always remove a cluster from Project Astra before you delete it through GCP. Deleting a cluster from GCP while it's still being managed by Project Astra can cause problems for your Project Astra account.
 
 **Will NetApp Trident be uninstalled when I remove a GKE cluster from Project Astra?**
 
