@@ -18,7 +18,9 @@ Get started by verifying support for your Kubernetes clusters, apps, and web bro
 +
 On-prem Kubernetes clusters and clusters running in other cloud providers are not supported at this time.
 
-* Clusters must be running in a healthy state, in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region that supports Cloud Volumes Service for Google Cloud^].
+* Clusters must be running in a healthy state.
+
+* Clusters must be in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region that supports the "CVS-Performance" service type for Cloud Volumes Service^].
 
 * A cluster must be running Kubernetes version 1.17 or later.
 
