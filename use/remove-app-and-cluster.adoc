@@ -22,13 +22,11 @@ This ends your app being managed by Project Astra. It does not remove the app fr
 
 == Remove Your Cluster(s)
 
-Go to **Compute**, then click your cluster to select it. Click to expand the actions menu, then click **Remove cluster**.
+Go to **Compute**, then click your cluster to selct it. Click to expand the actions menu, then click **Remove cluster**.
 
 image::deregister-cluster.png[Deregister a cluster]
 
 This removes your cluster from Project Astra. It does not delete the GKE cluster from your Google Cloud Platform (GCP) account.
-
-NOTE: It's important to remove your cluster from Astra before you delete it through the GCP console. Deleting the cluster from GCP first can cause problems with your Astra account.
 
 == Optional: Delete the Cluster
 
