@@ -19,12 +19,12 @@ Get started by verifying support for your Kubernetes clusters, apps, and web bro
 On-prem Kubernetes clusters and clusters running in other cloud providers are not supported at this time.
 
 * Clusters must be running in a healthy state, in one of the supported regions:
-  * us-central1
-  * us-east4
-  * us-west2
-  * europe-west3
-  * europe-west2
-  * australia-southeast1
+  - us-central1
+  - us-east4
+  - us-west2
+  - europe-west3
+  - europe-west2
+  - australia-southeast1
 
 * A cluster must be running Kubernetes version 1.17 or later.
 
