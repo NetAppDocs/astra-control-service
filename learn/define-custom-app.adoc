@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: define-custom-app.html
+permalink: learn/define-custom-app.html
 keywords:
 summary: Learn how to create a custom app in Project Astra to manage your data by namespace or label.
 ---
