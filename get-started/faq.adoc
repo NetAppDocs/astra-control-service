@@ -104,11 +104,7 @@ When you create a GKE cluster or node pool, you can choose the operating system 
 
 **I would like to add different GKE clusters from different GCP projects. Is this supported in Project Astra?**
 
-Yes, you can add different GKE clusters from different GCP projects as long as all of the following are true:
-
-* The clusters and worker nodes are running a supported version.
-* Service accounts have the required roles and permissions.
-* The network configuration of the different GCP projects allows for communication with the GCP object store created within the first project.
+No, this is not a supported configuration. Beta will only support a single GCP project.
 
 **How do I verify my GKE cluster was added successfully to Project Astra?**
 
