@@ -44,6 +44,11 @@ Ask them to check their spam folder, or search their inbox for “invitation”.
 
 Yes, you can add private clusters in Project Astra beta. To create a Google Kubernetes Engine (GKE) private cluster, https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra[follow the instructions in this knowledgebase article^].
 
+Private clusters must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network] set to allow the Astra IP addresses:
+  ** 18.232.241.74
+  ** 52.72.239.237
+  ** 3.210.60.146
+
 **Can I use a custom network?**
 
 Yes, custom Virtual Private Cloud (VPC) networks are supported and Project Astra Beta will identify the right network peering and automate the required configuration.
