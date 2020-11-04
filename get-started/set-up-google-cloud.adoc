@@ -52,6 +52,7 @@ https://cloud.google.com/endpoints/docs/openapi/enable-api[Enable the following 
 * NetApp Cloud Volumes Service
 * Service Networking API
 * Service Management API
+* Service Consumer Management API
 
 ==== image:number5.png[Number 5] Enable private service access to Cloud Volumes Service for Google Cloud
 

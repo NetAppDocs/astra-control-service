@@ -29,7 +29,7 @@ link:requirements.html[Learn more].
 . Set up a Google Cloud account and project.
 . Create a service account that has the required permissions:
 ** Kubernetes Engine Admin
-** Cloud Volumes Admin
+** NetApp Cloud Volumes Admin
 ** Storage Admin
 ** Service Usage Viewer
 ** Compute Network Viewer

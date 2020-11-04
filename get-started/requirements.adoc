@@ -25,6 +25,7 @@ On-prem Kubernetes clusters and clusters running in other cloud providers are no
   ** europe-west3
   ** europe-west2
   ** australia-southeast1
+  ** Other regions will be added in the future.
 
 * A cluster must be running Kubernetes version 1.17 or later.
 
