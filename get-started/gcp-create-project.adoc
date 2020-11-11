@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: get-started/gcp-create-project.html
 keywords:
-summary: Learn how to create a GCP project so you can use Project Astra.
+summary: Learn how to create a GCP project so you can use Astra.
 ---
 
 = Create a GCP Project
@@ -10,7 +10,7 @@ summary: Learn how to create a GCP project so you can use Project Astra.
 :icons: font
 :imagesdir: ../media/gcp-credentials/
 
-To use the Project Astra beta program you will need to have a GCP project created with the correct APIs enabled. If you don't already have a GCP project, follow these steps to create a new one.
+To use the Astra beta program you will need to have a GCP project created with the correct APIs enabled. If you don't already have a GCP project, follow these steps to create a new one.
 
 == Create a Project
 
@@ -20,7 +20,7 @@ image::click-project.png[Google Container Engine: Click Project]
 
 In the pop-up window which appears, click *NEW PROJECT* to create a new project.
 
-Fill in "Project Astra" as the Project name, select the organization you want to use, then click *CREATE* to create the project.
+Fill in "Astra" as the Project name, select the organization you want to use, then click *CREATE* to create the project.
 
 image::create-new-project.png[Create new GCP project]
 
@@ -28,7 +28,7 @@ It may take a few moments for the project to be created. After the task is compl
 
 == Enable APIs
 
-Next, use the API Manager to enable the APIs used by Project Astra.. From the https://console.cloud.google.com[Google Cloud Console], click *APIs & Services > Dashboard*.
+Next, use the API Manager to enable the APIs used by Astra.. From the https://console.cloud.google.com[Google Cloud Console], click *APIs & Services > Dashboard*.
 
 image::click-api-manager.png[Google Container Engine: API Manager]
 

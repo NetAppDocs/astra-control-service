@@ -10,17 +10,17 @@ summary: Learn how to deploy Postgres from a Helm chart
 :icons: font
 :imagesdir: ../media/
 
-Learn how to exercise the Project Astra beta program workflow by deploying Postgres from a Helm chart. After you deploy Postgres on your cluster, you can register the application with Project Astra.
+Learn how to exercise the Astra beta program workflow by deploying Postgres from a Helm chart. After you deploy Postgres on your cluster, you can register the application with Astra.
 
-Postgres is a validated app for the Project Astra Beta program. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
+Postgres is a validated app for the Astra Beta program. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
-NOTE: The Project Astra Beta Program only supports Postgres 11.7.
+NOTE: The Astra Beta Program only supports Postgres 11.7.
 
 == System Requirements
 
-In order to deploy Postgres from a Helm chart for the Project Astra alpha program, you need the following:
+In order to deploy Postgres from a Helm chart for the Astra alpha program, you need the following:
 
-* A fresh GKE cluster which has been added to Project Astra.
+* A fresh GKE cluster which has been added to Astra.
 * Updated versions of Helm (version 3.2+) and Kubectl installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
 
@@ -28,17 +28,17 @@ In order to deploy Postgres from a Helm chart for the Project Astra alpha progra
 
 **You must deploy your app in a namespace other than the default.** In the following example, we create and use the namespace `testdb` for the deployment.
 
-**A namespace which is empty for more than 60 seconds will be ignored by Project Astra.** Thus, you want to be sure to deploy your app into your namespace within one minute after you create the namespace.
+**A namespace which is empty for more than 60 seconds will be ignored by Astra.** Thus, you want to be sure to deploy your app into your namespace within one minute after you create the namespace.
 
 In the following example, we use `&&` to concatenate the commands for creating the namespace and deploying the app. We recommend this approach, as it ensures the commands are run in sequence even if you get interrupted.
 
 We recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
 
-NOTE: You must deploy your app after the cluster is added to Project Astra, not before.
+NOTE: You must deploy your app after the cluster is added to Astra, not before.
 
 == Install Postgres
 
-To exercise the Project Astra alpha workflow, we recommend the https://github.com/helm/charts/tree/master/stable/postgresql[standard stable chart].
+To exercise the Astra alpha workflow, we recommend the https://github.com/helm/charts/tree/master/stable/postgresql[standard stable chart].
 
 NOTE: You must deploy the Helm chart in a namespace other than the default.
 
@@ -55,6 +55,6 @@ This does the following:
 * Creates a database named `test_db`
 * Creates a user `test_db_user` with password `U9dH9HT4pWS`
 
-WARNING: This method of setting the password at deployment is insecure. Only use this command when setting up Postgres for a sandbox deployment to use Project Astra alpha program. We do not recommend this for a production environment.
+WARNING: This method of setting the password at deployment is insecure. Only use this command when setting up Postgres for a sandbox deployment to use Astra alpha program. We do not recommend this for a production environment.
 
-After the Helm chart is deployed, it will be automatically detected by Project Astra, at which point you can register the app with Project Astra. Please note that for the Project Astra alpha program, it can take up to 5 minutes for applications to show up in the Discovered Applications list after being installed.
+After the Helm chart is deployed, it will be automatically detected by Astra, at which point you can register the app with Astra. Please note that for the Astra alpha program, it can take up to 5 minutes for applications to show up in the Discovered Applications list after being installed.
