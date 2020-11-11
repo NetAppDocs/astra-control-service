@@ -1,12 +1,14 @@
-sudo: false
 dist: xenial
+if: repo =~ /-internal/
 language: ruby
 rvm:
 - 2.4.3
-if: repo =~ /-internal/
+env:
+  global:
+    - FRAMEWORK_BRANCH=astra
 before_install:
 - echo -e "machine github.com\n login $GH_TOKEN" >> ~/.netrc && chmod 600 ~/.netrc
-- git submodule add https://github.com/NetAppDocs/jekyll dependencies/jekyll
+- git submodule add -b $FRAMEWORK_BRANCH https://github.com/NetAppDocs/jekyll dependencies/jekyll
 - gem update --system && gem install bundler && gem update bundler
 - mv dependencies/jekyll/prod-build.sh ./ && ./prod-build.sh
 - sudo apt-get -y install graphicsmagick graphicsmagick-libmagick-dev-compat libmagickwand-dev
