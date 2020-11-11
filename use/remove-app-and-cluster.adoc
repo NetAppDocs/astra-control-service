@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/remove-app-and-cluster.html
 keywords:
-summary: Learn how to remove your app and cluster to remove your assets from Project Astra
+summary: Learn how to remove your app and cluster to remove your assets from Astra
 ---
 
 = Remove Your App and Cluster
@@ -10,7 +10,7 @@ summary: Learn how to remove your app and cluster to remove your assets from Pro
 :icons: font
 :imagesdir: ../media/deregister/
 
-After you are done exploring the functionality of the Project Astra beta program, you will want to remove your assets from the service.
+After you are done exploring the functionality of the Astra beta program, you will want to remove your assets from the service.
 
 == Deregister Your App(s)
 
@@ -18,7 +18,7 @@ Go to **Apps**, then click your app to select it. Click to expand the actions me
 
 image::deregister-app.png[Deregister an app]
 
-This ends your app being managed by Project Astra. It does not remove the app from your cluster.
+This ends your app being managed by Astra. It does not remove the app from your cluster.
 
 == Remove Your Cluster(s)
 
@@ -26,7 +26,7 @@ Go to **Compute**, then click your cluster to selct it. Click to expand the acti
 
 image::deregister-cluster.png[Deregister a cluster]
 
-This removes your cluster from Project Astra. It does not delete the GKE cluster from your Google Cloud Platform (GCP) account.
+This removes your cluster from Astra. It does not delete the GKE cluster from your Google Cloud Platform (GCP) account.
 
 == Optional: Delete the Cluster
 

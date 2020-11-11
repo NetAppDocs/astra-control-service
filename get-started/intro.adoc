@@ -1,20 +1,20 @@
 ---
 sidebar: sidebar
 permalink: get-started/intro.html
-keywords: introduction, how astra works, how project astra works, what project astra is, concept, understanding, overview
-summary: Project Astra is a Kubernetes application data lifecycle management service that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
+keywords: introduction, how astra works, how Astra works, what Astra is, concept, understanding, overview
+summary: Astra is a Kubernetes application data lifecycle management service that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
 ---
 
-= Intro to Project Astra
+= Intro to Astra
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
-Project Astra is a Kubernetes application data lifecycle management service that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
+Astra is a Kubernetes application data lifecycle management service that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
 
 == Features
 
-The Project Astra beta program offers critical capabilities for Kubernetes application data lifecycle management:
+The Astra beta program offers critical capabilities for Kubernetes application data lifecycle management:
 
 * Create a protection policy for each of your apps
 * Migrate applications and data from one Kubernetes cluster to another
@@ -24,23 +24,23 @@ The Project Astra beta program offers critical capabilities for Kubernetes appli
 
 == Supported Kubernetes clusters
 
-Project Astra can manage data for Google Kubernetes Engine (GKE) clusters.
+Astra can manage data for Google Kubernetes Engine (GKE) clusters.
 
 On-prem Kubernetes clusters and clusters running in other cloud providers aren't supported at this time.
 
 link:requirements.html[Learn more about cluster requirements].
 
-== How Project Astra works
+== How Astra works
 
-Project Astra is a NetApp-managed cloud service that is always on and updated with the latest capabilities. It utilizes several components to enable application data lifecycle management. The following image shows the relationship between each component:
+Astra is a NetApp-managed cloud service that is always on and updated with the latest capabilities. It utilizes several components to enable application data lifecycle management. The following image shows the relationship between each component:
 
 image:diagram-overview.png[]
 
-At a high level, Project Astra works like this:
+At a high level, Astra works like this:
 
 * You set up your cloud provider.
 
-* You add your first Kubernetes cluster to Project Astra. Project Astra then does the following:
+* You add your first Kubernetes cluster to Astra. Astra then does the following:
 
 ** Uses the cloud provider credentials that you provided to discover the cluster and the applications running on the cluster.
 
@@ -50,10 +50,10 @@ At a high level, Project Astra works like this:
 
 ** Uses the role to install https://netapp-trident.readthedocs.io/[NetApp's Trident^], to create storage classes, and to eventually create namespaces and support cloning of applications.
 +
-Project Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud.
+Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud.
 +
-Project Astra creates three storage classes that use Cloud Volumes Service for Google Cloud: netapp-cvs-extreme, netapp-cvs-premium (default), and netapp-cvs-standard.
+Astra creates three storage classes that use Cloud Volumes Service for Google Cloud: netapp-cvs-extreme, netapp-cvs-premium (default), and netapp-cvs-standard.
 
 * At this point, cluster configuration is complete. You can now choose which apps to manage and start creating snapshots, backups, and clones.
 
-Note that Project Astra continually watches your clusters for state changes, so it's aware of any new apps that you add along the way.
+Note that Astra continually watches your clusters for state changes, so it's aware of any new apps that you add along the way.

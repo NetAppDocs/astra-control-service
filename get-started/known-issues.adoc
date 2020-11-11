@@ -14,7 +14,7 @@ Known issues identify problems that might prevent you from using this release of
 
 == Clone performance impacted by large persistent volumes
 
-Clones of very large and consumed persistent volumes might be intermittently slow, dependent on cluster access to the object store. If the clone is hung and no data has been copied for more than 30 minutes, Project Astra terminates the clone action.
+Clones of very large and consumed persistent volumes might be intermittently slow, dependent on cluster access to the object store. If the clone is hung and no data has been copied for more than 30 minutes, Astra terminates the clone action.
 
 == Clone fails after deleting a backup
 
