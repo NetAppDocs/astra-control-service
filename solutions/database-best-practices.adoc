@@ -14,7 +14,7 @@ The following suggestions are considered "best practices" for deploying a databa
 
 == Avoid a Single Point of Failure
 
-WARNING: The Project Astra alpha release only supports a single database instance.
+WARNING: The Astra alpha release only supports a single database instance.
 
 If there's one thing you can count on, it's unexpected failures. We recommend the following steps to help limit the scope of a failure.
 

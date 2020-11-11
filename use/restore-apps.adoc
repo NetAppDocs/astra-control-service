@@ -39,4 +39,4 @@ image:screenshot-clone-summary.gif[]
 
 .Result
 
-Project Astra restores the app based on the information that you provided.
+Astra restores the app based on the information that you provided.

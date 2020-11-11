@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: get-started/set-up-google-cloud.html
 keywords: google cloud, google cloud platform, gcp, set up google cloud, set up gcp, set up service account, create service account, project, gcp project, permissions gcp permissions, service account permissions, key, service account key, json, key json, roles, service account roles, gcp roles, cvs, cvs for aws, cloud volumes service apis, apis, networking, cvs networking, cloud volumes service networking, private service access
-summary: A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with Project Astra.
+summary: A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with Astra.
 ---
 
 = Set up Google Cloud
@@ -10,7 +10,7 @@ summary: A few steps are required to prepare your Google Cloud project before yo
 :icons: font
 :imagesdir: ../media/get-started/
 
-A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with the Project Astra beta program.
+A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with the Astra beta program.
 
 == Quick start
 
@@ -65,7 +65,7 @@ image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud pr
 
 == Create a service account that has the required permissions
 
-Project Astra uses a Google Cloud service account to facilitate Kubernetes application data management on your behalf.
+Astra uses a Google Cloud service account to facilitate Kubernetes application data management on your behalf.
 
 .Steps
 
@@ -89,7 +89,7 @@ video::video-create-gcp-service-account.mp4[width=848, height=480]
 
 == Create a service account key
 
-Instead of providing a user name and password to Project Astra, you'll provide a service account key when you add your first cluster. Project Astra uses the service account key to establish the identity of the service account that you just set up.
+Instead of providing a user name and password to Astra, you'll provide a service account key when you add your first cluster. Astra uses the service account key to establish the identity of the service account that you just set up.
 
 The service account key is plaintext stored in the JavaScript Object Notation (JSON) format. It contains information about the GCP resources that you have permission to access.
 
@@ -130,7 +130,7 @@ video::video-enable-gcp-apis.mp4[width=848, height=480]
 
 == Enable private service access to Cloud Volumes Service for Google Cloud
 
-Project Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. Other than the APIs that you enabled in the previous step, the only other requirement is to enable private service access to Cloud Volumes Service.
+Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. Other than the APIs that you enabled in the previous step, the only other requirement is to enable private service access to Cloud Volumes Service.
 
 .Step
 

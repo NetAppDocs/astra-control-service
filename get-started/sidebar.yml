@@ -1,7 +1,7 @@
 section: get-started
 title: Get started
 entries:
-  - title: Intro to Project Astra
+  - title: Intro to Astra
     url: /get-started/intro.html
   - title: Join the Beta release
     url: /get-started/join-beta.html
@@ -11,7 +11,7 @@ entries:
         url: /get-started/known-issues.html
       - title: Known limitations
         url: /get-started/known-limitations.html
-  - title: Get started with Project Astra
+  - title: Get started with Astra
     entries:
       - title: Quick start
         url: /get-started/quick-start.html

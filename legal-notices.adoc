@@ -39,4 +39,4 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[^]
 
 Notice files provide information about third-party copyright and licenses used in NetApp software.
 
-link:media/notice.pdf[Notice for Project Astra^]
+link:media/notice.pdf[Notice for Astra^]

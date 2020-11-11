@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/manage-users.html
 keywords: invite users, add users, remove users, delete users
-summary: Invite users to join your Project Astra account and remove users that should no longer have access to your account.
+summary: Invite users to join your Astra account and remove users that should no longer have access to your account.
 ---
 
 = Invite and remove users
@@ -10,11 +10,11 @@ summary: Invite users to join your Project Astra account and remove users that s
 :icons: font
 :imagesdir: ../media/use/
 
-Invite users to join your Project Astra beta program account and remove users that should no longer have access to your account.
+Invite users to join your Astra beta program account and remove users that should no longer have access to your account.
 
 == Invite users
 
-Account Owners and Admins can invite other users to join the Project Astra account.
+Account Owners and Admins can invite other users to join the Astra account.
 
 .Steps
 
@@ -57,4 +57,4 @@ An Account Owner can remove other users from the account at any time.
 
 .Result
 
-Project Astra removes the user from the account.
+Astra removes the user from the account.

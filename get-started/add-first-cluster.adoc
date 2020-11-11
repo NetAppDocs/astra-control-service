@@ -2,16 +2,16 @@
 sidebar: sidebar
 permalink: get-started/add-first-cluster.html
 keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add compute
-summary: After you log in to Project Astra, your first step is to add a Kubernetes cluster.
+summary: After you log in to Astra, your first step is to add a Kubernetes cluster.
 ---
 
-= Add your first cluster to Project Astra
+= Add your first cluster to Astra
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
 [.lead]
-After you log in to the Project Astra beta program, your first step is to add a Kubernetes cluster.
+After you log in to the Astra beta program, your first step is to add a Kubernetes cluster.
 
 .Steps
 
@@ -23,7 +23,7 @@ Follow the prompts to add the cluster.
 +
 image:screenshot-compute-select-credentials.gif[]
 +
-Project Astra uses the service account to discover the clusters running in Google Kubernetes Engine.
+Astra uses the service account to discover the clusters running in Google Kubernetes Engine.
 
 . *Compute*: Select the cluster that you'd like to add and click *Configure storage*.
 +
@@ -43,4 +43,4 @@ video::video-manage-cluster.mp4[width=848, height=480]
 
 .Result
 
-Project Astra creates an object store for application backups, creates an admin account on the cluster, and sets the default storage class that you specified. This process takes up to 5 minutes.
+Astra creates an object store for application backups, creates an admin account on the cluster, and sets the default storage class that you specified. This process takes up to 5 minutes.

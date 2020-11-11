@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/view-apps.html
 keywords: view app, view app status, view app protection status, view app pods, view persistent storage
-summary: After you start managing an app, Project Astra provides details about the app that enables you to identify its status, its protection status, the pods, persistent storage, and more.
+summary: After you start managing an app, Astra provides details about the app that enables you to identify its status, its protection status, the pods, persistent storage, and more.
 ---
 
 = View the health and details of an app
@@ -11,7 +11,7 @@ summary: After you start managing an app, Project Astra provides details about t
 :imagesdir: ../media/use/
 
 [.lead]
-After you start managing an app, Project Astra provides details about the app that enables you to identify its status (whether it's healthy), its protection status (whether it's fully protected in case of failure), the pods, persistent storage, and more.
+After you start managing an app, Astra provides details about the app that enables you to identify its status (whether it's healthy), its protection status (whether it's fully protected in case of failure), the pods, persistent storage, and more.
 
 image:screenshot-app-overview.gif[]
 
@@ -21,7 +21,7 @@ image:screenshot-app-overview.gif[]
 
 . Click around to find the information that you're looking for:
 +
-App Status:: Provides a status that reflects the app's state in Kubernetes. For example, are pods and persistent volumes online? If an app is unhealthy, you'll need to go and troubleshoot the issue on the cluster by looking at Kubernetes logs. Project Astra doesn't provide information to help you fix a broken app.
+App Status:: Provides a status that reflects the app's state in Kubernetes. For example, are pods and persistent volumes online? If an app is unhealthy, you'll need to go and troubleshoot the issue on the cluster by looking at Kubernetes logs. Astra doesn't provide information to help you fix a broken app.
 
 App Protection Status:: Provides a status of how well the app is protected. An app is either Fully Protected (it has a recent backup), Partially Protected (it has a data protection schedule or active snapshots, but no recently successful backup), or it's Unprotected.
 +
