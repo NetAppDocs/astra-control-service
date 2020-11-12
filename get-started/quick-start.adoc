@@ -16,12 +16,12 @@ Get started with the Astra beta program in a few steps.
 
 [role="quick-margin-list"]
 * Astra supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
-* Clusters must be running a healthy state, with at least one online worker node, and in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region that supports Cloud Volumes Service^].
+* Clusters must be running a healthy state, with at least one online worker node, in a link:requirements.html[supported Google Cloud region], and using CVS-Performance (not CVS Beta).
 * A cluster must be running Kubernetes version 1.17 or later.
 * The image type for each worker node must be Ubuntu.
 
 [role="quick-margin-para"]
-link:requirements.html[Learn more].
+link:requirements.html[Learn more about the Kubernetes cluster requirements].
 
 ==== image:number2.png[Number 2] Set up Google Cloud
 
@@ -38,7 +38,7 @@ link:requirements.html[Learn more].
 . https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[Enable networking for Cloud Volumes Service for Google Cloud^].
 
 [role="quick-margin-para"]
-link:set-up-google-cloud.html[Learn more].
+link:set-up-google-cloud.html[Learn more about the Google Cloud requirements].
 
 ==== image:number3.png[Number 3] Sign up to NetApp Cloud Central
 
