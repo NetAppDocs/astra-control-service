@@ -10,7 +10,7 @@ summary: Get started with Astra in a few steps.
 :icons: font
 :imagesdir: ../media/get-started/
 
-Get started with the Astra beta program in a few steps.
+This page provides a high-level overview of the steps that you need to complete to get started with Project Astra. The links within each step take you to a page that provides more details.
 
 ==== image:number1.png[Number 1] Review Kubernetes cluster requirements
 
@@ -26,31 +26,31 @@ link:requirements.html[Learn more about the Kubernetes cluster requirements].
 ==== image:number2.png[Number 2] Set up Google Cloud
 
 [role="quick-margin-list"]
-. Set up a Google Cloud account and project.
-. Create a service account that has the required permissions:
+.. Set up a Google Cloud account and project.
+.. Create a service account that has the required permissions:
 ** Kubernetes Engine Admin
 ** NetApp Cloud Volumes Admin
 ** Storage Admin
 ** Service Usage Viewer
 ** Compute Network Viewer
-. Create a service account key.
-. link:set-up-google-cloud.html#enable-apis-in-your-google-cloud-project[Enable the required APIs].
-. https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[Enable networking for Cloud Volumes Service for Google Cloud^].
+.. Create a service account key.
+.. Enable the required APIs.
+.. Enable networking for Cloud Volumes Service for Google Cloud.
 
 [role="quick-margin-para"]
-link:set-up-google-cloud.html[Learn more about the Google Cloud requirements].
+link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 
 ==== image:number3.png[Number 3] Sign up to NetApp Cloud Central
 
 [role="quick-margin-para"]
-Sign up to https://cloud.netapp.com[NetApp Cloud Central^] so you can access Astra and NetApp’s other cloud services. link:cloud-central.html[Learn more].
+Sign up to https://cloud.netapp.com[NetApp Cloud Central^] so you can access Astra and NetApp’s other cloud services. link:cloud-central.html[Learn more about signing up].
 
 ==== image:number4.png[Number 4] Accept your Beta invitation
 
 [role="quick-margin-para"]
-After you've been accepted into the Astra Beta program, you'll receive an invitation to join a Astra account. Accept this invitation to join the account and log in to the Astra interface. link:invitation.html[Learn more].
+After you've been accepted into the Astra Beta program, you'll receive an invitation to join an Astra account. Accept this invitation to join the account and log in to the Astra interface. link:invitation.html[Learn more about accepting your invitation].
 
 ==== image:number5.png[Number 5] Add your first cluster
 
 [role="quick-margin-para"]
-After you log in, click *Add a Kubernetes Cluster* to start managing your first cluster with Astra. link:add-first-cluster.html[Learn more].
+After you log in, click *Add a Kubernetes Cluster* to start managing your first cluster with Astra. link:add-first-cluster.html[Learn more about adding your first cluster].
