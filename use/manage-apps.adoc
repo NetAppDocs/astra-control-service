@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/manage-apps.html
 keywords: manage app, discover app, ignore app
-summary: After you add a Kubernetes cluster to Project Astra, go to the Apps page to start managing the apps that run on the cluster.
+summary: After you add a Kubernetes cluster to Astra, go to the Apps page to start managing the apps that run on the cluster.
 ---
 
 = Start managing apps
@@ -10,7 +10,7 @@ summary: After you add a Kubernetes cluster to Project Astra, go to the Apps pag
 :icons: font
 :imagesdir: ../media/use/
 
-After you link:../get-started/add-first-cluster.html[a Kubernetes cluster to the Project Astra beta program], go to the Apps page to start managing the apps that run on the cluster.
+After you add link:../get-started/add-first-cluster.html[a Kubernetes cluster to the Astra beta program], go to the Apps page to start managing the apps that run on the cluster.
 
 == Start managing an app
 
@@ -20,17 +20,17 @@ View the apps that you can discover from the *Discovered* section of the Apps pa
 
 . Click *Apps* and then click *Discovered*.
 +
-If you just added the cluster to Project Astra, you'll notice that some apps are in the process of being discovered.
+If you just added the cluster to Astra, you'll notice that some apps are in the process of being discovered.
 +
 image:screenshot-app-discovery.gif[]
 +
 If there are any issues with discovery, you can hover over the icon in the Ready column to view details about the issue.
 +
-In the following image, you can see that Project Astra is still in the process of discovering the app. Hovering over the Ready column shows the current status.
+In the following image, you can see that Astra is still in the process of discovering the app. Hovering over the Ready column shows the current status.
 +
 image:screenshot-app-discovery-status.gif[]
 +
-After Project Astra discovers an app, you have the option to either manage the app or ignore it.
+After Astra discovers an app, you have the option to either manage the app or ignore it.
 
 . Look at the *Group* column to see which namespace the application is running in (it's designated with the folder icon) and whether any Kubernetes labels are available (those are designated with a tag icon).
 +
@@ -65,7 +65,7 @@ image:screenshot-view-labels.gif[]
 +
 image:screenshot-select-label.gif[]
 +
-After you choose a label, it displays in the *Label* field. Project Astra also updates the *Unselected Resources* section to show the resources that don't match the selected label.
+After you choose a label, it displays in the *Label* field. Astra also updates the *Unselected Resources* section to show the resources that don't match the selected label.
 +
 ** View *Unselected Resources* to verify the app resources that you don't want to protect.
 +
@@ -79,17 +79,17 @@ video::video-manage-app.mp4[width=848, height=480]
 
 .Result
 
-Project Astra enables management of the app. You can now find it in the *Managed* tab.
+Astra enables management of the app. You can now find it in the *Managed* tab.
 
 image:screenshot-app-managed.gif[]
 
 .What's next?
 
-Repeat these steps for additional apps. Choose *Ignore* for any of the apps that you don't want to manage from Project Astra. Those apps will move to the *Ignored* tab. Ideally, you'd have zero clusters listed in the Discovered tab after you're done.
+Repeat these steps for additional apps. Choose *Ignore* for any of the apps that you don't want to manage from Astra. Those apps will move to the *Ignored* tab. Ideally, you'd have zero clusters listed in the Discovered tab after you're done.
 
 == Manage an app using a custom label
 
-Project Astra includes an action at the top of the Apps page named *Manage new app*. You can use this action to manage an app by using a _custom_ label. For example, you might not want to use one of the discovered Helm labels to manage the app.
+Astra includes an action at the top of the Apps page named *Manage new app*. You can use this action to manage an app by using a _custom_ label. For example, you might not want to use one of the discovered Helm labels to manage the app.
 
 .Steps
 
@@ -113,11 +113,11 @@ Project Astra includes an action at the top of the Apps page named *Manage new a
 
 .Result
 
-Project Astra enables management of the app. You can now find it in the *Managed* tab.
+Astra enables management of the app. You can now find it in the *Managed* tab.
 
 == What about system apps?
 
-When you add a Kubernetes cluster, Project Astra also discovers the system apps running on the cluster. You can view them by filtering the Apps list.
+When you add a Kubernetes cluster, Astra also discovers the system apps running on the cluster. You can view them by filtering the Apps list.
 
 image:screenshot-system-apps.gif[]
 

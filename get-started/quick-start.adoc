@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: get-started/quick-start.html
 keywords: get started, quick start
-summary: Get started with Project Astra in a few steps.
+summary: Get started with Astra in a few steps.
 ---
 
-= Quick start for Project Astra
+= Quick start for Astra
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
@@ -15,8 +15,8 @@ This page provides a high-level overview of the steps that you need to complete 
 ==== image:number1.png[Number 1] Review Kubernetes cluster requirements
 
 [role="quick-margin-list"]
-* Project Astra supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
-* Clusters must be running a healthy state, with at least one online worker node, in a supported Google Cloud region, and using CVS-Performance (not CVS Beta).
+* Astra supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
+* Clusters must be running a healthy state, with at least one online worker node, in a link:requirements.html[supported Google Cloud region], and using CVS-Performance (not CVS Beta).
 * A cluster must be running Kubernetes version 1.17 or later.
 * The image type for each worker node must be Ubuntu.
 
@@ -29,7 +29,7 @@ link:requirements.html[Learn more about the Kubernetes cluster requirements].
 .. Set up a Google Cloud account and project.
 .. Create a service account that has the required permissions:
 ** Kubernetes Engine Admin
-** Cloud Volumes Admin
+** NetApp Cloud Volumes Admin
 ** Storage Admin
 ** Service Usage Viewer
 ** Compute Network Viewer
@@ -43,14 +43,14 @@ link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 ==== image:number3.png[Number 3] Sign up to NetApp Cloud Central
 
 [role="quick-margin-para"]
-Sign up to https://cloud.netapp.com[NetApp Cloud Central^] so you can access Project Astra and NetApp’s other cloud services. link:cloud-central.html[Learn more about signing up].
+Sign up to https://cloud.netapp.com[NetApp Cloud Central^] so you can access Astra and NetApp’s other cloud services. link:cloud-central.html[Learn more about signing up].
 
 ==== image:number4.png[Number 4] Accept your Beta invitation
 
 [role="quick-margin-para"]
-After you've been accepted into the Project Astra Beta program, you'll receive an invitation to join a Project Astra account. Accept this invitation to join the account and log in to the Project Astra interface. link:invitation.html[Learn more about accepting your invitation].
+After you've been accepted into the Astra Beta program, you'll receive an invitation to join an Astra account. Accept this invitation to join the account and log in to the Astra interface. link:invitation.html[Learn more about accepting your invitation].
 
 ==== image:number5.png[Number 5] Add your first cluster
 
 [role="quick-margin-para"]
-After you log in, click *Add a Kubernetes Cluster* to start managing your first cluster with Project Astra. link:add-first-cluster.html[Learn more about adding your first cluster].
+After you log in, click *Add a Kubernetes Cluster* to start managing your first cluster with Astra. link:add-first-cluster.html[Learn more about adding your first cluster].

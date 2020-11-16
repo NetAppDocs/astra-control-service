@@ -10,27 +10,27 @@ summary: Learn the difference between a Validated and a Standard app
 :icons: font
 :imagesdir: ../media/
 
-There are two types of applications you can bring to Project Astra: Validated and Standard. Learn the difference between these two categories, and the potential impacts on your projects and strategy.
+There are two types of applications you can bring to Astra: Validated and Standard. Learn the difference between these two categories, and the potential impacts on your projects and strategy.
 
-NOTE: It's tempting to think of these two categories as "supported" and "unsupported." But as you will see, there is no such thing as an "unsupported" app in Project Astra. You can add any app to Project Astra, although validated apps have more infrastructure built around their Project Astra workflows compared to standard apps.
+NOTE: It's tempting to think of these two categories as "supported" and "unsupported." But as you will see, there is no such thing as an "unsupported" app in Astra. You can add any app to Astra, although validated apps have more infrastructure built around their Astra workflows compared to standard apps.
 
 == Validated Apps
 
-Validated apps for the Project Astra Beta Program are:
+Validated apps for the Astra Beta Program are:
 
 * MySQL 0.3.22
 * MariaDB 14.14
 * PostgreSQL 11.7
 * Jenkins 2.249.1 LTS
 
-The short list of validated apps represents applications that Project Astra recognizes. The Project Astra QA team has analyzed and confirmed these apps to be fully tested to restore.
+The short list of validated apps represents applications that Astra recognizes. The Astra QA team has analyzed and confirmed these apps to be fully tested to restore.
 
-Validated apps have also been checked by the Project Astra Development team, which creates custom workflows to help ensure the safety and consistency of your data. For example, when Project Astra takes a backup of a PostgreSQL database, it first quiesces the database. After the backup is complete, Project Astra restores the database to normal operation.
+Validated apps have also been checked by the Astra Development team, which creates custom workflows to help ensure the safety and consistency of your data. For example, when Astra takes a backup of a PostgreSQL database, it first quiesces the database. After the backup is complete, Astra restores the database to normal operation.
 
-No matter which type of app you use with Project Astra, always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
+No matter which type of app you use with Astra, always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
 Let us know what apps you would like to see validated in the future. https://preview-beta.astra.netapp.io/support[Contact us through the Feedback email address on the Support page.]
 
 == Standard Apps
 
-Any other app, including custom programs, is considered a standard app. You can add and manage standard apps through Project Astra. You can also create basic crash-consistent Snapshots and Backups of a standard app. However, these have not been QA-tested to restore the app to its original state.
+Any other app, including custom programs, is considered a standard app. You can add and manage standard apps through Astra. You can also create basic crash-consistent Snapshots and Backups of a standard app. However, these have not been QA-tested to restore the app to its original state.

@@ -14,9 +14,9 @@ Known limitations identify platforms, devices, or functions that are not support
 
 == One GCP project and one service account are supported
 
-The Project Astra Beta program supports one Google Cloud Platform project and one service account. You should not add more than one service account to Project Astra and you shouldn’t rotate service account credentials.
+The Astra Beta program supports one Google Cloud Platform project and one service account. You should not add more than one service account to Astra and you shouldn’t rotate service account credentials.
 
-If you want to change the GCP project that you’re using with Project Astra, then we will need to set up a new account for you.
+If you want to change the GCP project that you’re using with Astra, then we will need to set up a new account for you.
 
 We intend to address this limitation in a future release.
 
@@ -26,12 +26,12 @@ You can have up to 100 volumes per Google Cloud region. If you reach this limit,
 
 == Unhealthy pods affect app management
 
-If a managed app has pods in an unhealthy state, Project Astra can't create new backups and clones.
+If a managed app has pods in an unhealthy state, Astra can't create new backups and clones.
 
 == Trident isn't uninstalled from a cluster
 
-When you unmanage a cluster from Project Astra, Trident isn't automatically uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
+When you unmanage a cluster from Astra, Trident isn't automatically uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
 
 == Existing connections to a Postgres pod causes failures
 
-When you perform operations on Postgres pods, you shouldn't connect directly within the pod to use the psql command. Project Astra requires psql access to freeze and thaw the databases. If there is a pre-existing connection, the snapshot, backup, or clone will fail.
+When you perform operations on Postgres pods, you shouldn't connect directly within the pod to use the psql command. Astra requires psql access to freeze and thaw the databases. If there is a pre-existing connection, the snapshot, backup, or clone will fail.

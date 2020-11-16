@@ -17,7 +17,7 @@ image:screenshot-dashboard.gif[]
 
 The Apps tile helps you identify the following:
 
-* How many apps you're currently managing with Project Astra.
+* How many apps you're currently managing with Astra.
 * Whether those managed apps are healthy.
 * Whether the apps are fully protected (they're protected if recent backups are available).
 * The number of apps that were discovered, but are not yet managed.
