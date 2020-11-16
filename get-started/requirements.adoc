@@ -14,7 +14,7 @@ Get started by verifying support for your Kubernetes clusters, apps, and web bro
 
 == Supported Kubernetes clusters
 
-* The Project Astra beta program supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
+* The Astra beta program supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
 +
 On-prem Kubernetes clusters and clusters running in other cloud providers are not supported at this time.
 
@@ -25,6 +25,7 @@ On-prem Kubernetes clusters and clusters running in other cloud providers are no
   ** europe-west3
   ** europe-west2
   ** australia-southeast1
+  ** Other regions will be added in the future.
 
 * A cluster must be running Kubernetes version 1.17 or later.
 
@@ -32,16 +33,23 @@ On-prem Kubernetes clusters and clusters running in other cloud providers are no
 
 * The image type for each worker node must be Ubuntu.
 
+* The cluster must be using CVS-Performance (not CVS Beta).
+
+* If the cluster is private, it must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network] set to allow the Astra IP addresses:
+  ** 18.232.241.74
+  ** 52.72.239.237
+  ** 3.210.60.146
+
 == Supported apps
 
-Project Astra supports all applications running on your Kubernetes clusters.
+Astra supports all applications running on your Kubernetes clusters.
 
 NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups.
 
 link:../learn/validated-vs-standard.html[Learn the difference between a Validated and a Standard app].
 
-No matter which type of app that you use with Project Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
+No matter which type of app that you use with Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
 == Supported web browsers
 
-Project Astra supports recent versions of Firefox, Safari, and Chrome with a minimum resolution of 1280 x 720.
+Astra supports recent versions of Firefox, Safari, and Chrome with a minimum resolution of 1280 x 720.

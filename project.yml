@@ -1,6 +1,6 @@
 sidebar:
   entries:
-    - title: Project Astra docs
+    - title: Astra docs
       url: /index.html
     - section: get-started
     - section: use
@@ -15,19 +15,19 @@ homepage:
     - title: Get Started
       #image: ./media/outline_directions_run_black_18dp.png
       links:
-        - title: Learn about Project Astra
-          summary: Understand how Project Astra works.
+        - title: Learn about Astra
+          summary: Understand how Astra works.
           url: /get-started/intro.html
         - title: Quick start
-          summary: Get started quickly with Project Astra.
+          summary: Get started quickly with Astra.
           url: /get-started/quick-start.html
         - title: FAQ
           summary: Read frequently asked questions.
           url: /get-started/faq.html
-    - title: Use Project Astra
+    - title: Use Astra
       links:
         - title: Register applications
-          summary: Start managing your apps from Project Astra.
+          summary: Start managing your apps from Astra.
           url: /use/manage-apps.html
         - title: Protect your apps
           summary: Create recovery points for your apps in case of failure.
@@ -37,14 +37,14 @@ homepage:
           url: /use/clone-apps.html
     - title: Demos & tutorials
       links:
-        - title: Project Astra videos
-          summary: Watch videos that show how to use Project Astra.
+        - title: Astra videos
+          summary: Watch videos that show how to use Astra.
           url: /get-started/videos.html
         - title: Deploy MariaDB
-          summary: Deploy MariaDB from a Helm chart and register it with Project Astra.
+          summary: Deploy MariaDB from a Helm chart and register it with Astra.
           url: /solutions/mariadb-deploy-from-helm-chart.html
         - title: Deploy MySQL
-          summary: Deploy MySQL from a Helm chart and register it with Project Astra.
+          summary: Deploy MySQL from a Helm chart and register it with Astra.
           url: /solutions/mysql-deploy-from-helm-chart.html
     - title: Blogs & community
       links:
@@ -52,7 +52,7 @@ homepage:
           summary: Ask questions, exchange ideas, and share best practices.
           url: https://netapppub.slack.com/archives/C1E3QH84C
         - title: Stateful Lessons for a Multi-Cloud World
-          summary: How Project Astra provides robust storage, easy-to-consume data services, and application and data portability.
+          summary: How Astra provides robust storage, easy-to-consume data services, and application and data portability.
           url: https://blog.netapp.com/project-astra-stateful-lessons
         - title: Kubernetes Hub
           summary: A curated collection of blog postings to learn more about Kubernetes and persistent storage.
