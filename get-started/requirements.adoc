@@ -36,9 +36,9 @@ On-prem Kubernetes clusters and clusters running in other cloud providers are no
 * The cluster must be using CVS-Performance (not CVS Beta).
 
 * If the cluster is private, it must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network] set to allow the Astra IP addresses:
-  ** 18.232.241.74
-  ** 52.72.239.237
-  ** 3.210.60.146
+  ** 18.232.241.74/32
+  ** 52.72.239.237/32
+  ** 3.210.60.146/32
 
 == Supported apps
 
