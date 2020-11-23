@@ -24,6 +24,8 @@ In order to deploy MariaDB from a Helm chart for the Astra Beta program, you nee
 * Updated versions of Helm (version 3.2+) and Kubectl installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
 
+NOTE: Applications deployed from Google Marketplace not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
+
 == Install MariaDB
 
 To exercise the Astra Beta program workflow, we recommend you use the Helm chart.
