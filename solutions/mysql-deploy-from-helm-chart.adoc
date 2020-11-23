@@ -26,6 +26,8 @@ In order to deploy MySQL from a Helm chart for the Astra Beta program, you need 
 
 NOTE: You must deploy your app after the cluster is added to Astra, not before.
 
+NOTE: Applications deployed from Google Marketplace not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
+
 == Install MySQL
 
 To exercise the Astra Beta workflow, we recommend the https://github.com/helm/charts/tree/master/stable/mysql[standard stable chart^].

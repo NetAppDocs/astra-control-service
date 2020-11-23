@@ -42,6 +42,8 @@ CVS is  the storage layer and connective elements for Astra, respectively. More 
 
 Helm is a popular way to organize and install apps on Kubernetes. To install Helm on your local computer, follow https://helm.sh/docs/intro/install/[their handy install guide^].
 
+NOTE: Applications deployed from Google Marketplace not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
+
 === MySQL/MariaDB Requirements
 
 For a MySQL/MariaDB application, Astra requires:
