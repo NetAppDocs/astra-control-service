@@ -14,7 +14,7 @@ Known issues identify problems that might prevent you from using this release of
 
 == Google Marketplace
 
-Applications deployed from Google Marketplace not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
+Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
 
 == Clone performance impacted by large persistent volumes
 
