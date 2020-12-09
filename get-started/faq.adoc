@@ -20,7 +20,7 @@ The following sections provide answers to some additional questions that you mig
 
 == Access to Astra
 
-**How can I access Astra?**
+**What's the Astra URL?**
 
 Visit Astra at https://astra.netapp.io.
 
@@ -28,15 +28,9 @@ Visit Astra at https://astra.netapp.io.
 
 Beta preview access is limited to a select few parties. Please register at https://cloud.netapp.com/project-astra-register.
 
-**I received an invitation to participate in the Beta. Where do I register my company?**
+**I sent an email invitation to a colleague, but they haven't received it. What should I do?**
 
-Astra access is granted to your organization email address. This is the same email address that is registered with NetApp Cloud Central.
-
-If you don't have a NetApp Cloud Central account yet, sign up using the **same** email in the invitation. You can create a NetApp Cloud Central account here: https://cloud.netapp.com.
-
-**I’ve added my colleagues to Astra, but they haven’t received an email yet. What should I do?**
-
-Ask them to check their spam folder, or search their inbox for “invitation”.  You can also remove the user and attempt to re-add them. If neither of these work, please contact NetApp technical support with your organization name and the email addresses of people who haven't received the email invitation.
+Ask them to check their spam folder for an email from do-not-reply@netapp.com, or search their inbox for “invitation”.  You can also remove the user and attempt to re-add them.
 
 == Registering Kubernetes Clusters
 
@@ -46,93 +40,25 @@ Yes, you can add private clusters in Astra beta. To create a Google Kubernetes E
 
 Private clusters must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network] set to allow the Astra IP addresses:
 
-  * 18.232.241.74
-  * 52.72.239.237
-  * 3.210.60.146
-
-**Can I use a custom network?**
-
-Yes, custom Virtual Private Cloud (VPC) networks are supported and Astra Beta will identify the right network peering and automate the required configuration.
+  * 18.232.241.74/32
+  * 52.72.239.237/32
+  * 3.210.60.146/32
 
 **Where can I find my service account credentials on GCP?**
 
 After you log in to the https://console.cloud.google.com/[Google Cloud Console^], your service account details will be in the *IAM and Admin* section. For more details, refer to link:set-up-google-cloud.html[how to set up Google Cloud for Astra].
 
-**How can I disable the service credentials I’ve registered with Astra?**
-
-When the Beta workflow testing is complete and you want to completely remove all credentials and objects from Astra, please contact NetApp Technical support  and request to remove the Account. You can also invalidate any credentials stored with Astra by deleting the service account from the Google Cloud Console.
-
-**I’ve set permissions on the service account credentials in my GCP account, but it still doesn't work. What should I do?**
-
-Contact NetApp Technical Support with a description of your problem and any error messages that you received.
-
-**I’ve changed my GCP service account roles. How do I update them in Astra?**
-
-Service account details are used when adding a GKE Kubernetes cluster to Astra. If the required roles and permissions are retained in the service account, you will not need to update anything in Astra.
-
-If you rename or delete the service account, this will impact the application and cluster management features of Astra. You should contact projectastra.support@netapp.com to get help.
-
-**How many GCP service accounts can I register?**
-
-Different service accounts can be used when adding GKE clusters to Astra as long as they have the required roles and permissions. At a minimum, for each project, you need to provide one service account with the required roles and permissions.
-
-**How many Kubernetes clusters can I register?**
-
-You will need to register a minimum of two GKE Kubernetes clusters in order to exercise the Astra features. The maximum number of clusters for the Beta program is 100.
-
 **Do I need to install CSI drivers on my GKE cluster before adding it to Astra?**
 
 No. When your GKE cluster is added to Astra, the service will automatically install NetApp’s Trident Container Storage Interface (CSI) driver on the Kubernetes cluster. This CSI driver is used to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud.
-
-**I have a GKE cluster that’s running a different Kubernetes version than supported by Astra. Can I add that cluster to Astra?**
-
-The cluster discovery phase will not add a GKE cluster with an unsupported Kubernetes version. Astra provides information about supported Kubernetes version when it discovers a cluster running an unsupported Kubernetes version.
-
-**Can Astra validate the required GCP service account permissions?**
-
-Yes, Astra verifies that the required permissions are enabled before registering a GKE cluster, and will attempt to provide information about missing permissions.
-
-**How do I verify my GKE Kubernetes cluster is running supported Kubernetes version for Astra?**
-
-There are two ways you can verify the GKE Kubernetes cluster version:
-
-1. Verify it from Google cloud console. Go to **Kubernetes Engine > Cluster** and select the relevant cluster. Check the Release Channel and Master Version.
-
-2. Astra checks the GKE cluster version when the cluster is added. If Astra identifies an unsupported Kubernetes version, it provides more information in the Add compute user interface.
-
-**How do I know the worker nodes in the GKE Kubernetes cluster are running a supported image type?**
-
-The cluster discovery phase will not add a GKE cluster if the worker nodes are running an unsupported image type. If this happens, Astra will provide details on the supported image version (Ubuntu) in the Add compute user interface. Alternatively, you can verify the worker node image version from the https://console.cloud.google.com/[Google Cloud Console^].
-
-**How do I create a GKE cluster with a supported worker node image type?**
-
-When you create a GKE cluster or node pool, you can choose the operating system image that runs on each node. You can also upgrade an existing cluster to use a different node image type.
 
 **I would like to add different GKE clusters from different GCP projects. Is this supported in Astra?**
 
 No, this is not a supported configuration. Beta will only support a single GCP project.
 
-**How do I verify my GKE cluster was added successfully to Astra?**
-
-When you add the cluster, the user interface will show the status update and any error messages. When the cluster is added successfully, the status of the GKE cluster in the **Compute** section will be _Available_.
-
-Alternatively, you can also verify if the Trident operator and CSI drivers deployed successfully under the namespace _trident_ by running the kubectl commands:
-
-`kubectl get pods -n trident`
-
-or
-
-`kubectl get pods -|grep trident`
-
 **I need to add worker nodes to my GKE cluster after adding to Astra. What should I do?**
 
 New worker nodes can be added to existing pools, or new pools can be created as long as they are the Ubuntu image type. These will be automatically discovered by Astra. If the new nodes are not visible in Astra, check if the new worker nodes are running the supported image type. You can also verify the health of the new worker nodes by using the `kubectl get nodes` command.
-
-**Can I unmanage my Kubernetes cluster from Astra?**
-
-Yes, you can remove one or more Kubernetes cluster from Astra at the same time. All managed applications from the unamanged cluster will be removed and Astra snapshots or backups taken of applications on that cluster will be unavailable to restore.
-
-WARNING: Always remove a cluster from Astra before you delete it through GCP. Deleting a cluster from GCP while it's still being managed by Astra can cause problems for your Astra account.
 
 **What happens to my applications and data after removing the GKE cluster from Astra?**
 
@@ -146,45 +72,21 @@ Trident will not be uninstalled from a cluster when you remove it from Astra.
 
 == Managing Applications
 
-**How many apps per namespace?**
+**My application is not showing up on the Discovered Apps list. What can I check to identify the problem?**
 
-There is no limitation about number applications under a namespace. Astra will discover all application in the name space by application name.
+When applications are not listed in **Discovered Apps**, check the status and health of the Kubernetes pod by running `kubectl get pod -A |grep [pod name]`. If the pods are healthy and running, check to see if the application is listed under **Ignored Apps**.
 
-**I have deployed my applications using Helm and kubectl. My newly-deployed application is not showing up on the Discovered Apps list. What can I check to identify the problem?**
-
-When an application is successfully deployed, Astra will automatically discover the application and add it to the Discovered Apps list. When applications are not listed in **Discovered Apps**, check the status and health of the Kubernetes pod by running `kubectl get pod -A |grep [pod name]`. If the pods are healthy and running, check to see if the application is listed under **Ignored Apps**.
-
-**I've deployed my applications using Helm and kubectl. I don’t see any of my application’s PVCs bound to GCP CVS. What's wrong?**
+**I don’t see any of my application’s PVCs bound to GCP CVS. What's wrong?**
 
 The NetApp Trident operator sets the default storage class to `netapp-cvs-premium` after it's successfully added to Astra. When an application's PVCs are not bound to Cloud Volumes Services for Google Cloud, there are a few steps that you can take:
 
-* Run `kubectl get sc` and check to see if the default storage class is set to _netapp-cvs_.
+* Run `kubectl get sc` and check the default storage class.
 * Check the yaml file or Helm chart that was used to deploy the application and see if a different storage class is defined.
 * Check to make sure that the worker node image type is Ubuntu and the NFS mount succeeded.
 
-**I have an existing cluster that has applications using GCP persistent disks. Can I register those applications with Astra?**
-
-Applications using GCP PVCs will be discovered and registered by Astra. And it's allowed to perform Astra data management operations. But snapshots and backups taken with Astra for those applications will not be application consistent.
-
-**How many applications can I simultaneously manage with Astra?**
-
-Multiple applications from different GKE cluster can be managed at the same time.
-
-**I moved my application to the Ignored list by mistake. Can I manage the applications that are on the Ignore list?**
-
-Yes, applications on the Ignored list can be registered successfully. Data management operations will function as usual after you start managing the application.
-
-**Can I register applications that are not MySQL, Jenkins, or PostgreSQL?**
-
-Yes, we can use data management services offered by Astra on any persistent volumes managed by Cloud Volumes Service for Google Cloud. However, application-level consistent snapshots, backup, migration, etc. will not be orchestrated through Astra.
-
 **Can Astra deploy an application?**
 
-Astra doesn't deploy an application. Applications must be deployed outside of Astra by using kubectl or Helm charts.
-
-**What storage classes can I use in my PVCs to support Astra data management operations?**
-
-As part of adding the GKE cluster to Astra, NetApp Trident will create three different storage classes for Cloud Volume Services in GCP. Astra data management operations are only supported on storage class _netapp-cvs-extreme_, _netapp-cvs-premium_, and _netapp-cvs-standard_. And you can choose either of these storage class as default when adding a Kubernetes cluster to Astra.
+Astra doesn't deploy an application. Applications must be deployed outside of Astra.
 
 **What happens to applications after I stop managing them from Astra?**
 
@@ -192,20 +94,14 @@ Applications, data, and any existing backups or snapshots remain available. Data
 
 == Data Management Operations
 
+**There are snapshots in my account that I didn't create. Where did they come from?**
+
+In some situations, Astra will automatically create a snapshot as part of performing another process. If these snapshots are more than a few minutes old, you can safely delete them.
+
 **My application uses several PVs. Will Astra take snapshots and backups of all these PVCs?**
 
-Astra aims to simplify application data lifecycle management. Using Astra eliminates the need for individual volume-level data management operations. A snapshot operation on an application by Astra includes snapshot of all the PVs that are bound to the application’s PVCs.
-
-**Can I create snapshot schedules and assign retention schedules?**
-
-Yes, you can use the Configure Protection Policy option to set a retention policy for each individual application.
-
-**What is the difference between snapshots and backups?**
-
-_Snapshot_ refers to local snapshots, where data is stored as part of the provisioned volumes. Given that they are stored on the same provisioned volume, they are usually faster. Local snapshots are used to restore the application to an earlier point in time.
-
-_Backups_ are stored on object storage. They could be slower compared to the local snapshots. However, they can be accessed across regions in the cloud. Backups are used for migrating applications across regions in the cloud. Also, a user can choose to have longer retention period for backups.
+Yes. A snapshot operation on an application by Astra includes snapshot of all the PVs that are bound to the application’s PVCs.
 
 **Can I manage snapshots taken by Astra directly through the Cloud Volumes Service snapshot management interface or object storage?**
 
-Snapshots and backups taken through Astra can only be managed through Astra. Astra provides interfaces to create, view, and delete the snapshots and backups. If data objects associated with these snapshots are managed outside of the Astra interface, it can result in intermittent behavior.
+No. Snapshots and backups taken by Astra can only be managed with Astra.

@@ -12,6 +12,8 @@ summary: A few steps are required to prepare your Google Cloud project before yo
 
 A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with the Astra beta program.
 
+NOTE: Although Astra is free at this time, you will still be charged by Google for your CVS and Google Cloud usage. These charges will be billed separately by the providers.
+
 == Quick start for Google Cloud set up
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
