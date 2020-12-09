@@ -94,10 +94,14 @@ Applications, data, and any existing backups or snapshots remain available. Data
 
 == Data Management Operations
 
+**There are snapshots in my account that I didn't create. Where did they come from?**
+
+In some situations, Astra will automatically create a snapshot as part of performing another process. If these snapshots are more than a few minutes old, you can safely delete them.
+
 **My application uses several PVs. Will Astra take snapshots and backups of all these PVCs?**
 
 Yes. A snapshot operation on an application by Astra includes snapshot of all the PVs that are bound to the application’s PVCs.
 
 **Can I manage snapshots taken by Astra directly through the Cloud Volumes Service snapshot management interface or object storage?**
 
-No. Snapshots and backups taken by Astra can only be managed with Astra. 
+No. Snapshots and backups taken by Astra can only be managed with Astra.
