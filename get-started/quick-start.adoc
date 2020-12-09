@@ -18,7 +18,7 @@ This page provides a high-level overview of the steps that you need to complete 
 * Astra supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
 * Clusters must be running a healthy state, with at least one online worker node, in a link:requirements.html[supported Google Cloud region], and using CVS-Performance (not CVS Beta).
 * A cluster must be running Kubernetes version 1.17 or later.
-* The image type for each worker node must be Ubuntu.
+* The image type for each worker node must be **Ubuntu**.
 
 [role="quick-margin-para"]
 link:requirements.html[Learn more about the Kubernetes cluster requirements].
@@ -53,4 +53,5 @@ After you've been accepted into the Astra Beta program, you'll receive an invita
 ==== image:number5.png[Number 5] Add your first cluster
 
 [role="quick-margin-para"]
+
 After you log in, click *Add a Kubernetes Cluster* to start managing your first cluster with Astra. link:add-first-cluster.html[Learn more about adding your first cluster].
