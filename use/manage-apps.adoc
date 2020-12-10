@@ -10,17 +10,19 @@ summary: After you add a Kubernetes cluster to Astra, go to the Apps page to sta
 :icons: font
 :imagesdir: ../media/use/
 
-After you add link:../get-started/add-first-cluster.html[a Kubernetes cluster to the Astra beta program], go to the Apps page to start managing the apps that run on the cluster.
+After you add link:../get-started/add-first-cluster.html[a Kubernetes cluster to the Astra beta program] and install apps on the cluster, go to the Apps page to start managing them.
+
+You can manage apps by namespace, or by Kubernetes label. For more information on defining apps by Kubernetes label, see our article link:../learn/define-custom-app.html[Define a Custom App].
 
 == Start managing an app
 
-View the apps that you can discover from the *Discovered* section of the Apps page and then click *Manage*.
+The *Discovered* section of the Apps page shows namespaces and any Helm-installed apps. You can choose to either manage or ignore these apps.
 
 .Steps
 
 . Click *Apps* and then click *Discovered*.
 +
-If you just added the cluster to Astra, you'll notice that some apps are in the process of being discovered.
+If you just installed apps after adding the Compute, you'll notice that some apps are in the process of being discovered.
 +
 image:screenshot-app-discovery.gif[]
 +
@@ -81,11 +83,13 @@ video::video-manage-app.mp4[width=848, height=480]
 
 Astra enables management of the app. You can now find it in the *Managed* tab.
 
+NOTE: To manage a stateful app, all its persistent volumes must reside on a NetApp storage class.
+
 image:screenshot-app-managed.gif[]
 
 .What's next?
 
-Repeat these steps for additional apps. Choose *Ignore* for any of the apps that you don't want to manage from Astra. Those apps will move to the *Ignored* tab. Ideally, you'd have zero clusters listed in the Discovered tab after you're done.
+Repeat these steps for additional apps. Choose *Ignore* for any of the apps that you don't want to manage from Astra. Those apps will move to the *Ignored* tab. Ideally, the Discovered tab will show zero apps, so that as new apps are installed, they are easier to find and manage.
 
 == Manage an app using a custom label
 

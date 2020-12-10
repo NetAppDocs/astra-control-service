@@ -15,9 +15,8 @@ After you've been accepted into the Astra Beta program, you'll receive an invita
 
 .Steps
 
-. Open the email invitation to join a Astra account.
+. Open the email invitation to join an Astra account.
 +
-image:screenshot-invitation.gif[A screenshot of an email that invites you to join a Astra account. It includes a Join Now button that you can click to accept the invitation.]
 
 . Confirm that the email address in the invitation matches the email address that you used to sign up to Cloud Central.
 +
@@ -31,6 +30,5 @@ image:screenshot-accept-invitation.gif[A screenshot that shows the Accept Invita
 
 . Click *Accept Invitation*.
 +
-If you are the first person to join the Astra organization, you will be prompted to provide your address and serial number. **Be sure to use a valid physical address.** Please note the account name must be between 5 and 19 characters long. If you are being added to an existing account, you should now see the Astra interface.
+If you are the first person to join the Astra organization, you will be prompted to provide your business address. **Be sure to use a valid physical address.** Please note the account name must be between 5 and 19 characters long. If you are being added to an existing account, you will now see the Astra interface.
 +
-image:screenshot-dashboard.gif[A screenshot that shoes the Astra Dashboard.]

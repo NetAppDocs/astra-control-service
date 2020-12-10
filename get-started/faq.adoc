@@ -44,6 +44,11 @@ Private clusters must have the https://cloud.google.com/kubernetes-engine/docs/c
   * 52.72.239.237/32
   * 3.210.60.146/32
 
+**Can my GCP cluster reside on a shared VPC? **
+
+Yes. If you are using a shared VPC for your GCP cluster, that shared VPC must be set up with private services access to CVS. You will need to specify the Astra service account as a member of the host project with role **Compute Network Viewer.**
+
+
 **Where can I find my service account credentials on GCP?**
 
 After you log in to the https://console.cloud.google.com/[Google Cloud Console^], your service account details will be in the *IAM and Admin* section. For more details, refer to link:set-up-google-cloud.html[how to set up Google Cloud for Astra].

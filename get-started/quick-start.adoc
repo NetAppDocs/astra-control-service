@@ -16,8 +16,10 @@ This page provides a high-level overview of the steps that you need to complete 
 
 [role="quick-margin-list"]
 * Astra supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
-* Clusters must be running a healthy state, with at least one online worker node, in a link:requirements.html[supported Google Cloud region], and using CVS-Performance (not CVS Beta).
-* A cluster must be running Kubernetes version 1.17 or later.
+
+* Clusters must be running a healthy state, with at least one online worker node, in a link:requirements.html[supported Google Cloud region].
+* The cluster must reside on a VPC that is peered with CVS-Performance. link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[Learn more about setting up private service access].
+* The cluster must be running Kubernetes version 1.17 or later.
 * The image type for each worker node must be **Ubuntu**.
 
 [role="quick-margin-para"]
