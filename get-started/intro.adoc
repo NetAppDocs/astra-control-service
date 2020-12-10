@@ -34,26 +34,24 @@ link:requirements.html[Learn more about cluster requirements].
 
 Astra is a NetApp-managed cloud service that is always on and updated with the latest capabilities. It utilizes several components to enable application data lifecycle management. The following image shows the relationship between each component:
 
-image:diagram-overview.png[]
-
 At a high level, Astra works like this:
 
-* You set up your cloud provider.
+* You set up your cloud provider by enabling CVS and creating a service account for Astra.
 
 * You add your first Kubernetes cluster to Astra. Astra then does the following:
 
-** Uses the cloud provider credentials that you provided to discover the cluster and the applications running on the cluster.
-
 ** Creates an object store in your cloud provider account, which is where backup copies are sent.
 
-** Creates a new admin role on the cluster.
+** Creates a new admin role and Kubernetes service account on the cluster.
 
-** Uses the role to install https://netapp-trident.readthedocs.io/[NetApp's Trident^], to create storage classes, and to eventually create namespaces and support cloning of applications.
-+
-Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud.
-+
-Astra creates three storage classes that use Cloud Volumes Service for Google Cloud: netapp-cvs-extreme, netapp-cvs-premium (default), and netapp-cvs-standard.
+** Uses that new admin role to install https://netapp-trident.readthedocs.io/[NetApp's Trident^].
 
-* At this point, cluster configuration is complete. You can now choose which apps to manage and start creating snapshots, backups, and clones.
+** Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud.
+
+** Astra creates three storage classes that use Cloud Volumes Service for Google Cloud: netapp-cvs-extreme, netapp-cvs-premium (default), and netapp-cvs-standard.
+
+* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new storage classes by default.
+
+* Use Astra to manage these apps, and start creating snapshots, backups, and clones.
 
 Note that Astra continually watches your clusters for state changes, so it's aware of any new apps that you add along the way.
