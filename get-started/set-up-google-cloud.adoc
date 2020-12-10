@@ -23,27 +23,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-para"]
 You need a https://console.cloud.google.com/freetrial[Google Cloud account^] and https://cloud.google.com/resource-manager/docs/creating-managing-projects[a project^].
 
-==== image:number2.png[Number 2] Create a service account that has the required permissions
-
-[role="quick-margin-para"]
-Create a Google Cloud service account that has the following permissions:
-
-[role="quick-margin-list"]
-* Kubernetes Engine Admin
-* NetApp Cloud Volumes Admin
-* Storage Admin
-* Service Usage Viewer
-* Compute Network Viewer
-
-[role="quick-margin-para"]
-<<Create a service account,Read step-by-step instructions>>.
-
-==== image:number3.png[Number 3] Create a service account key
-
-[role="quick-margin-para"]
-Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
-
-==== image:number4.png[Number 4] Enable APIs in your Google Cloud project
+==== image:number4.png[Number 2] Enable APIs in your Google Cloud project
 
 [role="quick-margin-para"]
 Enable the following Google Cloud APIs:
@@ -62,6 +42,29 @@ Enable the following Google Cloud APIs:
 
 [role="quick-margin-para"]
 <<Enable APIs in your project,Follow step-by-step instructions>>.
+
+==== image:number3.png[Number 3] Create a service account key
+
+[role="quick-margin-para"]
+Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
+
+If you’d like to use gcloud, you can follow steps from within the Astra user interface. Click **Account > Credentials > Add Credentials**, then click Instructions. 
+
+==== image:number2.png[Number 4] Create a service account that has the required permissions
+
+[role="quick-margin-para"]
+Create a Google Cloud service account that has the following permissions:
+
+[role="quick-margin-list"]
+* Kubernetes Engine Admin
+* NetApp Cloud Volumes Admin
+* Storage Admin
+* Service Usage Viewer
+* Compute Network Viewer
+
+[role="quick-margin-para"]
+<<Create a service account,Read step-by-step instructions>>.
+
 
 ==== image:number5.png[Number 5] Enable private services access
 
@@ -134,25 +137,10 @@ Your project needs permissions to access specific Google Cloud APIs. APIs are us
 * Service Networking API
 * Service Management API
 +
-The last two APIs are required for Cloud Volumes Service for Google Cloud.
 
 The following video shows how to enable the APIs from the Google Cloud console.
 
 video::video-enable-gcp-apis.mp4[width=848, height=480]
-
-If you'd rather use the gcloud CLI, you can use these commands after setting your project:
-
-----
-gcloud services enable container.googleapis.com
-gcloud services enable storage-component.googleapis.com
-gcloud services enable storage-api.googleapis.com
-gcloud services enable serviceusage.googleapis.com
-gcloud services enable cloudresourcemanager.googleapis.com
-gcloud services enable cloudvolumesgcp-api.netapp.com
-gcloud services enable serviceconsumermanagement.googleapis.com
-gcloud services enable servicenetworking.googleapis.com
-gcloud services enable servicemanagement.googleapis.com
-----
 
 == Enable private services access
 
