@@ -23,9 +23,13 @@ image:screenshot-app-overview.gif[]
 +
 App Status:: Provides a status that reflects the app's state in Kubernetes. For example, are pods and persistent volumes online? If an app is unhealthy, you'll need to go and troubleshoot the issue on the cluster by looking at Kubernetes logs. Astra doesn't provide information to help you fix a broken app.
 
-App Protection Status:: Provides a status of how well the app is protected. An app is either Fully Protected (it has a recent backup), Partially Protected (it has a data protection schedule or active snapshots, but no recently successful backup), or it's Unprotected.
+App Protection Status:: Provides a status of how well the app is protected:
 +
-_You can't be fully protected until you have a recent backup_. This is important because backups are stored in an object store away from the persistent volumes. If a failure or accident wipes out the cluster and it's persistent storage, then you need a backup to recover.
+* *Fully protected*: The app has an active backup schedule and a successful backup that's less than a week old
+* *Partially protected*: The app has an active backup schedule, an active snapshot schedule, or a successful backup or snapshot
+* *Unprotected*: Apps that are neither fully protected or partially protected.
++
+_You can't be fully protected until you have a recent backup_. This is important because backups are stored in an object store away from the persistent volumes. If a failure or accident wipes out the cluster and it's persistent storage, then you need a backup to recover. A snapshot wouldn't enable you to recover.
 
 Overview:: Information about the state of the pods that are associated with the app.
 
