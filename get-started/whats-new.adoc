@@ -16,8 +16,8 @@ NetApp periodically updates Astra to bring you new features, enhancements, and b
 
 We primarily focused on bug fixes to improve your experience, but we made a few other notable enhancements:
 
-* Kubernetes clusters now show up in a *Removed* state, which enables you to remove a cluster if you deleted it while Astra was managing it.
-
 * When you add your first Kubernetes cluster to Astra, the object store is now created in the geography where the cluster resides.
 
 * Details about persistent volumes is now available at the Compute level.
+
+* If you delete a Kubernetes cluster that Astra is managing, the cluster now shows up in a *Removed* state. You can then remove the cluster from Astra.
