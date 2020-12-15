@@ -23,7 +23,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-para"]
 You need a https://console.cloud.google.com/freetrial[Google Cloud account^] and https://cloud.google.com/resource-manager/docs/creating-managing-projects[a project^].
 
-==== image:number4.png[Number 2] Enable APIs in your Google Cloud project
+==== image:number2.png[Number 2] Enable APIs in your Google Cloud project
 
 [role="quick-margin-para"]
 Enable the following Google Cloud APIs:
@@ -43,14 +43,7 @@ Enable the following Google Cloud APIs:
 [role="quick-margin-para"]
 <<Enable APIs in your project,Follow step-by-step instructions>>.
 
-==== image:number3.png[Number 3] Create a service account key
-
-[role="quick-margin-para"]
-Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
-
-If you’d like to use gcloud, you can follow steps from within the Astra user interface. Click **Account > Credentials > Add Credentials**, then click Instructions. 
-
-==== image:number2.png[Number 4] Create a service account that has the required permissions
+==== image:number3.png[Number 3] Create a service account that has the required permissions
 
 [role="quick-margin-para"]
 Create a Google Cloud service account that has the following permissions:
@@ -65,6 +58,13 @@ Create a Google Cloud service account that has the following permissions:
 [role="quick-margin-para"]
 <<Create a service account,Read step-by-step instructions>>.
 
+==== image:number4.png[Number 4] Create a service account key
+
+[role="quick-margin-para"]
+Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
+
+[role="quick-margin-para"]
+If you’d like to use gcloud, you can follow steps from within the Astra user interface. Click **Account > Credentials > Add Credentials**, then click Instructions.
 
 ==== image:number5.png[Number 5] Enable private services access
 
@@ -74,6 +74,28 @@ Set up private services access for Cloud Volumes Service for Google Cloud. <<Ena
 The following image depicts each of these steps that you'll need to complete.
 
 image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud project, a service account with IAM roles and a key, enabled APIs, and private service access to Cloud Volumes Service for Google Cloud.]
+
+== Enable APIs in your project
+
+Your project needs permissions to access specific Google Cloud APIs. APIs are used to interact with Google Cloud resources, such as Google Kubernetes Engine (GKE) clusters and NetApp Cloud Volumes Service storage.
+
+.Step
+
+. https://cloud.google.com/endpoints/docs/openapi/enable-api[Use the Google Cloud console or gcloud CLI to enable the following APIs^]:
++
+* Google Kubernetes Engine
+* Cloud Storage
+* Cloud Storage JSON API
+* Service Usage
+* Cloud Resource Manager API
+* NetApp Cloud Volumes Service
+* Service Consumer Management API
+* Service Networking API
+* Service Management API
+
+The following video shows how to enable the APIs from the Google Cloud console.
+
+video::video-enable-gcp-apis.mp4[width=848, height=480]
 
 == Create a service account
 
@@ -118,29 +140,6 @@ You can only view or download the JSON file when you create the key. However, yo
 The following video shows how to create the service account key from the Google Cloud console.
 
 video::video-create-gcp-service-account-key.mp4[width=848, height=480]
-
-== Enable APIs in your project
-
-Your project needs permissions to access specific Google Cloud APIs. APIs are used to interact with Google Cloud resources, such as Google Kubernetes Engine (GKE) clusters and NetApp Cloud Volumes Service storage.
-
-.Step
-
-. https://cloud.google.com/endpoints/docs/openapi/enable-api[Use the Google Cloud console or gcloud CLI to enable the following APIs^]:
-+
-* Google Kubernetes Engine
-* Cloud Storage
-* Cloud Storage JSON API
-* Service Usage
-* Cloud Resource Manager API
-* NetApp Cloud Volumes Service
-* Service Consumer Management API
-* Service Networking API
-* Service Management API
-+
-
-The following video shows how to enable the APIs from the Google Cloud console.
-
-video::video-enable-gcp-apis.mp4[width=848, height=480]
 
 == Enable private services access
 
