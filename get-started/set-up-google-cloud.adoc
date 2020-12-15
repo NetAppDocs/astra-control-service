@@ -23,7 +23,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-para"]
 You need a https://console.cloud.google.com/freetrial[Google Cloud account^] and https://cloud.google.com/resource-manager/docs/creating-managing-projects[a project^].
 
-==== image:number4.png[Number 2] Enable APIs in your Google Cloud project
+==== image:number2.png[Number 2] Enable APIs in your Google Cloud project
 
 [role="quick-margin-para"]
 Enable the following Google Cloud APIs:
