@@ -7,6 +7,8 @@ entries:
     url: /get-started/join-beta.html
   - title: Release notes
     entries:
+      - title: What's new
+        url: /get-started/whats-new.html
       - title: Known issues
         url: /get-started/known-issues.html
       - title: Known limitations
