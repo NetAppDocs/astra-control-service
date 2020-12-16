@@ -38,11 +38,9 @@ Enable the following Google Cloud APIs:
 * Service Consumer Management API
 * Service Networking API
 * Service Management API
-* Service Consumer Management API
 
 [role="quick-margin-para"]
 <<Enable APIs in your project,Follow step-by-step instructions>>.
-
 
 ==== image:number3.png[Number 3] Create a service account that has the required permissions
 
