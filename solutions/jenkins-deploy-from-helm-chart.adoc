@@ -25,7 +25,9 @@ Only the current version of Jenkins (5.0.26) has been officially validated for u
 
 Astra does not support the https://plugins.jenkins.io/kubernetes/[Kubernetes plugin for Jenkins] at this time. This functionality will be added soon. You can run Jenkins in a Kubernetes cluster without the plugin. The plugin provides scalability to your Jenkins cluster.
 
+
 NOTE: Applications deployed from Google Marketplace not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
+
 
 === System Requirements
 
