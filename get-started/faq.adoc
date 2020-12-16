@@ -94,9 +94,13 @@ Astra doesn't deploy an application. Applications must be deployed outside of As
 
 **What happens to applications after I stop managing them from Astra?**
 
-Applications, data, and any existing backups or snapshots remain available. Data management operations will not be available for unmanaged applications or any backups or snapshots that belong to it. When the application is managed by Astra again, the existing snapshots and backups will be available for data management operations.
+Any existing backups or snapshots will be deleted. Applications and data remain available. Data management operations will not be available for unmanaged applications or any backups or snapshots that belong to it. 
 
 == Data Management Operations
+
+**Where is my object bucket created?**
+
+The geography of the first managed cluster will determine the location of the object store. For example, if you add a cluster in a European zone, then remove that cluster and add one in the US, all future object stores will be created in EU. If you need to change this zone, please contact our support department.
 
 **There are snapshots in my account that I didn't create. Where did they come from?**
 

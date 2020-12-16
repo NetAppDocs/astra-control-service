@@ -23,7 +23,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-para"]
 You need a https://console.cloud.google.com/freetrial[Google Cloud account^] and https://cloud.google.com/resource-manager/docs/creating-managing-projects[a project^].
 
-==== image:number4.png[Number 2] Enable APIs in your Google Cloud project
+==== image:number2.png[Number 2] Enable APIs in your Google Cloud project
 
 [role="quick-margin-para"]
 Enable the following Google Cloud APIs:
@@ -43,14 +43,8 @@ Enable the following Google Cloud APIs:
 [role="quick-margin-para"]
 <<Enable APIs in your project,Follow step-by-step instructions>>.
 
-==== image:number3.png[Number 3] Create a service account key
 
-[role="quick-margin-para"]
-Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
-
-If you’d like to use gcloud, you can follow steps from within the Astra user interface. Click **Account > Credentials > Add Credentials**, then click Instructions. 
-
-==== image:number2.png[Number 4] Create a service account that has the required permissions
+==== image:number3.png[Number 3] Create a service account that has the required permissions
 
 [role="quick-margin-para"]
 Create a Google Cloud service account that has the following permissions:
@@ -65,6 +59,12 @@ Create a Google Cloud service account that has the following permissions:
 [role="quick-margin-para"]
 <<Create a service account,Read step-by-step instructions>>.
 
+==== image:number4.png[Number 4] Create a service account key
+
+[role="quick-margin-para"]
+Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
+
+If you’d like to use gcloud, you can follow steps from within the Astra user interface. Click **Account > Credentials > Add Credentials**, then click Instructions.
 
 ==== image:number5.png[Number 5] Enable private services access
 
