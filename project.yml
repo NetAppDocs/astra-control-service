@@ -20,6 +20,7 @@ homepage:
           url: /get-started/intro.html
         - title: What's new
           summary: Learn what's new with Astra.
+          url: /get-started/whats-new.html
         - title: Quick start
           summary: Get started quickly with Astra.
           url: /get-started/quick-start.html
