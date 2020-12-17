@@ -35,7 +35,7 @@ Note the following:
 +
 image:screenshot-invite-users.gif[A screenshot of the Invite Users screen where you enter a name, email address, and select a role.]
 
-. Click *Send invite/s*.
+. Click *Send invite(s)*.
 
 .Result
 
