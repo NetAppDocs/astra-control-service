@@ -18,7 +18,7 @@ We primarily focused on bug fixes to improve your experience, but we made a few 
 
 * When you add your first Kubernetes cluster to Astra, the object store is now created in the geography where the cluster resides.
 
-* Details about persistent volumes is now available at the Compute level.
+* Details about persistent volumes is now available when you view storage details at the compute level.
 +
 image:screenshot-compute-pvs.gif[A screenshot of the persistent volumes that were provisioned to a Kubernetes cluster.]
 
