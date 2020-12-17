@@ -28,7 +28,7 @@ image:screenshot-create-clone.gif["A screenshot of the app page where you can cl
 . *Clone details*: Specify details for the clone:
 +
 * Enter a name.
-* Choose a destination cluster for the clone.
+* Choose a destination compute for the clone.
 * Choose whether you want to create the clone from an existing snapshot or backup. If you don't select this option, Astra creates the clone from the app's current state.
 
 . *Source*: If you chose to clone from an existing snapshot or backup, choose the snapshot or backup that you'd like to use.
