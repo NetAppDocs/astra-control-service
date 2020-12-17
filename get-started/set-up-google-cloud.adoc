@@ -38,7 +38,6 @@ Enable the following Google Cloud APIs:
 * Service Consumer Management API
 * Service Networking API
 * Service Management API
-* Service Consumer Management API
 
 [role="quick-margin-para"]
 <<Enable APIs in your project,Follow step-by-step instructions>>.
@@ -63,7 +62,9 @@ Create a Google Cloud service account that has the following permissions:
 [role="quick-margin-para"]
 Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
 
+
 [role="quick-margin-para"]
+
 If you’d like to use gcloud, you can follow steps from within the Astra user interface. Click **Account > Credentials > Add Credentials**, then click Instructions.
 
 ==== image:number5.png[Number 5] Enable private services access

@@ -22,7 +22,7 @@ Stop managing apps that you no longer want to back up, snapshot, or clone from A
 
 * If you remove an app from your cluster, Astra will identify that it was removed, but the app remains in a managed state. That means you can still clone the app from a backup until you explicitly unmanage the app.
 
-TIP: Always remove a cluster from Astra before you delete it through GCP. Deleting a cluster from GCP while it's still being managed by Astra can cause problems for your Astra account.
+TIP: As a best practice, we recommend that you remove a cluster from Astra before you delete it through GCP. 
 
 .Steps
 
