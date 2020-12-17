@@ -27,3 +27,7 @@ image:screenshot-compute-pvs.gif[A screenshot of the persistent volumes that wer
 image:screenshot-app-restore.gif[A screenshot of the Data protection tab for an app where you can click the action drop-down to select Restore application.]
 
 * If you delete a Kubernetes cluster that Astra is managing, the cluster now shows up in a *Removed* state. You can then remove the cluster from Astra.
+
+* Account owners can now modify the assigned roles for other users.
+
+* We added a section for billing, which will be enabled when Astra is released for General Availability (GA).
