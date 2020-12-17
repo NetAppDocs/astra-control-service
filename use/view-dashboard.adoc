@@ -26,6 +26,6 @@ Ideally, this number would be zero because you would either manage or ignore app
 
 Note that these aren't just numbers or statuses--you can drill down from each of these. For example, if apps aren't fully protected, you can hover over the icon to identify which apps aren't fully protected, which includes a reason why.
 
-image:screenshot-dashboard-unmanaged.gif[]
+image:screenshot-dashboard-unprotected.gif[]
 
 The Compute tile provides similar details about the health of your clusters and you can drill down to get more details just like you can with an app.
