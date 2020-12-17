@@ -1,0 +1,33 @@
+---
+sidebar: sidebar
+permalink: get-started/whats-new.html
+keywords: what's new, bugs, bug fixes, new features, enhancements
+summary: NetApp periodically updates Astra to bring you new features, enhancements, and bug fixes.
+---
+
+= What's new with Astra
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+NetApp periodically updates Astra to bring you new features, enhancements, and bug fixes.
+
+== 17 Dec 2020 update during Beta
+
+We primarily focused on bug fixes to improve your experience, but we made a few other notable enhancements:
+
+* When you add your first Kubernetes cluster to Astra, the object store is now created in the geography where the cluster resides.
+
+* Details about persistent volumes is now available when you view storage details at the compute level.
++
+image:screenshot-compute-pvs.gif[A screenshot of the persistent volumes that were provisioned to a Kubernetes cluster.]
+
+* We added an option to restore an application from an existing snapshot or backup.
++
+image:screenshot-app-restore.gif[A screenshot of the Data protection tab for an app where you can click the action drop-down to select Restore application.]
+
+* If you delete a Kubernetes cluster that Astra is managing, the cluster now shows up in a *Removed* state. You can then remove the cluster from Astra.
+
+* Account owners can now modify the assigned roles for other users.
+
+* We added a section for billing, which will be enabled when Astra is released for General Availability (GA).

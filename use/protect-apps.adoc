@@ -122,7 +122,7 @@ Delete the scheduled or on-demand snapshots that you no longer need.
 
 . Click the drop-down list in the *Actions* column for the desired snapshot.
 
-. Click *Delete*.
+. Click *Delete snapshot*.
 +
 image:screenshot-delete-snapshot.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
 
@@ -146,7 +146,7 @@ image:screenshot-data-protection-backups.gif[A screenshot of the Backups option 
 
 . Click the drop-down list in the *Actions* column for the desired backup.
 
-. Click *Delete*.
+. Click *Delete backup*.
 +
 image:screenshot-delete-backup.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
 
