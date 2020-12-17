@@ -20,6 +20,10 @@ We primarily focused on bug fixes to improve your experience, but we made a few 
 
 * Details about persistent volumes is now available at the Compute level.
 +
-image:compute-pvs.gif[A screenshot of the persistent volumes that were provisioned to a Kubernetes cluster.]
+image:screenshot-compute-pvs.gif[A screenshot of the persistent volumes that were provisioned to a Kubernetes cluster.]
+
+* We added an option to restore an application from an existing snapshot or backup.
++
+image:screenshot-app-restore.gif[A screenshot of the Data protection tab for an app where you can click the action drop-down to select Restore application.]
 
 * If you delete a Kubernetes cluster that Astra is managing, the cluster now shows up in a *Removed* state. You can then remove the cluster from Astra.
