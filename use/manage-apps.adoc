@@ -93,13 +93,13 @@ Repeat these steps for additional apps. Choose *Ignore* for any of the apps that
 
 == Manage an app using a custom label
 
-Astra includes an action at the top of the Apps page named *Manage new app*. You can use this action to manage an app by using a _custom_ label. For example, you might not want to use one of the discovered Helm labels to manage the app.
+Astra includes an action at the top of the Apps page named *Define custom app*. You can use this action to manage an app by using a _custom_ label. For example, you might not want to use one of the discovered Helm labels to manage the app.
 
 .Steps
 
-. Click *Apps > Manage new app*.
+. Click *Apps > Define custom app*.
 
-. In the *Manage Application* dialog box, provide the required information to manage the app:
+. In the *Define Custom Application* dialog box, provide the required information to manage the app:
 
 .. *New App*: Customize the name of the app.
 
@@ -113,7 +113,7 @@ Astra includes an action at the top of the Apps page named *Manage new app*. You
 
 .. *Unselected Resources*: Verify the app resources that you don't want to protect.
 
-. Click *Manage App*.
+. Click *Define Custom App*.
 
 .Result
 
