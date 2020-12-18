@@ -41,6 +41,22 @@ image:screenshot-invite-users.gif[A screenshot of the Invite Users screen where 
 
 The user will receive an email that invites them to join your account.
 
+== Change a user's role
+
+An Account Owner can change the role of all users, while an Account Admin can change the role of users who have the Admin, Member, or Viewer role.
+
+.Steps
+
+. Click *Account*.
+
+. In the *Users* tab, select the drop-down list in the *Role* column for the user.
+
+. Select a new role and then click *Change Role* when prompted.
+
+.Result
+
+Astra updates the user's permissions based on the new role that you selected.
+
 == Remove users
 
 An Account Owner can remove other users from the account at any time.

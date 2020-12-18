@@ -16,13 +16,9 @@ Remove any apps or clusters that you no longer want to manage from the Astra bet
 
 Stop managing apps that you no longer want to back up, snapshot, or clone from Astra.
 
-* This action stops your app from being managed by Astra. It doesn't remove the app from your cluster.
+* Any existing backups and snapshots will be deleted.
 
-* Existing backups and snapshots aren't deleted, but data management operations aren't available from Astra.
-
-* If you remove an app from your cluster, Astra will identify that it was removed, but the app remains in a managed state. That means you can still clone the app from a backup until you explicitly unmanage the app.
-
-TIP: As a best practice, we recommend that you remove a cluster from Astra before you delete it through GCP. 
+* Applications and data remain available.
 
 .Steps
 
@@ -40,7 +36,7 @@ Astra stops managing the app.
 
 == Stop managing clusters
 
-Stop managing the clusters that you no longer want to manage from Astra.
+Stop managing the clusters that you no longer want to manage from Astra. As a best practice, we recommend that you remove a cluster from Astra before you delete it through GCP.
 
 * This action stops your cluster from being managed by Astra. It doesn't make any changes to the cluster's configuration and it doesn't delete the cluster.
 +
@@ -48,13 +44,7 @@ Trident won't be uninstalled from the cluster. https://netapp-trident.readthedoc
 
 * Apps associated with this cluster will no longer be managed and will go into a Detached state.
 
-* Any snapshots or backups associated with applications on the cluster aren't deleted, but data management operations aren't available from Astra.
-
 .Steps
-
-. Delete any snapshots or backups and stop managing the cluster's applications before removing the cluster.
-+
-link:protect-apps.html[Learn how to delete snapshots and backups].
 
 . Click *Compute*.
 
