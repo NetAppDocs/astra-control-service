@@ -43,11 +43,11 @@ The user will receive an email that invites them to join your account.
 
 == Change a user's role
 
-An Account Owner can change the role of all users, while an Account Admin can change the role of Admin, Member, and Viewer users.
+An Account Owner can change the role of all users, while an Account Admin can change the role of users who have the Admin, Member, or Viewer role.
 
 .Steps
 
-. Click *Account*
+. Click *Account*.
 
 . In the *Users* tab, select the drop-down list in the *Role* column for the user.
 
