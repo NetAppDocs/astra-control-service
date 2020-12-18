@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/manage-apps.html
 keywords: manage app, discover app, ignore app
-summary: After you add a Kubernetes cluster to Astra, go to the Apps page to start managing the apps that run on the cluster.
+summary: After you add a Kubernetes cluster to Astra, you can install apps on that cluster (outside of Astra), and then go to the Apps page in Astra to start managing the apps.
 ---
 
 = Start managing apps
@@ -10,9 +10,22 @@ summary: After you add a Kubernetes cluster to Astra, go to the Apps page to sta
 :icons: font
 :imagesdir: ../media/use/
 
-After you add link:../get-started/add-first-cluster.html[a Kubernetes cluster to the Astra beta program] and install apps on the cluster, go to the Apps page to start managing them.
+After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to Astra], you can install apps on that cluster (outside of Astra), and then go to the Apps page in Astra to start managing the apps.
 
 You can manage apps by namespace, or by Kubernetes label. For more information on defining apps by Kubernetes label, see our article link:../learn/define-custom-app.html[Define a Custom App].
+
+== Install apps on your cluster
+
+Now that you've added your Kubernetes cluster to Astra, you can install apps on the cluster (from outside of Astra). Persistent volumes will be provisioned on the new storage classes by default.
+
+NOTE: Astra can't manage apps that were previously created before you started managing the cluster in Astra.
+
+For help with deploying common applications from Helm charts, refer to the following:
+
+* link:../solutions/mariadb-deploy-from-helm-chart.html[Deploy MariaDB from a Helm chart]
+* link:../solutions/mysql-deploy-from-helm-chart.html[Deploy MySQL from a Helm chart]
+* link:../solutions/postgres-deploy-from-helm-chart.html[Deploy Postgres from a Helm chart]
+* link:../solutions/jenkins-deploy-from-helm-chart.html[Deploy Jenkins from a Helm chart]
 
 == Start managing an app
 

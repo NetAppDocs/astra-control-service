@@ -15,7 +15,7 @@ After you log in to the Astra beta program, your first step is to add a Kubernet
 
 .Steps
 
-. On the Dashboard, click *Add a Kubernetes Cluster*.
+. On the Dashboard, click *Add a Kubernetes compute*.
 +
 Follow the prompts to add the cluster.
 
