@@ -10,50 +10,33 @@ summary: Learn how to install Jenkins from a Helm chart on Astra
 :icons: font
 :imagesdir: ../media/
 
-Learn how to exercise the Astra beta program workflow by deploying Jenkins from a Helm chart. After you deploy Jenkins on your cluster, you can register the application with Astra.
+Learn how to deploy Jenkins from the Bitnami Helm chart so that you can test the Astra beta program. After you deploy Jenkins on your cluster, you can register the application with Astra.
 
 Jenkins is a validated app for the Astra Beta program. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
+NOTE: Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
 
 == Requirements
 
-The following requirements are necessary for installing and running Jenkins on a Kubernetes cluster for the Astra beta program.
-
-=== Compatibility Requirements
-
-Only the current version of Jenkins (5.0.26) has been officially validated for use with Astra. Other versions may work, but may only run as a standard application.
-
-Astra does not support the https://plugins.jenkins.io/kubernetes/[Kubernetes plugin for Jenkins] at this time. This functionality will be added soon. You can run Jenkins in a Kubernetes cluster without the plugin. The plugin provides scalability to your Jenkins cluster.
-
-
-NOTE: Applications deployed from Google Marketplace not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
-
-
-=== System Requirements
-
-* A new Kubernetes cluster which has been added to Astra.
-* https://helm.sh/docs/intro/install/[Helm (version 3.2+)] and https://kubernetes.io/docs/tasks/tools/install-kubectl/[kubectl] installed on your local computer.
+* A GKE cluster which has been added to Astra.
+* Updated versions of Helm (version 3.2+) and Kubectl installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
 
-=== Namespace Requirements
+Astra does not currently support the https://plugins.jenkins.io/kubernetes/[Kubernetes plugin for Jenkins]. You can run Jenkins in a Kubernetes cluster without the plugin. The plugin provides scalability to your Jenkins cluster.
 
-**You must deploy your app in a namespace other than the default.** In the following example, we create and use the namespace `jenkins` for the deployment.
-
-In the following example, we use `&&` to concatenate the commands for creating the namespace and deploying the app. We recommend this approach, as it ensures the commands are run in sequence even if you get interrupted.
-
-We recommend the use of `&&` instead of `;` to concatenate commands. `&&` is conditional, and only runs the second command if the first command completes successfully.
-
-NOTE: You must deploy your app after the cluster is added to Astra, not before.
 
 == Install Jenkins
 
-To exercise the Astra beta workflow, we recommend you use the Bitnami Helm chart. Add the Bitnami chart repo:
+Two important notes on this process:
+
+* You must deploy your app after the cluster is added to Astra, not before.
+* You must deploy the Helm chart in a namespace other than the default.
+
+Add the Bitnami chart repo:
 
 ----
 helm repo add bitnami https://charts.bitnami.com/bitnami
 ----
-
-NOTE: You must deploy the Helm chart in a namespace other than the default.
 
 Create the `jenkins` namespace and deploy Jenkins into it with the command:
 
@@ -67,4 +50,4 @@ This does the following:
 * Sets the correct storage class.
 * Sets the persistent volume storage size to 100Gi.
 
-After the Helm chart is deployed, it will be automatically detected by Astra. You can then register the app with Astra.
+After the pods are online, you can manage the app with Astra. Astra allows you to manage an app at the namespace level or using a helm label

@@ -10,36 +10,28 @@ summary: Learn how to exercise the Astra Beta workflow by deploying MySQL from a
 :icons: font
 :imagesdir: ../media/
 
-Learn how to exercise the Astra Beta workflow by deploying MySQL from a Helm chart. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra.
+Learn how to deploy MySQL from the https://github.com/helm/charts/tree/master/stable/mysql[standard stable chart^] so that you can test the Astra beta program. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra.
 
 MariaDB and MySQL are validated apps for the Astra Beta program. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
-NOTE: The Astra beta program only supports MySQL 0.3.22 and MariaDB 14.14.
+NOTE: Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
 
-== System Requirements
-
-In order to deploy MySQL from a Helm chart for the Astra Beta program, you need the following:
+== Requirements
 
 * A GKE cluster which has been added to Astra.
 * Updated versions of Helm (version 3.2+) and Kubectl installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
 
-NOTE: You must deploy your app after the cluster is added to Astra, not before.
-
-NOTE: Applications deployed from Google Marketplace not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
-
-
 == Install MySQL
 
-To exercise the Astra Beta workflow, we recommend the https://github.com/helm/charts/tree/master/stable/mysql[standard stable chart^].
+Two important notes on this process:
 
-NOTE: You must deploy the Helm chart in a namespace other than the default.
+* You must deploy your app after the cluster is added to Astra, not before.
+* You must deploy the Helm chart in a namespace other than the default.
 
 Deploy MySQL with the command:
 
 ----
-helm install mysql stable/mysql --namespace testdb--set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8
-if you need to deploy mysql under a new namespace; please use the following command
 helm install mysql stable/mysql --namespace testdb --create-namespace --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8
 ----
 
@@ -50,6 +42,6 @@ This does the following:
 * Creates a database named `test_db`
 * Creates a user `test_db_user` with password `NKhjs2wQPt8`
 
-WARNING: This method of setting the password at deployment is insecure. You can use own secrets and config maps and passing along with helm command.
+WARNING: This method of setting the password at deployment is insecure. We do not recommend this for a production environment.
 
-After the Helm chart is deployed, it will be automatically discovered by Astra, at which point you can manage the app with Astra.
+After the pods are online, you can manage the app with Astra. Astra allows you to manage an app at the namespace level or using a helm label
