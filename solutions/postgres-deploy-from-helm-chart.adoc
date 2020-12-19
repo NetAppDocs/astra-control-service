@@ -22,11 +22,12 @@ NOTE: Applications deployed from Google Marketplace have not been validated. Som
 * Updated versions of Helm (version 3.2+) and Kubectl installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
 
-NOTE: You must deploy your app after the cluster is added to Astra, not before.
-
 == Install Postgres
 
-NOTE: You must deploy the Helm chart in a namespace other than the default.
+Two important notes on this process:
+
+* You must deploy your app after the cluster is added to Astra, not before.
+* You must deploy the Helm chart in a namespace other than the default.
 
 Deploy Postgres with the command:
 
