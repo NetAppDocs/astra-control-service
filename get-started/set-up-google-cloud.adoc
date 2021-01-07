@@ -12,8 +12,6 @@ summary: A few steps are required to prepare your Google Cloud project before yo
 
 A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with the Astra beta program.
 
-NOTE: Although Astra is free at this time, you will still be charged by Google for your CVS and Google Cloud usage. These charges will be billed separately by the providers.
-
 == Quick start for setting up Google Cloud
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
@@ -151,8 +149,10 @@ The easiest way to set up network peering is by obtaining the gcloud commands di
 . Log in to Google Cloud Platform and go to *Cloud Volumes*.
 
 . In the *Volumes* page, click *Create*.
+
+. Under *Service Type*, select *CVS-Performance*.
 +
-You'll only need to enter your networking information to obtain the commands.
+After this step, you'll only need to enter your networking information to obtain the commands.
 
 . Under *Region*, select your region and zone.
 
