@@ -2,6 +2,7 @@ sidebar:
   entries:
     - title: Astra docs
       url: /index.html
+    - section: release-notes
     - section: get-started
     - section: use
     - section: learn
