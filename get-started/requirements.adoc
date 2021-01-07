@@ -37,7 +37,7 @@ On-prem Kubernetes clusters and clusters running in other cloud providers are no
 
 * The image type for each worker node must be Ubuntu.
 
-* The cluster must reside on a VPC peered with CVS-Performance (not CVS Beta).
+* The cluster must reside on a VPC peered with the CVS-Performance service type (not the CVS service type).
 
 * If the cluster is private, it must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network] set to allow the Astra IP addresses:
   ** 18.232.241.74/32
