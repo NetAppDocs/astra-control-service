@@ -162,7 +162,7 @@ If you haven't set up network peering, you'll see the following notification:
 +
 image:gcp-peering.gif[]
 
-. Click the buttons to view the commands.
+. Click the button to view the commands.
 
 . Copy the commands and run them in Cloud Shell.
 +
