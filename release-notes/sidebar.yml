@@ -2,8 +2,8 @@ section: release-notes
 title: Release notes
 entries:
   - title: What's new
-    url: /get-started/whats-new.html
+    url: /release-notes/whats-new.html
   - title: Known issues
-    url: /get-started/known-issues.html
+    url: /release-notes/known-issues.html
   - title: Known limitations
-    url: /get-started/known-limitations.html
+    url: /release-notes/known-limitations.html
