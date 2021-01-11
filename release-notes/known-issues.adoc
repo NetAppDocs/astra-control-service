@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/known-issues.html
+permalink: release-notes/known-issues.html
 keywords: bugs, known issues, problems
 summary: Known issues identify problems that might prevent you from using this release of the product successfully.
 ---
@@ -11,10 +11,6 @@ summary: Known issues identify problems that might prevent you from using this r
 :imagesdir: ../media/get-started/
 
 Known issues identify problems that might prevent you from using this release of the product successfully.
-
-== Google Marketplace
-
-Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
 
 == Clone performance impacted by large persistent volumes
 
