@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/whats-new.html
+permalink: release-notes/whats-new.html
 keywords: what's new, bugs, bug fixes, new features, enhancements
 summary: NetApp periodically updates Astra to bring you new features, enhancements, and bug fixes.
 ---

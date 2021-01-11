@@ -12,9 +12,7 @@ summary: A few steps are required to prepare your Google Cloud project before yo
 
 A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with the Astra beta program.
 
-NOTE: Although Astra is free at this time, you will still be charged by Google for your CVS and Google Cloud usage. These charges will be billed separately by the providers.
-
-== Quick start for Google Cloud set up
+== Quick start for setting up Google Cloud
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
@@ -62,15 +60,13 @@ Create a Google Cloud service account that has the following permissions:
 [role="quick-margin-para"]
 Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
 
-
 [role="quick-margin-para"]
-
 If you’d like to use gcloud, you can follow steps from within the Astra user interface. Click **Account > Credentials > Add Credentials**, then click Instructions.
 
-==== image:number5.png[Number 5] Enable private services access
+==== image:number5.png[Number 5] Set up network peering for your VPC
 
 [role="quick-margin-para"]
-Set up private services access for Cloud Volumes Service for Google Cloud. <<Enable private services access,Follow step-by-step instructions>>.
+Set up network peering from your VPC to Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC,Follow step-by-step instructions>>.
 
 The following image depicts each of these steps that you'll need to complete.
 
@@ -142,10 +138,36 @@ The following video shows how to create the service account key from the Google 
 
 video::video-create-gcp-service-account-key.mp4[width=848, height=480]
 
-== Enable private services access
+== Set up network peering for your VPC
 
-Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. Other than the APIs that you enabled in the previous step, the only other requirement is to enable private services access to Cloud Volumes Service.
+Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. Other than the APIs that you enabled in the previous step, the only other requirement is to set up networking peering from your VPC to Cloud Volumes Service.
 
-.Step
+The easiest way to set up network peering is by obtaining the gcloud commands directly from Cloud Volumes Service. The commands are shown when creating a new file system.
 
-. Set up private services access from your project to create a high-throughput and low-latency data-path connection, https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[as described in the Cloud Volumes Service for Google Cloud documentation^].
+.Steps
+
+. Log in to Google Cloud Platform and go to *Cloud Volumes*.
+
+. In the *Volumes* page, click *Create*.
+
+. Under *Service Type*, select *CVS-Performance*.
++
+After this step, you'll only need to enter your networking information to obtain the commands.
+
+. Under *Region*, select your region and zone.
+
+. Under *Network Details*, select your VPC.
++
+If you haven't set up network peering, you'll see the following notification:
++
+image:gcp-peering.gif[]
+
+. Click the button to view the commands.
+
+. Copy the commands and run them in Cloud Shell.
++
+For more details about using these commands, refer to the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#configure_private_services_access_and_set_up_network_peering[Quickstart for Cloud Volumes Service for GCP^].
++
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[Learn more about configuring private services access and setting up network peering^].
+
+. After you're done, you can click cancel on the *Create File System* page.

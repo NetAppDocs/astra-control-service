@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: get-started/known-limitations.html
+permalink: release-notes/known-limitations.html
 keywords: limitations, known limitations, interoperability
 summary: Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 ---
@@ -11,6 +11,12 @@ summary: Known limitations identify platforms, devices, or functions that are no
 :imagesdir: ../media/get-started/
 
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
+
+== Google Marketplace apps haven't been validated
+
+NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users report issues with discovery or backup of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
+
+No matter which type of app that you use with Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
 == One GCP project and one service account are supported
 
