@@ -28,7 +28,7 @@ You can access Astra at https://astra.netapp.io.
 
 Ask them to check their spam folder for an email from do-not-reply@netapp.com, or search their inbox for "invitation."  You can also remove the user and attempt to re-add them.
 
-== Registering Kubernetes Clusters
+== Registering Kubernetes clusters
 
 *Can I add a private cluster to Astra?*
 
@@ -70,7 +70,7 @@ WARNING: Always remove a cluster from Astra before you delete it through GCP. De
 
 Trident will not be uninstalled from a cluster when you remove it from Astra.
 
-== Managing Applications
+== Managing applications
 
 *My application is not showing up on the Discovered Apps list. What can I check to identify the problem?*
 
@@ -92,7 +92,7 @@ Astra doesn't deploy applications. Applications must be deployed outside of Astr
 
 Any existing backups or snapshots will be deleted. Applications and data remain available. Data management operations will not be available for unmanaged applications or any backups or snapshots that belong to it.
 
-== Data Management Operations
+== Data management operations
 
 *Where is my object bucket created?*
 
