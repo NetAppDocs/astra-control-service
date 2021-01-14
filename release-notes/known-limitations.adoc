@@ -14,17 +14,13 @@ Known limitations identify platforms, devices, or functions that are not support
 
 == Google Marketplace apps haven't been validated
 
-NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users report issues with discovery or backup of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
+NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users report issues with discovery or back up of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
 
 No matter which type of app that you use with Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
 == One GCP project and one service account are supported
 
-The Astra Beta program supports one Google Cloud Platform project and one service account. You should not add more than one service account to Astra and you shouldn’t rotate service account credentials.
-
-If you want to change the GCP project that you’re using with Astra, then we will need to set up a new account for you.
-
-We intend to address this limitation in a future release.
+Astra supports one Google Cloud Platform project and one service account. You should not add more than one service account to Astra and you shouldn’t rotate service account credentials.
 
 == Persistent volume limit
 
@@ -36,7 +32,7 @@ If a managed app has pods in an unhealthy state, Astra can't create new backups 
 
 == Trident isn't uninstalled from a cluster
 
-When you unmanage a cluster from Astra, Trident isn't automatically uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
+When you unmanage a cluster from Astra, Trident isn't automatically uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/latest/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
 
 == Existing connections to a Postgres pod causes failures
 

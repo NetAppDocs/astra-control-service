@@ -60,9 +60,6 @@ Create a Google Cloud service account that has the following permissions:
 [role="quick-margin-para"]
 Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
 
-[role="quick-margin-para"]
-If you’d like to use gcloud, you can follow steps from within the Astra user interface. Click **Account > Credentials > Add Credentials**, then click Instructions.
-
 ==== image:number5.png[Number 5] Set up network peering for your VPC
 
 [role="quick-margin-para"]
@@ -140,21 +137,23 @@ video::video-create-gcp-service-account-key.mp4[width=848, height=480]
 
 == Set up network peering for your VPC
 
-Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. Other than the APIs that you enabled in the previous step, the only other requirement is to set up networking peering from your VPC to Cloud Volumes Service.
+Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. Other than the APIs that you enabled in a previous step, the only other requirement is to set up networking peering from your VPC to Cloud Volumes Service.
 
 The easiest way to set up network peering is by obtaining the gcloud commands directly from Cloud Volumes Service. The commands are shown when creating a new file system.
 
 .Steps
 
-. Log in to Google Cloud Platform and go to *Cloud Volumes*.
+. https://console.cloud.google.com/netapp/cloud-volumes/volumes[Go to Cloud Volumes in Google Cloud Platform^].
 
-. In the *Volumes* page, click *Create*.
+. On the *Volumes* page, click *Create*.
 
-. Under *Service Type*, select *CVS-Performance*.
+. Under *Service Type*, select *CVS-Performance* (CVS is not supported at this time).
 +
 After this step, you'll only need to enter your networking information to obtain the commands.
 
 . Under *Region*, select your region and zone.
++
+Clusters must be running in a Google Cloud region that supports the CVS-Performance service type. link:requirements.html[Learn more about supported regions].
 
 . Under *Network Details*, select your VPC.
 +
@@ -162,7 +161,7 @@ If you haven't set up network peering, you'll see the following notification:
 +
 image:gcp-peering.gif[]
 
-. Click the button to view the commands.
+. Click the button to view the network peering set up commands.
 
 . Copy the commands and run them in Cloud Shell.
 +
@@ -171,3 +170,5 @@ For more details about using these commands, refer to the https://cloud.google.c
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[Learn more about configuring private services access and setting up network peering^].
 
 . After you're done, you can click cancel on the *Create File System* page.
++
+We started creating this volume only to get the commands for network peering.

@@ -13,8 +13,6 @@ entries:
         url: /get-started/set-up-google-cloud.html
       - title: Sign up to Cloud Central
         url: /get-started/cloud-central.html
-      - title: Accept your Beta invitation
-        url: /get-started/invitation.html
       - title: Add your first cluster
         url: /get-started/add-first-cluster.html
       - title: What's next?
