@@ -11,7 +11,7 @@ summary: Astra is integrated within NetApp Cloud Central's authentication servic
 :imagesdir: ../media/get-started/
 
 [.lead]
-The Astra beta program is integrated within NetApp Cloud Central's authentication service. Sign up to Cloud Central so you can access Astra and NetApp’s other cloud services.
+Astra is integrated within NetApp Cloud Central's authentication service. Sign up to Cloud Central so you can access Astra and NetApp’s other cloud services.
 
 .Steps
 
@@ -21,7 +21,7 @@ The Astra beta program is integrated within NetApp Cloud Central's authenticatio
 
 . Fill out the form and click *Sign up*.
 +
-TIP: You'll need to provide the email address that you enter in this form to the person who adds you to Astra.
+TIP: You'll need to provide the email address that you enter in this form to the admin who adds you to Astra.
 +
 image:screenshot-cloud-central-signup.gif["A screenshot of the Cloud Central sign up page where you need to enter your email address, password, name, company, and your phone number, which is optional."]
 

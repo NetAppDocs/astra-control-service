@@ -14,7 +14,7 @@ Astra is a Kubernetes application data lifecycle management service that simplif
 
 == Features
 
-The Astra beta program offers critical capabilities for Kubernetes application data lifecycle management:
+Astra offers critical capabilities for Kubernetes application data lifecycle management:
 
 * Create a protection policy for each of your apps
 * Migrate applications and data from one Kubernetes cluster to another
@@ -36,7 +36,7 @@ Astra is a NetApp-managed cloud service that is always on and updated with the l
 
 At a high level, Astra works like this:
 
-* You set up your cloud provider by enabling CVS and creating a service account for Astra.
+* You set up your cloud provider by enabling Cloud Volumes Service for Google Cloud and by creating a GCP service account for Astra.
 
 * You add your first Kubernetes cluster to Astra. Astra then does the following:
 
@@ -48,10 +48,10 @@ At a high level, Astra works like this:
 
 ** Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud.
 
-** Astra creates three storage classes that use Cloud Volumes Service for Google Cloud: netapp-cvs-extreme, netapp-cvs-premium (default), and netapp-cvs-standard.
+** Astra creates three storage classes that use Cloud Volumes Service for Google Cloud: netapp-cvs-extreme, netapp-cvs-premium, and netapp-cvs-standard.
 
 * At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new storage classes by default.
 
-* Use Astra to manage these apps, and start creating snapshots, backups, and clones.
+* You then use Astra to manage these apps, and start creating snapshots, backups, and clones.
 
 Note that Astra continually watches your clusters for state changes, so it's aware of any new apps that you add along the way.
