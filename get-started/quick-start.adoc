@@ -41,7 +41,7 @@ link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 [role="quick-margin-para"]
 Sign up to https://cloud.netapp.com[NetApp Cloud Central^] so you can access Astra and NetApp’s other cloud services. link:cloud-central.html[Learn more about signing up].
 
-==== image:number5.png[Number 4] Add your first cluster
+==== image:number4.png[Number 4] Add your first cluster
 
 [role="quick-margin-para"]
 After you log in, click *Add a Kubernetes Cluster* to start managing your first cluster with Astra. link:add-first-cluster.html[Learn more about adding your first cluster].
