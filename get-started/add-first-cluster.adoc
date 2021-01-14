@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: get-started/add-first-cluster.html
 keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add compute
-summary: After you log in to Astra, your first step is to add a Kubernetes cluster.
+summary: After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra.
 ---
 
 = Add your first cluster to Astra
@@ -11,7 +11,15 @@ summary: After you log in to Astra, your first step is to add a Kubernetes clust
 :imagesdir: ../media/get-started/
 
 [.lead]
-After you log in to the Astra beta program, your first step is to add a Kubernetes cluster.
+After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra.
+
+== Create a Kubernetes cluster
+
+If you don't have a cluster yet, create a cluster in Google Kubernetes Engine (GKE) link:requirements.html[that meets Astra requirements].
+
+== Add the cluster to Astra
+
+After you log in to Astra, your first step is to add a Kubernetes cluster.
 
 .Steps
 

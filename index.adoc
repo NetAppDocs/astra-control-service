@@ -6,7 +6,7 @@ lead: Astra is a Kubernetes application data lifecycle management service that s
 summary: Astra is a Kubernetes application data lifecycle management service that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
 ---
 
-= Astra Documentation for the Beta release
+= Astra Documentation
 :hardbreaks:
 :nofooter:
 :icons: font

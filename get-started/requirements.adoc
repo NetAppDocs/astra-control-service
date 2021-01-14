@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: get-started/requirements.html
-keywords: kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, google cloud regions, gcp regions, apps, supported apps, mariadb, mysql, postgres
-summary: Get started by verifying support for your Kubernetes clusters and apps.
+keywords: kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, google cloud regions, gcp regions, apps, supported apps, mariadb, mysql, postgres, kubernetes version, ubuntu, image type, networking
+summary: Get started by verifying support for your Kubernetes clusters, apps, and web browser.
 ---
 
 = Requirements
@@ -12,45 +12,44 @@ summary: Get started by verifying support for your Kubernetes clusters and apps.
 
 Get started by verifying support for your Kubernetes clusters, apps, and web browser.
 
-== Supported Kubernetes clusters
+== Kubernetes cluster requirements
 
-* The Astra beta program supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
+A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra.
+
+Kubernetes deployment:: Astra supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
 +
-On-prem Kubernetes clusters and clusters running in other cloud providers are not supported at this time.
+On-prem Kubernetes clusters and clusters managed by other cloud managed services are not supported at this time.
 
-* Clusters must be running in a healthy state, in one of the supported regions:
+Google Cloud region:: Clusters must be running in a Google Cloud region that supports the CVS-Performance service type:
++
+* us-central1 (Iowa)
+* us-east4 (Virginia)
+* us-west2 (LA)
+* northamerica-northeast1 (Montreal)
+* europe-west2 (London)
+* europe-west3 (Frankfurt)
+* europe-west4 (Netherlands)
+* australia-southeast1 (Sydney)
+* asia-southeast1 (Singapore)
 
-  ** us-central1 (Iowa)
-  ** us-east4 (Virginia)
-  ** us-west2 (LA)
-  ** northamerica-northeast1 (Montreal)
-  ** europe-west2 (London)
-  ** europe-west3 (Frankfurt)
-  ** europe-west4 (Netherlands)
-  ** australia-southeast1 (Sydney)
-  ** asia-southeast1 (Singapore)
-  ** Other regions will be added in the future.
+Kubernetes version:: A cluster must be running Kubernetes version 1.17 or later.
 
-* A cluster must be running Kubernetes version 1.17 or later.
+Image type:: The image type for each worker node must be Ubuntu.
 
-* The cluster must have at least one online worker node.
+Cluster state:: Clusters must be running in a healthy state and have at least one online worker node.
 
-* The image type for each worker node must be Ubuntu.
+Networking:: The cluster must reside on a VPC peered with the CVS-Performance service type (not the CVS service type). link:set-up-google-cloud.html#set-up-network-peering-for-your-vpc-2[Learn how to set up peering].
 
-* The cluster must reside on a VPC peered with the CVS-Performance service type (not the CVS service type).
-
-* If the cluster is private, it must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network] set to allow the Astra IP addresses:
-  ** 18.232.241.74/32
-  ** 52.72.239.237/32
-  ** 3.210.60.146/32
+Private clusters:: If the cluster is private, it must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network^] set to allow the Astra IP addresses:
+* 18.232.241.74/32
+* 52.72.239.237/32
+* 3.210.60.146/32
 
 == Supported apps
 
 Astra supports all applications running on your Kubernetes clusters. link:../release-notes/known-limitations.html[Note that there is a known limitation with apps deployed from the Google Marketplace].
 
-NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups.
-
-link:../learn/validated-vs-standard.html[Learn the difference between a Validated and a Standard app].
+NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups. link:../learn/validated-vs-standard.html[Learn the difference between a Validated and a Standard app].
 
 No matter which type of app that you use with Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
