@@ -16,23 +16,23 @@ Many of the pages on this doc site include videos that show you how to complete 
 
 The following videos show how to complete set up requirements in Google Cloud before you can discover Kubernetes clusters running in GCP.
 
+=== Enable APIs
+
+Your project needs permissions to access specific Google Cloud APIs. The following video shows how to enable the APIs from the Google Cloud console. link:set-up-google-cloud.html#enable-apis-in-your-project[Learn more about enabling APIs].
+
+video::video-enable-gcp-apis.mp4[width=848, height=480]
+
 === Create a service account
 
-Astra uses a Google Cloud service account to facilitate Kubernetes application data management on your behalf. The following video shows how to create the service account from the Google Cloud console. link:set-up-google-cloud.html[Learn more about creating a service account].
+Astra uses a Google Cloud service account to facilitate Kubernetes application data management on your behalf. The following video shows how to create the service account from the Google Cloud console. link:set-up-google-cloud.html#create-a-service-account[Learn more about creating a service account].
 
 video::video-create-gcp-service-account.mp4[width=848, height=480]
 
 === Create a service account key
 
-Astra uses a service account key to establish the identity of the service account that you just set up. The following video shows how to create the service account key from the Google Cloud console. link:set-up-google-cloud.html[Learn more about creating a service account key].
+Astra uses a service account key to establish the identity of the service account that you just set up. The following video shows how to create the service account key from the Google Cloud console. link:set-up-google-cloud.html#create-a-service-account-key-2[Learn more about creating a service account key].
 
 video::video-create-gcp-service-account-key.mp4[width=848, height=480]
-
-=== Enable APIs
-
-Your project needs permissions to access specific Google Cloud APIs. The following video shows how to enable the APIs from the Google Cloud console. link:set-up-google-cloud.html[Learn more about enabling APIs].
-
-video::video-enable-gcp-apis.mp4[width=848, height=480]
 
 == Videos for using Astra
 

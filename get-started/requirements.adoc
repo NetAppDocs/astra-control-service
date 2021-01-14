@@ -12,7 +12,7 @@ summary: Get started by verifying support for your Kubernetes clusters, apps, an
 
 Get started by verifying support for your Kubernetes clusters, apps, and web browser.
 
-== Supported Kubernetes clusters
+== Kubernetes cluster requirements
 
 A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra.
 
@@ -38,7 +38,7 @@ Image type:: The image type for each worker node must be Ubuntu.
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node.
 
-Networking:: The cluster must reside on a VPC peered with the CVS-Performance service type (not the CVS service type).
+Networking:: The cluster must reside on a VPC peered with the CVS-Performance service type (not the CVS service type). link:set-up-google-cloud.html#set-up-network-peering-for-your-vpc-2[Learn how to set up peering].
 
 Private clusters:: If the cluster is private, it must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network^] set to allow the Astra IP addresses:
 * 18.232.241.74/32
