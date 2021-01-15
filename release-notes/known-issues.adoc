@@ -8,7 +8,7 @@ summary: Known issues identify problems that might prevent you from using this r
 = Known issues
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/get-started/
+:imagesdir: ../media/release-notes/
 
 Known issues identify problems that might prevent you from using this release of the product successfully.
 

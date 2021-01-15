@@ -8,7 +8,7 @@ summary: Known limitations identify platforms, devices, or functions that are no
 = Known limitations
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/get-started/
+:imagesdir: ../media/release-notes/
 
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 

@@ -10,7 +10,7 @@ summary: Invite users to join your Astra account and remove users that should no
 :icons: font
 :imagesdir: ../media/use/
 
-Invite users to join your Astra beta program account and remove users that should no longer have access to your account.
+Invite users to join your Astra account and remove users that should no longer have access to the account.
 
 == Invite users
 

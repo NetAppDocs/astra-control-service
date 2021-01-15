@@ -16,13 +16,13 @@ Protect your apps by taking snapshots and backups using an automated protection 
 
 A _snapshot_ is a point-in-time copy of an app that's stored on the same provisioned volume as the app. They are usually fast. Local snapshots are used to restore the application to an earlier point in time.
 
-A _backup_ is stored on object storage. A backup can be slower to take compared to the local snapshots. However, they can be accessed across regions in the cloud. Backups are used for migrating applications across cloud regions. Also, you can choose to have a longer retention period for backups.
+A _backup_ is stored on object storage in the cloud. A backup can be slower to take compared to the local snapshots. But they can be accessed across regions in the cloud to enable app migrations. You can also choose a longer retention period for backups.
 
 CAUTION: _You can't be fully protected until you have a recent backup_. This is important because backups are stored in an object store away from the persistent volumes. If a failure or accident wipes out the cluster and it's persistent storage, then you need a backup to recover. A snapshot wouldn't enable you to recover.
 
 == Configure a protection policy
 
-Configure a protection policy to protect an app by creating snapshots, backups, or both at a defined schedule and with a specified number of copies to retain.
+Configure a protection policy to protect an app by creating snapshots, backups, or both, at a defined schedule and with a specified number of copies to retain.
 
 .Steps
 
