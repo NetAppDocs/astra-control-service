@@ -5,7 +5,7 @@ keywords:
 summary: Learn the difference between a Validated and a Standard app
 ---
 
-= Validated vs Standard Apps
+= Validated vs standard apps
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
