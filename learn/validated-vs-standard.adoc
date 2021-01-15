@@ -1,14 +1,14 @@
 ---
 sidebar: sidebar
 permalink: learn/validated-vs-standard.html
-keywords:
-summary: Learn the difference between a Validated and a Standard app
+keywords: supported apps
+summary: There are two types of applications you can bring to Astra: Validated and Standard. Learn the difference between these two categories, and the potential impacts on your projects and strategy.
 ---
 
 = Validated vs standard apps
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ../media/learn/
 
 There are two types of applications you can bring to Astra: Validated and Standard. Learn the difference between these two categories, and the potential impacts on your projects and strategy.
 
@@ -16,7 +16,7 @@ NOTE: It's tempting to think of these two categories as "supported" and "unsuppo
 
 == Validated Apps
 
-Validated apps for the Astra Beta Program are:
+Validated apps for Astra include the following:
 
 * MySQL 0.3.22
 * MariaDB 14.14
