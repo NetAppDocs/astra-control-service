@@ -1,18 +1,18 @@
 ---
 sidebar: sidebar
 permalink: solutions/jenkins-deploy-from-helm-chart.html
-keywords:
-summary: Learn how to install Jenkins from a Helm chart on Astra
+keywords: helm, jenkins, deploy apps, deploy jenkins, bitnami, helm chart
+summary: Learn how to deploy Jenkins from the Bitnami Helm chart. After you deploy Jenkins on your cluster, you can register the application with Astra.
 ---
 
-= Deploy Jenkins From a Helm Chart
+= Deploy Jenkins from a Helm chart
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
 
-Learn how to deploy Jenkins from the Bitnami Helm chart so that you can test the Astra beta program. After you deploy Jenkins on your cluster, you can register the application with Astra.
+Learn how to deploy Jenkins from the Bitnami Helm chart. After you deploy Jenkins on your cluster, you can register the application with Astra.
 
-Jenkins is a validated app for the Astra Beta program. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
+Jenkins is a validated app for Astra. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
 NOTE: Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
 
