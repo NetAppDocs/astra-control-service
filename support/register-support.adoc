@@ -30,7 +30,7 @@ If you have any issues registering your serial number, contact us at projectastr
 
 == Obtain your serial number
 
-When you accept your Beta invitation, Astra prompts you to set up your account. Astra uses the information that you provide about your company to generate a 20-digit NetApp serial number that starts with "941".
+When you register for an account, Astra uses the information that you provide about your company to generate a 20-digit NetApp serial number that starts with "941".
 
 The NetApp serial number represents your Astra account. You'll need to use this serial number when opening a web ticket.
 

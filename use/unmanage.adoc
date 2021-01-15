@@ -10,7 +10,7 @@ summary: Remove any apps or clusters that you no longer want to manage from Astr
 :icons: font
 :imagesdir: ../media/use/
 
-Remove any apps or clusters that you no longer want to manage from the Astra beta program.
+Remove any apps or clusters that you no longer want to manage from Astra.
 
 == Stop managing an app
 
@@ -57,13 +57,3 @@ Trident won't be uninstalled from the cluster. https://netapp-trident.readthedoc
 .Result
 
 Astra stops managing the clusters.
-
-== Cleaning up after the Beta
-
-A few things remain after you've removed apps and clusters from Astra:
-
-* The object store that was created in your Google Cloud account
-* The Admin role that was installed on each managed Kubernetes cluster
-* The service account that you created
-
-You'll need to manually remove these.

@@ -11,7 +11,7 @@ summary: After you add a cluster to Astra, you can view details about the cluste
 :imagesdir: ../media/use/
 
 [.lead]
-After you add a cluster to the Astra beta program, you can view details about the cluster, such as its location, the worker nodes, persistent volumes, and storage classes.
+After you add a cluster to Astra, you can view details about the cluster, such as its location, the worker nodes, persistent volumes, and storage classes.
 
 .Steps
 
