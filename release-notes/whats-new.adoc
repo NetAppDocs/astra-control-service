@@ -8,7 +8,7 @@ summary: NetApp periodically updates Astra to bring you new features, enhancemen
 = What's new with Astra
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/get-started/
+:imagesdir: ../media/release-notes/
 
 NetApp periodically updates Astra to bring you new features, enhancements, and bug fixes.
 
