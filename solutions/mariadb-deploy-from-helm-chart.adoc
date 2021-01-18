@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: solutions/mariadb-deploy-from-helm-chart.html
 keywords: helm chart, mariadb, deploy mariadb, helm chart, bitnami
-summary: Learn how to exercise the Astra Beta program workflow by deploying MariaDB from a Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra.
+summary: Learn how to deploy MariaDB from the Bitnami Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra.
 ---
 
 = Deploy MariaDB from a Helm chart
