@@ -1,18 +1,18 @@
 ---
 sidebar: sidebar
 permalink: solutions/mysql-deploy-from-helm-chart.html
-keywords: helm, mysql
-summary: Learn how to exercise the Astra Beta workflow by deploying MySQL from a Helm chart. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra.
+keywords: helm, mysql, helm chart, deploy mysql
+summary: Learn how to deploy MySQL from the standard stable chart. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra.
 ---
 
-= Deploy MySQL From a Helm Chart
+= Deploy MySQL from a Helm chart
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
 
-Learn how to deploy MySQL from the https://github.com/helm/charts/tree/master/stable/mysql[standard stable chart^] so that you can test the Astra beta program. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra.
+Learn how to deploy MySQL from the https://github.com/helm/charts/tree/master/stable/mysql[standard stable chart^]. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra.
 
-MariaDB and MySQL are validated apps for the Astra Beta program. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
+MySQL is a validated app for Astra. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
 NOTE: Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
 

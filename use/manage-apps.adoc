@@ -18,7 +18,7 @@ You can manage apps at the namespace level, or by Kubernetes label. link:../lear
 
 Now that you've added your Kubernetes cluster to Astra, you can install apps on the cluster. Persistent volumes will be provisioned on the new storage classes by default. After the pods are online, you can manage the app with Astra.
 
-Astra will manage stateful apps only if the storage is on a storage class installed by Astra: netapp-cvs-extreme, netapp-cvs-premium (default), or netapp-cvs-standard.
+Astra will manage stateful apps only if the storage is on a storage class installed by Astra: netapp-cvs-extreme, netapp-cvs-premium, or netapp-cvs-standard.
 
 For help with deploying common applications from Helm charts, refer to the following:
 

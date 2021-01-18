@@ -1,5 +1,5 @@
 section: solutions
-title: Solutions
+title: Deploy apps
 entries:
    - title: Deploy Jenkins
      url: /solutions/jenkins-deploy-from-helm-chart.html

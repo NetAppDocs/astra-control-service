@@ -1,18 +1,18 @@
 ---
 sidebar: sidebar
 permalink: solutions/mariadb-deploy-from-helm-chart.html
-keywords: helm chart, mariadb
-summary: Learn how to exercise the Astra Beta program workflow by deploying MariaDB from a Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra.
+keywords: helm chart, mariadb, deploy mariadb, helm chart, bitnami
+summary: Learn how to deploy MariaDB from the Bitnami Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra.
 ---
 
-= Deploy MariaDB From a Helm Chart
+= Deploy MariaDB from a Helm chart
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
 
-Learn how to deploy MariaDB from the Bitnami Helm chart so that you can test the Astra beta program. After you deploy MariaDB on your cluster, you can manage the application with Astra.
+Learn how to deploy MariaDB from the Bitnami Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra.
 
-MariaDB is a validated app for the Astra Beta program. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
+MariaDB is a validated app for Astra. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
 NOTE: Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
 

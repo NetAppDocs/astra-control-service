@@ -1,18 +1,18 @@
 ---
 sidebar: sidebar
 permalink: solutions/postgres-deploy-from-helm-chart.html
-keywords:
-summary: Learn how to deploy Postgres from a Helm chart
+keywords: deploy apps, deploy postgres, helm chart
+summary: Learn how to deploy Postgres from a Helm chart. After you deploy Postgres on your cluster, you can register the application with Astra.
 ---
 
-= Deploy Postgres From a Helm Chart
+= Deploy Postgres from a Helm chart
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
 
-Learn how to deploy Postgres from the https://github.com/helm/charts/tree/master/stable/postgresql[standard stable Helm chart] so that you can test the Astra beta program. After you deploy Postgres on your cluster, you can register the application with Astra.
+Learn how to deploy Postgres from the https://github.com/helm/charts/tree/master/stable/postgresql[standard stable Helm chart]. After you deploy Postgres on your cluster, you can register the application with Astra.
 
-Postgres is a validated app for the Astra Beta program. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
+Postgres is a validated app for Astra. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
 NOTE: Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
 
