@@ -10,7 +10,7 @@ summary: If you no longer need an Astra account, you can close it at any time.
 :icons: font
 :imagesdir: ../media/use/
 
-If you no longer need an Astra account, you can close it at any time.
+If you no longer need your Astra account, you can close it at any time.
 
 .Steps
 
