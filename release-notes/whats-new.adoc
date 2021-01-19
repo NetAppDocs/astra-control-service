@@ -12,7 +12,23 @@ summary: NetApp periodically updates Astra to bring you new features, enhancemen
 
 NetApp periodically updates Astra to bring you new features, enhancements, and bug fixes.
 
-== 17 Dec 2020 update during Beta
+== 25 Jan 2021
+
+We're pleased to announce that Astra is now Generally Available. We incorporated a lot of the feedback that we received from the beta release and made a few other notable enhancements.
+
+* Billing is now available, which enables you to move from the Free Plan to the Premium Plan. * link:../use/set-up-billing.html[Learn more about billing].
+
+* Astra now creates Persistent Volumes that are 100 GiB.
+
+* Astra can now discover apps faster.
+
+* You can now create and delete accounts on your own.
+
+* We've improved notifications when Astra can no longer access a Kubernetes cluster.
++
+These notifications are important because Astra can't manage apps for disconnected clusters.
+
+== 17 Dec 2020 (Beta update)
 
 We primarily focused on bug fixes to improve your experience, but we made a few other notable enhancements:
 
