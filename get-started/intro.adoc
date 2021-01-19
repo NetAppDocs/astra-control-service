@@ -22,13 +22,24 @@ Astra offers critical capabilities for Kubernetes application data lifecycle man
 * Create on-demand snapshots and backups
 * Identify the health of your apps
 
-== Supported Kubernetes clusters
+== Supported Kubernetes deployments
 
-Astra can manage data for Google Kubernetes Engine (GKE) clusters.
+Astra can manage apps on Google Kubernetes Engine (GKE) clusters.
 
 On-prem Kubernetes clusters and clusters running in other cloud providers aren't supported at this time.
 
-link:requirements.html[Learn more about cluster requirements].
+link:requirements.html[Learn about cluster requirements].
+
+== Pricing
+
+Astra offers two plans:
+
+[horizontal]
+Free Plan:: Manage up to 10 apps for free.
+
+Premium Plan:: Manage an unlimited amount of apps by paying per minute, per application. https://cloud.netapp.com/project-astra[Learn how much the Premium Plan costs^].
+
+link:../use/set-up-billing.html[Upgrade to the Premium Plan at any time]. After you upgrade to the Premium plan, Astra starts charging you for _all_ managed apps. The first 10 apps don't stay in the Free Plan.
 
 == How Astra works
 

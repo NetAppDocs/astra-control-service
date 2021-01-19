@@ -16,6 +16,7 @@ Now that you’ve logged in and added your first cluster to Astra, you're ready 
 * link:../use/manage-apps.html[Start managing apps]
 * link:../use/protect-apps.html[Protect apps]
 * link:../use/clone-apps.html[Clone apps]
+* link:../use/set-up-billing.html[Set up billing]
 * link:../use/manage-users.html[Invite and manage users]
 * link:../use/manage-credentials.html[Manage cloud provider credentials]
 * link:../use/manage-notifications.html[Manage notifications]

@@ -21,6 +21,8 @@ entries:
         url: /use/view-apps.html
   - title: Manage your account
     entries:
+      - title: Set up billing
+        url: /use/set-up-billing.html
       - title: Invite and manage users
         url: /use/manage-users.html
       - title: Manage cloud provider credentials
