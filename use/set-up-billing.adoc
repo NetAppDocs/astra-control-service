@@ -16,10 +16,8 @@ Astra's Free Plan enables you to manage up to 10 apps. If you want to manage mor
 
 Astra offers two plans:
 
-[horizontal]
-Free Plan:: Manage up to 10 apps for free.
-
-Premium Plan:: Manage an unlimited amount of apps by paying per minute, per application. https://cloud.netapp.com/project-astra[Learn how much the Premium Plan costs^].
+* *Free Plan*: Manage up to 10 apps for free.
+* *Premium Plan*: Manage an unlimited amount of apps by paying per minute, per application. https://cloud.netapp.com/project-astra[Learn how much the Premium Plan costs^].
 
 When you're on the Free Plan, Astra's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed:
 

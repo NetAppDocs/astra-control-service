@@ -29,5 +29,7 @@ entries:
         url: /use/manage-credentials.html
       - title: Manage notifications
         url: /use/manage-notifications.html
+      - title: Close your account
+        url: use/close-account.html
   - title: Unmanage apps and clusters
     url: /use/unmanage.html

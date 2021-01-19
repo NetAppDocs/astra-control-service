@@ -34,10 +34,8 @@ link:requirements.html[Learn about cluster requirements].
 
 Astra offers two plans:
 
-[horizontal]
-Free Plan:: Manage up to 10 apps for free.
-
-Premium Plan:: Manage an unlimited amount of apps by paying per minute, per application. https://cloud.netapp.com/project-astra[Learn how much the Premium Plan costs^].
+* *Free Plan*: Manage up to 10 apps for free.
+* *Premium Plan*: Manage an unlimited amount of apps by paying per minute, per application. https://cloud.netapp.com/project-astra[Learn how much the Premium Plan costs^].
 
 link:../use/set-up-billing.html[Upgrade to the Premium Plan at any time]. After you upgrade to the Premium plan, Astra starts charging you for _all_ managed apps. The first 10 apps don't stay in the Free Plan.
 
