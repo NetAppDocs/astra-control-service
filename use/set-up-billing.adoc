@@ -1,0 +1,80 @@
+---
+sidebar: sidebar
+permalink: use/set-up-billing.html
+keywords: billing, set up billing, payments, set up payments, credit card, update credit card, change credit card, free plan, free trial, premium, premium plan
+summary: Astra's Free Plan enables you to manage up to 10 apps. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
+---
+
+= Set up billing
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+Astra's Free Plan enables you to manage up to 10 apps. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
+
+== Billing overview
+
+Astra offers two plans:
+
+* *Free Plan*: Manage up to 10 apps for free.
+* *Premium Plan*: Manage an unlimited amount of apps by paying per minute, per application. https://cloud.netapp.com/project-astra[Learn how much the Premium Plan costs^].
+
+When you're on the Free Plan, Astra's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed:
+
+<screenshot>
+
+When you try to manage an 11th app, Astra notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to the Premium Plan.
+
+After you upgrade to Premium, Astra starts charging you for _all_ managed apps. The first 10 apps don't stay in the Free Plan.
+
+== Upgrade from the Free Plan to the Premium Plan
+
+Upgrade your billing plan at any time to start managing more than 10 apps from Astra. All you need is a valid credit card.
+
+.Steps
+
+. Click *Account* and then click *Billing*.
+
+. Under *Plans*, go to *Premium* and click *Upgrade Now*.
+
+. Provide payment details for a valid credit card and click *Upgrade to Premium Plan*.
++
+NOTE: Astra will email you if the credit card is nearing expiration.
+
+.Result
+
+You can now manage more than 10 apps. Astra starts charging you for _all_ apps that you're currently managing.
+
+== View your current costs and billing history
+
+Astra shows you your current monthly costs, as well as a detailed billing history by app.
+
+.Steps
+
+. Click *Account* and then click *Billing*.
++
+Your current costs appear under the billing overview.
++
+<screenshot>
+
+. To view the billing history by app, click *Billing history*.
++
+Astra shows you the usage minutes and cost for each app.
++
+<screenshot>
+
+. Click the drop-down list to select a previous month.
++
+<screenshot>
+
+== Change your payment method
+
+If needed, you can change the credit card that Astra has on file for billing.
+
+.Steps
+
+. Click *Account > Billing > Payment method*.
+
+. Click the <screenshot> icon.
+
+. Modify the credit card.

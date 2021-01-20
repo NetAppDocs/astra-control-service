@@ -11,7 +11,7 @@ entries:
         url: /get-started/requirements.html
       - title: Set up Google Cloud
         url: /get-started/set-up-google-cloud.html
-      - title: Register for Astra
+      - title: Register for an Astra account
         url: /get-started/register.html
       - title: Add your first cluster
         url: /get-started/add-first-cluster.html

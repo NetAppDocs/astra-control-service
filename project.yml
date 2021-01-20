@@ -39,6 +39,9 @@ homepage:
         - title: Migrate an app
           summary: Migrate an app to another cluster.
           url: /use/clone-apps.html
+        - title: Set up billing
+          summary: Set up billing for the Premium Plan.
+          url: /use/set-up-billing.html
     - title: Demos & tutorials
       links:
         - title: Astra videos

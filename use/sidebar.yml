@@ -21,11 +21,15 @@ entries:
         url: /use/view-apps.html
   - title: Manage your account
     entries:
+      - title: Set up billing
+        url: /use/set-up-billing.html
       - title: Invite and manage users
         url: /use/manage-users.html
       - title: Manage cloud provider credentials
         url: /use/manage-credentials.html
       - title: Manage notifications
         url: /use/manage-notifications.html
+      - title: Close your account
+        url: /use/close-account.html
   - title: Unmanage apps and clusters
     url: /use/unmanage.html
