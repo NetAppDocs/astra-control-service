@@ -14,7 +14,7 @@ Known limitations identify platforms, devices, or functions that are not support
 
 == Astra API is not available yet
 
-The Astra API is not available for customer use at this time. We'll add details to the documentation when it's ready.
+The Astra API is not available for customer use at this time. We'll add an announcement in the release notes when it's ready.
 
 == Google Marketplace apps haven't been validated
 
