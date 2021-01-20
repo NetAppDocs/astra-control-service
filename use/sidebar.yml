@@ -1,6 +1,8 @@
 section: use
 title: Use Astra
 entries:
+  - title: Log in
+    url: /use/log-in.html
   - title: Manage and protect apps
     entries:
       - title: Start managing apps
