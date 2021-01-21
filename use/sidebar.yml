@@ -13,8 +13,6 @@ entries:
         url: /use/restore-apps.html
       - title: Clone and migrate apps
         url: /use/clone-apps.html
-      - title: Log in
-        url: /use/log-in.html
   - title: View app and cluster health
     entries:
       - title: Dashboard summary
