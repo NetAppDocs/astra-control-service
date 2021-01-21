@@ -14,11 +14,11 @@ NetApp periodically updates Astra to bring you new features, enhancements, and b
 
 == 25 Jan 2021
 
-We're pleased to announce that Astra is now Generally Available. We incorporated a lot of the feedback that we received from the beta release and made a few other notable enhancements.
+We're pleased to announce that Astra is now Generally Available. We incorporated a lot of the feedback that we received from the Beta release and made a few other notable enhancements.
 
 * Billing is now available, which enables you to move from the Free Plan to the Premium Plan. link:../use/set-up-billing.html[Learn more about billing].
 
-* Astra now creates Persistent Volumes that are 100 GiB.
+* Astra now creates Persistent Volumes with a minimum size of 100 GiB.
 
 * Astra can now discover apps faster.
 

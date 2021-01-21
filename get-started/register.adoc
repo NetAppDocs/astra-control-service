@@ -45,16 +45,16 @@ When you use Astra, you'll manage your apps from within an account. An account i
 
 .Steps
 
-. https://cloud.netapp.com/project-astra[Go to the Astra page on Cloud Central^].
+. https://cloud.netapp.com/astra[Go to the Astra page on Cloud Central^].
 
-. Click the registration link.
+. Click *Sign up for the Free Plan*.
 
 . Provide the required information in the form.
 +
 A few important things to note as you fill out the form:
 +
 * Your business name and address must be accurate because we verify them to meet the requirements of Global Trade Compliance.
-* The *Astra Account Name* is the name of your business's Astra account. You'll see this name in the Astra user interface. Note that you can create additional accounts, if that's required for your needs.
+* The *Astra Account Name* is the name of your business's Astra account. You'll see this name in the Astra user interface. Note that you can create additional accounts (up to 5), if that's required for your needs.
 
 . Click *Submit*.
 +

@@ -16,9 +16,8 @@ This page provides a high-level overview of the steps that you need to complete 
 
 [role="quick-margin-list"]
 * Astra supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
-
-* Clusters must be running a healthy state, with at least one online worker node, in a link:requirements.html[supported Google Cloud region].
-* The cluster must reside on a VPC that is peered with CVS-Performance. link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[Learn more about setting up private service access].
+* Clusters must be running a healthy state, with at least one online worker node, in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region that supports the CVS-Performance service type^].
+* The cluster must reside on a VPC that is peered to Cloud Volumes Service for Google Cloud (more on this in the next step).
 * The cluster must be running Kubernetes version 1.17 or later.
 * The image type for each worker node must be **Ubuntu**.
 
@@ -29,9 +28,10 @@ link:requirements.html[Learn more about the Kubernetes cluster requirements].
 
 [role="quick-margin-list"]
 .. Set up a Google Cloud account and project.
+.. Purchase Cloud Volumes Service for Google Cloud from the Marketplace.
+.. Enable the required APIs.
 .. Create a service account that has the required permissions.
 .. Create a service account key.
-.. Enable the required APIs.
 .. Set up network peering for your VPC.
 
 [role="quick-margin-para"]
@@ -40,9 +40,15 @@ link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 ==== image:number3.png[Number 3] Complete the Astra registration
 
 [role="quick-margin-para"]
-Complete the Astra registration from https://cloud.netapp.com[NetApp Cloud Central^]. link:register.html[Learn more about the registration process].
+Complete the Astra registration from https://cloud.netapp.com[NetApp Cloud Central^].
+
+[role="quick-margin-para"]
+link:register.html[Learn more about the registration process].
 
 ==== image:number4.png[Number 4] Add your first cluster
 
 [role="quick-margin-para"]
-After you log in, click *Add a Kubernetes Cluster* to start managing your first cluster with Astra. link:add-first-cluster.html[Learn more about adding your first cluster].
+After you log in, click *Add a Kubernetes Cluster* to start managing your first cluster with Astra.
+
+[role="quick-margin-para"]
+link:add-first-cluster.html[Learn more about adding your first cluster].

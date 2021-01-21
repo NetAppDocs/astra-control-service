@@ -30,22 +30,17 @@ On-prem Kubernetes clusters and clusters running in other cloud providers aren't
 
 link:requirements.html[Learn about cluster requirements].
 
-== Pricing
-
-Astra offers two plans:
-
-* *Free Plan*: Manage up to 10 apps for free.
-* *Premium Plan*: Manage an unlimited amount of apps by paying per minute, per application. https://cloud.netapp.com/project-astra[Learn how much the Premium Plan costs^].
-
-link:../use/set-up-billing.html[Upgrade to the Premium Plan at any time]. After you upgrade to the Premium plan, Astra starts charging you for _all_ managed apps. The first 10 apps don't stay in the Free Plan.
-
 == How Astra works
 
-Astra is a NetApp-managed cloud service that is always on and updated with the latest capabilities. It utilizes several components to enable application data lifecycle management. The following image shows the relationship between each component:
+Astra is a NetApp-managed cloud service that is always on and updated with the latest capabilities. It utilizes several components to enable application data lifecycle management.
+
+//The following image shows the relationship between each component:
 
 At a high level, Astra works like this:
 
 * You set up your cloud provider by enabling Cloud Volumes Service for Google Cloud and by creating a GCP service account for Astra.
++
+Astra uses https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] as the backend storage for your persistent volumes.
 
 * You add your first Kubernetes cluster to Astra. Astra then does the following:
 
@@ -59,8 +54,27 @@ At a high level, Astra works like this:
 
 ** Astra creates three storage classes that use Cloud Volumes Service for Google Cloud: netapp-cvs-extreme, netapp-cvs-premium, and netapp-cvs-standard.
 
-* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new storage classes by default.
+* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new storage classes by default using a minimum volume size of 100 GiB.
 
 * You then use Astra to manage these apps, and start creating snapshots, backups, and clones.
 
 Note that Astra continually watches your clusters for state changes, so it's aware of any new apps that you add along the way.
+
+== Pricing
+
+There are two types of costs associated with using Astra to manage your apps: charges from NetApp for the Astra service and charges from your cloud provider for persistent volumes.
+
+=== Astra billing
+
+Astra offers two plans:
+
+* *Free Plan*: Manage up to 10 apps for free.
+* *Premium Plan*: Manage an unlimited amount of apps by paying per minute, per application.
+
+When you create an Astra account, you're automatically signed up for the Free Plan. You can link:../use/set-up-billing.html[upgrade to the Premium Plan at any time]. After you upgrade, Astra starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
+
+Pricing details for the Premium Plan are available from within Astra by going to *Account > Billing*.
+
+=== Persistent volume billing
+
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs[View pricing details for Cloud Volumes Service^]. Note that Astra supports the CVS-Performance service type with either the Standard, Premium, or Extreme service level.

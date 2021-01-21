@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: log-in.html
+keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account
+summary: Astra is accessible through a SaaS-based user interface by going to astra.netapp.io.
+---
+
+= Log in to Astra
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Astra is accessible through a SaaS-based user interface by going to https://astra.netapp.io.
+
+.Steps
+
+. Open a web browser and go to https://astra.netapp.io.
+
+. Log in using your NetApp Cloud Central credentials.

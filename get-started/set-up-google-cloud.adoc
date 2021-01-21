@@ -21,7 +21,12 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-para"]
 You need a https://console.cloud.google.com/freetrial[Google Cloud account^] and https://cloud.google.com/resource-manager/docs/creating-managing-projects[a project^].
 
-==== image:number2.png[Number 2] Enable APIs in your Google Cloud project
+==== image:number2.png[Number 2] Purchase Cloud Volumes Service for Google Cloud
+
+[role="quick-margin-para"]
+Go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and click Purchase. <<Purchase Cloud Volumes Service for Google Cloud,Learn more about this step>>.
+
+==== image:number3.png[Number 3] Enable APIs in your Google Cloud project
 
 [role="quick-margin-para"]
 Enable the following Google Cloud APIs:
@@ -40,7 +45,7 @@ Enable the following Google Cloud APIs:
 [role="quick-margin-para"]
 <<Enable APIs in your project,Follow step-by-step instructions>>.
 
-==== image:number3.png[Number 3] Create a service account that has the required permissions
+==== image:number4.png[Number 4] Create a service account that has the required permissions
 
 [role="quick-margin-para"]
 Create a Google Cloud service account that has the following permissions:
@@ -55,12 +60,12 @@ Create a Google Cloud service account that has the following permissions:
 [role="quick-margin-para"]
 <<Create a service account,Read step-by-step instructions>>.
 
-==== image:number4.png[Number 4] Create a service account key
+==== image:number5.png[Number 5] Create a service account key
 
 [role="quick-margin-para"]
 Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
 
-==== image:number5.png[Number 5] Set up network peering for your VPC
+==== image:number6.png[Number 6] Set up network peering for your VPC
 
 [role="quick-margin-para"]
 Set up network peering from your VPC to Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC,Follow step-by-step instructions>>.
@@ -68,6 +73,16 @@ Set up network peering from your VPC to Cloud Volumes Service for Google Cloud. 
 The following image depicts each of these steps that you'll need to complete.
 
 image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud project, a service account with IAM roles and a key, enabled APIs, and private service access to Cloud Volumes Service for Google Cloud.]
+
+== Purchase Cloud Volumes Service for Google Cloud
+
+Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. You need to purchase Cloud Volumes Service for Google Cloud from the Google Cloud Marketplace to enable billing for persistent volumes.
+
+.Step
+
+. Go to the https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com[NetApp Cloud Volumes Service page^] in the Google Cloud Marketplace, click *Purchase*, and follow the prompts.
++
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#purchase_the_service[Follow step-by-step instructions in the Google Cloud documentation to purchase and enable the service^].
 
 == Enable APIs in your project
 
@@ -137,7 +152,7 @@ video::video-create-gcp-service-account-key.mp4[width=848, height=480]
 
 == Set up network peering for your VPC
 
-Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. Other than the APIs that you enabled in a previous step, the only other requirement is to set up networking peering from your VPC to Cloud Volumes Service.
+The final step is to set up networking peering from your VPC to Cloud Volumes Service for Google Cloud.
 
 The easiest way to set up network peering is by obtaining the gcloud commands directly from Cloud Volumes Service. The commands are shown when creating a new file system.
 

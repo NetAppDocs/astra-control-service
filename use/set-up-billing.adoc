@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/set-up-billing.html
 keywords: billing, set up billing, payments, set up payments, credit card, update credit card, change credit card, free plan, free trial, premium, premium plan
-summary: Astra's Free Plan enables you to manage up to 10 apps. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
+summary: Astra's Free Plan enables you to manage up to 10 apps in your account. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
 ---
 
 = Set up billing
@@ -10,22 +10,36 @@ summary: Astra's Free Plan enables you to manage up to 10 apps. If you want to m
 :icons: font
 :imagesdir: ../media/use/
 
-Astra's Free Plan enables you to manage up to 10 apps. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
+Astra's Free Plan enables you to manage up to 10 apps in your account. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
 
 == Billing overview
 
 Astra offers two plans:
 
 * *Free Plan*: Manage up to 10 apps for free.
-* *Premium Plan*: Manage an unlimited amount of apps by paying per minute, per application. https://cloud.netapp.com/project-astra[Learn how much the Premium Plan costs^].
+* *Premium Plan*: Manage an unlimited amount of apps by paying per minute, per application.
 
-When you're on the Free Plan, Astra's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed:
+When you create an Astra account, you're automatically signed up for the Free Plan. Astra's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed:
 
 <screenshot>
 
 When you try to manage an 11th app, Astra notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to the Premium Plan.
 
-After you upgrade to Premium, Astra starts charging you for _all_ managed apps. The first 10 apps don't stay in the Free Plan.
+link:../get-started/intro.html[Learn more about Astra pricing].
+
+== Important notes
+
+* Your billing plan is per Astra account.
++
+If you have multiple accounts, then each has its own billing plan.
+
+* Your Astra bill includes charges for managing your Kubernetes apps. You’re charged separately by your cloud provider for the backend storage for persistent volumes.
++
+link:../get-started/intro.html[Learn more about Astra pricing].
+
+* Each billing period ends on the last day of the month.
+
+* You can't downgrade from the Premium Plan to the Free Plan.
 
 == Upgrade from the Free Plan to the Premium Plan
 
@@ -59,7 +73,7 @@ Your current costs appear under the billing overview.
 
 . To view the billing history by app, click *Billing history*.
 +
-Astra shows you the usage minutes and cost for each app.
+Astra shows you the usage minutes and cost for each app. A usage minute is how many minutes Astra managed your app during a billing period.
 +
 <screenshot>
 
