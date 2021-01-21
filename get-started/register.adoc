@@ -45,7 +45,7 @@ When you use Astra, you'll manage your apps from within an account. An account i
 
 .Steps
 
-. https://cloud.netapp.com/project-astra[Go to the Astra page on Cloud Central^].
+. https://cloud.netapp.com/astra[Go to the Astra page on Cloud Central^].
 
 . Click *Sign up for the Free Plan*.
 

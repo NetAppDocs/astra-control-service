@@ -33,7 +33,7 @@ link:../get-started/intro.html[Learn more about Astra pricing].
 +
 If you have multiple accounts, then each has its own billing plan.
 
-* Your Astra bill includes charges for managing your apps. You're charged separately for the underlying storage.
+* Your Astra bill includes charges for managing your Kubernetes apps. You’re charged separately by your cloud provider for the backend storage for persistent volumes.
 +
 link:../get-started/intro.html[Learn more about Astra pricing].
 
