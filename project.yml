@@ -57,7 +57,7 @@ homepage:
       links:
         - title: Slack
           summary: Ask questions, exchange ideas, and share best practices.
-          url: https://netapppub.slack.com/archives/C1E3QH84C
+          url: https://netapppub.slack.com/#astra
         - title: Stateful Lessons for a Multi-Cloud World
           summary: How Astra provides robust storage, easy-to-consume data services, and application and data portability.
           url: https://blog.netapp.com/project-astra-stateful-lessons
