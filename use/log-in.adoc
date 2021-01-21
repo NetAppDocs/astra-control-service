@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: log-in.html
+permalink: use/log-in.html
 keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account
 summary: Astra is accessible through a SaaS-based user interface by going to astra.netapp.io.
 ---
