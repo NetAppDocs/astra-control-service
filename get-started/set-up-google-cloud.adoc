@@ -24,10 +24,7 @@ You need a https://console.cloud.google.com/freetrial[Google Cloud account^] and
 ==== image:number2.png[Number 2] Purchase Cloud Volumes Service for Google Cloud
 
 [role="quick-margin-para"]
-Go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and click Purchase.
-
-[role="quick-margin-para"]
-<<Purchase Cloud Volumes Service for Google Cloud,Learn more about this step>>.
+Go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and click Purchase. <<Purchase Cloud Volumes Service for Google Cloud,Learn more about this step>>.
 
 ==== image:number3.png[Number 3] Enable APIs in your Google Cloud project
 
@@ -83,7 +80,9 @@ Astra uses Cloud Volumes Service for Google Cloud as the backend storage for you
 
 .Step
 
-. https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#purchase_the_service[Follow instructions in Google Cloud documentation to purchase and enable the service^].
+. Go to the https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com[NetApp Cloud Volumes Service page^] in the Google Cloud Marketplace, click *Purchase*, and follow the prompts.
++
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#purchase_the_service[Follow step-by-step instructions in the Google Cloud documentation to purchase and enable the service^].
 
 == Enable APIs in your project
 
