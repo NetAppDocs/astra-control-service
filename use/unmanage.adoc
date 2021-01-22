@@ -38,9 +38,9 @@ Astra stops managing the app.
 
 Stop managing the compute that you no longer want to manage from Astra. As a best practice, we recommend that you remove compute from Astra before you delete it through GCP.
 
-This action stops your compute from being managed by Astra. It doesn't make any changes to the cluster's configuration and it doesn't delete the cluster.
-+
-Trident won't be uninstalled from the cluster. https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[Learn how to uninstall Trident^].
+* This action stops your compute from being managed by Astra. It doesn't make any changes to the cluster's configuration and it doesn't delete the cluster.
+
+* Trident won't be uninstalled from the cluster. https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[Learn how to uninstall Trident^].
 
 .Steps
 
