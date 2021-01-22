@@ -30,7 +30,7 @@ Search for articles, FAQ’s, or Break Fix information related to Astra.
 +
 This is the doc site that you're currently viewing.
 
-* https://netapppub.slack.com/archives/C1E3QH84C[Slack^]
+* https://netapppub.slack.com/#astra[Slack^]
 +
 Go to the containers channel in thePub workspace to connect with peers and experts.
 
