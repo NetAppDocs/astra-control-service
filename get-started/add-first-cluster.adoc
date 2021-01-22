@@ -17,13 +17,13 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 If you don't have a cluster yet, create a cluster in Google Kubernetes Engine (GKE) link:requirements.html[that meets Astra requirements].
 
-== Add the cluster to Astra
+== Start managing a cluster
 
 After you log in to Astra, your first step is to add a Kubernetes cluster.
 
 .Steps
 
-. On the Dashboard, click *Add a Kubernetes compute*.
+. On the Dashboard, click *Manage Kubernetes compute*.
 +
 Follow the prompts to add the cluster.
 
@@ -33,22 +33,24 @@ image:screenshot-compute-select-credentials.gif[]
 +
 Astra uses the service account to discover the clusters running in Google Kubernetes Engine.
 
-. *Compute*: Select the cluster that you'd like to add and click *Configure storage*.
+. *Compute*: Select the cluster that you'd like to add.
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify the cluster doesn't have a worker node.
 
-. *Storage*: Select the default storage class that you'd like to use with this cluster and click *Review information*.
+. *Storage*: Select the default storage class that you'd like to use with this cluster.
 +
 Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^].
++
+link:../learn/choose-class-and-size.html[Learn about choosing a storage class].
 
 . *Review & Approve*: Review the configuration details and click *Add compute*.
 +
 image:screenshot-compute-approve.gif[]
 
-The following video shows how to add a cluster.
+The following video shows each of these steps.
 
 video::video-manage-cluster.mp4[width=848, height=480]
 
 .Result
 
-Astra creates an object store for application backups, creates an admin account on the cluster, and sets the default storage class that you specified. This process takes up to 5 minutes.
+Astra creates an object store for application backups, creates an admin account on the cluster, and sets the default storage class that you specified. This process can take up to 5 minutes.
