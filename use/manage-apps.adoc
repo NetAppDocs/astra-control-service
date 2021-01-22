@@ -134,8 +134,8 @@ Astra enables management of the app. You can now find it in the *Managed* tab.
 
 == What about system apps?
 
-When you add a Kubernetes cluster, Astra also discovers the system apps running on the cluster. You can view them by filtering the Apps list.
+Astra also discovers the system apps running on a Kubernetes cluster. You can view them by filtering the Apps list.
 
-image:screenshot-system-apps.gif[]
+image:screenshot-system-apps.gif[A screenshot that shows the Show System Apps option that is available when you click All Compute in the Apps screen.]
 
 We don't show you these system apps by default because it's rare that you'd need to back them up.

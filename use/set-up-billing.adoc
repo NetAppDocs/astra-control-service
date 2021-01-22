@@ -19,7 +19,9 @@ Astra offers two plans:
 * *Free Plan*: Manage up to 10 apps for free.
 * *Premium Plan*: Manage an unlimited amount of apps by paying per minute, per application.
 
-When you create an Astra account, you're automatically signed up for the Free Plan. Astra's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed.
+When you create an Astra account, you're automatically signed up for the Free Plan. Astra's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed:
+
+image:screenshot-dashboard.gif[]
 
 When you try to manage an 11th app, Astra notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to the Premium Plan.
 
