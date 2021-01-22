@@ -13,10 +13,10 @@ summary: Astra uses Cloud Volumes Service for Google Cloud as the backend storag
 [.lead]
 Astra uses Cloud Volumes Service for Google Cloud as the backend storage for persistent volumes. You should understand how choosing a service level and persistent volume size can help you meet your performance objectives.
 
-Cloud Volumes Service for Google Cloud supports three service levels for the CVS-Performance service type: Standard, Premium, and Extreme. When you add compute to Astra, you're prompted to choose the default storage class for the cluster (either Standard, Premium, or Extreme). Each of these service levels are designed for different capacity and bandwidth needs. https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels[Click here to learn more about these service levels in the Cloud Volumes Service for Google Cloud documentation^].
+Cloud Volumes Service for Google Cloud supports three service levels for the CVS-Performance service type: Standard, Premium, and Extreme. When you add compute to Astra, you're prompted to choose Standard, Premium, or Extreme as the default storage class for the cluster. Each of these service levels are designed for different capacity and bandwidth needs. https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels[Click here to learn more about these service levels in the Cloud Volumes Service for Google Cloud documentation^].
 
-As you can see from the Google Cloud docs, the bandwidth for each service level is per GiB of provisioned capacity. That means larger volumes will provide better performance. But you don't want too much unused capacity, so you need to balance your capacity needs with your performance needs.
+As you can see from the Google Cloud docs, the allowed bandwidth for each service level is per GiB of provisioned capacity. That means larger volumes will provide better performance.
 
 Be sure to read through the page linked to above. It includes cost comparisons and examples that can help you better understand how to couple a service level with volume size to meet your performance objectives.
 
-TIP: Astra provisions persistent volumes using a minimum volume size of 100 GiB.
+TIP: Astra provisions persistent volumes using a minimum volume size of 100 GiB, and defaults to the Premium service level.
