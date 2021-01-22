@@ -42,7 +42,7 @@ At a high level, Astra works like this:
 +
 Astra uses https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] as the backend storage for your persistent volumes.
 
-* You add your first Kubernetes cluster to Astra. Astra then does the following:
+* You add your first Kubernetes compute to Astra. Astra then does the following:
 
 ** Creates an object store in your cloud provider account, which is where backup copies are sent.
 
@@ -58,7 +58,7 @@ Astra uses https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes 
 
 * You then use Astra to manage these apps, and start creating snapshots, backups, and clones.
 
-Note that Astra continually watches your clusters for state changes, so it's aware of any new apps that you add along the way.
+Note that Astra continually watches your compute for state changes, so it's aware of any new apps that you add along the way.
 
 == Pricing
 

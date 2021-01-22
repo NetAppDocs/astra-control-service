@@ -2,15 +2,15 @@
 sidebar: sidebar
 permalink: use/unmanage.html
 keywords: unmanage app, remove app, stop managing app, stop managing clusters, unmanage cluster, remove cluster
-summary: Remove any apps or clusters that you no longer want to manage from Astra.
+summary: Remove any apps or compute that you no longer want to manage from Astra.
 ---
 
-= Unmanage apps and clusters
+= Unmanage apps and compute
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/use/
 
-Remove any apps or clusters that you no longer want to manage from Astra.
+Remove any apps or compute that you no longer want to manage from Astra.
 
 == Stop managing an app
 

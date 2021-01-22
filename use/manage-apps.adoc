@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/manage-apps.html
 keywords: manage app, discover app, ignore app
-summary: After you add a Kubernetes cluster to Astra, you can install apps on that cluster (outside of Astra), and then go to the Apps page in Astra to start managing the apps.
+summary: After you add Kubernetes compute to Astra, you can install apps on that cluster (outside of Astra), and then go to the Apps page in Astra to start managing the apps.
 ---
 
 = Start managing apps
@@ -10,13 +10,13 @@ summary: After you add a Kubernetes cluster to Astra, you can install apps on th
 :icons: font
 :imagesdir: ../media/use/
 
-After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to Astra], you can install apps on that cluster (outside of Astra), and then go to the Apps page in Astra to start managing the apps.
+After you link:../get-started/add-first-cluster.html[add Kubernetes compute to Astra], you can install apps on the cluster (outside of Astra), and then go to the Apps page in Astra to start managing the apps.
 
 You can manage apps at the namespace level, or by Kubernetes label. link:../learn/define-custom-app.html[Learn more about defining apps by Kubernetes label].
 
 == Install apps on your cluster
 
-Now that you've added your Kubernetes cluster to Astra, you can install apps on the cluster. Persistent volumes will be provisioned on the new storage classes by default. After the pods are online, you can manage the app with Astra.
+Now that you've added your compute to Astra, you can install apps on the cluster. Persistent volumes will be provisioned on the new storage classes by default. After the pods are online, you can manage the app with Astra.
 
 Astra will manage stateful apps only if the storage is on a storage class installed by Astra: netapp-cvs-extreme, netapp-cvs-premium, or netapp-cvs-standard.
 
