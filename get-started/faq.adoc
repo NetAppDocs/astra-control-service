@@ -20,13 +20,33 @@ The following sections provide answers to some additional questions that you mig
 
 == Access to Astra
 
+*Why do I need to provide so many details when registering for Astra?*
+
+Astra requires accurate customer information when registering. This information is required to go through a Global Trade Compliance (GTC) check.
+
+*Why am I getting a “Registration Failed” error when registering for Astra?*
+
+Astra requires you to provide accurate customer information in the onboarding section. You will get a "Registration Failed" error if you provided incorrect information. Other accounts that you are a member of also get locked.
+
 *What's the Astra URL?*
 
 You can access Astra at https://astra.netapp.io.
 
 *I sent an email invitation to a colleague, but they haven't received it. What should I do?*
 
-Ask them to check their spam folder for an email from do-not-reply@netapp.com, or search their inbox for "invitation."  You can also remove the user and attempt to re-add them.
+Ask them to check their spam folder for an email from do-not-reply@netapp.com, or search their inbox for "invitation." You can also remove the user and attempt to re-add them.
+
+*I upgraded to the Premium Plan from the Free Plan. Will I get charged for the first 10 applications?*
+
+Yes. After upgrading to the Premium Plan, Astra starts charging you for all managed applications in your account.
+
+*I upgraded to the Premium Plan in the middle of a month. Will I get charged for the entire month?*
+
+No, billing starts from the time that you upgraded to the Premium Plan.
+
+*I am using the Free Plan, will I get charged for the Persistent Volume Claims used from Cloud Volumes Services for GCP?*
+
+Yes, you will be charged for the Persistent Volumes used from Cloud Volumes Service for Google Cloud.
 
 == Registering Kubernetes clusters
 
@@ -91,6 +111,10 @@ Astra doesn't deploy applications. Applications must be deployed outside of Astr
 *What happens to applications after I stop managing them from Astra?*
 
 Any existing backups or snapshots will be deleted. Applications and data remain available. Data management operations will not be available for unmanaged applications or any backups or snapshots that belong to it.
+
+*Can Astra manage an application that is on non-NetApp storage?*
+
+No. While Astra can discover applications that are using non-NetApp storage, it can't manage an application that's using non-NetApp storage.
 
 == Data management operations
 
