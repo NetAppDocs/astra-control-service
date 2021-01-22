@@ -36,7 +36,7 @@ Go to the containers channel in thePub workspace to connect with peers and exper
 
 * Feedback email
 +
-Send an email to projectastra.feedback@netapp.com to let us know your thoughts, ideas, or concerns.
+Send an email to astra.feedback@netapp.com to let us know your thoughts, ideas, or concerns.
 
 == Subscription support
 

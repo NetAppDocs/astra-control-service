@@ -24,13 +24,13 @@ Astra includes a Support Status field that enables you to confirm your support r
 +
 The Support Status starts off as "Not Registered" but then moves to "In-Progress" and finally to "Registered" once complete.
 +
-You can refresh your screen to get a current snapshot of process.
+You can refresh your screen to get a current snapshot of the process.
 +
-If you have any issues registering your serial number, contact us at projectastra.feedback@netapp.com.
+If you have any issues registering your serial number, contact us at astra.feedback@netapp.com.
 
 == Obtain your serial number
 
-When you register for an account, Astra uses the information that you provide about your company to generate a 20-digit NetApp serial number that starts with "941".
+When you register for an account, Astra uses the information that you provided about your company to generate a 20-digit NetApp serial number that starts with "941."
 
 The NetApp serial number represents your Astra account. You'll need to use this serial number when opening a web ticket.
 
