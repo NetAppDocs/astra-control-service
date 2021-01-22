@@ -27,12 +27,16 @@ NOTE: Applications deployed from Google Marketplace have not been validated. Som
 Two important notes on this process:
 
 * You must deploy your app after the cluster is added to Astra, not before.
-* You must deploy the Helm chart in a namespace other than the default.
+* We recommend that you deploy the Helm chart in a namespace other than the default.
+
+Add the Bitnami chart repo:
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
 
 Deploy MySQL with the command:
 
 ----
-helm install mysql stable/mysql --namespace testdb --create-namespace --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8
+helm install mysql bitnami/mysql --namespace testdb --create-namespace --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8
 ----
 
 This does the following:
@@ -44,4 +48,4 @@ This does the following:
 
 WARNING: This method of setting the password at deployment is insecure. We do not recommend this for a production environment.
 
-After the pods are online, you can manage the app with Astra. Astra allows you to manage an app at the namespace level or using a helm label
+After the pods are online, you can manage the app with Astra. Astra allows you to manage an app with its name, at the namespace level, or by using a helm label.
