@@ -24,15 +24,15 @@ We're pleased to announce that Astra is now Generally Available. We incorporated
 
 * You can now create and delete accounts on your own.
 
-* We've improved notifications when Astra can no longer access a Kubernetes cluster.
+* We've improved notifications when Astra can no longer access Kubernetes compute.
 +
-These notifications are important because Astra can't manage apps for disconnected clusters.
+These notifications are important because Astra can't manage apps for disconnected compute.
 
 == 17 Dec 2020 (Beta update)
 
 We primarily focused on bug fixes to improve your experience, but we made a few other notable enhancements:
 
-* When you add your first Kubernetes cluster to Astra, the object store is now created in the geography where the cluster resides.
+* When you add your first Kubernetes compute to Astra, the object store is now created in the geography where the cluster resides.
 
 * Details about persistent volumes is now available when you view storage details at the compute level.
 +

@@ -5,7 +5,7 @@ keywords: discover cluster, add cluster, add kubernetes cluster, discover kubern
 summary: After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra.
 ---
 
-= Add your first cluster to Astra
+= Start managing Kubernetes compute from Astra
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
@@ -17,27 +17,27 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 If you don't have a cluster yet, create a cluster in Google Kubernetes Engine (GKE) link:requirements.html[that meets Astra requirements].
 
-== Start managing a cluster
+== Start managing Kubernetes compute
 
-After you log in to Astra, your first step is to add a Kubernetes cluster.
+After you log in to Astra, your first step is to start managing compute.
 
 .Steps
 
 . On the Dashboard, click *Manage Kubernetes compute*.
 +
-Follow the prompts to add the cluster.
+Follow the prompts to add the compute.
 
 . *Provider*: Provide the service account key file either by uploading the file or by pasting the contents from your clipboard.
 +
 image:screenshot-compute-select-credentials.gif[]
 +
-Astra uses the service account to discover the clusters running in Google Kubernetes Engine.
+Astra uses the service account to discover compute running in Google Kubernetes Engine.
 
-. *Compute*: Select the cluster that you'd like to add.
+. *Compute*: Select the compute that you'd like to add.
 +
-Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify the cluster doesn't have a worker node.
+Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the compute. For example, it might identify that the cluster doesn't have a worker node.
 
-. *Storage*: Select the default storage class that you'd like to use with this cluster.
+. *Storage*: Select the default storage class that you'd like to use with this compute.
 +
 Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^].
 +
