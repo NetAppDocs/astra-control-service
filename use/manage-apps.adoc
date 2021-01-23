@@ -27,11 +27,11 @@ For help with deploying common applications from Helm charts, refer to the follo
 
 == Manage apps
 
-Astra enables you to manage your apps at the namespace level or by Kubernetes label. Follow the sections below for more details.
+Astra enables you to manage your apps at the namespace level or by Kubernetes label.
 
 === Manage apps by namespace
 
-The *Discovered* section of the Apps page shows namespaces and any Helm-installed apps. You can choose to manage your apps individually or at the namespace level. It all comes down to the level of granularity that you need for data protection operations.
+The *Discovered* section of the Apps page shows namespaces and any Helm-installed apps. You can choose to manage each app individually or at the namespace level. It all comes down to the level of granularity that you need for data protection operations.
 
 For example, you might want to set a backup policy for "maria" that has a weekly cadence, but you might need to back up "mariadb" (which is in the same namespace) more frequently than that. Based on those needs, you would need to manage the apps separately and not under a single namespace.
 
@@ -41,7 +41,7 @@ For example, you might want to set a backup policy for "maria" that has a weekly
 +
 image:screenshot-app-discovery.gif[]
 
-. Look at the *Group* column to see which namespace the application is running in (it's designated with the folder icon) and whether any Kubernetes labels are available (those are designated with a tag icon).
+. Look at the *Group* column to see which namespace the application is running in (it's designated with the folder icon) and whether any Helm labels are available (those are designated with a tag icon).
 +
 Here's an example:
 +
@@ -56,12 +56,14 @@ image:screenshot-app-manage.gif[]
 For example, if you wanted to manage all apps under the "maria" namespace together so that they have the same snapshot and backup policies, you would manage the first app and ignore the second app:
 +
 image:screenshot-app-manage-and-ignore.gif[]
-+
-Any ignored apps will move to the *Ignored* tab. Ideally, the Discovered tab will show zero apps, so that as new apps are installed, they are easier to find and manage.
+
+.Result
+
+Apps that you chose to manage are now available from the *Managed* tab. Any ignored apps will move to the *Ignored* tab. Ideally, the Discovered tab will show zero apps, so that as new apps are installed, they are easier to find and manage.
 
 === Manage apps by Kubernetes label
 
-Astra includes an action at the top of the Apps page named *Define custom app*. You can use this action to manage any apps that have a _custom_ Kubernetes label. link:../learn/define-custom-app.html[Learn more about defining apps by Kubernetes label].
+Astra includes an action at the top of the Apps page named *Define custom app*. You can use this action to manage any apps that have a custom Kubernetes label. link:../learn/define-custom-app.html[Learn more about defining apps by Kubernetes label].
 
 .Steps
 
