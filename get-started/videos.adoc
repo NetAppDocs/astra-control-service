@@ -36,16 +36,10 @@ video::video-create-gcp-service-account-key.mp4[width=848, height=480]
 
 == Videos for using Astra
 
-The following videos show how to complete a few common tasks using Astra.
+The following videos show how to complete common tasks using Astra.
 
 === Add your first cluster to Astra
 
 After you log in to Astra, your first step is to add a Kubernetes cluster. link:add-first-cluster.html[Learn more about adding a cluster].
 
 video::video-manage-cluster.mp4[width=848, height=480]
-
-=== Start managing an app
-
-After you install an app on your cluster, go to the Apps page to start managing the app. link:../use/manage-apps.html[Learn more about managing apps].
-
-video::video-manage-app.mp4[width=848, height=480]
