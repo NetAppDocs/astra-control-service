@@ -31,7 +31,9 @@ Two important notes on this process:
 
 Add the Bitnami chart repo:
 
+----
 helm repo add bitnami https://charts.bitnami.com/bitnami
+----
 
 Deploy MySQL with the command:
 

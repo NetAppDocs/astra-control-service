@@ -8,7 +8,7 @@ summary: Click Dashboard to see a high-level view of your apps, compute, and the
 = View a summary of app and compute health
 :hardbreaks:
 :icons: font
-:imagesdir: ../media
+:imagesdir: ../media/use/
 
 [.lead]
 Click the *Dashboard* to see a high-level view of your apps, compute, and their health.
