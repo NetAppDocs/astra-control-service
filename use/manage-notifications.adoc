@@ -22,6 +22,8 @@ You can view these notifications and mark them as read (this can come in handy i
 .Steps
 
 . Click the number of unread notifications in the top right.
++
+image:screenshot-expand-notifications.gif[A screenshot that shows the expanded notifications in the Astra interface.]
 
 . Review the notifications and then click *Mark as read* or *Show all notifications*.
 +

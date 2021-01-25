@@ -63,7 +63,7 @@ Apps that you chose to manage are now available from the *Managed* tab. Any igno
 
 === Manage apps by Kubernetes label
 
-Astra includes an action at the top of the Apps page named *Define custom app*. You can use this action to manage any apps that have a custom Kubernetes label. link:../learn/define-custom-app.html[Learn more about defining apps by Kubernetes label].
+Astra includes an action at the top of the Apps page named *Define custom app*. You can use this action to manage apps that are identified with a Kubernetes label. link:../learn/define-custom-app.html[Learn more about defining apps by Kubernetes label].
 
 .Steps
 
@@ -71,7 +71,7 @@ Astra includes an action at the top of the Apps page named *Define custom app*. 
 
 . In the *Define Custom Application* dialog box, provide the required information to manage the app:
 
-.. *New App*: Customize the name of the app.
+.. *New App*: Enter the display name of the app.
 
 .. *Compute*: Select the compute where the app resides.
 
@@ -79,14 +79,11 @@ Astra includes an action at the top of the Apps page named *Define custom app*. 
 
 .. *Label:* Enter a label or select a label from the resources below.
 
-.. *Selected Resources*: View and manage the selected Kubernetes resources that you'd like to protect (pods, secrets, persistent volumes, and more). Here's an example:
+.. *Selected Resources*: View and manage the selected Kubernetes resources that you'd like to protect (pods, secrets, persistent volumes, and more).
++
+Here's an example:
 +
 image:screenshot-selected-resources.gif[]
-+
-There are two primary ways to use the Selected Resources field:
-+
-* View the resources to validate that the Kubernetes resources that you want to protect are listed.
-* If a namespace contains multiple discrete applications and you use Kubernetes labels to split apart the apps, then you can choose a label to register the app with, based on that label.
 +
 ** View the available labels by expanding a resource and clicking the number of labels.
 +

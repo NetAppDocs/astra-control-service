@@ -39,16 +39,17 @@ link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 
 ==== image:number3.png[Number 3] Complete the Astra registration
 
-[role="quick-margin-para"]
-Complete the Astra registration from https://cloud.netapp.com[NetApp Cloud Central^].
+[role="quick-margin-list"]
+.. Create a https://cloud.netapp.com[NetApp Cloud Central^] account.
+.. Specify your NetApp Cloud Central email ID when creating your Astra account.
 
 [role="quick-margin-para"]
 link:register.html[Learn more about the registration process].
 
-==== image:number4.png[Number 4] Add your first cluster
+==== image:number4.png[Number 4] Add your first compute
 
 [role="quick-margin-para"]
-After you log in, click *Add a Kubernetes Cluster* to start managing your first cluster with Astra.
+After you log in, click *Add Compute* to start managing compute with Astra.
 
 [role="quick-margin-para"]
-link:add-first-cluster.html[Learn more about adding your first cluster].
+link:add-first-cluster.html[Learn more about adding compute].

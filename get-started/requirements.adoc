@@ -31,9 +31,9 @@ Cluster state:: Clusters must be running in a healthy state and have at least on
 Networking:: The cluster must reside on a VPC peered with the CVS-Performance service type (not the CVS service type). link:set-up-google-cloud.html#set-up-network-peering-for-your-vpc-2[Learn how to set up peering].
 
 Private clusters:: If the cluster is private, it must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network^] set to allow the Astra IP addresses:
-* 18.232.241.74/32
-* 52.72.239.237/32
-* 3.210.60.146/32
+*	54.164.233.140/32
+*	3.218.120.204/32
+*	34.193.99.138/32
 
 == Supported apps
 

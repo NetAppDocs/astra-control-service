@@ -44,7 +44,7 @@ Yes. After upgrading to the Premium Plan, Astra starts charging you for all mana
 
 No, billing starts from the time that you upgraded to the Premium Plan.
 
-*I am using the Free Plan, will I get charged for the Persistent Volume Claims used from Cloud Volumes Services for GCP?*
+*I am using the Free Plan, will I get charged for the Persistent Volume Claims used from Cloud Volumes Service for GCP?*
 
 Yes, you will be charged for the Persistent Volumes used from Cloud Volumes Service for Google Cloud.
 
@@ -56,9 +56,9 @@ Yes, you can add private clusters to Astra. To create a Google Kubernetes Engine
 
 Private clusters must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network] set to allow the Astra IP addresses:
 
-* 18.232.241.74/32
-* 52.72.239.237/32
-* 3.210.60.146/32
+* 54.164.233.140/32
+* 3.218.120.204/32
+* 34.193.99.138/32
 
 *Can my GCP cluster reside on a shared VPC?*
 
