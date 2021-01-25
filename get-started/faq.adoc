@@ -44,7 +44,7 @@ Yes. After upgrading to the Premium Plan, Astra starts charging you for all mana
 
 No, billing starts from the time that you upgraded to the Premium Plan.
 
-*I am using the Free Plan, will I get charged for the Persistent Volume Claims used from Cloud Volumes Services for GCP?*
+*I am using the Free Plan, will I get charged for the Persistent Volume Claims used from Cloud Volumes Service for GCP?*
 
 Yes, you will be charged for the Persistent Volumes used from Cloud Volumes Service for Google Cloud.
 
