@@ -60,4 +60,4 @@ A few important things to note as you fill out the form:
 +
 If you're logged in to Cloud Central already, you'll see a registration status and then you'll be redirected to the Astra Dashboard. Otherwise, you'll be prompted to log in first.
 +
-Now that you're registered, you can access Astra directly from https://astra.netapp.io. There's no need to return to Cloud Central.
+Now that you're registered, you can access Astra directly from https://astra.netapp.io.
