@@ -2,16 +2,16 @@
 sidebar: sidebar
 permalink: use/view-dashboard.html
 keywords: dashboard, cluster health, unhealthy apps, protected apps, discovered apps
-summary: Click Dashboard to see a high-level view of your apps, clusters, and their health.
+summary: Click Dashboard to see a high-level view of your apps, compute, and their health.
 ---
 
-= View a summary of app and cluster health
+= View a summary of app and compute health
 :hardbreaks:
 :icons: font
-:imagesdir: ../media
+:imagesdir: ../media/use/
 
 [.lead]
-Click the *Dashboard* to see a high-level view of your apps, clusters, and their health.
+Click the *Dashboard* to see a high-level view of your apps, compute, and their health.
 
 image:screenshot-dashboard.gif[]
 
@@ -28,4 +28,4 @@ Note that these aren't just numbers or statuses--you can drill down from each of
 
 image:screenshot-dashboard-unprotected.gif[]
 
-The Compute tile provides similar details about the health of your clusters and you can drill down to get more details just like you can with an app.
+The Compute tile provides similar details about the health of the compute and you can drill down to get more details just like you can with an app.

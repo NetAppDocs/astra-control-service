@@ -15,6 +15,11 @@ summary: Astra is accessible through a SaaS-based user interface by going to ast
 [.lead]
 Astra is accessible through a SaaS-based user interface by going to https://astra.netapp.io.
 
+.What you'll need
+
+* link:..get-started/register.html[A Cloud Central user ID].
+* link:..get-started/register.html[A new Astra account] or link:manage-users.html[an invitation to an existing account].
+
 .Steps
 
 . Open a web browser and go to https://astra.netapp.io.

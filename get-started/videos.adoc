@@ -38,8 +38,8 @@ video::video-create-gcp-service-account-key.mp4[width=848, height=480]
 
 The following videos show how to complete common tasks using Astra.
 
-=== Add your first cluster to Astra
+=== Manage compute from Astra
 
-After you log in to Astra, your first step is to add a Kubernetes cluster. link:add-first-cluster.html[Learn more about adding a cluster].
+After you log in to Astra, your first step is to add Kubernetes compute. link:add-first-cluster.html[Learn more about managing compute].
 
 video::video-manage-cluster.mp4[width=848, height=480]
