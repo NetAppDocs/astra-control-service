@@ -79,7 +79,9 @@ Astra includes an action at the top of the Apps page named *Define custom app*. 
 
 .. *Label:* Enter a label or select a label from the resources below.
 
-.. *Selected Resources*: View and manage the selected Kubernetes resources that you'd like to protect (pods, secrets, persistent volumes, and more). Here's an example:
+.. *Selected Resources*: View and manage the selected Kubernetes resources that you'd like to protect (pods, secrets, persistent volumes, and more).
++
+Here's an example:
 +
 image:screenshot-selected-resources.gif[]
 +
