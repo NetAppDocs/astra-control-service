@@ -8,7 +8,7 @@ summary: Click Dashboard to see a high-level view of your apps, clusters, and th
 = View a summary of app and cluster health
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/use/
+:imagesdir: ../media
 
 [.lead]
 Click the *Dashboard* to see a high-level view of your apps, clusters, and their health.
