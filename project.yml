@@ -30,7 +30,7 @@ homepage:
           url: /get-started/faq.html
     - title: Use Astra
       links:
-        - title: Register applications
+        - title: Manage applications
           summary: Start managing your apps from Astra.
           url: /use/manage-apps.html
         - title: Protect your apps
