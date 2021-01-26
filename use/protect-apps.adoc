@@ -22,7 +22,7 @@ CAUTION: _You can't be fully protected until you have a recent backup_. This is 
 
 == Configure a protection policy
 
-Configure a protection policy to protect an app by creating snapshots, backups, or both, at a defined schedule and with a specified number of copies to retain.
+A protection policy protects an app by creating snapshots, backups, or both at a defined schedule. You can choose to create snapshots and backups hourly, daily, weekly, and monthly, and you can specify the number of copies to retain.
 
 .Steps
 
@@ -45,6 +45,10 @@ image:screenshot-protection-policy.gif["A screenshot of a sample configuration p
 . Click *Review Information*.
 
 . Click *Set Protection Policy.*
++
+Here's a video that shows each of these steps.
++
+video::video-set-protection-policy.mp4[width=848, height=480]
 
 .Result
 
