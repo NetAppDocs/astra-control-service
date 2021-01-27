@@ -31,7 +31,7 @@ Validated apps have also been checked by the Astra Development team, which creat
 
 No matter which type of app you use with Astra, always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
-Let us know what apps you would like to see validated in the future. https://preview-beta.astra.netapp.io/support[Contact us through the Feedback email address on the Support page.]
+Let us know what apps you would like to see validated in the future. https://astra.netapp.io/support[Contact us through the Feedback email address on the Support page.]
 
 == Standard Apps
 
