@@ -16,7 +16,7 @@ This FAQ can help if you're just looking for a quick answer to a question.
 
 Astra aims to simplify your application data lifecycle management operations for Kubernetes native applications. Astra supports Kubernetes clusters running on Google Kubernetes Engine (GKE) on Google Cloud Platform (GCP).
 
-The following sections provide answers to some additional questions that you might come across as you use Astra. For any additional clarifications, please reach out to projectastra.feedback@netapp.com
+The following sections provide answers to some additional questions that you might come across as you use Astra. For any additional clarifications, please reach out to astra.feedback@netapp.com
 
 == Access to Astra
 
@@ -54,7 +54,7 @@ Yes, you will be charged for the Persistent Volumes used from Cloud Volumes Serv
 
 Yes, you can add private clusters to Astra. To create a Google Kubernetes Engine (GKE) private cluster, https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra[follow the instructions in this knowledgebase article^].
 
-Private clusters must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network] set to allow the Astra IP addresses:
+Private clusters must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network^] set to allow the Astra IP addresses:
 
 * 54.164.233.140/32
 * 3.218.120.204/32
