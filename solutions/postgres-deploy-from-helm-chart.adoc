@@ -10,7 +10,7 @@ summary: Learn how to deploy Postgres from a Helm chart. After you deploy Postgr
 :icons: font
 :imagesdir: ../media/
 
-Learn how to deploy Postgres from the https://github.com/helm/charts/tree/master/stable/postgresql[standard stable Helm chart]. After you deploy Postgres on your cluster, you can register the application with Astra.
+Learn how to deploy Postgres from the Bitnami Helm chart. After you deploy Postgres on your cluster, you can register the application with Astra.
 
 Postgres is a validated app for Astra. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
@@ -29,10 +29,16 @@ Two important notes on this process:
 * You must deploy your app after the cluster is added to Astra, not before.
 * You must deploy the Helm chart in a namespace other than the default.
 
+Add the Bitnami chart repo:
+
+----
+helm repo add bitnami https://charts.bitnami.com/bitnami
+----
+
 Deploy Postgres with the command:
 
 ----
-kubectl create namespace testdb && helm install stable/postgresql --namespace testdb --set postgresqlPassword=U9dH9HT4pWS,postgresqlDatabase=test_db --generate-name
+kubectl create namespace testdb && helm install bitnami/postgresql --namespace testdb --set postgresqlPassword=U9dH9HT4pWS,postgresqlDatabase=test_db --generate-name
 ----
 
 This does the following:
