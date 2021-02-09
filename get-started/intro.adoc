@@ -69,11 +69,9 @@ There are two types of costs associated with using Astra to manage your apps: ch
 Astra offers two plans:
 
 * *Free Plan*: Manage up to 10 apps for free.
-* *Premium Plan*: Manage an unlimited amount of apps by paying per minute, per application.
+* *Premium Plan*: Manage an unlimited amount of apps at a rate of $.005 per minute per app.
 
 When you create an Astra account, you're automatically signed up for the Free Plan. You can link:../use/set-up-billing.html[upgrade to the Premium Plan at any time]. After you upgrade, Astra starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
-
-Pricing details for the Premium Plan are available from within Astra by going to *Account > Billing*.
 
 === Persistent volume billing
 

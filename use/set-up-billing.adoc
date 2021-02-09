@@ -17,7 +17,7 @@ Astra's Free Plan enables you to manage up to 10 apps in your account. If you wa
 Astra offers two plans:
 
 * *Free Plan*: Manage up to 10 apps for free.
-* *Premium Plan*: Manage an unlimited amount of apps by paying per minute, per application.
+* *Premium Plan*: Manage an unlimited amount of apps at a rate of $.005 per minute per app.
 
 When you create an Astra account, you're automatically signed up for the Free Plan. Astra's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed:
 
