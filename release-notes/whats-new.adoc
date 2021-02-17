@@ -12,6 +12,12 @@ summary: NetApp periodically updates Astra to bring you new features, enhancemen
 
 NetApp periodically updates Astra to bring you new features, enhancements, and bug fixes.
 
+== 24 Feb 2021
+
+Astra now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[CVS service type for Cloud Volumes Service for Google Cloud^]. This enhancement enables you to manage apps for Kubernetes clusters that reside in https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud regions where CVS is supported^].
+
+If you have the flexibility to select a Google Cloud region, then you can link:../learn/choose-class-and-size.html[choose between CVS and CVS-Performance based on your performance requirements].
+
 == 25 Jan 2021
 
 We're pleased to announce that Astra is now Generally Available. We incorporated a lot of the feedback that we received from the Beta release and made a few other notable enhancements.

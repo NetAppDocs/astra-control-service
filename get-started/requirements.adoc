@@ -20,7 +20,7 @@ Kubernetes deployment:: Astra supports Kubernetes clusters that are managed by G
 +
 On-prem Kubernetes clusters and clusters managed by other cloud managed services are not supported at this time.
 
-Google Cloud region:: Clusters must be running in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region that supports the CVS-Performance service type^].
+Google Cloud region:: Clusters must be running in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region where Cloud Volumes Service for Google Cloud is supported.] Note that both service types are supported: CVS and CVS-Performance.
 
 Kubernetes version:: A cluster must be running Kubernetes version 1.17 or later.
 

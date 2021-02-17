@@ -52,9 +52,9 @@ Astra uses https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes 
 
 ** Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud.
 
-** Astra creates three storage classes that use Cloud Volumes Service for Google Cloud: netapp-cvs-extreme, netapp-cvs-premium, and netapp-cvs-standard.
+** Astra creates one or more storage classes that use Cloud Volumes Service for Google Cloud.
 
-* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new storage classes by default using a minimum volume size of 100 GiB.
+* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class using a minimum volume size of 100 GiB.
 
 * You then use Astra to manage these apps, and start creating snapshots, backups, and clones.
 
