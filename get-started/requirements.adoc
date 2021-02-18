@@ -28,7 +28,7 @@ Image type:: The image type for each worker node must be Ubuntu.
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node.
 
-Networking:: The cluster must reside on a VPC that is peered with Cloud Volumes Service for Google Cloud. link:set-up-google-cloud.html#set-up-network-peering-for-your-vpc-2[Learn how to set up peering].
+Networking:: The cluster must reside in a VPC that is peered with Cloud Volumes Service for Google Cloud. link:set-up-google-cloud.html#set-up-network-peering-for-your-vpc-2[Learn how to set up peering].
 
 Private clusters:: If the cluster is private, it must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network^] set to allow the Astra IP addresses:
 *	54.164.233.140/32

@@ -15,7 +15,7 @@ Astra uses Cloud Volumes Service for Google Cloud as the backend storage for per
 
 == Service types for Cloud Volumes Service for Google Cloud
 
-Cloud Volumes Service for Google Cloud provides two service types: _CVS_ and _CVS-Performance_. These service types are supported in specific Google Cloud regions. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Go to NetApp Cloud Central's Global Regions Maps^] to identify the service type that's supported in the Google Cloud region where your cluster resides.
+Cloud Volumes Service for Google Cloud provides two service types: _CVS_ and _CVS-Performance_. These service types are supported in specific Google Cloud regions. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Go to NetApp Cloud Central's Global Regions Maps^] to identify the service type that's supported in the Google Cloud region where your clusters reside.
 
 If your Kubernetes clusters must reside in a specific region, then you'll be using the service type supported in that region.
 
@@ -25,11 +25,13 @@ But if you have the flexibility to select between Google Cloud regions, then we 
 
 * For K8s applications that have low-to-medium storage performance needs (web apps, general purpose file storage, etc.), choose a Google Cloud region that supports either CVS or CVS-Performance, with the Standard storage class.
 
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[Learn more about these service types in the Cloud Volumes Service for Google Cloud docs^].
+
 == Storage class for CVS
 
 One service level is supported with the CVS service type: Standard. When you manage clusters in regions where the CVS service type is supported, Astra uses the Standard service level as the default storage class for persistent volumes. The storage class is named _netapp-cvs-standard_.
 
-https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-levels[Learn more about the Standard service level in the Cloud Volumes Service for Google Cloud documentation^].
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-levels[Learn more about the Standard service level in the Cloud Volumes Service for Google Cloud docs^].
 
 == Storage classes for CVS-Performance
 
@@ -37,12 +39,12 @@ Three service levels are supported with the CVS-Performance service type: Standa
 
 The names of the storage classes are _netapp-cvs-standard_, _netapp-cvs-premium_, and _netapp-cvs-extreme_.
 
-https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels[Learn more about these service levels in the Cloud Volumes Service for Google Cloud documentation^].
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels[Learn more about these service levels in the Cloud Volumes Service for Google Cloud docs^].
 
 == Persistent volume size
 
 As the Google Cloud docs explain, the allowed bandwidth for each service level is per GiB of provisioned capacity. That means larger volumes will provide better performance.
 
-Be sure to read through the pages linked to above. They include cost comparisons and examples that can help you better understand how to couple a service level with volume size to meet your performance objectives.
+Be sure to read through the Google Cloud pages linked to above. They include cost comparisons and examples that can help you better understand how to couple a service level with volume size to meet your performance objectives.
 
 TIP: Astra provisions persistent volumes using a minimum volume size of 100 GiB, and defaults to the Premium service level.
