@@ -19,7 +19,7 @@ Cloud Volumes Service for Google Cloud provides two service types: _CVS_ and _CV
 
 If your Kubernetes clusters must reside in a specific region, then you'll be using the service type supported in that region.
 
-But if you have the flexibility to select between Google Cloud regions, then we recommend the following based on your performance requirements:
+But if you have the flexibility to choose between Google Cloud regions, then we recommend the following based on your performance requirements:
 
 * For K8s applications that have medium-to-high performance storage needs, choose a Google Cloud region that supports CVS-Performance and use the Premium or Extreme storage class. Such workloads include AI/ML pipelines, CI/CD pipelines, media processing, and databases including relational, noSQL, time series, etc.
 

@@ -18,7 +18,7 @@ Astra now supports the https://cloud.google.com/solutions/partners/netapp-cloud-
 
 This enhancement means that Astra can now manage app data for Kubernetes clusters that are running in _any_ https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region where Cloud Volumes Service is supported^].
 
-If you have the flexibility to choose between Google Cloud regions, then you can pick either CVS or CVS-Performance depending on your performance requirements. link:../learn/choose-class-and-size.html[Learn more about choosing a service type].
+If you have the flexibility to choose between Google Cloud regions, then you can pick either CVS or CVS-Performance, depending on your performance requirements. link:../learn/choose-class-and-size.html[Learn more about choosing a service type].
 
 == 25 Jan 2021
 
