@@ -14,9 +14,11 @@ NetApp periodically updates Astra to bring you new features, enhancements, and b
 
 == 24 Feb 2021
 
-Astra now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[CVS service type for Cloud Volumes Service for Google Cloud^]. This enhancement enables you to manage apps for Kubernetes clusters that reside in https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud regions where CVS is supported^].
+Astra now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[CVS service type^] with Cloud Volumes Service for Google Cloud. This is in addition to already supporting the CVS-Performance service type. Just as a reminder, Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes.
 
-If you have the flexibility to select a Google Cloud region, then you can link:../learn/choose-class-and-size.html[choose between CVS and CVS-Performance based on your performance requirements].
+This enhancement means that Astra can now manage app data for Kubernetes clusters that are running in _any_ https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region where Cloud Volumes Service is supported^].
+
+If you have the flexibility to choose between Google Cloud regions, then you can link:../learn/choose-class-and-size.html[pick either CVS or CVS-Performance depending on your performance requirements].
 
 == 25 Jan 2021
 

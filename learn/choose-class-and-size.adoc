@@ -23,21 +23,25 @@ But if you have the flexibility to select between Google Cloud regions, then we 
 
 * For K8s applications that have medium-to-high performance storage needs, choose a Google Cloud region that supports CVS-Performance and use the Premium or Extreme storage class. Such workloads include AI/ML pipelines, CI/CD pipelines, media processing, and databases including relational, noSQL, time series, etc.
 
-* For K8s applications that have low-to-medium storage performance needs (web apps, general purpose file storage, etc.), choose a Google Cloud region that supports CVS or CVS-Performance, with the Standard storage class.
+* For K8s applications that have low-to-medium storage performance needs (web apps, general purpose file storage, etc.), choose a Google Cloud region that supports either CVS or CVS-Performance, with the Standard storage class.
 
-== Service level for CVS
+== Storage class for CVS
 
-One service level is supported with the CVS service type: Standard. https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-levels[Learn more about this service level in the Cloud Volumes Service for Google Cloud documentation^].
+One service level is supported with the CVS service type: Standard. When you manage clusters in regions where the CVS service type is supported, Astra uses the Standard service level as the default storage class for persistent volumes. The storage class is named _netapp-cvs-standard_.
 
-== Service level for CVS-Performance
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-levels[Learn more about the Standard service level in the Cloud Volumes Service for Google Cloud documentation^].
 
-Three service levels are supported with the CVS-Performance service type: Standard, Premium, and Extreme. When you add compute to Astra, you're prompted to choose Standard, Premium, or Extreme as the default storage class for the cluster. Each of these service levels are designed for different capacity and bandwidth needs.
+== Storage classes for CVS-Performance
+
+Three service levels are supported with the CVS-Performance service type: Standard, Premium, and Extreme. When you add compute to Astra, you're prompted to choose either Standard, Premium, or Extreme as the default storage class for persistent volumes. Each of these service levels are designed for different capacity and bandwidth needs.
+
+The names of the storage classes are _netapp-cvs-standard_, _netapp-cvs-premium_, and _netapp-cvs-extreme_.
 
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels[Learn more about these service levels in the Cloud Volumes Service for Google Cloud documentation^].
 
-== PV size
+== Persistent volume size
 
-As you can see from the Google Cloud docs, the allowed bandwidth for each service level is per GiB of provisioned capacity. That means larger volumes will provide better performance.
+As the Google Cloud docs explain, the allowed bandwidth for each service level is per GiB of provisioned capacity. That means larger volumes will provide better performance.
 
 Be sure to read through the pages linked to above. They include cost comparisons and examples that can help you better understand how to couple a service level with volume size to meet your performance objectives.
 

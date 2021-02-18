@@ -154,7 +154,7 @@ video::video-create-gcp-service-account-key.mp4[width=848, height=480]
 
 The final step is to set up networking peering from your VPC to Cloud Volumes Service for Google Cloud.
 
-The easiest way to set up network peering is by obtaining the gcloud commands directly from Cloud Volumes Service. The commands are shown when creating a new file system.
+The easiest way to set up network peering is by obtaining the gcloud commands directly from Cloud Volumes Service. The commands are available from Cloud Volumes Service when creating a new file system.
 
 .Steps
 
