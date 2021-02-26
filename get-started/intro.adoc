@@ -52,9 +52,9 @@ Astra uses https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes 
 
 ** Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud.
 
-** Astra creates three storage classes that use Cloud Volumes Service for Google Cloud: netapp-cvs-extreme, netapp-cvs-premium, and netapp-cvs-standard.
+** Astra creates one or more storage classes that use Cloud Volumes Service for Google Cloud.
 
-* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new storage classes by default using a minimum volume size of 100 GiB.
+* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class using a minimum volume size of 100 GiB.
 
 * You then use Astra to manage these apps, and start creating snapshots, backups, and clones.
 
@@ -62,7 +62,7 @@ Note that Astra continually watches your compute for state changes, so it's awar
 
 == Pricing
 
-There are two types of costs associated with using Astra to manage your apps: charges from NetApp for the Astra service and charges from your cloud provider for persistent volumes.
+There are two types of costs associated with using Astra to manage your apps: charges from NetApp for the Astra service and charges from your cloud provider for persistent volumes and object storage.
 
 === Astra billing
 
@@ -75,4 +75,4 @@ When you create an Astra account, you're automatically signed up for the Free Pl
 
 === Persistent volume billing
 
-https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs[View pricing details for Cloud Volumes Service^]. Note that Astra supports the CVS-Performance service type with either the Standard, Premium, or Extreme service level.
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs[View pricing details for Cloud Volumes Service^]. Note that Astra supports all service types and service levels. The service type that you choose depends on your https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region^].
