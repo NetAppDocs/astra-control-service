@@ -47,4 +47,4 @@ As the Google Cloud docs explain, the allowed bandwidth for each service level i
 
 Be sure to read through the Google Cloud pages linked to above. They include cost comparisons and examples that can help you better understand how to couple a service level with volume size to meet your performance objectives.
 
-TIP: Astra provisions persistent volumes using a minimum volume size of 100 GiB, and defaults to the Premium service level.
+TIP: Astra provisions persistent volumes using a minimum volume size of 100 GiB, even if the PVC asks for a smaller volume size. For example, if the PVC in a Helm chart asks for 6 GiB, Astra automatically provisions a 100 GiB volume.
