@@ -20,7 +20,7 @@ Kubernetes deployment:: Astra supports Kubernetes clusters that are managed by G
 +
 On-prem Kubernetes clusters and clusters managed by other cloud managed services are not supported at this time.
 
-Google Cloud region:: Clusters must be running in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region that supports the CVS-Performance service type^].
+Google Cloud region:: Clusters must be running in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region where Cloud Volumes Service for Google Cloud is supported.] Note that both service types are supported: CVS and CVS-Performance.
 
 Kubernetes version:: A cluster must be running Kubernetes version 1.17 or later.
 
@@ -28,7 +28,7 @@ Image type:: The image type for each worker node must be Ubuntu.
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node.
 
-Networking:: The cluster must reside on a VPC peered with the CVS-Performance service type (not the CVS service type). link:set-up-google-cloud.html#set-up-network-peering-for-your-vpc-2[Learn how to set up peering].
+Networking:: The cluster must reside in a VPC that is peered with Cloud Volumes Service for Google Cloud. link:set-up-google-cloud.html#set-up-network-peering-for-your-vpc-2[Learn how to set up peering].
 
 Private clusters:: If the cluster is private, it must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network^] set to allow the Astra IP addresses:
 *	54.164.233.140/32
@@ -39,7 +39,7 @@ Private clusters:: If the cluster is private, it must have the https://cloud.goo
 
 Astra supports all applications running on your Kubernetes clusters. link:../release-notes/known-limitations.html[Note that there is a known limitation with apps deployed from the Google Marketplace].
 
-NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups. link:../learn/validated-vs-standard.html[Learn the difference between a Validated and a Standard app].
+NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups. link:../learn/validated-vs-standard.html[Learn the difference between a validated app and a standard app].
 
 No matter which type of app that you use with Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 

@@ -13,7 +13,7 @@ sidebar:
 
 homepage:
   tiles:
-    - title: Get Started
+    - title: Get started
       #image: ./media/outline_directions_run_black_18dp.png
       links:
         - title: Learn about Astra

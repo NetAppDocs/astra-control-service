@@ -3,7 +3,7 @@ title: Learn
 entries:
   - title: Validated vs standard apps
     url: /learn/validated-vs-standard.html
-  - title: Storage classes and PV size
+  - title: Service type, storage class, and PV size
     url: /learn/choose-class-and-size.html
   - title: Define a custom app
     url: /learn/define-custom-app.html
