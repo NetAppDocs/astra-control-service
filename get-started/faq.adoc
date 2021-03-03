@@ -62,7 +62,7 @@ Private clusters must have the https://cloud.google.com/kubernetes-engine/docs/c
 
 *Can my GCP cluster reside on a shared VPC?*
 
-Yes. If you are using a shared VPC for your GCP cluster, that shared VPC must be set up with private services access to CVS. You will need to specify the Astra service account as a member of the host project with the *Compute Network Viewer* role.
+No, Astra can’t manage clusters that reside in a shared VPC. This is a known limitation.
 
 *Where can I find my service account credentials on GCP?*
 
