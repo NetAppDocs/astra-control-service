@@ -12,6 +12,10 @@ summary: Known limitations identify platforms, devices, or functions that are no
 
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
+== Shared VPCs in Google Cloud aren't supported
+
+Astra can't manage GKE clusters that reside in a shared VPC.
+
 == Astra API is not available yet
 
 The Astra API is not available for customer use at this time. We'll add an announcement in the release notes when it's ready.
