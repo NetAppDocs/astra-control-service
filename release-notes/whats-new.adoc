@@ -26,7 +26,7 @@ We're pleased to announce that Astra is now Generally Available. We incorporated
 
 * Billing is now available, which enables you to move from the Free Plan to the Premium Plan. link:../use/set-up-billing.html[Learn more about billing].
 
-* Astra now creates Persistent Volumes with a minimum size of 100 GiB.
+* Astra now creates Persistent Volumes with a minimum size of 100 GiB when using the CVS-Performance service type.
 
 * Astra can now discover apps faster.
 
