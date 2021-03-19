@@ -80,6 +80,17 @@ No, this isn't a supported configuration. Only a single GCP project is supported
 
 New worker nodes can be added to existing pools, or new pools can be created as long as they are the Ubuntu image type. These will be automatically discovered by Astra. If the new nodes are not visible in Astra, check if the new worker nodes are running the supported image type. You can also verify the health of the new worker nodes by using the `kubectl get nodes` command.
 
+*How do I properly unregister, bring down a cluster, and delete the associated volumes?*
+
+.	link:../use/unmanage.html[Unmanage the applications from Astra].
+.	link:../use/unmanage.html#stop-managing-compute[Unregister the cluster from Astra].
+.	Delete the application namespace from the Kubernetes cluster.
++
+Alternatively, delete the PVCs and PVs. This will remove the volume from Cloud Volumes Service.
+.	Delete the cluster.
+
+NOTE: If you forget step 3, or if you used a storage class with the reclaim policy set to _retain_, the volume will remain in Cloud Volumes Service indefinitely. If this happens and you want to delete the volume, then you'll need to delete the volume manually.
+
 *What happens to my applications and data after removing the GKE cluster from Astra?*
 
 Removing a GKE cluster from Astra will not make any changes to the cluster's configuration (applications and persistent storage). Any Astra snapshots or backups taken of applications on that cluster will be unavailable to restore. Volume snapshot data stored within Cloud Volumes Service will not be removed. Persistent Storage backups created by Astra will remain within the Google Cloud object store, but they are unavailable for restore.
