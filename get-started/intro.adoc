@@ -73,6 +73,10 @@ Astra offers two plans:
 
 When you create an Astra account, you're automatically signed up for the Free Plan. You can link:../use/set-up-billing.html[upgrade to the Premium Plan at any time]. After you upgrade, Astra starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
 
-=== Persistent volume billing
+=== Cloud provider billing
 
-https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs[View pricing details for Cloud Volumes Service^]. Note that Astra supports all service types and service levels. The service type that you choose depends on your https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region^].
+* https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs[View pricing details for Cloud Volumes Service^].
++
+Note that Astra supports all service types and service levels. The service type that you choose depends on your https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region^].
+
+* https://cloud.google.com/storage/pricing[View pricing details for Google Cloud storage buckets^].
