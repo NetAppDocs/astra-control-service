@@ -17,6 +17,8 @@ Sign up to NetApp Cloud Central and then complete the registration process to ob
 
 Astra is integrated within NetApp Cloud Central's authentication service. Sign up to Cloud Central so you can access Astra and NetApp’s other cloud services.
 
+TIP: You can use single sign-on to log in to Cloud Central using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[Cloud Central Help Center^] and then click *Cloud Central sign-in options*.
+
 .Steps
 
 . Open your web browser and go to https://cloud.netapp.com[NetApp Cloud Central^].
