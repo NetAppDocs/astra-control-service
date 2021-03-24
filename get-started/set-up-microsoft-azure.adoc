@@ -24,10 +24,7 @@ If you don't have an Azure subscription yet, https://azure.microsoft.com/en-us/f
 ==== image:number2.png[Number 2] Register for Azure NetApp Files
 
 [role="quick-margin-para"]
-https://aka.ms/azurenetappfiles[Request access to the Azure NetApp Files service] and then register the NetApp Resource Provider.
-
-[role="quick-margin-para"]
-<<Register for Azure NetApp Files,Learn more about this step>>.
+https://aka.ms/azurenetappfiles[Request access to the Azure NetApp Files service] and then register the NetApp Resource Provider. <<Register for Azure NetApp Files,Learn more about this step>>.
 
 ==== image:number3.png[Number 3] Create a NetApp account
 
@@ -58,25 +55,25 @@ Get access to Azure NetApp Files by submitting a waitlist request. After you're 
 
 == Create a NetApp account
 
-After you've been granted access to Azure NetApp Files, you'll need to create a NetApp account before you can set up a capacity pool.
+After you've been granted access, create a NetApp account in Azure NetApp Files.
 
 .Step
 
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account[Follow Azure NetApp Files documentation to create a NetApp account from the Azure portal^].
 
-== Set up capacity pools
+== Set up a capacity pool
 
 One or more capacity pools are required so that Astra can provision persistent volumes in a capacity pool. Astra doesn't create capacity pools for you.
 
 Take the following into consideration as you set up capacity pools for your Kubernetes apps:
 
-* A capacity pool can have an Ultra, Premium, or Standard service level, which provide different levels of performance. Astra supports all three service levels.
+* A capacity pool can have an Ultra, Premium, or Standard service level. These service levels provide different levels of performance. Astra supports all three.
 +
 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Learn more about service levels for Azure NetApp Files^].
 
-* Before you create the apps that you intend to protect with Astra, choose the required performance and capacity for the apps. After that, create the capacity pools that meet those requirements.
+* Before you create a capacity pool for the apps that you intend to protect with Astra, choose the required performance and capacity for those apps.
 +
-Provisioning the right amount of capacity ensures that users can create persistent volumes as they are needed.
+Provisioning the right amount of capacity ensures that users can create persistent volumes as they are needed. If capacity isn't available, then the persistent volumes can't be provisioned.
 
 * A capacity pool can use the manual or auto QoS type. Astra supports auto QoS capacity pools. Manual QoS capacity pools aren't supported.
 
