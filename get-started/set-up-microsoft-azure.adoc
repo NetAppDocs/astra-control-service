@@ -26,34 +26,27 @@ If you don't have an Azure subscription yet, https://azure.microsoft.com/en-us/f
 [role="quick-margin-para"]
 https://aka.ms/azurenetappfiles[Request access to the Azure NetApp Files service] and then register the NetApp Resource Provider.
 
+[role="quick-margin-para"]
 <<Register for Azure NetApp Files,Learn more about this step>>.
 
 ==== image:number3.png[Number 3] Create a NetApp account
 
 [role="quick-margin-para"]
-In the Azure portal, go to Azure NetApp Files and create a NetApp account.
-
-<<Create a NetApp account,Learn more about this step>>.
+In the Azure portal, go to Azure NetApp Files and create a NetApp account. <<Create a NetApp account,Learn more about this step>>.
 
 ==== image:number4.png[Number 4] Set up a capacity pool
 
 [role="quick-margin-para"]
-A capacity pool is required before Astra can provision persistent volumes for your apps.
-
-[role="quick-margin-para"]
-<<Set up a capacity pool,Learn more about this step>>.
+A capacity pool is required before Astra can provision persistent volumes for your apps. <<Set up a capacity pool,Learn more about this step>>.
 
 ==== image:number5.png[Number 5] Create an Azure service principal
 
 [role="quick-margin-para"]
-Create an Azure service principal that has the Contributor role.
-
-[role="quick-margin-para"]
-<<Create an Azure service principal,Read step-by-step instructions>>.
+Create an Azure service principal that has the Contributor role. <<Create an Azure service principal,Read step-by-step instructions>>.
 
 == Register for Azure NetApp Files
 
-Register for Azure NetApp Files by submitting a waitlist request and then registering the NetApp Resource Provider.
+Get access to Azure NetApp Files by submitting a waitlist request. After you're approved, you'll need to register the NetApp Resource Provider.
 
 .Steps
 
@@ -61,7 +54,7 @@ Register for Azure NetApp Files by submitting a waitlist request and then regist
 
 . Wait for a confirmation email from the Azure NetApp Files team.
 
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register#resource-provider[Register the NetApp Resource Provider^].
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register#resource-provider[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
 
 == Create a NetApp account
 
@@ -69,33 +62,35 @@ After you've been granted access to Azure NetApp Files, you'll need to create a 
 
 .Step
 
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account[Create a NetApp account from the Azure portal^].
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account[Follow Azure NetApp Files documentation to create a NetApp account from the Azure portal^].
 
 == Set up capacity pools
 
 One or more capacity pools are required so that Astra can provision persistent volumes in a capacity pool. Astra doesn't create capacity pools for you.
 
-Take the following into consideration as you set up capacity pools:
+Take the following into consideration as you set up capacity pools for your Kubernetes apps:
 
-* A capacity pool can have an Ultra, Premium, or Standard service level. Each of these are storage tiers with different levels of performance. Astra supports all three service levels.
+* A capacity pool can have an Ultra, Premium, or Standard service level, which provide different levels of performance. Astra supports all three service levels.
 +
 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Learn more about service levels for Azure NetApp Files^].
 
-* For the apps that you intend to protect with Astra, choose the performance and capacity that your apps will need and provision those capacity pools ahead of time, before you create the apps.
+* Before you create the apps that you intend to protect with Astra, choose the required performance and capacity for the apps. After that, create the capacity pools that meet those requirements.
++
+Provisioning the right amount of capacity ensures that users can create persistent volumes as they are needed.
 
-* Astra supports auto QoS capacity pools. Manual QoS capacity pools aren't supported.
+* A capacity pool can use the manual or auto QoS type. Astra supports auto QoS capacity pools. Manual QoS capacity pools aren't supported.
 
 .Step
 
-. Go to the Azure NetApp Files Service and https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool[set up a capacity pool^].
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool[Follow Azure NetApp Files documentation to set up a capacity pool^].
 
 == Create an Azure service principal
 
-Astra uses an Azure service principal with Contributor role privileges to facilitate Kubernetes application data management on your behalf.
+Astra requires an Azure service principal that is assigned the Contributor role. Astra uses this service principal to facilitate Kubernetes application data management on your behalf.
 
-A service principal is an identity created specifically for use with applications, services, and tools. Assigning a role to the service principal restricts access to specific resources.
+A service principal is an identity created specifically for use with applications, services, and tools. Assigning a role to the service principal restricts access to specific Azure resources.
 
-Azure offers several ways to create a service principal. The steps below show how to create a service principal using the Azure CLI. Refer to Azure documentation for additional methods:
+Azure offers several ways to create a service principal. The steps section below shows how to create a service principal using the Azure CLI. Refer to Azure documentation for more details and additional methods:
 
 * https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli[Create an Azure service principal with the Azure CLI^]
 * https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal[Use the portal to create an Azure AD application and service principal that can access resources^]
@@ -105,20 +100,20 @@ The following steps assume that you have permission to create service principals
 
 .Steps
 
-. Identify the subscription and tenant ID where your AKS clusters reside (these are the clusters that you want Astra to manage).
+. Identify the subscription and tenant ID where your AKS clusters reside (these are the clusters that you want to manage in Astra).
 +
-[source,azure cli]
+[source,azurecli]
 az configure --list-defaults
 az account list --output table
 
 . Create the service principal, assign the Contributor role, and specify the scope to the entire subscription.
 +
-[source,azure cli]
+[source,azurecli]
 az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
 
 . Optional: Test your service principal.
 +
-[source,azure cli]
+[source,azurecli]
 az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password SECRET --tenant TENANT-ID
 az group list --subscription SUBSCRIPTION-ID
 az aks list --subscription SUBSCRIPTION-ID
