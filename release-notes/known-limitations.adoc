@@ -12,36 +12,40 @@ summary: Known limitations identify platforms, devices, or functions that are no
 
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
-== Shared VPCs in Google Cloud aren't supported
+== General limitations
+
+The following limitations affect Astra's management of Kubernetes clusters in any supported Kubernetes deployment.
+
+=== Unhealthy pods affect app management
+
+If a managed app has pods in an unhealthy state, Astra can't create new backups and clones.
+
+=== Trident isn't uninstalled from a cluster
+
+When you unmanage a cluster from Astra, Trident isn't automatically uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/latest/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
+
+=== Existing connections to a Postgres pod causes failures
+
+When you perform operations on Postgres pods, you shouldn't connect directly within the pod to use the psql command. Astra requires psql access to freeze and thaw the databases. If there is a pre-existing connection, the snapshot, backup, or clone will fail.
+
+== Limitations for management of GKE clusters
+
+The following limitations apply to the management of Kubernetes clusters in Google Kubernetes Engine (GKE).
+
+=== One GCP project and one service account are supported
+
+Astra supports one Google Cloud Platform project and one service account. You should not add more than one service account to Astra and you shouldn’t rotate service account credentials.
+
+=== Shared VPCs in Google Cloud aren't supported
 
 Astra can't manage GKE clusters that reside in a shared VPC.
 
-== Astra API is not available yet
-
-The Astra API is not available for customer use at this time. We'll add an announcement in the release notes when it's ready.
-
-== Google Marketplace apps haven't been validated
+=== Google Marketplace apps haven't been validated
 
 NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users report issues with discovery or back up of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
 
 No matter which type of app that you use with Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
-== One GCP project and one service account are supported
-
-Astra supports one Google Cloud Platform project and one service account. You should not add more than one service account to Astra and you shouldn’t rotate service account credentials.
-
 == Persistent volume limit
 
 You can have up to 100 volumes per Google Cloud region. If you reach this limit, creation of new clones or volumes will fail. link:../support/get-help.html[Contact support to increase the volume limit].
-
-== Unhealthy pods affect app management
-
-If a managed app has pods in an unhealthy state, Astra can't create new backups and clones.
-
-== Trident isn't uninstalled from a cluster
-
-When you unmanage a cluster from Astra, Trident isn't automatically uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/latest/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
-
-== Existing connections to a Postgres pod causes failures
-
-When you perform operations on Postgres pods, you shouldn't connect directly within the pod to use the psql command. Astra requires psql access to freeze and thaw the databases. If there is a pre-existing connection, the snapshot, backup, or clone will fail.
