@@ -87,7 +87,7 @@ Astra requires an Azure service principal that is assigned the Contributor role.
 
 A service principal is an identity created specifically for use with applications, services, and tools. Assigning a role to the service principal restricts access to specific Azure resources.
 
-Azure offers several ways to create a service principal. The steps section below shows how to create a service principal using the Azure CLI. Refer to Azure documentation for more details and additional methods:
+Azure offers several ways to create a service principal. The steps below show how to create a service principal using the Azure CLI. Refer to Azure documentation for more details and additional methods:
 
 * https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli[Create an Azure service principal with the Azure CLI^]
 * https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal[Use the portal to create an Azure AD application and service principal that can access resources^]
