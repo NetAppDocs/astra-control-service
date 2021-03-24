@@ -24,9 +24,7 @@ Astra offers critical capabilities for Kubernetes application data lifecycle man
 
 == Supported Kubernetes deployments
 
-Astra can manage apps on Google Kubernetes Engine (GKE) clusters.
-
-On-prem Kubernetes clusters and clusters running in other cloud providers aren't supported at this time.
+Astra can manage apps that are running on a managed Kubernetes cluster in Google Kubernetes Engine (GKE) and Azure Kubernetes Service (AKS).
 
 link:requirements.html[Learn about cluster requirements].
 
@@ -38,23 +36,23 @@ Astra is a NetApp-managed cloud service that is always on and updated with the l
 
 At a high level, Astra works like this:
 
-* You set up your cloud provider by enabling Cloud Volumes Service for Google Cloud and by creating a GCP service account for Astra.
+* You get started with Astra by setting up your cloud provider and by registering for an Astra account.
 +
-Astra uses https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] as the backend storage for your persistent volumes.
+For GKE clusters, Astra uses https://cloud.netapp.com/cloud-volumes-service-for-gcp[NetApp Cloud Volumes Service for Google Cloud^] as the backend storage for your persistent volumes.
++
+For AKS clusters, Astra uses https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^] as the backend storage for your persistent volumes.
 
 * You add your first Kubernetes compute to Astra. Astra then does the following:
 
-** Creates an object store in your cloud provider account, which is where backup copies are sent.
+** Creates an object store in your cloud provider account, which is where backup copies are stored.
 
 ** Creates a new admin role and Kubernetes service account on the cluster.
 
-** Uses that new admin role to install https://netapp-trident.readthedocs.io/[NetApp's Trident^].
-
-** Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud.
-
-** Astra creates one or more storage classes that use Cloud Volumes Service for Google Cloud.
+** Uses that new admin role to install https://netapp-trident.readthedocs.io/[NetApp's Trident^] on the cluster and to create on or more storage classes.
 
 * At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class. link:../learn/choose-class-and-size.html[Learn about storage classes and persistent volume sizes].
++
+Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud or by Azure NetApp Files.
 
 * You then use Astra to manage these apps, and start creating snapshots, backups, and clones.
 
@@ -62,7 +60,7 @@ Note that Astra continually watches your compute for state changes, so it's awar
 
 == Pricing
 
-There are two types of costs associated with using Astra to manage your apps: charges from NetApp for the Astra service and charges from your cloud provider for persistent volumes and object storage.
+There are two types of costs associated with using Astra: charges from NetApp for the Astra service and charges from your cloud provider for persistent volumes and object storage.
 
 === Astra billing
 
@@ -73,10 +71,16 @@ Astra offers two plans:
 
 When you create an Astra account, you're automatically signed up for the Free Plan. You can link:../use/set-up-billing.html[upgrade to the Premium Plan at any time]. After you upgrade, Astra starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
 
-=== Cloud provider billing
+=== Google Cloud billing
 
 * https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs[View pricing details for Cloud Volumes Service^].
 +
 Note that Astra supports all service types and service levels. The service type that you choose depends on your https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region^].
 
 * https://cloud.google.com/storage/pricing[View pricing details for Google Cloud storage buckets^].
+
+=== Microsoft Azure billing
+
+* https://azure.microsoft.com/en-us/pricing/details/netapp[View pricing details for Azure NetApp Files^].
+
+* https://azure.microsoft.com/en-us/pricing/details/storage/blobs[View pricing details for Microsoft Azure Blob storage^].
