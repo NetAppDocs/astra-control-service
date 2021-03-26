@@ -5,8 +5,6 @@ entries:
     url: /get-started/intro.html
   - title: Quick start
     url: /get-started/quick-start.html
-  - title: Review requirements
-    url: /get-started/requirements.html
   - title: Set up your cloud provider
     entries:
       - title: Set up Google Cloud
