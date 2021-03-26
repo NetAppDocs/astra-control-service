@@ -19,10 +19,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Review Astra requirements for Azure Kubernetes Service
 
 [role="quick-margin-para"]
-Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that worker nodes are online and running *Ubuntu*, and more.
-
-[role="quick-margin-para"]
-<<AKS cluster requirements,Learn more about this step>>.
+Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that worker nodes are online and running *Ubuntu*, and more. <<AKS cluster requirements,Learn more about this step>>.
 
 ==== image:number2.png[Number 2] Register for Azure NetApp Files
 

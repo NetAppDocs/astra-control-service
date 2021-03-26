@@ -14,8 +14,9 @@ This page provides a high-level overview of the steps that you need to complete 
 
 ==== image:number1.png[Number 1] Set up your cloud provider
 
+[role="quick-margin-para"]
+*Google Cloud*
 [role="quick-margin-list"]
-* *Google Cloud*:
 ** Review GKE cluster requirements.
 ** Purchase Cloud Volumes Service for Google Cloud from the Marketplace.
 ** Enable the required APIs.
@@ -23,7 +24,10 @@ This page provides a high-level overview of the steps that you need to complete 
 ** Set up network peering from your VPC to Cloud Volumes Service for Google Cloud.
 +
 link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
-* *Microsoft Azure*:
+
+[role="quick-margin-para"]
+*Microsoft Azure*
+[role="quick-margin-list"]
 ** Review AKS cluster requirements.
 ** Register for Azure NetApp Files.
 ** Create a NetApp account.

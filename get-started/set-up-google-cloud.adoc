@@ -19,10 +19,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Review Astra requirements for Google Kubernetes Engine
 
 [role="quick-margin-para"]
-Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that worker nodes are online and running *Ubuntu*, and more.
-
-[role="quick-margin-para"]
-<<GKE cluster requirements,Learn more about this step>>.
+Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that worker nodes are online and running *Ubuntu*, and more. <<GKE cluster requirements,Learn more about this step>>.
 
 ==== image:number2.png[Number 2] Purchase Cloud Volumes Service for Google Cloud
 
@@ -48,10 +45,10 @@ Enable the following Google Cloud APIs:
 [role="quick-margin-para"]
 <<Enable APIs in your project,Follow step-by-step instructions>>.
 
-==== image:number4.png[Number 4] Create a service account and service account key
+==== image:number4.png[Number 4] Create a service account that has the required permissions
 
 [role="quick-margin-para"]
-Create a Google Cloud service account that has the following permissions and then create a key and save the key file in a secure location.
+Create a Google Cloud service account that has the following permissions:
 
 [role="quick-margin-list"]
 * Kubernetes Engine Admin
@@ -63,7 +60,12 @@ Create a Google Cloud service account that has the following permissions and the
 [role="quick-margin-para"]
 <<Create a service account,Read step-by-step instructions>>.
 
-==== image:number5.png[Number 5] Set up network peering for your VPC
+==== image:number5.png[Number 5] Create a service account key
+
+[role="quick-margin-para"]
+Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
+
+==== image:number6.png[Number 6] Set up network peering for your VPC
 
 [role="quick-margin-para"]
 Set up network peering from your VPC to Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC,Follow step-by-step instructions>>.
@@ -125,15 +127,9 @@ The following video shows how to enable the APIs from the Google Cloud console.
 
 video::video-enable-gcp-apis.mp4[width=848, height=480]
 
-== Create a service account and key
+== Create a service account
 
 Astra uses a Google Cloud service account to facilitate Kubernetes application data management on your behalf.
-
-Instead of providing a user name and password to Astra, you'll provide a service account key when you add your first cluster. Astra uses the service account key to establish the identity of the service account that you just set up.
-
-The service account key is plaintext stored in the JavaScript Object Notation (JSON) format. It contains information about the GCP resources that you have permission to access.
-
-You can only view or download the JSON file when you create the key. However, you can create a new key at any time.
 
 .Steps
 
@@ -150,19 +146,29 @@ You can only view or download the JSON file when you create the key. However, yo
 * *Service Usage Viewer* - Used to check if the required Cloud Volumes Service for Google Cloud APIs are enabled.
 
 * *Compute Network Viewer* - Used to check if the Kubernetes VPC is allowed to reach Cloud Volumes Service for Google Cloud.
-+
+
 If you'd like to use gcloud, you can follow steps from within the Astra user interface. Click *Account > Credentials > Add Credentials*, and then click *Instructions*.
-+
+
 If you'd like to use the Google Cloud console, the following video shows how to create the service account from the console.
-+
+
 video::video-create-gcp-service-account.mp4[width=848, height=480]
 
-. Now https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys[create a service account key by using the console, gcloud command, or another preferred method^].
+== Create a service account key
+
+Instead of providing a user name and password to Astra, you'll provide a service account key when you add your first cluster. Astra uses the service account key to establish the identity of the service account that you just set up.
+
+The service account key is plaintext stored in the JavaScript Object Notation (JSON) format. It contains information about the GCP resources that you have permission to access.
+
+You can only view or download the JSON file when you create the key. However, you can create a new key at any time.
+
+.Steps
+
+. Go to Google Cloud and https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys[create a service account key by using the console, gcloud command, or another preferred method^].
 
 . When prompted, save the service account key file in a secure location.
-+
+
 The following video shows how to create the service account key from the Google Cloud console.
-+
+
 video::video-create-gcp-service-account-key.mp4[width=848, height=480]
 
 == Set up network peering for your VPC
