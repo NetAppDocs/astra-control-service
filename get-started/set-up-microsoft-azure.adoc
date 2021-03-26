@@ -119,11 +119,6 @@ You need to delegate a subnet to Azure NetApp Files so that Astra can create per
 
 == Create an Azure service principal
 
-ADD THIS:
-•	Service Principal must be using regular auth, no credentials allowed
-•	Must provide a specific subscription to discover and create with
-o	Multi-subscription is not blocked but won’t work (i.e. AKS in one sub, ANF in a diff sub)
-
 Astra requires an Azure service principal that is assigned the Contributor role. Astra uses this service principal to facilitate Kubernetes application data management on your behalf.
 
 A service principal is an identity created specifically for use with applications, services, and tools. Assigning a role to the service principal restricts access to specific Azure resources.
@@ -135,6 +130,11 @@ Azure offers several ways to create a service principal. The steps below show ho
 * https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-authenticate-service-principal-powershell[Use Azure PowerShell to create a service principal with a certificate^]
 
 The following steps assume that you have permission to create service principals and that you have the Microsoft Azure SDK (az command) installed on your machine.
+
+.Requirements
+
+*	The service principal must be use regular authentication. Credentials aren't supported.
+* The service principal must reside in the same Azure subscription as your AKS clusters and your Azure NetApp Files account.
 
 .Steps
 

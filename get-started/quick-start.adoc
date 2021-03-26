@@ -49,7 +49,7 @@ link:register.html[Learn more about the registration process].
 ==== image:number3.png[Number 3] Add compute to Astra
 
 [role="quick-margin-para"]
-After you log in, click *Add Compute* to start managing compute with Astra.
+After you log in, click *Add Compute* to start managing your compute with Astra.
 
 [role="quick-margin-para"]
 link:add-first-cluster.html[Learn more about adding compute].
