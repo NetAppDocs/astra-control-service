@@ -1,9 +1,9 @@
 section: learn
 title: Learn
 entries:
-  - title: Storage classes and PV size for GKE clusters
+  - title: Storage classes for GKE clusters
     url: /learn/choose-class-and-size.html
-  - title: Storage classes and PV size for AKS clusters
+  - title: Storage classes for AKS clusters
     url: /learn/azure-storage.html
   - title: Validated apps vs standard apps
     url: /learn/validated-vs-standard.html
