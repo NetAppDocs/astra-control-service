@@ -15,7 +15,7 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 == Create a Kubernetes cluster
 
-If you don't have a cluster yet, create a cluster in Google Kubernetes Engine (GKE) link:requirements.html[that meets Astra requirements].
+If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra requirements for Google Kubernetes Engine (GKE)] or link:https://review.docs.netapp.com/us-en/astra_PI-21Q1/get-started/set-up-microsoft-azure.html#aks-cluster-requirements[Astra requirements for Azure Kubernetes Service (AKS)].
 
 == Start managing Kubernetes compute
 
@@ -27,7 +27,13 @@ After you log in to Astra, your first step is to start managing compute.
 +
 Follow the prompts to add the compute.
 
-. *Provider*: Provide the service account key file either by uploading the file or by pasting the contents from your clipboard.
+. *Provider*: Select your cloud provider and then provide the required credentials.
+
+.. *Microsoft Azure*: Provide the file that contains the output from the Azure CLI when you created the service principal. You need to provide this file to Astra so that Astra can discover your AKS clusters and manage Kubernetes data management operations.
+
+or do you paste your service principal credential JSON?
+
+.. *Google Cloud Platform*: Provide the service account key file either by uploading the file or by pasting the contents from your clipboard.
 +
 image:screenshot-compute-select-credentials.gif[]
 +
@@ -39,7 +45,7 @@ Pay careful attention to the Eligible tab. If a warning appears, hover over the 
 
 . *Storage*: Select the default storage class that you'd like to use with this compute.
 +
-Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^].
+Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
 +
 link:../learn/choose-class-and-size.html[Learn about choosing a storage class].
 
@@ -47,7 +53,7 @@ link:../learn/choose-class-and-size.html[Learn about choosing a storage class].
 +
 image:screenshot-compute-approve.gif[]
 
-The following video shows each of these steps.
+The following video shows each of these steps for a GKE cluster.
 
 video::video-manage-cluster.mp4[width=848, height=480]
 
