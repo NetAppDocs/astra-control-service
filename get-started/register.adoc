@@ -5,7 +5,7 @@ keywords: cloud central, sign up, log in, login, register, register for cloud ce
 summary: Astra is integrated within NetApp Cloud Central's authentication service. Sign up to Cloud Central so you can access Astra and NetApp’s other cloud services.
 ---
 
-= Sign up to Cloud Central and register for an Astra account
+= Register for an Astra account
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
