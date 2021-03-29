@@ -93,7 +93,7 @@ Private clusters:: If the cluster is private, it must have the https://cloud.goo
 *	3.218.120.204/32
 *	34.193.99.138/32
 
-Mode of operation for a GKE cluster:: You should use the Standard mode of operation. The Autopilot mode hasn't been tested at this time. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes[Learn more about modes of operation].
+Mode of operation for a GKE cluster:: You should use the Standard mode of operation. The Autopilot mode hasn't been tested at this time. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes[Learn more about modes of operation^].
 
 == Purchase Cloud Volumes Service for Google Cloud
 

@@ -58,10 +58,10 @@ Cluster state:: Clusters must be running in a healthy state and have at least on
 
 Azure region:: Clusters must reside in a region where Azure NetApp Files is available. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp[View Azure products by region^].
 
-Subscription:: Clusters must reside in a subscription where Azure NetApp Files is enabled.
+Subscription:: Clusters must reside in a subscription where Azure NetApp Files is enabled. You'll choose a subscription when you <<Register for Azure NetApp Files,register for Azure NetApp Files>>.
 
 VNet::
-* Clusters must reside in a VNet that has direct access to an Azure NetApp Files delegated subnet.
+* Clusters must reside in a VNet that has direct access to an Azure NetApp Files delegated subnet. <<Delegate a subnet to Azure NetApp Files,Learn about setting up a delegated subnet>>.
 *	If the cluster's VNet is peered to another VNet with an Azure NetApp Files delegated subnet, then both sides of the peering connection must be online.
 *	A VNet must not have more than 800 IP addresses in use across all VNets touching a delegated subnet.
 
@@ -99,17 +99,17 @@ Take the following into consideration as you set up capacity pools for your Kube
 +
 You need to set up a capacity pool for each service level that you want to use with your Kubernetes clusters.
 +
-https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Learn more about service levels for Azure NetApp Files^].
+link:../learn/azure-storage.html[Learn more about service levels for Azure NetApp Files].
 
 * Before you create a capacity pool for the apps that you intend to protect with Astra, choose the required performance and capacity for those apps.
 +
 Provisioning the right amount of capacity ensures that users can create persistent volumes as they are needed. If capacity isn't available, then the persistent volumes can't be provisioned.
 
-* A capacity pool can use the manual or auto QoS type. Astra supports auto QoS capacity pools. Manual QoS capacity pools aren't supported.
+* An Azure NetApp Files capacity pool can use the manual or auto QoS type. Astra supports auto QoS capacity pools. Manual QoS capacity pools aren't supported.
 
 .Step
 
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool[Follow Azure NetApp Files documentation to set up a capacity pool^].
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool[Follow Azure NetApp Files documentation to set up an auto QoS capacity pool^].
 
 == Delegate a subnet to Azure NetApp Files
 
@@ -117,7 +117,7 @@ You need to delegate a subnet to Azure NetApp Files so that Astra can create per
 
 .Step
 
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet[Follow the Azure NetApp Files documentation to delegate a subnet to Azure NetApp Files].
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet[Follow the Azure NetApp Files documentation to delegate a subnet to Azure NetApp Files^].
 
 == Create an Azure service principal
 
@@ -147,7 +147,7 @@ az account list --output table
 [source,azurecli]
 az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
 +
-Store the resulting output as a file. You'll need to provide this file to Astra so that Astra can discover your AKS clusters and manage Kubernetes data management operations.
+Store the resulting output as a file. You'll need to provide this file to Astra so that Astra can discover your AKS clusters and manage Kubernetes data management operations. link:../use/manage-credentials.html[Learn about managing credentials in Astra].
 
 . Optional: Test your service principal.
 +

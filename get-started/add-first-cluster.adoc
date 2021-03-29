@@ -47,7 +47,8 @@ Pay careful attention to the Eligible tab. If a warning appears, hover over the 
 +
 Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
 +
-link:../learn/choose-class-and-size.html[Learn about choosing a storage class].
+* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
+* link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
 
 . *Review & Approve*: Review the configuration details and click *Add compute*.
 +

@@ -26,11 +26,12 @@ Astra offers critical capabilities for Kubernetes application data lifecycle man
 
 Astra can manage apps that are running on a managed Kubernetes cluster in Google Kubernetes Engine (GKE) and Azure Kubernetes Service (AKS).
 
-link:requirements.html[Learn about cluster requirements].
+* link:set-up-google-cloud.html[Learn how to set up Google Cloud for Astra].
+* link:set-up-microsoft-azure.html[Learn how to set up Microsoft Azure for Astra].
 
 == Supported apps
 
-Astra supports all applications running on your Kubernetes clusters. link:../release-notes/known-limitations.html[Note that there is a known limitation with apps deployed from the Google Marketplace].
+Astra supports all applications running on your Kubernetes clusters. For GKE clusters, note that there is a link:../release-notes/known-limitations.html[known limitation with apps deployed from the Google Marketplace].
 
 NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups. link:../learn/validated-vs-standard.html[Learn the difference between a validated app and a standard app].
 
@@ -57,10 +58,14 @@ For AKS clusters, Astra uses https://cloud.netapp.com/azure-netapp-files[Azure N
 ** Creates a new admin role and Kubernetes service account on the cluster.
 
 ** Uses that new admin role to install https://netapp-trident.readthedocs.io/[NetApp's Trident^] on the cluster and to create on or more storage classes.
-
-* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class. link:../learn/choose-class-and-size.html[Learn about storage classes and persistent volume sizes].
 +
 Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud or by Azure NetApp Files.
+
+* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class.
++
+link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
++
+link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
 
 * You then use Astra to manage these apps, and start creating snapshots, backups, and clones.
 
@@ -85,7 +90,7 @@ When you manage GKE clusters with Astra, persistent volumes are backed by NetApp
 
 * https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs[View pricing details for Cloud Volumes Service^].
 +
-Note that Astra supports all service types and service levels. The service type that you choose depends on your https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region^].
+Note that Astra supports all service types and service levels. The service type that you use depends on your https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region^].
 
 * https://cloud.google.com/storage/pricing[View pricing details for Google Cloud storage buckets^].
 
