@@ -5,7 +5,7 @@ keywords: service level, cvs, cvs-performance, storage class, storage classes, p
 summary: Astra uses Cloud Volumes Service for Google Cloud as the backend storage for persistent volumes. You should understand how choosing a service level, storage class, and persistent volume size can help you meet your performance objectives.
 ---
 
-= Choosing a service type, storage class, and PV size
+= Service type, storage classes, and PV size for GKE clusters
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/learn/
