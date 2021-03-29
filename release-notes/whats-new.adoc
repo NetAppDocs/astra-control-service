@@ -12,6 +12,10 @@ summary: NetApp periodically updates Astra to bring you new features, enhancemen
 
 NetApp periodically updates Astra to bring you new features, enhancements, and bug fixes.
 
+== 14 Apr 2021
+
+* Astra can now manage apps that are running on a managed Kubernetes cluster in and Azure Kubernetes Service (AKS). link:set-up-microsoft-azure.html[Learn how to get started].
+
 == 1 Mar 2021
 
 Astra now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[_CVS_ service type^] with Cloud Volumes Service for Google Cloud. This is in addition to already supporting the _CVS-Performance_ service type. Just as a reminder, Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes.
