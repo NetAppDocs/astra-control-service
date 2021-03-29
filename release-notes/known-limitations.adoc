@@ -46,6 +46,6 @@ NetApp hasn't validated apps that were deployed from the Google Marketplace. Som
 
 No matter which type of app that you use with Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
-== Persistent volume limit
+=== Persistent volume limit
 
 You can have up to 100 volumes per Google Cloud region. If you reach this limit, creation of new clones or volumes will fail. link:../support/get-help.html[Contact support to increase the volume limit].
