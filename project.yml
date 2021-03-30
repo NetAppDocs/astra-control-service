@@ -77,4 +77,4 @@ homepage:
           url: https://cloud.netapp.com/blog/blg-astra-data-management-services-for-kubernetes-applications
         - title: Kubernetes Hub
           summary: A curated collection of blog postings to learn more about Kubernetes and persistent storage.
-          url: https://cloud.netapp.com/kubernetes-hub?target=_blank
+          url: https://cloud.netapp.com/kubernetes-hub
