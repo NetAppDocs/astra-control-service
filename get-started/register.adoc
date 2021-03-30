@@ -39,7 +39,7 @@ image:screenshot-cloud-central-signup.gif["A screenshot of the Cloud Central sig
 
 You now have an active Cloud Central user login.
 
-== Register for an Astra account
+== Register for an account
 
 Before you can log in to Astra, you need to complete a registration process to obtain an Astra account.
 

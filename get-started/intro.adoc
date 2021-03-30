@@ -63,9 +63,8 @@ Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volume
 
 * At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class.
 +
-link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
-+
-link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
+** link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
+** link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
 
 * You then use Astra to manage these apps, and start creating snapshots, backups, and clones.
 

@@ -55,8 +55,8 @@ homepage:
           url: /solutions/mysql-deploy-from-helm-chart.html
     - title: Solution briefs
       links:
-        - title: NetApp Astra with containerized DataStax Enterprise and Apache Cassandra
-          summary: Full lifecycle management features and capabilities in a cloud native Kubernetes environment for DataStax Enterprise and Apache Cassandra clusters.
+        - title: Astra with DataStax Enterprise and Apache Cassandra
+          summary: Full lifecycle management features and capabilities in a cloud native Kubernetes environment.
           url: https://cloud.netapp.com/hubfs/SB-4134-0321-DataStax-Cassandra-Guide%20(1).pdf
         - title: PostgreSQL Database as a Service (DBaaS) with Astra
           summary: Use Astra to simplify day 2 operations of DBaaS for PostgreSQL.
@@ -72,8 +72,7 @@ homepage:
         - title: Slack
           summary: Ask questions, exchange ideas, and share best practices.
           url: https://netapppub.slack.com/#astra
-        - title: Stateful Lessons for a Multi-Cloud World
-        - title: The first fully-managed, application-aware data management service for Kubernetes
+        - title: The first application-aware data management service for Kubernetes
           summary: How Astra manages, protects, and moves Kubernetes data-rich containerized workloads.
           url: https://cloud.netapp.com/blog/blg-astra-data-management-services-for-kubernetes-applications
         - title: Kubernetes Hub
