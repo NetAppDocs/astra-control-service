@@ -13,7 +13,7 @@ summary: You can view details about the activities in your Astra account. For ex
 [.lead]
 You can view details about the activities in your Astra account. For example, when new users were invited, when compute was added, or when a snapshot was taken. You also have the ability to export your account activity to a CSV file.
 
-.Steps to view all account activity
+.Steps to view all account activity in Astra
 
 . Click *Activity*.
 
@@ -21,8 +21,14 @@ You can view details about the activities in your Astra account. For example, wh
 
 . Click *Export to CSV* to download your account activity to a CSV file.
 
-.Steps to view account activity for a single app
+.Steps to view account activity for a specific app
 
 . Click *Apps* and then click the name of an app.
+
+. Click *Activity*.
+
+.Steps to view account activity for compute
+
+. Click *Compute* and then click the name of the compute.
 
 . Click *Activity*.
