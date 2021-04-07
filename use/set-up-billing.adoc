@@ -16,9 +16,9 @@ Astra's Free Plan enables you to manage up to 10 apps in your account. If you wa
 
 Astra offers three plans:
 
-* *Free Plan*: Manage up to 10 apps for free.
-* *Premium PayGo*: Manage an unlimited amount of apps at a rate of $.005 per minute, per app.
-* *Premium Subscription*: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra. If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
+Free Plan:: Manage up to 10 apps for free.
+Premium PayGo:: Manage an unlimited amount of apps at a rate of $.005 per minute, per app.
+Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra. If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
 +
 If you don't have an Astra account yet, purchasing the Premium Subscription automatically creates an Astra account for you. If you have an existing Free Plan, then you're automatically converted to the Premium Subscription.
 
@@ -26,7 +26,7 @@ When you create an Astra account, you're automatically signed up for the Free Pl
 
 image:screenshot-dashboard.gif[]
 
-When you try to manage an 11th app, Astra notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to the Premium Plan.
+When you try to manage an 11th app, Astra notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to a Premium Plan.
 
 link:../get-started/intro.html[Learn more about Astra pricing].
 
@@ -72,13 +72,13 @@ Contact NetApp Sales to pre-pay at a discounted rate with an annual subscription
 
 . Under *Plans*, go to *Premium Subscription* and click *Contact Sales*.
 
+. Provide details to the sales team to start the process.
+
 .Result
 
 A NetApp Sales representative will contact you to process your purchase order. After the order is complete, Astra will reflect your current plan on the Billing tab.
 
 image:screenshot-premium-subscription.gif[]
-
-image:screenshot-premium-subscription2.gif[]
 
 == View your current costs and billing history
 

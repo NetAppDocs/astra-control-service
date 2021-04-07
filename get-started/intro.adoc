@@ -20,6 +20,7 @@ Astra offers critical capabilities for Kubernetes application data lifecycle man
 * Migrate applications and data from one Kubernetes cluster to another
 * Easily clone an application from production to staging
 * Create on-demand snapshots and backups
+* Clone and back up across clouds
 * Identify the health of your apps
 
 == Supported Kubernetes deployments
@@ -47,9 +48,9 @@ At a high level, Astra works like this:
 
 * You get started with Astra by setting up your cloud provider and by registering for an Astra account.
 +
-For GKE clusters, Astra uses https://cloud.netapp.com/cloud-volumes-service-for-gcp[NetApp Cloud Volumes Service for Google Cloud^] as the backend storage for your persistent volumes.
+** For GKE clusters, Astra uses https://cloud.netapp.com/cloud-volumes-service-for-gcp[NetApp Cloud Volumes Service for Google Cloud^] as the backend storage for your persistent volumes.
 +
-For AKS clusters, Astra uses https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^] as the backend storage for your persistent volumes.
+** For AKS clusters, Astra uses https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^] as the backend storage for your persistent volumes.
 
 * You add your first Kubernetes compute to Astra. Astra then does the following:
 
@@ -57,9 +58,9 @@ For AKS clusters, Astra uses https://cloud.netapp.com/azure-netapp-files[Azure N
 
 ** Creates a new admin role and Kubernetes service account on the cluster.
 
-** Uses that new admin role to install https://netapp-trident.readthedocs.io/[NetApp's Trident^] on the cluster and to create on or more storage classes.
+** Uses that new admin role to install https://netapp-trident.readthedocs.io/[NetApp's Trident^] on the cluster and to create one or more storage classes.
 +
-Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud or by Azure NetApp Files.
+Astra uses Trident to provision persistent volumes for your apps.
 
 * At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class.
 +
@@ -78,13 +79,13 @@ There are two types of costs associated with using Astra: charges from NetApp fo
 
 Astra offers three plans:
 
-* *Free Plan*: Manage up to 10 apps for free.
-* *Premium PayGo*: Manage an unlimited amount of apps at a rate of $.005 per minute, per app.
-* *Premium Subscription*: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra. If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
+Free Plan:: Manage up to 10 apps for free.
+Premium PayGo:: Manage an unlimited amount of apps at a rate of $.005 per minute, per app.
+Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra. If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
 +
 If you don't have an Astra account yet, purchasing the Premium Subscription automatically creates an Astra account for you. If you have an existing Free Plan, then you're automatically converted to the Premium Subscription.
 
-When you create an Astra account, you're automatically signed up for the Free Plan. You can link:../use/set-up-billing.html[upgrade to the Premium Plan at any time]. After you upgrade, Astra starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
+When you create an Astra account, you're automatically signed up for the Free Plan. You can link:../use/set-up-billing.html[upgrade to a Premium Plan at any time]. After you upgrade, Astra starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
 
 === Google Cloud billing
 

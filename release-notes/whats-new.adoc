@@ -14,7 +14,7 @@ NetApp periodically updates Astra to bring you new features, enhancements, and b
 
 == 14 Apr 2021
 
-* Astra can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS). link:set-up-microsoft-azure.html[Learn how to get started].
+* Astra can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS). link:../get-started/set-up-microsoft-azure.html[Learn how to get started].
 
 * Astra now offers a _Premium Subscription_.
 +
@@ -22,13 +22,13 @@ Pre-pay at a discounted rate with an annual subscription that enables you to man
 +
 If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
 +
-link:../get-started/intro.html[Learn more about Astra pricing].
+link:../get-started/intro.html#pricing[Learn more about Astra pricing].
 
 * Astra now creates Persistent Volumes with a minimum size of 100 GiB when using the CVS service type with GKE clusters.
 +
 link:../learn/choose-class-and-size.html[Learn more about storage for GKE clusters].
 
-* We enhanced the Discovered Apps page to better show the hierarchy of namespaces and the apps contained in those namespaces.
+* We enhanced the Discovered Apps page to better show the hierarchy between namespaces and apps. Just expand a namespace to see the apps contained in that namespace.
 +
 image:screenshot-group.gif[]
 +

@@ -27,8 +27,8 @@ link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 ** Review AKS cluster requirements.
 ** Register for Azure NetApp Files.
 ** Create a NetApp account.
-** Delegate a subnet to Azure NetApp Files.
 ** Set up a capacity pool.
+** Delegate a subnet to Azure NetApp Files.
 ** Create an Azure service principal that has the Contributor role.
 +
 link:set-up-microsoft-azure.html[Learn more about Microsoft Azure requirements].

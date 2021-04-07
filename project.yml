@@ -56,16 +56,16 @@ homepage:
     - title: Solution briefs
       links:
         - title: Astra with DataStax Enterprise and Apache Cassandra
-          summary: Full lifecycle management features and capabilities in a cloud native Kubernetes environment.
+          summary: Full lifecycle management in a cloud-native Kubernetes environment.
           url: https://cloud.netapp.com/hubfs/SB-4134-0321-DataStax-Cassandra-Guide%20(1).pdf
-        - title: PostgreSQL Database as a Service (DBaaS) with Astra
+        - title: PostgreSQL DBaaS with Astra
           summary: Use Astra to simplify day 2 operations of DBaaS for PostgreSQL.
           url: https://cloud.netapp.com/hubfs/SB-4122-0221-PostgresSQL-DBaaS-with-Astra%20(2).pdf
-        - title: MySQL Database as a Service (DBaaS) with Astra
+        - title: MySQL DBaaS with Astra
           summary: Use Astra to simplify day 2 operations of DBaaS for MySQL.
           url: https://cloud.netapp.com/hubfs/SB-4110-0221-MySQL-Astra%20(2).pdf
-        - title: Simplify Jenkins application and data lifecycle management
-          summary: Deliver data protection, restoration, and portability to Jenkins on Google Kubernetes Engine.
+        - title: Simplify Jenkins app and data lifecycle management
+          summary: Deliver data protection and portability to Jenkins on GKE.
           url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
     - title: Blogs & community
       links:

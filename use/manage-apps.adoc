@@ -38,7 +38,7 @@ The *Discovered* section of the Apps page shows namespaces and the Helm-installe
 
 For example, you might want to set a backup policy for "maria" that has a weekly cadence, but you might need to back up "mariadb" (which is in the same namespace) more frequently than that. Based on those needs, you would need to manage the apps separately and not under a single namespace.
 
-While Astra allows you to manage both levels of the hierarchy separately (the namespace and the apps in that namespace), the best practice is to choose one or the other. Actions that you take in Astra can fail if those actions take place at the same time at both the namespace and app level.
+While Astra allows you to separately manage both levels of the hierarchy (the namespace and the apps in that namespace), the best practice is to choose one or the other. Actions that you take in Astra can fail if the actions take place at the same time at both the namespace and app level.
 
 .Steps
 
@@ -46,9 +46,9 @@ While Astra allows you to manage both levels of the hierarchy separately (the na
 +
 image:screenshot-app-discovery.gif[]
 
-. View the list of discovered namespaces and expand the namespaces to view the apps and associated resources.
+. View the list of discovered namespaces and expand a namespace to view the apps and associated resources.
 +
-You'll see any apps that are Helm apps or that are custom-labeled apps. If Helm labels are available, they're designated with a tag icon.
+Astra shows you Helm apps and custom-labeled apps in namespace. If Helm labels are available, they're designated with a tag icon.
 +
 Here's an example with two apps in a namespace:
 +
@@ -62,7 +62,7 @@ image:screenshot-app-manage.gif[]
 
 . If you don't want to manage an app, click the drop-down list in the *Actions* column for the desired app and click *Ignore*.
 +
-For example, if you wanted to manage all apps under the "jenkins" namespace together so that they have the same snapshot and backup policies, you would manage the first app and ignore the second app:
+For example, if you wanted to manage all apps under the "jenkins" namespace together so that they have the same snapshot and backup policies, you would manage the namespace and ignore the apps in the namespace:
 +
 image:screenshot-app-manage-and-ignore.gif[]
 
