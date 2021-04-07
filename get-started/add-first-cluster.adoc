@@ -21,6 +21,12 @@ If you don't have a cluster yet, create one that meets link:set-up-google-cloud.
 
 After you log in to Astra, your first step is to start managing compute.
 
+.What you'll need
+
+* For GKE, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html[Learn how to set up a service account].
+
+* For AKS, you should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure.html[Learn how to set up a service principal].
+
 .Steps
 
 . On the Dashboard, click *Manage Kubernetes compute*.
@@ -29,13 +35,9 @@ Follow the prompts to add the compute.
 
 . *Provider*: Select your cloud provider and then provide the required credentials.
 
-.. *Microsoft Azure*: Provide the file that contains the output from the Azure CLI when you created the service principal. You need to provide this file to Astra so that Astra can discover your AKS clusters and manage Kubernetes data management operations.
-
-or do you paste your service principal credential JSON?
+.. *Microsoft Azure*: Provide Astra with details about your Azure service principal by uploading a JSON file or by pasting the contents of that JSON file from your clipboard. The JSON file should contain the output from the Azure CLI when you created the service principal.
 
 .. *Google Cloud Platform*: Provide the service account key file either by uploading the file or by pasting the contents from your clipboard.
-+
-image:screenshot-compute-select-credentials.gif[]
 +
 Astra uses the service account to discover compute running in Google Kubernetes Engine.
 
@@ -43,7 +45,7 @@ Astra uses the service account to discover compute running in Google Kubernetes 
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the compute. For example, it might identify that the cluster doesn't have a worker node.
 
-. *Storage*: Select the default storage class that you'd like to use with this compute.
+. *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this compute to use by default.
 +
 Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
 +
