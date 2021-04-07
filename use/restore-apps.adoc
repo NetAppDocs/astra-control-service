@@ -15,7 +15,7 @@ Astra can restore your application configuration and persistent storage from a s
 
 .Steps
 
-. Click *Apps* and then click the name of an app.
+. Click *Apps* and then click the name of a managed app.
 
 . Click *Data protection*.
 

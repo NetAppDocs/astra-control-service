@@ -26,7 +26,7 @@ A protection policy protects an app by creating snapshots, backups, or both at a
 
 .Steps
 
-. Click *Apps* and then click the name of an app.
+. Click *Apps* and then click the name of a managed app.
 
 . Click *Data Protection*.
 
@@ -104,7 +104,7 @@ You can view the snapshots and backups of an app from the Data Protection tab.
 
 .Steps
 
-. Click *Apps* and then click the name of an app.
+. Click *Apps* and then click the name of a managed app.
 
 . Click *Data Protection*.
 +
@@ -120,7 +120,7 @@ Delete the scheduled or on-demand snapshots that you no longer need.
 
 .Steps
 
-. Click *Apps* and then click the name of an app.
+. Click *Apps* and then click the name of a managed app.
 
 . Click *Data Protection*.
 
@@ -140,7 +140,7 @@ Astra deletes the snapshot.
 
 Delete the scheduled or on-demand backups that you no longer need.
 
-. Click *Apps* and then click the name of an app.
+. Click *Apps* and then click the name of a managed app.
 
 . Click *Data Protection*.
 
