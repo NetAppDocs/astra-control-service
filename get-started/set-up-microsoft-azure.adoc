@@ -61,13 +61,13 @@ Azure region:: Clusters must reside in a region where Azure NetApp Files is avai
 Subscription:: Clusters must reside in a subscription where Azure NetApp Files is enabled. You'll choose a subscription when you <<Register for Azure NetApp Files,register for Azure NetApp Files>>.
 
 VNet::
-* Clusters must reside in a VNet that has direct access to an Azure NetApp Files delegated subnet. <<Delegate a subnet to Azure NetApp Files,Learn about setting up a delegated subnet>>.
-*	If the cluster's VNet is peered to another VNet with an Azure NetApp Files delegated subnet, then both sides of the peering connection must be online.
-*	A VNet must not have more than 800 IP addresses in use across all VNets touching a delegated subnet.
+* Clusters must reside in a VNet that has direct access to an Azure NetApp Files delegated subnet. <<Delegate a subnet to Azure NetApp Files,Learn how to set up a delegated subnet>>.
+*	If a cluster's VNet is peered to another VNet with an Azure NetApp Files delegated subnet, then both sides of the peering connection must be online.
+*	Be aware that the default limit for the number of IPs used in a VNet (including immediately peered VNets) with Azure NetApp Files is 1,000. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits[View Azure NetApp Files resource limits^].
 
 Private networking:: Private networking must not be enabled on a cluster.
 
-Volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default on K8s version 1.20, but you'll need to check on clusters running versions 1.17, 1.18, or 1.19.
+External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.20, but you'll need to check on clusters running versions 1.17, 1.18, or 1.19. https://netapp-trident.readthedocs.io/en/stable-v20.07/kubernetes/operations/tasks/volumes/snapshots.html[Learn more about external snapshot controllers^].
 
 == Register for Azure NetApp Files
 
@@ -113,7 +113,9 @@ Provisioning the right amount of capacity ensures that users can create persiste
 
 == Delegate a subnet to Azure NetApp Files
 
-You need to delegate a subnet to Azure NetApp Files so that Astra can create persistent volumes in that subnet. You can have only one delegated subnet in a VNet.
+You need to delegate a subnet to Azure NetApp Files so that Astra can create persistent volumes in that subnet. Note that Azure NetApp Files enables you to have only one delegated subnet in a VNet.
+
+If you're using peered VNets, then both sides of the peering connection must be online: the VNet where your Kubernetes clusters reside and the VNet that has the Azure NetApp Files delegated subnet.
 
 .Step
 
@@ -142,12 +144,12 @@ The following steps assume that you have permission to create a service principa
 az configure --list-defaults
 az account list --output table
 
-. Create the service principal, assign the Contributor role, and specify the scope to the entire subscription.
+. Create the service principal, assign the Contributor role, and specify the scope to the entire subscription where the clusters reside.
 +
 [source,azurecli]
 az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
 +
-Store the resulting output as a file. You'll need to provide this file to Astra so that Astra can discover your AKS clusters and manage Kubernetes data management operations. link:../use/manage-credentials.html[Learn about managing credentials in Astra].
+Store the resulting output as a JSON file. You'll need to provide this file to Astra so that Astra can discover your AKS clusters and manage Kubernetes data management operations. link:../use/manage-credentials.html[Learn about managing credentials in Astra].
 
 . Optional: Test your service principal.
 +
