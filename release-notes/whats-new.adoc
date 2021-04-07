@@ -14,7 +14,36 @@ NetApp periodically updates Astra to bring you new features, enhancements, and b
 
 == 14 Apr 2021
 
-* Astra can now manage apps that are running on a managed Kubernetes cluster in and Azure Kubernetes Service (AKS). link:set-up-microsoft-azure.html[Learn how to get started].
+* Astra can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS). link:set-up-microsoft-azure.html[Learn how to get started].
+
+* Astra now offers a _Premium Subscription_.
++
+Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra.
++
+If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
++
+link:../get-started/intro.html[Learn more about Astra pricing].
+
+* Astra now creates Persistent Volumes with a minimum size of 100 GiB when using the CVS service type with GKE clusters.
++
+link:../learn/choose-class-and-size.html[Learn more about storage for GKE clusters].
+
+* We enhanced the Discovered Apps page to better show the hierarchy of namespaces and the apps contained in those namespaces.
++
+image:screenshot-group.gif[]
++
+link:../use/manage-apps.html[Learn more about managing apps].
+
+* Data protection wizards were enhanced for ease of use. For example, we refined the Protection Policy wizard to more easily view the protection schedule as you define it.
++
+image:screenshot-protection-policy.gif[]
+
+* We've made it easier to view details about the activities in your Astra account.
+** Filter the activity list by managed app, severity level, user, and time range.
+** Download your Astra account activity to a CSV file.
+** View activities directly from the Compute page or the Apps page after selecting compute or an app.
++
+link:../use/view-account-activity.html[Learn more about viewing your account activity].
 
 == 1 Mar 2021
 
