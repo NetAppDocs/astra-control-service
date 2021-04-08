@@ -16,14 +16,6 @@ NetApp periodically updates Astra to bring you new features, enhancements, and b
 
 This release includes the following new features and enhancements.
 
-* <<Support for AKS clusters>>
-* <<REST API>>
-* <<Annual subscription>>
-* <<Min volume size of 100 GiB>>
-* <<Namespace and app visualization>>
-* <<User interface enhancements>>
-* <<Activity enhancements>>
-
 === Support for AKS clusters
 
 Astra can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS).
