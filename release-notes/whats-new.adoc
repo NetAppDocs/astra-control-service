@@ -48,9 +48,9 @@ link:../learn/choose-class-and-size.html[Learn more about storage for GKE cluste
 
 We enhanced the Discovered Apps page to better show the hierarchy between namespaces and apps. Just expand a namespace to see the apps contained in that namespace.
 
-image:screenshot-group.gif[]
-
 link:../use/manage-apps.html[Learn more about managing apps].
+
+image:screenshot-group.gif[]
 
 === User interface enhancements
 
