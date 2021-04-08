@@ -1,0 +1,15 @@
+---
+sidebar: sidebar
+permalink: automation/overview.html
+keywords: api, rest api, automate, automation, endpoints, api reference
+summary:
+---
+
+= Automation using the Astra REST API
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+<Brief introduction to the Astra REST API>
+
+<Link to the Astra automation content>
