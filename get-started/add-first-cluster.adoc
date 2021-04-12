@@ -26,6 +26,8 @@ After you log in to Astra, your first step is to start managing compute.
 * For GKE, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
 
 * For AKS, you should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
++
+You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
 
 .Steps
 
@@ -37,7 +39,7 @@ Follow the prompts to add the compute.
 
 .. *Microsoft Azure*: Provide Astra with details about your Azure service principal by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
 +
-The JSON file should contain the output from the Azure CLI when you created the service principal.
+The JSON file should contain the output from the Azure CLI when you created the service principal. It can also include your subscription ID so it's automatically added to Astra. Otherwise, you need to manually enter the ID after providing the JSON.
 
 .. *Google Cloud Platform*: Provide the service account key file either by uploading the file or by pasting the contents from your clipboard.
 +

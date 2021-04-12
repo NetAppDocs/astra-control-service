@@ -150,8 +150,26 @@ az account list --output table
 +
 [source,azurecli]
 az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
+
+. Store the resulting Azure CLI output as a JSON file.
 +
-Store the resulting output as a JSON file. You'll need to provide this file to Astra so that Astra can discover your AKS clusters and manage Kubernetes data management operations. link:../use/manage-credentials.html[Learn about managing credentials in Astra].
+You'll need to provide this file to Astra so that Astra can discover your AKS clusters and manage Kubernetes data management operations. link:../use/manage-credentials.html[Learn about managing credentials in Astra].
+
+. Optional: Add the subscription ID to the JSON file so that Astra automatically populates the ID when you select the file.
++
+Otherwise, you'll need to enter the subscription ID in Astra when prompted.
++
+*Example*
++
+[source,JSON]
+{
+  "appId": "0db3929a-bfb0-4c93-baee-blah",
+  "displayName": "sp-example-dev-sandbox",
+  "name": "http://sp-example-dev-sandbox",
+  "password": "mypassword",
+  "tenant": "011cdf6c-7512-4805-blah-7721afd8ca37",
+  "subscriptionId": "99ce999a-8c99-99d9-a9d9-99cce99f99ad"
+}
 
 . Optional: Test your service principal.
 +
