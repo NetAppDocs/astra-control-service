@@ -163,11 +163,11 @@ Otherwise, you'll need to enter the subscription ID in Astra when prompted.
 +
 [source,JSON]
 {
-  "appId": "0db3929a-bfb0-4c93-baee-blah",
+  "appId": "0db3929a-bfb0-4c93-baee-aaf8",
   "displayName": "sp-example-dev-sandbox",
   "name": "http://sp-example-dev-sandbox",
   "password": "mypassword",
-  "tenant": "011cdf6c-7512-4805-blah-7721afd8ca37",
+  "tenant": "011cdf6c-7512-4805-aaf8-7721afd8ca37",
   "subscriptionId": "99ce999a-8c99-99d9-a9d9-99cce99f99ad"
 }
 
