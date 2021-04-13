@@ -64,6 +64,8 @@ VNet::
 * Clusters must reside in a VNet that has direct access to an Azure NetApp Files delegated subnet. <<Delegate a subnet to Azure NetApp Files,Learn how to set up a delegated subnet>>.
 *	If your Kubernetes clusters are in a VNet that's peered to another VNet that has the Azure NetApp Files delegated subnet, then both sides of the peering connection must be online.
 *	Be aware that the default limit for the number of IPs used in a VNet (including immediately peered VNets) with Azure NetApp Files is 1,000. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits[View Azure NetApp Files resource limits^].
++
+If needed, you can https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-[submit a request for a limit increase^]. Contact your NetApp representative if you need help. 
 
 Private networking:: Private networking must not be enabled on a cluster.
 
