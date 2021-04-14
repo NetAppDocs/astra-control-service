@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: automation/overview.html
-keywords: api, rest api, automate, automation, endpoints, api reference
-summary:
+keywords: api, rest api, automate, automation, endpoints, api reference, curl, ansible, automation, token
+summary: Astra has a REST API that allows software developers to directly access the Astra functionality using a programming language or utility such as Curl. You can also manage Astra deployments using Ansible and other automation technologies.
 ---
 
 = Automation using the Astra REST API
@@ -10,6 +10,6 @@ summary:
 :icons: font
 :imagesdir: ../media/get-started/
 
-<Brief introduction to the Astra REST API>
+Astra has a REST API that allows software developers to directly access the Astra functionality using a programming language or utility such as Curl. You can also manage Astra deployments using Ansible and other automation technologies.
 
-<Link to the Astra automation content>
+To learn more, https://docs.netapp.com/us-en/astra-automation[go to the Astra automation docs^].
