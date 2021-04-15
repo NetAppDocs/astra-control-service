@@ -1,0 +1,184 @@
+---
+sidebar: sidebar
+permalink: get-started/set-up-microsoft-azure.html
+keywords: azure, azure netapp files, register, create account, create netapp account, azure subscription, azure permissions, service principal, create service principal, set up azure permissions, set up service principal, setup service principal, setup azure permissions, permissions, create capacity pool, setup capacity pool, set up capacity pool, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, azure regions, kubernetes version, ubuntu, image type, networking
+summary: A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra.
+---
+
+= Set up Microsoft Azure
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra.
+
+== Quick start for setting up Azure
+
+Get started quickly by following these steps or scroll down to the remaining sections for full details.
+
+==== image:number1.png[Number 1] Review Astra requirements for Azure Kubernetes Service
+
+[role="quick-margin-para"]
+Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that worker nodes are online and running *Ubuntu*, and more. <<AKS cluster requirements,Learn more about this step>>.
+
+==== image:number2.png[Number 2] Register for Azure NetApp Files
+
+[role="quick-margin-para"]
+Request access to the Azure NetApp Files service and then register the NetApp Resource Provider. <<Register for Azure NetApp Files,Learn more about this step>>.
+
+==== image:number3.png[Number 3] Create a NetApp account
+
+[role="quick-margin-para"]
+In the Azure portal, go to Azure NetApp Files and create a NetApp account. <<Create a NetApp account,Learn more about this step>>.
+
+==== image:number4.png[Number 4] Set up capacity pools
+
+[role="quick-margin-para"]
+Set up one or more capacity pools for your persistent volumes. <<Set up a capacity pool,Learn more about this step>>.
+
+==== image:number5.png[Number 5] Delegate a subnet to Azure NetApp Files
+
+[role="quick-margin-para"]
+Delegate a subnet to Azure NetApp Files so that Astra can create persistent volumes in that subnet. <<Delegate a subnet to Azure NetApp Files,Learn more about this step>>.
+
+==== image:number6.png[Number 6] Create an Azure service principal
+
+[role="quick-margin-para"]
+Create an Azure service principal that has the Contributor role. <<Create an Azure service principal,Read step-by-step instructions>>.
+
+== AKS cluster requirements
+
+A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra.
+
+Kubernetes version:: Clusters must be running Kubernetes version 1.17 or later.
+
+Image type:: The image type for each worker node must be Ubuntu.
+
+Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
+
+Azure region:: Clusters must reside in a region where Azure NetApp Files is available. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp[View Azure products by region^].
+
+Subscription:: Clusters must reside in a subscription where Azure NetApp Files is enabled. You'll choose a subscription when you <<Register for Azure NetApp Files,register for Azure NetApp Files>>.
+
+VNet::
+* Clusters must reside in a VNet that has direct access to an Azure NetApp Files delegated subnet. <<Delegate a subnet to Azure NetApp Files,Learn how to set up a delegated subnet>>.
+*	If your Kubernetes clusters are in a VNet that's peered to the Azure NetApp Files delegated subnet that's in another VNet, then both sides of the peering connection must be online.
+*	Be aware that the default limit for the number of IPs used in a VNet (including immediately peered VNets) with Azure NetApp Files is 1,000. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits[View Azure NetApp Files resource limits^].
++
+If you're close to the limit, you have two options:
++
+** You can https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-[submit a request for a limit increase^]. Contact your NetApp representative if you need help.
+** When creating a new AKS cluster, specify a new network for the cluster. Once the new network is created, provision a new subnet and delegate the subnet to Azure NetApp Files.
+
+Private networking:: Private networking must not be enabled on a cluster.
+
+External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.20, but you'll need to check on clusters running versions 1.17, 1.18, or 1.19. https://netapp-trident.readthedocs.io/en/stable-v20.07/kubernetes/operations/tasks/volumes/snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
+
+== Register for Azure NetApp Files
+
+Get access to Azure NetApp Files by submitting a waitlist request. After you're approved, you'll need to register the NetApp Resource Provider.
+
+.Steps
+
+. https://aka.ms/azurenetappfiles[Submit a waitlist request to access Azure NetApp Files^].
+
+. Wait for a confirmation email from the Azure NetApp Files team.
+
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register#resource-provider[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
+
+== Create a NetApp account
+
+After you've been granted access, create a NetApp account in Azure NetApp Files.
+
+.Step
+
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account[Follow Azure NetApp Files documentation to create a NetApp account from the Azure portal^].
+
+== Set up a capacity pool
+
+One or more capacity pools are required so that Astra can provision persistent volumes in a capacity pool. Astra doesn't create capacity pools for you.
+
+Take the following into consideration as you set up capacity pools for your Kubernetes apps:
+
+* A capacity pool can have an Ultra, Premium, or Standard service level. Each of these service levels are designed for different performance needs. Astra supports all three.
++
+You need to set up a capacity pool for each service level that you want to use with your Kubernetes clusters.
++
+link:../learn/azure-storage.html[Learn more about service levels for Azure NetApp Files].
+
+* Before you create a capacity pool for the apps that you intend to protect with Astra, choose the required performance and capacity for those apps.
++
+Provisioning the right amount of capacity ensures that users can create persistent volumes as they are needed. If capacity isn't available, then the persistent volumes can't be provisioned.
+
+* An Azure NetApp Files capacity pool can use the manual or auto QoS type. Astra supports auto QoS capacity pools. Manual QoS capacity pools aren't supported.
+
+.Step
+
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool[Follow Azure NetApp Files documentation to set up an auto QoS capacity pool^].
+
+== Delegate a subnet to Azure NetApp Files
+
+You need to delegate a subnet to Azure NetApp Files so that Astra can create persistent volumes in that subnet. Note that Azure NetApp Files enables you to have only one delegated subnet in a VNet.
+
+If you're using peered VNets, then both sides of the peering connection must be online: the VNet where your Kubernetes clusters reside and the VNet that has the Azure NetApp Files delegated subnet.
+
+.Step
+
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet[Follow the Azure NetApp Files documentation to delegate a subnet to Azure NetApp Files^].
+
+== Create an Azure service principal
+
+Astra requires a Azure service principal that is assigned the Contributor role. Astra uses this service principal to facilitate Kubernetes application data management on your behalf.
+
+A service principal is an identity created specifically for use with applications, services, and tools. Assigning a role to the service principal restricts access to specific Azure resources.
+
+Follow the steps below to create a service principal using the Azure CLI. You'll need to save the output in a JSON file and provide it to Astra later on. https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli[Refer to Azure documentation for more details about using the CLI^].
+
+The following steps assume that you have permission to create a service principal and that you have the Microsoft Azure SDK (az command) installed on your machine.
+
+.Requirements
+
+*	The service principal must use regular authentication. Certificates aren't supported.
+*	The service principal must be granted Contributor or Owner access to your Azure subscription.
+* The Azure subscription must contain the AKS clusters and your Azure NetApp Files account.
+
+.Steps
+
+. Identify the subscription and tenant ID where your AKS clusters reside (these are the clusters that you want to manage in Astra).
++
+[source,azureCLI]
+az configure --list-defaults
+az account list --output table
+
+. Create the service principal, assign the Contributor role, and specify the scope to the entire subscription where the clusters reside.
++
+[source,azurecli]
+az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
+
+. Store the resulting Azure CLI output as a JSON file.
++
+You'll need to provide this file to Astra so that Astra can discover your AKS clusters and manage Kubernetes data management operations. link:../use/manage-credentials.html[Learn about managing credentials in Astra].
+
+. Optional: Add the subscription ID to the JSON file so that Astra automatically populates the ID when you select the file.
++
+Otherwise, you'll need to enter the subscription ID in Astra when prompted.
++
+*Example*
++
+[source,JSON]
+{
+  "appId": "0db3929a-bfb0-4c93-baee-aaf8",
+  "displayName": "sp-example-dev-sandbox",
+  "name": "http://sp-example-dev-sandbox",
+  "password": "mypassword",
+  "tenant": "011cdf6c-7512-4805-aaf8-7721afd8ca37",
+  "subscriptionId": "99ce999a-8c99-99d9-a9d9-99cce99f99ad"
+}
+
+. Optional: Test your service principal.
++
+[source,azurecli]
+az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
+az group list --subscription SUBSCRIPTION-ID
+az aks list --subscription SUBSCRIPTION-ID
+az storage container list --subscription SUBSCRIPTION-ID

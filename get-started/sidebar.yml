@@ -3,20 +3,20 @@ title: Get started
 entries:
   - title: Intro to Astra
     url: /get-started/intro.html
-  - title: Get started with Astra
+  - title: Quick start
+    url: /get-started/quick-start.html
+  - title: Set up your cloud provider
     entries:
-      - title: Quick start
-        url: /get-started/quick-start.html
-      - title: Requirements
-        url: /get-started/requirements.html
       - title: Set up Google Cloud
         url: /get-started/set-up-google-cloud.html
-      - title: Register for an Astra account
-        url: /get-started/register.html
-      - title: Manage compute from Astra
-        url: /get-started/add-first-cluster.html
-      - title: What's next?
-        url: /get-started/whats-next.html
+      - title: Set up Microsoft Azure
+        url: /get-started/set-up-microsoft-azure.html
+  - title: Register for an Astra account
+    url: /get-started/register.html
+  - title: Manage compute from Astra
+    url: /get-started/add-first-cluster.html
+  - title: What's next?
+    url: /get-started/whats-next.html
   - title: Videos
     url: /get-started/videos.html
   - title: FAQ

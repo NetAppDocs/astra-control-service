@@ -25,8 +25,6 @@ Validated apps for Astra include the following:
 
 The short list of validated apps represents applications that Astra recognizes. The Astra QA team has analyzed and confirmed these apps to be fully tested to restore.
 
-NOTE: Applications deployed from Google Marketplace not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
-
 Validated apps have also been checked by the Astra Development team, which creates custom workflows to help ensure the safety and consistency of your data. For example, when Astra takes a backup of a PostgreSQL database, it first quiesces the database. After the backup is complete, Astra restores the database to normal operation.
 
 No matter which type of app you use with Astra, always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.

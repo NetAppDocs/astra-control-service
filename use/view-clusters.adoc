@@ -23,5 +23,6 @@ After you add Kubernetes compute to Astra, you can view details about the comput
 +
 * *Overview*: Details about the worker nodes, including their state.
 * *Storage*: The persistent volumes associated with the compute, including the storage class and state.
+* *Activity*: The Astra activities related to the compute.
 +
 image:screenshot-cluster-overview.gif[A screenshot of the Overview tab for compute.]

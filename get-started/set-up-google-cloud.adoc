@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: get-started/set-up-google-cloud.html
-keywords: google cloud, google cloud platform, gcp, set up google cloud, set up gcp, set up service account, create service account, project, gcp project, permissions gcp permissions, service account permissions, key, service account key, json, key json, roles, service account roles, gcp roles, cvs, cvs for aws, cloud volumes service apis, apis, networking, cvs networking, cloud volumes service networking, private service access
+keywords: google cloud, google cloud platform, gcp, set up google cloud, set up gcp, set up service account, create service account, project, gcp project, permissions gcp permissions, service account permissions, key, service account key, json, key json, roles, service account roles, gcp roles, cvs, cvs for aws, cloud volumes service apis, apis, networking, cvs networking, cloud volumes service networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, google cloud regions, gcp regions, kubernetes version, ubuntu, image type, networking
 summary: A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with Astra.
 ---
 
@@ -16,10 +16,10 @@ A few steps are required to prepare your Google Cloud project before you can man
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Set up a Google Cloud account and project
+==== image:number1.png[Number 1] Review Astra requirements for Google Kubernetes Engine
 
 [role="quick-margin-para"]
-You need a https://console.cloud.google.com/freetrial[Google Cloud account^] and https://cloud.google.com/resource-manager/docs/creating-managing-projects[a project^].
+Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that worker nodes are online and running *Ubuntu*, and more. <<GKE cluster requirements,Learn more about this step>>.
 
 ==== image:number2.png[Number 2] Purchase Cloud Volumes Service for Google Cloud
 
@@ -73,6 +73,27 @@ Set up network peering from your VPC to Cloud Volumes Service for Google Cloud. 
 The following image depicts each of these steps that you'll need to complete.
 
 image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud project, a service account with IAM roles and a key, enabled APIs, and private service access to Cloud Volumes Service for Google Cloud.]
+
+== GKE cluster requirements
+
+A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra.
+
+Kubernetes version:: A cluster must be running Kubernetes version 1.17 or later.
+
+Image type:: The image type for each worker node must be Ubuntu.
+
+Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
+
+Google Cloud region:: Clusters must be running in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region where Cloud Volumes Service for Google Cloud is supported.] Note that Astra supports both service types: CVS and CVS-Performance.
+
+Networking:: The cluster must reside in a VPC that is peered with Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC,This step is described below>>.
+
+Private clusters:: If the cluster is private, it must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network^] set to allow the Astra IP addresses:
+*	54.164.233.140/32
+*	3.218.120.204/32
+*	34.193.99.138/32
+
+Mode of operation for a GKE cluster:: You should use the Standard mode of operation. The Autopilot mode hasn't been tested at this time. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes[Learn more about modes of operation^].
 
 == Purchase Cloud Volumes Service for Google Cloud
 

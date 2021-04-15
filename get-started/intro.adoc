@@ -20,15 +20,23 @@ Astra offers critical capabilities for Kubernetes application data lifecycle man
 * Migrate applications and data from one Kubernetes cluster to another
 * Easily clone an application from production to staging
 * Create on-demand snapshots and backups
+* Clone and back up across clouds
 * Identify the health of your apps
 
 == Supported Kubernetes deployments
 
-Astra can manage apps on Google Kubernetes Engine (GKE) clusters.
+Astra can manage apps that are running on a managed Kubernetes cluster in Google Kubernetes Engine (GKE) and Azure Kubernetes Service (AKS).
 
-On-prem Kubernetes clusters and clusters running in other cloud providers aren't supported at this time.
+* link:set-up-google-cloud.html[Learn how to set up Google Cloud for Astra].
+* link:set-up-microsoft-azure.html[Learn how to set up Microsoft Azure for Astra].
 
-link:requirements.html[Learn about cluster requirements].
+== Supported apps
+
+Astra supports all applications running on your Kubernetes clusters. For GKE clusters, note that there is a link:../release-notes/known-limitations.html[known limitation with apps deployed from the Google Marketplace].
+
+NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups. link:../learn/validated-vs-standard.html[Learn the difference between a validated app and a standard app].
+
+No matter which type of app that you use with Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
 == How Astra works
 
@@ -38,23 +46,26 @@ Astra is a NetApp-managed cloud service that is always on and updated with the l
 
 At a high level, Astra works like this:
 
-* You set up your cloud provider by enabling Cloud Volumes Service for Google Cloud and by creating a GCP service account for Astra.
+* You get started with Astra by setting up your cloud provider and by registering for an Astra account.
 +
-Astra uses https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] as the backend storage for your persistent volumes.
+** For GKE clusters, Astra uses https://cloud.netapp.com/cloud-volumes-service-for-gcp[NetApp Cloud Volumes Service for Google Cloud^] as the backend storage for your persistent volumes.
++
+** For AKS clusters, Astra uses https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^] as the backend storage for your persistent volumes.
 
 * You add your first Kubernetes compute to Astra. Astra then does the following:
 
-** Creates an object store in your cloud provider account, which is where backup copies are sent.
+** Creates an object store in your cloud provider account, which is where backup copies are stored.
 
 ** Creates a new admin role and Kubernetes service account on the cluster.
 
-** Uses that new admin role to install https://netapp-trident.readthedocs.io/[NetApp's Trident^].
+** Uses that new admin role to install https://netapp-trident.readthedocs.io/[NetApp's Trident^] on the cluster and to create one or more storage classes.
++
+Astra uses Trident to provision persistent volumes for your apps.
 
-** Astra uses Trident to provision persistent volumes backed by NetApp Cloud Volumes Service for Google Cloud.
-
-** Astra creates one or more storage classes that use Cloud Volumes Service for Google Cloud.
-
-* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class. link:../learn/choose-class-and-size.html[Learn about storage classes and persistent volume sizes].
+* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class.
++
+** link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
+** link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
 
 * You then use Astra to manage these apps, and start creating snapshots, backups, and clones.
 
@@ -62,21 +73,34 @@ Note that Astra continually watches your compute for state changes, so it's awar
 
 == Pricing
 
-There are two types of costs associated with using Astra to manage your apps: charges from NetApp for the Astra service and charges from your cloud provider for persistent volumes and object storage.
+There are two types of costs associated with using Astra: charges from NetApp for the Astra service and charges from your cloud provider for persistent volumes and object storage.
 
 === Astra billing
 
-Astra offers two plans:
+Astra offers three plans:
 
-* *Free Plan*: Manage up to 10 apps for free.
-* *Premium Plan*: Manage an unlimited amount of apps at a rate of $.005 per minute per app.
+Free Plan:: Manage up to 10 apps for free.
+Premium PayGo:: Manage an unlimited amount of apps at a rate of $.005 per minute, per app.
+Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra. If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
++
+If you don't have an Astra account yet, purchasing the Premium Subscription automatically creates an Astra account for you. If you have an existing Free Plan, then you're automatically converted to the Premium Subscription.
 
-When you create an Astra account, you're automatically signed up for the Free Plan. You can link:../use/set-up-billing.html[upgrade to the Premium Plan at any time]. After you upgrade, Astra starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
+When you create an Astra account, you're automatically signed up for the Free Plan. You can link:../use/set-up-billing.html[upgrade to a Premium Plan at any time]. After you upgrade, Astra starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
 
-=== Cloud provider billing
+=== Google Cloud billing
+
+When you manage GKE clusters with Astra, persistent volumes are backed by NetApp Cloud Volumes Service and backups of your apps are stored in a Google Cloud Storage bucket.
 
 * https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs[View pricing details for Cloud Volumes Service^].
 +
-Note that Astra supports all service types and service levels. The service type that you choose depends on your https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region^].
+Note that Astra supports all service types and service levels. The service type that you use depends on your https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region^].
 
 * https://cloud.google.com/storage/pricing[View pricing details for Google Cloud storage buckets^].
+
+=== Microsoft Azure billing
+
+When you manage AKS clusters with Astra, persistent volumes are backed by Azure NetApp Files and backups of your apps are stored in an Azure Blob container.
+
+* https://azure.microsoft.com/en-us/pricing/details/netapp[View pricing details for Azure NetApp Files^].
+
+* https://azure.microsoft.com/en-us/pricing/details/storage/blobs[View pricing details for Microsoft Azure Blob storage^].
