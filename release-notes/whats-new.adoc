@@ -12,6 +12,63 @@ summary: NetApp periodically updates Astra to bring you new features, enhancemen
 
 NetApp periodically updates Astra to bring you new features, enhancements, and bug fixes.
 
+== 15 Apr 2021
+
+This release includes the following new features and enhancements.
+
+=== Support for AKS clusters
+
+Astra can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS).
+
+link:../get-started/set-up-microsoft-azure.html[Learn how to get started].
+
+=== REST API
+
+The Astra REST API is now available for use. The API is based on modern technologies and current best practices.
+
+https://docs.netapp.com/us-en/astra-automation[Learn how to automate application data lifecycle management using the REST API^].
+
+=== Annual subscription
+
+Astra now offers a _Premium Subscription_.
+
+Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra.
+
+If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
+
+link:../get-started/intro.html#pricing[Learn more about Astra pricing].
+
+=== Min volume size of 100 GiB
+
+Astra now creates Persistent Volumes with a minimum size of 100 GiB when using the CVS service type with GKE clusters. With this change, 100 GiB is now the default volume size for all types of backend storage (Google Cloud and Microsoft Azure).
+
+* link:../learn/choose-class-and-size.html[Learn more about storage for GKE clusters]
+* link:../learn/azure-storage.html[Learn more about storage for AKS clusters]
+
+=== Namespace and app visualization
+
+We enhanced the Discovered Apps page to better show the hierarchy between namespaces and apps. Just expand a namespace to see the apps contained in that namespace.
+
+link:../use/manage-apps.html[Learn more about managing apps].
+
+image:screenshot-group.gif[]
+
+=== User interface enhancements
+
+Data protection wizards were enhanced for ease of use. For example, we refined the Protection Policy wizard to more easily view the protection schedule as you define it.
+
+image:screenshot-protection-policy.gif[]
+
+=== Activity enhancements
+
+We've made it easier to view details about the activities in your Astra account.
+
+* Filter the activity list by managed app, severity level, user, and time range.
+* Download your Astra account activity to a CSV file.
+* View activities directly from the Compute page or the Apps page after selecting compute or an app.
+
+link:../use/view-account-activity.html[Learn more about viewing your account activity].
+
 == 1 Mar 2021
 
 Astra now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[_CVS_ service type^] with Cloud Volumes Service for Google Cloud. This is in addition to already supporting the _CVS-Performance_ service type. Just as a reminder, Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes.

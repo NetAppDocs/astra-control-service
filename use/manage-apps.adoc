@@ -16,7 +16,10 @@ After you link:../get-started/add-first-cluster.html[add Kubernetes compute to A
 
 Now that you've added your compute to Astra, you can install apps on the cluster. Persistent volumes will be provisioned on the new storage classes by default. After the pods are online, you can manage the app with Astra.
 
-Astra will manage stateful apps only if the storage is on a storage class installed by Astra: netapp-cvs-extreme, netapp-cvs-premium, or netapp-cvs-standard.
+Astra will manage stateful apps only if the storage is on a storage class installed by Astra.
+
+* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters]
+* link:../learn/azure-storage.html[Learn about storage classes for AKS clusters]
 
 For help with deploying common applications from Helm charts, refer to the following:
 
@@ -31,9 +34,11 @@ Astra enables you to manage your apps at the namespace level or by Kubernetes la
 
 === Manage apps by namespace
 
-The *Discovered* section of the Apps page shows namespaces and any Helm-installed apps. You can choose to manage each app individually or at the namespace level. It all comes down to the level of granularity that you need for data protection operations.
+The *Discovered* section of the Apps page shows namespaces and the Helm-installed apps or custom-labeled apps in those namespaces. You can choose to manage each app individually or at the namespace level. It all comes down to the level of granularity that you need for data protection operations.
 
 For example, you might want to set a backup policy for "maria" that has a weekly cadence, but you might need to back up "mariadb" (which is in the same namespace) more frequently than that. Based on those needs, you would need to manage the apps separately and not under a single namespace.
+
+While Astra allows you to separately manage both levels of the hierarchy (the namespace and the apps in that namespace), the best practice is to choose one or the other. Actions that you take in Astra can fail if the actions take place at the same time at both the namespace and app level.
 
 .Steps
 
@@ -41,19 +46,23 @@ For example, you might want to set a backup policy for "maria" that has a weekly
 +
 image:screenshot-app-discovery.gif[]
 
-. Look at the *Group* column to see which namespace the application is running in (it's designated with the folder icon) and whether any Helm labels are available (those are designated with a tag icon).
+. View the list of discovered namespaces and expand a namespace to view the apps and associated resources.
 +
-Here's an example:
+Astra shows you Helm apps and custom-labeled apps in namespace. If Helm labels are available, they're designated with a tag icon.
++
+Here's an example with two apps in a namespace:
 +
 image:screenshot-group.gif[]
 
-. Click the drop-down list in the *Actions* column for the desired app and click *Manage*.
+. Decide whether you want to manage each app individually or at the namespace level.
+
+. At the desired level in the hierarchy, click the drop-down list in the *Actions* column and click *Manage*.
 +
 image:screenshot-app-manage.gif[]
 
 . If you don't want to manage an app, click the drop-down list in the *Actions* column for the desired app and click *Ignore*.
 +
-For example, if you wanted to manage all apps under the "maria" namespace together so that they have the same snapshot and backup policies, you would manage the first app and ignore the second app:
+For example, if you wanted to manage all apps under the "jenkins" namespace together so that they have the same snapshot and backup policies, you would manage the namespace and ignore the apps in the namespace:
 +
 image:screenshot-app-manage-and-ignore.gif[]
 

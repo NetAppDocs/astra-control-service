@@ -38,3 +38,5 @@ Data protection:: Enables you to configure a data protection policy and to view 
 Storage:: Shows you the app-level persistent volumes. The state of a persistent volume is from the perspective of the Kubernetes cluster.
 
 Resources:: Enables you to verify which resources are being backed up and managed.
+
+Activity:: The Astra activities related to the app.

@@ -12,32 +12,28 @@ summary: Get started with Astra in a few steps.
 
 This page provides a high-level overview of the steps that you need to complete to get started with Astra. The links within each step take you to a page that provides more details.
 
-==== image:number1.png[Number 1] Review Kubernetes cluster requirements
+==== image:number1.png[Number 1] Set up your cloud provider
 
 [role="quick-margin-list"]
-* Astra supports Kubernetes clusters that are managed by Google Kubernetes Engine (GKE).
-* Clusters must be running a healthy state, with at least one online worker node, in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[region where Cloud Volumes Service is supported^].
-* The cluster must reside on a VPC that is peered to Cloud Volumes Service for Google Cloud (more on this in the next step).
-* The cluster must be running Kubernetes version 1.17 or later.
-* The image type for each worker node must be **Ubuntu**.
-
-[role="quick-margin-para"]
-link:requirements.html[Learn more about the Kubernetes cluster requirements].
-
-==== image:number2.png[Number 2] Set up Google Cloud
-
-[role="quick-margin-list"]
-.. Set up a Google Cloud account and project.
-.. Purchase Cloud Volumes Service for Google Cloud from the Marketplace.
-.. Enable the required APIs.
-.. Create a service account that has the required permissions.
-.. Create a service account key.
-.. Set up network peering from your VPC to Cloud Volumes Service for Google Cloud.
-
-[role="quick-margin-para"]
+.. Google Cloud:
+** Review GKE cluster requirements.
+** Purchase Cloud Volumes Service for Google Cloud from the Google Cloud Marketplace.
+** Enable the required APIs.
+** Create a service account and service account key.
+** Set up network peering from your VPC to Cloud Volumes Service for Google Cloud.
++
 link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
+.. Microsoft Azure:
+** Review AKS cluster requirements.
+** Register for Azure NetApp Files.
+** Create a NetApp account.
+** Set up a capacity pool.
+** Delegate a subnet to Azure NetApp Files.
+** Create an Azure service principal that has the Contributor role.
++
+link:set-up-microsoft-azure.html[Learn more about Microsoft Azure requirements].
 
-==== image:number3.png[Number 3] Complete the Astra registration
+==== image:number2.png[Number 2] Complete the Astra registration
 
 [role="quick-margin-list"]
 .. Create a https://cloud.netapp.com[NetApp Cloud Central^] account.
@@ -46,10 +42,10 @@ link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 [role="quick-margin-para"]
 link:register.html[Learn more about the registration process].
 
-==== image:number4.png[Number 4] Add your first compute
+==== image:number3.png[Number 3] Add compute to Astra
 
 [role="quick-margin-para"]
-After you log in, click *Add Compute* to start managing compute with Astra.
+After you log in, click *Add Compute* to start managing your compute with Astra.
 
 [role="quick-margin-para"]
 link:add-first-cluster.html[Learn more about adding compute].

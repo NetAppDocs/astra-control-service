@@ -5,6 +5,8 @@ sidebar:
     - section: release-notes
     - section: get-started
     - section: use
+    - title: Automate with REST
+      url: /automation.html
     - section: learn
     - section: solutions
     - section: support
@@ -17,11 +19,8 @@ homepage:
       #image: ./media/outline_directions_run_black_18dp.png
       links:
         - title: Learn about Astra
-          summary: Understand how Astra works.
+          summary: Get an overview of Astra before you get started.
           url: /get-started/intro.html
-        - title: What's new
-          summary: Learn what's new with Astra.
-          url: /release-notes/whats-new.html
         - title: Quick start
           summary: Get started quickly with Astra.
           url: /get-started/quick-start.html
@@ -53,14 +52,28 @@ homepage:
         - title: Deploy MySQL
           summary: Deploy MySQL from a Helm chart and register it with Astra.
           url: /solutions/mysql-deploy-from-helm-chart.html
+    - title: Solution briefs
+      links:
+        - title: DataStax Enterprise & Apache Cassandra with Astra
+          summary: Full lifecycle management in a cloud-native Kubernetes environment.
+          url: https://cloud.netapp.com/hubfs/SB-4134-0321-DataStax-Cassandra-Guide%20(1).pdf
+        - title: PostgreSQL DBaaS with Astra
+          summary: Use Astra to simplify day 2 operations of DBaaS for PostgreSQL.
+          url: https://cloud.netapp.com/hubfs/SB-4122-0221-PostgresSQL-DBaaS-with-Astra%20(2).pdf
+        - title: MySQL DBaaS with Astra
+          summary: Use Astra to simplify day 2 operations of DBaaS for MySQL.
+          url: https://cloud.netapp.com/hubfs/SB-4110-0221-MySQL-Astra%20(2).pdf
+        - title: Simplify Jenkins lifecycle management
+          summary: Deliver data protection and portability to Jenkins on GKE.
+          url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
     - title: Blogs & community
       links:
         - title: Slack
           summary: Ask questions, exchange ideas, and share best practices.
           url: https://netapppub.slack.com/#astra
-        - title: Stateful Lessons for a Multi-Cloud World
-          summary: How Astra provides robust storage, easy-to-consume data services, and application and data portability.
-          url: https://blog.netapp.com/project-astra-stateful-lessons
+        - title: Astra - A data management service for Kubernetes
+          summary: How Astra manages, protects, and moves Kubernetes data-rich containerized workloads.
+          url: https://cloud.netapp.com/blog/blg-astra-data-management-services-for-kubernetes-applications
         - title: Kubernetes Hub
-          summary: A curated collection of blog postings to learn more about Kubernetes and persistent storage.
+          summary: A curated collection of blog postings about Kubernetes and persistent storage.
           url: https://cloud.netapp.com/kubernetes-hub
