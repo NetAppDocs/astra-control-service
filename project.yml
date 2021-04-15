@@ -2,13 +2,11 @@ sidebar:
   entries:
     - title: Astra docs
       url: /index.html
-    - section: release-notes
     - section: get-started
     - section: use
     - title: Automate with REST
       url: /automation.html
     - section: learn
-    - section: solutions
     - section: support
     - title: Legal notices
       url: /legal-notices.html

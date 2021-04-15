@@ -15,7 +15,7 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 == Create a Kubernetes cluster
 
-If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra requirements for Google Kubernetes Engine (GKE)] or link:https://review.docs.netapp.com/us-en/astra_PI-21Q1/get-started/set-up-microsoft-azure.html#aks-cluster-requirements[Astra requirements for Azure Kubernetes Service (AKS)].
+If you don't have a cluster yet, create one that meets link:https://review.docs.netapp.com/us-en/astra_PI-21Q1/get-started/set-up-microsoft-azure.html#aks-cluster-requirements[Astra requirements for Azure Kubernetes Service (AKS)].
 
 == Start managing Kubernetes compute
 
@@ -23,9 +23,7 @@ After you log in to Astra, your first step is to start managing compute.
 
 .What you'll need
 
-* For GKE, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
-
-* For AKS, you should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
+For AKS, you should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
 +
 You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
 
@@ -41,19 +39,14 @@ Follow the prompts to add the compute.
 +
 The JSON file should contain the output from the Azure CLI when you created the service principal. It can also include your subscription ID so it's automatically added to Astra. Otherwise, you need to manually enter the ID after providing the JSON.
 
-.. *Google Cloud Platform*: Provide the service account key file either by uploading the file or by pasting the contents from your clipboard.
-+
-Astra uses the service account to discover compute running in Google Kubernetes Engine.
-
 . *Compute*: Select the compute that you'd like to add.
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the compute. For example, it might identify that the cluster doesn't have a worker node.
 
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this compute to use by default.
 +
-Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
+Each storage class utilizes https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
 +
-* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
 * link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
 
 . *Review & Approve*: Review the configuration details and click *Add compute*.

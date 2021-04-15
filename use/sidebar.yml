@@ -27,8 +27,6 @@ entries:
         url: /use/set-up-billing.html
       - title: Invite and manage users
         url: /use/manage-users.html
-      - title: Manage cloud provider credentials
-        url: /use/manage-credentials.html
       - title: View account activity
         url: /use/view-account-activity.html
       - title: Manage notifications

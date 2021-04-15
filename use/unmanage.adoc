@@ -36,7 +36,7 @@ Astra stops managing the app.
 
 == Stop managing compute
 
-Stop managing the compute that you no longer want to manage from Astra. As a best practice, we recommend that you remove compute from Astra before you delete it through GCP.
+Stop managing the compute that you no longer want to manage from Astra. As a best practice, we recommend that you remove compute from Astra before you delete it through your cloud provider.
 
 * This action stops your compute from being managed by Astra. It doesn't make any changes to the cluster's configuration and it doesn't delete the cluster.
 

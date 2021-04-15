@@ -3,8 +3,6 @@ title: Learn
 entries:
   - title: Storage for AKS clusters
     url: /learn/azure-storage.html
-  - title: Storage for GKE clusters
-    url: /learn/choose-class-and-size.html
   - title: Validated apps vs standard apps
     url: /learn/validated-vs-standard.html
   - title: Defining a custom app
