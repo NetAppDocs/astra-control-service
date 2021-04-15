@@ -6,6 +6,8 @@ sidebar:
     - section: get-started
     - section: use
     - section: automation
+    - title: Automate with REST
+      url: /automation.html
     - section: learn
     - section: solutions
     - section: support

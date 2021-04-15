@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: automation/overview.html
+permalink: automation.html
 keywords: api, rest api, automate, automation, endpoints, api reference, curl, ansible, automation, token
 summary: Astra has a REST API that allows software developers to directly access the Astra functionality using a programming language or utility such as Curl. You can also manage Astra deployments using Ansible and other automation technologies.
 ---
