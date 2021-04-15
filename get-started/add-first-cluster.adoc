@@ -53,10 +53,6 @@ Each storage class utilizes https://cloud.netapp.com/azure-netapp-files[Azure Ne
 +
 image:screenshot-compute-approve.gif[]
 
-The following video shows each of these steps for a GKE cluster.
-
-video::video-manage-cluster.mp4[width=848, height=480]
-
 .Result
 
 Astra creates an object store for application backups, creates an admin account on the cluster, and sets the default storage class that you specified. This process can take up to 5 minutes.
