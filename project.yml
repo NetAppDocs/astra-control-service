@@ -57,7 +57,7 @@ homepage:
           url: /solutions/mysql-deploy-from-helm-chart.html
     - title: Solution briefs
       links:
-        - title: Astra with DataStax Enterprise and Apache Cassandra
+        - title: DataStax Enterprise & Apache Cassandra with Astra
           summary: Full lifecycle management in a cloud-native Kubernetes environment.
           url: https://cloud.netapp.com/hubfs/SB-4134-0321-DataStax-Cassandra-Guide%20(1).pdf
         - title: PostgreSQL DBaaS with Astra
@@ -66,7 +66,7 @@ homepage:
         - title: MySQL DBaaS with Astra
           summary: Use Astra to simplify day 2 operations of DBaaS for MySQL.
           url: https://cloud.netapp.com/hubfs/SB-4110-0221-MySQL-Astra%20(2).pdf
-        - title: Simplify Jenkins app and data lifecycle management
+        - title: Simplify Jenkins lifecycle management
           summary: Deliver data protection and portability to Jenkins on GKE.
           url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
     - title: Blogs & community
@@ -74,9 +74,9 @@ homepage:
         - title: Slack
           summary: Ask questions, exchange ideas, and share best practices.
           url: https://netapppub.slack.com/#astra
-        - title: The first application-aware data management service for Kubernetes
+        - title: Astra - A data management service for Kubernetes
           summary: How Astra manages, protects, and moves Kubernetes data-rich containerized workloads.
           url: https://cloud.netapp.com/blog/blg-astra-data-management-services-for-kubernetes-applications
         - title: Kubernetes Hub
-          summary: A curated collection of blog postings to learn more about Kubernetes and persistent storage.
+          summary: A curated collection of blog postings about Kubernetes and persistent storage.
           url: https://cloud.netapp.com/kubernetes-hub
