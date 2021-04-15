@@ -5,7 +5,6 @@ sidebar:
     - section: release-notes
     - section: get-started
     - section: use
-    - section: automation
     - title: Automate with REST
       url: /automation.html
     - section: learn
