@@ -12,7 +12,7 @@ summary: NetApp periodically updates Astra to bring you new features, enhancemen
 
 NetApp periodically updates Astra to bring you new features, enhancements, and bug fixes.
 
-== 14 Apr 2021
+== 15 Apr 2021
 
 This release includes the following new features and enhancements.
 
@@ -26,7 +26,7 @@ link:../get-started/set-up-microsoft-azure.html[Learn how to get started].
 
 The Astra REST API is now available for use. The API is based on modern technologies and current best practices.
 
-Learn how to automate application data lifecycle management using the REST API (*_LINK COMING SOON_*).
+https://docs.netapp.com/us-en/astra-automation[Learn how to automate application data lifecycle management using the REST API^].
 
 === Annual subscription
 
