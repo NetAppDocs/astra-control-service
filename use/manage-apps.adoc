@@ -18,8 +18,8 @@ Now that you've added your compute to Astra, you can install apps on the cluster
 
 Astra will manage stateful apps only if the storage is on a storage class installed by Astra.
 
-* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
-* link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
+* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters]
+* link:../learn/azure-storage.html[Learn about storage classes for AKS clusters]
 
 For help with deploying common applications from Helm charts, refer to the following:
 
