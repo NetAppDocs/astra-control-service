@@ -19,11 +19,8 @@ homepage:
       #image: ./media/outline_directions_run_black_18dp.png
       links:
         - title: Learn about Astra
-          summary: Learn about Astra's features and how it works.
+          summary: Get an overview of Astra before you get started.
           url: /get-started/intro.html
-        - title: What's new
-          summary: Learn what's new with Astra.
-          url: /release-notes/whats-new.html
         - title: Quick start
           summary: Get started quickly with Astra.
           url: /get-started/quick-start.html
