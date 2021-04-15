@@ -62,10 +62,13 @@ Subscription:: Clusters must reside in a subscription where Azure NetApp Files i
 
 VNet::
 * Clusters must reside in a VNet that has direct access to an Azure NetApp Files delegated subnet. <<Delegate a subnet to Azure NetApp Files,Learn how to set up a delegated subnet>>.
-*	If your Kubernetes clusters are in a VNet that's peered to another VNet that has the Azure NetApp Files delegated subnet, then both sides of the peering connection must be online.
+*	If your Kubernetes clusters are in a VNet that's peered to the Azure NetApp Files delegated subnet that's in another VNet, then both sides of the peering connection must be online.
 *	Be aware that the default limit for the number of IPs used in a VNet (including immediately peered VNets) with Azure NetApp Files is 1,000. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits[View Azure NetApp Files resource limits^].
 +
-If needed, you can https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-[submit a request for a limit increase^]. Contact your NetApp representative if you need help. 
+If you're close to the limit, you have two options:
++
+** You can https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-[submit a request for a limit increase^]. Contact your NetApp representative if you need help.
+** When creating a new AKS cluster, specify a new network for the cluster. Once the new network is created, provision a new subnet and delegate the subnet to Azure NetApp Files.
 
 Private networking:: Private networking must not be enabled on a cluster.
 
@@ -125,7 +128,7 @@ If you're using peered VNets, then both sides of the peering connection must be 
 
 == Create an Azure service principal
 
-Astra requires an Azure service principal that is assigned the Contributor role. Astra uses this service principal to facilitate Kubernetes application data management on your behalf.
+Astra requires a Azure service principal that is assigned the Contributor role. Astra uses this service principal to facilitate Kubernetes application data management on your behalf.
 
 A service principal is an identity created specifically for use with applications, services, and tools. Assigning a role to the service principal restricts access to specific Azure resources.
 
@@ -135,10 +138,9 @@ The following steps assume that you have permission to create a service principa
 
 .Requirements
 
-*	The service principal must use regular authentication. Credentials aren't supported.
-* The service principal must reside in the same Azure subscription as your AKS clusters and your Azure NetApp Files account.
-+
-*_QUESTION: I'm not sure if this bullet point is correct. I can't remember if I got it from somewhere or made it up. Can you please confirm?_*
+*	The service principal must use regular authentication. Certificates aren't supported.
+*	The service principal must be granted Contributor or Owner access to your Azure subscription.
+* The Azure subscription must contain the AKS clusters and your Azure NetApp Files account.
 
 .Steps
 
