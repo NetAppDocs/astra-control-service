@@ -25,7 +25,7 @@ These service levels are an attribute of a capacity pool. You need to set up a c
 
 Astra uses these service levels as storage classes for your persistent volumes. When you add Kubernetes compute to Astra, you're prompted to choose either Ultra, Premium, or Standard as the default storage class. The names of the storage classes are _netapp-anf-perf-ultra_, _netapp-anf-perf-premium_, and _netapp-anf-perf-standard_.
 
-https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Learn more about these service levels in the Azure NetApp Files docs^].
+https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-service-levels[Learn more about these service levels in the Azure NetApp Files docs^].
 
 == Persistent volume size and performance
 

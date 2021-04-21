@@ -101,6 +101,6 @@ Note that Astra supports all service types and service levels. The service type 
 
 When you manage AKS clusters with Astra, persistent volumes are backed by Azure NetApp Files and backups of your apps are stored in an Azure Blob container.
 
-* https://azure.microsoft.com/en-us/pricing/details/netapp[View pricing details for Azure NetApp Files^].
+* https://azure.microsoft.com/pricing/details/netapp[View pricing details for Azure NetApp Files^].
 
-* https://azure.microsoft.com/en-us/pricing/details/storage/blobs[View pricing details for Microsoft Azure Blob storage^].
+* https://azure.microsoft.com/pricing/details/storage/blobs[View pricing details for Microsoft Azure Blob storage^].

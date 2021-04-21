@@ -45,10 +45,6 @@ image:screenshot-protection-policy.gif["A screenshot of a sample configuration p
 . Click *Review Information*.
 
 . Click *Set Protection Policy.*
-+
-Here's a video that shows each of these steps.
-+
-video::video-set-protection-policy.mp4[width=848, height=480]
 
 .Result
 

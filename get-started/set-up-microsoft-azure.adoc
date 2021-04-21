@@ -56,19 +56,19 @@ Image type:: The image type for each worker node must be Ubuntu.
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
 
-Azure region:: Clusters must reside in a region where Azure NetApp Files is available. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp[View Azure products by region^].
+Azure region:: Clusters must reside in a region where Azure NetApp Files is available. https://azure.microsoft.com/global-infrastructure/services/?products=netapp[View Azure products by region^].
 
 Subscription:: Clusters must reside in a subscription where Azure NetApp Files is enabled. You'll choose a subscription when you <<Register for Azure NetApp Files,register for Azure NetApp Files>>.
 
 VNet::
 * Clusters must reside in a VNet that has direct access to an Azure NetApp Files delegated subnet. <<Delegate a subnet to Azure NetApp Files,Learn how to set up a delegated subnet>>.
 *	If your Kubernetes clusters are in a VNet that's peered to the Azure NetApp Files delegated subnet that's in another VNet, then both sides of the peering connection must be online.
-*	Be aware that the default limit for the number of IPs used in a VNet (including immediately peered VNets) with Azure NetApp Files is 1,000. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits[View Azure NetApp Files resource limits^].
+*	Be aware that the default limit for the number of IPs used in a VNet (including immediately peered VNets) with Azure NetApp Files is 1,000. https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-resource-limits[View Azure NetApp Files resource limits^].
 +
 If you're close to the limit, you have two options:
 +
-** You can https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-[submit a request for a limit increase^]. Contact your NetApp representative if you need help.
 ** When creating a new AKS cluster, specify a new network for the cluster. Once the new network is created, provision a new subnet and delegate the subnet to Azure NetApp Files.
+** You can https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-[submit a request for a limit increase^]. Contact your NetApp representative if you need help.
 
 Private networking:: Private networking must not be enabled on a cluster.
 
@@ -84,7 +84,7 @@ Get access to Azure NetApp Files by submitting a waitlist request. After you're 
 
 . Wait for a confirmation email from the Azure NetApp Files team.
 
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register#resource-provider[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
+. https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-register#resource-provider[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
 
 == Create a NetApp account
 
@@ -92,7 +92,7 @@ After you've been granted access, create a NetApp account in Azure NetApp Files.
 
 .Step
 
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account[Follow Azure NetApp Files documentation to create a NetApp account from the Azure portal^].
+. https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-netapp-account[Follow Azure NetApp Files documentation to create a NetApp account from the Azure portal^].
 
 == Set up a capacity pool
 
@@ -114,7 +114,7 @@ Provisioning the right amount of capacity ensures that users can create persiste
 
 .Step
 
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool[Follow Azure NetApp Files documentation to set up an auto QoS capacity pool^].
+. https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool[Follow Azure NetApp Files documentation to set up an auto QoS capacity pool^].
 
 == Delegate a subnet to Azure NetApp Files
 
@@ -124,7 +124,7 @@ If you're using peered VNets, then both sides of the peering connection must be 
 
 .Step
 
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet[Follow the Azure NetApp Files documentation to delegate a subnet to Azure NetApp Files^].
+. https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-delegate-subnet[Follow the Azure NetApp Files documentation to delegate a subnet to Azure NetApp Files^].
 
 == Create an Azure service principal
 
@@ -132,7 +132,7 @@ Astra requires a Azure service principal that is assigned the Contributor role. 
 
 A service principal is an identity created specifically for use with applications, services, and tools. Assigning a role to the service principal restricts access to specific Azure resources.
 
-Follow the steps below to create a service principal using the Azure CLI. You'll need to save the output in a JSON file and provide it to Astra later on. https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli[Refer to Azure documentation for more details about using the CLI^].
+Follow the steps below to create a service principal using the Azure CLI. You'll need to save the output in a JSON file and provide it to Astra later on. https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli[Refer to Azure documentation for more details about using the CLI^].
 
 The following steps assume that you have permission to create a service principal and that you have the Microsoft Azure SDK (az command) installed on your machine.
 

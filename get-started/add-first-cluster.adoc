@@ -45,7 +45,7 @@ Pay careful attention to the Eligible tab. If a warning appears, hover over the 
 
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this compute to use by default.
 +
-Each storage class utilizes https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
+Each storage class utilizes https://azure.microsoft.com/services/netapp[Azure NetApp Files^].
 +
 * link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
 
