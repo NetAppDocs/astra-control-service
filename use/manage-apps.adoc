@@ -49,7 +49,7 @@ image:screenshot-app-discovery.gif[]
 +
 Astra shows you Helm apps and custom-labeled apps in namespace. If Helm labels are available, they're designated with a tag icon.
 +
-Here's an example with two apps in a namespace:
+Here's an example with one app in a namespace:
 +
 image:screenshot-group.gif[]
 
