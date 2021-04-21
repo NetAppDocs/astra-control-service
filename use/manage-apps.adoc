@@ -61,7 +61,7 @@ image:screenshot-app-manage.gif[]
 
 . If you don't want to manage an app, click the drop-down list in the *Actions* column for the desired app and click *Ignore*.
 +
-For example, if you wanted to manage all apps under the "jenkins" namespace together so that they have the same snapshot and backup policies, you would manage the namespace and ignore the apps in the namespace:
+For example, if you wanted to manage all apps under the "mysql-test" namespace together so that they have the same snapshot and backup policies, you would manage the namespace and ignore the apps in the namespace:
 +
 image:screenshot-app-manage-and-ignore.gif[]
 
