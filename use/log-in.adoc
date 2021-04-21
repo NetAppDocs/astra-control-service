@@ -19,8 +19,8 @@ TIP: You can use single sign-on to log in using credentials from your corporate 
 
 .What you'll need
 
-* link:..get-started/register.html[A Cloud Central user ID].
-* link:..get-started/register.html[A new Astra account] or link:manage-users.html[an invitation to an existing account].
+* link:../get-started/register.html[A Cloud Central user ID].
+* link:../get-started/register.html[A new Astra account] or link:manage-users.html[an invitation to an existing account].
 * A supported web browser.
 +
 Astra supports recent versions of Firefox, Safari, and Chrome with a minimum resolution of 1280 x 720.
