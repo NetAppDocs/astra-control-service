@@ -15,7 +15,7 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 == Create a Kubernetes cluster
 
-If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra requirements for Google Kubernetes Engine (GKE)] or link:https://review.docs.netapp.com/us-en/astra_PI-21Q1/get-started/set-up-microsoft-azure.html#aks-cluster-requirements[Astra requirements for Azure Kubernetes Service (AKS)].
+If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra requirements for Google Kubernetes Engine (GKE)] or link:set-up-microsoft-azure.html#aks-cluster-requirements[Astra requirements for Azure Kubernetes Service (AKS)].
 
 == Start managing Kubernetes compute
 
