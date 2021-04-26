@@ -38,13 +38,6 @@ If you manage more apps than allowed by your annual subscription, then you'll be
 
 link:../get-started/intro.html#pricing[Learn more about Astra pricing].
 
-=== Min volume size of 100 GiB
-
-Astra now creates Persistent Volumes with a minimum size of 100 GiB when using the CVS service type with GKE clusters. With this change, 100 GiB is now the default volume size for all types of backend storage (Google Cloud and Microsoft Azure).
-
-* link:../learn/choose-class-and-size.html[Learn more about storage for GKE clusters]
-* link:../learn/azure-storage.html[Learn more about storage for AKS clusters]
-
 === Namespace and app visualization
 
 We enhanced the Discovered Apps page to better show the hierarchy between namespaces and apps. Just expand a namespace to see the apps contained in that namespace.
