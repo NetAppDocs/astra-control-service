@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: get-started/set-up-microsoft-azure.html
-keywords: azure, azure netapp files, register, create account, create netapp account, azure subscription, azure permissions, service principal, create service principal, set up azure permissions, set up service principal, setup service principal, setup azure permissions, permissions, create capacity pool, setup capacity pool, set up capacity pool, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, azure regions, kubernetes version, ubuntu, image type, networking
+keywords: azure, azure netapp files, register, create account, create netapp account, azure subscription, azure permissions, service principal, create service principal, set up azure permissions, set up service principal, setup service principal, setup azure permissions, permissions, create capacity pool, setup capacity pool, set up capacity pool, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, azure regions, kubernetes version, linux, image type, networking
 summary: A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra.
 ---
 
@@ -19,7 +19,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Review Astra requirements for Azure Kubernetes Service
 
 [role="quick-margin-para"]
-Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that worker nodes are online and running *Ubuntu*, and more. <<AKS cluster requirements,Learn more about this step>>.
+Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that node pools are online and running *Linux*, and more. <<AKS cluster requirements,Learn more about this step>>.
 
 ==== image:number2.png[Number 2] Register for Azure NetApp Files
 
@@ -52,7 +52,7 @@ A Kubernetes cluster must meet the following requirements so you can discover an
 
 Kubernetes version:: Clusters must be running Kubernetes version 1.17 or later.
 
-Image type:: The image type for each worker node must be Ubuntu.
+Image type:: The image type for all node pools must be Linux.
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
 
@@ -72,7 +72,45 @@ If you're close to the limit, you have two options:
 
 Private networking:: Private networking must not be enabled on a cluster.
 
-External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.20, but you'll need to check on clusters running versions 1.17, 1.18, or 1.19. https://netapp-trident.readthedocs.io/en/stable-v20.07/kubernetes/operations/tasks/volumes/snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
+External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.17, 1.18, 1.19, or 1.20. https://netapp-trident.readthedocs.io/en/latest/kubernetes/operations/tasks/volumes/snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
+
+=== Install a CSI volume snapshot controller
+
+As noted in the list of requirements, Kubernetes clusters must have a CSI volume snapshot controller installed. Follow these steps to install the controller on your clusters.
+
+.Steps for K8s versions 1.17, 1.18, and 1.19
+
+. Install volume snapshot CRDs.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+
+. Create the snapshot controller.
++
+If you want the snapshot controller in a specific namespace, download and edit the following files before you apply them.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+
+.Steps for K8s version 1.20
+
+. Install volume snapshot CRDs.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+
+. Create the snapshot controller.
++
+If you want the snapshot controller in a specific namespace, download and edit the following files before you apply them.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
 
 == Register for Azure NetApp Files
 
