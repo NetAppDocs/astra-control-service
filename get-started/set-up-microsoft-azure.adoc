@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: get-started/set-up-microsoft-azure.html
-keywords: azure, azure netapp files, register, create account, create netapp account, azure subscription, azure permissions, service principal, create service principal, set up azure permissions, set up service principal, setup service principal, setup azure permissions, permissions, create capacity pool, setup capacity pool, set up capacity pool, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, azure regions, kubernetes version, ubuntu, image type, networking
+keywords: azure, azure netapp files, register, create account, create netapp account, azure subscription, azure permissions, service principal, create service principal, set up azure permissions, set up service principal, setup service principal, setup azure permissions, permissions, create capacity pool, setup capacity pool, set up capacity pool, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, azure regions, kubernetes version, linux, image type, networking
 summary: A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra.
 ---
 
@@ -19,7 +19,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Review Astra requirements for Azure Kubernetes Service
 
 [role="quick-margin-para"]
-Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that worker nodes are online and running *Ubuntu*, and more. <<AKS cluster requirements,Learn more about this step>>.
+Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that node pools are online and running *Linux*, and more. <<AKS cluster requirements,Learn more about this step>>.
 
 ==== image:number2.png[Number 2] Register for Azure NetApp Files
 
