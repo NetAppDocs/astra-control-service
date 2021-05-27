@@ -30,7 +30,7 @@ link:../learn/choose-class-and-size.html[Learn how Astra uses Cloud Volumes Serv
 
 Container-Optimized OS is now supported with GKE worker nodes. This is in addition to support for Ubuntu.
 
-link:../get-started/set-up-google-cloud.html[Learn more about GKE cluster requirements].
+link:../get-started/set-up-google-cloud.html#gke-cluster-requirements[Learn more about GKE cluster requirements].
 
 == 15 Apr 2021
 
