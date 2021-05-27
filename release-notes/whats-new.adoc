@@ -18,19 +18,19 @@ This release includes bug fixes and the following enhancements to Google Cloud s
 
 === Support for shared VPCs
 
-Astra now supports shared VPCs in Google Cloud. This support enables you to manage GKE clusters that reside in a shared VPC.
+You can now manage GKE clusters that reside in a shared VPC.
 
 === Persistent volume size for the CVS service type
 
 Astra now creates persistent volumes with a minimum size of 300 GiB when using the CVS service type.
 
-link:choose-class-and-size.html[Learn how Astra uses Cloud Volumes Service for Google Cloud as the backend storage for persistent volumes].
+link:../learn/choose-class-and-size.html[Learn how Astra uses Cloud Volumes Service for Google Cloud as the backend storage for persistent volumes].
 
 === Support for Container-Optimized OS
 
-The Container-Optimized OS is now supported with GKE worker nodes. This is in addition to support for Ubuntu.
+Container-Optimized OS is now supported with GKE worker nodes. This is in addition to support for Ubuntu.
 
-link:set-up-google-cloud.html[Learn more about GKE cluster requirements].
+link:../get-started/set-up-google-cloud.html[Learn more about GKE cluster requirements].
 
 == 15 Apr 2021
 
