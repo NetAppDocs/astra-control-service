@@ -36,10 +36,6 @@ The following limitations apply to the management of Kubernetes clusters in Goog
 
 Astra supports one Google Cloud Platform project and one service account. You should not add more than one service account to Astra and you shouldn’t rotate service account credentials.
 
-=== Shared VPCs in Google Cloud aren't supported
-
-Astra can't manage GKE clusters that reside in a shared VPC.
-
 === Google Marketplace apps haven't been validated
 
 NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users report issues with discovery or back up of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
