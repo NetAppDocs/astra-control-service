@@ -41,7 +41,7 @@ a|
 * netapp-cvs-premium
 * netapp-cvs-extreme | 100 GiB
 
-| CVS | Apps with low-to-medium storage performance needs | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[View supported Google Cloud regions^] | netapp-cvs-standard | 1 TiB
+| CVS | Apps with low-to-medium storage performance needs | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[View supported Google Cloud regions^] | netapp-cvs-standard | 300 GiB
 
 |===
 
@@ -83,4 +83,6 @@ The allowed bandwidth for the CVS service type is per GiB of provisioned capacit
 
 === Minimum volume size
 
-Astra provisions persistent volumes using a minimum volume size of 1 TiB with the CVS service type, even if the PVC asks for a smaller volume size.
+Astra provisions persistent volumes using a minimum volume size of 300 GiB with the CVS service type, even if the PVC asks for a smaller volume size. For example, if 20 GiB is requested, Astra automatically provisions a 300 GiB volume.
+
+Due to a limitation, if 700-999 GiB is requested, Astra provisions a volume size of 1000 GiB.
