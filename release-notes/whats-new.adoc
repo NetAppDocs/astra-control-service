@@ -18,7 +18,7 @@ This release includes bug fixes and the following enhancements to Google Cloud s
 
 === Support for shared VPCs
 
-You can now manage GKE clusters that reside in a shared VPC.
+You can now manage GKE clusters in GCP projects with a shared VPC network configuration.
 
 === Persistent volume size for the CVS service type
 
