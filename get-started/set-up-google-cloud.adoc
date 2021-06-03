@@ -80,7 +80,7 @@ A Kubernetes cluster must meet the following requirements so you can discover an
 
 Kubernetes version:: A cluster must be running Kubernetes version 1.17 or later.
 
-Image type:: The image type for each worker node must be Ubuntu.
+Image type:: The image type for each worker node must be Container-Optimized OS or Ubuntu.
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
 
