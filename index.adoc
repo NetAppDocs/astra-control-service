@@ -3,7 +3,7 @@ layout: astra
 sidebar: sidebar
 permalink: index.html
 lead: Astra Control offers stateful Kubernetes workloads a rich set of storage and application-aware data management services powered by NetApp’s trusted data protection technology. There are two versions of Astra Control. Astra Control Service is a fully managed service that supports Azure AKS and Google GKE clusters. Astra Control Center software (coming soon) will enable you to manage Kubernetes clusters in your private clouds.
-summary: Astra Control offers stateful Kubernetes workloads a rich set of storage and application-aware data management services powered by NetApp’s trusted data protection technology. There are two versions of Astra Control. Astra Control Service is a fully managed service that supports Azure AKS and Google GKE clusters. Astra Control Center software (coming soon) will enable you to manage Kubernetes clusters in your private clouds.
+summary: Astra Control offers stateful Kubernetes workloads a rich set of storage and application-aware data management services powered by NetApp’s trusted data protection technology. There are two versions of Astra Control. Astra Control Service is a fully managed service that supports Azure AKS and Google GKE clusters. Astra Control Center (coming soon) will enable you to manage Kubernetes clusters in your on-premises private clouds.
 ---
 
 = Astra Control Service documentation
