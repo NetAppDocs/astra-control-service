@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/set-up-billing.html
 keywords: billing, set up billing, payments, set up payments, credit card, update credit card, change credit card, free plan, free trial, premium, premium plan
-summary: Astra's Free Plan enables you to manage up to 10 apps in your account. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
+summary: Astra Control's Free Plan enables you to manage up to 10 apps in your account. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
 ---
 
 = Set up billing
@@ -10,35 +10,35 @@ summary: Astra's Free Plan enables you to manage up to 10 apps in your account. 
 :icons: font
 :imagesdir: ../media/use/
 
-Astra's Free Plan enables you to manage up to 10 apps in your account. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
+Astra Control's Free Plan enables you to manage up to 10 apps in your account. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
 
 == Billing overview
 
-Astra offers three plans:
+Astra Control offers three plans:
 
 Free Plan:: Manage up to 10 apps for free.
 Premium PayGo:: Manage an unlimited amount of apps at a rate of $.005 per minute, per app.
-Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra. If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
+Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra Control. If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
 +
-If you don't have an Astra account yet, purchasing the Premium Subscription automatically creates an Astra account for you. If you have an existing Free Plan, then you're automatically converted to the Premium Subscription.
+If you don't have an Astra Control account yet, purchasing the Premium Subscription automatically creates an Astra Control account for you. If you have an existing Free Plan, then you're automatically converted to the Premium Subscription.
 
-When you create an Astra account, you're automatically signed up for the Free Plan. Astra's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed:
+When you create an Astra Control account, you're automatically signed up for the Free Plan. Astra Control's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed:
 
 image:screenshot-dashboard.gif[]
 
-When you try to manage an 11th app, Astra notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to a Premium Plan.
+When you try to manage an 11th app, Astra Control notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to a Premium Plan.
 
-link:../get-started/intro.html[Learn more about Astra pricing].
+link:../get-started/intro.html[Learn more about Astra Control pricing].
 
 == Important notes
 
-* Your billing plan is per Astra account.
+* Your billing plan is per Astra Control account.
 +
 If you have multiple accounts, then each has its own billing plan.
 
-* Your Astra bill includes charges for managing your Kubernetes apps. You’re charged separately by your cloud provider for the backend storage for persistent volumes.
+* Your Astra Control bill includes charges for managing your Kubernetes apps. You’re charged separately by your cloud provider for the backend storage for persistent volumes.
 +
-link:../get-started/intro.html[Learn more about Astra pricing].
+link:../get-started/intro.html[Learn more about Astra Control pricing].
 
 * Each billing period ends on the last day of the month.
 
@@ -46,7 +46,7 @@ link:../get-started/intro.html[Learn more about Astra pricing].
 
 == Upgrade from the Free Plan to the Premium PayGo Plan
 
-Upgrade your billing plan at any time to start managing more than 10 apps from Astra by paying as you go. All you need is a valid credit card.
+Upgrade your billing plan at any time to start managing more than 10 apps from Astra Control by paying as you go. All you need is a valid credit card.
 
 .Steps
 
@@ -56,11 +56,11 @@ Upgrade your billing plan at any time to start managing more than 10 apps from A
 
 . Provide payment details for a valid credit card and click *Upgrade to Premium Plan*.
 +
-NOTE: Astra will email you if the credit card is nearing expiration.
+NOTE: Astra Control will email you if the credit card is nearing expiration.
 
 .Result
 
-You can now manage more than 10 apps. Astra starts charging you for _all_ apps that you're currently managing.
+You can now manage more than 10 apps. Astra Control starts charging you for _all_ apps that you're currently managing.
 
 == Upgrade from the Free Plan to the Premium Subscription
 
@@ -76,13 +76,13 @@ Contact NetApp Sales to pre-pay at a discounted rate with an annual subscription
 
 .Result
 
-A NetApp Sales representative will contact you to process your purchase order. After the order is complete, Astra will reflect your current plan on the Billing tab.
+A NetApp Sales representative will contact you to process your purchase order. After the order is complete, Astra Control will reflect your current plan on the Billing tab.
 
 image:screenshot-premium-subscription.gif[]
 
 == View your current costs and billing history
 
-Astra shows you your current monthly costs, as well as a detailed billing history by app.
+Astra Control shows you your current monthly costs, as well as a detailed billing history by app.
 
 .Steps
 
@@ -92,13 +92,13 @@ Your current costs appear under the billing overview.
 
 . To view the billing history by app, click *Billing history*.
 +
-Astra shows you the usage minutes and cost for each app. A usage minute is how many minutes Astra managed your app during a billing period.
+Astra Control shows you the usage minutes and cost for each app. A usage minute is how many minutes Astra Control managed your app during a billing period.
 
 . Click the drop-down list to select a previous month.
 
 == Change the credit card for Premium PayGo
 
-If needed, you can change the credit card that Astra has on file for billing.
+If needed, you can change the credit card that Astra Control has on file for billing.
 
 .Steps
 
