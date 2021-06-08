@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/close-account.html
 keywords: close account, delete account, delete my account, close my account
-summary: If you no longer need an Astra account, you can close it at any time.
+summary: If you no longer need an Astra Control account, you can close it at any time.
 ---
 
 = Close your account
@@ -10,13 +10,13 @@ summary: If you no longer need an Astra account, you can close it at any time.
 :icons: font
 :imagesdir: ../media/use/
 
-If you no longer need your Astra account, you can close it at any time.
+If you no longer need your Astra Control account, you can close it at any time.
 
 .Steps
 
 . link:unmanage.html[Unmanage all apps and compute].
 
-. link:manage-credentials.html[Remove credentials from Astra].
+. link:manage-credentials.html[Remove credentials from Astra Control].
 
 . Click *Account > Billing > Payment method*.
 

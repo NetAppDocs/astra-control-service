@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/restore-apps.html
 keywords: restore app, restoring an app, restore an app, restore
-summary: Astra can restore your application configuration and persistent storage from a snapshot or backup. Persistent storage backups are transferred from your object store, so restoring from an existing backup will complete the fastest.
+summary: Astra Control can restore your application configuration and persistent storage from a snapshot or backup. Persistent storage backups are transferred from your object store, so restoring from an existing backup will complete the fastest.
 ---
 
 = Restore apps
@@ -11,7 +11,7 @@ summary: Astra can restore your application configuration and persistent storage
 :imagesdir: ../media/use/
 
 [.lead]
-Astra can restore your application configuration and persistent storage from a snapshot or backup. Persistent storage backups are transferred from your object store, so restoring from an existing backup will complete the fastest.
+Astra Control can restore your application configuration and persistent storage from a snapshot or backup. Persistent storage backups are transferred from your object store, so restoring from an existing backup will complete the fastest.
 
 .Steps
 
@@ -41,4 +41,4 @@ image:screenshot-restore-summary.gif[]
 
 .Result
 
-Astra restores the app based on the information that you provided.
+Astra Control restores the app based on the information that you provided.

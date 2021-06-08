@@ -1,16 +1,16 @@
 ---
 sidebar: sidebar
 permalink: get-started/videos.html
-keywords: videos, Astra videos
-summary: Many of the pages on this doc site include videos that show how to complete a task using Astra. If you're just interested in videos, we've made it easier for you by collecting all of the videos on this single page (kind of like a playlist).
+keywords: videos, Astra Control Service videos
+summary: Many of the pages on this doc site include videos that show how to complete a task using Astra Control Service. If you're just interested in videos, we've made it easier for you by collecting all of the videos on this single page (kind of like a playlist).
 ---
 
-= Astra videos
+= Astra Control Service videos
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
 
-Many of the pages on this doc site include videos that show you how to complete a task for Astra. If you're just interested in videos, we've made it easy for you by collecting all of the videos on this single page (kind of like a playlist).
+Many of the pages on this doc site include videos that show you how to complete a task for Astra Control Service. If you're just interested in videos, we've made it easy for you by collecting all of the videos on this single page (kind of like a playlist).
 
 == Videos for setting up Google Cloud
 
@@ -24,23 +24,23 @@ video::get-started/video-enable-gcp-apis.mp4[width=848, height=480]
 
 === Create a service account
 
-Astra uses a Google Cloud service account to facilitate Kubernetes application data management on your behalf. The following video shows how to create the service account from the Google Cloud console. link:set-up-google-cloud.html#create-a-service-account[Learn more about creating a service account].
+Astra Control Service uses a Google Cloud service account to facilitate Kubernetes application data management on your behalf. The following video shows how to create the service account from the Google Cloud console. link:set-up-google-cloud.html#create-a-service-account[Learn more about creating a service account].
 
 video::get-started/video-create-gcp-service-account.mp4[width=848, height=480]
 
 === Create a service account key
 
-Astra uses a service account key to establish the identity of the service account that you just set up. The following video shows how to create the service account key from the Google Cloud console. link:set-up-google-cloud.html#create-a-service-account-key-2[Learn more about creating a service account key].
+Astra Control Service uses a service account key to establish the identity of the service account that you just set up. The following video shows how to create the service account key from the Google Cloud console. link:set-up-google-cloud.html#create-a-service-account-key-2[Learn more about creating a service account key].
 
 video::get-started/video-create-gcp-service-account-key.mp4[width=848, height=480]
 
-== Videos for using Astra
+== Videos for using Astra Control
 
-The following videos show how to complete common tasks using Astra.
+The following videos show how to complete common tasks using Astra Control.
 
-=== Manage compute from Astra
+=== Manage compute from Astra Control
 
-After you log in to Astra, your first step is to add Kubernetes compute. link:add-first-cluster.html[Learn more about managing compute].
+After you log in to Astra Control Service, your first step is to add Kubernetes compute. link:add-first-cluster.html[Learn more about managing compute].
 
 video::get-started/video-manage-cluster.mp4[width=848, height=480]
 

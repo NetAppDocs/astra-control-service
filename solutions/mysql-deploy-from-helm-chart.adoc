@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: solutions/mysql-deploy-from-helm-chart.html
 keywords: helm, mysql, helm chart, deploy mysql
-summary: Learn how to deploy MySQL from the standard stable chart. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra.
+summary: Learn how to deploy MySQL from the standard stable chart. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra Control.
 ---
 
 = Deploy MySQL from a Helm chart
@@ -10,15 +10,15 @@ summary: Learn how to deploy MySQL from the standard stable chart. After you dep
 :icons: font
 :imagesdir: ../media/
 
-Learn how to deploy MySQL from the https://github.com/helm/charts/tree/master/stable/mysql[standard stable chart^]. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra.
+Learn how to deploy MySQL from the https://github.com/helm/charts/tree/master/stable/mysql[standard stable chart^]. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra Control.
 
-MySQL is a validated app for Astra. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
+MySQL is a validated app for Astra Control. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
 NOTE: Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
 
 == Requirements
 
-* A GKE cluster which has been added to Astra.
+* A GKE cluster that has been added to Astra Control Service.
 * Updated versions of Helm (version 3.2+) and Kubectl installed.
 * Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
 
@@ -26,7 +26,7 @@ NOTE: Applications deployed from Google Marketplace have not been validated. Som
 
 Two important notes on this process:
 
-* You must deploy your app after the cluster is added to Astra, not before.
+* You must deploy your app after the cluster is added to Astra Control, not before.
 * We recommend that you deploy the Helm chart in a namespace other than the default.
 
 Add the Bitnami chart repo:
@@ -50,4 +50,4 @@ This does the following:
 
 WARNING: This method of setting the password at deployment is insecure. We do not recommend this for a production environment.
 
-After the pods are online, you can manage the app with Astra. Astra allows you to manage an app with its name, at the namespace level, or by using a helm label.
+After the pods are online, you can manage the app with Astra Control. Astra Control allows you to manage an app with its name, at the namespace level, or by using a helm label.

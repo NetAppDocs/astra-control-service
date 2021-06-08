@@ -52,7 +52,7 @@ video::video-set-protection-policy.mp4[width=848, height=480]
 
 .Result
 
-Astra implements the data protection policy by creating and retaining snapshots and backups using the schedule and retention policy that you defined.
+Astra Control implements the data protection policy by creating and retaining snapshots and backups using the schedule and retention policy that you defined.
 
 == Create a snapshot
 
@@ -74,7 +74,7 @@ image:screenshot-create-snapshot.gif["A screenshot of the app page where you can
 
 .Result
 
-Astra creates a snapshot of the apps.
+Astra Control creates a snapshot of the apps.
 
 == Create a backup
 
@@ -96,7 +96,7 @@ image:screenshot-create-backup.gif["A screenshot of the app page where you can c
 
 .Result
 
-Astra creates a backup of the app.
+Astra Control creates a backup of the app.
 
 == View snapshots and backups
 
@@ -134,7 +134,7 @@ image:screenshot-delete-snapshot.gif[A screenshot of the Data protection tab for
 
 .Result
 
-Astra deletes the snapshot.
+Astra Control deletes the snapshot.
 
 == Delete backups
 
@@ -158,4 +158,4 @@ image:screenshot-delete-backup.gif[A screenshot of the Data protection tab for a
 
 .Result
 
-Astra deletes the backup.
+Astra Control deletes the backup.
