@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: support/get-help.html
 keywords: get help, get support, knowledgebase, slack, phone, web, ticket, contact support, support ticket
-summary: NetApp provides support for Astra in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles and a Slack channel. Your Astra account includes remote technical support via web ticketing.
+summary: NetApp provides support for Astra Control in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles and a Slack channel. Your Astra Control account includes remote technical support via web ticketing.
 ---
 
 = Get help
@@ -10,11 +10,11 @@ summary: NetApp provides support for Astra in a variety of ways. Extensive free 
 :icons: font
 :imagesdir: ../media/support/
 
-NetApp provides support for Astra in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles and a Slack channel. Your Astra account includes remote technical support via web ticketing.
+NetApp provides support for Astra Control in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles and a Slack channel. Your Astra Control account includes remote technical support via web ticketing.
 
 You must first link:register-support.html[activate support for your NetApp serial number] in order to use these non self-service support options. A NetApp Support Site (NSS) SSO account is required for chat and web ticketing along with case management.
 
-You can access support options from the Astra UI by selecting the *Support* tab from the main menu.
+You can access support options from the Astra Control UI by selecting the *Support* tab from the main menu.
 
 image:screenshot-support.gif[]
 
@@ -24,7 +24,7 @@ These options are available for free 24x7:
 
 * https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra[Knowledge base^]
 +
-Search for articles, FAQ’s, or Break Fix information related to Astra.
+Search for articles, FAQ’s, or Break Fix information related to Astra Control.
 
 * Documentation
 +
@@ -42,7 +42,7 @@ Send an email to astra.feedback@netapp.com to let us know your thoughts, ideas, 
 
 In addition to the self-support options above, you can work with a NetApp Support Engineer to resolve any issues after you link:register-support.html[activate support for your NetApp serial number].
 
-Once your Astra serial number is activated, you can access NetApp technical support resources by creating a https://mysupport.netapp.com/site/cases/mine/create[Support ticket].
+Once your Astra Control serial number is activated, you can access NetApp technical support resources by creating a https://mysupport.netapp.com/site/cases/mine/create[Support ticket].
 
 Select *Cloud Data Services > Astra*.
 

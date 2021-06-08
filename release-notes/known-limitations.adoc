@@ -14,19 +14,19 @@ Known limitations identify platforms, devices, or functions that are not support
 
 == General limitations
 
-The following limitations affect Astra's management of Kubernetes clusters in any supported Kubernetes deployment.
+The following limitations affect Astra Control Service's management of Kubernetes clusters in any supported Kubernetes deployment.
 
 === Unhealthy pods affect app management
 
-If a managed app has pods in an unhealthy state, Astra can't create new backups and clones.
+If a managed app has pods in an unhealthy state, Astra Control Service can't create new backups and clones.
 
 === Trident isn't uninstalled from a cluster
 
-When you unmanage a cluster from Astra, Trident isn't automatically uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/latest/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
+When you unmanage a cluster from Astra Control Service, Trident isn't automatically uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/latest/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
 
 === Existing connections to a Postgres pod causes failures
 
-When you perform operations on Postgres pods, you shouldn't connect directly within the pod to use the psql command. Astra requires psql access to freeze and thaw the databases. If there is a pre-existing connection, the snapshot, backup, or clone will fail.
+When you perform operations on Postgres pods, you shouldn't connect directly within the pod to use the psql command. Astra Control Service requires psql access to freeze and thaw the databases. If there is a pre-existing connection, the snapshot, backup, or clone will fail.
 
 == Limitations for management of GKE clusters
 
@@ -34,13 +34,13 @@ The following limitations apply to the management of Kubernetes clusters in Goog
 
 === One GCP project and one service account are supported
 
-Astra supports one Google Cloud Platform project and one service account. You should not add more than one service account to Astra and you shouldn’t rotate service account credentials.
+Astra Control Service supports one Google Cloud Platform project and one service account. You should not add more than one service account to Astra Control Service and you shouldn’t rotate service account credentials.
 
 === Google Marketplace apps haven't been validated
 
 NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users report issues with discovery or back up of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
 
-No matter which type of app that you use with Astra, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
+No matter which type of app that you use with Astra Control Service, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
 === Persistent volume limit
 

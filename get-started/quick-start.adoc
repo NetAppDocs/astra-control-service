@@ -2,15 +2,15 @@
 sidebar: sidebar
 permalink: get-started/quick-start.html
 keywords: get started, quick start
-summary: Get started with Astra in a few steps.
+summary: Get started with Astra Control Service in a few steps.
 ---
 
-= Quick start for Astra
+= Quick start for Astra Control Service
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
-This page provides a high-level overview of the steps that you need to complete to get started with Astra. The links within each step take you to a page that provides more details.
+This page provides a high-level overview of the steps that you need to complete to get started with Astra Control Service. The links within each step take you to a page that provides more details.
 
 ==== image:number1.png[Number 1] Set up your cloud provider
 
@@ -33,19 +33,19 @@ link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 +
 link:set-up-microsoft-azure.html[Learn more about Microsoft Azure requirements].
 
-==== image:number2.png[Number 2] Complete the Astra registration
+==== image:number2.png[Number 2] Complete the Astra Control registration
 
 [role="quick-margin-list"]
 .. Create a https://cloud.netapp.com[NetApp Cloud Central^] account.
-.. Specify your NetApp Cloud Central email ID when creating your Astra account https://cloud.netapp.com/astra[from the Astra product page^].
+.. Specify your NetApp Cloud Central email ID when creating your Astra Control account https://cloud.netapp.com/astra[from the Astra product page^].
 
 [role="quick-margin-para"]
 link:register.html[Learn more about the registration process].
 
-==== image:number3.png[Number 3] Add compute to Astra
+==== image:number3.png[Number 3] Add compute to Astra Control
 
 [role="quick-margin-para"]
-After you log in, click *Add Compute* to start managing your compute with Astra.
+After you log in, click *Add Compute* to start managing your compute with Astra Control.
 
 [role="quick-margin-para"]
 link:add-first-cluster.html[Learn more about adding compute].
