@@ -55,6 +55,8 @@ At a high level, Astra Control Service works like this:
 * You add your first Kubernetes compute to Astra Control Service. Astra Control Service then does the following:
 
 ** Creates an object store in your cloud provider account, which is where backup copies are stored.
++
+In Azure, Astra Control Service also creates a resource group, a storage account, and keys for the Blob container.
 
 ** Creates a new admin role and Kubernetes service account on the cluster.
 
