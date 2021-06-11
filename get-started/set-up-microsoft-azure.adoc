@@ -164,6 +164,10 @@ If you're using peered VNets, then both sides of the peering connection must be 
 
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet[Follow the Azure NetApp Files documentation to delegate a subnet to Azure NetApp Files^].
 
+.After you're done
+
+Wait about 10 minutes before discovering the compute running in the delegated subnet.
+
 == Create an Azure service principal
 
 Astra Control Service requires a Azure service principal that is assigned the Contributor role. Astra Control Service uses this service principal to facilitate Kubernetes application data management on your behalf.

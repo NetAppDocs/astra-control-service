@@ -19,7 +19,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Review Astra Control Service requirements for Google Kubernetes Engine
 
 [role="quick-margin-para"]
-Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that worker nodes are online and running *Ubuntu*, and more. <<GKE cluster requirements,Learn more about this step>>.
+Ensure that clusters are healthy and running a Kubernetes version in the range of 1.17 to 1.20, that worker nodes are online and running *Ubuntu*, and more. <<GKE cluster requirements,Learn more about this step>>.
 
 ==== image:number2.png[Number 2] Purchase Cloud Volumes Service for Google Cloud
 
@@ -78,7 +78,7 @@ image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud pr
 
 A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service.
 
-Kubernetes version:: A cluster must be running Kubernetes version 1.17 or later.
+Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.17 to 1.20.
 
 Image type:: The image type for each worker node must be Container-Optimized OS or Ubuntu.
 
@@ -152,6 +152,27 @@ If you'd like to use gcloud, you can follow steps from within the Astra Control 
 If you'd like to use the Google Cloud console, the following video shows how to create the service account from the console.
 
 video::video-create-gcp-service-account.mp4[width=848, height=480]
+
+=== Configure the service account for a shared VPC
+
+To manage GKE clusters that reside in one project, but use a VPC from a different project (a shared VPC), then you need to specify the Astra service account as a member of the host project with the *Compute Network Viewer* role.
+
+.Steps
+
+. From the Google Cloud console, go to *IAM & Admin* and select *Service Accounts*.
+
+. Find the Astra service account that you previously created and then copy the email address.
+
+. Go to your host project and then select *IAM & Admin* > *IAM*.
+
+. Click *Add* and add an entry for the service account.
+.. *New members*: Enter the email address for the service account.
+.. *Role*: Select *Compute Network Viewer*.
+.. Click *Save*.
+
+.Result
+
+Adding a GKE cluster using a shared VPC will fully work with Astra.
 
 == Create a service account key
 

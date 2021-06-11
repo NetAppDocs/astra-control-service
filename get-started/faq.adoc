@@ -58,7 +58,7 @@ No. When your cluster is added to Astra Control, the service will automatically 
 
 New worker nodes can be added to existing pools, or new pools can be created as long as they are the Ubuntu image type. These will be automatically discovered by Astra Control. If the new nodes are not visible in Astra Control, check if the new worker nodes are running the supported image type. You can also verify the health of the new worker nodes by using the `kubectl get nodes` command.
 
-=== Registering GKE clusters
+== Registering GKE clusters
 
 *Can I add a private GKE cluster to Astra Control Service?*
 
@@ -72,7 +72,7 @@ Private clusters must have the https://cloud.google.com/kubernetes-engine/docs/c
 
 *Can my GKE cluster reside on a shared VPC?*
 
-Yes, Astra Control can manage clusters that reside in a shared VPC.
+Yes, Astra Control can manage clusters that reside in a shared VPC. link:set-up-google-cloud.html[Learn how to set up the Astra service account for a shared VPC configuration].
 
 *Where can I find my service account credentials on GCP?*
 
