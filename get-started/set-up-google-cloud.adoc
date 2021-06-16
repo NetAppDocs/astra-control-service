@@ -88,7 +88,7 @@ Google Cloud region:: Clusters must be running in a https://cloud.netapp.com/clo
 
 Networking:: The cluster must reside in a VPC that is peered with Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC,This step is described below>>.
 
-Private clusters:: If the cluster is private, it must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[master authorized network^] set to allow the Astra Control Service IP addresses:
+Private clusters:: If the cluster is private, the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[authorized networks^] must allow the Astra Control Service IP addresses:
 *	54.164.233.140/32
 *	3.218.120.204/32
 *	34.193.99.138/32
