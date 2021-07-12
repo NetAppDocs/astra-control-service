@@ -161,7 +161,7 @@ To manage GKE clusters that reside in one project, but use a VPC from a differen
 
 . From the Google Cloud console, go to *IAM & Admin* and select *Service Accounts*.
 
-. Find the Astra service account that you previously created and then copy the email address.
+. Find the Astra service account that has link:set-up-google-cloud.html#create-a-service-account[the required permissions] and then copy the email address.
 
 . Go to your host project and then select *IAM & Admin* > *IAM*.
 
