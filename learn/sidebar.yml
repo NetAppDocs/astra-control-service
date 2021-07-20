@@ -1,5 +1,5 @@
 section: learn
-title: Learn
+title: Concepts
 entries:
   - title: Storage for AKS clusters
     url: /learn/azure-storage.html
