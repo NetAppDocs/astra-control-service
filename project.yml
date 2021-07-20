@@ -34,14 +34,26 @@ homepage:
           url: /use/clone-apps.html
         - title: Set up billing
           url: /use/set-up-billing.html
+    - title: Use the Astra REST API
+      links:
+        - title: Get started
+          url: https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html
+        - title: API workflows
+          url: https://docs.netapp.com/us-en/astra-automation/workflows/workflows.html
+        - title: API reference
+          url: https://docs.netapp.com/us-en/astra-automation/reference/api_reference.html
     - title: Demos & tutorials
       links:
         - title: Astra Control Service videos
           url: /get-started/videos.html
+        - title: Deploy Jenkins
+          url: /solutions/jenkins-deploy-from-helm-chart.html
         - title: Deploy MariaDB
           url: /solutions/mariadb-deploy-from-helm-chart.html
         - title: Deploy MySQL
           url: /solutions/mysql-deploy-from-helm-chart.html
+        - title: Deploy Postgres
+          url: /solutions/postgres-deploy-from-helm-chart.html
     - title: Solution briefs
       links:
         - title: DataStax Enterprise & Apache Cassandra with Astra Control
