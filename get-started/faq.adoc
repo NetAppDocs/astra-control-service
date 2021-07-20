@@ -129,9 +129,9 @@ Any existing backups or snapshots will be deleted. Applications and data remain 
 
 == Data management operations
 
-*Where is my object bucket created?*
+*Where does Astra Control create the object store bucket?*
 
-The geography of the first managed cluster will determine the location of the object store. For example, if you add a cluster in a European zone, then remove that cluster and add one in the US, all future object stores will be created in EU. If you need to change this zone, please contact our support department.
+The geography of the first managed cluster determines the location of the object store. For example, if the first cluster that you add is in a European zone, then the bucket is created in that same geography. If needed, you can link:../use/manage-buckets.html[add additional buckets].
 
 *There are snapshots in my account that I didn't create. Where did they come from?*
 

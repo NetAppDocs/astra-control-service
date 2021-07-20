@@ -34,17 +34,19 @@ A protection policy protects an app by creating snapshots, backups, or both at a
 +
 image:screenshot-configure-protection-policy.gif[A screenshot of the Data protection tab for an app which enables you to configure a protection policy.]
 
-. Define a protection schedule by choosing the number of snapshots and backups to keep hourly, daily, weekly, and monthly.
+. Define a protection schedule by choosing the number of snapshots and backups to keep for the hourly, daily, weekly, and monthly schedules.
 +
-You can define the hourly, daily, weekly, and monthly schedules concurrently. A schedule won't turn active until you set a retention level.
+You can define the hourly, daily, weekly, and monthly schedules concurrently. A schedule won't turn active until you set a retention level for snapshots and backups.
++
+When you set a retention level for backups, you can choose the bucket where you'd like to store the backups.
 +
 The following example sets four protection schedules: hourly, daily, weekly, and monthly for snapshots and backups.
 +
-image:screenshot-protection-policy.gif["A screenshot of a sample configuration policy where you can choose to take snapshots and backups on an hourly, daily, weekly, or monthly basis."]
+image:screenshot-protection-policy.png["A screenshot of a sample configuration policy where you can choose to take snapshots and backups on an hourly, daily, weekly, or monthly basis."]
 
-. Click *Review Information*.
+. Click *Review*.
 
-. Click *Set Protection Policy.*
+. Click *Configure*.
 +
 Here's a video that shows each of these steps.
 +
