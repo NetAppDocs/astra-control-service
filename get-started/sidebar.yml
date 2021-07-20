@@ -11,9 +11,9 @@ entries:
         url: /get-started/set-up-google-cloud.html
       - title: Set up Microsoft Azure
         url: /get-started/set-up-microsoft-azure.html
-  - title: Register for an Astra Control account
+  - title: Register for an account
     url: /get-started/register.html
-  - title: Manage compute from Astra Control
+  - title: Manage compute
     url: /get-started/add-first-cluster.html
   - title: What's next?
     url: /get-started/whats-next.html
