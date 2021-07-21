@@ -2,47 +2,46 @@
 sidebar: sidebar
 permalink: get-started/intro.html
 keywords: introduction, how astra works, how Astra works, what Astra is, concept, understanding, overview
-summary: Astra Control Service is a Kubernetes application data lifecycle management service that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
+summary: Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
 ---
 
-= Intro to Astra Control Service
+= Intro to Astra Control
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
-Astra Control Service is a Kubernetes application data lifecycle management service that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
+Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
 
 == Features
 
-Astra Control Service offers critical capabilities for Kubernetes application data lifecycle management:
+Astra Control offers critical capabilities for Kubernetes application data lifecycle management:
 
-* Create a protection policy for each of your apps
+* Manage, protect, and migrate your Kubernetes applications
+* Manage persistent storage
 * Migrate applications and data from one Kubernetes cluster to another
 * Easily clone an application from production to staging
-* Create on-demand snapshots and backups
+* Create application-aware, on-demand snapshots and backups
 * Clone and back up across clouds
-* Identify the health of your apps
+* Visualize the real-time protection status of your apps
+* Use a user interface or an API to implement your backup and migration workflows
 
-== Supported Kubernetes deployments
+== Deployment models
 
-Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Google Kubernetes Engine (GKE) and Azure Kubernetes Service (AKS).
+Astra Control is available in two deployment models:
 
-* link:set-up-google-cloud.html[Learn how to set up Google Cloud for Astra Control Service].
-* link:set-up-microsoft-azure.html[Learn how to set up Microsoft Azure for Astra Control Service].
+* *Astra Control Service*: A NetApp-managed service that provides application-aware data management of Kubernetes clusters in Google Kubernetes Engine (GKE) and Azure Kubernetes Service (AKS).
+
+* *Astra Control Center*: Self-managed software that provides application-aware data management of Kubernetes clusters running in your on-premises environment.
 
 == Supported apps
 
-Astra Control Service supports all applications running on your Kubernetes clusters. For GKE clusters, note that there is a link:../release-notes/known-limitations.html[known limitation with apps deployed from the Google Marketplace].
+Astra Control supports all applications running on your Kubernetes clusters. NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups. link:../learn/validated-vs-standard.html[Learn the difference between a validated app and a standard app].
 
-NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups. link:../learn/validated-vs-standard.html[Learn the difference between a validated app and a standard app].
-
-No matter which type of app that you use with Astra Control Service, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
+No matter which type of app that you use with Astra Control, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
 == How Astra Control Service works
 
 Astra Control Service is a NetApp-managed cloud service that is always on and updated with the latest capabilities. It utilizes several components to enable application data lifecycle management.
-
-//The following image shows the relationship between each component:
 
 At a high level, Astra Control Service works like this:
 
@@ -62,7 +61,7 @@ In Azure, Astra Control Service also creates a resource group, a storage account
 
 ** Uses that new admin role to install https://netapp-trident.readthedocs.io/[NetApp's Trident^] on the cluster and to create one or more storage classes.
 +
-Astra Control Service uses Trident to provision persistent volumes for your apps.
+** Uses Trident to provision persistent volumes for your apps.
 
 * At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class.
 +
@@ -73,36 +72,23 @@ Astra Control Service uses Trident to provision persistent volumes for your apps
 
 Note that Astra Control Service continually watches your compute for state changes, so it's aware of any new apps that you add along the way.
 
-== Pricing
+== How Astra Control Center works
 
-There are two types of costs associated with using Astra Control Service: charges from NetApp for the Astra Control Service and charges from your cloud provider for persistent volumes and object storage.
+Astra Control Center runs locally in your own private cloud.
 
-=== Astra Control Service billing
+At a high level, Astra Control Center works like this:
 
-Astra Control Service offers three plans:
+* You install Astra Control Center in your local environment.
+* Astra Control Center does this:
+** Discovers your Kubernetes clusters.
+** Discovers your Trident configuration backed by an ONTAP storage backend.
+** Creates a new admin role.
 
-Free Plan:: Manage up to 10 apps for free.
-Premium PayGo:: Manage an unlimited amount of apps at a rate of $.005 per minute, per app.
-Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra Control Service. If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
-+
-If you don't have an Astra Control account yet, purchasing the Premium Subscription automatically creates an Astra Control account for you. If you have an existing Free Plan, then you're automatically converted to the Premium Subscription.
+You complete some setup tasks such as these:
 
-When you create an Astra Control account, you're automatically signed up for the Free Plan. You can link:../use/set-up-billing.html[upgrade to a Premium Plan at any time]. After you upgrade, Astra Control starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
+* Set up licensing.
+* Add your first cluster.
+* Add backend storage.
+* Add an object store bucket that will store your app backups.
 
-=== Google Cloud billing
-
-When you manage GKE clusters with Astra Control Service, persistent volumes are backed by NetApp Cloud Volumes Service and backups of your apps are stored in a Google Cloud Storage bucket.
-
-* https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs[View pricing details for Cloud Volumes Service^].
-+
-Note that Astra Control Service supports all service types and service levels. The service type that you use depends on your https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region^].
-
-* https://cloud.google.com/storage/pricing[View pricing details for Google Cloud storage buckets^].
-
-=== Microsoft Azure billing
-
-When you manage AKS clusters with Astra Control Service, persistent volumes are backed by Azure NetApp Files and backups of your apps are stored in an Azure Blob container.
-
-* https://azure.microsoft.com/en-us/pricing/details/netapp[View pricing details for Azure NetApp Files^].
-
-* https://azure.microsoft.com/en-us/pricing/details/storage/blobs[View pricing details for Microsoft Azure Blob storage^].
+At this point, you can add apps to your cluster. Some apps are pre-installed in the cluster being managed. Then, use Astra Control Center to manage these apps, and create snapshots, backups, and clones.
