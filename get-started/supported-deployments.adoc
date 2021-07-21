@@ -1,0 +1,16 @@
+---
+sidebar: sidebar
+permalink: get-started/supported-deployments.html
+keywords: gke, aks, google kubernetes engine, azure kubernetes service
+summary: "Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Google Kubernetes Engine (GKE) and Azure Kubernetes Service (AKS)."
+---
+
+= Supported Kubernetes deployments
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Google Kubernetes Engine (GKE) and Azure Kubernetes Service (AKS).
+
+* link:set-up-google-cloud.html[Learn how to set up Google Cloud for Astra Control Service].
+* link:set-up-microsoft-azure.html[Learn how to set up Microsoft Azure for Astra Control Service].
