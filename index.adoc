@@ -2,8 +2,8 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-lead: "Available as a fully-managed service or as self-managed on-premises software, Astra Control offers on-demand access that scales from the smallest applications to the largest enterprise workloads. Astra Control provides data portability with your choice of Kubernetes. The docs on this site are for Astra Control Service. Access Control Center docs will be available at GA. Go to https://cloud.netapp.com/astra to learn more."
-summary: Available as a fully-managed service or as self-managed on-premises software, Astra Control offers on-demand access that scales from the smallest applications to the largest enterprise workloads. Astra Control provides data portability with your choice of Kubernetes. The docs on this site are for Astra Control Service. Astra Control Center docs will be available at GA. Go to NetApp Cloud Central to learn more.
+lead: "Available as a fully-managed service or as self-managed on-premises software, Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones."ter docs will be available at GA. Go to https://cloud.netapp.com/astra to learn more."
+summary: "Available as a fully-managed service or as self-managed on-premises software, Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones."
 ---
 
 = Astra Control Service documentation
