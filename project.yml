@@ -54,6 +54,14 @@ homepage:
           url: /solutions/mysql-deploy-from-helm-chart.html
         - title: Deploy Postgres
           url: /solutions/postgres-deploy-from-helm-chart.html
+    - title: Astra Control Center
+      links:
+        - title: Intro to Astra Control Center
+          url: https://docs.netapp.com/us-en/astra-control-center/concepts/intro.html
+        - title: What's new
+          url: https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html
+        - title: Quick start
+          url: https://docs.netapp.com/us-en/astra-control-center/get-started/quick-start.html
     - title: Solution briefs
       links:
         - title: DataStax Enterprise & Apache Cassandra with Astra Control
