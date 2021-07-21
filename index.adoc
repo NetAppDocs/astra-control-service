@@ -2,7 +2,7 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-lead: "Available as a fully-managed service or as self-managed on-premises software, Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones."ter docs will be available at GA. Go to https://cloud.netapp.com/astra to learn more."
+lead: "Available as a fully-managed service or as self-managed on-premises software, Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones."
 summary: "Available as a fully-managed service or as self-managed on-premises software, Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones."
 ---
 
