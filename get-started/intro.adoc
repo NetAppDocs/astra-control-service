@@ -69,12 +69,24 @@ In Azure, Astra Control Service also creates a resource group, a storage account
 ** link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
 
 * You then use Astra Control Service to manage these apps, and start creating snapshots, backups, and clones.
++
+Astra Control Service continually watches your compute for state changes, so it's aware of any new apps that you add along the way.
 
-Note that Astra Control Service continually watches your compute for state changes, so it's aware of any new apps that you add along the way.
+Astra Control's Free Plan enables you to manage up to 10 apps in your account. If you want to manage more than 10 apps, then you'll need to link:../use/set-up-billing.html[set up billing by upgrading from the Free Plan to the Premium Plan].
 
 == How Astra Control Center works
 
 Astra Control Center runs locally in your own private cloud.
+
+For the first release, Astra Control Center will support OpenShift Kubernetes clusters and Trident storage backends with ONTAP 9.5 and above.
+
+In a cloud-connected environment, Astra Control Center uses Cloud Insights to provide advanced monitoring and telemetry. In the absence of a Cloud Insights connection, limited (7-days worth of metrics) monitoring and telemetry is available in Astra Control Center and also exported to Kubernetes native monitoring tools (such as Prometheus and Grafana) through open metrics end points.
+
+Astra Control Center is fully integrated into the AutoSupport and Active IQ ecosystem to provide support and business users with troubleshooting and usage information.
+
+You can try Astra Control Center out using a 90-day evaluation license. The evaluation version is supported through email and community (Slack channel) options. Additionally, you have access to Knowledgebase articles and documentation from the in-product support dashboard.
+
+To install and use Astra Control Center, you'll need some prerequisites. Learn about the https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html[requirements^].
 
 At a high level, Astra Control Center works like this:
 
@@ -84,11 +96,15 @@ At a high level, Astra Control Center works like this:
 ** Discovers your Trident configuration backed by an ONTAP storage backend.
 ** Creates a new admin role.
 
+Learn more about how to https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html[install Astra Control Center^].
+
 You complete some setup tasks such as these:
 
 * Set up licensing.
 * Add your first cluster.
 * Add backend storage.
 * Add an object store bucket that will store your app backups.
+
+Learn more about how to https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html[set up Astra Control Center^].
 
 At this point, you can add apps to your cluster. Some apps are pre-installed in the cluster being managed. Then, use Astra Control Center to manage these apps, and create snapshots, backups, and clones.
