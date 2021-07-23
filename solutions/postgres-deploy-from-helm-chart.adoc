@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: solutions/postgres-deploy-from-helm-chart.html
-keywords: deploy apps, deploy postgres, helm chart
+keywords: deploy apps, deploy postgres, helm chart, astra, astra control, kubernetes
 summary: Learn how to deploy Postgres from a Helm chart. After you deploy Postgres on your cluster, you can register the application with Astra Control.
 ---
 
@@ -12,21 +12,23 @@ summary: Learn how to deploy Postgres from a Helm chart. After you deploy Postgr
 
 Learn how to deploy Postgres from the Bitnami Helm chart. After you deploy Postgres on your cluster, you can register the application with Astra Control.
 
-Postgres is a validated app for Astra Control. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
+Postgres is a validated app for Astra. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
-NOTE: Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
+These instructions apply to both Astra Control Service and Astra Control Center.
 
 == Requirements
 
-* A fresh GKE cluster which has been added to Astra Control Service.
-* Updated versions of Helm (version 3.2+) and Kubectl installed.
-* Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
+* A cluster that has been added to Astra Control.
++
+NOTE: For Astra Control Center, you can add the cluster to Astra Control Center first or add the app first.
+
+* Updated versions of Helm (version 3.2+) and Kubectl installed on a local machine with the proper kubeconfig for the cluster
 
 == Install Postgres
 
 Two important notes on this process:
 
-* You must deploy your app after the cluster is added to Astra Control, not before.
+* You must deploy your app after the cluster is added to Astra Control Service, not before. Astra Control Center will accept applications before or after the cluster is added to Astra Control Center.
 * You must deploy the Helm chart in a namespace other than the default.
 
 Add the Bitnami chart repo:
@@ -50,4 +52,4 @@ This does the following:
 
 WARNING: This method of setting the password at deployment is insecure. We do not recommend this for a production environment.
 
-After the pods are online, you can manage the app with Astra Control. Astra Control allows you to manage an app at the namespace level or using a helm label.
+After the pods are online, you can manage the app with Astra Control. Astra Control enables you to manage an app at the namespace level or by using a helm label.
