@@ -33,6 +33,18 @@ Astra Control is available in two deployment models:
 
 * *Astra Control Center*: Self-managed software that provides application-aware data management of Kubernetes clusters running in your on-premises environment.
 
+[cols=3*,options="header",cols="25,25,25"]
+|===
+|
+| Astra Control Service
+| Astra Control Center
+| How is it offered? | As a fully managed cloud service from NetApp | As software that you download, install, and manage
+| Where is it hosted? | On a public cloud of NetApp's choice | On your provided Kubernetes cluster
+| How is it updated? | Managed by NetApp | You manage any updates
+| What are the app data management capabilities? | Same capabilities on both platforms with exceptions to backend storage or to external services | Same capabilities on both platforms with exceptions to backend storage or to external services
+| What is the backend storage support? | NetApp cloud service offerings | NetApp ONTAP AFF and FAS systems
+|===
+
 == Supported apps
 
 Astra Control supports all applications running on your Kubernetes clusters. NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups. link:../learn/validated-vs-standard.html[Learn the difference between a validated app and a standard app].
