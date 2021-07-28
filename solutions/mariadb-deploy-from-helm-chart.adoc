@@ -40,15 +40,21 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 Deploy MariaDB with the command:
 
 ----
-helm install mariadb bitnami/mariadb --namespace testdb --create-namespace --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8 > /dev/null 2>&1
+helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
 ----
+// helm install mariadb bitnami/mariadb --namespace testdb --create-namespace --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8 > /dev/null 2>&1
+
+NOTE: If the volume size is changed, use Kibibyte (Ki), Mebibyte (Mi) or Gibibyte (Gi) units.
+
+You need to define the storage class only in these situations:
+•	You are using Astra Control Service and you don’t want to use the default storage class.
+•	You are using Astra Control Center and haven’t yet imported the cluster into Astra Control Center. Or, you have imported the cluster, but don't want to use the default storage class.
 
 This does the following:
 
-* Creates the `testdb` namespace.
-* Deploys MariaDB on the `testdb` namespace.
-* Creates a database named `test_db`
-* Creates a user `test_db_user` with password `NKhjs2wQPt8`
+* Creates a namespace.
+* Deploys MariaDB on the namespace.
+* Creates a database.
 
 WARNING: This method of setting the password at deployment is insecure. We do not recommend this for a production environment.
 

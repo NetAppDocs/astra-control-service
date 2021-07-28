@@ -40,16 +40,19 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 Deploy Postgres with the command:
 
 ----
-kubectl create namespace testdb && helm install bitnami/postgresql --namespace testdb --set postgresqlPassword=U9dH9HT4pWS,postgresqlDatabase=test_db --generate-name
+helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
 ----
+
+NOTE: If the volume size is changed, use Kibibyte (Ki), Mebibyte (Mi) or Gibibyte (Gi) units.
+
+You need to define the storage class only in these situations:
+
+*	You are using Astra Control Service and you don’t want to use the default storage class.
+*	You are using Astra Control Center and haven’t yet imported the cluster into Astra Control Center. Or, you have imported the cluster, but don't want to use the default storage class.
 
 This does the following:
 
-* Creates the `testdb` namespace.
-* Deploys Postgres on the `testdb` namespace.
-* Creates a database named `test_db`
-* Creates a user `test_db_user` with password `U9dH9HT4pWS`
-
-WARNING: This method of setting the password at deployment is insecure. We do not recommend this for a production environment.
+* Creates a namespace.
+* Deploys Postgres on the namespace.
 
 After the pods are online, you can manage the app with Astra Control. Astra Control enables you to manage an app at the namespace level or by using a helm label.
