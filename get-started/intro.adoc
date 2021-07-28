@@ -33,7 +33,7 @@ Astra Control is available in two deployment models:
 
 * *Astra Control Center*: Self-managed software that provides application-aware data management of Kubernetes clusters running in your on-premises environment.
 
-[cols=3*,options="header",cols="25,25,25"]
+[cols=3*,cols="h,d,d",options="header"]
 |===
 |
 | Astra Control Service
