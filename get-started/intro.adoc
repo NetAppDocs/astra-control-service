@@ -104,9 +104,9 @@ At a high level, Astra Control Center works like this:
 
 * You install Astra Control Center in your local environment.
 * Astra Control Center does this:
-** Discovers your Kubernetes clusters.
-** Discovers your Trident configuration backed by an ONTAP storage backend.
-** Creates a new admin role.
+** Discovers details about your Kubernetes clusters.
+** Discovers your Trident configuration on the clusters that you choose to manage.
+** Discovers apps on those clusters and enables you to protect those apps.
 
 Learn more about how to https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html[install Astra Control Center^].
 
@@ -114,9 +114,9 @@ You complete some setup tasks such as these:
 
 * Set up licensing.
 * Add your first cluster.
-* Add backend storage.
+* Add backend storage that is discovered when you added the cluster.
 * Add an object store bucket that will store your app backups.
 
 Learn more about how to https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html[set up Astra Control Center^].
 
-At this point, you can add apps to your cluster. Some apps are pre-installed in the cluster being managed. Then, use Astra Control Center to manage these apps, and create snapshots, backups, and clones.
+You can add apps to your cluster. Or, if you have some apps already in the cluster being managed, you can use Astra Control Center to discover and manage them. Then, use Astra Control Center to create snapshots, backups, and clones.
