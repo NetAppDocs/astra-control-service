@@ -1,6 +1,8 @@
 section: learn
-title: Learn
+title: Concepts
 entries:
+  - title: Architecture and components
+    url: /learn/architecture.html
   - title: Storage for AKS clusters
     url: /learn/azure-storage.html
   - title: Storage for GKE clusters

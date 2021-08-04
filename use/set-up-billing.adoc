@@ -14,11 +14,15 @@ Astra Control's Free Plan enables you to manage up to 10 apps in your account. I
 
 == Billing overview
 
-Astra Control offers three plans:
+There are two types of costs associated with using Astra Control Service: charges from NetApp for the Astra Control Service and charges from your cloud provider for persistent volumes and object storage.
+
+=== Astra Control Service billing
+
+Astra Control Service offers three plans:
 
 Free Plan:: Manage up to 10 apps for free.
 Premium PayGo:: Manage an unlimited amount of apps at a rate of $.005 per minute, per app.
-Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra Control. If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
+Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra Control Service. If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
 +
 If you don't have an Astra Control account yet, purchasing the Premium Subscription automatically creates an Astra Control account for you. If you have an existing Free Plan, then you're automatically converted to the Premium Subscription.
 
@@ -26,9 +30,27 @@ When you create an Astra Control account, you're automatically signed up for the
 
 image:screenshot-dashboard.gif[]
 
-When you try to manage an 11th app, Astra Control notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to a Premium Plan.
+If you try to manage an 11th app, Astra Control notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to a Premium Plan.
 
-link:../get-started/intro.html[Learn more about Astra Control pricing].
+You can upgrade to a Premium Plan at any time. After you upgrade, Astra Control starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
+
+=== Google Cloud billing
+
+When you manage GKE clusters with Astra Control Service, persistent volumes are backed by NetApp Cloud Volumes Service and backups of your apps are stored in a Google Cloud Storage bucket.
+
+* https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs[View pricing details for Cloud Volumes Service^].
++
+Note that Astra Control Service supports all service types and service levels. The service type that you use depends on your https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region^].
+
+* https://cloud.google.com/storage/pricing[View pricing details for Google Cloud storage buckets^].
+
+=== Microsoft Azure billing
+
+When you manage AKS clusters with Astra Control Service, persistent volumes are backed by Azure NetApp Files and backups of your apps are stored in an Azure Blob container.
+
+* https://azure.microsoft.com/en-us/pricing/details/netapp[View pricing details for Azure NetApp Files^].
+
+* https://azure.microsoft.com/en-us/pricing/details/storage/blobs[View pricing details for Microsoft Azure Blob storage^].
 
 == Important notes
 
