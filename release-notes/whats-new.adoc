@@ -12,6 +12,22 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
+== 5 Aug 2021
+
+This release includes the following new features and enhancements.
+
+=== Astra Control Center
+
+Astra Control is now available in a new deployment model. _Astra Control Center_ is self-managed software that you install and operate in your data center so that you can manage Kubernetes application lifecycle management for on-premise Kubernetes clusters.
+
+https://docs.netapp.com/us-en/astra-control-center[Go to the Astra Control Center documentation to learn more^].
+
+=== Bring your own bucket
+
+You can now manage the buckets that Astra uses for backups and clones by adding additional buckets and by changing the default bucket for the Kubernetes clusters in your cloud provider.
+
+link:../use/manage-buckets.html[Learn more about managing buckets].
+
 == 2 June 2021
 
 This release includes bug fixes and the following enhancements to Google Cloud support.

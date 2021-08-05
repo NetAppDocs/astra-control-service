@@ -1,8 +1,10 @@
 section: get-started
 title: Get started
 entries:
-  - title: Intro to Astra Control Service
+  - title: Intro to Astra Control
     url: /get-started/intro.html
+  - title: Supported Kubernetes deployments
+    url: /get-started/supported-deployments.html
   - title: Quick start
     url: /get-started/quick-start.html
   - title: Set up your cloud provider
@@ -11,9 +13,9 @@ entries:
         url: /get-started/set-up-google-cloud.html
       - title: Set up Microsoft Azure
         url: /get-started/set-up-microsoft-azure.html
-  - title: Register for an Astra Control account
+  - title: Register for an account
     url: /get-started/register.html
-  - title: Manage compute from Astra Control
+  - title: Manage compute
     url: /get-started/add-first-cluster.html
   - title: What's next?
     url: /get-started/whats-next.html

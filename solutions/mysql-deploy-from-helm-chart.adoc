@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: solutions/mysql-deploy-from-helm-chart.html
-keywords: helm, mysql, helm chart, deploy mysql
+keywords: helm, mysql, helm chart, deploy mysql, astra, astra control, kubernetes
 summary: Learn how to deploy MySQL from the standard stable chart. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra Control.
 ---
 
@@ -14,19 +14,21 @@ Learn how to deploy MySQL from the https://github.com/helm/charts/tree/master/st
 
 MySQL is a validated app for Astra Control. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
-NOTE: Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
+These instructions apply to both Astra Control Service and Astra Control Center.
 
 == Requirements
 
-* A GKE cluster that has been added to Astra Control Service.
-* Updated versions of Helm (version 3.2+) and Kubectl installed.
-* Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
+* A cluster that has been added to Astra Control.
++
+NOTE: For Astra Control Center, you can add the cluster to Astra Control Center first or add the app first.
+
+* Updated versions of Helm (version 3.2+) and Kubectl installed on a local machine with the proper kubeconfig for the cluster
 
 == Install MySQL
 
 Two important notes on this process:
 
-* You must deploy your app after the cluster is added to Astra Control, not before.
+* You must deploy your app after the cluster is added to Astra Control Service, not before. Astra Control Center will accept applications before or after the cluster is added to Astra Control Center.
 * We recommend that you deploy the Helm chart in a namespace other than the default.
 
 Add the Bitnami chart repo:
@@ -38,16 +40,19 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 Deploy MySQL with the command:
 
 ----
-helm install mysql bitnami/mysql --namespace testdb --create-namespace --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8
+helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
 ----
+
+NOTE: If the volume size is changed, use Kibibyte (Ki), Mebibyte (Mi) or Gibibyte (Gi) units.
+
+You need to define the storage class only in these situations:
+
+*	You are using Astra Control Service and you don’t want to use the default storage class.
+*	You are using Astra Control Center and haven’t yet imported the cluster into Astra Control Center. Or, you have imported the cluster, but don't want to use the default storage class.
 
 This does the following:
 
-* Creates the `testdb` namespace.
-* Deploys MySQL on the `testdb` namespace.
-* Creates a database named `test_db`
-* Creates a user `test_db_user` with password `NKhjs2wQPt8`
-
-WARNING: This method of setting the password at deployment is insecure. We do not recommend this for a production environment.
+* Creates a namespace.
+* Deploys MySQL on the namespace.
 
 After the pods are online, you can manage the app with Astra Control. Astra Control allows you to manage an app with its name, at the namespace level, or by using a helm label.

@@ -21,6 +21,8 @@ entries:
         url: /use/view-clusters.html
       - title: App health and details
         url: /use/view-apps.html
+  - title: Manage buckets
+    url: /use/manage-buckets.html
   - title: Manage your account
     entries:
       - title: Set up billing
