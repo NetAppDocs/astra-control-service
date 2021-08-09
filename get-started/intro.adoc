@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: get-started/intro.html
 keywords: introduction, how astra works, how Astra works, what Astra is, concept, understanding, overview
-summary: Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
+summary: Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily protect, back up, and migrate Kubernetes workloads, and instantly create working application clones.
 ---
 
 = Intro to Astra Control
@@ -10,19 +10,18 @@ summary: Astra Control is a Kubernetes application data lifecycle management sol
 :icons: font
 :imagesdir: ../media/get-started/
 
-Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily back up Kubernetes apps, migrate data to a different cluster, and instantly create working application clones.
+Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily protect, back up, and migrate Kubernetes workloads, and instantly create working application clones.
 
 == Features
 
 Astra Control offers critical capabilities for Kubernetes application data lifecycle management:
 
-* Manage, protect, and migrate your Kubernetes applications
-* Manage persistent storage
+* Automatically manage persistent storage
+* Create application-aware, on-demand snapshots and backups
+* Automate policy-driven snapshot and backup operations
 * Migrate applications and data from one Kubernetes cluster to another
 * Easily clone an application from production to staging
-* Create application-aware, on-demand snapshots and backups
-* Clone and back up across clouds
-* Visualize the real-time protection status of your apps
+* Visualize application health and protection status
 * Use a user interface or an API to implement your backup and migration workflows
 
 == Deployment models
@@ -33,7 +32,7 @@ Astra Control is available in two deployment models:
 
 * *Astra Control Center*: Self-managed software that provides application-aware data management of Kubernetes clusters running in your on-premises environment.
 
-[cols=3*,cols="1h,2d,2d",options="header"]
+[cols=3*,options="header",cols="1h,2d,2d"]
 |===
 |
 | Astra Control Service
@@ -47,7 +46,9 @@ Astra Control is available in two deployment models:
 
 == Supported apps
 
-Astra Control supports all applications running on your Kubernetes clusters. NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups. link:../learn/validated-vs-standard.html[Learn the difference between a validated app and a standard app].
+Astra Control supports all applications running on your Kubernetes clusters. NetApp has validated some apps to ensure the safety and consistency of the snapshots and backups.
+
+link:../learn/validated-vs-standard.html[Learn the difference between a validated app and a standard app].
 
 No matter which type of app that you use with Astra Control, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
@@ -92,31 +93,31 @@ Astra Control Center runs locally in your own private cloud.
 
 For the first release, Astra Control Center will support OpenShift Kubernetes clusters and Trident storage backends with ONTAP 9.5 and above.
 
-In a cloud-connected environment, Astra Control Center uses Cloud Insights to provide advanced monitoring and telemetry. In the absence of a Cloud Insights connection, limited (7-days worth of metrics) monitoring and telemetry is available in Astra Control Center and also exported to Kubernetes native monitoring tools (such as Prometheus and Grafana) through open metrics end points.
+In a cloud connected environment Astra Control Center uses Cloud Insights to provide advanced monitoring and telemetry. In the absence of a Cloud Insights connection, limited (7-days of metrics) monitoring and telemetry is available in Astra Control Center and also exported to Kubernetes native monitoring tools (such as Prometheus and Grafana) through open metrics end points.
 
-Astra Control Center is fully integrated into the AutoSupport and Active IQ ecosystem to provide support and business users with troubleshooting and usage information.
+Astra Control Center is fully integrated into the AutoSupport and Active IQ ecosystem to provide users and NetApp support with troubleshooting and usage information.
 
 You can try Astra Control Center out using a 90-day evaluation license. The evaluation version is supported through email and community (Slack channel) options. Additionally, you have access to Knowledgebase articles and documentation from the in-product support dashboard.
 
-To install and use Astra Control Center, you'll need some prerequisites. Learn about the https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html[requirements^].
+To install and use Astra Control Center, you'll need to meet certain https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html[requirements^].
 
 At a high level, Astra Control Center works like this:
 
-* You install Astra Control Center in your local environment.
-* Astra Control Center does this:
-** Discovers details about your Kubernetes clusters.
-** Discovers your Trident configuration on the clusters that you choose to manage.
-** Discovers apps on those clusters and enables you to protect those apps.
+* You install Astra Control Center in your local environment. Learn more about how to https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html[install Astra Control Center^].
 
-Learn more about how to https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html[install Astra Control Center^].
+* You complete some setup tasks such as these:
 
-You complete some setup tasks such as these:
-
-* Set up licensing.
-* Add your first cluster.
-* Add backend storage that is discovered when you added the cluster.
-* Add an object store bucket that will store your app backups.
+** Set up licensing.
+** Add your first cluster.
+** Add backend storage that is discovered when you added the cluster.
+** Add an object store bucket that will store your app backups.
 
 Learn more about how to https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html[set up Astra Control Center^].
+
+Astra Control Center does this:
+
+* Discovers details about the managed Kubernetes clusters.
+* Discovers your Trident configuration on the clusters that you choose to manage and lets you monitor the storage backends.
+* Discovers apps on those clusters and enables you to manage and protect the apps.
 
 You can add apps to your cluster. Or, if you have some apps already in the cluster being managed, you can use Astra Control Center to discover and manage them. Then, use Astra Control Center to create snapshots, backups, and clones.
