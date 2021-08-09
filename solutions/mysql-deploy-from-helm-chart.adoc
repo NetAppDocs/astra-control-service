@@ -31,24 +31,27 @@ Two important notes on this process:
 * You must deploy your app after the cluster is added to Astra Control Service, not before. Astra Control Center will accept applications before or after the cluster is added to Astra Control Center.
 * We recommend that you deploy the Helm chart in a namespace other than the default.
 
-Add the Bitnami chart repo:
-
+.Steps
+. Add the Bitnami chart repo:
++
 ----
 helm repo add bitnami https://charts.bitnami.com/bitnami
 ----
 
-Deploy MySQL with the command:
-
+. Deploy MySQL with the command:
++
 ----
-helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
+Helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
 ----
-
++
 NOTE: If the volume size is changed, use Kibibyte (Ki), Mebibyte (Mi) or Gibibyte (Gi) units.
-
++
 You need to define the storage class only in these situations:
 
 *	You are using Astra Control Service and you don’t want to use the default storage class.
 *	You are using Astra Control Center and haven’t yet imported the cluster into Astra Control Center. Or, you have imported the cluster, but don't want to use the default storage class.
+
+.Result
 
 This does the following:
 
