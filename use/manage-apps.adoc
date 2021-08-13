@@ -30,7 +30,21 @@ For help with deploying common applications from Helm charts, refer to the follo
 
 == Manage apps
 
-Astra Control enables you to manage your apps at the namespace level or by Kubernetes label.
+When Astra Control discovers the apps running on your clusters, they are unmanaged until you choose how you want to manage them. A managed application in Astra Control can be any of the following:
+
+* A namespace, including all resources in that namespace
++
+image:diagram-managed-app1.png[A conceptual image that shows Astra managing all of the resources in a namespace.]
+
+* An individual application deployed with helm3 within a namespace
++
+image:diagram-managed-app2.png[A conceptual image that shows Astra managing an individual application deployed in a namespace that includes other applications.]
+
+* A group of resources that are identified by a Kubernetes label (this is called a _custom app_ in Astra Control)
++
+image:diagram-managed-app3.png[A conceptual image that shows Astra managing a custom app based on a Kubernetes label.]
+
+The sections below describe how to manage your apps using these options.
 
 === Manage apps by namespace
 
