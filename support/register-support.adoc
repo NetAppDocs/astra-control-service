@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: support/register-support.html
 keywords: support, register for support, support registration
-summary: Astra attempts to automatically register your account for support when you set up your account. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
+summary: Astra Control attempts to automatically register your account for support when you set up your account. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
 ---
 
 = Register for support
@@ -10,11 +10,11 @@ summary: Astra attempts to automatically register your account for support when 
 :icons: font
 :imagesdir: ../media/support/
 
-Astra attempts to automatically register your account for support when you set up your account. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
+Astra Control attempts to automatically register your account for support when you set up your account. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
 
 == Verify your support registration
 
-Astra includes a Support Status field that enables you to confirm your support registration.
+Astra Control includes a Support Status field that enables you to confirm your support registration.
 
 .Steps
 
@@ -24,21 +24,21 @@ Astra includes a Support Status field that enables you to confirm your support r
 +
 The Support Status starts off as "Not Registered" but then moves to "In-Progress" and finally to "Registered" once complete.
 +
-This support registration status is polled every 15 minutes. New NetApp customers could take up to next business day to complete onboarding and support registration. If the serial number doesn't show "Registered" within 48 hours, you can reach out to NetApp using astra.feedback@netapp.com or register manually from https://register.netapp.com. 
+This support registration status is polled every 15 minutes. New NetApp customers could take up to next business day to complete onboarding and support registration. If the serial number doesn't show "Registered" within 48 hours, you can reach out to NetApp using astra.feedback@netapp.com or register manually from https://register.netapp.com.
 
 == Obtain your serial number
 
-When you register for an account, Astra uses the information that you provided about your company to generate a 20-digit NetApp serial number that starts with "941."
+When you register for an account, Astra Control uses the information that you provided about your company to generate a 20-digit NetApp serial number that starts with "941."
 
-The NetApp serial number represents your Astra account. You'll need to use this serial number when opening a web ticket.
+The NetApp serial number represents your Astra Control account. You'll need to use this serial number when opening a web ticket.
 
-You can find your serial number in the Astra interface from the *Support* page.
+You can find your serial number in the Astra Control interface from the *Support* page.
 
 image:screenshot-support.gif[]
 
 == Activate support entitlement
 
-If Astra was unable to automatically register your account for support, then you must register the NetApp serial number associated with Astra to activate support entitlement. We offer 2 options for support registration:
+If Astra Control was unable to automatically register your account for support, then you must register the NetApp serial number associated with Astra Control to activate support entitlement. We offer 2 options for support registration:
 
 . Current NetApp customer with existing NetApp Support Site (NSS) SSO account
 . New NetApp customer with no existing NetApp Support Site (NSS) SSO account
@@ -101,4 +101,4 @@ This is a one-time support registration for the applicable serial number.
 
 . As a new NetApp customer, you also need to create a NetApp Support Site (NSS) user account for future support activations and for access to the support portal for technical support chat and web ticketing.
 +
-Go to the http://now.netapp.com/newuser/[NetApp Support Registration site^] to perform this task. You can provide your newly registered Astra serial number to expedite the process.
+Go to the http://now.netapp.com/newuser/[NetApp Support Registration site^] to perform this task. You can provide your newly registered Astra Control serial number to expedite the process.

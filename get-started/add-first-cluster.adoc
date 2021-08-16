@@ -2,28 +2,28 @@
 sidebar: sidebar
 permalink: get-started/add-first-cluster.html
 keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add compute
-summary: After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra.
+summary: After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
 ---
 
-= Start managing Kubernetes compute from Astra
+= Start managing Kubernetes compute from Astra Control Service
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
 [.lead]
-After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra.
+After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
 
 == Create a Kubernetes cluster
 
-If you don't have a cluster yet, create one that meets link:set-up-microsoft-azure.html#aks-cluster-requirements[Astra requirements for Azure Kubernetes Service (AKS)].
+If you don't have a cluster yet, create one that meets link:set-up-microsoft-azure.html#aks-cluster-requirements[Astra Control Service requirements for Azure Kubernetes Service (AKS)].
 
 == Start managing Kubernetes compute
 
-After you log in to Astra, your first step is to start managing compute.
+After you log in to Astra Control Service, your first step is to start managing compute.
 
 .What you'll need
 
-For AKS, you should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
+or AKS, you should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
 
 You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
 
@@ -35,7 +35,7 @@ Follow the prompts to add the compute.
 
 . *Provider*: Select your cloud provider and then provide the required credentials.
 
-.. *Microsoft Azure*: Provide Astra with details about your Azure service principal by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
+.. *Microsoft Azure*: Provide details about your Azure service principal by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
 +
 The JSON file should contain the output from the Azure CLI when you created the service principal. It can also include your subscription ID so it's automatically added to Astra. Otherwise, you need to manually enter the ID after providing the JSON.
 
@@ -45,9 +45,9 @@ Pay careful attention to the Eligible tab. If a warning appears, hover over the 
 
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this compute to use by default.
 +
-Each storage class utilizes https://azure.microsoft.com/services/netapp[Azure NetApp Files^].
+Each storage class utilizes https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
 +
-* link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
+link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
 
 . *Review & Approve*: Review the configuration details and click *Add compute*.
 +
@@ -55,4 +55,4 @@ image:screenshot-compute-approve.gif[]
 
 .Result
 
-Astra creates an object store for application backups, creates an admin account on the cluster, and sets the default storage class that you specified. This process can take up to 5 minutes.
+Astra Control Service creates an object store for application backups, creates an admin account on the cluster, and sets the default storage class that you specified. This process can take up to 5 minutes.

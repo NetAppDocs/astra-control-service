@@ -2,15 +2,51 @@
 sidebar: sidebar
 permalink: release-notes/whats-new.html
 keywords: what's new, bugs, bug fixes, new features, enhancements
-summary: NetApp periodically updates Astra to bring you new features, enhancements, and bug fixes.
+summary: NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 ---
 
-= What's new with Astra
+= What's new with Astra Control Service
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/release-notes/
 
-NetApp periodically updates Astra to bring you new features, enhancements, and bug fixes.
+NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
+
+== 5 Aug 2021
+
+This release includes the following new features and enhancements.
+
+=== Astra Control Center
+
+Astra Control is now available in a new deployment model. _Astra Control Center_ is self-managed software that you install and operate in your data center so that you can manage Kubernetes application lifecycle management for on-premise Kubernetes clusters.
+
+https://docs.netapp.com/us-en/astra-control-center[Go to the Astra Control Center documentation to learn more^].
+
+=== Bring your own bucket
+
+You can now manage the buckets that Astra uses for backups and clones by adding additional buckets and by changing the default bucket for the Kubernetes clusters in your cloud provider.
+
+link:../use/manage-buckets.html[Learn more about managing buckets].
+
+== 2 June 2021
+
+This release includes bug fixes and the following enhancements to Google Cloud support.
+
+=== Support for shared VPCs
+
+You can now manage GKE clusters in GCP projects with a shared VPC network configuration.
+
+=== Persistent volume size for the CVS service type
+
+Astra Control Service now creates persistent volumes with a minimum size of 300 GiB when using the CVS service type.
+
+link:../learn/choose-class-and-size.html[Learn how Astra Control Service uses Cloud Volumes Service for Google Cloud as the backend storage for persistent volumes].
+
+=== Support for Container-Optimized OS
+
+Container-Optimized OS is now supported with GKE worker nodes. This is in addition to support for Ubuntu.
+
+link:../get-started/set-up-google-cloud.html#gke-cluster-requirements[Learn more about GKE cluster requirements].
 
 == 15 Apr 2021
 
@@ -18,32 +54,25 @@ This release includes the following new features and enhancements.
 
 === Support for AKS clusters
 
-Astra can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS).
+Astra Control Service can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS).
 
 link:../get-started/set-up-microsoft-azure.html[Learn how to get started].
 
 === REST API
 
-The Astra REST API is now available for use. The API is based on modern technologies and current best practices.
+The Astra Control REST API is now available for use. The API is based on modern technologies and current best practices.
 
 https://docs.netapp.com/us-en/astra-automation[Learn how to automate application data lifecycle management using the REST API^].
 
 === Annual subscription
 
-Astra now offers a _Premium Subscription_.
+Astra Control Service now offers a _Premium Subscription_.
 
-Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra.
+Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra Control Service.
 
 If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
 
-link:../get-started/intro.html#pricing[Learn more about Astra pricing].
-
-=== Min volume size of 100 GiB
-
-Astra now creates Persistent Volumes with a minimum size of 100 GiB when using the CVS service type with GKE clusters. With this change, 100 GiB is now the default volume size for all types of backend storage (Google Cloud and Microsoft Azure).
-
-* link:../learn/choose-class-and-size.html[Learn more about storage for GKE clusters]
-* link:../learn/azure-storage.html[Learn more about storage for AKS clusters]
+link:../get-started/intro.html#pricing[Learn more about Astra Control Service pricing].
 
 === Namespace and app visualization
 
@@ -61,43 +90,43 @@ image:screenshot-protection-policy.gif[]
 
 === Activity enhancements
 
-We've made it easier to view details about the activities in your Astra account.
+We've made it easier to view details about the activities in your Astra Control account.
 
 * Filter the activity list by managed app, severity level, user, and time range.
-* Download your Astra account activity to a CSV file.
+* Download your Astra Control account activity to a CSV file.
 * View activities directly from the Compute page or the Apps page after selecting compute or an app.
 
 link:../use/view-account-activity.html[Learn more about viewing your account activity].
 
 == 1 Mar 2021
 
-Astra now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[_CVS_ service type^] with Cloud Volumes Service for Google Cloud. This is in addition to already supporting the _CVS-Performance_ service type. Just as a reminder, Astra uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes.
+Astra Control Service now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[_CVS_ service type^] with Cloud Volumes Service for Google Cloud. This is in addition to already supporting the _CVS-Performance_ service type. Just as a reminder, Astra Control Service uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes.
 
-This enhancement means that Astra can now manage app data for Kubernetes clusters that are running in _any_ https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region where Cloud Volumes Service is supported^].
+This enhancement means that Astra Control Service can now manage app data for Kubernetes clusters that are running in _any_ https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region where Cloud Volumes Service is supported^].
 
 If you have the flexibility to choose between Google Cloud regions, then you can pick either CVS or CVS-Performance, depending on your performance requirements. link:../learn/choose-class-and-size.html[Learn more about choosing a service type].
 
 == 25 Jan 2021
 
-We're pleased to announce that Astra is now Generally Available. We incorporated a lot of the feedback that we received from the Beta release and made a few other notable enhancements.
+We're pleased to announce that Astra Control Service is now Generally Available. We incorporated a lot of the feedback that we received from the Beta release and made a few other notable enhancements.
 
 * Billing is now available, which enables you to move from the Free Plan to the Premium Plan. link:../use/set-up-billing.html[Learn more about billing].
 
-* Astra now creates Persistent Volumes with a minimum size of 100 GiB when using the CVS-Performance service type.
+* Astra Control Service now creates Persistent Volumes with a minimum size of 100 GiB when using the CVS-Performance service type.
 
-* Astra can now discover apps faster.
+* Astra Control Service can now discover apps faster.
 
 * You can now create and delete accounts on your own.
 
-* We've improved notifications when Astra can no longer access Kubernetes compute.
+* We've improved notifications when Astra Control Service can no longer access Kubernetes compute.
 +
-These notifications are important because Astra can't manage apps for disconnected compute.
+These notifications are important because Astra Control Service can't manage apps for disconnected compute.
 
 == 17 Dec 2020 (Beta update)
 
 We primarily focused on bug fixes to improve your experience, but we made a few other notable enhancements:
 
-* When you add your first Kubernetes compute to Astra, the object store is now created in the geography where the cluster resides.
+* When you add your first Kubernetes compute to Astra Control Service, the object store is now created in the geography where the cluster resides.
 
 * Details about persistent volumes is now available when you view storage details at the compute level.
 +
@@ -107,8 +136,8 @@ image:screenshot-compute-pvs.gif[A screenshot of the persistent volumes that wer
 +
 image:screenshot-app-restore.gif[A screenshot of the Data protection tab for an app where you can click the action drop-down to select Restore application.]
 
-* If you delete a Kubernetes cluster that Astra is managing, the cluster now shows up in a *Removed* state. You can then remove the cluster from Astra.
+* If you delete a Kubernetes cluster that Astra Control Service is managing, the cluster now shows up in a *Removed* state. You can then remove the cluster from Astra Control Service.
 
 * Account owners can now modify the assigned roles for other users.
 
-* We added a section for billing, which will be enabled when Astra is released for General Availability (GA).
+* We added a section for billing, which will be enabled when Astra Control Service is released for General Availability (GA).

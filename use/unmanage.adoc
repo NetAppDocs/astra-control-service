@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/unmanage.html
 keywords: unmanage app, remove app, stop managing app, stop managing clusters, unmanage cluster, remove cluster
-summary: Remove any apps or compute that you no longer want to manage from Astra.
+summary: Remove any apps or compute that you no longer want to manage from Astra Control.
 ---
 
 = Unmanage apps and compute
@@ -10,11 +10,11 @@ summary: Remove any apps or compute that you no longer want to manage from Astra
 :icons: font
 :imagesdir: ../media/use/
 
-Remove any apps or compute that you no longer want to manage from Astra.
+Remove any apps or compute that you no longer want to manage from Astra Control.
 
 == Stop managing an app
 
-Stop managing apps that you no longer want to back up, snapshot, or clone from Astra.
+Stop managing apps that you no longer want to back up, snapshot, or clone from Astra Control.
 
 * Any existing backups and snapshots will be deleted.
 
@@ -32,13 +32,13 @@ Stop managing apps that you no longer want to back up, snapshot, or clone from A
 
 .Result
 
-Astra stops managing the app.
+Astra Control stops managing the app.
 
 == Stop managing compute
 
-Stop managing the compute that you no longer want to manage from Astra. As a best practice, we recommend that you remove compute from Astra before you delete it through your cloud provider.
+Stop managing the compute that you no longer want to manage from Astra Control. As a best practice, we recommend that you remove compute from Astra Control before you delete it through your cloud provider.
 
-* This action stops your compute from being managed by Astra. It doesn't make any changes to the cluster's configuration and it doesn't delete the cluster.
+* This action stops your compute from being managed by Astra Control. It doesn't make any changes to the cluster's configuration and it doesn't delete the cluster.
 
 * Trident won't be uninstalled from the cluster. https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[Learn how to uninstall Trident^].
 
@@ -54,7 +54,7 @@ Stop managing the compute that you no longer want to manage from Astra. As a bes
 
 .Result
 
-Astra stops managing the compute.
+Astra Control stops managing the compute.
 
 == Deleting clusters from your cloud provider
 
@@ -63,7 +63,7 @@ Before you delete a Kubernetes cluster that has persistent volumes (PV) residing
 * *Method #1*: Delete the application workload namespaces from the cluster. Do _not_ delete the Trident namespace.
 * *Method #2*: Delete the PVCs and the pods, or the deployment where the PVs are mounted.
 
-When you manage a Kubernetes cluster from Astra, applications on that cluster use Cloud Volumes Service or Azure NetApp Files as the backend storage for persistent volumes. If you delete the cluster from your cloud provider without first removing the PVs, the backend volumes are _not_ deleted along with the cluster.
+When you manage a Kubernetes cluster from Astra Control, applications on that cluster use Cloud Volumes Service or Azure NetApp Files as the backend storage for persistent volumes. If you delete the cluster from your cloud provider without first removing the PVs, the backend volumes are _not_ deleted along with the cluster.
 
 Using one of the above methods will delete the corresponding PVs from your cluster. Make sure that there are no PVs residing on NetApp storage classes on the cluster before you delete it.
 

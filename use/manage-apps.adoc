@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/manage-apps.html
 keywords: manage app, discover app, ignore app
-summary: After you add Kubernetes compute to Astra, you can install apps on that cluster (outside of Astra), and then go to the Apps page in Astra to start managing the apps.
+summary: After you add Kubernetes compute to Astra Control, you can install apps on that cluster (outside of Astra Control), and then go to the Apps page in Astra Control to start managing the apps.
 ---
 
 = Start managing apps
@@ -10,26 +10,33 @@ summary: After you add Kubernetes compute to Astra, you can install apps on that
 :icons: font
 :imagesdir: ../media/use/
 
-After you link:../get-started/add-first-cluster.html[add Kubernetes compute to Astra], you can install apps on the cluster (outside of Astra), and then go to the Apps page in Astra to start managing the apps.
+After you link:../get-started/add-first-cluster.html[add Kubernetes compute to Astra Control], you can install apps on the cluster (outside of Astra Control), and then go to the Apps page in Astra Control to start managing the apps.
 
 == Install apps on your cluster
 
-Now that you've added your compute to Astra, you can install apps on the cluster. Persistent volumes will be provisioned on the new storage classes by default. After the pods are online, you can manage the app with Astra.
+Now that you've added your compute to Astra Control, you can install apps on the cluster. Persistent volumes will be provisioned on the new storage classes by default. After the pods are online, you can manage the app with Astra Control.
 
-Astra will manage stateful apps only if the storage is on a storage class installed by Astra.
+Astra Control will manage stateful apps only if the storage is on a storage class installed by Astra Control.
 
 link:../learn/azure-storage.html[Learn about storage classes for AKS clusters]
 
-For help with deploying common applications from Helm charts, refer to the following:
-
-* link:../solutions/mariadb-deploy-from-helm-chart.html[Deploy MariaDB from a Helm chart]
-* link:../solutions/mysql-deploy-from-helm-chart.html[Deploy MySQL from a Helm chart]
-* link:../solutions/postgres-deploy-from-helm-chart.html[Deploy Postgres from a Helm chart]
-* link:../solutions/jenkins-deploy-from-helm-chart.html[Deploy Jenkins from a Helm chart]
-
 == Manage apps
 
-Astra enables you to manage your apps at the namespace level or by Kubernetes label.
+When Astra Control discovers the apps running on your clusters, they are unmanaged until you choose how you want to manage them. A managed application in Astra Control can be any of the following:
+
+* A namespace, including all resources in that namespace
++
+image:diagram-managed-app1.png[A conceptual image that shows Astra managing all of the resources in a namespace.]
+
+* An individual application deployed with helm3 within a namespace
++
+image:diagram-managed-app2.png[A conceptual image that shows Astra managing an individual application deployed in a namespace that includes other applications.]
+
+* A group of resources that are identified by a Kubernetes label (this is called a _custom app_ in Astra Control)
++
+image:diagram-managed-app3.png[A conceptual image that shows Astra managing a custom app based on a Kubernetes label.]
+
+The sections below describe how to manage your apps using these options.
 
 === Manage apps by namespace
 
@@ -37,7 +44,7 @@ The *Discovered* section of the Apps page shows namespaces and the Helm-installe
 
 For example, you might want to set a backup policy for "maria" that has a weekly cadence, but you might need to back up "mariadb" (which is in the same namespace) more frequently than that. Based on those needs, you would need to manage the apps separately and not under a single namespace.
 
-While Astra allows you to separately manage both levels of the hierarchy (the namespace and the apps in that namespace), the best practice is to choose one or the other. Actions that you take in Astra can fail if the actions take place at the same time at both the namespace and app level.
+While Astra Control allows you to separately manage both levels of the hierarchy (the namespace and the apps in that namespace), the best practice is to choose one or the other. Actions that you take in Astra Control can fail if the actions take place at the same time at both the namespace and app level.
 
 .Steps
 
@@ -47,7 +54,7 @@ image:screenshot-app-discovery.gif[]
 
 . View the list of discovered namespaces and expand a namespace to view the apps and associated resources.
 +
-Astra shows you Helm apps and custom-labeled apps in namespace. If Helm labels are available, they're designated with a tag icon.
+Astra Control shows you Helm apps and custom-labeled apps in namespace. If Helm labels are available, they're designated with a tag icon.
 +
 Here's an example with one app in a namespace:
 +
@@ -71,7 +78,7 @@ Apps that you chose to manage are now available from the *Managed* tab. Any igno
 
 === Manage apps by Kubernetes label
 
-Astra includes an action at the top of the Apps page named *Define custom app*. You can use this action to manage apps that are identified with a Kubernetes label. link:../learn/define-custom-app.html[Learn more about defining apps by Kubernetes label].
+Astra Control includes an action at the top of the Apps page named *Define custom app*. You can use this action to manage apps that are identified with a Kubernetes label. link:../learn/define-custom-app.html[Learn more about defining apps by Kubernetes label].
 
 .Steps
 
@@ -101,7 +108,7 @@ image:screenshot-view-labels.gif[]
 +
 image:screenshot-select-label.gif[]
 +
-After you choose a label, it displays in the *Label* field. Astra also updates the *Unselected Resources* section to show the resources that don't match the selected label.
+After you choose a label, it displays in the *Label* field. Astra Control also updates the *Unselected Resources* section to show the resources that don't match the selected label.
 
 .. *Unselected Resources*: Verify the app resources that you don't want to protect.
 +
@@ -111,11 +118,11 @@ image:screenshot-selected-label.gif[]
 
 .Result
 
-Astra enables management of the app. You can now find it in the *Managed* tab.
+Astra Control enables management of the app. You can now find it in the *Managed* tab.
 
 == What about system apps?
 
-Astra also discovers the system apps running on a Kubernetes cluster. You can view them by filtering the Apps list.
+Astra Control also discovers the system apps running on a Kubernetes cluster. You can view them by filtering the Apps list.
 
 image:screenshot-system-apps.gif[A screenshot that shows the Show System Apps option that is available when you click All Compute in the Apps screen.]
 

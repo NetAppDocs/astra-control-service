@@ -35,7 +35,7 @@ https://www.netapp.com/us/media/patents-page.pdf[^]
 
 https://www.netapp.com/us/legal/privacypolicy/index.aspx[^]
 
-== Astra API license
+== Astra Control API license
 
 https://docs.netapp.com/us-en/astra-automation/media/astra-api-license.pdf[^]
 

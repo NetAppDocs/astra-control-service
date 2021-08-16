@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/view-clusters.html
 keywords: view cluster, cluster storage, cluster overview
-summary: After you add Kubernetes compute to Astra, you can view details about the compute, such as its location, the worker nodes, persistent volumes, and storage classes.
+summary: After you add Kubernetes compute to Astra Control, you can view details about the compute, such as its location, the worker nodes, persistent volumes, and storage classes.
 ---
 
 = View the health and details of compute
@@ -11,7 +11,7 @@ summary: After you add Kubernetes compute to Astra, you can view details about t
 :imagesdir: ../media/use/
 
 [.lead]
-After you add Kubernetes compute to Astra, you can view details about the compute, such as its location, the worker nodes, persistent volumes, and storage classes.
+After you add Kubernetes compute to Astra Control, you can view details about the compute, such as its location, the worker nodes, persistent volumes, and storage classes.
 
 .Steps
 

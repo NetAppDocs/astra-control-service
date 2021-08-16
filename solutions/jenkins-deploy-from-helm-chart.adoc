@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: solutions/jenkins-deploy-from-helm-chart.html
-keywords: helm, jenkins, deploy apps, deploy jenkins, bitnami, helm chart
-summary: Learn how to deploy Jenkins from the Bitnami Helm chart. After you deploy Jenkins on your cluster, you can register the application with Astra.
+keywords: helm, jenkins, deploy apps, deploy jenkins, bitnami, helm chart, astra, astra control, kubernetes
+summary: Learn how to deploy Jenkins from the Bitnami Helm chart. After you deploy Jenkins on your cluster, you can register the application with Astra Control.
 ---
 
 = Deploy Jenkins from a Helm chart
@@ -10,44 +10,55 @@ summary: Learn how to deploy Jenkins from the Bitnami Helm chart. After you depl
 :icons: font
 :imagesdir: ../media/
 
-Learn how to deploy Jenkins from the Bitnami Helm chart. After you deploy Jenkins on your cluster, you can register the application with Astra.
+Learn how to deploy Jenkins from the Bitnami Helm chart. After you deploy Jenkins on your cluster, you can register the application with Astra Control.
 
-Jenkins is a validated app for Astra. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
+Jenkins is a validated app for Astra Control. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
-NOTE: Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
+These instructions apply to both Astra Control Service and Astra Control Center.
 
 == Requirements
 
-* A GKE cluster which has been added to Astra.
-* Updated versions of Helm (version 3.2+) and Kubectl installed.
-* Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
+* A cluster that has been added to Astra Control.
++
+NOTE: For Astra Control Center, you can add the cluster to Astra Control Center first or add the app first.
 
-Astra does not currently support the https://plugins.jenkins.io/kubernetes/[Kubernetes plugin for Jenkins]. You can run Jenkins in a Kubernetes cluster without the plugin. The plugin provides scalability to your Jenkins cluster.
+* Updated versions of Helm (version 3.2+) and Kubectl installed on a local machine with the proper kubeconfig for the cluster
 
+Astra Control does not currently support the https://plugins.jenkins.io/kubernetes/[Kubernetes plugin for Jenkins^]. You can run Jenkins in a Kubernetes cluster without the plugin. The plugin provides scalability to your Jenkins cluster.
 
 == Install Jenkins
 
 Two important notes on this process:
 
-* You must deploy your app after the cluster is added to Astra, not before.
+* You must deploy your app after the cluster is added to Astra Control Service, not before. Astra Control Center will accept applications before or after the cluster is added to Astra Control Center.
 * You must deploy the Helm chart in a namespace other than the default.
 
-Add the Bitnami chart repo:
+.Steps
 
+. Add the Bitnami chart repo:
++
 ----
 helm repo add bitnami https://charts.bitnami.com/bitnami
 ----
 
-Create the `jenkins` namespace and deploy Jenkins into it with the command:
+. Create the `jenkins` namespace and deploy Jenkins into it with the command:
++
+----
+Helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
+----
++
+NOTE: If the volume size is changed, use Kibibyte (Ki), Mebibyte (Mi) or Gibibyte (Gi) units.
++
+You need to define the storage class only in these situations:
 
-----
-kubectl create namespace jenkins && helm install jenkins --namespace jenkins --set persistence.storageClass=netapp-cvs-perf-premium,persistence.size=100Gi bitnami/jenkins
-----
+*	You are using Astra Control Service and you don’t want to use the default storage class.
+*	You are using Astra Control Center and haven’t yet imported the cluster into Astra Control Center. Or, you have imported the cluster, but don't want to use the default storage class.
+
+.Result
 
 This does the following:
 
-* Creates the `jenkins` namespace.
+* Creates a namespace.
 * Sets the correct storage class.
-* Sets the persistent volume storage size to 100Gi.
 
-After the pods are online, you can manage the app with Astra. Astra allows you to manage an app at the namespace level or using a helm label
+After the pods are online, you can manage the app with Astra Control. Astra Control enables you to manage an app at the namespace level or by using a helm label.

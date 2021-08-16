@@ -1,10 +1,10 @@
 sidebar:
   entries:
-    - title: Astra docs
+    - title: Astra Control Service docs
       url: /index.html
     - section: get-started
     - section: use
-    - title: Automate with REST
+    - title: Automate with the REST API
       url: /automation.html
     - section: learn
     - section: support
@@ -16,62 +16,65 @@ homepage:
     - title: Get started
       #image: ./media/outline_directions_run_black_18dp.png
       links:
-        - title: Learn about Astra
-          summary: Get an overview of Astra before you get started.
+        - title: Learn about Astra Control Service
           url: /get-started/intro.html
         - title: Quick start
-          summary: Get started quickly with Astra.
           url: /get-started/quick-start.html
         - title: FAQ
-          summary: Read frequently asked questions.
           url: /get-started/faq.html
-    - title: Use Astra
+    - title: Use Astra Control Service
       links:
         - title: Manage applications
-          summary: Start managing your apps from Astra.
           url: /use/manage-apps.html
         - title: Protect your apps
-          summary: Create recovery points for your apps in case of failure.
           url: /use/protect-apps.html
         - title: Migrate an app
-          summary: Migrate an app to another cluster.
           url: /use/clone-apps.html
         - title: Set up billing
-          summary: Set up billing for the Premium Plan.
           url: /use/set-up-billing.html
+    - title: Use the Astra REST API
+      links:
+        - title: Get started
+          url: https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html
+        - title: API reference
+          url: https://docs.netapp.com/us-en/astra-automation/reference/api_reference.html
+        - title: API workflows
+          url: https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html
     - title: Demos & tutorials
       links:
-        - title: Astra videos
-          summary: Watch videos that show how to use Astra.
+        - title: Astra Control Service videos
           url: /get-started/videos.html
+        - title: Deploy Jenkins
+          url: /solutions/jenkins-deploy-from-helm-chart.html
         - title: Deploy MariaDB
-          summary: Deploy MariaDB from a Helm chart and register it with Astra.
           url: /solutions/mariadb-deploy-from-helm-chart.html
         - title: Deploy MySQL
-          summary: Deploy MySQL from a Helm chart and register it with Astra.
           url: /solutions/mysql-deploy-from-helm-chart.html
+        - title: Deploy Postgres
+          url: /solutions/postgres-deploy-from-helm-chart.html
+    - title: Astra Control Center
+      links:
+        - title: Intro to Astra Control Center
+          url: https://docs.netapp.com/us-en/astra-control-center/concepts/intro.html
+        - title: What's new
+          url: https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html
+        - title: Quick start
+          url: https://docs.netapp.com/us-en/astra-control-center/get-started/quick-start.html
     - title: Solution briefs
       links:
-        - title: DataStax Enterprise & Apache Cassandra with Astra
-          summary: Full lifecycle management in a cloud-native Kubernetes environment.
+        - title: DataStax Enterprise & Apache Cassandra with Astra Control
           url: https://cloud.netapp.com/hubfs/SB-4134-0321-DataStax-Cassandra-Guide%20(1).pdf
-        - title: PostgreSQL DBaaS with Astra
-          summary: Use Astra to simplify day 2 operations of DBaaS for PostgreSQL.
+        - title: PostgreSQL DBaaS with Astra Control
           url: https://cloud.netapp.com/hubfs/SB-4122-0221-PostgresSQL-DBaaS-with-Astra%20(2).pdf
-        - title: MySQL DBaaS with Astra
-          summary: Use Astra to simplify day 2 operations of DBaaS for MySQL.
+        - title: MySQL DBaaS with Astra Control
           url: https://cloud.netapp.com/hubfs/SB-4110-0221-MySQL-Astra%20(2).pdf
         - title: Simplify Jenkins lifecycle management
-          summary: Deliver data protection and portability to Jenkins on GKE.
           url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
     - title: Blogs & community
       links:
-        - title: Slack
-          summary: Ask questions, exchange ideas, and share best practices.
+        - title: Slack channel
           url: https://netapppub.slack.com/#astra
-        - title: Astra - A data management service for Kubernetes
-          summary: How Astra manages, protects, and moves Kubernetes data-rich containerized workloads.
-          url: https://cloud.netapp.com/blog/blg-astra-data-management-services-for-kubernetes-applications
-        - title: Kubernetes Hub
-          summary: A curated collection of blog postings about Kubernetes and persistent storage.
+        - title: Astra Control – Simplifying app data management for the hybrid cloud
+          url: https://cloud.netapp.com/blog/blg-astra-control-simplifying-kubernetes-application-data-management-for-the-hybrid-cloud
+        - title: Kubernetes Hub on Cloud Central
           url: https://cloud.netapp.com/kubernetes-hub

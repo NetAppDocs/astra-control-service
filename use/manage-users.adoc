@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/manage-users.html
 keywords: invite users, add users, remove users, delete users
-summary: Invite users to join your Astra account and remove users that should no longer have access to your account.
+summary: Invite users to join your Astra Control account and remove users that should no longer have access to your account.
 ---
 
 = Invite and remove users
@@ -10,11 +10,11 @@ summary: Invite users to join your Astra account and remove users that should no
 :icons: font
 :imagesdir: ../media/use/
 
-Invite users to join your Astra account and remove users that should no longer have access to the account.
+Invite users to join your Astra Control account and remove users that should no longer have access to the account.
 
 == Invite users
 
-Account Owners and Admins can invite other users to join the Astra account.
+Account Owners and Admins can invite other users to join the Astra Control account.
 
 .Steps
 
@@ -57,7 +57,7 @@ An Account Owner can change the role of all users, while an Account Admin can ch
 
 .Result
 
-Astra updates the user's permissions based on the new role that you selected.
+Astra Control updates the user's permissions based on the new role that you selected.
 
 == Remove users
 
@@ -75,4 +75,4 @@ An Account Owner can remove other users from the account at any time.
 
 .Result
 
-Astra removes the user from the account.
+Astra Control removes the user from the account.

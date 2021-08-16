@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: solutions/mariadb-deploy-from-helm-chart.html
-keywords: helm chart, mariadb, deploy mariadb, helm chart, bitnami
-summary: Learn how to deploy MariaDB from the Bitnami Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra.
+keywords: helm chart, mariadb, deploy mariadb, helm chart, bitnami, astra, astra control, kubernetes
+summary: Learn how to deploy MariaDB from the Bitnami Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra Control.
 ---
 
 = Deploy MariaDB from a Helm chart
@@ -10,44 +10,56 @@ summary: Learn how to deploy MariaDB from the Bitnami Helm chart. After you depl
 :icons: font
 :imagesdir: ../media/
 
-Learn how to deploy MariaDB from the Bitnami Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra.
+Learn how to deploy MariaDB from the Bitnami Helm chart. After you deploy MariaDB on your cluster, you can manage the application with Astra Control.
 
 MariaDB is a validated app for Astra. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
-NOTE: Applications deployed from Google Marketplace have not been validated. Some users report issues with discovery and/or backup with Google Marketplace deployments of Postgres, MariaDB, and MySQL.
+These instructions apply to both Astra Control Service and Astra Control Center.
 
 == Requirements
 
-* A GKE cluster which has been added to Astra.
-* Updated versions of Helm (version 3.2+) and Kubectl installed.
-* Kubeconfig configured using the gcloud tool with a command like `gcloud container clusters get-credentials my-cluster-name`
+* A cluster that has been added to Astra Control.
++
+NOTE: For Astra Control Center, you can add the cluster to Astra Control Center first or add the app first.
+
+* Updated versions of Helm (version 3.2+) and Kubectl installed on a local machine with the proper kubeconfig for the cluster
 
 == Install MariaDB
 
 Two important notes on this process:
 
-* You must deploy your app after the cluster is added to Astra, not before.
+* You must deploy your app after the cluster is added to Astra Control Service, not before. Astra Control Center will accept applications before or after the cluster is added to Astra Control Center.
 * You must deploy the Helm chart in a namespace other than the default.
 
-Add the Bitnami chart repo:
-
+.Steps
+. Add the Bitnami chart repo:
++
 ----
 helm repo add bitnami https://charts.bitnami.com/bitnami
 ----
 
-Deploy MariaDB with the command:
+. Deploy MariaDB with the command:
++
+----
+Helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
+----
+// helm install mariadb bitnami/mariadb --namespace testdb --create-namespace --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8 > /dev/null 2>&1
++
+NOTE: If the volume size is changed, use Kibibyte (Ki), Mebibyte (Mi) or Gibibyte (Gi) units.
++
+You need to define the storage class only in these situations:
 
-----
-helm install mariadb bitnami/mariadb --namespace testdb --create-namespace --set db.database=test_db,db.user=test_db_user,db.password=NKhjs2wQPt8 > /dev/null 2>&1
-----
+*	You are using Astra Control Service and you don’t want to use the default storage class.
+*	You are using Astra Control Center and haven’t yet imported the cluster into Astra Control Center. Or, you have imported the cluster, but don't want to use the default storage class.
+
+.Result
 
 This does the following:
 
-* Creates the `testdb` namespace.
-* Deploys MariaDB on the `testdb` namespace.
-* Creates a database named `test_db`
-* Creates a user `test_db_user` with password `NKhjs2wQPt8`
+* Creates a namespace.
+* Deploys MariaDB on the namespace.
+* Creates a database.
 
 WARNING: This method of setting the password at deployment is insecure. We do not recommend this for a production environment.
 
-After the pods are online, you can manage the app with Astra. Astra allows you to manage an app at the namespace level or using a helm label
+After the pods are online, you can manage the app with Astra Control. Astra Control enables you to manage an app at the namespace level or by using a helm label.
