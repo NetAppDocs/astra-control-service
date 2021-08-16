@@ -16,7 +16,7 @@ You must first link:register-support.html[activate support for your NetApp seria
 
 You can access support options from the Astra Control UI by selecting the *Support* tab from the main menu.
 
-image:screenshot-support.gif[]
+image:screenshot-support.gif[A screenshot of the Support page in Astra Control where you can view resources to get help and to contact NetApp.]
 
 == Self support
 
@@ -48,7 +48,7 @@ Select *Cloud Data Services > Astra*.
 
 Use your "941" serial number to open the web ticket. link:register-support.html[Learn more about your serial number].
 
-image:screenshot-web-ticket.gif[]
+image:screenshot-web-ticket.gif["A screenshot of a web ticket on the NetApp Support Site, which requires you to select a system, enter your problem details, and provide your contact information."]
 
 //* https://www.netapp.com/us/contact-us/support.aspx[Phone]
 //+

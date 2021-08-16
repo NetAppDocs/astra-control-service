@@ -220,7 +220,7 @@ After this step, you'll only need to enter your networking information to obtain
 +
 If you haven't set up network peering, you'll see the following notification:
 +
-image:gcp-peering.gif[]
+image:gcp-peering.gif[A screenshot of the Google Cloud console where a button titled View Commands How to Set Up Network Peering appears.]
 
 . Click the button to view the network peering set up commands.
 
