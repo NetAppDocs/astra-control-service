@@ -34,8 +34,6 @@ If you try to manage an 11th app, Astra Control notifies you that you've reached
 
 You can upgrade to a Premium Plan at any time. After you upgrade, Astra Control starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
 
-* https://cloud.google.com/storage/pricing[View pricing details for Google Cloud storage buckets^].
-
 === Microsoft Azure billing
 
 When you manage AKS clusters with Astra Control Service, persistent volumes are backed by Azure NetApp Files and backups of your apps are stored in an Azure Blob container.
