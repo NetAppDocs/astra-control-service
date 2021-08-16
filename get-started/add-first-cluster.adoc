@@ -58,7 +58,7 @@ Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-g
 
 . *Review & Approve*: Review the configuration details and click *Add compute*.
 +
-image:screenshot-compute-approve.gif[]
+image:screenshot-compute-approve.gif["A screenshot that shows the Review & Approve page, which provides a summary of the configuration that you chose for the managed app."]
 
 The following video shows each of these steps for a GKE cluster.
 
