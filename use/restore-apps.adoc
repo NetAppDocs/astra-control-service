@@ -37,7 +37,7 @@ image:screenshot-restore-app.gif["A screenshot of the app page where you can cli
 
 . *Restore Summary*: Review details about the restore action and click *Restore App*.
 +
-image:screenshot-restore-summary.gif[]
+image:screenshot-restore-summary.gif[A screenshot of the Restore Application page which enables you to review information about the restore action.]
 
 .Result
 

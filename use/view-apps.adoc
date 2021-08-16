@@ -13,7 +13,7 @@ summary: After you start managing an app, Astra Control provides details about t
 [.lead]
 After you start managing an app, Astra Control provides details about the app that enables you to identify its status (whether it's healthy), its protection status (whether it's fully protected in case of failure), the pods, persistent storage, and more.
 
-image:screenshot-app-overview.gif[]
+image:screenshot-app-overview.gif["A screenshot of the Overview page for an app where you can view details such as the app status, app protection status, protection schedule, and more."]
 
 .Steps
 

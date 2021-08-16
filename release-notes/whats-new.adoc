@@ -80,13 +80,13 @@ We enhanced the Discovered Apps page to better show the hierarchy between namesp
 
 link:../use/manage-apps.html[Learn more about managing apps].
 
-image:screenshot-group.gif[]
+image:screenshot-group.gif[A screenshot of the Apps page with the Discovered tab selected.]
 
 === User interface enhancements
 
 Data protection wizards were enhanced for ease of use. For example, we refined the Protection Policy wizard to more easily view the protection schedule as you define it.
 
-image:screenshot-protection-policy.gif[]
+image:screenshot-protection-policy.gif["A screenshot of the Configure Protection Policy dialog box where you can enable Hourly, Daily, Weekly, and Monthly schedules."]
 
 === Activity enhancements
 
