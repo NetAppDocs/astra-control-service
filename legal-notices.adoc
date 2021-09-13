@@ -12,6 +12,10 @@ summary: Legal notices provide access to copyright statements, trademarks, paten
 :linkattrs:
 :imagesdir: ./media/
 
+// Include the common notices 
+include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/common-legal-notices.adoc[]
+
+////
 [.lead]
 Legal notices provide access to copyright statements, trademarks, patents, and more.
 
@@ -44,3 +48,4 @@ https://docs.netapp.com/us-en/astra-automation/media/astra-api-license.pdf[^]
 Notice files provide information about third-party copyright and licenses used in NetApp software.
 
 link:media/notice.pdf[Notice for Astra^]
+////
