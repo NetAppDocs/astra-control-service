@@ -12,7 +12,7 @@ summary: Here's an overview of the various components of the Astra Control envir
 
 Here's an overview of the various components of the Astra Control environment.
 
-image:architecture.png[Astra Control architecture diagram and components]
+image:astra-cc-arch2.png[Astra Control architecture diagram and components]
 
 == Astra Control components
 
