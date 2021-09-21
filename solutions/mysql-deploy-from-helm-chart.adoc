@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: solutions/mysql-deploy-from-helm-chart.html
 keywords: helm, mysql, helm chart, deploy mysql, astra, astra control, kubernetes
-summary: Learn how to deploy MySQL from the standard stable chart. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra Control.
+summary: Learn how to deploy MySQL from the https://bitnami.com/stack/mysql/helm[Bitnami Helm chart^]. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra Control.
 ---
 
 = Deploy MySQL from a Helm chart
@@ -10,7 +10,7 @@ summary: Learn how to deploy MySQL from the standard stable chart. After you dep
 :icons: font
 :imagesdir: ../media/
 
-Learn how to deploy MySQL from the https://github.com/helm/charts/tree/master/stable/mysql[standard stable chart^]. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra Control.
+Learn how to deploy MySQL from the https://bitnami.com/stack/mysql/helm[Bitnami Helm chart^]. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra Control.
 
 MySQL is a validated app for Astra Control. link:../learn/validated-vs-standard.html[Learn the difference between Validated and Standard apps].
 
