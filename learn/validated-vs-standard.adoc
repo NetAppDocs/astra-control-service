@@ -5,5 +5,6 @@ keywords: supported apps
 summary: There are two types of applications you can bring to Astra Control, Validated and Standard. Learn the difference between these two categories, and the potential impacts on your projects and strategy.
 ---
 
-// Include from ACC internal repo
+= Validated vs standard apps
+
 include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-validated-vs-standard.adoc[]
