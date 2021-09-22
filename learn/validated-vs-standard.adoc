@@ -7,5 +7,4 @@ summary: There are two types of applications you can bring to Astra Control, Val
 
 = Validated vs standard apps
 
-
-include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-validated-vs-standard.adoc[]
+include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center-internal/main/_include/source-validated-vs-standard.adoc[]
