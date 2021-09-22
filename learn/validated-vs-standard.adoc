@@ -6,4 +6,4 @@ summary: There are two types of applications you can bring to Astra Control, Val
 ---
 
 // Include from ACC internal repo
-include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center-internal/main/_include/source-validated-vs-standard.adoc[]
+include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center-internal/acc_q3_includes_amg/_include/source-validated-vs-standard.adoc[]
