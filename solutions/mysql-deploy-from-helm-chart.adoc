@@ -5,7 +5,7 @@ keywords: helm, mysql, helm chart, deploy mysql, astra, astra control, kubernete
 summary: Learn how to deploy MySQL from the Bitnami Helm chart. After you deploy MySQL on your Kubernetes cluster, you can manage the application with Astra Control.
 ---
 
-= Deploy MySQL from a Helm chart
+= Deploy MySQL from a Helm chart 
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
