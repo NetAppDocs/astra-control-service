@@ -6,5 +6,5 @@ summary: Learn how to deploy Jenkins from the Bitnami Helm chart. After you depl
 ---
 = Deploy Jenkins from a Helm chart
 
-
+//Remote includes from ACC repo
 include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-jenkins-deploy-from-helm-chart.adoc[]
