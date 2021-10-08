@@ -10,5 +10,5 @@ summary: Learn how to deploy MariaDB from the Bitnami Helm chart. After you depl
 :icons: font
 :imagesdir: ../media/
 
-//Remote includes from ACC repo
+//Remote includes from the ACC repo
 include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-mariadb-deploy-from-helm-chart.adoc[]
