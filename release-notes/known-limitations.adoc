@@ -20,9 +20,9 @@ The following limitations affect Astra Control Service's management of Kubernete
 
 If a managed app has pods in an unhealthy state, Astra Control Service can't create new backups and clones.
 
-=== Trident isn't uninstalled from a cluster
+=== Astra Trident isn't uninstalled from a cluster
 
-When you unmanage a cluster from Astra Control Service, Trident isn't automatically uninstalled from the cluster. To uninstall Trident, you'll need to https://netapp-trident.readthedocs.io/en/latest/kubernetes/operations/tasks/managing.html#uninstalling-trident[follow these steps in the Trident documentation^].
+When you unmanage a cluster from Astra Control Service, Astra Trident isn't automatically uninstalled from the cluster. To uninstall Astra Trident, you'll need to https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html[follow these steps in the Astra Trident documentation^].
 
 === Existing connections to a Postgres pod causes failures
 
