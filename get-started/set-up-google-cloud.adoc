@@ -19,7 +19,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review Astra Control Service requirements for Google Kubernetes Engine
 
 [role="quick-margin-para"]
-Ensure that clusters are healthy and running a Kubernetes version in the range of 1.17 to 1.20, that worker nodes are online and running Container-Optimized OS or Ubuntu, and more. <<GKE cluster requirements,Learn more about this step>>.
+Ensure that clusters are healthy and running a Kubernetes version in the range of 1.18 to 1.20, that worker nodes are online and running Container-Optimized OS or Ubuntu, and more. <<GKE cluster requirements,Learn more about this step>>.
 
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Purchase Cloud Volumes Service for Google Cloud
 
@@ -78,9 +78,12 @@ image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud pr
 
 A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service.
 
-Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.17 to 1.20.
+Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.18 to 1.20.
 
-Image type:: The image type for each worker node must be Container-Optimized OS or Ubuntu.
+Image type:: The image type for each worker node must be one of the following:
+* Container-Optimized OS with containderd
+* Container-Optimized OS with Docker
+* Ubuntu with Docker
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
 
