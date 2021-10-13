@@ -16,17 +16,17 @@ A few steps are required to prepare your Google Cloud project before you can man
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Review Astra Control Service requirements for Google Kubernetes Engine
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review Astra Control Service requirements for Google Kubernetes Engine
 
 [role="quick-margin-para"]
 Ensure that clusters are healthy and running a Kubernetes version in the range of 1.17 to 1.20, that worker nodes are online and running Container-Optimized OS or Ubuntu, and more. <<GKE cluster requirements,Learn more about this step>>.
 
-==== image:number2.png[Number 2] Purchase Cloud Volumes Service for Google Cloud
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Purchase Cloud Volumes Service for Google Cloud
 
 [role="quick-margin-para"]
 Go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and click Purchase. <<Purchase Cloud Volumes Service for Google Cloud,Learn more about this step>>.
 
-==== image:number3.png[Number 3] Enable APIs in your Google Cloud project
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enable APIs in your Google Cloud project
 
 [role="quick-margin-para"]
 Enable the following Google Cloud APIs:
@@ -45,7 +45,7 @@ Enable the following Google Cloud APIs:
 [role="quick-margin-para"]
 <<Enable APIs in your project,Follow step-by-step instructions>>.
 
-==== image:number4.png[Number 4] Create a service account that has the required permissions
+==== image:image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Create a service account that has the required permissions
 
 [role="quick-margin-para"]
 Create a Google Cloud service account that has the following permissions:
@@ -60,12 +60,12 @@ Create a Google Cloud service account that has the following permissions:
 [role="quick-margin-para"]
 <<Create a service account,Read step-by-step instructions>>.
 
-==== image:number5.png[Number 5] Create a service account key
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Create a service account key
 
 [role="quick-margin-para"]
 Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
 
-==== image:number6.png[Number 6] Set up network peering for your VPC
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Set up network peering for your VPC
 
 [role="quick-margin-para"]
 Set up network peering from your VPC to Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC,Follow step-by-step instructions>>.
