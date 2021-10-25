@@ -182,7 +182,7 @@ The following steps assume that you have permission to create a service principa
 
 *	The service principal must use regular authentication. Certificates aren't supported.
 *	The service principal must be granted Contributor or Owner access to your Azure subscription.
-* The Azure subscription must contain the AKS clusters and your Azure NetApp Files account.
+* The subscription or resource group you choose for scope must contain the AKS clusters and your Azure NetApp Files account.
 
 .Steps
 
@@ -192,10 +192,17 @@ The following steps assume that you have permission to create a service principa
 az configure --list-defaults
 az account list --output table
 
-. Create the service principal, assign the Contributor role, and specify the scope to the entire subscription where the clusters reside.
+. Do one of the following, depending on if you use a subscription or a resource group:
+
+* Create the service principal, assign the Contributor role, and specify the scope to the entire subscription where the clusters reside.
 +
 [source,azurecli]
 az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
+
+* Create the service principal, assign the Contributor role, and specify the resource group where the clusters reside.
++
+[source,azurecli]
+az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/RESOURCE-GROUP-ID
 
 . Store the resulting Azure CLI output as a JSON file.
 +
