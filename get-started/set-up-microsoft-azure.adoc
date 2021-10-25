@@ -192,7 +192,7 @@ The following steps assume that you have permission to create a service principa
 az configure --list-defaults
 az account list --output table
 
-. Do one of the following, depending on if you use a subscription or a resource group:
+. Do one of the following, depending on if you use an entire subscription or a resource group:
 
 * Create the service principal, assign the Contributor role, and specify the scope to the entire subscription where the clusters reside.
 +
@@ -224,7 +224,7 @@ Otherwise, you'll need to enter the subscription ID in Astra Control Service whe
   "subscriptionId": "99ce999a-8c99-99d9-a9d9-99cce99f99ad"
 }
 
-. Optional: Test your service principal.
+. Optional: Test your service principal. Replace SUBSCRIPTION-ID with the ID of the resource group if you created the service principal with resource group scope.
 +
 [source,azurecli]
 az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
