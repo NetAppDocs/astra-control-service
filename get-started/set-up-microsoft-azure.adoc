@@ -202,7 +202,7 @@ az ad sp create-for-rbac --name http://sp-astra-service-principal --role contrib
 * Create the service principal, assign the Contributor role, and specify the resource group where the clusters reside.
 +
 [source,azurecli]
-az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/RESOURCE-GROUP-ID
+az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID/resourceGroups/RESOURCE-GROUP-ID
 
 . Store the resulting Azure CLI output as a JSON file.
 +
@@ -224,10 +224,14 @@ Otherwise, you'll need to enter the subscription ID in Astra Control Service whe
   "subscriptionId": "99ce999a-8c99-99d9-a9d9-99cce99f99ad"
 }
 
-. Optional: Test your service principal. Replace SUBSCRIPTION-ID with the ID of the resource group if you created the service principal with resource group scope.
+. Optional: Test your service principal. Choose from the following example commands depending on the scope your service principal uses.
 +
-[source,azurecli]
+[source,azurecli with subscription scope]
 az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
 az group list --subscription SUBSCRIPTION-ID
 az aks list --subscription SUBSCRIPTION-ID
 az storage container list --subscription SUBSCRIPTION-ID
++
+[source,azurecli with resource group scope]
+az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
+az aks list --subscription SUBSCRIPTION-ID --resource-group RESOURCE-GROUP-ID
