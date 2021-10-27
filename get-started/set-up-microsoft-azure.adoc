@@ -226,12 +226,14 @@ Otherwise, you'll need to enter the subscription ID in Astra Control Service whe
 
 . Optional: Test your service principal. Choose from the following example commands depending on the scope your service principal uses.
 +
-[source,azurecli with subscription scope]
+.Subscription scope
+[source,azurecli]
 az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
 az group list --subscription SUBSCRIPTION-ID
 az aks list --subscription SUBSCRIPTION-ID
 az storage container list --subscription SUBSCRIPTION-ID
 +
-[source,azurecli with resource group scope]
+.Resource group scope
+[source,azurecli]
 az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
 az aks list --subscription SUBSCRIPTION-ID --resource-group RESOURCE-GROUP-ID
