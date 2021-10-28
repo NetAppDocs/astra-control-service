@@ -63,8 +63,18 @@ This instructs the hook to act only on the specified snapshot image.
 === Hook examples
 Use the following examples to get an idea of how to structure your scripts.
 
+== Disable an execution hook
+If you want to temporarily prevent an execution hook from running during snapshots of an app, you can disable it.
+
+.Steps
+
+. Click *Apps* and then click the name of a managed app.
+. Click the *Execution hooks* tab.
+. Select the *Actions* dropdown for a hook that you wish to delete.
+. Select *Disable*.
+
 == Delete an execution hook
-You can remove an execution hook if you no longer need it.
+You can remove an execution hook entirely if you no longer need it.
 
 .Steps
 
