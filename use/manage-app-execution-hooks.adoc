@@ -9,3 +9,40 @@ summary: Clone an existing app to create a duplicate app on the same Kubernetes 
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/use/
+
+For managed apps, you can create and manage scripts that run before or after snapshots of the app. For example, if you have a database app, you might need to pause all transactions before taking a snapshot of the database and its data, and resume transactions after the snapshot is complete.
+
+== Create a custom execution hook
+You can create an execution hook. For some apps, Astra Control comes with default execution hooks that you can use or disable. You cannot modify NetApp-provided execution hooks.
+
+.Steps
+
+. Click *Apps* and then click the name of a managed app.
+. Click the *Execution hooks* tab.
+. Click *Add a new hook*.
+. Depending on when the hook should run, choose *Pre-Snapshot* or *Post-Snapshot*.
+. Enter a name for the hook.
+. (Optional) Enter any arguments to pass to the hook during execution.
+. (Optional) Enter any container image names the hook should run for.
++
+This instructs the hook to act only on the specified snapshot image.
+. Do one of the following:
+* Upload a custom script.
+.. Select the *Upload file* option.
+.. Browse to a file and upload it.
+.. Give the script a name.
+.. (Optional) Enter any notes other administrators should know about the script.
+* Paste in a custom script from the clipboard
+.. Select the *Paste from clipboard* option.
+.. Click the text field and paste the script text into the field.
+.. Give the script a name.
+.. (Optional) Enter any notes other administrators should know about the script.
+. Click *Add hook*.
+
+
+
+=== Hook examples
+Use the following examples to get an idea of how to structure your scripts.
+
+== Delete an execution hook
+You can remove an execution hook if you no longer need it.
