@@ -12,7 +12,7 @@ summary: Clone an existing app to create a duplicate app on the same Kubernetes 
 
 For managed apps, you can create and manage scripts that run before or after snapshots of the app. For example, if you have a database app, you might need to pause all transactions before taking a snapshot of the database and its data, and resume transactions after the snapshot is complete.
 
-For validated apps, Astra Control comes with default execution hooks that handle freeze and thaw operations to ensure application-consistent snapshots. You can use these provided hooks, or disable them and use your own. You cannot delete or modify NetApp-provided execution hooks.
+For validated apps, Astra Control comes with default execution hooks that handle freeze and thaw operations to ensure application-consistent snapshots. You can use these NetApp-provided hooks, or disable them and use your own. You cannot delete or modify NetApp-provided execution hooks.
 
 == Important notes about execution hooks
 Keep the following points in mind when planning execution hooks for your apps.
@@ -25,11 +25,11 @@ Keep the following points in mind when planning execution hooks for your apps.
 * Scripts that run with Member and Viewer privileges can view only.
 
 When a snapshot is run, execution hook events take place in the following order:
-. Any applicable NetApp pre-snapshot execution hooks are run on the appropriate containers.
+. Any applicable NetApp-provided pre-snapshot execution hooks are run on the appropriate containers.
 . Any applicable custom pre-snapshot execution hooks are run on the appropriate containers. You can create and run as many custom pre-snapshot hooks as you need, but the order of execution of these hooks before the snapshot is not guaranteed or configurable.
 . The snapshot is performed.
 . Any applicable custom post-snapshot execution hooks are run on the appropriate containers. You can create and run as many custom post-snapshot hooks as you need, but the order of execution of these hooks after the snapshot is not guaranteed or configurable.
-. Any applicable NetApp post-snapshot execution hooks are run on the appropriate containers.
+. Any applicable NetApp-provided post-snapshot execution hooks are run on the appropriate containers.
 
 == Create a custom execution hook
 You can create a custom execution hook for an app.
