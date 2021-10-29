@@ -32,6 +32,16 @@ When a snapshot is run, execution hook events take place in the following order:
 . Any applicable custom post-snapshot execution hooks are run on the appropriate containers. You can create and run as many custom post-snapshot hooks as you need, but the order of execution of these hooks after the snapshot is neither guaranteed nor configurable.
 . Any applicable NetApp-provided post-snapshot execution hooks are run on the appropriate containers.
 
+== View existing execution hooks
+You can view existing custom or NetApp-provided execution hooks for an app.
+
+.Steps
+
+. Go to *Apps* and then click the name of a managed app.
+. Click the *Execution hooks* tab.
++
+You can view all enabled or disabled execution hooks in the resulting list. You can see a hook's status, source, and when it runs (pre- or post-snapshot). To view event logs surrounding execution hooks, go to the *Activity* page in the left-side navigation area.
+
 == Create a custom execution hook
 You can create a custom execution hook for an app.
 
@@ -59,9 +69,6 @@ An execution hook can run against all container images contained within the appl
 .. (Optional) Enter any notes other administrators should know about the script.
 . Click *Add hook*.
 
-=== Hook examples
-Use the following examples to get an idea of how to structure your scripts.
-
 == Disable an execution hook
 If you want to temporarily prevent an execution hook from running during snapshots of an app, you can disable it.
 
@@ -81,3 +88,6 @@ You can remove an execution hook entirely if you no longer need it.
 . Click the *Execution hooks* tab.
 . Select the *Actions* dropdown for a hook that you wish to delete.
 . Select *Delete*.
+
+=== Execution hook examples
+Use the following examples to get an idea of how to structure your scripts.
