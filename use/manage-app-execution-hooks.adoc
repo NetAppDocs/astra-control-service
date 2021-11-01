@@ -72,13 +72,13 @@ An execution hook can run against all container images contained within the appl
 . Click *Add hook*.
 
 == Disable an execution hook
-If you want to temporarily prevent an execution hook from running during snapshots of an app, you can disable it.
+You can disable an execution hook if you want to temporarily prevent it from running before or after a snapshot of an app.
 
 .Steps
 
 . Click *Apps* and then click the name of a managed app.
 . Click the *Execution hooks* tab.
-. Select the *Actions* dropdown for a hook that you wish to delete.
+. Select the *Actions* dropdown for a hook that you wish to disable.
 . Select *Disable*.
 
 == Delete an execution hook
@@ -92,6 +92,6 @@ You can remove an execution hook entirely if you no longer need it.
 . Select *Delete*.
 
 === Execution hook examples
-Use the following examples to get an idea of how to structure your scripts.
+Use the following examples to get an idea of how to structure your execution hooks.
 
 (Examples are WIP)
