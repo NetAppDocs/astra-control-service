@@ -23,7 +23,7 @@ Standard storage:: Provides up to 16 Mib/s of throughput per 1 TiB.
 
 These service levels are an attribute of a capacity pool. You need to set up a capacity pool for each service level that you want to use with your Kubernetes clusters. link:../get-started/set-up-microsoft-azure.html[Learn how to set up capacity pools].
 
-Astra Control Service uses these service levels as storage classes for your persistent volumes. When you add Kubernetes compute to Astra Control Service, you're prompted to choose either Ultra, Premium, or Standard as the default storage class. The names of the storage classes are _netapp-anf-perf-ultra_, _netapp-anf-perf-premium_, and _netapp-anf-perf-standard_.
+Astra Control Service uses these service levels as storage classes for your persistent volumes. When you add Kubernetes clusters to Astra Control Service, you're prompted to choose either Ultra, Premium, or Standard as the default storage class. The names of the storage classes are _netapp-anf-perf-ultra_, _netapp-anf-perf-premium_, and _netapp-anf-perf-standard_.
 
 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Learn more about these service levels in the Azure NetApp Files docs^].
 

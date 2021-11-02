@@ -166,7 +166,7 @@ If you're using peered VNets, then both sides of the peering connection must be 
 
 .After you're done
 
-Wait about 10 minutes before discovering the compute running in the delegated subnet.
+Wait about 10 minutes before discovering the cluster running in the delegated subnet.
 
 == Create an Azure service principal
 
