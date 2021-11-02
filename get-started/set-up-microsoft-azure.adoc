@@ -24,7 +24,7 @@ Ensure that clusters are healthy and running Kubernetes version 1.17 or later, t
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Register for Azure NetApp Files
 
 [role="quick-margin-para"]
-Subscribe to the Azure NetApp Files service and then register the NetApp Resource Provider. <<Register for Azure NetApp Files,Learn more about this step>>.
+Register for the Azure NetApp Files service and then register the NetApp Resource Provider. <<Register for Azure NetApp Files,Learn more about this step>>.
 
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create a NetApp account
 
@@ -114,15 +114,19 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 == Register for Azure NetApp Files
 
-Get access to Azure NetApp Files by subscribing to Microsoft Azure. After you subscribe, you'll need to register the NetApp Resource Provider.
+Get access to Azure NetApp Files by registering for Microsoft Azure. After you register for the service, you'll need to register the NetApp Resource Provider.
 
 .Steps
+
+. If you already have a Microsoft Azure account, skip to step 4.
 
 . Go to the https://azure.microsoft.com/en-us/free/[Azure subscription page^] to subscribe to the Azure service.
 
 . Select *Start free* and follow the instructions to complete the subscription.
 
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register#resource-provider[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
+. Log in to the Azure portal.
+
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
 
 == Create a NetApp account
 
