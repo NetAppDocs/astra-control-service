@@ -2,15 +2,15 @@
 sidebar: sidebar
 permalink: use/unmanage.html
 keywords: unmanage app, remove app, stop managing app, stop managing clusters, unmanage cluster, remove cluster
-summary: Remove any apps or compute that you no longer want to manage from Astra Control.
+summary: Remove any apps or clusters that you no longer want to manage from Astra Control.
 ---
 
-= Unmanage apps and compute
+= Unmanage apps and clusters
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/use/
 
-Remove any apps or compute that you no longer want to manage from Astra Control.
+Remove any apps or clusters that you no longer want to manage from Astra Control.
 
 == Stop managing an app
 
@@ -34,27 +34,27 @@ Stop managing apps that you no longer want to back up, snapshot, or clone from A
 
 Astra Control stops managing the app.
 
-== Stop managing compute
+== Stop managing a cluster
 
-Stop managing the compute that you no longer want to manage from Astra Control. As a best practice, we recommend that you remove compute from Astra Control before you delete it through GCP.
+Stop managing the cluster that you no longer want to manage from Astra Control. As a best practice, we recommend that you remove the cluster from Astra Control before you delete it through GCP.
 
-* This action stops your compute from being managed by Astra Control. It doesn't make any changes to the cluster's configuration and it doesn't delete the cluster.
+* This action stops your cluster from being managed by Astra Control. It doesn't make any changes to the cluster's configuration and it doesn't delete the cluster.
 
-* Trident won't be uninstalled from the cluster. https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident[Learn how to uninstall Trident^].
+* Astra Trident won't be uninstalled from the cluster. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html[Learn how to uninstall Astra Trident^].
 
 .Steps
 
-. Click *Compute*.
+. Click *Clusters*.
 
-. Click the checkbox for the compute that you no longer want to manage.
+. Click the checkbox for the cluster that you no longer want to manage.
 
-. Click the *Actions* drop-down and select *Unmanage compute/s*.
+. Click the *Actions* drop-down and select *Unmanage*.
 
-. Confirm that you want to unmanage the compute and then click *Yes, Unmanage Compute*.
+. Confirm that you want to unmanage the cluster and then click *Yes, Unmanage cluster*.
 
 .Result
 
-Astra Control stops managing the compute.
+Astra Control stops managing the cluster.
 
 == Deleting clusters from your cloud provider
 

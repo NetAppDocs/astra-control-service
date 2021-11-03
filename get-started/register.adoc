@@ -49,7 +49,7 @@ When you use Astra Control, you'll manage your apps from within an account. An a
 
 . https://cloud.netapp.com/astra[Go to the Astra Control page on Cloud Central^].
 
-. Click *Sign up for the Free Plan*.
+. Click *Get Started with Astra Control*.
 
 . Provide the required information in the form.
 +

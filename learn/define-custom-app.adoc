@@ -50,7 +50,7 @@ In order to avoid possible data conflicts, the admin creates two custom apps: on
 
 After the admin adds the cluster to Astra Control, the next step is to define a custom app. To do this, the admin clicks the **+ Define custom app** button on the Apps page.
 
-In the pop-up window which appears, the admin sets `devops-canary-deployment` as the app name. The admin then chooses the cluster in the **Compute** drop-down, then the app's namespace from the **Namespace** drop-down.
+In the pop-up window which appears, the admin sets `devops-canary-deployment` as the app name. The admin then chooses the cluster in the **Cluster** drop-down, then the app's namespace from the **Namespace** drop-down.
 
 At this point, the admin can either type `deployment=canary` in the **Labels** field, or select that label from the resources listed below.
 

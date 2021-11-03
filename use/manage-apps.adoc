@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/manage-apps.html
 keywords: manage app, discover app, ignore app
-summary: After you add Kubernetes compute to Astra Control, you can install apps on that cluster (outside of Astra Control), and then go to the Apps page in Astra Control to start managing the apps.
+summary: After you add a Kubernetes cluster to Astra Control, you can install apps on that cluster (outside of Astra Control), and then go to the Apps page in Astra Control to start managing the apps.
 ---
 
 = Start managing apps
@@ -10,11 +10,11 @@ summary: After you add Kubernetes compute to Astra Control, you can install apps
 :icons: font
 :imagesdir: ../media/use/
 
-After you link:../get-started/add-first-cluster.html[add Kubernetes compute to Astra Control], you can install apps on the cluster (outside of Astra Control), and then go to the Apps page in Astra Control to start managing the apps.
+After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to Astra Control], you can install apps on the cluster (outside of Astra Control), and then go to the Apps page in Astra Control to start managing the apps.
 
 == Install apps on your cluster
 
-Now that you've added your compute to Astra Control, you can install apps on the cluster. Persistent volumes will be provisioned on the new storage classes by default. After the pods are online, you can manage the app with Astra Control.
+Now that you've added your cluster to Astra Control, you can install apps on the cluster. Persistent volumes will be provisioned on the new storage classes by default. After the pods are online, you can manage the app with Astra Control.
 
 Astra Control will manage stateful apps only if the storage is on a storage class installed by Astra Control.
 
@@ -96,7 +96,7 @@ Astra Control includes an action at the top of the Apps page named *Define custo
 
 .. *New App*: Enter the display name of the app.
 
-.. *Compute*: Select the compute where the app resides.
+.. *Cluster*: Select the cluster where the app resides.
 
 .. *Namespace:* Select the namespace for the app.
 
@@ -132,6 +132,6 @@ Astra Control enables management of the app. You can now find it in the *Managed
 
 Astra Control also discovers the system apps running on a Kubernetes cluster. You can view them by filtering the Apps list.
 
-image:screenshot-system-apps.gif[A screenshot that shows the Show System Apps option that is available when you click All Compute in the Apps screen.]
+image:screenshot-system-apps.gif[A screenshot that shows the Show System Apps option that is available when you click All Clusters in the Apps screen.]
 
 We don't show you these system apps by default because it's rare that you'd need to back them up.
