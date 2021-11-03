@@ -130,7 +130,7 @@ Get access to Azure NetApp Files by registering for Microsoft Azure. After you r
 
 == Create a NetApp account
 
-After you've signed up, create a NetApp account in Azure NetApp Files.
+After you've registered, create a NetApp account in Azure NetApp Files.
 
 .Step
 
