@@ -16,7 +16,7 @@ NOTE: Buckets that Astra Control automatically created will be automatically del
 
 .Steps
 
-. link:unmanage.html[Unmanage all apps and compute].
+. link:unmanage.html[Unmanage all apps and clusters].
 
 . link:manage-credentials.html[Remove credentials from Astra Control].
 
