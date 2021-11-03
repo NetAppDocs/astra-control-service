@@ -114,7 +114,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 == Register for Azure NetApp Files
 
-Get access to Azure NetApp Files by registering for Microsoft Azure. After you register for the service, you'll need to register the NetApp Resource Provider.
+If you don't have a Microsoft Azure account, begin by signing up for Microsoft Azure. Then, get access to Azure NetApp Files by registering the NetApp Resource Provider.
 
 .Steps
 
