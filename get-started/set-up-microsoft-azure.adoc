@@ -24,7 +24,7 @@ Ensure that clusters are healthy and running Kubernetes version 1.17 or later, t
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Register for Azure NetApp Files
 
 [role="quick-margin-para"]
-Request access to the Azure NetApp Files service and then register the NetApp Resource Provider. <<Register for Azure NetApp Files,Learn more about this step>>.
+Register the NetApp Resource Provider. <<Register for Azure NetApp Files,Learn more about this step>>.
 
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create a NetApp account
 
@@ -114,19 +114,23 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 == Register for Azure NetApp Files
 
-Get access to Azure NetApp Files by submitting a waitlist request. After you're approved, you'll need to register the NetApp Resource Provider.
+If you don't have a Microsoft Azure account, begin by signing up for Microsoft Azure. Then, get access to Azure NetApp Files by registering the NetApp Resource Provider.
 
 .Steps
 
-. https://aka.ms/azurenetappfiles[Submit a waitlist request to access Azure NetApp Files^].
+. If you already have a Microsoft Azure account, skip to step 4.
 
-. Wait for a confirmation email from the Azure NetApp Files team.
+. Go to the https://azure.microsoft.com/en-us/free/[Azure subscription page^] to subscribe to the Azure service.
 
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register#resource-provider[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
+. Select a plan and follow the instructions to complete the subscription.
+
+. Log in to the Azure portal.
+
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
 
 == Create a NetApp account
 
-After you've been granted access, create a NetApp account in Azure NetApp Files.
+After you've registered, create a NetApp account in Azure NetApp Files.
 
 .Step
 
@@ -166,7 +170,7 @@ If you're using peered VNets, then both sides of the peering connection must be 
 
 .After you're done
 
-Wait about 10 minutes before discovering the compute running in the delegated subnet.
+Wait about 10 minutes before discovering the cluster running in the delegated subnet.
 
 == Create an Azure service principal
 

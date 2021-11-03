@@ -28,7 +28,7 @@ image:screenshot-create-clone.gif["A screenshot of the app page where you can cl
 . *Clone details*: Specify details for the clone:
 +
 * Keep the default name and namespace, or edit them.
-* Choose a destination compute for the clone.
+* Choose a destination cluster for the clone.
 * Choose whether you want to create the clone from an existing snapshot or backup. If you don't select this option, Astra Control creates the clone from the app's current state.
 
 . *Clone Summary*: Review the details about the clone and click *Clone App*.

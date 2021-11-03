@@ -51,7 +51,7 @@ Learn more about the CVS-Performance service type before you choose a storage cl
 
 === Storage classes
 
-Three service levels are supported with the CVS-Performance service type: Standard, Premium, and Extreme. When you add compute to Astra Control Service, you're prompted to choose either Standard, Premium, or Extreme as the default storage class for persistent volumes. Each of these service levels are designed for different capacity and bandwidth needs.
+Three service levels are supported with the CVS-Performance service type: Standard, Premium, and Extreme. When you add a cluster to Astra Control Service, you're prompted to choose either Standard, Premium, or Extreme as the default storage class for persistent volumes. Each of these service levels are designed for different capacity and bandwidth needs.
 
 The names of the storage classes are _netapp-cvs-standard_, _netapp-cvs-premium_, and _netapp-cvs-extreme_.
 

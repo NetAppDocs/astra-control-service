@@ -94,7 +94,7 @@ We've made it easier to view details about the activities in your Astra Control 
 
 * Filter the activity list by managed app, severity level, user, and time range.
 * Download your Astra Control account activity to a CSV file.
-* View activities directly from the Compute page or the Apps page after selecting compute or an app.
+* View activities directly from the Clusters page or the Apps page after selecting a cluster or an app.
 
 link:../use/view-account-activity.html[Learn more about viewing your account activity].
 
@@ -118,9 +118,9 @@ We're pleased to announce that Astra Control Service is now Generally Available.
 
 * You can now create and delete accounts on your own.
 
-* We've improved notifications when Astra Control Service can no longer access Kubernetes compute.
+* We've improved notifications when Astra Control Service can no longer access a Kubernetes cluster.
 +
-These notifications are important because Astra Control Service can't manage apps for disconnected compute.
+These notifications are important because Astra Control Service can't manage apps for disconnected clusters.
 
 == 17 Dec 2020 (Beta update)
 
