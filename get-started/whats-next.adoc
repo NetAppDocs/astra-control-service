@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: get-started/whats-next.html
 keywords: get started, manage apps, manage account
-summary: Now that you’ve logged in and added compute to Astra Control, you're ready to start using Astra Control's application data management features.
+summary: Now that you’ve logged in and added clusters to Astra Control, you're ready to start using Astra Control's application data management features.
 ---
 
 = What's next?

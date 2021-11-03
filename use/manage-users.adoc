@@ -32,7 +32,7 @@ Note the following:
 * Each role provides the following permissions:
 ** An *Owner* has Admin permissions and can delete accounts.
 ** An *Admin* has Member permissions and can invite other users.
-** A *Member* can fully manage apps and compute.
+** A *Member* can fully manage apps and clusters.
 ** A *Viewer* can view resources.
 +
 image:screenshot-invite-users.gif[A screenshot of the Invite Users screen where you enter a name, email address, and select a role.]

@@ -11,7 +11,7 @@ summary: You can view details about the activities in your Astra Control account
 :imagesdir: ../media/use/
 
 [.lead]
-You can view details about the activities in your Astra Control account. For example, when new users were invited, when compute was added, or when a snapshot was taken. You also have the ability to export your account activity to a CSV file.
+You can view details about the activities in your Astra Control account. For example, when new users were invited, when a cluster was added, or when a snapshot was taken. You also have the ability to export your account activity to a CSV file.
 
 .Steps to view all account activity in Astra Control
 
@@ -27,8 +27,8 @@ You can view details about the activities in your Astra Control account. For exa
 
 . Click *Activity*.
 
-.Steps to view account activity for compute
+.Steps to view account activity for clusters
 
-. Click *Compute* and then click the name of the compute.
+. Click *Clusters* and then click the name of the cluster.
 
 . Click *Activity*.

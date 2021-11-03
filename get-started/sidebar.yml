@@ -15,7 +15,7 @@ entries:
         url: /get-started/set-up-microsoft-azure.html
   - title: Register for an account
     url: /get-started/register.html
-  - title: Manage compute
+  - title: Manage clusters
     url: /get-started/add-first-cluster.html
   - title: What's next?
     url: /get-started/whats-next.html
