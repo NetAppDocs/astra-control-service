@@ -51,19 +51,27 @@ Pay careful attention to the Eligible tab. If a warning appears, hover over the 
 
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
-Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
+Each storage class utilizes one of the following services:
+
+* https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
+* https://cloud.google.com/persistent-disk/[Google Persistent Disk^]
+* https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview[Azure Disk Storage^]
 +
-* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
-* link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
+Learn about link:../learn/choose-class-and-size.html[storage classes for GKE clusters] and link:../learn/azure-storage.html[storage classes for AKS clusters].
+//Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
+//+
+//* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
+//* link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
 
 . *Review & Approve*: Review the configuration details and click *Add cluster*.
-+
-image:screenshot-compute-approve.gif["A screenshot that shows the Review & Approve page, which provides a summary of the configuration that you chose for the managed app."]
+//+
+//image:screenshot-compute-approve.gif["A screenshot that shows the Review & Approve page, which provides a summary of the configuration that you chose for the managed app."]
 
-The following video shows each of these steps for a GKE cluster.
+//The following video shows each of these steps for a GKE cluster.
 
-video::video-manage-cluster.mp4[width=848, height=480]
+//video::video-manage-cluster.mp4[width=848, height=480]
 
 .Result
 
-Astra Control Service creates an object store for application backups, creates an admin account on the cluster, and sets the default storage class that you specified. This process can take up to 5 minutes.
+Astra Control Service creates an object store for application backups on eligible clusters, creates an admin account on the cluster, and sets the default storage class that you specified. This process can take up to 5 minutes.
