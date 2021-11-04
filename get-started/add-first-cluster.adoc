@@ -48,10 +48,14 @@ Astra Control Service uses the service account to discover clusters running in G
 . *Cluster*: Select the cluster that you'd like to add.
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
++
+If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud or Azure NetApp Files, a warning appears. You can proceed with adding the cluster if you intend to use a different storage service.
 
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
-Each storage class utilizes one of the following services:
+Price, performance, and resilience information is displayed for each NetApp storage class in the list.  For non-NetApp storage classes, this information is not available.
++
+Each storage class can utilize one of the following services:
 
 * https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
 * https://cloud.google.com/persistent-disk/[Google Persistent Disk^]
