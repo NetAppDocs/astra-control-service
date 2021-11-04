@@ -11,9 +11,13 @@ summary: Astra Control Service uses Cloud Volumes Service for Google Cloud as th
 :imagesdir: ../media/learn/
 
 [.lead]
-Astra Control Service uses Cloud Volumes Service for Google Cloud as the backend storage for persistent volumes. You should understand how choosing a service type, storage class, and persistent volume size can help you meet your performance objectives.
 
-== Overview
+Astra Control Service supports Cloud Volumes Service for Google Cloud or Google Persistent Disk as the backend storage options for persistent volumes.
+
+== Cloud Volumes Service for Google Cloud
+Astra Control Service can use Cloud Volumes Service for Google Cloud as the backend storage for persistent volumes. You should understand how choosing a service type, storage class, and persistent volume size can help you meet your performance objectives.
+
+=== Overview
 
 Cloud Volumes Service for Google Cloud provides two service types: _CVS_ and _CVS-Performance_. These service types are supported in specific Google Cloud regions. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Go to NetApp Cloud Central's Global Regions Maps^] to identify the service type that's supported in the Google Cloud region where your clusters reside.
 
@@ -45,11 +49,11 @@ a|
 
 |===
 
-== CVS-Performance service type
+=== CVS-Performance service type
 
 Learn more about the CVS-Performance service type before you choose a storage class and create persistent volumes.
 
-=== Storage classes
+==== Storage classes
 
 Three service levels are supported with the CVS-Performance service type: Standard, Premium, and Extreme. When you add a cluster to Astra Control Service, you're prompted to choose either Standard, Premium, or Extreme as the default storage class for persistent volumes. Each of these service levels are designed for different capacity and bandwidth needs.
 
@@ -57,32 +61,34 @@ The names of the storage classes are _netapp-cvs-standard_, _netapp-cvs-premium_
 
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels[Learn more about these service levels in the Cloud Volumes Service for Google Cloud docs^].
 
-=== Persistent volume size and performance
+==== Persistent volume size and performance
 
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels[As the Google Cloud docs explain^], the allowed bandwidth for each service level is per GiB of provisioned capacity. That means larger volumes will provide better performance.
 
 Be sure to read through the Google Cloud page linked to above. It includes cost comparisons and examples that can help you better understand how to couple a service level with volume size to meet your performance objectives.
 
-=== Minimum volume size
+==== Minimum volume size
 
 Astra Control Service provisions persistent volumes using a minimum volume size of 100 GiB with the CVS-Performance service type, even if the PVC requests a smaller volume size. For example, if the PVC in a Helm chart asks for 6 GiB, Astra Control Service automatically provisions a 100 GiB volume.
 
-== CVS service type
+=== CVS service type
 
 Learn more about the CVS service type before you choose a storage class and create persistent volumes.
 
-=== Storage class
+==== Storage class
 
 One service level is supported with the CVS service type: Standard. When you manage clusters in regions where the CVS service type is supported, Astra Control Service uses the Standard service level as the default storage class for persistent volumes. The storage class is named _netapp-cvs-standard_.
 
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-levels[Learn more about the Standard service level in the Cloud Volumes Service for Google Cloud docs^].
 
-=== Persistent volume size and performance
+==== Persistent volume size and performance
 
 The allowed bandwidth for the CVS service type is per GiB of provisioned capacity. That means larger volumes will provide better performance.
 
-=== Minimum volume size
+==== Minimum volume size
 
 Astra Control Service provisions persistent volumes using a minimum volume size of 300 GiB with the CVS service type, even if the PVC asks for a smaller volume size. For example, if 20 GiB is requested, Astra Control Service automatically provisions a 300 GiB volume.
 
 Due to a limitation, if a PVC requests a volume between 700-999 GiB, Astra Control Service automatically provisions a volume size of 1000 GiB.
+
+== Google Persistent Disk
