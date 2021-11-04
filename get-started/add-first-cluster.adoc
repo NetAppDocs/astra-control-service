@@ -49,7 +49,7 @@ Astra Control Service uses the service account to discover clusters running in G
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
 +
-If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud or Azure NetApp Files, a warning appears. You can proceed with adding the cluster if you intend to use a different storage service.
+If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud or Azure NetApp Files, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
 
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
