@@ -21,10 +21,10 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-para"]
 Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that node pools are online and running *Linux*, and more. <<AKS cluster requirements,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Register for Azure NetApp Files
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] (Optional): Register for Azure NetApp Files
 
 [role="quick-margin-para"]
-Register the NetApp Resource Provider. <<Register for Azure NetApp Files,Learn more about this step>>.
+If you plan to use Azure NetApp Files as a storage backend, register the NetApp Resource Provider. <<(Optional): Register for Azure NetApp Files,Learn more about this step>>.
 
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create a NetApp account
 
@@ -112,9 +112,9 @@ If you want the snapshot controller in a specific namespace, download and edit t
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
 
-== Register for Azure NetApp Files
+== (Optional): Register for Azure NetApp Files
 
-If you don't have a Microsoft Azure account, begin by signing up for Microsoft Azure. Then, get access to Azure NetApp Files by registering the NetApp Resource Provider.
+If you don't have a Microsoft Azure account, begin by signing up for Microsoft Azure. Then, if you plan on using Azure NetApp Files as a storage backend, get access to Azure NetApp Files by registering the NetApp Resource Provider.
 
 .Steps
 
