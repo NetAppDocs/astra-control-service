@@ -11,7 +11,7 @@ summary: Astra Control Service uses Azure NetApp Files as the backend storage fo
 :imagesdir: ../media/learn/
 
 [.lead]
-Astra Control Service supports Azure NetApp Files or Azure Disk Storage as the backend storage for Azure Kubernetes Service (AKS) clusters.
+Astra Control Service supports Azure NetApp Files or Azure managed disks as the backend storage for Azure Kubernetes Service (AKS) clusters.
 
 == Azure NetApp Files
 
@@ -39,6 +39,8 @@ As described above, the throughput for each service level is per 1 TiB of provis
 
 Astra Control Service provisions persistent volumes using a minimum volume size of 100 GiB, even if the PVC asks for a smaller volume size. For example, if the PVC in a Helm chart asks for 6 GiB, Astra Control Service automatically provisions a 100 GiB volume.
 
-== Azure Disk Storage
+== Azure managed disks
 
-Astra Control Service supports Azure managed disks as another backend storage option. This service provides block-level storage that is managed by Azure.
+Astra Control Service supports Azure managed disks as a backend storage option. This service provides block-level storage that is managed by Azure.
+
+https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview[Learn more about Azure managed disks^].

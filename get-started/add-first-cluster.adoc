@@ -53,14 +53,14 @@ If you select a cluster that has not been configured for Cloud Volumes Service f
 
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
-Price, performance, and resilience information is displayed for each Cloud Volumes Service for Google Cloud service in the list.  Performance and resilience information is displayed for each Azure NetApp Files service. For non-NetApp storage classes such as Google Persistent Disk or Azure Disk Storage, price, performance, and resilience information is not available.
+Price, performance, and resilience information is displayed for each Cloud Volumes Service for Google Cloud service in the list.  Performance and resilience information is displayed for each Azure NetApp Files service. For non-NetApp storage classes such as Google Persistent Disk or Azure managed disks, price, performance, and resilience information is not available.
 +
 Each storage class can utilize one of the following services:
 
 * https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
 * https://cloud.google.com/persistent-disk/[Google Persistent Disk^]
 * https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^]
-* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview[Azure Disk Storage^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview[Azure managed disks^]
 +
 Learn more about link:../learn/choose-class-and-size.html[storage classes for GKE clusters] and link:../learn/azure-storage.html[storage classes for AKS clusters].
 //Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].

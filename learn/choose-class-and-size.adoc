@@ -92,3 +92,6 @@ Astra Control Service provisions persistent volumes using a minimum volume size 
 Due to a limitation, if a PVC requests a volume between 700-999 GiB, Astra Control Service automatically provisions a volume size of 1000 GiB.
 
 == Google Persistent Disk
+Astra Control Service supports Google Persistent Disk as a backend storage option. This service provides block-level storage that is managed by Google.
+
+https://cloud.google.com/persistent-disk/[Learn more about Google Persistent Disk^].
