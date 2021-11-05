@@ -24,7 +24,7 @@ Ensure that clusters are healthy and running a Kubernetes version in the range o
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] (Optional): Purchase Cloud Volumes Service for Google Cloud
 
 [role="quick-margin-para"]
-If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and click Purchase. <<(Optional): Purchase Cloud Volumes Service for Google Cloud,Learn more about this step>>.
+If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and click Purchase. <<Purchase Cloud Volumes Service for Google Cloud,Learn more about this step>>.
 
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enable APIs in your Google Cloud project
 
@@ -98,9 +98,9 @@ Private clusters:: If the cluster is private, the https://cloud.google.com/kuber
 
 Mode of operation for a GKE cluster:: You should use the Standard mode of operation. The Autopilot mode hasn't been tested at this time. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes[Learn more about modes of operation^].
 
-== (Optional): Purchase Cloud Volumes Service for Google Cloud
+== Purchase Cloud Volumes Service for Google Cloud
 
-Astra Control Service can use Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. To use this service, you need to purchase Cloud Volumes Service for Google Cloud from the Google Cloud Marketplace to enable billing for persistent volumes.
+Astra Control Service can use Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. If you plan to use this service, you need to purchase Cloud Volumes Service for Google Cloud from the Google Cloud Marketplace to enable billing for persistent volumes.
 
 .Step
 
