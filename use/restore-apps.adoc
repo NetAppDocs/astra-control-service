@@ -29,16 +29,16 @@ image:screenshot-restore-snapshot-or-backup.gif[A screenshot of the Data protect
 +
 image:screenshot-restore-app.gif["A screenshot of the app page where you can click the drop-down list in the actions column and select Restore application."]
 
-. *Restore details*: Specify details for the clone. To revert an app to an earlier version of itself, choose the same namespace and destination cluster that it is currently running in:
+. *Restore details*: Specify details for the clone. To restore an app in-place (revert an app to an earlier version of itself), choose the same namespace and destination cluster that it is currently running in:
 +
 * Enter a name and namespace for the app.
 * Choose the destination cluster for the app.
-* Click *Review information*.
+* Click *Review*.
 
-. *Restore Summary*: Review details about the restore action and click *Restore App*.
-+
-image:screenshot-restore-summary.gif[A screenshot of the Restore Application page which enables you to review information about the restore action.]
+. *Restore Summary*: Review details about the restore action, type "restore", and click *Restore*.
+//+
+//image:screenshot-restore-summary.gif[A screenshot of the Restore Application page which enables you to review information about the restore action.]
 
 .Result
 
-Astra Control restores the app based on the information that you provided.
+Astra Control restores the app based on the information that you provided. If you restored the app in-place, the associated persistent volumes are deleted and recreated.
