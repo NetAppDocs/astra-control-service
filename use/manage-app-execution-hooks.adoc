@@ -13,7 +13,13 @@ summary: An execution hook is a custom script that you can run before or after a
 [.lead]
 An execution hook is a custom script that you can run before or after a snapshot of a managed app. For example, if you have a database app, you can use execution hooks to pause all database transactions before a snapshot, and resume transactions after the snapshot is complete. This ensures application-consistent snapshots.
 
-For validated apps, Astra Control comes with default execution hooks that handle freeze and thaw operations before and after snapshots. You can use these NetApp-provided hooks, or disable them and use your own. You cannot delete or modify NetApp-provided execution hooks.
+For the following validated apps, Astra Control comes with default execution hooks that handle freeze and thaw operations before and after snapshots.
+
+* MariaDB
+* MySQL
+* PostgreSQL
+
+You can use the NetApp-provided hooks for these apps, or disable them and use your own. You cannot delete or modify NetApp-provided execution hooks.
 
 == Important notes about execution hooks
 Keep the following points in mind when planning execution hooks for your apps.
