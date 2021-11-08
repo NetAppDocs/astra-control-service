@@ -13,7 +13,7 @@ summary: Use the following examples to get an idea of how to structure your exec
 [.lead]
 Use the following examples to get an idea of how to structure your execution hooks.
 
-== Pre-snapshot / post-snapshot script example
+== Pre-snapshot / post-snapshot hook example
 The following script demonstrates how the same script can be used for both a pre-snapshot and a post-snapshot hook.
 [source,shell]
 ----
