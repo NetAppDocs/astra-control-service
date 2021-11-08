@@ -15,9 +15,9 @@ An execution hook is a custom script that you can run before or after a snapshot
 
 For the following validated apps, Astra Control comes with default execution hooks that handle freeze and thaw operations before and after snapshots.
 
-* MariaDB
-* MySQL
-* PostgreSQL
+* MariaDB 10.5.9
+* MySQL 8.0.25
+* PostgreSQL 11.12
 
 You can use the NetApp-provided hooks for these apps, or disable them and use your own. You cannot delete or modify NetApp-provided execution hooks.
 
@@ -28,7 +28,7 @@ Keep the following points in mind when planning execution hooks for your apps.
 * All execution hook failures are soft failures; other hooks and the snapshot are still attempted even if a hook fails. However, when a hook fails, a warning event is recorded in the *Activity* page event log.
 * Any executable script is supported and execution is dependent on support for that script in the container (including interpreted languages such as Python, Ruby, or Go).
 * Script size is limited to 128KB.
-* All create / edit / delete operations use Owner/Admin permissions.
+* All create, edit, and delete operations use Owner/Admin permissions.
 * Scripts that run with Member and Viewer privileges can view only.
 
 When a snapshot is run, execution hook events take place in the following order:
@@ -103,7 +103,7 @@ Use the following examples to get an idea of how to structure your execution hoo
 
 .Pre-snapshot / post-snapshot script example
 The following script demonstrates how the same script can be used for both a pre-snapshot and a post-snapshot hook.
-[source,sh]
+[source,shell]
 ----
 #!/bin/sh
 #
@@ -209,7 +209,7 @@ exit ${rc}
 .Failure example
 The following script demonstrates how you can handle failures in a hook.
 
-[source,sh]
+[source,shell]
 ----
 
 #!/bin/sh
@@ -270,7 +270,7 @@ exit ${argexitcode}
 .Failure and then success example
 The following script demonstrates a failure on the first run, but success on the second.
 
-[source,sh]
+[source,shell]
 ----
 #!/bin/sh
 #
