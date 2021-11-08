@@ -14,7 +14,7 @@ summary: Use the following examples to get an idea of how to structure your exec
 Use the following examples to get an idea of how to structure your execution hooks.
 
 == Pre-snapshot / post-snapshot hook example
-The following script demonstrates how the same script can be used for both a pre-snapshot and a post-snapshot hook.
+The following example demonstrates how the same script can be used for both a pre-snapshot and a post-snapshot hook.
 [source,shell]
 ----
 #!/bin/sh
@@ -119,7 +119,7 @@ exit ${rc}
 ----
 
 == Failure example
-The following script demonstrates how you can handle failures in a hook.
+The following example demonstrates how you can handle failures in a hook.
 
 [source,shell]
 ----
@@ -180,7 +180,7 @@ exit ${argexitcode}
 ----
 
 == Failure and then success example
-The following script demonstrates a failure on the first run, but success on the second.
+The following example demonstrates a hook failing the first time it is run, but succeeding the second time.
 
 [source,shell]
 ----
