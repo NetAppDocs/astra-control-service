@@ -39,7 +39,7 @@ Enable the following Google Cloud APIs:
 * Cloud Storage JSON API
 * Service Usage
 * Cloud Resource Manager API
-* NetApp Cloud Volumes Service (Recommended, but only required if you plan to use Cloud Volumes Service for Google Cloud)
+* NetApp Cloud Volumes Service (Required for Cloud Volumes Service for Google Cloud)
 * Service Consumer Management API
 * Service Networking API
 * Service Management API
@@ -54,7 +54,7 @@ Create a Google Cloud service account that has the following permissions:
 
 [role="quick-margin-list"]
 * Kubernetes Engine Admin
-* NetApp Cloud Volumes Admin (Recommended, but only required if you plan to use Cloud Volumes Service for Google Cloud)
+* NetApp Cloud Volumes Admin (Required for Cloud Volumes Service for Google Cloud)
 * Storage Admin
 * Service Usage Viewer
 * Compute Network Viewer
@@ -100,6 +100,46 @@ Private clusters:: If the cluster is private, the https://cloud.google.com/kuber
 
 Mode of operation for a GKE cluster:: You should use the Standard mode of operation. The Autopilot mode hasn't been tested at this time. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes[Learn more about modes of operation^].
 
+External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.19, 1.20, or 1.21. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
+
+=== Install a CSI volume snapshot controller
+
+As noted in the list of requirements, Kubernetes clusters must have a CSI volume snapshot controller installed. Follow these steps to install the controller on your clusters.
+
+.Steps for K8s versions 1.19
+
+. Install volume snapshot CRDs.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+
+. Create the snapshot controller.
++
+If you want the snapshot controller in a specific namespace, download and edit the following files before you apply them.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+
+.Steps for K8s version 1.20 and 1.21
+
+. Install volume snapshot CRDs.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+
+. Create the snapshot controller.
++
+If you want the snapshot controller in a specific namespace, download and edit the following files before you apply them.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+
 == Purchase Cloud Volumes Service for Google Cloud (optional)
 
 Astra Control Service can use Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. If you plan to use this service, you need to purchase Cloud Volumes Service for Google Cloud from the Google Cloud Marketplace to enable billing for persistent volumes.
@@ -123,7 +163,7 @@ Your project needs permissions to access specific Google Cloud APIs. APIs are us
 * Cloud Storage JSON API
 * Service Usage
 * Cloud Resource Manager API
-* NetApp Cloud Volumes Service (Recommended, but only required if you plan to use Cloud Volumes Service for Google Cloud)
+* NetApp Cloud Volumes Service (Required for Cloud Volumes Service for Google Cloud)
 * Service Consumer Management API
 * Service Networking API
 * Service Management API

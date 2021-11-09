@@ -21,27 +21,32 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-para"]
 Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that node pools are online and running *Linux*, and more. <<AKS cluster requirements,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] (Optional): Register for Azure NetApp Files
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Sign up for Microsoft Azure
 
 [role="quick-margin-para"]
-If you plan to use Azure NetApp Files as a storage backend, register the NetApp Resource Provider. <<Register for Azure NetApp Files,Learn more about this step>>.
+Create a Microsoft Azure account. <<Sign up for Microsoft Azure,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create a NetApp account
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] (Optional): Register for Azure NetApp Files
+
+[role="quick-margin-para"]
+If you plan to use Azure NetApp Files as a storage backend, register the NetApp Resource Provider. <<Register for Azure NetApp Files (optional),Learn more about this step>>.
+
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Create a NetApp account
 
 [role="quick-margin-para"]
 In the Azure portal, go to Azure NetApp Files and create a NetApp account. <<Create a NetApp account,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up capacity pools
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Set up capacity pools
 
 [role="quick-margin-para"]
 Set up one or more capacity pools for your persistent volumes. <<Set up a capacity pool,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Delegate a subnet to Azure NetApp Files
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Delegate a subnet to Azure NetApp Files
 
 [role="quick-margin-para"]
 Delegate a subnet to Azure NetApp Files so that Astra Control Service can create persistent volumes in that subnet. <<Delegate a subnet to Azure NetApp Files,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Create an Azure service principal
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Create an Azure service principal
 
 [role="quick-margin-para"]
 Create an Azure service principal that has the Contributor role. <<Create an Azure service principal,Read step-by-step instructions>>.
@@ -72,13 +77,13 @@ If you're close to the limit, you have two options:
 
 Private networking:: Private networking must not be enabled on a cluster.
 
-External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.17, 1.18, 1.19, or 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
+External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.19, 1.20, or 1.21. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
 
 === Install a CSI volume snapshot controller
 
 As noted in the list of requirements, Kubernetes clusters must have a CSI volume snapshot controller installed. Follow these steps to install the controller on your clusters.
 
-.Steps for K8s versions 1.17, 1.18, and 1.19
+.Steps for K8s versions 1.19
 
 . Install volume snapshot CRDs.
 +
@@ -95,7 +100,7 @@ If you want the snapshot controller in a specific namespace, download and edit t
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
 
-.Steps for K8s version 1.20
+.Steps for K8s version 1.20 and 1.21
 
 . Install volume snapshot CRDs.
 +
@@ -112,9 +117,8 @@ If you want the snapshot controller in a specific namespace, download and edit t
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
 
-== Register for Azure NetApp Files
-
-If you don't have a Microsoft Azure account, begin by signing up for Microsoft Azure. Then, if you plan on using Azure NetApp Files as a storage backend, get access to Azure NetApp Files by registering the NetApp Resource Provider.
+== Sign up for Microsoft Azure
+If you don't have a Microsoft Azure account, begin by signing up for Microsoft Azure.
 
 .Steps
 
@@ -123,6 +127,12 @@ If you don't have a Microsoft Azure account, begin by signing up for Microsoft A
 . Go to the https://azure.microsoft.com/en-us/free/[Azure subscription page^] to subscribe to the Azure service.
 
 . Select a plan and follow the instructions to complete the subscription.
+
+== Register for Azure NetApp Files (optional)
+
+If you plan on using Azure NetApp Files as a storage backend, get access to Azure NetApp Files by registering the NetApp Resource Provider.
+
+.Steps
 
 . Log in to the Azure portal.
 
