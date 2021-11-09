@@ -39,7 +39,9 @@ Enable the following Google Cloud APIs:
 * Cloud Storage JSON API
 * Service Usage
 * Cloud Resource Manager API
-* NetApp Cloud Volumes Service (Required for Cloud Volumes Service for Google Cloud)
+* NetApp Cloud Volumes Service
+** Required for Cloud Volumes Service for Google Cloud
+** Optional (but recommended) for Google Persistent Disk
 * Service Consumer Management API
 * Service Networking API
 * Service Management API
@@ -54,7 +56,9 @@ Create a Google Cloud service account that has the following permissions:
 
 [role="quick-margin-list"]
 * Kubernetes Engine Admin
-* NetApp Cloud Volumes Admin (Required for Cloud Volumes Service for Google Cloud)
+* NetApp Cloud Volumes Admin
+** Required for Cloud Volumes Service for Google Cloud
+** Optional (but recommended) for Google Persistent Disk
 * Storage Admin
 * Service Usage Viewer
 * Compute Network Viewer
