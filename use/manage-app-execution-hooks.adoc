@@ -71,7 +71,7 @@ An execution hook can run against all container images contained within the appl
 .. Browse to a file and upload it.
 .. Give the script a unique name.
 .. (Optional) Enter any notes other administrators should know about the script.
-* Paste in a custom script from the clipboard
+* Paste in a custom script from the clipboard.
 .. Select the *Paste from clipboard* option.
 .. Click the text field and paste the script text into the field.
 .. Give the script a unique name.
