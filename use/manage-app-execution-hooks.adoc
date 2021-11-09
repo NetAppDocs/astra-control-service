@@ -29,7 +29,7 @@ Keep the following points in mind when planning execution hooks for your apps.
 * Any executable script is supported and execution is dependent on support for that script in the container (including interpreted languages such as Python, Ruby, or Go).
 * Script size is limited to 128KB.
 * All create, edit, and delete operations use Owner/Admin permissions.
-* Scripts that run with Member and Viewer privileges can view only.
+//* Scripts that run with Member and Viewer privileges can view only.
 
 When a snapshot is run, execution hook events take place in the following order:
 
