@@ -41,10 +41,10 @@ In the Azure portal, go to Azure NetApp Files and create a NetApp account. <<Cre
 [role="quick-margin-para"]
 Set up one or more capacity pools for your persistent volumes. <<Set up a capacity pool,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Delegate a subnet to Azure NetApp Files
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] (Optional): Delegate a subnet to Azure NetApp Files
 
 [role="quick-margin-para"]
-Delegate a subnet to Azure NetApp Files so that Astra Control Service can create persistent volumes in that subnet. <<Delegate a subnet to Azure NetApp Files,Learn more about this step>>.
+Delegate a subnet to Azure NetApp Files so that Astra Control Service can create persistent volumes in that subnet. <<Delegate a subnet to Azure NetApp Files (optional),Learn more about this step>>.
 
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Create an Azure service principal
 
@@ -168,9 +168,9 @@ Provisioning the right amount of capacity ensures that users can create persiste
 
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool[Follow Azure NetApp Files documentation to set up an auto QoS capacity pool^].
 
-== Delegate a subnet to Azure NetApp Files
+== Delegate a subnet to Azure NetApp Files (optional)
 
-You need to delegate a subnet to Azure NetApp Files so that Astra Control Service can create persistent volumes in that subnet. Note that Azure NetApp Files enables you to have only one delegated subnet in a VNet.
+If you plan on using Azure NetApp Files as a storage backend, you need to delegate a subnet to Azure NetApp Files so that Astra Control Service can create persistent volumes in that subnet. Note that Azure NetApp Files enables you to have only one delegated subnet in a VNet.
 
 If you're using peered VNets, then both sides of the peering connection must be online: the VNet where your Kubernetes clusters reside and the VNet that has the Azure NetApp Files delegated subnet.
 
