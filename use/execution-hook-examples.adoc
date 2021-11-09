@@ -19,7 +19,7 @@ This is an example of a simple hook that succeeds and writes a message to standa
 [source,sh]
 ----
 #!/bin/sh
-#
+
 # success_sample.sh
 #
 # A simple noop success hook script for testing purposes.
@@ -76,7 +76,6 @@ This is an example of a simple hook that succeeds and writes a message to standa
 ----
 #!/bin/bash
 
-#
 # success_sample.bash
 #
 # A simple noop success hook script for testing purposes.
@@ -132,7 +131,6 @@ This is an example of a simple hook that succeeds and writes a message to standa
 ----
 #!/bin/zsh
 
-#
 # success_sample.zsh
 #
 # A simple noop success hook script for testing purposes.
@@ -188,7 +186,6 @@ The following example demonstrates how you can use args in a hook.
 ----
 #!/bin/sh
 
-#
 # success_sample_args.sh
 #
 # A simple success hook script with args for testing purposes.
@@ -252,7 +249,7 @@ The following example demonstrates how the same script can be used for both a pr
 [source,sh]
 ----
 #!/bin/sh
-#
+
 # success_sample_pre_post.sh
 #
 # A simple success hook script example with an arg for testing purposes
@@ -357,9 +354,8 @@ The following example demonstrates how you can handle failures in a hook.
 
 [source,sh]
 ----
-
 #!/bin/sh
-#
+
 # failure_sample_arg_exit_code.sh
 #
 # A simple failure hook script for testing purposes.
@@ -420,7 +416,6 @@ The following example demonstrates how you can handle failures in a hook, with m
 ----
 #!/bin/sh
 
-#
 # failure_sample_verbose.sh
 #
 # A simple failure hook script with args for testing purposes.
@@ -487,7 +482,6 @@ The following example demonstrates a hook failing with an exit code.
 ----
 #!/bin/sh
 
-#
 # failure_sample_arg_exit_code.sh
 #
 # A simple failure hook script for testing purposes.
@@ -547,7 +541,7 @@ The following example demonstrates a hook failing the first time it is run, but 
 [source,sh]
 ----
 #!/bin/sh
-#
+
 # failure_then_success_sample.sh
 #
 # A hook script that fails on initial run but succeeds on second run for testing purposes.
