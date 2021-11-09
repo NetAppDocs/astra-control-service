@@ -16,7 +16,7 @@ Use the following examples to get an idea of how to structure your execution hoo
 == Simple success example
 This is an example of a simple hook that succeeds and writes a message to standard output and standard error.
 
-[source,sh]
+[source]
 ----
 #!/bin/sh
 
@@ -72,7 +72,7 @@ exit 0
 == Simple success example (bash version)
 This is an example of a simple hook that succeeds and writes a message to standard output and standard error, written for bash.
 
-[source,bash]
+[source]
 ----
 #!/bin/bash
 
@@ -127,7 +127,7 @@ exit 0
 == Simple success example (zsh version)
 This is an example of a simple hook that succeeds and writes a message to standard output and standard error, written for Z shell.
 
-[source,zsh]
+[source]
 ----
 #!/bin/zsh
 
@@ -182,7 +182,7 @@ exit 0
 == Success with arguments example
 The following example demonstrates how you can use args in a hook.
 
-[source,sh]
+[source]
 ----
 #!/bin/sh
 
@@ -246,7 +246,7 @@ exit 0
 == Pre-snapshot / post-snapshot hook example
 The following example demonstrates how the same script can be used for both a pre-snapshot and a post-snapshot hook.
 
-[source,sh]
+[source]
 ----
 #!/bin/sh
 
@@ -352,7 +352,7 @@ exit ${rc}
 == Failure example
 The following example demonstrates how you can handle failures in a hook.
 
-[source,sh]
+[source]
 ----
 #!/bin/sh
 
@@ -412,7 +412,7 @@ exit ${argexitcode}
 == Verbose failure example
 The following example demonstrates how you can handle failures in a hook, with more verbose logging.
 
-[source,sh]
+[source]
 ----
 #!/bin/sh
 
@@ -478,7 +478,7 @@ exit 8
 == Failure with an exit code example
 The following example demonstrates a hook failing with an exit code.
 
-[source,sh]
+[source]
 ----
 #!/bin/sh
 
@@ -538,7 +538,7 @@ exit ${argexitcode}
 == Success after failure example
 The following example demonstrates a hook failing the first time it is run, but succeeding after the second run.
 
-[source,sh]
+[source]
 ----
 #!/bin/sh
 
