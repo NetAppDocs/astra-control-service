@@ -95,3 +95,5 @@ Due to a limitation, if a PVC requests a volume between 700-999 GiB, Astra Contr
 Astra Control Service supports Google Persistent Disk as a backend storage option. This service provides block-level storage that is managed by Google.
 
 https://cloud.google.com/persistent-disk/[Learn more about Google Persistent Disk^].
+
+https://cloud.google.com/compute/docs/disks/performance[Learn more about different performance levels of Google Persistent Disks^].
