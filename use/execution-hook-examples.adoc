@@ -248,6 +248,7 @@ exit 0
 
 == Pre-snapshot / post-snapshot hook example
 The following example demonstrates how the same script can be used for both a pre-snapshot and a post-snapshot hook.
+
 [source,shell]
 ----
 #!/bin/sh
