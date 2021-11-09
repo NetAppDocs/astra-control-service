@@ -36,10 +36,10 @@ If you plan to use Azure NetApp Files as a storage backend, register the NetApp 
 [role="quick-margin-para"]
 In the Azure portal, go to Azure NetApp Files and create a NetApp account. <<Create a NetApp account,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Set up capacity pools
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] (Optional): Set up capacity pools
 
 [role="quick-margin-para"]
-Set up one or more capacity pools for your persistent volumes. <<Set up a capacity pool,Learn more about this step>>.
+If you plan on using Azure NetApp Files as a storage backend, set up one or more capacity pools for your persistent volumes. <<Set up a capacity pool (optional),Learn more about this step>>.
 
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] (Optional): Delegate a subnet to Azure NetApp Files
 
@@ -146,9 +146,9 @@ After you've registered, create a NetApp account in Azure NetApp Files.
 
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account[Follow Azure NetApp Files documentation to create a NetApp account from the Azure portal^].
 
-== Set up a capacity pool
+== Set up a capacity pool (optional)
 
-One or more capacity pools are required so that Astra Control Service can provision persistent volumes in a capacity pool. Astra Control Service doesn't create capacity pools for you.
+If you plan on using Azure NetApp Files as a storage backend, one or more capacity pools are required so that Astra Control Service can provision persistent volumes in a capacity pool. Astra Control Service doesn't create capacity pools for you.
 
 Take the following into consideration as you set up capacity pools for your Kubernetes apps:
 
