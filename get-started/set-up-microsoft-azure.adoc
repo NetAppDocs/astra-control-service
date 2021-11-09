@@ -122,10 +122,7 @@ If you don't have a Microsoft Azure account, begin by signing up for Microsoft A
 
 .Steps
 
-. If you already have a Microsoft Azure account, skip to step 4.
-
 . Go to the https://azure.microsoft.com/en-us/free/[Azure subscription page^] to subscribe to the Azure service.
-
 . Select a plan and follow the instructions to complete the subscription.
 
 == Register for Azure NetApp Files (optional)
@@ -135,7 +132,6 @@ If you plan to use Azure NetApp Files as a storage backend, get access to Azure 
 .Steps
 
 . Log in to the Azure portal.
-
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
 
 == Create a NetApp account
