@@ -52,7 +52,7 @@ You can view existing custom or NetApp-provided execution hooks for an app.
 You can view all enabled or disabled execution hooks in the resulting list. You can see a hook's status, source, and when it runs (pre- or post-snapshot). To view event logs surrounding execution hooks, go to the *Activity* page in the left-side navigation area.
 
 == Create a custom execution hook
-You can create a custom execution hook for an app. See link:execution-hook-examples.html[Execution hook examples^] for hook examples.
+You can create a custom execution hook for an app. See link:execution-hook-examples.html[Execution hook examples^] for hook examples. You need to have Owner/Admin permissions to create execution hooks.
 
 .Steps
 
@@ -79,7 +79,7 @@ An execution hook can run against all container images contained within the appl
 . Click *Add hook*.
 
 == Disable an execution hook
-You can disable an execution hook if you want to temporarily prevent it from running before or after a snapshot of an app.
+You can disable an execution hook if you want to temporarily prevent it from running before or after a snapshot of an app. You need to have Owner/Admin permissions to disable execution hooks.
 
 .Steps
 
@@ -89,7 +89,7 @@ You can disable an execution hook if you want to temporarily prevent it from run
 . Select *Disable*.
 
 == Delete an execution hook
-You can remove an execution hook entirely if you no longer need it.
+You can remove an execution hook entirely if you no longer need it. You need to have Owner/Admin permissions to delete execution hooks.
 
 .Steps
 
