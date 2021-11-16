@@ -22,6 +22,7 @@ Astra Control has the following app management requirements:
 ** https://github.com/k8ssandra/cass-operator/tree/v1.7.1[Apache Cassandra^]
 ** https://github.com/jenkinsci/kubernetes-operator[Jenkins CI^]
 ** https://github.com/percona/percona-xtradb-cluster-operator[Percona XtraDB Cluster^]
++
 NOTE: If you clone an operator-deployed instance of Jenkins CI, you need to manually restore the persistent data. This is a limitation of the app's deployment model.
 
 Each of these operators must be deployed in the same namespace as the app. You might need to modify the deployment .yaml file for the operator to ensure this is the case.
