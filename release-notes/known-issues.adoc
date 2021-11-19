@@ -12,6 +12,9 @@ summary: Known issues identify problems that might prevent you from using this r
 
 Known issues identify problems that might prevent you from using this release of the product successfully.
 
+== Operator-deployed apps and namespaces
+An operator and the app it deploys must be installed together in the same namespace. Astra Control supports only one operator-deployed app per namespace.
+
 == Backup taken from new snapshot instead of existing snapshot
 
 When you create a backup and select *Backup from existing snapshot*, Astra Control creates an ad-hoc snapshot and uses that snapshot to create the backup. Astra Control doesn't use the existing snapshot.
