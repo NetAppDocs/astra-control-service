@@ -25,6 +25,8 @@ Astra Control has the following app management requirements:
 
 Each of these operators must be deployed in the same namespace as the app. You might need to modify the deployment .yaml file for the operator to ensure this is the case.
 
+NOTE: Only one operator-deployed app is supported per namespace.
+
 == Install apps on your cluster
 
 Now that you've added your cluster to Astra Control, you can install apps on the cluster. Persistent volumes will be provisioned on the new storage classes by default. After the pods are online, you can manage the app with Astra Control.
