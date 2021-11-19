@@ -23,9 +23,7 @@ Astra Control has the following app management requirements:
 ** https://github.com/jenkinsci/kubernetes-operator[Jenkins CI^]
 ** https://github.com/percona/percona-xtradb-cluster-operator[Percona XtraDB Cluster^]
 
-Each of these operators must be deployed in the same namespace as the app. You might need to modify the deployment .yaml file for the operator to ensure this is the case.
-
-NOTE: Only one operator-deployed app is supported per namespace.
+NOTE: Only one operator-deployed app is supported per namespace. An operator and the app it deploys must use the same namespace; you might need to modify the deployment .yaml file for the operator to ensure this is the case.
 
 == Install apps on your cluster
 
