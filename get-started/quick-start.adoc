@@ -16,7 +16,7 @@ This page provides a high-level overview of the steps that you need to complete 
 
 [role="quick-margin-list"]
 .. Google Cloud:
-** Review GKE cluster requirements.
+** Review Google Kubernetes Engine cluster requirements.
 ** Purchase Cloud Volumes Service for Google Cloud from the Google Cloud Marketplace.
 ** Enable the required APIs.
 ** Create a service account and service account key.
@@ -24,7 +24,7 @@ This page provides a high-level overview of the steps that you need to complete 
 +
 link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 .. Microsoft Azure:
-** Review AKS cluster requirements.
+** Review Azure Kubernetes Service cluster requirements.
 ** Register for Azure NetApp Files.
 ** Create a NetApp account.
 ** Set up a capacity pool.
