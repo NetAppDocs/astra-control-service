@@ -12,6 +12,8 @@ summary: A few steps are required to prepare your Microsoft Azure subscription b
 
 A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra Control Service.
 
+NOTE: Support for using Azure Managed Disks as a backend storage service is in initial preview status with this release.
+
 == Quick start for setting up Azure
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
@@ -50,6 +52,11 @@ If you plan to use Azure NetApp Files as a storage backend, delegate a subnet to
 
 [role="quick-margin-para"]
 Create an Azure service principal that has the Contributor role. <<Create an Azure service principal,Read step-by-step instructions>>.
+
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight] (Optional): Create a volume snapshot
+
+[role="quick-margin-para"]
+If you plan to use Azure Managed Disks as a storage backend, you need to manually create a volume snapshot. <<Create a volume snapshot (optional),Follow step-by-step instructions>>.
 
 == Azure Kubernetes Service cluster requirements
 
@@ -247,3 +254,8 @@ az storage container list --subscription SUBSCRIPTION-ID
 [source,azurecli]
 az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
 az aks list --subscription SUBSCRIPTION-ID --resource-group RESOURCE-GROUP-ID
+
+== Create a volume snapshot (optional)
+If you plan to use Azure Managed Disks as a storage backend, you need to manually create a volume snapshot. In the following instructions, you only need to complete the steps in the section titled *Create a volume snapshot*.
+
+https://docs.microsoft.com/en-us/azure/aks/azure-disk-csi#volume-snapshots[Follow these instructions to create a volume snapshot^].

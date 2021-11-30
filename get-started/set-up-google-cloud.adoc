@@ -14,6 +14,8 @@ A few steps are required to prepare your Google Cloud project before you can man
 
 NOTE: If you do not start out using Google Cloud Volumes Service for Google Cloud as a storage backend but plan to use it at a later date, you should complete the necessary steps to configure Google Cloud Volumes Service for Google Cloud now. Creating a service account later means that you might lose access to your existing storage buckets.
 
+NOTE: Support for using Google Persistent Disk as a backend storage service is in initial preview status with this release.
+
 == Quick start for setting up Google Cloud
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
@@ -76,9 +78,14 @@ Create a key for the service account and save the key file in a secure location.
 [role="quick-margin-para"]
 If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, set up network peering from your VPC to Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC (optional),Follow step-by-step instructions>>.
 
-The following image depicts each of these steps that you'll need to complete.
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] (Optional): Create a VolumeSnapshotClass object
 
-image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud project, a service account with IAM roles and a key, enabled APIs, and private service access to Cloud Volumes Service for Google Cloud.]
+[role="quick-margin-para"]
+If you plan to use Google Persistent Disk as a storage backend, you need to manually create a VolumeSnapshotClass object. <<Create a VolumeSnapshotClass object (optional),Follow step-by-step instructions>>.
+
+//The following image depicts each of these steps that you'll need to complete.
+// Old image
+//image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud project, a service account with IAM roles and a key, enabled APIs, and private service access to Cloud Volumes Service for Google Cloud.]
 
 == GKE cluster requirements
 
@@ -243,7 +250,7 @@ video::video-create-gcp-service-account-key.mp4[width=848, height=480]
 
 == Set up network peering for your VPC (optional)
 
-The final step is to set up networking peering from your VPC to Cloud Volumes Service for Google Cloud.
+If you plan to use Cloud Volumes Service for Google Cloud as a backend storage service, the final step is to set up networking peering from your VPC to Cloud Volumes Service for Google Cloud.
 
 The easiest way to set up network peering is by obtaining the gcloud commands directly from Cloud Volumes Service. The commands are available from Cloud Volumes Service when creating a new file system.
 
@@ -282,3 +289,8 @@ https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-priv
 . After you're done, you can click cancel on the *Create File System* page.
 +
 We started creating this volume only to get the commands for network peering.
+
+== Create a VolumeSnapshotClass object (optional)
+If you plan to use Google Persistent Disk as a storage backend, you need to manually create a VolumeSnapshotClass object.
+
+https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/volume-snapshots#create-snapshotclass[Follow these instructions to configure a VolumeSnapshotClass object^].
