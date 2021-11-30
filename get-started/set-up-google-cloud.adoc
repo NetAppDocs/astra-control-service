@@ -78,10 +78,12 @@ Create a key for the service account and save the key file in a secure location.
 [role="quick-margin-para"]
 If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, set up network peering from your VPC to Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC (optional),Follow step-by-step instructions>>.
 
+////
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] (Optional): Create a VolumeSnapshotClass object
 
 [role="quick-margin-para"]
 If you plan to use Google Persistent Disk as a storage backend, you need to manually create a VolumeSnapshotClass object. <<Create a VolumeSnapshotClass object (optional),Follow step-by-step instructions>>.
+////
 
 //The following image depicts each of these steps that you'll need to complete.
 // Old image
@@ -290,7 +292,9 @@ https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-priv
 +
 We started creating this volume only to get the commands for network peering.
 
+////
 == Create a VolumeSnapshotClass object (optional)
 If you plan to use Google Persistent Disk as a storage backend, you need to manually create a VolumeSnapshotClass object.
 
 https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/volume-snapshots#create-snapshotclass[Follow these instructions to configure a VolumeSnapshotClass object^].
+////
