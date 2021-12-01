@@ -15,21 +15,24 @@ An execution hook is a custom script that you can run before or after a snapshot
 
 For the following validated apps, Astra Control comes with default execution hooks that handle freeze and thaw operations before and after snapshots.
 
-* MariaDB 10.5.9
-* MySQL 8.0.25
-* PostgreSQL 11.12
+* MariaDB (matching regular expression: )
+* MySQL
+* PostgreSQL
 
 You can use the NetApp-provided hooks for these apps, or disable them and use your own. You cannot delete or modify NetApp-provided execution hooks.
 
 == Important notes about execution hooks
 Keep the following points in mind when planning execution hooks for your apps.
 
+* Astra Control requires execution hooks to be written in the format of executable shell scripts.
+* Script size is limited to 128KB.
 * Astra Control uses execution hook settings and any matching criteria to determine which hooks are applicable to a snapshot.
 * All execution hook failures are soft failures; other hooks and the snapshot are still attempted even if a hook fails. However, when a hook fails, a warning event is recorded in the *Activity* page event log.
-* Any executable script is supported and execution is dependent on support for that script in the container (including interpreted languages such as Python, Ruby, or Go).
-* Script size is limited to 128KB.
-* All create, edit, and delete operations use Owner/Admin permissions.
+* To create, edit, or delete execution hooks, you must be a user with Owner, Admin, or Member permissions.
+* If an execution hook takes longer than 25 minutes to run, the hook will fail, creating an event log entry with a return code of "N/A". Any affected snapshot will timeout and be marked as failed, with a resulting event log entry noting the timeout.
 //* Scripts that run with Member and Viewer privileges can view only.
+
+NOTE: Since execution hooks often reduce or completely disable the functionality of the application they are running against, you should always try to minimize the time your custom execution hooks take to run.
 
 When a snapshot is run, execution hook events take place in the following order:
 
@@ -59,13 +62,11 @@ You can create a custom execution hook for an app. See link:execution-hook-examp
 . Click *Apps* and then click the name of a managed app.
 . Click the *Execution hooks* tab.
 . Click *Add a new hook*.
-. Depending on when the hook should run, choose *Pre-Snapshot* or *Post-Snapshot*.
+. In the *Hook Details* area, depending on when the hook should run, choose *Pre-Snapshot* or *Post-Snapshot*.
 . Enter a unique name for the hook.
-. (Optional) Enter any arguments to pass to the hook during execution.
-. (Optional) Enter any container image names the hook should run for. This instructs the hook to act only on the specified snapshot images.
-+
-An execution hook can run against all container images contained within the application (default), or you can specify a specific container image name or names here.
-. Do one of the following:
+. (Optional) Enter any arguments to pass to the hook during execution, pressing the Enter key after each argument you enter to record each one.
+. (Optional) In the *Container Images* area, if the hook should run against all container images contained within the application, enable the *Apply to all container images* check box. If instead the hook should act only on one or more specified container images, enter the container image names in the *Container image names to match* field.
+. In the *Script* area, do one of the following:
 * Upload a custom script.
 .. Select the *Upload file* option.
 .. Browse to a file and upload it.
