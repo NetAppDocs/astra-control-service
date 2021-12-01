@@ -14,11 +14,16 @@ summary: An execution hook is a custom script that you can run before or after a
 An execution hook is a custom script that you can run before or after a snapshot of a managed app. For example, if you have a database app, you can use execution hooks to pause all database transactions before a snapshot, and resume transactions after the snapshot is complete. This ensures application-consistent snapshots.
 
 == NetApp default execution hooks
-For the following validated apps, Astra Control comes with default execution hooks that handle freeze and thaw operations before and after snapshots. Astra Control uses regular expressions to match an app's container image to the list of validated apps. If there is a match, the NetApp-provided execution hooks for that app appear in the app's list of active execution hooks, and they will run automatically when snapshots of that app are taken. If one of your custom apps has a similar image name that happens to match one of the regular expressions (and you don't want to use the NetApp-provided execution hooks), you can either change the image name, or disable the NetApp-provided execution hook for that app and use a custom hook instead.
+For the following validated apps, Astra Control comes with default execution hooks that handle freeze and thaw operations before and after snapshots.
 
-* MariaDB (matching regular expression: *\bmariadb\b* )
-* MySQL (matching regular expression: *\bmysql\b* )
-* PostgreSQL (matching regular expression: *\bpostgresql\b* )
+* MariaDB
+** Matching regular expression: \bmariadb\b
+* MySQL
+** Matching regular expression: \bmysql\b
+* PostgreSQL
+** Matching regular expression: \bpostgresql\b
+
+Astra Control uses regular expressions to match an app's container image to the list of validated apps. If there is a match, the NetApp-provided execution hooks for that app appear in the app's list of active execution hooks, and they will run automatically when snapshots of that app are taken. If one of your custom apps has a similar image name that happens to match one of the regular expressions (and you don't want to use the NetApp-provided execution hooks), you can either change the image name, or disable the NetApp-provided execution hook for that app and use a custom hook instead.
 
 You can use the NetApp-provided hooks for these apps, or disable them and use your own. You cannot delete or modify NetApp-provided execution hooks.
 
