@@ -25,7 +25,8 @@ For the following validated apps, Astra Control comes with default execution hoo
 
 Astra Control uses regular expressions to match an app's container image to the list of validated apps. If there is a match, the NetApp-provided execution hooks for that app appear in the app's list of active execution hooks, and they will run automatically when snapshots of that app are taken. If one of your custom apps has a similar image name that happens to match one of the regular expressions (and you don't want to use the NetApp-provided execution hooks), you can either change the image name, or disable the NetApp-provided execution hook for that app and use a custom hook instead.
 
-You can use the NetApp-provided hooks for these apps, or disable them and use your own. You cannot delete or modify NetApp-provided execution hooks.
+//You can use the NetApp-provided hooks for these apps, or disable them and use your own. 
+You cannot delete or modify NetApp-provided execution hooks.
 
 == Important notes about custom execution hooks
 Keep the following points in mind when planning execution hooks for your apps.
