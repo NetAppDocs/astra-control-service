@@ -66,7 +66,7 @@ You can create a custom execution hook for an app. See link:execution-hook-examp
 . In the *Hook Details* area, depending on when the hook should run, choose *Pre-Snapshot* or *Post-Snapshot*.
 . Enter a unique name for the hook.
 . (Optional) Enter any arguments to pass to the hook during execution, pressing the Enter key after each argument you enter to record each one.
-. (Optional) In the *Container Images* area, if the hook should run against all container images contained within the application, enable the *Apply to all container images* check box. If instead the hook should act only on one or more specified container images, enter the container image names in the *Container image names to match* field.
+. In the *Container Images* area, if the hook should run against all container images contained within the application, enable the *Apply to all container images* check box. If instead the hook should act only on one or more specified container images, enter the container image names in the *Container image names to match* field.
 . In the *Script* area, do one of the following:
 * Upload a custom script.
 .. Select the *Upload file* option.
