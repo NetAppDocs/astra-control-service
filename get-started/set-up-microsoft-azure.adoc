@@ -33,10 +33,10 @@ Create a Microsoft Azure account. <<Sign up for Microsoft Azure,Learn more about
 [role="quick-margin-para"]
 If you plan to use Azure NetApp Files as a storage backend, register the NetApp Resource Provider. <<Register for Azure NetApp Files (optional),Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Create a NetApp account
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] (Optional): Create a NetApp account
 
 [role="quick-margin-para"]
-In the Azure portal, go to Azure NetApp Files and create a NetApp account. <<Create a NetApp account,Learn more about this step>>.
+If you plan to use Azure NetApp Files as a storage backend, go to Azure NetApp Files in the Azure portal and create a NetApp account. <<Create a NetApp account (optional),Learn more about this step>>.
 
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] (Optional): Set up capacity pools
 
@@ -144,9 +144,9 @@ If you plan to use Azure NetApp Files as a storage backend, get access to Azure 
 . Log in to the Azure portal.
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
 
-== Create a NetApp account
+== Create a NetApp account (optional)
 
-After you've registered, create a NetApp account in Azure NetApp Files.
+If you plan to use Azure NetApp Files as a storage backend, create a NetApp account in Azure NetApp Files.
 
 .Step
 
@@ -217,12 +217,12 @@ az account list --output table
 * Create the service principal, assign the Contributor role, and specify the scope to the entire subscription where the clusters reside.
 +
 [source,azurecli]
-az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
+az ad sp create-for-rbac --name service-principal-name --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
 
 * Create the service principal, assign the Contributor role, and specify the resource group where the clusters reside.
 +
 [source,azurecli]
-az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID/resourceGroups/RESOURCE-GROUP-ID
+az ad sp create-for-rbac --name service-principal-name --role contributor --scopes /subscriptions/SUBSCRIPTION-ID/resourceGroups/RESOURCE-GROUP-ID
 
 . Store the resulting Azure CLI output as a JSON file.
 +
