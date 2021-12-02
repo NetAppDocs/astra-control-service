@@ -25,7 +25,7 @@ For the following validated apps, Astra Control comes with default execution hoo
 
 Astra Control uses regular expressions to match an app's container image to the list of validated apps. If there is a match, the NetApp-provided execution hooks for that app appear in the app's list of active execution hooks, and they will run automatically when snapshots of that app are taken. If one of your custom apps has a similar image name that happens to match one of the regular expressions (and you don't want to use the NetApp-provided execution hooks), you can either change the image name, or disable the NetApp-provided execution hook for that app and use a custom hook instead.
 
-//You can use the NetApp-provided hooks for these apps, or disable them and use your own. 
+//You can use the NetApp-provided hooks for these apps, or disable them and use your own.
 You cannot delete or modify NetApp-provided execution hooks.
 
 == Important notes about custom execution hooks
@@ -49,7 +49,7 @@ When a snapshot is run, execution hook events take place in the following order:
 . Any applicable custom post-snapshot execution hooks are run on the appropriate containers. You can create and run as many custom post-snapshot hooks as you need, but the order of execution of these hooks after the snapshot is neither guaranteed nor configurable.
 . Any applicable NetApp-provided post-snapshot execution hooks are run on the appropriate containers.
 
-NOTE: You should always test your execution hook scripts before enabling them in a production environment. After you enable them in a production environment, test the resulting snapshots to ensure they are consistent. You can do this by cloning the app to a temporary namespace, restoring the snapshot, and then testing the app.
+NOTE: You should always test your execution hook scripts before enabling them in a production environment. You can use the 'kubectl exec' command to conveniently test the scripts. After you enable the execution hooks in a production environment, test the resulting snapshots to ensure they are consistent. You can do this by cloning the app to a temporary namespace, restoring the snapshot, and then testing the app.
 
 == View existing execution hooks
 You can view existing custom or NetApp-provided execution hooks for an app.
@@ -62,7 +62,9 @@ You can view existing custom or NetApp-provided execution hooks for an app.
 You can view all enabled or disabled execution hooks in the resulting list. You can see a hook's status, source, and when it runs (pre- or post-snapshot). To view event logs surrounding execution hooks, go to the *Activity* page in the left-side navigation area.
 
 == Create a custom execution hook
-You can create a custom execution hook for an app. See link:execution-hook-examples.html[Execution hook examples^] for hook examples. You need to have Owner/Admin permissions to create execution hooks.
+You can create a custom execution hook for an app. See link:execution-hook-examples.html[Execution hook examples^] for hook examples. You need to have Owner, Admin, or Member permissions to create execution hooks.
+
+NOTE: When you create a custom shell script to use as an execution hook, remember to specify the appropriate shell at the beginning of the file, unless you are running linux commands or providing the full path to an executable.
 
 .Steps
 
@@ -87,7 +89,7 @@ You can create a custom execution hook for an app. See link:execution-hook-examp
 . Click *Add hook*.
 
 == Disable an execution hook
-You can disable an execution hook if you want to temporarily prevent it from running before or after a snapshot of an app. You need to have Owner/Admin permissions to disable execution hooks.
+You can disable an execution hook if you want to temporarily prevent it from running before or after a snapshot of an app. You need to have Owner, Admin, or Member permissions to disable execution hooks.
 
 .Steps
 
@@ -97,7 +99,7 @@ You can disable an execution hook if you want to temporarily prevent it from run
 . Select *Disable*.
 
 == Delete an execution hook
-You can remove an execution hook entirely if you no longer need it. You need to have Owner/Admin permissions to delete execution hooks.
+You can remove an execution hook entirely if you no longer need it. You need to have Owner, Admin, or Member permissions to delete execution hooks.
 
 .Steps
 
