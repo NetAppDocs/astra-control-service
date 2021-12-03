@@ -36,7 +36,7 @@ Keep the following points in mind when planning execution hooks for your apps.
 * Astra Control uses execution hook settings and any matching criteria to determine which hooks are applicable to a snapshot.
 * All execution hook failures are soft failures; other hooks and the snapshot are still attempted even if a hook fails. However, when a hook fails, a warning event is recorded in the *Activity* page event log.
 * To create, edit, or delete execution hooks, you must be a user with Owner, Admin, or Member permissions.
-* If an execution hook takes longer than 25 minutes to run, the hook will fail, creating an event log entry with a return code of "N/A". Any affected snapshot will timeout and be marked as failed, with a resulting event log entry noting the timeout.
+* If an execution hook takes longer than 25 minutes to run, the hook will fail, creating an event log entry with a return code of "N/A". Any affected snapshot will time out and be marked as failed, with a resulting event log entry noting the timeout.
 //* Scripts that run with Member and Viewer privileges can view only.
 
 NOTE: Since execution hooks often reduce or completely disable the functionality of the application they are running against, you should always try to minimize the time your custom execution hooks take to run.
