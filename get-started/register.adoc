@@ -21,13 +21,23 @@ TIP: You can use single sign-on to log in to Cloud Central using credentials fro
 
 .Steps
 
-. Open your web browser and go to https://cloud.netapp.com[NetApp Cloud Central^].
+. Open your web browser and go to https://cloud.netapp.com/astra-control[Astra Control^].
+
+. Click *Get started with Astra Control now*.
+
+. Select the *FREE PLAN* tab.
+
+. Fill out the form and click *Submit*.
+
+. Go to https://cloud.netapp.com[NetApp Cloud Central^].
 
 . In the top right, click *Sign up*.
 
-. Fill out the form and click *Sign up*.
+. Fill out the form. Ensure that the phone number and email address you enter here are the same as you used in the "FREE PLAN" form.
+
+. Click *Sign up*.
 +
-TIP: The email address that you enter in this form is for your NetApp Cloud Central user ID. Use this Cloud Central user ID when you sign up for a new Astra Control account, or when an Astra Control admin invites you to an existing Astra Control account.
+TIP: The email address that you enter in these forms is for your NetApp Cloud Central user ID. Use this Cloud Central user ID when you sign up for a new Astra Control account, or when an Astra Control admin invites you to an existing Astra Control account.
 +
 image:screenshot-cloud-central-signup.gif["A screenshot of the Cloud Central sign up page where you need to enter your email address, password, name, company, and your phone number, which is optional."]
 
