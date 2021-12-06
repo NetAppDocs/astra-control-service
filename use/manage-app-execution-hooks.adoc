@@ -29,7 +29,7 @@ Astra Control uses regular expressions to match an app's container image to the 
 You cannot delete or modify NetApp-provided execution hooks.
 
 == Important notes about custom execution hooks
-Keep the following points in mind when planning execution hooks for your apps.
+Consider the following when planning execution hooks for your apps.
 
 * Astra Control requires execution hooks to be written in the format of executable shell scripts.
 * Script size is limited to 128KB.

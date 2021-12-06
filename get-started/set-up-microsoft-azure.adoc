@@ -63,7 +63,7 @@ If you plan to use Azure Managed Disks as a storage backend, you need to manuall
 
 == Azure Kubernetes Service cluster requirements
 
-A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service.
+A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service. Note that some of these requirements only apply if you plan to use Azure NetApp Files as a storage backend.
 
 Kubernetes version:: Clusters must be running Kubernetes version 1.19 or later.
 
@@ -71,11 +71,12 @@ Image type:: The image type for all node pools must be Linux.
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
 
-Azure region:: Clusters must reside in a region where Azure NetApp Files is available. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp[View Azure products by region^].
+Azure region:: If you plan to use Azure NetApp Files as a storage backend, clusters must reside in a region where Azure NetApp Files is available. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp[View Azure products by region^]. As a best practice, you should choose a region that supports Azure NetApp Files, even if you do not use it as a storage backend. This makes it easier to use Azure NetApp Files as a storage backend in the future if your performance requirements change.
 
-Subscription:: Clusters must reside in a subscription where Azure NetApp Files is enabled. You'll choose a subscription when you <<Register for Azure NetApp Files,register for Azure NetApp Files>>.
+Subscription:: If you plan to use Azure NetApp Files as a storage backend, clusters must reside in a subscription where Azure NetApp Files is enabled. You'll choose a subscription when you <<Register for Azure NetApp Files,register for Azure NetApp Files>>.
 
 VNet::
+If you plan to use Azure NetApp Files as a storage backend, consider the following:
 * Clusters must reside in a VNet that has direct access to an Azure NetApp Files delegated subnet. <<Delegate a subnet to Azure NetApp Files,Learn how to set up a delegated subnet>>.
 *	If your Kubernetes clusters are in a VNet that's peered to the Azure NetApp Files delegated subnet that's in another VNet, then both sides of the peering connection must be online.
 *	Be aware that the default limit for the number of IPs used in a VNet (including immediately peered VNets) with Azure NetApp Files is 1,000. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits[View Azure NetApp Files resource limits^].
