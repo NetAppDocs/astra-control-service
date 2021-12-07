@@ -68,5 +68,5 @@ image:screenshot-cloud-central-signup.gif["A screenshot of the Cloud Central sig
 .Result
 
 You now have an active Cloud Central user login.
-+
+
 Now that you're registered, you can access Astra Control directly using your Cloud Central credentials from https://astra.netapp.io.
