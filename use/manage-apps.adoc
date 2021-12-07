@@ -15,15 +15,48 @@ After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to
 == App management requirements
 Astra Control has the following app management requirements:
 
-//* *Licensing*: You need an Astra Control Center license to manage apps using Astra Control Center.
-* *Helm 3*: If you use Helm to deploy apps, Astra Control requires Helm version 3. Managing and cloning apps deployed with Helm 3 (or upgraded from Helm 2 to Helm 3) are fully supported. Managing apps deployed with Helm 2 is not supported.
+* *Licensing*: To manage apps using Astra Control Center, you need an Astra Control Center license.
+* *Namespaces*: Astra Control requires that an app not span more than a single namespace, but a namespace can contain more than one app.
+* *StorageClass*: If you install an app with a StorageClass explicitly set and you need to clone the app, the target cluster for the clone operation must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
+* *Kubernetes resources*: Apps that use Kubernetes Resources not collected by Astra Control might not have full app data management capabilities. Astra Control collects the following Kubernetes resources:
+** ClusterRole
+** ClusterRoleBinding
+** ConfigMap
+** CustomResourceDefinition
+** CustomResource
+** DaemonSet
+** Deployment
+** DeploymentConfig
+** Ingress
+** MutatingWebhook
+** PersistentVolumeClaim
+** Pod
+** ReplicaSet
+** RoleBinding
+** Role
+** Route
+** Secret
+** Service
+** ServiceAccount
+** StatefulSet
+** ValidatingWebhook
+
+=== Supported app installation methods
+Astra Control supports the following application installation methods:
+
+* *Manifest file*: Astra Control supports apps installed from a manifest file using kubectl. For example:
++
+----
+kubectl apply -f myapp.yaml
+----
+* *Helm 3*: If you use Helm to install apps, Astra Control requires Helm version 3. Managing and cloning apps installed with Helm 3 (or upgraded from Helm 2 to Helm 3) are fully supported. Managing apps installed with Helm 2 is not supported.
 //* *Operator management*: Astra Control Center does not support apps that are deployed with Operator Lifecycle Manager (OLM)-enabled operators or cluster-scoped operators.
-* *Operator-deployed apps*: Astra Control supports the following apps deployed with namespace-scoped operators:
-** https://github.com/k8ssandra/cass-operator/tree/v1.7.1[Apache Cassandra^]
+* *Operator-deployed apps*: Astra Control supports apps installed with namespace-scoped operators. The following are some apps that have been validated for this installation model:
+** https://github.com/k8ssandra/cass-operator/tree/v1.7.1[Apache K8ssandra^]
 ** https://github.com/jenkinsci/kubernetes-operator[Jenkins CI^]
 ** https://github.com/percona/percona-xtradb-cluster-operator[Percona XtraDB Cluster^]
 
-NOTE: Only one operator-deployed app is supported per namespace. An operator and the app it deploys must use the same namespace; you might need to modify the deployment .yaml file for the operator to ensure this is the case.
+NOTE: An operator and the app it installs must use the same namespace; you might need to modify the deployment .yaml file for the operator to ensure this is the case.
 
 == Install apps on your cluster
 

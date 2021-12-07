@@ -17,6 +17,8 @@ When Astra Control clones an app, it creates a clone of your application configu
 
 NOTE: If you clone an operator-deployed instance of Jenkins CI, you need to manually restore the persistent data. This is a limitation of the app's deployment model.
 
+NOTE: If you deploy an app with a StorageClass explicitly set and you need to clone the app, the target cluster must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
+
 .Steps
 
 . Click *Apps*.
