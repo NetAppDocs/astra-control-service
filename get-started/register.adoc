@@ -52,7 +52,7 @@ TIP: You can use single sign-on to log in to Cloud Central using credentials fro
 
 . Fill out the form.
 +
-Ensure that the phone number and email address you enter here are the same that you used in the preceding "FREE PLAN" form.
+Ensure that the phone number and email address you enter here are the same that you used in the preceding free plan registration form.
 
 . Click *Sign up*.
 +
