@@ -11,7 +11,7 @@ summary: Astra Control is integrated within NetApp Cloud Central's authenticatio
 :imagesdir: ../media/get-started/
 
 [.lead]
-Complete the registration process and then sign up to NetApp Cloud Central to obtain an Astra Control account. If you already have a Cloud Central account, you can access Astra Control directly using your Cloud Central credentials from https://astra.netapp.io.
+Complete the registration process and then sign up to NetApp Cloud Central to obtain an Astra Control account. If you already have a Cloud Central account, you need to complete the Astra Control registration form before you can access https://astra.netapp.io[Astra Control^].
 
 == Register for an account
 
@@ -23,9 +23,11 @@ When you use Astra Control, you'll manage your apps from within an account. An a
 
 . https://cloud.netapp.com/astra[Go to the Astra Control page on Cloud Central^].
 
-. Click *Get started with Astra Control now*.
+. Click *Get started with Astra Control*.
 
 . Select the *FREE PLAN* tab.
++
+image:acs-registration-free-plan.png["A screenshot of the registration form plan selection tab where you need to select the FREE PLAN option."]
 
 . Provide the required information in the form.
 +
@@ -33,6 +35,7 @@ A few important things to note as you fill out the form:
 +
 * Your business name and address must be accurate because we verify them to meet the requirements of Global Trade Compliance.
 * The *Astra Account Name* is the name of your business's Astra Control account. You'll see this name in the Astra Control user interface. Note that you can create additional accounts (up to 5), if needed.
+* In the *Business Email Address* field, if you have a NetApp Cloud Central account, enter the email you use for that account here. If you don't yet have a NetApp Cloud Central account, use the email address you enter here when you sign up for Cloud Central.
 
 . Click *Submit*.
 //+
@@ -40,7 +43,7 @@ A few important things to note as you fill out the form:
 
 == Sign up to Cloud Central
 
-Astra Control Service is integrated within NetApp Cloud Central's authentication service. Sign up to Cloud Central so you can access Astra Control Service and NetApp’s other cloud services.
+If you don't already have a NetApp Cloud Central account, sign up to Cloud Central so you can access Astra Control Service and NetApp’s other cloud services. Astra Control Service is integrated within NetApp Cloud Central's authentication service. If you already have a Cloud Central account and have completed registration, you can access Astra Control directly using your Cloud Central credentials from https://astra.netapp.io.
 
 TIP: You can use single sign-on to log in to Cloud Central using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[Cloud Central Help Center^] and then click *Cloud Central sign-in options*.
 
@@ -61,7 +64,7 @@ TIP: The email address that you enter in these forms is for your NetApp Cloud Ce
 +
 image:screenshot-cloud-central-signup.gif["A screenshot of the Cloud Central sign up page where you need to enter your email address, password, name, company, and your phone number, which is optional."]
 +
-. Wait for an email from NetApp Cloud Central.
+. Wait for an email from NetApp Cloud Central. The email comes from the address saas.support@netapp.com, and might take several minutes to arrive. Be sure to check your spam folder.
 
 . When the email arrives, click the link in the email to verify your email address.
 
