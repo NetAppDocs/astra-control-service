@@ -12,8 +12,10 @@ summary: Known issues identify problems that might prevent you from using this r
 
 Known issues identify problems that might prevent you from using this release of the product successfully.
 
+////
 == Operator-deployed apps and namespaces
-Only one operator-deployed app is supported per namespace. An operator and the app it deploys must use the same namespace; you might need to modify the deployment .yaml file for the operator to ensure this is the case.
+An operator and the app it deploys must use the same namespace; you might need to modify the deployment .yaml file for the operator to ensure this is the case.
+////
 
 == Backup taken from new snapshot instead of existing snapshot
 
