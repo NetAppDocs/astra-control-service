@@ -13,7 +13,7 @@ entries:
         url: /get-started/set-up-google-cloud.html
       - title: Set up Microsoft Azure with Azure NetApp Files
         url: /get-started/set-up-microsoft-azure-with-anf.html
-      - title: Set up Microsoft Azure with Azure Managed Disks
+      - title: Set up Microsoft Azure with Azure managed disks
         url: /get-started/set-up-microsoft-azure-with-amd.html
   - title: Register for an account
     url: /get-started/register.html
