@@ -1,16 +1,16 @@
 ---
 sidebar: sidebar
-permalink: get-started/set-up-microsoft-azure.html
+permalink: get-started/set-up-microsoft-azure-with-anf.html
 keywords: azure, azure netapp files, register, create account, create netapp account, azure subscription, azure permissions, service principal, create service principal, set up azure permissions, set up service principal, setup service principal, setup azure permissions, permissions, create capacity pool, setup capacity pool, set up capacity pool, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, azure regions, kubernetes version, linux, image type, networking
 summary: A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra Control Service.
 ---
 
-= Set up Microsoft Azure
+= Set up Microsoft Azure with Azure NetApp Files
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
-A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra Control Service.
+A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra Control Service. Follow these instructions if you plan to use Azure NetApp Files as a storage backend.
 
 //NOTE: Support for using Azure Managed Disks as a backend storage service is in initial preview status with this release.
 
@@ -28,25 +28,25 @@ Ensure that clusters are healthy and running Kubernetes version 1.19 or later, t
 [role="quick-margin-para"]
 Create a Microsoft Azure account. <<Sign up for Microsoft Azure,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] (Optional): Register for Azure NetApp Files
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Register for Azure NetApp Files
 
 [role="quick-margin-para"]
-If you plan to use Azure NetApp Files as a storage backend, register the NetApp Resource Provider. <<Register for Azure NetApp Files (optional),Learn more about this step>>.
+Register the NetApp Resource Provider. <<Register for Azure NetApp Files,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] (Optional): Create a NetApp account
-
-[role="quick-margin-para"]
-If you plan to use Azure NetApp Files as a storage backend, go to Azure NetApp Files in the Azure portal and create a NetApp account. <<Create a NetApp account (optional),Learn more about this step>>.
-
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] (Optional): Set up capacity pools
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Create a NetApp account
 
 [role="quick-margin-para"]
-If you plan to use Azure NetApp Files as a storage backend, set up one or more capacity pools for your persistent volumes. <<Set up a capacity pool (optional),Learn more about this step>>.
+Go to Azure NetApp Files in the Azure portal and create a NetApp account. <<Create a NetApp account,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] (Optional): Delegate a subnet to Azure NetApp Files
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Set up capacity pools
 
 [role="quick-margin-para"]
-If you plan to use Azure NetApp Files as a storage backend, delegate a subnet to Azure NetApp Files so that Astra Control Service can create persistent volumes in that subnet. <<Delegate a subnet to Azure NetApp Files (optional),Learn more about this step>>.
+Set up one or more capacity pools for your persistent volumes. <<Set up a capacity pool,Learn more about this step>>.
+
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Delegate a subnet to Azure NetApp Files
+
+[role="quick-margin-para"]
+Delegate a subnet to Azure NetApp Files so that Astra Control Service can create persistent volumes in that subnet. <<Delegate a subnet to Azure NetApp Files,Learn more about this step>>.
 
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Create an Azure service principal
 
@@ -63,7 +63,7 @@ If you plan to use Azure Managed Disks as a storage backend, you need to manuall
 
 == Azure Kubernetes Service cluster requirements
 
-A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service. Note that some of these requirements only apply if you plan to use Azure NetApp Files as a storage backend.
+A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service.
 
 Kubernetes version:: Clusters must be running Kubernetes version 1.19 or later.
 
@@ -71,12 +71,12 @@ Image type:: The image type for all node pools must be Linux.
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
 
-Azure region:: If you plan to use Azure NetApp Files as a storage backend, clusters must reside in a region where Azure NetApp Files is available. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp[View Azure products by region^]. As a best practice, you should choose a region that supports Azure NetApp Files, even if you do not use it as a storage backend. This makes it easier to use Azure NetApp Files as a storage backend in the future if your performance requirements change.
+Azure region:: Clusters must reside in a region where Azure NetApp Files is available. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp[View Azure products by region^].
 
-Subscription:: If you plan to use Azure NetApp Files as a storage backend, clusters must reside in a subscription where Azure NetApp Files is enabled. You'll choose a subscription when you <<Register for Azure NetApp Files,register for Azure NetApp Files>>.
+Subscription:: Clusters must reside in a subscription where Azure NetApp Files is enabled. You'll choose a subscription when you <<Register for Azure NetApp Files,register for Azure NetApp Files>>.
 
 VNet::
-If you plan to use Azure NetApp Files as a storage backend, consider the following:
+Consider the following VNet requirements:
 * Clusters must reside in a VNet that has direct access to an Azure NetApp Files delegated subnet. <<Delegate a subnet to Azure NetApp Files,Learn how to set up a delegated subnet>>.
 *	If your Kubernetes clusters are in a VNet that's peered to the Azure NetApp Files delegated subnet that's in another VNet, then both sides of the peering connection must be online.
 *	Be aware that the default limit for the number of IPs used in a VNet (including immediately peered VNets) with Azure NetApp Files is 1,000. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits[View Azure NetApp Files resource limits^].
@@ -136,26 +136,26 @@ If you don't have a Microsoft Azure account, begin by signing up for Microsoft A
 . Go to the https://azure.microsoft.com/en-us/free/[Azure subscription page^] to subscribe to the Azure service.
 . Select a plan and follow the instructions to complete the subscription.
 
-== Register for Azure NetApp Files (optional)
+== Register for Azure NetApp Files
 
-If you plan to use Azure NetApp Files as a storage backend, get access to Azure NetApp Files by registering the NetApp Resource Provider.
+Get access to Azure NetApp Files by registering the NetApp Resource Provider.
 
 .Steps
 
 . Log in to the Azure portal.
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
 
-== Create a NetApp account (optional)
+== Create a NetApp account
 
-If you plan to use Azure NetApp Files as a storage backend, create a NetApp account in Azure NetApp Files.
+Create a NetApp account in Azure NetApp Files.
 
 .Step
 
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account[Follow Azure NetApp Files documentation to create a NetApp account from the Azure portal^].
 
-== Set up a capacity pool (optional)
+== Set up a capacity pool
 
-If you plan to use Azure NetApp Files as a storage backend, one or more capacity pools are required so that Astra Control Service can provision persistent volumes in a capacity pool. Astra Control Service doesn't create capacity pools for you.
+One or more capacity pools are required so that Astra Control Service can provision persistent volumes in a capacity pool. Astra Control Service doesn't create capacity pools for you.
 
 Take the following into consideration as you set up capacity pools for your Kubernetes apps:
 
@@ -175,9 +175,9 @@ Provisioning the right amount of capacity ensures that users can create persiste
 
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool[Follow Azure NetApp Files documentation to set up an auto QoS capacity pool^].
 
-== Delegate a subnet to Azure NetApp Files (optional)
+== Delegate a subnet to Azure NetApp Files
 
-If you plan to use Azure NetApp Files as a storage backend, you need to delegate a subnet to Azure NetApp Files so that Astra Control Service can create persistent volumes in that subnet. Note that Azure NetApp Files enables you to have only one delegated subnet in a VNet.
+You need to delegate a subnet to Azure NetApp Files so that Astra Control Service can create persistent volumes in that subnet. Note that Azure NetApp Files enables you to have only one delegated subnet in a VNet.
 
 If you're using peered VNets, then both sides of the peering connection must be online: the VNet where your Kubernetes clusters reside and the VNet that has the Azure NetApp Files delegated subnet.
 

@@ -24,14 +24,17 @@ This page provides a high-level overview of the steps that you need to complete 
 +
 link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 .. Microsoft Azure:
-** Review Azure Kubernetes Service cluster requirements.
-** Register for Azure NetApp Files.
-** Create a NetApp account.
-** Set up a capacity pool.
-** Delegate a subnet to Azure NetApp Files.
-** Create an Azure service principal that has the Contributor role.
+** Review Azure Kubernetes Service cluster requirements for the storage backend you plan to use.
+//** Register for Azure NetApp Files.
+//** Create a NetApp account.
+//** Set up a capacity pool.
+//** Delegate a subnet to Azure NetApp Files.
+//** Create an Azure service principal that has the Contributor role.
 +
-link:set-up-microsoft-azure.html[Learn more about Microsoft Azure requirements].
+link:set-up-microsoft-azure-with-anf.html[Learn more about Microsoft Azure and Azure NetApp Files requirements].
++
+link:set-up-microsoft-azure-with-amd.html[Learn more about Microsoft Azure and Azure managed disk requirements].
+
 
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Complete the Astra Control registration
 
