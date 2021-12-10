@@ -31,12 +31,12 @@ Create a Microsoft Azure account. <<Sign up for Microsoft Azure,Learn more about
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create an Azure service principal
 
 [role="quick-margin-para"]
-Create an Azure service principal that has the Contributor role. <<Create an Azure service principal,Read step-by-step instructions>>.
+Create an Azure service principal that has the Contributor role. <<Create an Azure service principal,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Configure Container Storage Interface (CSI) driver details
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Configure Container Storage Interface (CSI) driver details
 
 [role="quick-margin-para"]
-You need to configure your Azure subscription and the cluster to work with the CSI drivers. <<Configure Container Storage Interface (CSI) driver details,Read step-by-step instructions>>.
+You need to configure your Azure subscription and the cluster to work with the CSI drivers. <<Configure Container Storage Interface (CSI) driver details,Learn more about this step>>.
 
 == Azure Kubernetes Service cluster requirements
 
