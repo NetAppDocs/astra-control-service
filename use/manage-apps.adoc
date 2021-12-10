@@ -13,7 +13,7 @@ summary: After you add a Kubernetes cluster to Astra Control, you can install ap
 After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to Astra Control], you can install apps on the cluster (outside of Astra Control), and then go to the Apps page in Astra Control to start managing the apps.
 
 == App management requirements
-Astra Control has the following app management requirements:
+Consider the following Astra Control app management requirements:
 
 * *Licensing*: To manage apps using Astra Control Center, you need an Astra Control Center license.
 * *Namespaces*: Astra Control requires that an app not span more than a single namespace, but a namespace can contain more than one app.
@@ -42,7 +42,7 @@ Astra Control has the following app management requirements:
 ** ValidatingWebhook
 
 === Supported app installation methods
-Astra Control supports the following application installation methods:
+You can use the following methods to install apps that you want to manage with Astra Control:
 
 * *Manifest file*: Astra Control supports apps installed from a manifest file using kubectl. For example:
 +
@@ -51,10 +51,12 @@ kubectl apply -f myapp.yaml
 ----
 * *Helm 3*: If you use Helm to install apps, Astra Control requires Helm version 3. Managing and cloning apps installed with Helm 3 (or upgraded from Helm 2 to Helm 3) are fully supported. Managing apps installed with Helm 2 is not supported.
 //* *Operator management*: Astra Control Center does not support apps that are deployed with Operator Lifecycle Manager (OLM)-enabled operators or cluster-scoped operators.
-* *Operator-deployed apps*: Astra Control supports apps installed with namespace-scoped operators. The following are some apps that have been validated for this installation model:
+* *Operator-deployed apps*: Astra Control supports apps installed with namespace-scoped operators. These operators are generally designed with a "pass-by-value" rather than "pass-by-reference" architecture. The following are some operator apps that follow these patterns:
 ** https://github.com/k8ssandra/cass-operator/tree/v1.7.1[Apache K8ssandra^]
 ** https://github.com/jenkinsci/kubernetes-operator[Jenkins CI^]
 ** https://github.com/percona/percona-xtradb-cluster-operator[Percona XtraDB Cluster^]
+
+Note that Astra Control might not be able to clone an operator that is designed with a “pass-by-reference” architecture (for example, the CockroachDB operator). During these types of cloning operations, the cloned operator attempts to reference Kubernetes secrets from the source operator despite having its own new secret as part of the cloning process. The clone operation might fail because Astra Control is unaware of the Kubernetes secrets in the source operator.
 
 NOTE: An operator and the app it installs must use the same namespace; you might need to modify the deployment .yaml file for the operator to ensure this is the case.
 
