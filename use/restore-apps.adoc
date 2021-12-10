@@ -31,7 +31,7 @@ image:screenshot-restore-app.gif["A screenshot of the app page where you can cli
 
 . *Restore details*: Specify details for the restored app. To restore an app in-place (revert an app to an earlier version of itself), choose the same namespace and destination cluster that it is currently running in:
 +
-* Enter a name and namespace for the app.
+* Enter a namespace for the app.
 * Choose the destination cluster for the app.
 * Click *Review*.
 
