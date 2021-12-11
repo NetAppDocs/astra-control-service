@@ -135,7 +135,7 @@ az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSW
 az aks list --subscription SUBSCRIPTION-ID --resource-group RESOURCE-GROUP-ID
 
 == Configure Container Storage Interface (CSI) driver details
-To use Azure managed disks with Astra Control Service, you need to configure CSI volume snapshot capability and CSI drivers first. Volume snapshot capability is automatic with Kubernetes 1.21, but for other versions, you'll need to follow these instructions.
+To use Azure managed disks with Astra Control Service, you'll first need to configure CSI volume snapshot capability for Kubernetes versions older than 1.21 and also install the required CSI drivers.
 
 === Install a CSI volume snapshot controller for Kubernetes 1.19
 If you are using Kubernetes version 1.19, follow these instructions to install a volume snapshot controller.
