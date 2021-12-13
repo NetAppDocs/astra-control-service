@@ -1,16 +1,18 @@
 ---
 sidebar: sidebar
-permalink: get-started/set-up-microsoft-azure.html
+permalink: get-started/set-up-microsoft-azure-with-anf.html
 keywords: azure, azure netapp files, register, create account, create netapp account, azure subscription, azure permissions, service principal, create service principal, set up azure permissions, set up service principal, setup service principal, setup azure permissions, permissions, create capacity pool, setup capacity pool, set up capacity pool, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, azure regions, kubernetes version, linux, image type, networking
 summary: A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra Control Service.
 ---
 
-= Set up Microsoft Azure
+= Set up Microsoft Azure with Azure NetApp Files
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
-A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra Control Service.
+A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra Control Service. Follow these instructions if you plan to use Azure NetApp Files as a storage backend.
+
+//NOTE: Support for using Azure Managed Disks as a backend storage service is in initial preview status with this release.
 
 == Quick start for setting up Azure
 
@@ -19,38 +21,51 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review Astra Control Service requirements for Azure Kubernetes Service
 
 [role="quick-margin-para"]
-Ensure that clusters are healthy and running Kubernetes version 1.17 or later, that node pools are online and running *Linux*, and more. <<AKS cluster requirements,Learn more about this step>>.
+Ensure that clusters are healthy and running Kubernetes version 1.19 or later, that node pools are online and running *Linux*, and more. <<Azure Kubernetes Service cluster requirements,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Register for Azure NetApp Files
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Sign up for Microsoft Azure
+
+[role="quick-margin-para"]
+Create a Microsoft Azure account. <<Sign up for Microsoft Azure,Learn more about this step>>.
+
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Register for Azure NetApp Files
 
 [role="quick-margin-para"]
 Register the NetApp Resource Provider. <<Register for Azure NetApp Files,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Create a NetApp account
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Create a NetApp account
 
 [role="quick-margin-para"]
-In the Azure portal, go to Azure NetApp Files and create a NetApp account. <<Create a NetApp account,Learn more about this step>>.
+Go to Azure NetApp Files in the Azure portal and create a NetApp account. <<Create a NetApp account,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Set up capacity pools
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Set up capacity pools
 
 [role="quick-margin-para"]
 Set up one or more capacity pools for your persistent volumes. <<Set up a capacity pool,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Delegate a subnet to Azure NetApp Files
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Delegate a subnet to Azure NetApp Files
 
 [role="quick-margin-para"]
 Delegate a subnet to Azure NetApp Files so that Astra Control Service can create persistent volumes in that subnet. <<Delegate a subnet to Azure NetApp Files,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Create an Azure service principal
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Create an Azure service principal
 
 [role="quick-margin-para"]
-Create an Azure service principal that has the Contributor role. <<Create an Azure service principal,Read step-by-step instructions>>.
+Create an Azure service principal that has the Contributor role. <<Create an Azure service principal,Learn more about this step>>.
 
-== AKS cluster requirements
+////
+DOC-3900
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight] (Optional): Create a volume snapshot
+
+[role="quick-margin-para"]
+If you plan to use Azure Managed Disks as a storage backend, you need to manually create a volume snapshot. <<Create a volume snapshot (optional),Follow step-by-step instructions>>.
+////
+
+== Azure Kubernetes Service cluster requirements
 
 A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service.
 
-Kubernetes version:: Clusters must be running Kubernetes version 1.17 or later.
+Kubernetes version:: Clusters must be running Kubernetes version 1.19 or later.
 
 Image type:: The image type for all node pools must be Linux.
 
@@ -61,6 +76,7 @@ Azure region:: Clusters must reside in a region where Azure NetApp Files is avai
 Subscription:: Clusters must reside in a subscription where Azure NetApp Files is enabled. You'll choose a subscription when you <<Register for Azure NetApp Files,register for Azure NetApp Files>>.
 
 VNet::
+Consider the following VNet requirements:
 * Clusters must reside in a VNet that has direct access to an Azure NetApp Files delegated subnet. <<Delegate a subnet to Azure NetApp Files,Learn how to set up a delegated subnet>>.
 *	If your Kubernetes clusters are in a VNet that's peered to the Azure NetApp Files delegated subnet that's in another VNet, then both sides of the peering connection must be online.
 *	Be aware that the default limit for the number of IPs used in a VNet (including immediately peered VNets) with Azure NetApp Files is 1,000. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits[View Azure NetApp Files resource limits^].
@@ -68,17 +84,17 @@ VNet::
 If you're close to the limit, you have two options:
 +
 ** You can https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-[submit a request for a limit increase^]. Contact your NetApp representative if you need help.
-** When creating a new AKS cluster, specify a new network for the cluster. Once the new network is created, provision a new subnet and delegate the subnet to Azure NetApp Files.
+** When creating a new Amazon Kubernetes Service (AKS) cluster, specify a new network for the cluster. Once the new network is created, provision a new subnet and delegate the subnet to Azure NetApp Files.
 
 Private networking:: Private networking must not be enabled on a cluster.
 
-External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.17, 1.18, 1.19, or 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
+External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.19 and 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
 
 === Install a CSI volume snapshot controller
 
-As noted in the list of requirements, Kubernetes clusters must have a CSI volume snapshot controller installed. Follow these steps to install the controller on your clusters.
+As noted in the <<Azure Kubernetes Service cluster requirements>>, Kubernetes clusters must have a CSI volume snapshot controller installed. Follow these steps to install the controller on your clusters.
 
-.Steps for K8s versions 1.17, 1.18, and 1.19
+.Steps for K8s versions 1.19
 
 . Install volume snapshot CRDs.
 +
@@ -112,25 +128,26 @@ If you want the snapshot controller in a specific namespace, download and edit t
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
 
-== Register for Azure NetApp Files
-
-If you don't have a Microsoft Azure account, begin by signing up for Microsoft Azure. Then, get access to Azure NetApp Files by registering the NetApp Resource Provider.
+== Sign up for Microsoft Azure
+If you don't have a Microsoft Azure account, begin by signing up for Microsoft Azure.
 
 .Steps
 
-. If you already have a Microsoft Azure account, skip to step 4.
-
 . Go to the https://azure.microsoft.com/en-us/free/[Azure subscription page^] to subscribe to the Azure service.
-
 . Select a plan and follow the instructions to complete the subscription.
 
-. Log in to the Azure portal.
+== Register for Azure NetApp Files
 
+Get access to Azure NetApp Files by registering the NetApp Resource Provider.
+
+.Steps
+
+. Log in to the Azure portal.
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register[Follow Azure NetApp Files documentation to register the NetApp Resource Provider^].
 
 == Create a NetApp account
 
-After you've registered, create a NetApp account in Azure NetApp Files.
+Create a NetApp account in Azure NetApp Files.
 
 .Step
 
@@ -186,7 +203,7 @@ The following steps assume that you have permission to create a service principa
 
 *	The service principal must use regular authentication. Certificates aren't supported.
 *	The service principal must be granted Contributor or Owner access to your Azure subscription.
-* The Azure subscription must contain the AKS clusters and your Azure NetApp Files account.
+* The subscription or resource group you choose for scope must contain the AKS clusters and your Azure NetApp Files account.
 
 .Steps
 
@@ -196,10 +213,17 @@ The following steps assume that you have permission to create a service principa
 az configure --list-defaults
 az account list --output table
 
-. Create the service principal, assign the Contributor role, and specify the scope to the entire subscription where the clusters reside.
+. Do one of the following, depending on if you use an entire subscription or a resource group:
+
+* Create the service principal, assign the Contributor role, and specify the scope to the entire subscription where the clusters reside.
 +
 [source,azurecli]
-az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
+az ad sp create-for-rbac --name service-principal-name --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
+
+* Create the service principal, assign the Contributor role, and specify the resource group where the clusters reside.
++
+[source,azurecli]
+az ad sp create-for-rbac --name service-principal-name --role contributor --scopes /subscriptions/SUBSCRIPTION-ID/resourceGroups/RESOURCE-GROUP-ID
 
 . Store the resulting Azure CLI output as a JSON file.
 +
@@ -221,10 +245,23 @@ Otherwise, you'll need to enter the subscription ID in Astra Control Service whe
   "subscriptionId": "99ce999a-8c99-99d9-a9d9-99cce99f99ad"
 }
 
-. Optional: Test your service principal.
+. Optional: Test your service principal. Choose from the following example commands depending on the scope your service principal uses.
 +
+.Subscription scope
 [source,azurecli]
 az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
 az group list --subscription SUBSCRIPTION-ID
 az aks list --subscription SUBSCRIPTION-ID
 az storage container list --subscription SUBSCRIPTION-ID
++
+.Resource group scope
+[source,azurecli]
+az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
+az aks list --subscription SUBSCRIPTION-ID --resource-group RESOURCE-GROUP-ID
+
+////
+== Create a volume snapshot (optional)
+If you plan to use Azure Managed Disks as a storage backend, you need to manually create a volume snapshot. In the following instructions, you only need to complete the steps in the section titled *Create a volume snapshot*.
+
+https://docs.microsoft.com/en-us/azure/aks/azure-disk-csi#volume-snapshots[Follow these instructions to create a volume snapshot^].
+////

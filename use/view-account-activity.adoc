@@ -23,7 +23,7 @@ You can view details about the activities in your Astra Control account. For exa
 
 .Steps to view account activity for a specific app
 
-. Click *Apps* and then click the name of an app.
+. Click *Applications* and then click the name of an app.
 
 . Click *Activity*.
 

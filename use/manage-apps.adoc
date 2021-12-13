@@ -12,6 +12,54 @@ summary: After you add a Kubernetes cluster to Astra Control, you can install ap
 
 After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to Astra Control], you can install apps on the cluster (outside of Astra Control), and then go to the Apps page in Astra Control to start managing the apps.
 
+== App management requirements
+Consider the following Astra Control app management requirements:
+
+* *Licensing*: To manage apps using Astra Control Center, you need an Astra Control Center license.
+* *Namespaces*: Astra Control requires that an app not span more than a single namespace, but a namespace can contain more than one app.
+* *StorageClass*: If you install an app with a StorageClass explicitly set and you need to clone the app, the target cluster for the clone operation must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
+* *Kubernetes resources*: Apps that use Kubernetes Resources not collected by Astra Control might not have full app data management capabilities. Astra Control collects the following Kubernetes resources:
+** ClusterRole
+** ClusterRoleBinding
+** ConfigMap
+** CustomResourceDefinition
+** CustomResource
+** DaemonSet
+** Deployment
+** DeploymentConfig
+** Ingress
+** MutatingWebhook
+** PersistentVolumeClaim
+** Pod
+** ReplicaSet
+** RoleBinding
+** Role
+** Route
+** Secret
+** Service
+** ServiceAccount
+** StatefulSet
+** ValidatingWebhook
+
+=== Supported app installation methods
+You can use the following methods to install apps that you want to manage with Astra Control:
+
+* *Manifest file*: Astra Control supports apps installed from a manifest file using kubectl. For example:
++
+----
+kubectl apply -f myapp.yaml
+----
+* *Helm 3*: If you use Helm to install apps, Astra Control requires Helm version 3. Managing and cloning apps installed with Helm 3 (or upgraded from Helm 2 to Helm 3) are fully supported. Managing apps installed with Helm 2 is not supported.
+//* *Operator management*: Astra Control Center does not support apps that are deployed with Operator Lifecycle Manager (OLM)-enabled operators or cluster-scoped operators.
+* *Operator-deployed apps*: Astra Control supports apps installed with namespace-scoped operators. These operators are generally designed with a "pass-by-value" rather than "pass-by-reference" architecture. The following are some operator apps that follow these patterns:
+** https://github.com/k8ssandra/cass-operator/tree/v1.7.1[Apache K8ssandra^]
+** https://github.com/jenkinsci/kubernetes-operator[Jenkins CI^]
+** https://github.com/percona/percona-xtradb-cluster-operator[Percona XtraDB Cluster^]
+
+Note that Astra Control might not be able to clone an operator that is designed with a “pass-by-reference” architecture (for example, the CockroachDB operator). During these types of cloning operations, the cloned operator attempts to reference Kubernetes secrets from the source operator despite having its own new secret as part of the cloning process. The clone operation might fail because Astra Control is unaware of the Kubernetes secrets in the source operator.
+
+NOTE: An operator and the app it installs must use the same namespace; you might need to modify the deployment .yaml file for the operator to ensure this is the case.
+
 == Install apps on your cluster
 
 Now that you've added your cluster to Astra Control, you can install apps on the cluster. Persistent volumes will be provisioned on the new storage classes by default. After the pods are online, you can manage the app with Astra Control.
@@ -56,7 +104,7 @@ While Astra Control allows you to separately manage both levels of the hierarchy
 
 .Steps
 
-. Click *Apps* and then click *Discovered*.
+. Click *Applications* and then click *Discovered*.
 +
 image:screenshot-app-discovery.gif[A screenshot of the Apps page that shows the Discovered tab.]
 
@@ -90,7 +138,7 @@ Astra Control includes an action at the top of the Apps page named *Define custo
 
 .Steps
 
-. Click *Apps > Define custom app*.
+. Click *Applications > Define custom app*.
 
 . In the *Define Custom Application* dialog box, provide the required information to manage the app:
 

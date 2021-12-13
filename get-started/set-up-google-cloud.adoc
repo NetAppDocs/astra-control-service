@@ -12,6 +12,10 @@ summary: A few steps are required to prepare your Google Cloud project before yo
 
 A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with Astra Control Service.
 
+NOTE: If you do not start out using Google Cloud Volumes Service for Google Cloud as a storage backend but plan to use it at a later date, you should complete the necessary steps to configure Google Cloud Volumes Service for Google Cloud now. Creating a service account later means that you might lose access to your existing storage buckets.
+
+//NOTE: Support for using Google Persistent Disk as a backend storage service is in initial preview status with this release.
+
 == Quick start for setting up Google Cloud
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
@@ -19,12 +23,12 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review Astra Control Service requirements for Google Kubernetes Engine
 
 [role="quick-margin-para"]
-Ensure that clusters are healthy and running a Kubernetes version in the range of 1.18 to 1.20, that worker nodes are online and running Container-Optimized OS or Ubuntu, and more. <<GKE cluster requirements,Learn more about this step>>.
+Ensure that clusters are healthy and running a Kubernetes version in the range of 1.19 to 1.21.x, that worker nodes are online and running Container-Optimized OS or Ubuntu, and more. <<GKE cluster requirements,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Purchase Cloud Volumes Service for Google Cloud
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] (Optional): Purchase Cloud Volumes Service for Google Cloud
 
 [role="quick-margin-para"]
-Go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and click Purchase. <<Purchase Cloud Volumes Service for Google Cloud,Learn more about this step>>.
+If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and click Purchase. <<Purchase Cloud Volumes Service for Google Cloud (optional),Learn more about this step>>.
 
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enable APIs in your Google Cloud project
 
@@ -38,6 +42,8 @@ Enable the following Google Cloud APIs:
 * Service Usage
 * Cloud Resource Manager API
 * NetApp Cloud Volumes Service
+** Required for Cloud Volumes Service for Google Cloud
+** Optional (but recommended) for Google Persistent Disk
 * Service Consumer Management API
 * Service Networking API
 * Service Management API
@@ -53,6 +59,8 @@ Create a Google Cloud service account that has the following permissions:
 [role="quick-margin-list"]
 * Kubernetes Engine Admin
 * NetApp Cloud Volumes Admin
+** Required for Cloud Volumes Service for Google Cloud
+** Optional (but recommended) for Google Persistent Disk
 * Storage Admin
 * Service Usage Viewer
 * Compute Network Viewer
@@ -65,20 +73,27 @@ Create a Google Cloud service account that has the following permissions:
 [role="quick-margin-para"]
 Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Set up network peering for your VPC
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] (Optional): Set up network peering for your VPC
 
 [role="quick-margin-para"]
-Set up network peering from your VPC to Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC,Follow step-by-step instructions>>.
+If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, set up network peering from your VPC to Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC (optional),Follow step-by-step instructions>>.
 
-The following image depicts each of these steps that you'll need to complete.
+////
+==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] (Optional): Create a VolumeSnapshotClass object
 
-image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud project, a service account with IAM roles and a key, enabled APIs, and private service access to Cloud Volumes Service for Google Cloud.]
+[role="quick-margin-para"]
+If you plan to use Google Persistent Disk as a storage backend, you need to manually create a VolumeSnapshotClass object. <<Create a VolumeSnapshotClass object (optional),Follow step-by-step instructions>>.
+////
+
+//The following image depicts each of these steps that you'll need to complete.
+// Old image
+//image:diagram-google-cloud.png[A conceptual diagram that shows a Google Cloud project, a service account with IAM roles and a key, enabled APIs, and private service access to Cloud Volumes Service for Google Cloud.]
 
 == GKE cluster requirements
 
-A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service.
+A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service. Note that some of these requirements only apply if you plan to use Cloud Volumes Service for Google Cloud as a storage backend.
 
-Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.18 to 1.20.
+Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.19 to 1.21.x.
 
 Image type:: The image type for each worker node must be one of the following:
 * Container-Optimized OS with Containerd
@@ -87,9 +102,9 @@ Image type:: The image type for each worker node must be one of the following:
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
 
-Google Cloud region:: Clusters must be running in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region where Cloud Volumes Service for Google Cloud is supported.] Note that Astra Control Service supports both service types: CVS and CVS-Performance.
+Google Cloud region:: If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, clusters must be running in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region where Cloud Volumes Service for Google Cloud is supported.] Note that Astra Control Service supports both service types: CVS and CVS-Performance. As a best practice, you should choose a region that supports Cloud Volumes Service for Google Cloud, even if you do not use it as a storage backend. This makes it easier to use Cloud Volumes Service for Google Cloud as a storage backend in the future if your performance requirements change.
 
-Networking:: The cluster must reside in a VPC that is peered with Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC,This step is described below>>.
+Networking:: If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, the cluster must reside in a VPC that is peered with Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC,This step is described below>>.
 
 Private clusters:: If the cluster is private, the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[authorized networks^] must allow the Astra Control Service IP addresses:
 *	54.164.233.140/32
@@ -98,9 +113,49 @@ Private clusters:: If the cluster is private, the https://cloud.google.com/kuber
 
 Mode of operation for a GKE cluster:: You should use the Standard mode of operation. The Autopilot mode hasn't been tested at this time. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes[Learn more about modes of operation^].
 
-== Purchase Cloud Volumes Service for Google Cloud
+External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21.x, but you'll need to check on clusters running versions 1.19 and 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
 
-Astra Control Service uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. You need to purchase Cloud Volumes Service for Google Cloud from the Google Cloud Marketplace to enable billing for persistent volumes.
+=== Install a CSI volume snapshot controller
+
+As noted in the list of requirements, Kubernetes clusters must have a CSI volume snapshot controller installed. Follow these steps to install the controller on your clusters.
+
+.Steps for K8s versions 1.19
+
+. Install volume snapshot CRDs.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+
+. Create the snapshot controller.
++
+If you want the snapshot controller in a specific namespace, download and edit the following files before you apply them.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+
+.Steps for K8s version 1.20
+
+. Install volume snapshot CRDs.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+
+. Create the snapshot controller.
++
+If you want the snapshot controller in a specific namespace, download and edit the following files before you apply them.
++
+[source,kubectl]
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+
+== Purchase Cloud Volumes Service for Google Cloud (optional)
+
+Astra Control Service can use Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes. If you plan to use this service, you need to purchase Cloud Volumes Service for Google Cloud from the Google Cloud Marketplace to enable billing for persistent volumes.
 
 .Step
 
@@ -121,7 +176,7 @@ Your project needs permissions to access specific Google Cloud APIs. APIs are us
 * Cloud Storage JSON API
 * Service Usage
 * Cloud Resource Manager API
-* NetApp Cloud Volumes Service
+* NetApp Cloud Volumes Service (Required for Cloud Volumes Service for Google Cloud)
 * Service Consumer Management API
 * Service Networking API
 * Service Management API
@@ -195,9 +250,9 @@ The following video shows how to create the service account key from the Google 
 
 video::video-create-gcp-service-account-key.mp4[width=848, height=480]
 
-== Set up network peering for your VPC
+== Set up network peering for your VPC (optional)
 
-The final step is to set up networking peering from your VPC to Cloud Volumes Service for Google Cloud.
+If you plan to use Cloud Volumes Service for Google Cloud as a backend storage service, the final step is to set up networking peering from your VPC to Cloud Volumes Service for Google Cloud.
 
 The easiest way to set up network peering is by obtaining the gcloud commands directly from Cloud Volumes Service. The commands are available from Cloud Volumes Service when creating a new file system.
 
@@ -236,3 +291,10 @@ https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-priv
 . After you're done, you can click cancel on the *Create File System* page.
 +
 We started creating this volume only to get the commands for network peering.
+
+////
+== Create a VolumeSnapshotClass object (optional)
+If you plan to use Google Persistent Disk as a storage backend, you need to manually create a VolumeSnapshotClass object.
+
+https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/volume-snapshots#create-snapshotclass[Follow these instructions to configure a VolumeSnapshotClass object^].
+////

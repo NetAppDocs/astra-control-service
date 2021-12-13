@@ -13,7 +13,12 @@ entries:
         url: /use/restore-apps.html
       - title: Clone and migrate apps
         url: /use/clone-apps.html
-  - title: View app and cluster health
+      - title: Manage app execution hooks
+        url: /use/manage-app-execution-hooks.html
+        entries:
+          - title: Execution hook examples
+            url: /use/execution-hook-examples.html
+  - title: View app and compute health
     entries:
       - title: Dashboard summary
         url: /use/view-dashboard.html
