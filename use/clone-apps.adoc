@@ -21,7 +21,7 @@ NOTE: If you deploy an app with a StorageClass explicitly set and you need to cl
 
 .Steps
 
-. Click *Apps*.
+. Click *Applications*.
 
 . Click the drop-down list in the *Action* column for the desired app.
 

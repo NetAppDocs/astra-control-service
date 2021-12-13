@@ -15,7 +15,7 @@ Astra Control can restore your application configuration and persistent storage 
 
 .Steps
 
-. Click *Apps* and then click the name of a managed app.
+. Click *Applications* and then click the name of a managed app.
 
 . Click *Data protection*.
 
