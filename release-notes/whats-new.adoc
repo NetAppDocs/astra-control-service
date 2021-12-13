@@ -27,12 +27,12 @@ You can now restore a snapshot, clone, or backup of an app in place by restoring
 link:../use/restore-apps.html[Restore apps].
 
 === Script events with execution hooks
-Astra Control supports custom scripts that you can run before or after a snapshot is taken of an app. This enables you to perform tasks like suspending database transactions so that the snapshot of your database app is consistent.
+Astra Control supports custom scripts that you can run before or after you take a snapshot of an application. This enables you to perform tasks like suspending database transactions so that the snapshot of your database app is consistent.
 
 link:../use/manage-app-execution-hooks.html[Manage app execution hooks].
 
 === Operator-deployed apps
-Astra Control supports several apps when they are deployed with operators.
+Astra Control supports some apps when they are deployed with operators.
 
 link:../use/manage-apps.html#app-management-requirements[Start managing apps].
 
