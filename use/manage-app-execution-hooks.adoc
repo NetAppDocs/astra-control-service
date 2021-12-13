@@ -56,8 +56,8 @@ You can view existing custom or NetApp-provided default execution hooks for an a
 
 .Steps
 
-. Go to *Applications* and then click the name of a managed app.
-. Click the *Execution hooks* tab.
+. Go to *Applications* and then select the name of a managed app.
+. Select the *Execution hooks* tab.
 +
 You can view all enabled or disabled execution hooks in the resulting list. You can see a hook's status, source, and when it runs (pre- or post-snapshot). To view event logs surrounding execution hooks, go to the *Activity* page in the left-side navigation area.
 
@@ -68,9 +68,9 @@ NOTE: When you create a custom shell script to use as an execution hook, remembe
 
 .Steps
 
-. Click *Applications* and then click the name of a managed app.
-. Click the *Execution hooks* tab.
-. Click *Add a new hook*.
+. Select *Applications* and then select the name of a managed app.
+. Select the *Execution hooks* tab.
+. Select *Add a new hook*.
 . In the *Hook Details* area, depending on when the hook should run, choose *Pre-Snapshot* or *Post-Snapshot*.
 . Enter a unique name for the hook.
 . (Optional) Enter any arguments to pass to the hook during execution, pressing the Enter key after each argument you enter to record each one.
@@ -83,18 +83,18 @@ NOTE: When you create a custom shell script to use as an execution hook, remembe
 .. (Optional) Enter any notes other administrators should know about the script.
 * Paste in a custom script from the clipboard.
 .. Select the *Paste from clipboard* option.
-.. Click the text field and paste the script text into the field.
+.. Select the text field and paste the script text into the field.
 .. Give the script a unique name.
 .. (Optional) Enter any notes other administrators should know about the script.
-. Click *Add hook*.
+. Select *Add hook*.
 
 == Disable an execution hook
 You can disable an execution hook if you want to temporarily prevent it from running before or after a snapshot of an app. You need to have Owner, Admin, or Member permissions to disable execution hooks.
 
 .Steps
 
-. Click *Applications* and then click the name of a managed app.
-. Click the *Execution hooks* tab.
+. Select *Applications* and then select the name of a managed app.
+. Select the *Execution hooks* tab.
 . Select the *Actions* dropdown for a hook that you wish to disable.
 . Select *Disable*.
 
@@ -103,7 +103,7 @@ You can remove an execution hook entirely if you no longer need it. You need to 
 
 .Steps
 
-. Click *Applications* and then click the name of a managed app.
-. Click the *Execution hooks* tab.
+. Select *Applications* and then select the name of a managed app.
+. Select the *Execution hooks* tab.
 . Select the *Actions* dropdown for a hook that you wish to delete.
 . Select *Delete*.
