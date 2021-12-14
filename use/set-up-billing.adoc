@@ -58,7 +58,7 @@ When you manage AKS clusters with Astra Control Service, persistent volumes are 
 +
 If you have multiple accounts, then each has its own billing plan.
 
-* Your Astra Control bill includes charges for managing your Kubernetes apps. You’re charged separately by your cloud provider for the backend storage for persistent volumes.
+* Your Astra Control bill includes charges for managing your Kubernetes apps. You’re charged separately by your cloud provider for the storage backend for persistent volumes.
 +
 link:../get-started/intro.html[Learn more about Astra Control pricing].
 
@@ -72,11 +72,11 @@ Upgrade your billing plan at any time to start managing more than 10 apps from A
 
 .Steps
 
-. Click *Account* and then click *Billing*.
+. Select *Account* and then select *Billing*.
 
-. Under *Plans*, go to *Premium PayGo* and click *Upgrade Now*.
+. Under *Plans*, go to *Premium PayGo* and select *Upgrade Now*.
 
-. Provide payment details for a valid credit card and click *Upgrade to Premium Plan*.
+. Provide payment details for a valid credit card and select *Upgrade to Premium Plan*.
 +
 NOTE: Astra Control will email you if the credit card is nearing expiration.
 
@@ -90,9 +90,9 @@ Contact NetApp Sales to pre-pay at a discounted rate with an annual subscription
 
 .Steps
 
-. Click *Account* and then click *Billing*.
+. Select *Account* and then select *Billing*.
 
-. Under *Plans*, go to *Premium Subscription* and click *Contact Sales*.
+. Under *Plans*, go to *Premium Subscription* and select *Contact Sales*.
 
 . Provide details to the sales team to start the process.
 
@@ -108,15 +108,15 @@ Astra Control shows you your current monthly costs, as well as a detailed billin
 
 .Steps
 
-. Click *Account* and then click *Billing*.
+. Select *Account* and then select *Billing*.
 +
 Your current costs appear under the billing overview.
 
-. To view the billing history by app, click *Billing history*.
+. To view the billing history by app, select *Billing history*.
 +
 Astra Control shows you the usage minutes and cost for each app. A usage minute is how many minutes Astra Control managed your app during a billing period.
 
-. Click the drop-down list to select a previous month.
+. Select the drop-down list to select a previous month.
 
 == Change the credit card for Premium PayGo
 
@@ -124,8 +124,8 @@ If needed, you can change the credit card that Astra Control has on file for bil
 
 .Steps
 
-. Click *Account > Billing > Payment method*.
+. Select *Account > Billing > Payment method*.
 
-. Click the configure icon.
+. Select the configure icon.
 
 . Modify the credit card.

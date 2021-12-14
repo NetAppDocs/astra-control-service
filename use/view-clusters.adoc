@@ -15,9 +15,9 @@ After you add Kubernetes clusters to Astra Control, you can view details about t
 
 .Steps
 
-. Click *Clusters*.
+. Select *Clusters*.
 
-. Click the cluster name.
+. Select the cluster name.
 
 . View the information in the *Overview* and *Storage* tabs to find the information that you're looking for.
 +

@@ -104,7 +104,7 @@ While Astra Control allows you to separately manage both levels of the hierarchy
 
 .Steps
 
-. Click *Applications* and then click *Discovered*.
+. Select *Applications* and then select *Discovered*.
 +
 image:screenshot-app-discovery.gif[A screenshot of the Apps page that shows the Discovered tab.]
 
@@ -118,11 +118,11 @@ image:screenshot-group.gif[A screenshot of the Apps page where a namespace is ex
 
 . Decide whether you want to manage each app individually or at the namespace level.
 
-. At the desired level in the hierarchy, click the drop-down list in the *Actions* column and click *Manage*.
+. At the desired level in the hierarchy, select the drop-down list in the *Actions* column and select *Manage*.
 +
 image:screenshot-app-manage.gif["A screenshot of an expanded drop-down list in the Apps page where you can choose to manage or ignore a namespace or app."]
 
-. If you don't want to manage an app, click the drop-down list in the *Actions* column for the desired app and click *Ignore*.
+. If you don't want to manage an app, select the drop-down list in the *Actions* column for the desired app and select *Ignore*.
 +
 For example, if you wanted to manage all apps under the "jenkins" namespace together so that they have the same snapshot and backup policies, you would manage the namespace and ignore the apps in the namespace:
 +
@@ -138,7 +138,7 @@ Astra Control includes an action at the top of the Apps page named *Define custo
 
 .Steps
 
-. Click *Applications > Define custom app*.
+. Select *Applications > Define custom app*.
 
 . In the *Define Custom Application* dialog box, provide the required information to manage the app:
 
@@ -156,13 +156,13 @@ Here's an example:
 +
 image:screenshot-selected-resources.gif["A screenshot of the resources that you can protect, such as config maps and persistent volume claims."]
 +
-** View the available labels by expanding a resource and clicking the number of labels.
+** View the available labels by expanding a resource and selecting the number of labels.
 +
 image:screenshot-view-labels.gif["A screenshot that shows a resource expanded and the number of labels for that resource."]
 +
 ** Select one of the labels.
 +
-image:screenshot-select-label.gif[A screenshot that shows the list of labels that you can choose from after you click the number of labels.]
+image:screenshot-select-label.gif[A screenshot that shows the list of labels that you can choose from after you select the number of labels.]
 +
 After you choose a label, it displays in the *Label* field. Astra Control also updates the *Unselected Resources* section to show the resources that don't match the selected label.
 
@@ -170,7 +170,7 @@ After you choose a label, it displays in the *Label* field. Astra Control also u
 +
 image:screenshot-selected-label.gif[A screenshot that shows a label in the Label field after you select a label from the Resources pane.]
 
-. Click *Define Custom App*.
+. Select *Define Custom App*.
 
 .Result
 
@@ -180,6 +180,6 @@ Astra Control enables management of the app. You can now find it in the *Managed
 
 Astra Control also discovers the system apps running on a Kubernetes cluster. You can view them by filtering the Apps list.
 
-image:screenshot-system-apps.gif[A screenshot that shows the Show System Apps option that is available when you click All Clusters in the Apps screen.]
+image:screenshot-system-apps.gif[A screenshot that shows the Show System Apps option that is available when you select All Clusters in the Apps screen.]
 
 We don't show you these system apps by default because it's rare that you'd need to back them up.

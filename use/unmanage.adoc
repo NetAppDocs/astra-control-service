@@ -22,13 +22,13 @@ Stop managing apps that you no longer want to back up, snapshot, or clone from A
 
 .Steps
 
-. Click *Applications*.
+. Select *Applications*.
 
-. Click the checkbox for the apps that you no longer want to manage.
+. Select the checkbox for the apps that you no longer want to manage.
 
-. Click the *Action* drop-down and select *Unmanage application/s*.
+. Select the *Action* drop-down and select *Unmanage application/s*.
 
-. Confirm that you want to unmanage the apps and then click *Yes, Unmanage Applications*.
+. Confirm that you want to unmanage the apps and then select *Yes, Unmanage Applications*.
 
 .Result
 
@@ -44,13 +44,13 @@ Stop managing the cluster that you no longer want to manage from Astra Control. 
 
 .Steps
 
-. Click *Clusters*.
+. Select *Clusters*.
 
-. Click the checkbox for the cluster that you no longer want to manage.
+. Select the checkbox for the cluster that you no longer want to manage.
 
-. Click the *Actions* drop-down and select *Unmanage*.
+. Select the *Actions* drop-down and select *Unmanage*.
 
-. Confirm that you want to unmanage the cluster and then click *Yes, Unmanage cluster*.
+. Confirm that you want to unmanage the cluster and then select *Yes, Unmanage cluster*.
 
 .Result
 
@@ -63,7 +63,7 @@ Before you delete a Kubernetes cluster that has persistent volumes (PV) residing
 * *Method #1*: Delete the application workload namespaces from the cluster. Do _not_ delete the Trident namespace.
 * *Method #2*: Delete the PVCs and the pods, or the deployment where the PVs are mounted.
 
-When you manage a Kubernetes cluster from Astra Control, applications on that cluster use Cloud Volumes Service or Azure NetApp Files as the backend storage for persistent volumes. If you delete the cluster from your cloud provider without first removing the PVs, the backend volumes are _not_ deleted along with the cluster.
+When you manage a Kubernetes cluster from Astra Control, applications on that cluster use Cloud Volumes Service or Azure NetApp Files as the storage backend for persistent volumes. If you delete the cluster from your cloud provider without first removing the PVs, the backend volumes are _not_ deleted along with the cluster.
 
 Using one of the above methods will delete the corresponding PVs from your cluster. Make sure that there are no PVs residing on NetApp storage classes on the cluster before you delete it.
 

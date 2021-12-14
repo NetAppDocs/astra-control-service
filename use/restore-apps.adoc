@@ -15,19 +15,19 @@ Astra Control can restore your application configuration and persistent storage 
 
 .Steps
 
-. Click *Applications* and then click the name of a managed app.
+. Select *Applications* and then select the name of a managed app.
 
-. Click *Data protection*.
+. Select *Data protection*.
 
-. If you want to restore from a snapshot, keep *Snapshots* selected. Otherwise, click *Backups* to restore from a backup.
+. If you want to restore from a snapshot, keep *Snapshots* selected. Otherwise, select *Backups* to restore from a backup.
 +
 image:screenshot-restore-snapshot-or-backup.gif[A screenshot of the Data protection tab where you can view Snapshots or Backups.]
 
-. Click the drop-down list in the *Actions* column for the snapshot or backup from which you want to restore.
+. Select the drop-down list in the *Actions* column for the snapshot or backup from which you want to restore.
 
-. Click *Restore application*.
+. Select *Restore application*.
 +
-image:screenshot-restore-app.gif["A screenshot of the app page where you can click the drop-down list in the actions column and select Restore application."]
+image:screenshot-restore-app.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Restore application."]
 
 . *Restore details*: Specify details for the restored app. To restore an app in-place (revert an app to an earlier version of itself), choose the same namespace and destination cluster that it is currently running in:
 +
@@ -35,7 +35,7 @@ image:screenshot-restore-app.gif["A screenshot of the app page where you can cli
 * Choose the destination cluster for the app.
 * Click *Review*.
 
-. *Restore Summary*: Review details about the restore action, type "restore", and click *Restore*.
+. *Restore Summary*: Review details about the restore action, type "restore", and select *Restore*.
 //+
 //image:screenshot-restore-summary.gif[A screenshot of the Restore Application page which enables you to review information about the restore action.]
 
