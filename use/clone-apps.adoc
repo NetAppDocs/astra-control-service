@@ -21,13 +21,13 @@ NOTE: If you deploy an app with a StorageClass explicitly set and you need to cl
 
 .Steps
 
-. Click *Applications*.
+. Select *Applications*.
 
-. Click the drop-down list in the *Action* column for the desired app.
+. Select the drop-down list in the *Action* column for the desired app.
 
-. Click *Clone*.
+. Select *Clone*.
 +
-image:screenshot-create-clone.gif["A screenshot of the app page where you can click the drop-down list in the actions column and select Clone."]
+image:screenshot-create-clone.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Clone."]
 
 . *Clone details*: Specify details for the clone:
 +
@@ -35,7 +35,7 @@ image:screenshot-create-clone.gif["A screenshot of the app page where you can cl
 * Choose a destination cluster for the clone.
 * Choose whether you want to create the clone from an existing snapshot or backup. If you don't select this option, Astra Control creates the clone from the app's current state.
 
-. *Clone Summary*: Review the details about the clone and click *Clone App*.
+. *Clone Summary*: Review the details about the clone and select *Clone App*.
 +
 image:screenshot-clone-summary.gif[A screenshot of the Clone Summary dialog box which you can use to review clone information about the original app and the cloned app.]
 

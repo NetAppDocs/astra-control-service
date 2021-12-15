@@ -14,9 +14,9 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 
 == 14 Dec 2021
 
-=== Backend storage
+=== New storage backend options
 
-Astra Control Service now supports Google Persistent Disk and Azure managed disks as backend storage options.
+Astra Control Service now supports Google Persistent Disk and Azure managed disks as storage backend options.
 
 link:../get-started/set-up-google-cloud.html[Set up Google Cloud].
 link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks].
@@ -69,7 +69,7 @@ You can now manage GKE clusters in GCP projects with a shared VPC network config
 
 Astra Control Service now creates persistent volumes with a minimum size of 300 GiB when using the CVS service type.
 
-link:../learn/choose-class-and-size.html[Learn how Astra Control Service uses Cloud Volumes Service for Google Cloud as the backend storage for persistent volumes].
+link:../learn/choose-class-and-size.html[Learn how Astra Control Service uses Cloud Volumes Service for Google Cloud as the storage backend for persistent volumes].
 
 === Support for Container-Optimized OS
 
@@ -129,7 +129,7 @@ link:../use/view-account-activity.html[Learn more about viewing your account act
 
 == 1 Mar 2021
 
-Astra Control Service now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[_CVS_ service type^] with Cloud Volumes Service for Google Cloud. This is in addition to already supporting the _CVS-Performance_ service type. Just as a reminder, Astra Control Service uses Cloud Volumes Service for Google Cloud as the backend storage for your persistent volumes.
+Astra Control Service now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[_CVS_ service type^] with Cloud Volumes Service for Google Cloud. This is in addition to already supporting the _CVS-Performance_ service type. Just as a reminder, Astra Control Service uses Cloud Volumes Service for Google Cloud as the storage backend for your persistent volumes.
 
 This enhancement means that Astra Control Service can now manage app data for Kubernetes clusters that are running in _any_ https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region where Cloud Volumes Service is supported^].
 
@@ -163,7 +163,7 @@ image:screenshot-compute-pvs.gif[A screenshot of the persistent volumes that wer
 
 * We added an option to restore an application from an existing snapshot or backup.
 +
-image:screenshot-app-restore.gif[A screenshot of the Data protection tab for an app where you can click the action drop-down to select Restore application.]
+image:screenshot-app-restore.gif[A screenshot of the Data protection tab for an app where you can select the action drop-down to select Restore application.]
 
 * If you delete a Kubernetes cluster that Astra Control Service is managing, the cluster now shows up in a *Removed* state. You can then remove the cluster from Astra Control Service.
 

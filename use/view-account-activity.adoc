@@ -15,20 +15,20 @@ You can view details about the activities in your Astra Control account. For exa
 
 .Steps to view all account activity in Astra Control
 
-. Click *Activity*.
+. Select *Activity*.
 
 . Use the filters to narrow down the list of activities or use the search box to find exactly what you're looking for.
 
-. Click *Export to CSV* to download your account activity to a CSV file.
+. Select *Export to CSV* to download your account activity to a CSV file.
 
 .Steps to view account activity for a specific app
 
-. Click *Applications* and then click the name of an app.
+. Select *Applications* and then select the name of an app.
 
-. Click *Activity*.
+. Select *Activity*.
 
 .Steps to view account activity for clusters
 
-. Click *Clusters* and then click the name of the cluster.
+. Select *Clusters* and then select the name of the cluster.
 
-. Click *Activity*.
+. Select *Activity*.

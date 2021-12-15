@@ -21,12 +21,12 @@ You can view these notifications and mark them as read (this can come in handy i
 
 .Steps
 
-. Click the number of unread notifications in the top right.
+. Select the number of unread notifications in the top right.
 +
 image:screenshot-expand-notifications.gif[A screenshot that shows the expanded notifications in the Astra Control interface.]
 
-. Review the notifications and then click *Mark as read* or *Show all notifications*.
+. Review the notifications and then select *Mark as read* or *Show all notifications*.
 +
-If you clicked *Show all notifications*, the Notifications page loads.
+If you selected *Show all notifications*, the Notifications page loads.
 
-. On the *Notifications* page, view the notifications, select the ones that you want to mark as read, click *Action* and select *Mark as read*.
+. On the *Notifications* page, view the notifications, select the ones that you want to mark as read, select *Action* and select *Mark as read*.
