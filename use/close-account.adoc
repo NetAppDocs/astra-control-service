@@ -20,8 +20,8 @@ NOTE: Buckets that Astra Control automatically created will be automatically del
 
 . link:manage-credentials.html[Remove credentials from Astra Control].
 
-. Click *Account > Billing > Payment method*.
+. Select *Account > Billing > Payment method*.
 
-. Click *Close Account*.
+. Select *Close Account*.
 
 . Enter your account name and confirm to close the account.

@@ -12,7 +12,7 @@ summary: A few steps are required to prepare your Microsoft Azure subscription b
 
 A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra Control Service. Follow these instructions if you plan to use Azure NetApp Files as a storage backend.
 
-//NOTE: Support for using Azure Managed Disks as a backend storage service is in initial preview status with this release.
+//NOTE: Support for using Azure Managed Disks as a storage backend service is in initial preview status with this release.
 
 == Quick start for setting up Azure
 

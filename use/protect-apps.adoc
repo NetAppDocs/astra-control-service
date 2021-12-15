@@ -26,11 +26,11 @@ A protection policy protects an app by creating snapshots, backups, or both at a
 
 .Steps
 
-. Click *Applications* and then click the name of a managed app.
+. Select *Applications* and then select the name of a managed app.
 
-. Click *Data Protection*.
+. Select *Data Protection*.
 
-. Click *Configure Protection Policy*.
+. Select *Configure Protection Policy*.
 +
 image:screenshot-configure-protection-policy.gif[A screenshot of the Data protection tab for an app which enables you to configure a protection policy.]
 
@@ -44,9 +44,9 @@ The following example sets four protection schedules: hourly, daily, weekly, and
 +
 image:screenshot-protection-policy.png["A screenshot of a sample configuration policy where you can choose to take snapshots and backups on an hourly, daily, weekly, or monthly basis."]
 
-. Click *Review*.
+. Select *Review*.
 
-. Click *Configure*.
+. Select *Configure*.
 +
 Here's a video that shows each of these steps.
 +
@@ -62,17 +62,17 @@ You can create an on-demand snapshot at any time.
 
 .Steps
 
-. Click *Applications*.
+. Select *Applications*.
 
-. Click the drop-down list in the *Actions* column for the desired app.
+. Select the drop-down list in the *Actions* column for the desired app.
 
-. Click *Snapshot*.
+. Select *Snapshot*.
 +
-image:screenshot-create-snapshot.gif["A screenshot of the app page where you can click the drop-down list in the actions column and select Snapshot."]
+image:screenshot-create-snapshot.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Snapshot."]
 
-. Customize the name of the snapshot and then click *Review Information*.
+. Customize the name of the snapshot and then select *Review Information*.
 
-. Review the snapshot summary and click *Snapshot App*.
+. Review the snapshot summary and select *Snapshot App*.
 
 .Result
 
@@ -84,17 +84,17 @@ You can also back up an app at any time.
 
 .Steps
 
-. Click *Applications*.
+. Select *Applications*.
 
-. Click the drop-down list in the *Actions* column for the desired app.
+. Select the drop-down list in the *Actions* column for the desired app.
 
-. Click *Backup*.
+. Select *Backup*.
 +
-image:screenshot-create-backup.gif["A screenshot of the app page where you can click the drop-down list in the actions column and select Backup."]
+image:screenshot-create-backup.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Backup."]
 
-. Customize the name of the backup, choose whether to back up the app from an existing snapshot, and then click *Review Information*.
+. Customize the name of the backup, choose whether to back up the app from an existing snapshot, and then select *Review Information*.
 
-. Review the backup summary and click *Backup App*.
+. Review the backup summary and select *Backup App*.
 
 .Result
 
@@ -106,15 +106,15 @@ You can view the snapshots and backups of an app from the Data Protection tab.
 
 .Steps
 
-. Click *Applications* and then click the name of a managed app.
+. Select *Applications* and then select the name of a managed app.
 
-. Click *Data Protection*.
+. Select *Data Protection*.
 +
 The snapshots display by default.
 +
 image:screenshot-snapshots.gif[A screenshot of the data protection tab for an app where you can view the list of the current snapshots and backups.]
 
-. Click *Backups* to see the list of backups.
+. Select *Backups* to see the list of backups.
 
 == Delete snapshots
 
@@ -122,17 +122,17 @@ Delete the scheduled or on-demand snapshots that you no longer need.
 
 .Steps
 
-. Click *Applications* and then click the name of a managed app.
+. Select *Applications* and then select the name of a managed app.
 
-. Click *Data Protection*.
+. Select *Data Protection*.
 
-. Click the drop-down list in the *Actions* column for the desired snapshot.
+. Select the drop-down list in the *Actions* column for the desired snapshot.
 
-. Click *Delete snapshot*.
+. Select *Delete snapshot*.
 +
 image:screenshot-delete-snapshot.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
 
-. Type the name of the snapshot to confirm deletion and then click *Yes, Delete snapshot*.
+. Type the name of the snapshot to confirm deletion and then select *Yes, Delete snapshot*.
 
 .Result
 
@@ -142,21 +142,21 @@ Astra Control deletes the snapshot.
 
 Delete the scheduled or on-demand backups that you no longer need.
 
-. Click *Applications* and then click the name of a managed app.
+. Select *Applications* and then select the name of a managed app.
 
-. Click *Data Protection*.
+. Select *Data Protection*.
 
-. Click *Backups*.
+. Select *Backups*.
 +
 image:screenshot-data-protection-backups.gif[A screenshot of the Backups option that's available in the far right of the data protection tab.]
 
-. Click the drop-down list in the *Actions* column for the desired backup.
+. Select the drop-down list in the *Actions* column for the desired backup.
 
-. Click *Delete backup*.
+. Select *Delete backup*.
 +
 image:screenshot-delete-backup.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
 
-. Type the name of the backup to confirm deletion and then click *Yes, Delete backup*.
+. Type the name of the backup to confirm deletion and then select *Yes, Delete backup*.
 
 .Result
 

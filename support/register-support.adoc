@@ -18,7 +18,7 @@ Astra Control includes a Support Status field that enables you to confirm your s
 
 .Steps
 
-. Click *Support*.
+. Select *Support*.
 
 . Take a look at the Support Status field.
 +
@@ -49,7 +49,7 @@ If Astra Control was unable to automatically register your account for support, 
 
 . Navigate to the https://register.netapp.com[Cloud Data Services Support Registration^] page to create an NSS account.
 
-. Click *I am already registered as a NetApp customer*.
+. Select *I am already registered as a NetApp customer*.
 
 . Enter your NetApp Support Site credentials to log in.
 +
@@ -65,7 +65,7 @@ image:screenshot-existing-registration.gif[Existing Customer Registration Form]
 
 .. Enter your serial number.
 
-.. Click *Submit Registration*.
+.. Select *Submit Registration*.
 
 .Result
 
@@ -79,7 +79,7 @@ This is a one-time support registration for the applicable serial number.
 
 . Navigate to the https://register.netapp.com[Cloud Data Services Support Registration^] page to create an NSS account.
 
-. Click *I am not a registered NetApp Customer*.
+. Select *I am not a registered NetApp Customer*.
 +
 The New Customer Registration page displays.
 +
@@ -93,7 +93,7 @@ image:screenshot-new-registration.gif[New Customer Registration Form]
 
 .. Enter your serial number.
 
-.. Click *Submit Registration*.
+.. Select *Submit Registration*.
 +
 You will receive a confirmation email from your submitted registration. If no errors occur, you will be re-directed to a "Registration Submitted Successfully" page. You will also receive an email within an hour stating that "your product is now eligible for support".
 +

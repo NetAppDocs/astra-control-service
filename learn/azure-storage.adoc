@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: learn/azure-storage.html
 keywords: service level, cvs, cvs-performance, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance
-summary: Astra Control Service uses Azure NetApp Files as the backend storage for Azure Kubernetes Service (AKS) clusters. You should understand how choosing a storage class and persistent volume size can help you meet your performance objectives.
+summary: Astra Control Service uses Azure NetApp Files as the storage backend for Azure Kubernetes Service (AKS) clusters. You should understand how choosing a storage class and persistent volume size can help you meet your performance objectives.
 ---
 
 = Storage classes and PV size for AKS clusters
@@ -11,11 +11,11 @@ summary: Astra Control Service uses Azure NetApp Files as the backend storage fo
 :imagesdir: ../media/learn/
 
 [.lead]
-Astra Control Service supports Azure NetApp Files or Azure managed disks as the backend storage for Azure Kubernetes Service (AKS) clusters.
+Astra Control Service supports Azure NetApp Files or Azure managed disks as the storage backend for Azure Kubernetes Service (AKS) clusters.
 
 == Azure NetApp Files
 
-Astra Control Service supports Azure NetApp Files as the backend storage for Azure Kubernetes Service (AKS) clusters. You should understand how choosing a storage class and persistent volume size can help you meet your performance objectives.
+Astra Control Service supports Azure NetApp Files as the storage backend for Azure Kubernetes Service (AKS) clusters. You should understand how choosing a storage class and persistent volume size can help you meet your performance objectives.
 
 === Service levels and storage classes
 
@@ -41,6 +41,6 @@ Astra Control Service provisions persistent volumes using a minimum volume size 
 
 == Azure managed disks
 
-Astra Control Service supports Azure managed disks as a backend storage option. This service provides block-level storage that is managed by Azure.
+Astra Control Service supports Azure managed disks as a storage backend option. This service provides block-level storage that is managed by Azure.
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview[Learn more about Azure managed disks^].

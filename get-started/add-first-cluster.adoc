@@ -31,7 +31,7 @@ You'll also need your Azure subscription ID, if you didn't add it to the JSON fi
 
 .Steps
 
-. On the Dashboard, click *Manage Kubernetes cluster*.
+. On the Dashboard, select *Manage Kubernetes cluster*.
 +
 Follow the prompts to add the cluster.
 
@@ -70,7 +70,7 @@ Learn more about link:../learn/choose-class-and-size.html[storage classes for GK
 //* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
 //* link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
 
-. *Review & Approve*: Review the configuration details and click *Add cluster*.
+. *Review & Approve*: Review the configuration details and select *Add cluster*.
 //+
 //image:screenshot-compute-approve.gif["A screenshot that shows the Review & Approve page, which provides a summary of the configuration that you chose for the managed app."]
 

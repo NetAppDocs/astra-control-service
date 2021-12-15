@@ -20,9 +20,9 @@ Account Owners and Admins can invite other users to join the Astra Control accou
 
 . Make sure that the user has a link:../get-started/register.html[Cloud Central login].
 
-. Click *Account*.
+. Select *Account*.
 
-. In the *Users* tab, click *+ Invite users*.
+. In the *Users* tab, select *+ Invite users*.
 
 . Enter the user's name, email address, and their role.
 +
@@ -37,7 +37,7 @@ Note the following:
 +
 image:screenshot-invite-users.gif[A screenshot of the Invite Users screen where you enter a name, email address, and select a role.]
 
-. Click *Send invite(s)*.
+. Select *Send invite(s)*.
 
 .Result
 
@@ -49,11 +49,11 @@ An Account Owner can change the role of all users, while an Account Admin can ch
 
 .Steps
 
-. Click *Account*.
+. Select *Account*.
 
 . In the *Users* tab, select the drop-down list in the *Role* column for the user.
 
-. Select a new role and then click *Change Role* when prompted.
+. Select a new role and then select *Change Role* when prompted.
 
 .Result
 
@@ -65,13 +65,13 @@ An Account Owner can remove other users from the account at any time.
 
 .Steps
 
-. Click *Account*.
+. Select *Account*.
 
 . In the *Users* tab, select the users that you want to remove.
 
-. Click *Actions* and select *Remove user/s*.
+. Select *Actions* and select *Remove user/s*.
 
-. When you're prompted, confirm deletion by typing the user's name and then click *Yes, Remove User*.
+. When you're prompted, confirm deletion by typing the user's name and then select *Yes, Remove User*.
 
 .Result
 
