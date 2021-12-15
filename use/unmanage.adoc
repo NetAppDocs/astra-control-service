@@ -22,7 +22,7 @@ Stop managing apps that you no longer want to back up, snapshot, or clone from A
 
 .Steps
 
-. Click *Apps*.
+. Click *Applications*.
 
 . Click the checkbox for the apps that you no longer want to manage.
 

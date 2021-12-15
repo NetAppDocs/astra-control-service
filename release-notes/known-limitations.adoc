@@ -45,3 +45,15 @@ No matter which type of app that you use with Astra Control Service, you should 
 === Persistent volume limit
 
 You can have up to 100 volumes per Google Cloud region. If you reach this limit, creation of new clones or volumes will fail. link:../support/get-help.html[Contact support to increase the volume limit].
+
+== App management limitations
+The following limitations affect Astra Control Service's management of applications.
+
+=== Clones of apps installed using pass by reference operators can fail
+Astra Control supports apps installed with namespace-scoped operators. These operators are generally designed with a "pass-by-value" rather than "pass-by-reference" architecture. The following are some operator apps that follow these patterns:
+
+* https://github.com/k8ssandra/cass-operator/tree/v1.7.1[Apache K8ssandra^]
+* https://github.com/jenkinsci/kubernetes-operator[Jenkins CI^]
+* https://github.com/percona/percona-xtradb-cluster-operator[Percona XtraDB Cluster^]
+
+Note that Astra Control might not be able to clone an operator that is designed with a “pass-by-reference” architecture (for example, the CockroachDB operator). During these types of cloning operations, the cloned operator attempts to reference Kubernetes secrets from the source operator despite having its own new secret as part of the cloning process. The clone operation might fail because Astra Control is unaware of the Kubernetes secrets in the source operator.

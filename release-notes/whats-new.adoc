@@ -12,6 +12,35 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
+== 14 Dec 2021
+
+=== Backend storage
+
+Astra Control Service now supports Google Persistent Disk and Azure managed disks as backend storage options.
+
+link:../get-started/set-up-google-cloud.html[Set up Google Cloud].
+link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks].
+
+=== In-place app restore
+You can now restore a snapshot, clone, or backup of an app in place by restoring to the same cluster and namespace.
+
+link:../use/restore-apps.html[Restore apps].
+
+=== Script events with execution hooks
+Astra Control supports custom scripts that you can run before or after you take a snapshot of an application. This enables you to perform tasks like suspending database transactions so that the snapshot of your database app is consistent.
+
+link:../use/manage-app-execution-hooks.html[Manage app execution hooks].
+
+=== Operator-deployed apps
+Astra Control supports some apps when they are deployed with operators.
+
+link:../use/manage-apps.html#app-management-requirements[Start managing apps].
+
+=== Service principals with resource group scope
+Astra Control Service now supports service principals that use a resource group scope.
+
+link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Create an Azure service principal].
+
 == 5 Aug 2021
 
 This release includes the following new features and enhancements.
@@ -56,7 +85,7 @@ This release includes the following new features and enhancements.
 
 Astra Control Service can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS).
 
-link:../get-started/set-up-microsoft-azure.html[Learn how to get started].
+link:../get-started/set-up-microsoft-azure-with-anf.html[Learn how to get started].
 
 === REST API
 

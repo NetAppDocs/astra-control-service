@@ -1,0 +1,19 @@
+---
+sidebar: sidebar
+permalink: support/troubleshooting.html
+keywords: support, register for support, support registration
+summary: Find troubleshooting tips for common problems.
+---
+
+= Troubleshooting
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/support/
+
+Learn how to work around some common problems you might encounter.
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra
+
+== For more information
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra[Troubleshooting^]

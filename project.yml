@@ -14,7 +14,7 @@ sidebar:
     - section: release-notes
     - section: get-started
     - section: use
-    - title: Automate with the REST API
+    - title: Automate with the Astra Control REST API
       url: /automation.html
     - section: learn
     - section: solutions
@@ -43,7 +43,7 @@ homepage:
           url: /use/clone-apps.html
         - title: Set up billing
           url: /use/set-up-billing.html
-    - title: Use the Astra REST API
+    - title: Use the Astra Control REST API
       links:
         - title: Get started
           url: https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html
@@ -83,8 +83,8 @@ homepage:
           url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
     - title: Blogs & community
       links:
-        - title: Slack channel
-          url: https://netapppub.slack.com/#astra
+        - title: Slack "containers" channel
+          url: https://netapp.io/slack
         - title: Astra Control blog
           url: https://cloud.netapp.com/blog/topic/astra
         - title: Astra Control – Simplifying app data management for the hybrid cloud

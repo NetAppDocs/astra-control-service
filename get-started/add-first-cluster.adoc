@@ -15,7 +15,7 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 == Create a Kubernetes cluster
 
-If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)] or link:set-up-microsoft-azure.html#aks-cluster-requirements[Astra Control Service requirements for Azure Kubernetes Service (AKS)].
+If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)], link:set-up-microsoft-azure-with-anf.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure NetApp Files], or link:set-up-microsoft-azure-with-amd.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure managed disks] .
 
 == Start managing Kubernetes clusters
 
@@ -25,7 +25,7 @@ After you log in to Astra Control Service, your first step is to start managing 
 
 * For GKE, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
 
-* For AKS, you should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
+* For AKS, you should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
 +
 You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
 
@@ -48,22 +48,36 @@ Astra Control Service uses the service account to discover clusters running in G
 . *Cluster*: Select the cluster that you'd like to add.
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
++
+If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud or Azure NetApp Files, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
+//+
+//NOTE: Support for using Google Persistent Disk and Azure Managed Disks storage services is in initial preview status with this release.
 
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
-Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
+Price, performance, and resilience information is displayed for each Cloud Volumes Service for Google Cloud service in the list.  Performance and resilience information is displayed for each Azure NetApp Files service. For non-NetApp storage classes such as Google Persistent Disk or Azure managed disks, price, performance, and resilience information is not available.
 +
-* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
-* link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
+Each storage class can utilize one of the following services:
+
+* https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
+* https://cloud.google.com/persistent-disk/[Google Persistent Disk^]
+* https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview[Azure managed disks^]
++
+Learn more about link:../learn/choose-class-and-size.html[storage classes for GKE clusters] and link:../learn/azure-storage.html[storage classes for AKS clusters].
+//Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
+//+
+//* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
+//* link:../learn/azure-storage.html[Learn about storage classes for AKS clusters].
 
 . *Review & Approve*: Review the configuration details and click *Add cluster*.
-+
-image:screenshot-compute-approve.gif["A screenshot that shows the Review & Approve page, which provides a summary of the configuration that you chose for the managed app."]
+//+
+//image:screenshot-compute-approve.gif["A screenshot that shows the Review & Approve page, which provides a summary of the configuration that you chose for the managed app."]
 
-The following video shows each of these steps for a GKE cluster.
+//The following video shows each of these steps for a GKE cluster.
 
-video::video-manage-cluster.mp4[width=848, height=480]
+//video::video-manage-cluster.mp4[width=848, height=480]
 
 .Result
 
-Astra Control Service creates an object store for application backups, creates an admin account on the cluster, and sets the default storage class that you specified. This process can take up to 5 minutes.
+Astra Control Service creates an object store for application backups on eligible clusters, creates an admin account on the cluster, and sets the default storage class that you specified. This process can take up to 5 minutes.

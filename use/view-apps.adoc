@@ -17,7 +17,7 @@ image:screenshot-app-overview.gif["A screenshot of the Overview page for an app 
 
 .Steps
 
-. Click *Apps* and then click the name of an app.
+. Click *Applications* and then click the name of an app.
 
 . Click around to find the information that you're looking for:
 +
