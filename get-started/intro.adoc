@@ -10,5 +10,5 @@ summary: Astra Control is a Kubernetes application data lifecycle management sol
 :icons: font
 :imagesdir: ../media/get-started/
 
-//Remote includes from ACC repo
+//Remote includes from ACC repo 
 include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-intro.adoc[]
