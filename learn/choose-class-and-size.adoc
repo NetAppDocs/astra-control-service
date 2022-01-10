@@ -41,9 +41,9 @@ The following table provides a quick comparison of the information described on 
 
 | CVS-Performance | Apps with medium-to-high storage performance needs | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[View supported Google Cloud regions^]
 a|
-* netapp-cvs-standard
-* netapp-cvs-premium
-* netapp-cvs-extreme | 100 GiB
+* netapp-cvs-perf-standard
+* netapp-cvs-perf-premium
+* netapp-cvs-perf-extreme | 100 GiB
 
 | CVS | Apps with low-to-medium storage performance needs | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[View supported Google Cloud regions^] | netapp-cvs-standard | 300 GiB
 
@@ -57,7 +57,7 @@ Learn more about the CVS-Performance service type before you choose a storage cl
 
 Three service levels are supported with the CVS-Performance service type: Standard, Premium, and Extreme. When you add a cluster to Astra Control Service, you're prompted to choose either Standard, Premium, or Extreme as the default storage class for persistent volumes. Each of these service levels are designed for different capacity and bandwidth needs.
 
-The names of the storage classes are _netapp-cvs-standard_, _netapp-cvs-premium_, and _netapp-cvs-extreme_.
+The names of the storage classes are _netapp-cvs-perf-standard_, _netapp-cvs-perf-premium_, and _netapp-cvs-perf-extreme_.
 
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels[Learn more about these service levels in the Cloud Volumes Service for Google Cloud docs^].
 
