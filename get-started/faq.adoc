@@ -117,7 +117,7 @@ No. While Astra Control can discover applications that are using non-NetApp stor
 
 *I don’t see any of my application’s PVCs bound to GCP CVS. What's wrong?*
 
-The Astra Trident operator sets the default storage class to `netapp-cvs-premium` after it's successfully added to Astra Control. When an application's PVCs are not bound to Cloud Volumes Service for Google Cloud, there are a few steps that you can take:
+The Astra Trident operator sets the default storage class to `netapp-cvs-perf-premium` after it's successfully added to Astra Control. When an application's PVCs are not bound to Cloud Volumes Service for Google Cloud, there are a few steps that you can take:
 
 * Run `kubectl get sc` and check the default storage class.
 * Check the yaml file or Helm chart that was used to deploy the application and see if a different storage class is defined.
