@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: use/manage-buckets.html
-keywords: bucket, buckets, add buckets, change default bucket, default, default bucket, remove bucket, delete bucket
+keywords: bucket, buckets, add buckets, change default bucket, default, default bucket, remove bucket, delete bucket, S3, s3, storage, object storage, object store, store, object
 summary: Manage the buckets that Astra uses for backups and clones by adding additional buckets and by changing the default bucket for the clusters in your cloud provider.
 ---
 
@@ -20,7 +20,7 @@ When you start managing your first Kubernetes cluster, Astra Control Service cre
 
 Astra Control Service uses this default bucket for the backups and clones that you create. You can then use the backups to restore and clone apps between clusters.
 
-If you add additional buckets to Astra Control Service, you can select from those buckets when you create a protection policy. You can also change the default bucket that Astra Control Service uses for ad-hoc backups and clones.
+If you add additional buckets to Astra Control Service, you can select from those buckets when you create a protection policy. You can also change the default bucket that Astra Control Service uses for ad-hoc backups and clones. You can not clone a bucket from one cloud provider to another cloud provider. To migrate data from one cloud provider to another, clone the associated application instead.
 
 TIP: Astra Control Service checks whether a destination bucket is accessible prior to starting a backup or a clone.
 
