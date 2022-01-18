@@ -18,11 +18,11 @@ A _snapshot_ is a point-in-time copy of an app that's stored on the same provisi
 
 A _backup_ is stored on object storage in the cloud. A backup can be slower to take compared to the local snapshots. But they can be accessed across regions in the cloud to enable app migrations. You can also choose a longer retention period for backups.
 
-CAUTION: _You can't be fully protected until you have a recent backup_. This is important because backups are stored in an object store away from the persistent volumes. If a failure or accident wipes out the cluster and it's persistent storage, then you need a backup to recover. A snapshot wouldn't enable you to recover.
+CAUTION: _You can't be fully protected until you have a recent backup_. This is important because backups are stored in an object store away from the persistent volumes. If a failure or accident damages the cluster and its persistent storage, then you need a backup to recover. A snapshot wouldn't enable you to recover.
 
 == Configure a protection policy
 
-A protection policy protects an app by creating snapshots, backups, or both at a defined schedule. You can choose to create snapshots and backups hourly, daily, weekly, and monthly, and you can specify the number of copies to retain. If you need backups or snapshots to run more frequently than once per hour, you can https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html[use the Astra Control REST API to create snapshots and backups^]. 
+A protection policy protects an app by creating snapshots, backups, or both at a defined schedule. You can choose to create snapshots and backups hourly, daily, weekly, and monthly, and you can specify the number of copies to retain. If you need backups or snapshots to run more frequently than once per hour, you can https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html[use the Astra Control REST API to create snapshots and backups^].
 
 .Steps
 
