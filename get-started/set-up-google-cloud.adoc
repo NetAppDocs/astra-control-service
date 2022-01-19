@@ -113,6 +113,7 @@ Private clusters:: If the cluster is private, the https://cloud.google.com/kuber
 
 Mode of operation for a GKE cluster:: You should use the Standard mode of operation. The Autopilot mode hasn't been tested at this time. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes[Learn more about modes of operation^].
 
+////
 External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21.x, but you'll need to check on clusters running versions 1.19 and 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
 
 === Install a CSI volume snapshot controller
@@ -152,7 +153,7 @@ If you want the snapshot controller in a specific namespace, download and edit t
 [source,kubectl]
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-
+////
 == Purchase Cloud Volumes Service for Google Cloud (optional)
 
 Astra Control Service can use Cloud Volumes Service for Google Cloud as the storage backend for your persistent volumes. If you plan to use this service, you need to purchase Cloud Volumes Service for Google Cloud from the Google Cloud Marketplace to enable billing for persistent volumes.
