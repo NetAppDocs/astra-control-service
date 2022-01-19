@@ -159,6 +159,8 @@ One or more capacity pools are required so that Astra Control Service can provis
 
 Take the following into consideration as you set up capacity pools for your Kubernetes apps:
 
+* The capacity pools need to be created in the same Azure region where the AKS clusters will be managed with Astra Control Service.
+
 * A capacity pool can have an Ultra, Premium, or Standard service level. Each of these service levels are designed for different performance needs. Astra Control Service supports all three.
 +
 You need to set up a capacity pool for each service level that you want to use with your Kubernetes clusters.
