@@ -11,7 +11,7 @@ summary: Astra Control can restore your application configuration and persistent
 :imagesdir: ../media/use/
 
 [.lead]
-Astra Control can restore your application configuration and persistent storage from a snapshot or backup. Persistent storage backups are transferred from your object store, so restoring from an existing backup will complete the fastest.
+Astra Control can restore your application from a snapshot or backup. Restoring from an existing snapshot will be faster when restoring the application to the same cluster. You can use the Astra Control UI or https://docs.netapp.com/us-en/astra-automation/index.html[the Astra Control API^] to restore apps.
 
 .Steps
 
