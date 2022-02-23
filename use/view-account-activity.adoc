@@ -13,7 +13,7 @@ summary: You can view details about the activities in your Astra Control account
 [.lead]
 You can view details about the activities in your Astra Control account. For example, when new users were invited, when a cluster was added, or when a snapshot was taken. You also have the ability to export your account activity to a CSV file.
 
-.Steps to view all account activity in Astra Control
+.View all account activity in Astra Control
 
 . Select *Activity*.
 
@@ -21,13 +21,13 @@ You can view details about the activities in your Astra Control account. For exa
 
 . Select *Export to CSV* to download your account activity to a CSV file.
 
-.Steps to view account activity for a specific app
+.View account activity for a specific app
 
 . Select *Applications* and then select the name of an app.
 
 . Select *Activity*.
 
-.Steps to view account activity for clusters
+.View account activity for clusters
 
 . Select *Clusters* and then select the name of the cluster.
 
