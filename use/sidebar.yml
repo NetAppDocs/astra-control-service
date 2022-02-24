@@ -36,8 +36,8 @@ entries:
         url: /use/manage-users.html
       - title: Manage cloud provider credentials
         url: /use/manage-credentials.html
-      - title: View account activity
-        url: /use/view-account-activity.html
+      - title: Monitor account activity
+        url: /use/monitor-account-activity.html
       - title: Manage notifications
         url: /use/manage-notifications.html
       - title: Close your account
