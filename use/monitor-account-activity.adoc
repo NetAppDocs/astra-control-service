@@ -33,7 +33,7 @@ You can view details about the activities in your Astra Control account. For exa
 
 . Select *Activity*.
 
-.Take action to resolve events that require attention
+.View possible actions for events
 
 . Select *Activity*.
 . Select an event that requires attention.
