@@ -11,7 +11,7 @@ summary: You can view details about the activities in your Astra Control account
 :imagesdir: ../media/use/
 
 [.lead]
-You can view details about the activities in your Astra Control account. For example, when new users were invited, when a cluster was added, or when a snapshot was taken. You also have the ability to export your account activity to a CSV file. If an activity entry requires attention, you can view possible next steps.
+You can view details about the activities in your Astra Control account. For example, when new users were invited, when a cluster was added, or when a snapshot was taken. You also have the ability to export your account activity to a CSV file.
 
 .View all account activity in Astra Control
 
@@ -37,6 +37,6 @@ You can view details about the activities in your Astra Control account. For exa
 
 . Select *Activity*.
 . Select an event that requires attention.
-. Select the *Take action* dropdown.
+. Select the *Take action* drop-down option.
 +
 From this list, you can view possible corrective actions that you can take, view documentation related to the issue, and get support to help resolve the issue.
