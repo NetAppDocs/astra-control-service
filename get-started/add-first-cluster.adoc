@@ -21,6 +21,14 @@ If you don't have a cluster yet, create one that meets link:set-up-google-cloud.
 
 After you log in to Astra Control Service, your first step is to start managing your clusters.
 
+[NOTE]
+======================
+When Astra Control manages a cluster, it keeps track of the cluster's default StorageClass. If you change the StorageClass using `kubectl` commands, Astra Control reverts the change. To change the default StorageClass in a cluster managed by Astra Control, use one of the following methods:
+
+* Use the Astra Control API `PUT /managedClusters` endpoint, and assign a different default StorageClass with the `DefaultStorageClass` parameter
+* Remove the cluster from Astra Control management and re-add it with a different default StorageClass selected
+======================
+
 .What you'll need
 
 * For GKE, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
