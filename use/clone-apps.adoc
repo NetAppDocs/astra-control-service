@@ -26,8 +26,8 @@ NOTE: If you deploy an app with a StorageClass explicitly set and you need to cl
 . Select the drop-down list in the *Action* column for the desired app.
 
 . Select *Clone*.
-+
-image:screenshot-create-clone.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Clone."]
+//+
+//image:screenshot-create-clone.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Clone."]
 
 . *Clone details*: Specify details for the clone:
 +
