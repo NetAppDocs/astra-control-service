@@ -88,7 +88,7 @@ image:diagram-managed-app1.png[A conceptual image that shows Astra managing all 
 +
 image:diagram-managed-app2.png[A conceptual image that shows Astra managing an individual application deployed in a namespace that includes other applications.]
 
-* A group of resources that are identified by a Kubernetes label (this is called a _custom app_ in Astra Control)
+* A group of resources that are identified by a Kubernetes label (this is called a _custom app_ in Astra Control) within a namespace
 +
 image:diagram-managed-app3.png[A conceptual image that shows Astra managing a custom app based on a Kubernetes label.]
 
