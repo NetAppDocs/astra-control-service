@@ -104,31 +104,37 @@ You can use Astra Control Service to manage private AKS clusters. To do so, you 
 . Change directories to the top level of the unpacked operator package, so that you can see the `astraconnector_operator.yaml` file with the `ls` command.
 ////
 . Create a namespace for the Astra Connector operator.
++
 ----
 kubectl create ns astra-connector-operator
 ----
 
 . Apply the `astraconnector_operator.yaml` file to the operator namespace.
++
 ----
 kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
 ----
 
 . Create a namespace for the private cluster components.
++
 ----
 kubectl create ns astra-connector
 ----
 
 . Apply the Astra Connector Custom Resource Definition (CRD).
++
 ----
 kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 ----
 
 . Check the status of the Astra Connector.
++
 ----
 kubectl get astraconnector astra-connector -n astra-connector
 ----
 +
 You should see output similar to the following:
++
 ----
 NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
