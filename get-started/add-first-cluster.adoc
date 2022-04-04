@@ -98,9 +98,11 @@ Astra Control Service creates an object store for application backups on eligibl
 You can use Astra Control Service to manage private AKS clusters. To do so, you need to install the Astra Connector operator on the private AKS service cluster. You can complete this step before you add the cluster for management or during the process of adding it, when prompted.
 
 .Steps
-
-// .Download the astraconnector operator from <URL> and save it on the AKS service cluster.
-
+////
+. Download the Astra Connector operator from https://github.com/NetApp/astra-connector-operator and save it on the AKS service cluster.
+. Unpack the Astra Connector operator package.
+. Change directories to the top level of the unpacked operator package, so that you can see the `astraconnector_operator.yaml` file with the `ls` command.
+////
 . Create a namespace for the Astra Connector operator.
 ----
 kubectl create ns astra-connector-operator
