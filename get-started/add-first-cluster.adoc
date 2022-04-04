@@ -37,7 +37,9 @@ When Astra Control manages a cluster, it keeps track of the cluster's default St
 +
 You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
 
-* For private AKS clusters, make sure that the cluster meets the requirements noted in https://docs.microsoft.com/en-us/azure/aks/private-clusters[the Azure documentation^]. You also need to install the Astra Connector on the AKS service cluster so that Astra Control Service can manage the cluster. To install the Astra Connector, <<Manage a private cluster,follow these instructions>>.
+* For private AKS clusters:
+** The cluster should meet the requirements noted in https://docs.microsoft.com/en-us/azure/aks/private-clusters[the Azure documentation^].
+** You need to install the Astra Connector on the AKS service cluster so that Astra Control Service can manage the cluster. To install the Astra Connector, <<Manage a private cluster,follow these instructions>>.
 
 .Steps
 
