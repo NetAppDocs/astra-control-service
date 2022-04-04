@@ -99,6 +99,8 @@ You can use Astra Control Service to manage private AKS clusters. To do so, you 
 
 .Steps
 
+// .Download the astraconnector operator from <URL> and save it on the AKS service cluster.
+
 . Create a namespace for the Astra Connector operator.
 ----
 kubectl create ns astra-connector-operator
