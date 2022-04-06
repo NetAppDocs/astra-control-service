@@ -58,11 +58,18 @@ No. When your cluster is added to Astra Control, the service will automatically 
 
 New worker nodes can be added to existing pools, or new pools can be created as long as they are the Ubuntu image type. These will be automatically discovered by Astra Control. If the new nodes are not visible in Astra Control, check if the new worker nodes are running the supported image type. You can also verify the health of the new worker nodes by using the `kubectl get nodes` command.
 
+== Registering AKS clusters
+
+*Can I add a private AKS cluster to Astra Control Service?*
+
+Yes, you can add private AKS clusters to Astra Control Service.  To add a private AKS cluster, see link:add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
+
+
 == Registering GKE clusters
 
 *Can I add a private GKE cluster to Astra Control Service?*
 
-Yes, you can add private clusters to Astra Control Service. To create a Google Kubernetes Engine (GKE) private cluster, https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra[follow the instructions in this knowledgebase article^].
+Yes, you can add private GKE clusters to Astra Control Service. To create a Google Kubernetes Engine (GKE) private cluster, https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra[follow the instructions in this knowledgebase article^].
 
 Private clusters must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[authorized networks^] set to allow the Astra Control IP addresses:
 
