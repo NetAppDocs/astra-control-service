@@ -20,45 +20,42 @@ Consider the following Astra Control app management requirements:
 * *StorageClass*: If you install an app with a StorageClass explicitly set and you need to clone the app, the target cluster for the clone operation must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
 * *Kubernetes resources*: Apps that use Kubernetes Resources not collected by Astra Control might not have full app data management capabilities. Astra Control collects the following Kubernetes resources:
 
-[cols="1,1"]
+[cols="1,1,1"]
 |===
 |ClusterRole
 |ClusterRoleBinding
-
 |ConfigMap
-|CustomResourceDefinition
 
+|CustomResourceDefinition
 |CustomResource
 |CronJob
 
 |DaemonSet
 |HorizontalPodAutoscaler
-
 |Ingress
-|DeploymentConfig
 
+|DeploymentConfig
 |MutatingWebhook
 |PersistentVolumeClaim
 
 |Pod
 |PodDisruptionBudget
-
 |PodTemplate
-|NetworkPolicy
 
+|NetworkPolicy
 |ReplicaSet
 |Role
 
 |RoleBinding
 |Route
-
 |Secret
-|Service
 
+|Service
 |ServiceAccount
 |StatefulSet
 
 |ValidatingWebhook
+|
 |
 |===
 
