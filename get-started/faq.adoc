@@ -73,9 +73,11 @@ Yes, you can add private GKE clusters to Astra Control Service. To create a Goog
 
 Private clusters must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[authorized networks^] set to allow the Astra Control IP addresses:
 
-* 54.164.233.140/32
-* 3.218.120.204/32
-* 34.193.99.138/32
+52.188.218.166/32
+
+//* 54.164.233.140/32
+//* 3.218.120.204/32
+//* 34.193.99.138/32
 
 *Can my GKE cluster reside on a shared VPC?*
 
