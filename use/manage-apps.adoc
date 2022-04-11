@@ -19,27 +19,45 @@ Consider the following Astra Control app management requirements:
 * *Namespaces*: Astra Control requires that an app not span more than a single namespace, but a namespace can contain more than one app.
 * *StorageClass*: If you install an app with a StorageClass explicitly set and you need to clone the app, the target cluster for the clone operation must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
 * *Kubernetes resources*: Apps that use Kubernetes Resources not collected by Astra Control might not have full app data management capabilities. Astra Control collects the following Kubernetes resources:
-** ClusterRole
-** ClusterRoleBinding
-** ConfigMap
-** CustomResourceDefinition
-** CustomResource
-** DaemonSet
-** Deployment
-** DeploymentConfig
-** Ingress
-** MutatingWebhook
-** PersistentVolumeClaim
-** Pod
-** ReplicaSet
-** RoleBinding
-** Role
-** Route
-** Secret
-** Service
-** ServiceAccount
-** StatefulSet
-** ValidatingWebhook
+
+[cols="1,1,1"]
+|===
+|ClusterRole
+|ClusterRoleBinding
+|ConfigMap
+
+|CustomResourceDefinition
+|CustomResource
+|CronJob
+
+|DaemonSet
+|HorizontalPodAutoscaler
+|Ingress
+
+|DeploymentConfig
+|MutatingWebhook
+|PersistentVolumeClaim
+
+|Pod
+|PodDisruptionBudget
+|PodTemplate
+
+|NetworkPolicy
+|ReplicaSet
+|Role
+
+|RoleBinding
+|Route
+|Secret
+
+|Service
+|ServiceAccount
+|StatefulSet
+
+|ValidatingWebhook
+|
+|
+|===
 
 === Supported app installation methods
 You can use the following methods to install apps that you want to manage with Astra Control:
