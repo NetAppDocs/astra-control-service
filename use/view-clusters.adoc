@@ -24,5 +24,5 @@ After you add Kubernetes clusters to Astra Control, you can view details about t
 * *Overview*: Details about the worker nodes, including their state.
 * *Storage*: The persistent volumes associated with the cluster, including the storage class and state.
 * *Activity*: The Astra activities related to the cluster.
-+
-image:screenshot-cluster-overview.gif[A screenshot of the Overview tab for clusters.]
+//+
+//image:screenshot-cluster-overview.gif[A screenshot of the Overview tab for clusters.]

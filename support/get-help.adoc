@@ -16,7 +16,7 @@ You must first link:register-support.html[activate support for your NetApp seria
 
 You can access support options from the Astra Control UI by selecting the *Support* tab from the main menu.
 
-image:screenshot-support.gif[A screenshot of the Support page in Astra Control where you can view resources to get help and to contact NetApp.]
+//image:screenshot-support.gif[A screenshot of the Support page in Astra Control where you can view resources to get help and to contact NetApp.]
 
 == Self support
 

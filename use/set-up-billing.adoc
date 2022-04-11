@@ -26,9 +26,9 @@ Premium Subscription:: Pre-pay at a discounted rate with an annual subscription 
 +
 If you don't have an Astra Control account yet, purchasing the Premium Subscription automatically creates an Astra Control account for you. If you have an existing Free Plan, then you're automatically converted to the Premium Subscription.
 
-When you create an Astra Control account, you're automatically signed up for the Free Plan. Astra Control's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed:
+When you create an Astra Control account, you're automatically signed up for the Free Plan. Astra Control's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed.
 
-image:screenshot-dashboard.gif["A screenshot that shows the Astra dashboard which provides a resources summary and links to get started."]
+//image:screenshot-dashboard.gif["A screenshot that shows the Astra dashboard which provides a resources summary and links to get started."]
 
 If you try to manage an 11th app, Astra Control notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to a Premium Plan.
 
@@ -100,7 +100,7 @@ Contact NetApp Sales to pre-pay at a discounted rate with an annual subscription
 
 A NetApp Sales representative will contact you to process your purchase order. After the order is complete, Astra Control will reflect your current plan on the Billing tab.
 
-image:screenshot-premium-subscription.gif[A screenshot that shows the Account tab and an account that is enabled for the Premium Subscription.]
+//image:screenshot-premium-subscription.gif[A screenshot that shows the Account tab and an account that is enabled for the Premium Subscription.]
 
 == View your current costs and billing history
 
