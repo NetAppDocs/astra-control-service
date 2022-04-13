@@ -22,7 +22,7 @@ Account Owners and Admins can invite other users to join the Astra Control accou
 
 . Select *Account*.
 
-. In the *Users* tab, select *+ Invite users*.
+. In the *Users* tab, select *Invite*.
 
 . Enter the user's name, email address, and their role.
 +
@@ -34,14 +34,19 @@ Note the following:
 ** An *Admin* has Member permissions and can invite other users.
 ** A *Member* can fully manage apps and clusters.
 ** A *Viewer* can view resources.
-//+
-//image:screenshot-invite-users.gif[A screenshot of the Invite Users screen where you enter a name, email address, and select a role.]
-
-. Select *Send invite(s)*.
++
+image:screenshot-invite-users.gif[A screenshot of the Invite Users screen where you enter a name, email address, and select a role.]
+. To add constraints to a user with a Member or Viewer role, enable the *Restrict role to constraints* check box.
++
+For more information on adding constraints, see link:manage-roles.html[Manage roles].
+. To invite another user, select *Add another user* and enter information for the new user.
++
+You can invite up to 10 users at a time. You can navigate between the users you are inviting on the left side of the *Invite users* dialog.
+. Select *Invite users*.
 
 .Result
 
-The user will receive an email that invites them to join your account.
+The user or users will receive an email that invites them to join your account.
 
 == Change a user's role
 
@@ -50,10 +55,13 @@ An Account Owner can change the role of all users, while an Account Admin can ch
 .Steps
 
 . Select *Account*.
-
-. In the *Users* tab, select the drop-down list in the *Role* column for the user.
-
-. Select a new role and then select *Change Role* when prompted.
+. In the *Users* tab, select the menu in the *Actions* column for the user.
+. Select *Edit role*.
+. Select a new role.
+. To add constraints to a user with a Member or Viewer role, enable the *Restrict role to constraints* check box.
++
+For more information on adding constraints, see link:manage-roles.html[Manage roles].
+. Select *Confirm*.
 
 .Result
 
@@ -61,7 +69,7 @@ Astra Control updates the user's permissions based on the new role that you sele
 
 == Remove users
 
-An Account Owner can remove other users from the account at any time.
+A user with the Owner role can remove other users from the account at any time.
 
 .Steps
 
@@ -69,9 +77,9 @@ An Account Owner can remove other users from the account at any time.
 
 . In the *Users* tab, select the users that you want to remove.
 
-. Select *Actions* and select *Remove user/s*.
+. Select the menu in the *Actions* column and select *Remove user*.
 
-. When you're prompted, confirm deletion by typing the user's name and then select *Yes, Remove User*.
+. When you're prompted, confirm deletion by typing "remove" and then select *Yes, Remove User*.
 
 .Result
 
