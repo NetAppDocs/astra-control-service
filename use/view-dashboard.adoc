@@ -13,7 +13,7 @@ summary: Click Dashboard to see a high-level view of your apps, clusters, and th
 [.lead]
 Click the *Dashboard* to see a high-level view of your apps, clusters, and their health.
 
-image:screenshot-dashboard.gif["A screenshot that shows the Astra dashboard which provides a resources summary and links to get started."]
+//image:screenshot-dashboard.gif["A screenshot that shows the Astra dashboard which provides a resources summary and links to get started."]
 
 The Apps tile helps you identify the following:
 
@@ -26,6 +26,6 @@ Ideally, this number would be zero because you would either manage or ignore app
 
 Note that these aren't just numbers or statuses--you can drill down from each of these. For example, if apps aren't fully protected, you can hover over the icon to identify which apps aren't fully protected, which includes a reason why.
 
-image:screenshot-dashboard-unprotected.gif["A screenshot that shows the tooltip that displays when hovering over the number of not fully protected apps. The tooltip provides the name of the app and the reason why it's not fully protected."]
+//image:screenshot-dashboard-unprotected.gif["A screenshot that shows the tooltip that displays when hovering over the number of not fully protected apps. The tooltip provides the name of the app and the reason why it's not fully protected."]
 
 The Clusters tile provides similar details about the health of the cluster and you can drill down to get more details just like you can with an app.
