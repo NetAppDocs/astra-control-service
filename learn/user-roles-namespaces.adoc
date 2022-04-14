@@ -15,10 +15,10 @@ Learn about user roles and namespaces in Astra Control, and how you can use them
 == User roles
 You can use roles to control the access users have to resources or capabilities of Astra Control. The following are the user roles in Astra Control:
 
+* An *Owner* has Admin permissions and can delete accounts.
+* An *Admin* has Member permissions and can invite other users.
+* A *Member* can fully manage apps and clusters.
 * A *Viewer* can view resources.
-* A *Member* has Viewer role permissions and can manage apps and clusters, unmanage apps, and delete snapshots and backups.
-* An *Admin* has Member role permissions and can add and remove any other users except the Owner.
-* An *Owner* has Admin role permissions and can add and remove any user accounts.
 
 You can add constraints to a Member or Viewer role to restrict the role to one or more <<Namespaces>>.
 
