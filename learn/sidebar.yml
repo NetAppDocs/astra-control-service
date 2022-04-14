@@ -11,3 +11,5 @@ entries:
     url: /learn/validated-vs-standard.html
   - title: Defining a custom app
     url: /learn/define-custom-app.html
+  - title: User roles and namespaces
+    url: /learn/user-roles-namespaces.html

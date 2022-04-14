@@ -33,7 +33,9 @@ entries:
       - title: Set up billing
         url: /use/set-up-billing.html
       - title: Invite and manage users
-        url: /use/manage-users.html
+        url: /use/manage-users.
+      - title: Manage roles
+        url: /use/manage-roles.html
       - title: Manage cloud provider credentials
         url: /use/manage-credentials.html
       - title: Monitor account activity
