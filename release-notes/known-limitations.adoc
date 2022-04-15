@@ -16,9 +16,9 @@ Known limitations identify platforms, devices, or functions that are not support
 
 The following limitations affect Astra Control Service's management of Kubernetes clusters in any supported Kubernetes deployment.
 
-=== Unhealthy pods affect app management
+//=== Unhealthy pods affect app management
 
-If a managed app has pods in an unhealthy state, Astra Control Service can't create new backups and clones.
+//If a managed app has pods in an unhealthy state, Astra Control Service can't create new backups and clones.
 
 === Astra Trident isn't uninstalled from a cluster
 

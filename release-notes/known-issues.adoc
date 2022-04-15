@@ -21,7 +21,7 @@ An operator and the app it deploys must use the same namespace; you might need t
 .Apps
 
 * <<App clones fail after an application is deployed with a set storage class>>
-* <<App with user-defined label goes into "removed" state>>
+//* <<App with user-defined label goes into "removed" state>>
 
 .Backup, restore, and clone
 
@@ -50,9 +50,9 @@ An operator and the app it deploys must use the same namespace; you might need t
 After an application is deployed with a storage class explicitly set (for example, `helm install ...-set global.storageClass=netapp-cvs-perf-extreme`), subsequent attempts to clone the application require that the target cluster have the originally specified storage class.
 Cloning an application with an explicitly set storage class to a cluster that does not have the same storage class will fail. There are no recovery steps in this scenario.
 
-== App with user-defined label goes into "removed" state
+//== App with user-defined label goes into "removed" state
 //ASTRACTL-9643/DOC-3415/Q2
-If you define an app with a non-existent k8s label, Astra Control Center will create, manage, and then immediately remove the app. To avoid this, add the k8s label to pods and resources after the app is managed by Astra Control Center.
+//If you define an app with a non-existent k8s label, Astra Control Center will create, manage, and then immediately remove the app. To avoid this, add the k8s label to pods and resources after the app is managed by Astra Control Center.
 
 == During app restore from backup Trident creates a larger PV than the original PV
 // DOC-3562/ASTRACTL-9560/Q2 and PI4
