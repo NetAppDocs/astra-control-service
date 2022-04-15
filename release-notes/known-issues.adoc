@@ -30,7 +30,7 @@ An operator and the app it deploys must use the same namespace; you might need t
 * <<Backup taken from new snapshot instead of existing snapshot>>
 * <<Clone performance impacted by large persistent volumes>>
 * <<App clones fail when using Service Account level OCP Security Context Constraints (SCC)>>
-* <<Clone operation can't use other buckets besides the default>>
+* link:known-issues.html#clone-operation-cant-use-other-buckets-besides-the-default[Clone operation can't use other buckets besides the default]
 * <<Unable to stop running app backup>>
 //* <<Simultaneous app restore operations in the same namespace can fail>>
 //* <<Custom app execution hook scripts time out and cause post-snapshot scripts not to execute>>
@@ -39,12 +39,6 @@ An operator and the app it deploys must use the same namespace; you might need t
 
 * <<Managing a cluster with Astra Control Center fails when default kubeconfig file contains more than one context>>
 * <<Cluster is in `removed` state although cluster and network are otherwise working as expected>>
-
-.Role-based access control
-
-* <<A member user with RBAC constraints can clone or restore app but cannot access the new associated namespace>>
-* <<A member user with RBAC constraints can restore a deleted app but cannot access the restored app>>
-* <<A member user without RBAC constraints can add and manage a cluster but cannot unmanage it>>
 
 .Other issues
 
@@ -112,19 +106,6 @@ If a cluster is in `removed` state yet cluster and network connectivity appears 
 . Run a PUT call from the `/clusters` endpoint using the appropriate cluster ID and set the `credentialID` to the `id` value from the previous step.
 
 After you complete these steps, the credential associated with the cluster is updated and the cluster should reconnect and update its state to `available`.
-
-== A member user with RBAC constraints can clone or restore app but cannot access the new associated namespace
-//DOC-4137/ASTRACTL-16344/ASTRACTL-16131
-Any `member` user with RBAC constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. As a workaround, after a new namespace is created by a clone or restore operation, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the new namespace.
-
-== A member user with RBAC constraints can restore a deleted app but cannot access the restored app
-//DOC-4137/ASTRACTL-16274
-Any `member` user with RBAC constraints by namespace name/ID or by namespace labels can perform an in-place restore of an app after deleting the app's namespace, but the same user cannot access the restored app from the restored original namespace. As a workaround, after an app is restored to the original namespace, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the restored namespace.
-
-== A member user without RBAC constraints can add and manage a cluster but cannot unmanage it
-//DOC-4137/ASTRACTL-16274
-Any `member` user with no RBAC constraints by namespace name/ID or by namespace labels can add and manage a cluster, but the same user cannot unmanage the cluster until the account admin/owner grants the user access.
-As a workaround, the account admin/owner can edit the `member` user account and add RBAC constraints for the affected user that permit cluster unmanage operations.
 
 == 500 internal service error when attempting Trident app data management
 //DOC-3903/ASTRA-13162/PI4
