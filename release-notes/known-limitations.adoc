@@ -48,6 +48,7 @@ Persistent volumes have the following limits:
 
 * You can have up to 100 volumes per Google Cloud region.
 * You can have up to 100 volumes per Azure region.
+
 If you reach these limits, creation of new clones or volumes will fail. link:../support/get-help.html[Contact support to increase the volume limit].
 
 == App management limitations
