@@ -73,10 +73,10 @@ The following limitations apply to the way Astra Control limits user access to r
 //DOC-4137/ASTRACTL-16274/PI5
 A user with namespace RBAC constraints should not be allowed to add or unmanage clusters. Due to a current limitation, Astra does not prevent such users from unmanaging clusters.
 
-=== A member user with RBAC constraints can clone or restore app but cannot access the new associated namespace
+=== A Member user with namespace constraints cannot access cloned or restored apps until an Admin user adds the namespace to the constraint
 //DOC-4137/ASTRACTL-16344/ASTRACTL-16131/PI5
-Any `member` user with RBAC constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. As a workaround, after a new namespace is created by a clone or restore operation, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the new namespace.
+Any `member` user with RBAC constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the new namespace.
 
-=== A member user with RBAC constraints can restore a deleted app but cannot access the restored app
+//=== A member user with RBAC constraints can restore a deleted app but cannot access the restored app
 //DOC-4137/ASTRACTL-16274/PI5
-Any `member` user with RBAC constraints by namespace name/ID or by namespace labels can perform an in-place restore of an app after deleting the app's namespace, but the same user cannot access the restored app from the restored original namespace. As a workaround, after an app is restored to the original namespace, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the restored namespace.
+//Any `member` user with RBAC constraints by namespace name/ID or by namespace labels can perform an in-place restore of an app after deleting the app's namespace, but the same user cannot access the restored app from the restored original namespace. As a workaround, after an app is restored to the original namespace, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the restored namespace.
