@@ -53,6 +53,9 @@ kubectl apply -f myapp.yaml
 //* *Operator management*: Astra Control Center does not support apps that are deployed with Operator Lifecycle Manager (OLM)-enabled operators or cluster-scoped operators.
 * *Operator-deployed apps*: Astra Control supports apps installed with namespace-scoped operators. These operators are generally designed with a "pass-by-value" rather than "pass-by-reference" architecture. The following are some operator apps that follow these patterns:
 ** https://github.com/k8ssandra/cass-operator/tree/v1.7.1[Apache K8ssandra^]
++
+NOTE: For k8ssandra, in-place restore operations are supported. A restore operation to a new namespace or cluster requires that the original instance of the application to be taken down. This is to ensure that the peer group information carried over does not lead to cross-instance communication. Cloning of the app is not supported.
+
 ** https://github.com/jenkinsci/kubernetes-operator[Jenkins CI^]
 ** https://github.com/percona/percona-xtradb-cluster-operator[Percona XtraDB Cluster^]
 
