@@ -42,14 +42,14 @@ NetApp hasn't validated apps that were deployed from the Google Marketplace. Som
 
 No matter which type of app that you use with Astra Control Service, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
-=== Persistent volume limit
+//=== Persistent volume limit
 
-Persistent volumes have the following limits:
+//Persistent volumes have the following limits:
 
-* You can have up to 100 volumes per Google Cloud region.
-* You can have up to 100 volumes per Azure region.
+//* You can have up to 100 volumes per Google Cloud region.
+//* You can have up to 100 volumes per Azure region.
 
-If you reach these limits, creation of new clones or volumes will fail. link:../support/get-help.html[Contact support to increase the volume limit].
+//If you reach these limits, creation of new clones or volumes will fail. link:../support/get-help.html[Contact support to increase the volume limit].
 
 == App management limitations
 The following limitations affect Astra Control Service's management of applications.
@@ -65,6 +65,10 @@ NOTE: For K8ssandra, in-place restore operations are supported. A restore operat
 * https://github.com/percona/percona-xtradb-cluster-operator[Percona XtraDB Cluster^]
 
 Note that Astra Control might not be able to clone an operator that is designed with a “pass-by-reference” architecture (for example, the CockroachDB operator). During these types of cloning operations, the cloned operator attempts to reference Kubernetes secrets from the source operator despite having its own new secret as part of the cloning process. The clone operation might fail because Astra Control is unaware of the Kubernetes secrets in the source operator.
+
+== In-progress backups cannot be aborted
+// DOC-3552/ASTRACTL-9586/DOC-3894/ASTRACTL-13029/Q2 and PI4
+There is no way to cancel a running backup. If you need to delete the backup, wait until it has completed and then use the instructions in link:../use/protect-apps.html#delete-backups[Delete backups]. To delete a failed backup, use the link:https://docs.netapp.com/us-en/astra-automation/index.html[Astra API^].
 
 == Role-based Access Control (RBAC) limitations
 The following limitations apply to the way Astra Control limits user access to resources or capabilities.

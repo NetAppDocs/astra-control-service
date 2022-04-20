@@ -15,14 +15,18 @@ After you add Kubernetes clusters to Astra Control, you can view details about t
 
 .Steps
 
-. Select *Clusters*.
+. In the Astra Control Service UI, select *Clusters*.
 
-. Select the cluster name.
+. On the *Clusters* page, select the cluster whose details you want to view.
+//DOC-3613/Q2 and PI4
++
+NOTE: If a cluster is in `removed` state yet cluster and network connectivity appears healthy (external attempts to access the cluster using Kubernetes APIs are successful), the kubeconfig you provided to Astra Control might no longer be valid. This can be due to certificate rotation or expiration on the cluster. To correct this issue, update the credentials associated with the cluster in Astra Control using the link:https://docs.netapp.com/us-en/astra-automation/index.html[Astra Control API].
 
-. View the information in the *Overview* and *Storage* tabs to find the information that you're looking for.
+. View the information on the *Overview*, *Storage*, and *Activity* tabs to find the information that you're looking for.
 +
 * *Overview*: Details about the worker nodes, including their state.
-* *Storage*: The persistent volumes associated with the cluster, including the storage class and state.
-* *Activity*: The Astra activities related to the cluster.
-//+
-//image:screenshot-cluster-overview.gif[A screenshot of the Overview tab for clusters.]
+* *Storage*: The persistent volumes associated with the compute, including the storage class and state.
+* *Activity*: The the activities related to the cluster.
+
+NOTE: You can also view cluster information starting from the Astra Control Service *Dashboard*. On the *Clusters* tab under *Resource summary*, you can select the managed clusters, which takes you to the *Clusters* page. After you get to the *Clusters* page, follow the steps outlined above.
+
