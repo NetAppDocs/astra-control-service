@@ -31,8 +31,8 @@ A protection policy protects an app by creating snapshots, backups, or both at a
 . Select *Data Protection*.
 
 . Select *Configure Protection Policy*.
-+
-image:screenshot-configure-protection-policy.gif[A screenshot of the Data protection tab for an app which enables you to configure a protection policy.]
+//+
+//image:screenshot-configure-protection-policy.gif[A screenshot of the Data protection tab for an app which enables you to configure a protection policy.]
 
 . Define a protection schedule by choosing the number of snapshots and backups to keep for the hourly, daily, weekly, and monthly schedules.
 +
@@ -67,8 +67,8 @@ You can create an on-demand snapshot at any time.
 . Select the drop-down list in the *Actions* column for the desired app.
 
 . Select *Snapshot*.
-+
-image:screenshot-create-snapshot.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Snapshot."]
+//+
+//image:screenshot-create-snapshot.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Snapshot."]
 
 . Customize the name of the snapshot and then select *Review Information*.
 
@@ -89,8 +89,8 @@ You can also back up an app at any time.
 . Select the drop-down list in the *Actions* column for the desired app.
 
 . Select *Backup*.
-+
-image:screenshot-create-backup.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Backup."]
+//+
+//image:screenshot-create-backup.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Backup."]
 
 . Customize the name of the backup, choose whether to back up the app from an existing snapshot, and then select *Review Information*.
 
@@ -111,8 +111,8 @@ You can view the snapshots and backups of an app from the Data Protection tab.
 . Select *Data Protection*.
 +
 The snapshots display by default.
-+
-image:screenshot-snapshots.gif[A screenshot of the data protection tab for an app where you can view the list of the current snapshots and backups.]
+//+
+//image:screenshot-snapshots.gif[A screenshot of the data protection tab for an app where you can view the list of the current snapshots and backups.]
 
 . Select *Backups* to see the list of backups.
 
@@ -129,8 +129,8 @@ Delete the scheduled or on-demand snapshots that you no longer need.
 . Select the drop-down list in the *Actions* column for the desired snapshot.
 
 . Select *Delete snapshot*.
-+
-image:screenshot-delete-snapshot.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
+//+
+//image:screenshot-delete-snapshot.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
 
 . Type the name of the snapshot to confirm deletion and then select *Yes, Delete snapshot*.
 
@@ -147,14 +147,14 @@ Delete the scheduled or on-demand backups that you no longer need.
 . Select *Data Protection*.
 
 . Select *Backups*.
-+
-image:screenshot-data-protection-backups.gif[A screenshot of the Backups option that's available in the far right of the data protection tab.]
+//+
+//image:screenshot-data-protection-backups.gif[A screenshot of the Backups option that's available in the far right of the data protection tab.]
 
 . Select the drop-down list in the *Actions* column for the desired backup.
 
 . Select *Delete backup*.
-+
-image:screenshot-delete-backup.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
+//+
+//image:screenshot-delete-backup.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
 
 . Type the name of the backup to confirm deletion and then select *Yes, Delete backup*.
 

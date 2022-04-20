@@ -29,3 +29,4 @@ NOTE: If a cluster is in `removed` state yet cluster and network connectivity ap
 * *Activity*: The the activities related to the cluster.
 
 NOTE: You can also view cluster information starting from the Astra Control Service *Dashboard*. On the *Clusters* tab under *Resource summary*, you can select the managed clusters, which takes you to the *Clusters* page. After you get to the *Clusters* page, follow the steps outlined above.
+

@@ -34,7 +34,7 @@ The NetApp serial number represents your Astra Control account. You'll need to u
 
 You can find your serial number in the Astra Control interface from the *Support* page.
 
-image:screenshot-support.gif[A screenshot of the Support page in Astra Control where you can view resources to get help and to contact NetApp.]
+//image:screenshot-support.gif[A screenshot of the Support page in Astra Control where you can view resources to get help and to contact NetApp.]
 
 == Activate support entitlement
 

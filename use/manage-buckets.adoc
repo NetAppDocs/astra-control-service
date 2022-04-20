@@ -43,10 +43,10 @@ If a bucket is in the Removed state, you can still set it as the default bucket 
 . Under *Manage your storage*, select *Buckets*.
 +
 The list of buckets available to Astra Control Service displays.
-+
-As you can see from the following example, there is only one bucket available: the default bucket that Astra created.
-+
-image:screenshot_buckets_list.png[A screenshot that shows one bucket in the Buckets page.]
+//+
+//As you can see from the following example, there is only one bucket available: the default bucket that Astra created.
+//+
+//image:screenshot_buckets_list.png[A screenshot that shows one bucket in the Buckets page.]
 
 == Add an additional bucket
 
@@ -77,10 +77,10 @@ Your cloud provider is available only after Astra Control Service has started ma
 * *Make this bucket the default bucket for this cloud*: Choose whether you would like to use this bucket as the default bucket for ad-hoc backups and clones.
 
 * *Select credentials*: Choose the credentials that provide Astra Control Service with the permissions that it needs to manage the bucket.
-+
-Here's an example that shows adding a new bucket in Google Cloud Platform.
-+
-image:screenshot_buckets_add.png[A screenshot that shows one bucket in the Buckets page.]
+//+
+//Here's an example that shows adding a new bucket in Google Cloud Platform.
+//+
+//image:screenshot_buckets_add.png[A screenshot that shows one bucket in the Buckets page.]
 
 . Select *Add* to add the bucket.
 
@@ -103,3 +103,31 @@ Astra Control Service uses the default bucket for a cloud provider for ad-hoc ba
 . Select *Make this bucket the default bucket for this cloud*.
 
 . Select *Update*.
+
+== Remove a bucket
+
+You can remove a bucket that is no longer in use or is not healthy. You might want to do this to keep your object store configuration simple and up-to-date.
+
+You cannot remove a default bucket. If you want to remove that bucket, first select another bucket as the default.
+
+.What you'll need
+
+* You should check to ensure that there are no running or completed backups for this bucket before you begin.
+* You should check to ensure that the bucket is not being used for any scheduled backups.
+
+If there are, you will not be able to continue.
+
+
+.Steps
+. From left navigation, select *Buckets*.
+. From the *Actions* menu, select *Remove*.
+
++
+NOTE: Astra Control ensures first that there are no schedule policies using the bucket for backups and that there are no active backups in the bucket you are about to remove.
+
+. Type "remove" to confirm the action.
+. Select *Yes, remove bucket*.
+
+== Find more information
+
+* https://docs.netapp.com/us-en/astra-automation/index.html[Use the Astra Control API^]
