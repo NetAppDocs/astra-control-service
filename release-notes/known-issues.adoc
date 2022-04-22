@@ -31,7 +31,7 @@ An operator and the app it deploys must use the same namespace; you might need t
 * <<Clone performance impacted by large persistent volumes>>
 //* <<App clones fail when using Service Account level OCP Security Context Constraints (SCC)>>
 * link:known-issues.html#clone-operation-cant-use-other-buckets-besides-the-default[Clone operation can't use other buckets besides the default]
-* <<Unable to stop running app backup>>
+//* <<Unable to stop running app backup>>
 //* <<Simultaneous app restore operations in the same namespace can fail>>
 //* <<Custom app execution hook scripts time out and cause post-snapshot scripts not to execute>>
 
@@ -42,8 +42,8 @@ An operator and the app it deploys must use the same namespace; you might need t
 
 .Other issues
 
-* <<500 internal service error when attempting Trident app data management>>
 * <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
+* <<500 internal service error when attempting Trident app data management>>
 
 == App clones fail after an application is deployed with a set storage class
 //DOC-3892/ASTRACTL-13183/PI4
