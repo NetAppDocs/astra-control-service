@@ -15,11 +15,6 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 == 26 Apr 2022
 This release includes the following new features and enhancements.
 
-=== Bucket removal from Astra Control
-You can now remove a bucket from Astra Control Service.
-
-link:../use/manage-buckets.html[Remove a bucket].
-
 === Namespace role-based access control (RBAC)
 Astra Control Service now supports assigning namespace constraints to Member or Viewer users.
 
@@ -29,6 +24,11 @@ link:../use/manage-roles.html[Manage roles].
 You can now manage AKS clusters that use private IP addresses.
 
 link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
+
+=== Bucket removal from Astra Control
+You can now remove a bucket from Astra Control Service.
+
+link:../use/manage-buckets.html[Remove a bucket].
 
 == 14 Dec 2021
 This release includes the following new features and enhancements.
