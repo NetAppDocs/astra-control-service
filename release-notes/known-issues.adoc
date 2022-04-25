@@ -27,7 +27,7 @@ An operator and the app it deploys must use the same namespace; you might need t
 
 * <<During app restore from backup Trident creates a larger PV than the original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
-* <<Backup taken from new snapshot instead of existing snapshot>>
+//* <<Backup taken from new snapshot instead of existing snapshot>>
 * <<Clone performance impacted by large persistent volumes>>
 //* <<App clones fail when using Service Account level OCP Security Context Constraints (SCC)>>
 * link:known-issues.html#clone-operation-cant-use-other-buckets-besides-the-default[Clone operation can't use other buckets besides the default]
@@ -62,8 +62,8 @@ If you resize a persistent volume after creating a backup and then restore from 
 //DOC-3543/ASTRACTL-9408/Q2 and PI4
 App clones within the same cluster consistently fail with the Bitnami PostgreSQL 11.5.0 chart. To clone successfully, use an earlier or later version of the chart.
 
-== Backup taken from new snapshot instead of existing snapshot
-When you create a backup and select *Backup from existing snapshot*, Astra Control creates an ad-hoc snapshot and uses that snapshot to create the backup. Astra Control doesn't use the existing snapshot.
+//== Backup taken from new snapshot instead of existing snapshot
+//When you create a backup and select *Backup from existing snapshot*, Astra Control creates an ad-hoc snapshot and uses that snapshot to create the backup. Astra Control doesn't use the existing snapshot.
 
 == Clone performance impacted by large persistent volumes
 Clones of very large and consumed persistent volumes might be intermittently slow, dependent on cluster access to the object store. If the clone is hung and no data has been copied for more than 30 minutes, Astra Control terminates the clone action.
