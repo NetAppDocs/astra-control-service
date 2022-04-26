@@ -30,7 +30,7 @@ An operator and the app it deploys must use the same namespace; you might need t
 //* <<Backup taken from new snapshot instead of existing snapshot>>
 //* <<Clone performance impacted by large persistent volumes>>
 //* <<App clones fail when using Service Account level OCP Security Context Constraints (SCC)>>
-* link:known-issues.html#clone-operation-cant-use-other-buckets-besides-the-default[Clone operation can't use other buckets besides the default]
+//* link:known-issues.html#clone-operation-cant-use-other-buckets-besides-the-default[Clone operation can't use other buckets besides the default]
 //* <<Unable to stop running app backup>>
 //* <<Simultaneous app restore operations in the same namespace can fail>>
 //* <<Custom app execution hook scripts time out and cause post-snapshot scripts not to execute>>
@@ -78,9 +78,9 @@ App clones within the same cluster consistently fail with the Bitnami PostgreSQL
 //ASTRACTL-10060/DOC-3594/Q2 and PI4
 //An application clone might fail if the original security context constraints are configured at the service account level within the namespace on the OCP cluster. When the application clone fails, it appears in the Managed Applications area in Astra Control Center with status `Removed`. See the https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra/Application_clone_is_failing_for_an_application_in_Astra_Control_Center[knowledgebase article] for more information.
 
-== Clone operation can't use other buckets besides the default
+//== Clone operation can't use other buckets besides the default
 //DOC-3595/ASTRACTL-10071/Q2 and PI4
-During an app backup or app restore, you can optionally specify a bucket ID. An app clone operation, however, always uses the default bucket that has been defined. There is no option to change buckets for a clone. If you want control over which bucket is used, you can either link:../use/manage-buckets.html#edit-a-bucket[change the bucket default] or do a link:../use/protect-apps.html#create-a-backup[backup] followed by a link:../use/restore-apps.html[restore] separately.
+//During an app backup or app restore, you can optionally specify a bucket ID. An app clone operation, however, always uses the default bucket that has been defined. There is no option to change buckets for a clone. If you want control over which bucket is used, you can either link:../use/manage-buckets.html#edit-a-bucket[change the bucket default] or do a link:../use/protect-apps.html#create-a-backup[backup] followed by a link:../use/restore-apps.html[restore] separately.
 
 //== Simultaneous app restore operations in the same namespace can fail
 //DOC-3910 and ASTRACTL-13362
