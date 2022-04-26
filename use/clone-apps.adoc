@@ -15,9 +15,17 @@ Clone an existing app to create a duplicate app on the same Kubernetes cluster o
 
 When Astra Control clones an app, it creates a clone of your application configuration and persistent storage.
 
-NOTE: If you clone an operator-deployed instance of Jenkins CI, you need to manually restore the persistent data. This is a limitation of the app's deployment model.
+//DOC-3595/ASTRACTL-10071/Q2 and PI4
+[NOTE]
+===============================
+* If you clone an operator-deployed instance of Jenkins CI, you need to manually restore the persistent data. This is a limitation of the app's deployment model.
 
-NOTE: If you deploy an app with a StorageClass explicitly set and you need to clone the app, the target cluster must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
+* If you deploy an app with a StorageClass explicitly set and you need to clone the app, the target cluster must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
+
+* During an app backup or app restore, you can optionally specify a bucket ID. An app clone operation, however, always uses the default bucket that has been defined. There is no option to change buckets for a clone. If you want control over which bucket is used, you can either link:../use/manage-buckets.html#edit-a-bucket[change the bucket default] or do a link:../use/protect-apps.html#create-a-backup[backup] followed by a link:../use/restore-apps.html[restore] separately.
+===============================
+
+
 
 .Steps
 
@@ -26,8 +34,8 @@ NOTE: If you deploy an app with a StorageClass explicitly set and you need to cl
 . Select the drop-down list in the *Action* column for the desired app.
 
 . Select *Clone*.
-+
-image:screenshot-create-clone.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Clone."]
+//+
+//image:screenshot-create-clone.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Clone."]
 
 . *Clone details*: Specify details for the clone:
 +

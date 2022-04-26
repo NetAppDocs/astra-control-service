@@ -18,45 +18,91 @@ The following known issues affect the current release:
 == Operator-deployed apps and namespaces
 An operator and the app it deploys must use the same namespace; you might need to modify the deployment .yaml file for the operator to ensure this is the case.
 ////
+.Apps
 
 * <<App clones fail after an application is deployed with a set storage class>>
+//* <<App with user-defined label goes into "removed" state>>
+
+.Backup, restore, and clone
+
+* <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
-* <<Backup taken from new snapshot instead of existing snapshot>>
-* <<Custom app execution hook scripts time out and cause post-snapshot scripts not to execute>>
-* <<Clone performance impacted by large persistent volumes>>
-* <<Simultaneous app restore operations in the same namespace can fail>>
+//* <<Backup taken from new snapshot instead of existing snapshot>>
+//* <<Clone performance impacted by large persistent volumes>>
+//* <<App clones fail when using Service Account level OCP Security Context Constraints (SCC)>>
+//* link:known-issues.html#clone-operation-cant-use-other-buckets-besides-the-default[Clone operation can't use other buckets besides the default]
+//* <<Unable to stop running app backup>>
+//* <<Simultaneous app restore operations in the same namespace can fail>>
+//* <<Custom app execution hook scripts time out and cause post-snapshot scripts not to execute>>
+
+//.Clusters
+
+//* <<Managing a cluster with Astra Control Center fails when default kubeconfig file contains more than one context>>
+//* <<Cluster is in `removed` state although cluster and network are otherwise working as expected>>
+
+.Other issues
+
 * <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
-* <<Unable to stop running app backup>>
+* <<App data management operations fail with Internal Service Error (500) when Astra Trident is offline>>
 
 == App clones fail after an application is deployed with a set storage class
 //DOC-3892/ASTRACTL-13183/PI4
 After an application is deployed with a storage class explicitly set (for example, `helm install ...-set global.storageClass=netapp-cvs-perf-extreme`), subsequent attempts to clone the application require that the target cluster have the originally specified storage class.
 Cloning an application with an explicitly set storage class to a cluster that does not have the same storage class will fail. There are no recovery steps in this scenario.
 
+//== App with user-defined label goes into "removed" state
+//ASTRACTL-9643/DOC-3415/Q2
+//If you define an app with a non-existent k8s label, Astra Control Center will create, manage, and then immediately remove the app. To avoid this, add the k8s label to pods and resources after the app is managed by Astra Control Center.
+
+== Restore of an app results in PV size larger than original PV
+// DOC-3562/ASTRACTL-9560/Q2 and PI4
+If you resize a persistent volume after creating a backup and then restore from that backup, the persistent volume size will match the new size of the PV instead of using the size of the backup.
+
 == App clones fail using a specific version of PostgreSQL
 //DOC-3543/ASTRACTL-9408/Q2 and PI4
 App clones within the same cluster consistently fail with the Bitnami PostgreSQL 11.5.0 chart. To clone successfully, use an earlier or later version of the chart.
 
-== Backup taken from new snapshot instead of existing snapshot
-When you create a backup and select *Backup from existing snapshot*, Astra Control creates an ad-hoc snapshot and uses that snapshot to create the backup. Astra Control doesn't use the existing snapshot.
+//== Backup taken from new snapshot instead of existing snapshot
+//When you create a backup and select *Backup from existing snapshot*, Astra Control creates an ad-hoc snapshot and uses that snapshot to create the backup. Astra Control doesn't use the existing snapshot.
 
-== Custom app execution hook scripts time out and cause post-snapshot scripts not to execute
+//== Clone performance impacted by large persistent volumes
+//Clones of very large and consumed persistent volumes might be intermittently slow, dependent on cluster access to the object store. If the clone is hung and no data has been copied for more than 30 minutes, Astra Control terminates the clone action.
+
+//== Custom app execution hook scripts time out and cause post-snapshot scripts not to execute
 //ASTRACTL-12927/DOC-3909
-If an execution hook takes longer than 25 minutes to run, the hook will fail, creating an event log entry with a return code of "N/A". Any affected snapshot will timeout and be marked as failed, with a resulting event log entry noting the timeout.
+//If an execution hook takes longer than 25 minutes to run, the hook will fail, creating an event log entry with a return code of "N/A". Any affected snapshot will timeout and be marked as failed, with a resulting event log entry noting the timeout.
 
-Because execution hooks often reduce or completely disable the functionality of the application they are running against, you should always try to minimize the time your custom execution hooks take to run.
+//Because execution hooks often reduce or completely disable the functionality of the application they are running against, you should always try to minimize the time your custom execution hooks take to run.
 
-== Clone performance impacted by large persistent volumes
-Clones of very large and consumed persistent volumes might be intermittently slow, dependent on cluster access to the object store. If the clone is hung and no data has been copied for more than 30 minutes, Astra Control terminates the clone action.
+//== App clones fail when using Service Account level OCP Security Context Constraints (SCC)
+//ASTRACTL-10060/DOC-3594/Q2 and PI4
+//An application clone might fail if the original security context constraints are configured at the service account level within the namespace on the OCP cluster. When the application clone fails, it appears in the Managed Applications area in Astra Control Center with status `Removed`. See the https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra/Application_clone_is_failing_for_an_application_in_Astra_Control_Center[knowledgebase article] for more information.
 
-== Simultaneous app restore operations in the same namespace can fail
+//== Clone operation can't use other buckets besides the default
+//DOC-3595/ASTRACTL-10071/Q2 and PI4
+//During an app backup or app restore, you can optionally specify a bucket ID. An app clone operation, however, always uses the default bucket that has been defined. There is no option to change buckets for a clone. If you want control over which bucket is used, you can either link:../use/manage-buckets.html#edit-a-bucket[change the bucket default] or do a link:../use/protect-apps.html#create-a-backup[backup] followed by a link:../use/restore-apps.html[restore] separately.
+
+//== Simultaneous app restore operations in the same namespace can fail
 //DOC-3910 and ASTRACTL-13362
-If you try to restore one or more individually managed apps within a namespace simultaneously, the restore operations can fail after a long period of time. As a workaround, restore each app one at a time.
+//If you try to restore one or more individually managed apps within a namespace simultaneously, the restore operations can fail after a long period of time. As a workaround, restore each app one at a time.
 
 == Snapshots eventually begin to fail when using external-snapshotter version 4.2.0
 // DOC-3891 and ASTRACTL-12523
 When you use Kubernetes snapshot-controller (also known as external-snapshotter) version 4.2.0 with Kubernetes 1.20 or 1.21, snapshots can eventually begin to fail. To prevent this, use a different https://kubernetes-csi.github.io/docs/snapshot-controller.html[supported version^] of external-snapshotter, such as version 4.2.1, with Kubernetes versions 1.20 or 1.21.
 
-== Unable to stop running app backup
-// DOC-3552/ASTRACTL-9586/DOC-3894/ASTRACTL-13029/Q2 and PI4
-There is no way to stop a running backup. If you need to delete the backup, wait until it has completed and then use the instructions in link:../use/protect-apps.html#delete-backups[Delete backups]. To delete a failed backup, use the link:https://docs.netapp.com/us-en/astra-automation/index.html[Astra API^].
+//== Managing a cluster with Astra Control Center fails when default kubeconfig file contains more than one context
+//ASTRACTL-8872/DOC-3612/Q2 and PI4
+//You cannot use a kubeconfig with more than one cluster and context in it. See the https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra/Managing_cluster_with_Astra_Control_Center_may_fail_when_using_default_kubeconfig_file_contains_more_than_one_context[knowledgebase article^] for more information.
+
+//== Cluster is in `removed` state although cluster and network are otherwise working as expected
+//DOC-3613/Q2 and PI4
+//If a cluster is in `removed` state yet cluster and network connectivity appears healthy (external attempts to access the cluster using Kubernetes APIs are successful), the kubeconfig you provided to Astra Control might no longer be valid. This can be due to certificate rotation or expiration on the cluster. To correct this issue, update the credentials associated with the cluster in Astra Control using the link:https://docs.netapp.com/us-en/astra-automation/index.html[Astra Control API]:
+
+. Run a POST call to add an updated kubeconfig file to the `/credentials` endpoint and retrieve the assigned `id` from the response body.
+. Run a PUT call from the `/clusters` endpoint using the appropriate cluster ID and set the `credentialID` to the `id` value from the previous step.
+
+After you complete these steps, the credential associated with the cluster is updated and the cluster should reconnect and update its state to `available`.
+
+== App data management operations fail with Internal Service Error (500) when Astra Trident is offline
+//DOC-3903/ASTRA-13162/PI4
+If Astra Trident on an app cluster goes offline (and is brought back online) and 500 internal service errors are encountered when attempting app data management, restart all of the Kubernetes nodes in the app cluster to restore functionality.

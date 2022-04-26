@@ -1,0 +1,61 @@
+---
+sidebar: sidebar
+permalink: use/manage-roles.html
+keywords: users, roles, user roles, namespace, namespaces, account, accounts, permissions, restriction, restrict, constraint, constraints
+summary: Learn how to manage user roles by adding a constraint to the role.
+---
+
+= Manage roles
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+You can manage roles by adding namespace constraints and restricting user roles to those constraints. This enables you to control access to resources within your organization. You can use the Astra Control UI or https://docs.netapp.com/us-en/astra-automation/index.html[the Astra Control API^] to manage roles.
+
+== Add a namespace constraint to a role
+
+An Admin or Owner user can add namespace constraints.
+
+.Steps
+
+//. Make sure that the user has an invitation link:../get-started/register.html[Cloud Central login].
+. In the *Manage Your Account* navigation area, select *Account*.
+. Select the *Users* tab.
+. In the *Actions* column, select the menu button for a user with the Member or Viewer role.
+. Select *Edit role*.
+. Enable the *Restrict role to constraints* check box.
++
+The check box is only available for Member or Viewer roles. You can select a different role from the *Role* drop-down list.
+. Select *Add constraint*.
++
+You can view the list of available constraints by namespace or by namespace label.
+. In the *Constraint type* drop-down list, select either *Kubernetes namespace* or *Kubernetes namespace label* depending on how your namespaces are configured.
+. Select one or more namespaces or labels from the list to compose a constraint that restricts roles to those namespaces.
+. Select *Confirm*.
++
+The *Edit role* page displays the list of constraints you've chosen for this role.
+. Select *Confirm*.
++
+On the *Account* page, you can view the constraints for any Member or Viewer role in the *Role* column.
+
+NOTE: If you enable constraints for a role and select *Confirm* without adding any constraints, the role is considered to have full restrictions (the role is denied access to any resources that are assigned to namespaces).
+
+
+== Remove a namespace constraint from a role
+An Admin or Owner user can remove a namespace constraint from a role.
+
+.Steps
+
+//. Make sure that the user has an invitation link:../get-started/register.html[Cloud Central login].
+. In the *Manage Your Account* navigation area, select *Account*.
+. Select the *Users* tab.
+. In the *Actions* column, select the menu button for a user with the Member or Viewer role that has active constraints.
+. Select *Edit role*.
++
+The *Edit role* dialog displays the active constraints for the role.
+. Select the *X* to the right of the constraint you need to remove.
+. Select *Confirm*.
+
+== For more information
+
+* link:../learn/user-roles-namespaces.html[User roles and namespaces]

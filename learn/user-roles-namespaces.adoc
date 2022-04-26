@@ -1,0 +1,30 @@
+---
+sidebar: sidebar
+permalink: learn/user-roles-namespaces.html
+keywords: users, roles, user roles, namespace, namespaces, account, accounts, permissions, restriction, restrict, constraint
+summary: Learn about the available types of data protection in Astra Control Center, and how best to use them to protect your apps.
+---
+
+= User roles and namespaces
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/learn/
+
+Learn about user roles and namespaces in Astra Control, and how you can use them to control access to resources in your organization.
+
+== User roles
+You can use roles to control the access users have to resources or capabilities of Astra Control. The following are the user roles in Astra Control:
+
+* An *Owner* has Admin permissions and can delete accounts.
+* An *Admin* has Member permissions and can invite other users.
+* A *Member* can fully manage apps and clusters.
+* A *Viewer* can view resources.
+
+You can add constraints to a Member or Viewer user to restrict the user to one or more <<Namespaces>>.
+
+== Namespaces
+
+A namespace is a scope you can assign to specific resources within a cluster that is managed by Astra Control. Astra Control discovers a cluster's namespaces when you add the cluster to Astra Control. Once discovered, the namespaces are available to assign as constraints to users. Only members that have access to that namespace are able to use that resource. You can use namespaces to control access to resources using a paradigm that makes sense for your organization; for example, by physical regions or divisions within a company. When you add constraints to a user, you can configure that user to have access to all namespaces or only a specific set of namespaces. You can also assign namespace constraints using namespace labels.
+
+== Find more information
+link:../use/manage-roles.html[Manage roles]
