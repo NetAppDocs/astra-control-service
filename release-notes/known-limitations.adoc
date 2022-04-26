@@ -16,9 +16,9 @@ Known limitations identify platforms, devices, or functions that are not support
 
 The following limitations affect Astra Control Service's management of Kubernetes clusters in any supported Kubernetes deployment.
 
-=== Unhealthy pods affect app management
+//=== Unhealthy pods affect app management
 
-If a managed app has pods in an unhealthy state, Astra Control Service can't create new backups and clones.
+//If a managed app has pods in an unhealthy state, Astra Control Service can't create new backups and clones.
 
 === Astra Trident isn't uninstalled from a cluster
 
@@ -42,9 +42,14 @@ NetApp hasn't validated apps that were deployed from the Google Marketplace. Som
 
 No matter which type of app that you use with Astra Control Service, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 
-=== Persistent volume limit
+//=== Persistent volume limit
 
-You can have up to 100 volumes per Google Cloud region. If you reach this limit, creation of new clones or volumes will fail. link:../support/get-help.html[Contact support to increase the volume limit].
+//Persistent volumes have the following limits:
+
+//* You can have up to 100 volumes per Google Cloud region.
+//* You can have up to 100 volumes per Azure region.
+
+//If you reach these limits, creation of new clones or volumes will fail. link:../support/get-help.html[Contact support to increase the volume limit].
 
 == App management limitations
 The following limitations affect Astra Control Service's management of applications.
@@ -53,7 +58,29 @@ The following limitations affect Astra Control Service's management of applicati
 Astra Control supports apps installed with namespace-scoped operators. These operators are generally designed with a "pass-by-value" rather than "pass-by-reference" architecture. The following are some operator apps that follow these patterns:
 
 * https://github.com/k8ssandra/cass-operator/tree/v1.7.1[Apache K8ssandra^]
++
+NOTE: For K8ssandra, in-place restore operations are supported. A restore operation to a new namespace or cluster requires that the original instance of the application to be taken down. This is to ensure that the peer group information carried over does not lead to cross-instance communication. Cloning of the app is not supported.
+
 * https://github.com/jenkinsci/kubernetes-operator[Jenkins CI^]
 * https://github.com/percona/percona-xtradb-cluster-operator[Percona XtraDB Cluster^]
 
 Note that Astra Control might not be able to clone an operator that is designed with a “pass-by-reference” architecture (for example, the CockroachDB operator). During these types of cloning operations, the cloned operator attempts to reference Kubernetes secrets from the source operator despite having its own new secret as part of the cloning process. The clone operation might fail because Astra Control is unaware of the Kubernetes secrets in the source operator.
+
+== App backups that are in progress cannot be stopped
+// DOC-3552/ASTRACTL-9586/DOC-3894/ASTRACTL-13029/Q2 and PI4
+There is no way to cancel a running backup. If you need to delete the backup, wait until it has completed and then use the instructions in link:../use/protect-apps.html#delete-backups[Delete backups]. To delete a failed backup, use the link:https://docs.netapp.com/us-en/astra-automation/index.html[Astra API^].
+
+== Role-based Access Control (RBAC) limitations
+The following limitations apply to the way Astra Control limits user access to resources or capabilities.
+
+=== A user with namespace RBAC constraints can add and unmanage a cluster
+//DOC-4137/ASTRACTL-16274/PI5
+A user with namespace RBAC constraints should not be allowed to add or unmanage clusters. Due to a current limitation, Astra does not prevent such users from unmanaging clusters.
+
+=== A Member user with namespace constraints cannot access cloned or restored apps until an Admin user adds the namespace to the constraint
+//DOC-4137/ASTRACTL-16344/ASTRACTL-16131/PI5
+Any `member` user with RBAC constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the new namespace.
+
+//=== A member user with RBAC constraints can restore a deleted app but cannot access the restored app
+//DOC-4137/ASTRACTL-16274/PI5
+//Any `member` user with RBAC constraints by namespace name/ID or by namespace labels can perform an in-place restore of an app after deleting the app's namespace, but the same user cannot access the restored app from the restored original namespace. As a workaround, after an app is restored to the original namespace, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the restored namespace.
