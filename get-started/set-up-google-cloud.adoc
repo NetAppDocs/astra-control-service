@@ -106,10 +106,12 @@ Google Cloud region:: If you plan to use Cloud Volumes Service for Google Cloud 
 
 Networking:: If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, the cluster must reside in a VPC that is peered with Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC,This step is described below>>.
 
-Private clusters:: If the cluster is private, the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[authorized networks^] must allow the Astra Control Service IP addresses:
-*	54.164.233.140/32
-*	3.218.120.204/32
-*	34.193.99.138/32
+Private clusters:: If the cluster is private, the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[authorized networks^] must allow the Astra Control Service IP address:
+
+52.188.218.166/32
+//*	54.164.233.140/32
+//*	3.218.120.204/32
+//*	34.193.99.138/32
 
 Mode of operation for a GKE cluster:: You should use the Standard mode of operation. The Autopilot mode hasn't been tested at this time. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes[Learn more about modes of operation^].
 
