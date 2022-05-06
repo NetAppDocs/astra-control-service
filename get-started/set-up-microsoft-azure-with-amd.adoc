@@ -50,7 +50,7 @@ Cluster state:: Clusters must be running in a healthy state and have at least on
 
 Azure region:: As a best practice, you should choose a region that supports Azure NetApp Files, even if you do not use it as a storage backend. This makes it easier to use Azure NetApp Files as a storage backend in the future if your performance requirements change. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp[View Azure products by region^].
 
-Private networking:: Private networking must not be enabled on a cluster.
+//Private networking:: Private networking must not be enabled on a cluster.
 
 External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.19 and 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
 

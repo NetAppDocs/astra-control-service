@@ -86,7 +86,7 @@ If you're close to the limit, you have two options:
 ** You can https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-[submit a request for a limit increase^]. Contact your NetApp representative if you need help.
 ** When creating a new Amazon Kubernetes Service (AKS) cluster, specify a new network for the cluster. Once the new network is created, provision a new subnet and delegate the subnet to Azure NetApp Files.
 
-Private networking:: Private networking must not be enabled on a cluster.
+//Private networking:: Private networking must not be enabled on a cluster.
 
 External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.19 and 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
 
