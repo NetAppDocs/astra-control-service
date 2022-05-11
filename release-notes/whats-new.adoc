@@ -18,7 +18,12 @@ This release includes the following new features and enhancements.
 === Namespace role-based access control (RBAC)
 Astra Control Service now supports assigning namespace constraints to Member or Viewer users.
 
-link:../use/manage-roles.html[Manage roles].
+link:../learn/user-roles-namespaces.html[Namespace role-based access control (RBAC)].
+
+=== Azure Active Directory support
+Astra Control Service supports AKS clusters that use Azure Active Directory for authentication and identity management.
+
+link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
 
 === Support for private AKS clusters
 You can now manage AKS clusters that use private IP addresses.
