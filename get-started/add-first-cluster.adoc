@@ -17,16 +17,18 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)], link:set-up-microsoft-azure-with-anf.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure NetApp Files], or link:set-up-microsoft-azure-with-amd.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure managed disks] .
 
+NOTE: Astra Control Service supports AKS clusters that use Azure Active Directory (Azure AD) for authentication and identity management. When you create the cluster, follow the instructions in the https://docs.microsoft.com/en-us/azure/aks/managed-aad[official documentation^] to configure the cluster to use Azure AD. You'll need to make sure your clusters meet the requirements for AKS-managed Azure AD integration.
+
 == Start managing Kubernetes clusters
 
 After you log in to Astra Control Service, your first step is to start managing your clusters.
 
 [NOTE]
 ======================
-When Astra Control manages a cluster, it keeps track of the cluster's default StorageClass. If you change the StorageClass using `kubectl` commands, Astra Control reverts the change. To change the default StorageClass in a cluster managed by Astra Control, use one of the following methods:
+When Astra Control manages a cluster, it keeps track of the cluster's default storage class. If you change the storage class using `kubectl` commands, Astra Control reverts the change. To change the default storage class in a cluster managed by Astra Control, use one of the following methods:
 
-* Use the Astra Control API `PUT /managedClusters` endpoint, and assign a different default StorageClass with the `DefaultStorageClass` parameter
-* Remove the cluster from Astra Control management and re-add it with a different default StorageClass selected
+* Use the Astra Control API `PUT /managedClusters` endpoint, and assign a different default storage class with the `DefaultStorageClass` parameter.
+* Use the Astra Control web UI to assign a different default storage class. See <<Change the default storage class>>.
 ======================
 
 .What you'll need
@@ -141,3 +143,15 @@ You should see output similar to the following:
 NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 ----
+
+== Change the default storage class
+You can change the default storage class for a cluster.
+
+.Steps
+
+. In the Astra Control Service UI, select *Clusters*.
+. On the *Clusters* page, select the cluster that you want to change.
+. Select the *Storage* tab.
+. Select the *Storage classes* category.
+. Select the *Actions* menu for the storage class that you want to set as default.
+. Select *Set as default*.
