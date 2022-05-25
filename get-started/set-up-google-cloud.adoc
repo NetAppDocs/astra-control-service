@@ -30,7 +30,7 @@ Ensure that clusters are healthy and running a Kubernetes version in the range o
 [role="quick-margin-para"]
 If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and select Purchase. <<Purchase Cloud Volumes Service for Google Cloud (optional),Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enable APIs in your Google Cloud project
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enable APIs in your Google Cloud project
 
 [role="quick-margin-para"]
 Enable the following Google Cloud APIs:
@@ -51,7 +51,7 @@ Enable the following Google Cloud APIs:
 [role="quick-margin-para"]
 <<Enable APIs in your project,Follow step-by-step instructions>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Create a service account that has the required permissions
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Create a service account that has the required permissions
 
 [role="quick-margin-para"]
 Create a Google Cloud service account that has the following permissions:
@@ -68,12 +68,12 @@ Create a Google Cloud service account that has the following permissions:
 [role="quick-margin-para"]
 <<Create a service account,Read step-by-step instructions>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Create a service account key
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Create a service account key
 
 [role="quick-margin-para"]
 Create a key for the service account and save the key file in a secure location. <<Create a service account key,Follow step-by-step instructions>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] (Optional): Set up network peering for your VPC
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] (Optional): Set up network peering for your VPC
 
 [role="quick-margin-para"]
 If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, set up network peering from your VPC to Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC (optional),Follow step-by-step instructions>>.
