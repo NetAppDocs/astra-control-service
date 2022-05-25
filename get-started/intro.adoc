@@ -5,7 +5,7 @@ keywords: introduction, how astra works, how Astra works, what Astra is, concept
 summary: Astra Control is a Kubernetes application data lifecycle management solution that simplifies operations for stateful applications. Easily protect, back up, and migrate Kubernetes workloads, and instantly create working application clones.
 ---
 
-= Intro to Astra Control
+= Learn about Astra Control
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
