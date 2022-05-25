@@ -1,7 +1,7 @@
 section: get-started
 title: Get started
 entries:
-  - title: Intro to Astra Control
+  - title: Learn about Astra Control
     url: /get-started/intro.html
   - title: Supported Kubernetes deployments
     url: /get-started/supported-deployments.html
