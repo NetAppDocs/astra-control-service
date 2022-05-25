@@ -20,12 +20,12 @@ NOTE: If you do not start out using Google Cloud Volumes Service for Google Clou
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review Astra Control Service requirements for Google Kubernetes Engine
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review Astra Control Service requirements for Google Kubernetes Engine
 
 [role="quick-margin-para"]
 Ensure that clusters are healthy and running a Kubernetes version in the range of 1.19 to 1.23, that worker nodes are online and running Container-Optimized OS or Ubuntu, and more. <<GKE cluster requirements,Learn more about this step>>.
 
-==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] (Optional): Purchase Cloud Volumes Service for Google Cloud
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] (Optional): Purchase Cloud Volumes Service for Google Cloud
 
 [role="quick-margin-para"]
 If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and select Purchase. <<Purchase Cloud Volumes Service for Google Cloud (optional),Learn more about this step>>.
