@@ -224,5 +224,5 @@ You can configure a more durable redundancy level for Azure backup buckets. By d
 
 . Create an Azure storage account that uses the redundancy level you need using https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal[these instructions^].
 . Create an Azure container in the new storage account using https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal[these instructions^].
-. Add the container as a bucket to Astra Control Service. See https://docs.netapp.com/us-en/astra-control-service/use/manage-buckets.html#add-an-additional-bucket[Add an additional bucket].
-. (Optional) To use the newly created bucket as the default bucket for Azure backups, set it as the default bucket for Azure. See https://docs.netapp.com/us-en/astra-control-service/use/manage-buckets.html#change-the-default-bucket[Change the default bucket].
+. Add the container as a bucket to Astra Control Service. See link:../use/manage-buckets.html#add-an-additional-bucket[Add an additional bucket].
+. (Optional) To use the newly created bucket as the default bucket for Azure backups, set it as the default bucket for Azure. See link:../use/manage-buckets.html#change-the-default-bucket[Change the default bucket].
