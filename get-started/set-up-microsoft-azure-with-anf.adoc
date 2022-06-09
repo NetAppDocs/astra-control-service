@@ -56,7 +56,7 @@ Create an Azure service principal that has the Contributor role. <<Create an Azu
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight] Optional: Configure redundancy for Azure backup buckets
 
 [role="quick-margin-para"]
-By default, Azure containers use the Locally Redundant Storage (LRS) redundancy option. As an optional step, you can configure a more durable level of redundancy for Azure buckets. <<Optional: Configure redundancy for Azure backup buckets,Learn more about this step>>.
+By default, the buckets Astra Control Service uses to store Azure Kubernetes Service backups use the Locally Redundant Storage (LRS) redundancy option. As an optional step, you can configure a more durable level of redundancy for Azure buckets. <<Optional: Configure redundancy for Azure backup buckets,Learn more about this step>>.
 
 
 ////
@@ -275,7 +275,7 @@ https://docs.microsoft.com/en-us/azure/aks/azure-disk-csi#volume-snapshots[Follo
 ////
 
 == Optional: Configure redundancy for Azure backup buckets
-You can configure a more durable redundancy level for Azure backup buckets. By default, Azure containers use the Locally Redundant Storage (LRS) redundancy option. To use a more durable redundancy option for Azure buckets, you need to do the following:
+You can configure a more durable redundancy level for Azure backup buckets. By default, the buckets Astra Control Service uses to store Azure Kubernetes Service backups use the Locally Redundant Storage (LRS) redundancy option. To use a more durable redundancy option for Azure buckets, you need to do the following:
 
 .Steps
 

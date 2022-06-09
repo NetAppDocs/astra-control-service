@@ -41,7 +41,7 @@ You need to configure your Azure subscription and the cluster to work with the C
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Optional: Configure redundancy for Azure backup buckets
 
 [role="quick-margin-para"]
-By default, Azure containers use the Locally Redundant Storage (LRS) redundancy option. As an optional step, you can configure a more durable level of redundancy for Azure buckets. <<Optional: Configure redundancy for Azure backup buckets,Learn more about this step>>.
+By default, the buckets Astra Control Service uses to store Azure Kubernetes Service backups use the Locally Redundant Storage (LRS) redundancy option. As an optional step, you can configure a more durable level of redundancy for Azure buckets. <<Optional: Configure redundancy for Azure backup buckets,Learn more about this step>>.
 
 == Azure Kubernetes Service cluster requirements
 
@@ -218,7 +218,7 @@ You can install the Azure CSI drivers to complete your preparation.
 . Follow the instructions to install the required CSI drivers.
 
 == Optional: Configure redundancy for Azure backup buckets
-You can configure a more durable redundancy level for Azure backup buckets. By default, Azure containers use the Locally Redundant Storage (LRS) redundancy option. To use a more durable redundancy option for Azure buckets, you need to do the following:
+You can configure a more durable redundancy level for Azure backup buckets. By default, the buckets Astra Control Service uses to store Azure Kubernetes Service backups use the Locally Redundant Storage (LRS) redundancy option. To use a more durable redundancy option for Azure buckets, you need to do the following:
 
 .Steps
 
