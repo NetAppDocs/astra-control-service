@@ -53,6 +53,12 @@ Delegate a subnet to Azure NetApp Files so that Astra Control Service can create
 [role="quick-margin-para"]
 Create an Azure service principal that has the Contributor role. <<Create an Azure service principal,Learn more about this step>>.
 
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight] Optional: Configure redundancy for Azure backup buckets
+
+[role="quick-margin-para"]
+By default, the buckets Astra Control Service uses to store Azure Kubernetes Service backups use the Locally Redundant Storage (LRS) redundancy option. As an optional step, you can configure a more durable level of redundancy for Azure buckets. <<Optional: Configure redundancy for Azure backup buckets,Learn more about this step>>.
+
+
 ////
 DOC-3900
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png[Eight] (Optional): Create a volume snapshot
@@ -267,3 +273,13 @@ If you plan to use Azure Managed Disks as a storage backend, you need to manuall
 
 https://docs.microsoft.com/en-us/azure/aks/azure-disk-csi#volume-snapshots[Follow these instructions to create a volume snapshot^].
 ////
+
+== Optional: Configure redundancy for Azure backup buckets
+You can configure a more durable redundancy level for Azure backup buckets. By default, the buckets Astra Control Service uses to store Azure Kubernetes Service backups use the Locally Redundant Storage (LRS) redundancy option. To use a more durable redundancy option for Azure buckets, you need to do the following:
+
+.Steps
+
+. Create an Azure storage account that uses the redundancy level you need using https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal[these instructions^].
+. Create an Azure container in the new storage account using https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal[these instructions^].
+. Add the container as a bucket to Astra Control Service. See link:../use/manage-buckets.html#add-an-additional-bucket[Add an additional bucket].
+. (Optional) To use the newly created bucket as the default bucket for Azure backups, set it as the default bucket for Azure. See link:../use/manage-buckets.html#change-the-default-bucket[Change the default bucket].
