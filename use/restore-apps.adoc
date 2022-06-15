@@ -36,6 +36,8 @@ NOTE: Any member user with namespace constraints by namespace name/ID or by name
 * Enter a namespace for the app.
 * Choose the destination cluster for the app.
 * Click *Review*.
++
+NOTE: If you restore to a namespace that was previously deleted, a new namespace with the same name is created as part of the restore process. Any users that had rights to manage apps in the previously deleted namespace need to manually restore rights to the newly re-created namespace.
 
 . *Restore Summary*: Review details about the restore action, type "restore", and select *Restore*.
 //+
