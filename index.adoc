@@ -12,5 +12,12 @@ summary: "Astra Control Service is a NetApp-managed service that provides applic
 :linkattrs:
 :imagesdir: ./media/
 
+ifdef::azure[]
 [.lead]
-Astra Control Service is a NetApp-managed service that provides application-aware data management of Kubernetes clusters in Google Kubernetes Engine (GKE) and Azure Kubernetes Service (AKS). Go to the docs for Astra Control Center if you need to manage Kubernetes apps running in your on-premises environment.
+Astra Control Service is a NetApp-managed service that provides application-aware data management of Kubernetes clusters in Azure Kubernetes Service (AKS). Go to the docs for Astra Control Center if you need to manage Kubernetes apps running in your on-premises environment.
+endif::azure[]
+
+ifdef::gcp[]
+[.lead]
+Astra Control Service is a NetApp-managed service that provides application-aware data management of Kubernetes clusters in Google Kubernetes Engine (GKE). Go to the docs for Astra Control Center if you need to manage Kubernetes apps running in your on-premises environment.
+endif::gcp[]
