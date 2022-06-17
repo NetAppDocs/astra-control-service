@@ -4,8 +4,10 @@ entries:
   - title: Architecture and components
     url: /learn/architecture.html
   - title: Storage for AKS clusters
+    flavor: azure
     url: /learn/azure-storage.html
   - title: Storage for GKE clusters
+    flavor: gcp
     url: /learn/choose-class-and-size.html
   - title: Validated apps vs standard apps
     url: /learn/validated-vs-standard.html
