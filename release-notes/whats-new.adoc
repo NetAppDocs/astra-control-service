@@ -42,24 +42,24 @@ This release includes the following new features and enhancements.
 
 
 === New storage backend options
-ifdef::azure[]
+ifndef::gcp[]
 Astra Control Service now supports Azure managed disks as a storage backend option.
 
 link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks].
-endif::azure[]
+endif::gcp[]
 
-ifdef::gcp[]
+ifndef::azure[]
 Astra Control Service now supports Google Persistent Disk as a storage backend option.
 
 link:../get-started/set-up-google-cloud.html[Set up Google Cloud].
-endif::gcp[]
+endif::azure[]
 
-ifndef::gcp,azure[]
+ifdef::gcp+azure[]
 Astra Control Service now supports Google Persistent Disk and Azure managed disks as storage backend options.
 
 link:../get-started/set-up-google-cloud.html[Set up Google Cloud].
 link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks].
-endif::gcp,azure[]
+endif::gcp+azure[]
 
 === In-place app restore
 You can now restore a snapshot, clone, or backup of an app in place by restoring to the same cluster and namespace.
