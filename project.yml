@@ -11,9 +11,6 @@ settings:
     label: Cloud provider
     default: All cloud providers
     options:
-      - name: Amazon Web Services
-        alias: AWS
-        id: aws
       - name: Google Cloud
         alias: Google Cloud
         id: gcp
