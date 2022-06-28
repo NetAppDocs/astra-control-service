@@ -46,18 +46,19 @@ No, billing starts from the time that you upgraded to the Premium Plan.
 
 *I am using the Free Plan, will I get charged for the Persistent Volume Claims?*
 
-Yes, you will be charged for the Persistent Volumes used by GKE clusters from Cloud Volumes Service for Google Cloud or by AKS clusters from Azure NetApp Files.
+Yes, you will be charged for the Persistent Volumes used by the clusters from your cloud provider.
 
 == Registering Kubernetes clusters
 
 *Do I need to install CSI drivers on my cluster before adding it to Astra Control Service?*
 
-No. When your cluster is added to Astra Control, the service will automatically install NetApp’s Trident Container Storage Interface (CSI) driver on the Kubernetes cluster. This CSI driver is used to provision persistent volumes for GKE clusters backed by NetApp Cloud Volumes Service for Google Cloud, and for AKS clusters backed by Azure NetApp Files.
+No. When your cluster is added to Astra Control, the service will automatically install NetApp’s Trident Container Storage Interface (CSI) driver on the Kubernetes cluster. This CSI driver is used to provision persistent volumes for clusters backed by your cloud provider.
 
 *I need to add worker nodes to my cluster after adding to Astra Control Service. What should I do?*
 
 New worker nodes can be added to existing pools, or new pools can be created as long as they are the Ubuntu image type. These will be automatically discovered by Astra Control. If the new nodes are not visible in Astra Control, check if the new worker nodes are running the supported image type. You can also verify the health of the new worker nodes by using the `kubectl get nodes` command.
 
+ifdef::azure[]
 == Registering AKS clusters
 
 *Can I add a private AKS cluster to Astra Control Service?*
@@ -67,7 +68,9 @@ Yes, you can add private AKS clusters to Astra Control Service.  To add a privat
 *Can I use Active Directory to manage authentication for my AKS clusters?*
 
 Yes, you can configure your AKS clusters to use Azure Active Directory (Azure AD) for authentication and identity management. When you create the cluster, follow the instructions in the https://docs.microsoft.com/en-us/azure/aks/managed-aad[official documentation^] to configure the cluster to use Azure AD. You'll need to make sure your clusters meet the requirements for AKS-managed Azure AD integration.
+endif::azure[]
 
+ifdef::gcp[]
 == Registering GKE clusters
 
 *Can I add a private GKE cluster to Astra Control Service?*
@@ -93,6 +96,7 @@ After you log in to the https://console.cloud.google.com/[Google Cloud Console^]
 *I would like to add different GKE clusters from different GCP projects. Is this supported in Astra Control?*
 
 No, this isn't a supported configuration. Only a single GCP project is supported.
+endif::gcp[]
 
 == Removing clusters
 
@@ -107,7 +111,9 @@ No, this isn't a supported configuration. Only a single GCP project is supported
 
 Removing a cluster from Astra Control will not make any changes to the cluster's configuration (applications and persistent storage). Any Astra Control snapshots or backups taken of applications on that cluster will be unavailable to restore. Volume snapshot data stored within the storage backend will not be removed. Persistent Storage backups created by Astra Control will remain within your cloud provider's object store, but they are unavailable for restore.
 
+ifdef::gcp[]
 WARNING: Always remove a cluster from Astra Control before you delete it through GCP. Deleting a cluster from GCP while it's still being managed by Astra Control can cause problems for your Astra Control account.
+endif::gcp[]
 
 *Will Astra Trident be uninstalled when I remove a cluster from Astra Control?*
 
@@ -127,6 +133,7 @@ When applications are not listed in *Discovered Apps*, check the status and heal
 
 No. While Astra Control can discover applications that are using non-NetApp storage, it can't manage an application that's using non-NetApp storage.
 
+ifdef::gcp[]
 *I don’t see any of my application’s PVCs bound to GCP CVS. What's wrong?*
 
 The Astra Trident operator sets the default storage class to `netapp-cvs-perf-premium` after it's successfully added to Astra Control. When an application's PVCs are not bound to Cloud Volumes Service for Google Cloud, there are a few steps that you can take:
@@ -134,6 +141,7 @@ The Astra Trident operator sets the default storage class to `netapp-cvs-perf-pr
 * Run `kubectl get sc` and check the default storage class.
 * Check the yaml file or Helm chart that was used to deploy the application and see if a different storage class is defined.
 * Check to make sure that the worker node image type is Ubuntu and the NFS mount succeeded.
+endif::gcp[]
 
 *What happens to applications after I stop managing them from Astra Control?*
 
