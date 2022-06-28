@@ -104,12 +104,12 @@ When you use Kubernetes snapshot-controller (also known as external-snapshotter)
 //== Cluster is in `removed` state although cluster and network are otherwise working as expected
 //DOC-3613/Q2 and PI4
 //If a cluster is in `removed` state yet cluster and network connectivity appears healthy (external attempts to access the cluster using Kubernetes APIs are successful), the kubeconfig you provided to Astra Control might no longer be valid. This can be due to certificate rotation or expiration on the cluster. To correct this issue, update the credentials associated with the cluster in Astra Control using the link:https://docs.netapp.com/us-en/astra-automation/index.html[Astra Control API]:
-
+////
 . Run a POST call to add an updated kubeconfig file to the `/credentials` endpoint and retrieve the assigned `id` from the response body.
 . Run a PUT call from the `/clusters` endpoint using the appropriate cluster ID and set the `credentialID` to the `id` value from the previous step.
 
 After you complete these steps, the credential associated with the cluster is updated and the cluster should reconnect and update its state to `available`.
-
+////
 == App data management operations fail with Internal Service Error (500) when Astra Trident is offline
 //DOC-3903/ASTRA-13162/PI4
 If Astra Trident on an app cluster goes offline (and is brought back online) and 500 internal service errors are encountered when attempting app data management, restart all of the Kubernetes nodes in the app cluster to restore functionality.
