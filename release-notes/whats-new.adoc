@@ -101,6 +101,7 @@ link:../use/manage-buckets.html[Learn more about managing buckets].
 
 == 2 June 2021
 
+ifdef::gcp[]
 This release includes bug fixes and the following enhancements to Google Cloud support.
 
 === Support for shared VPCs
@@ -118,17 +119,18 @@ link:../learn/choose-class-and-size.html[Learn how Astra Control Service uses Cl
 Container-Optimized OS is now supported with GKE worker nodes. This is in addition to support for Ubuntu.
 
 link:../get-started/set-up-google-cloud.html#gke-cluster-requirements[Learn more about GKE cluster requirements].
+endif::gcp[]
 
 == 15 Apr 2021
 
 This release includes the following new features and enhancements.
-
+ifdef::azure[]
 === Support for AKS clusters
 
 Astra Control Service can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS).
 
 link:../get-started/set-up-microsoft-azure-with-anf.html[Learn how to get started].
-
+endif::azure[]
 === REST API
 
 The Astra Control REST API is now available for use. The API is based on modern technologies and current best practices.
@@ -171,11 +173,13 @@ link:../use/view-account-activity.html[Learn more about viewing your account act
 
 == 1 Mar 2021
 
+ifdef::gcp[]
 Astra Control Service now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[_CVS_ service type^] with Cloud Volumes Service for Google Cloud. This is in addition to already supporting the _CVS-Performance_ service type. Just as a reminder, Astra Control Service uses Cloud Volumes Service for Google Cloud as the storage backend for your persistent volumes.
 
 This enhancement means that Astra Control Service can now manage app data for Kubernetes clusters that are running in _any_ https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region where Cloud Volumes Service is supported^].
 
 If you have the flexibility to choose between Google Cloud regions, then you can pick either CVS or CVS-Performance, depending on your performance requirements. link:../learn/choose-class-and-size.html[Learn more about choosing a service type].
+endif::gcp[]
 
 == 25 Jan 2021
 

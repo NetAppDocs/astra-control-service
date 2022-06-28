@@ -28,6 +28,7 @@ When you unmanage a cluster from Astra Control Service, Astra Trident isn't auto
 
 When you perform operations on Postgres pods, you shouldn't connect directly within the pod to use the psql command. Astra Control Service requires psql access to freeze and thaw the databases. If there is a pre-existing connection, the snapshot, backup, or clone will fail.
 
+ifdef::gcp[]
 == Limitations for management of GKE clusters
 
 The following limitations apply to the management of Kubernetes clusters in Google Kubernetes Engine (GKE).
@@ -41,6 +42,7 @@ Astra Control Service supports one Google Cloud Platform project and one service
 NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users report issues with discovery or back up of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
 
 No matter which type of app that you use with Astra Control Service, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
+endif::gcp[]
 
 //=== Persistent volume limit
 

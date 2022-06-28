@@ -63,12 +63,13 @@ If you resize a persistent volume after creating a backup and then restore from 
 //DOC-3543/ASTRACTL-9408/Q2 and PI4
 App clones within the same cluster consistently fail with the Bitnami PostgreSQL 11.5.0 chart. To clone successfully, use an earlier or later version of the chart.
 
+ifdef::azure[]
 == Azure backup buckets use LRS redundancy by default
 By default, the buckets Astra Control Service uses to store Azure Kubernetes Service backups use the Locally Redundant Storage (LRS) redundancy option. To use a more durable redundancy option for Azure buckets, see the optional steps in the Azure cloud provider setup instructions:
 
 * link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks]
 * link:../get-started/set-up-microsoft-azure-with-anf.html[Set up Microsoft Azure with Azure NetApp Files]
-
+endif::azure[]
 //== Backup taken from new snapshot instead of existing snapshot
 //When you create a backup and select *Backup from existing snapshot*, Astra Control creates an ad-hoc snapshot and uses that snapshot to create the backup. Astra Control doesn't use the existing snapshot.
 

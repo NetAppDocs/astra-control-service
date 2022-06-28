@@ -26,7 +26,6 @@ NOTE: If a cluster is in `removed` state yet cluster and network connectivity ap
 +
 * *Overview*: Details about the worker nodes, including their state.
 * *Storage*: The persistent volumes associated with the compute, including the storage class and state.
-* *Activity*: The the activities related to the cluster.
+* *Activity*: The activities related to the cluster.
 
 NOTE: You can also view cluster information starting from the Astra Control Service *Dashboard*. On the *Clusters* tab under *Resource summary*, you can select the managed clusters, which takes you to the *Clusters* page. After you get to the *Clusters* page, follow the steps outlined above.
-
