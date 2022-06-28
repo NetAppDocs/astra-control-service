@@ -125,12 +125,14 @@ endif::gcp[]
 
 This release includes the following new features and enhancements.
 ifdef::azure[]
+
 === Support for AKS clusters
 
 Astra Control Service can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS).
 
 link:../get-started/set-up-microsoft-azure-with-anf.html[Learn how to get started].
 endif::azure[]
+
 === REST API
 
 The Astra Control REST API is now available for use. The API is based on modern technologies and current best practices.
