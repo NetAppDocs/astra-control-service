@@ -14,7 +14,7 @@ This FAQ can help if you're just looking for a quick answer to a question.
 
 == Overview
 
-Astra Control aims to simplify your application data lifecycle management operations for Kubernetes native applications. Astra Control Service supports Kubernetes clusters running on Google Kubernetes Engine (GKE) and Azure Kubernetes Service (AKS).
+Astra Control aims to simplify your application data lifecycle management operations for Kubernetes native applications. Astra Control Service supports Kubernetes clusters running on multiple cloud provider environments.
 
 The following sections provide answers to some additional questions that you might come across as you use Astra Control. For any additional clarifications, please reach out to astra.feedback@netapp.com
 

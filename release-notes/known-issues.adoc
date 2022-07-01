@@ -27,7 +27,9 @@ An operator and the app it deploys must use the same namespace; you might need t
 
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
+ifdef::azure[]
 * <<Azure backup buckets use LRS redundancy by default>>
+endif::azure[]
 //* <<Backup taken from new snapshot instead of existing snapshot>>
 //* <<Clone performance impacted by large persistent volumes>>
 //* <<App clones fail when using Service Account level OCP Security Context Constraints (SCC)>>
