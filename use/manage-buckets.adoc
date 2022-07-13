@@ -57,8 +57,9 @@ Note that Astra Control Service doesn't enable you to remove a bucket after you'
 .What you'll need
 
 * The name of an existing bucket in your cloud provider.
-
+ifdef::azure[]
 * If your bucket is in Azure, it must belong to the resource group named _astra-backup-rg_.
+endif::azure[]
 
 .Steps
 

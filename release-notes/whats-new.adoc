@@ -20,6 +20,7 @@ Astra Control Service now supports assigning namespace constraints to Member or 
 
 link:../learn/user-roles-namespaces.html[Namespace role-based access control (RBAC)].
 
+ifdef::azure[]
 === Azure Active Directory support
 Astra Control Service supports AKS clusters that use Azure Active Directory for authentication and identity management.
 
@@ -29,6 +30,7 @@ link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters fr
 You can now manage AKS clusters that use private IP addresses.
 
 link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
+endif::azure[]
 
 === Bucket removal from Astra Control
 You can now remove a bucket from Astra Control Service.
@@ -38,12 +40,26 @@ link:../use/manage-buckets.html[Remove a bucket].
 == 14 Dec 2021
 This release includes the following new features and enhancements.
 
-=== New storage backend options
 
+=== New storage backend options
+ifndef::gcp[]
+Astra Control Service now supports Azure managed disks as a storage backend option.
+
+link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks].
+endif::gcp[]
+
+ifndef::azure[]
+Astra Control Service now supports Google Persistent Disk as a storage backend option.
+
+link:../get-started/set-up-google-cloud.html[Set up Google Cloud].
+endif::azure[]
+
+ifdef::gcp+azure[]
 Astra Control Service now supports Google Persistent Disk and Azure managed disks as storage backend options.
 
 link:../get-started/set-up-google-cloud.html[Set up Google Cloud].
 link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks].
+endif::gcp+azure[]
 
 === In-place app restore
 You can now restore a snapshot, clone, or backup of an app in place by restoring to the same cluster and namespace.
@@ -60,10 +76,12 @@ Astra Control supports some apps when they are deployed with operators.
 
 link:../use/manage-apps.html#app-management-requirements[Start managing apps].
 
+ifdef::azure[]
 === Service principals with resource group scope
 Astra Control Service now supports service principals that use a resource group scope.
 
 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Create an Azure service principal].
+endif::azure[]
 
 == 5 Aug 2021
 
@@ -83,6 +101,7 @@ link:../use/manage-buckets.html[Learn more about managing buckets].
 
 == 2 June 2021
 
+ifdef::gcp[]
 This release includes bug fixes and the following enhancements to Google Cloud support.
 
 === Support for shared VPCs
@@ -100,16 +119,19 @@ link:../learn/choose-class-and-size.html[Learn how Astra Control Service uses Cl
 Container-Optimized OS is now supported with GKE worker nodes. This is in addition to support for Ubuntu.
 
 link:../get-started/set-up-google-cloud.html#gke-cluster-requirements[Learn more about GKE cluster requirements].
+endif::gcp[]
 
 == 15 Apr 2021
 
 This release includes the following new features and enhancements.
+ifdef::azure[]
 
 === Support for AKS clusters
 
 Astra Control Service can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS).
 
 link:../get-started/set-up-microsoft-azure-with-anf.html[Learn how to get started].
+endif::azure[]
 
 === REST API
 
@@ -153,11 +175,13 @@ link:../use/view-account-activity.html[Learn more about viewing your account act
 
 == 1 Mar 2021
 
+ifdef::gcp[]
 Astra Control Service now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[_CVS_ service type^] with Cloud Volumes Service for Google Cloud. This is in addition to already supporting the _CVS-Performance_ service type. Just as a reminder, Astra Control Service uses Cloud Volumes Service for Google Cloud as the storage backend for your persistent volumes.
 
 This enhancement means that Astra Control Service can now manage app data for Kubernetes clusters that are running in _any_ https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Google Cloud region where Cloud Volumes Service is supported^].
 
 If you have the flexibility to choose between Google Cloud regions, then you can pick either CVS or CVS-Performance, depending on your performance requirements. link:../learn/choose-class-and-size.html[Learn more about choosing a service type].
+endif::gcp[]
 
 == 25 Jan 2021
 

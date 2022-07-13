@@ -15,9 +15,21 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 == Create a Kubernetes cluster
 
-If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)], link:set-up-microsoft-azure-with-anf.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure NetApp Files], or link:set-up-microsoft-azure-with-amd.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure managed disks] .
+ifndef::azure[]
+If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)].
+endif::azure[]
+ifndef::gcp[]
+If you don't have a cluster yet, create one that meets link:set-up-microsoft-azure-with-anf.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure NetApp Files] or link:set-up-microsoft-azure-with-amd.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure managed disks].
 
 NOTE: Astra Control Service supports AKS clusters that use Azure Active Directory (Azure AD) for authentication and identity management. When you create the cluster, follow the instructions in the https://docs.microsoft.com/en-us/azure/aks/managed-aad[official documentation^] to configure the cluster to use Azure AD. You'll need to make sure your clusters meet the requirements for AKS-managed Azure AD integration.
+endif::gcp[]
+
+ifdef::gcp+azure[]
+If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)], link:set-up-microsoft-azure-with-anf.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure NetApp Files], or link:set-up-microsoft-azure-with-amd.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure managed disks].
+
+NOTE: Astra Control Service supports AKS clusters that use Azure Active Directory (Azure AD) for authentication and identity management. When you create the cluster, follow the instructions in the https://docs.microsoft.com/en-us/azure/aks/managed-aad[official documentation^] to configure the cluster to use Azure AD. You'll need to make sure your clusters meet the requirements for AKS-managed Azure AD integration.
+
+endif::gcp+azure[]
 
 == Start managing Kubernetes clusters
 
@@ -33,8 +45,10 @@ When Astra Control manages a cluster, it keeps track of the cluster's default st
 
 .What you'll need
 
+ifdef::gcp[]
 * For GKE, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
-
+endif::gcp[]
+ifdef::azure[]
 * For AKS, you should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
 +
 You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
@@ -42,6 +56,7 @@ You'll also need your Azure subscription ID, if you didn't add it to the JSON fi
 * For private AKS clusters:
 ** The cluster should meet the requirements noted in https://docs.microsoft.com/en-us/azure/aks/private-clusters[the Azure documentation^].
 ** You need to install the Astra Connector on the AKS service cluster so that Astra Control Service can manage the cluster. To install the Astra Connector, <<Manage a private cluster,follow these instructions>>.
+endif::azure[]
 
 .Steps
 
@@ -51,36 +66,79 @@ Follow the prompts to add the cluster.
 
 . *Provider*: Select your cloud provider and then provide the required credentials.
 
+ifdef::azure[]
 .. *Microsoft Azure*: Provide details about your Azure service principal by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
 +
 The JSON file should contain the output from the Azure CLI when you created the service principal. It can also include your subscription ID so it's automatically added to Astra. Otherwise, you need to manually enter the ID after providing the JSON.
-
+endif::azure[]
+ifdef::gcp[]
 .. *Google Cloud Platform*: Provide the service account key file either by uploading the file or by pasting the contents from your clipboard.
 +
 Astra Control Service uses the service account to discover clusters running in Google Kubernetes Engine.
+endif::gcp[]
 
 . *Cluster*: Select the cluster that you'd like to add.
+ifndef::azure[]
++
+Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
++
+If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
++
+If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, <<Manage a private cluster,follow these instructions>> to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
+endif::gcp[]
+ifndef::gcp[]
++
+Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
++
+If you select a cluster that has not been configured for Azure NetApp Files, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
++
+If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, <<Manage a private cluster,follow these instructions>> to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
+endif::azure[]
+ifdef::gcp+azure[]
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
 +
 If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud or Azure NetApp Files, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
 +
 If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, <<Manage a private cluster,follow these instructions>> to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
+endif::gcp+azure[]
 //+
 //NOTE: Support for using Google Persistent Disk and Azure Managed Disks storage services is in initial preview status with this release.
 
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
-Price, performance, and resilience information is displayed for each Cloud Volumes Service for Google Cloud service in the list. Performance and resilience information is displayed for each Azure NetApp Files service. For non-NetApp storage classes such as Google Persistent Disk or Azure managed disks, price, performance, and resilience information is not available.
+[NOTE]
+====
+Each cloud provider storage service displays the following price, performance, and resilience information:
+ifdef::gcp[]
+* Cloud Volumes Service for Google Cloud: Price, performance, and resilience information
+* Google Persistent Disk: No price, performance, or resilience information available
+endif::gcp[]
+ifdef::azure[]
+* Azure NetApp Files: Performance and resilience information
+* Azure Managed disks: No price, performance, or resilience information available
+endif::azure[]
+====
 +
 Each storage class can utilize one of the following services:
-
+ifdef::gcp[]
 * https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
 * https://cloud.google.com/persistent-disk/[Google Persistent Disk^]
+endif::gcp[]
+ifdef::azure[]
 * https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^]
 * https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview[Azure managed disks^]
+endif::azure[]
 +
+ifndef::gcp[]
+Learn more about link:../learn/azure-storage.html[storage classes for AKS clusters].
+endif::gcp[]
+ifndef::azure[]
+Learn more about link:../learn/choose-class-and-size.html[storage classes for GKE clusters].
+endif::azure[]
+ifdef::gcp+azure[]
 Learn more about link:../learn/choose-class-and-size.html[storage classes for GKE clusters] and link:../learn/azure-storage.html[storage classes for AKS clusters].
+endif::gcp+azure[]
 //Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
 //+
 //* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].
@@ -98,6 +156,7 @@ Learn more about link:../learn/choose-class-and-size.html[storage classes for GK
 
 Astra Control Service creates an object store for application backups on eligible clusters, creates an admin account on the cluster, and sets the default storage class that you specified. This process can take up to 5 minutes.
 
+ifdef::azure[]
 == Manage a private cluster
 You can use Astra Control Service to manage private AKS clusters. To do so, you need to install the Astra Connector operator on the private AKS service cluster. You can complete this step before you add the cluster for management or during the process of adding it, when prompted.
 
@@ -143,6 +202,8 @@ You should see output similar to the following:
 NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 ----
+endif::azure[]
+
 
 == Change the default storage class
 You can change the default storage class for a cluster.

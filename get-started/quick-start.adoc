@@ -14,6 +14,7 @@ This page provides a high-level overview of the steps that you need to complete 
 
 == image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Set up your cloud provider
 
+ifdef::gcp[]
 [role="quick-margin-list"]
 .. Google Cloud:
 ** Review Google Kubernetes Engine cluster requirements.
@@ -23,6 +24,8 @@ This page provides a high-level overview of the steps that you need to complete 
 ** Set up network peering from your VPC to Cloud Volumes Service for Google Cloud.
 +
 link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
+endif::gcp[]
+ifdef::azure[]
 .. Microsoft Azure:
 ** Review Azure Kubernetes Service cluster requirements for the storage backend you plan to use.
 //** Register for Azure NetApp Files.
@@ -34,7 +37,7 @@ link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 link:set-up-microsoft-azure-with-anf.html[Learn more about Microsoft Azure and Azure NetApp Files requirements].
 +
 link:set-up-microsoft-azure-with-amd.html[Learn more about Microsoft Azure and Azure managed disk requirements].
-
+endif::azure[]
 
 == image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Complete the Astra Control registration
 

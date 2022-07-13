@@ -7,6 +7,16 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: true
+  filter:
+    label: Cloud provider
+    default: All cloud providers
+    options:
+      - name: Google Cloud
+        alias: Google Cloud
+        id: gcp
+      - name: Microsoft Azure
+        alias: Azure
+        id: azure
 sidebar:
   entries:
     - title: Astra Control Service docs

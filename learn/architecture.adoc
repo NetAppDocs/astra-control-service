@@ -11,4 +11,58 @@ summary: Here's an overview of the various components of the Astra Control envir
 :imagesdir: ../media/learn/
 
 //Remote includes from ACC repo
-include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-architecture.adoc[]
+//include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-architecture.adoc[]
+
+
+Here is an overview of the various components of the Astra Control environment.
+
+image:astra-ads-architecture-diagram-v3.png[Astra Control architecture diagram and components]
+
+== Astra Control components
+
+* *Kubernetes clusters*: Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. Astra provides management services for applications hosted in a Kubernetes cluster.
+
+* *Astra Trident*: As a fully supported open source storage provisioner and orchestrator maintained by NetApp, Trident enables you to create storage volumes for containerized applications managed by Docker and Kubernetes. When deployed with Astra Control Center, Trident includes a configured ONTAP storage backend, and also supports Astra Data Store as a storage backend.
+
+* *Storage backend*:
+ifdef::gcp+azure[]
+** Astra Control Service uses https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/[NetApp Cloud Volumes Service for Google Cloud^] as the storage backend for GKE clusters and https://www.netapp.com/cloud-services/azure-netapp-files/[Azure NetApp Files^] as the storage backend for AKS clusters.
+** Astra Control Service also supports Azure Managed Disks and Google Persistent Disk as backend storage options.
+endif::gcp+azure[]
+ifndef::gcp[]
+** Astra Control Service uses https://www.netapp.com/cloud-services/azure-netapp-files/[Azure NetApp Files^] as the storage backend for AKS clusters.
+** Astra Control Service also supports Azure Managed Disks as a backend storage option.
+endif::gcp[]
+ifndef::azure[]
+** Astra Control Service uses https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/[NetApp Cloud Volumes Service for Google Cloud^] as the storage backend for GKE clusters.
+** Astra Control Service also supports Google Persistent Disk as a backend storage option.
+endif::azure[]
++
+** Astra Control Center uses the following storage backends:
+
+*** Astra Data Store storage backend
+*** ONTAP AFF and FAS storage backend. As a storage software and hardware platform, ONTAP provides core storage services, support for multiple storage access protocols, and storage management functionality, such as snapshots and mirroring.
+//*** SolidFire storage backend. When you use a SolidFire storage backend, Astra Control Center doesn't report statistics and storage backend status as it does with other storage backends.
+*** Cloud Volumes ONTAP storage backend
+
+
+* *Cloud Insights*:  A NetApp cloud infrastructure monitoring tool, Cloud Insights enables you to monitor performance and utilization for your Kubernetes clusters managed by Astra Control Center. Cloud Insights correlates storage usage to workloads. When you enable the Cloud Insights connection in Astra Control Center, telemetry information shows in Astra Control Center UI pages.
+
+== Astra Control interfaces
+
+You can complete tasks using different interfaces:
+
+* *Web user interface (UI)*: Both Astra Control Service and Astra Control Center use the same web-based UI where you can manage, migrate and protect apps. Use the UI also to manage user accounts and configuration settings.
+
+* *API*: Both Astra Control Service and Astra Control Center use the same Astra Control API. Using the API, you can perform the same tasks that you would using the UI.
+
+Astra Control Center also enables you to manage, migrate, and protect Kubernetes clusters running within VM environments.
+
+== For more information
+
+* https://docs.netapp.com/us-en/astra/index.html[Astra Control Service documentation^]
+* https://docs.netapp.com/us-en/astra-control-center/index.html[Astra Control Center documentation^]
+* https://docs.netapp.com/us-en/trident/index.html[Astra Trident documentation^]
+* https://docs.netapp.com/us-en/astra-automation/index.html[Use the Astra Control API^]
+* https://docs.netapp.com/us-en/cloudinsights/[Cloud Insights documentation^]
+* https://docs.netapp.com/us-en/ontap/index.html[ONTAP documentation^]

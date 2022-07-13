@@ -87,8 +87,12 @@ Now that you've added your cluster to Astra Control, you can install apps on the
 
 Astra Control will manage stateful apps only if the storage is on a storage class installed by Astra Control.
 
+ifdef::gcp[]
 * link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters]
+endif::gcp[]
+ifdef::azure[]
 * link:../learn/azure-storage.html[Learn about storage classes for AKS clusters]
+endif::azure[]
 
 For help with deploying common applications from Helm charts, refer to the following:
 
