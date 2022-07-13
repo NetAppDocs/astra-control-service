@@ -10,10 +10,13 @@ entries:
   - title: Set up your cloud provider
     entries:
       - title: Set up Google Cloud
+        flavor: gcp
         url: /get-started/set-up-google-cloud.html
       - title: Set up Microsoft Azure with Azure NetApp Files
+        flavor: azure
         url: /get-started/set-up-microsoft-azure-with-anf.html
       - title: Set up Microsoft Azure with Azure managed disks
+        flavor: azure
         url: /get-started/set-up-microsoft-azure-with-amd.html
   - title: Register for an account
     url: /get-started/register.html
