@@ -11,8 +11,9 @@ summary: An execution hook is a custom script that you can run before or after a
 :imagesdir: ../media/use/
 
 [.lead]
-An execution hook is a custom script that you can run before or after a snapshot of a managed app. For example, if you have a database app, you can use execution hooks to pause all database transactions before a snapshot, and resume transactions after the snapshot is complete. This ensures application-consistent snapshots.
+An execution hook is a custom action that you can configure to run in conjunction with a data protection operation of a managed app. For example, if you have a database app, you can use execution hooks to pause all database transactions before a snapshot, and resume transactions after the snapshot is complete. This ensures application-consistent snapshots.
 
+////
 == Default execution hooks and regular expressions
 For some apps, Astra Control comes with default execution hooks, provided by NetApp, that handle freeze and thaw operations before and after snapshots. Astra Control uses regular expressions to match an app's container image to these apps:
 
@@ -24,69 +25,263 @@ For some apps, Astra Control comes with default execution hooks, provided by Net
 ** Matching regular expression: \bpostgresql\b
 
 If there is a match, the NetApp-provided default execution hooks for that app appear in the app's list of active execution hooks, and those hooks run automatically when snapshots of that app are taken. If one of your custom apps has a similar image name that happens to match one of the regular expressions (and you don't want to use the default execution hooks), you can either change the image name, or disable the default execution hook for that app and use a custom hook instead.
+////
+
 
 //You can use the NetApp-provided hooks for these apps, or disable them and use your own.
-You cannot delete or modify the default execution hooks.
+//You cannot delete or modify the default execution hooks.
 
 == Important notes about custom execution hooks
 Consider the following when planning execution hooks for your apps.
 
-* Astra Control requires execution hooks to be written in the format of executable shell scripts.
+* An execution hook must use a script to perform actions. Many execution hooks can reference the same script.
+* Astra Control requires the scripts that execution hooks use to be written in the format of executable shell scripts.
 * Script size is limited to 128KB.
-* Astra Control uses execution hook settings and any matching criteria to determine which hooks are applicable to a snapshot.
-* All execution hook failures are soft failures; other hooks and the snapshot are still attempted even if a hook fails. However, when a hook fails, a warning event is recorded in the *Activity* page event log.
+* Astra Control uses execution hook settings and any matching criteria to determine which hooks are applicable to a snapshot, backup, or restore operation.
+* All execution hook failures are soft failures; other hooks and the data protection operation are still attempted even if a hook fails. However, when a hook fails, a warning event is recorded in the *Activity* page event log.
 * To create, edit, or delete execution hooks, you must be a user with Owner, Admin, or Member permissions.
 * If an execution hook takes longer than 25 minutes to run, the hook will fail, creating an event log entry with a return code of "N/A". Any affected snapshot will time out and be marked as failed, with a resulting event log entry noting the timeout.
 //* Scripts that run with Member and Viewer privileges can view only.
 
-NOTE: Since execution hooks often reduce or completely disable the functionality of the application they are running against, you should always try to minimize the time your custom execution hooks take to run.
+[NOTE]
+====
+* Since execution hooks often reduce or completely disable the functionality of the application they are running against, you should always try to minimize the time your custom execution hooks take to run.
+* If you start a backup or snapshot operation with associated execution hooks but then cancel it, the hooks are still allowed to run if the backup or snapshot operation has already begun. This means that a post-backup execution hook cannot assume that the backup was completed.
+====
 
-When a snapshot is run, execution hook events take place in the following order:
+=== Order of execution
+When a data protection operation is run, execution hook events take place in the following order:
 
-. Any applicable NetApp-provided default pre-snapshot execution hooks are run on the appropriate containers.
-. Any applicable custom pre-snapshot execution hooks are run on the appropriate containers. You can create and run as many custom pre-snapshot hooks as you need, but the order of execution of these hooks before the snapshot is neither guaranteed nor configurable.
-. The snapshot is performed.
-. Any applicable custom post-snapshot execution hooks are run on the appropriate containers. You can create and run as many custom post-snapshot hooks as you need, but the order of execution of these hooks after the snapshot is neither guaranteed nor configurable.
-. Any applicable NetApp-provided default post-snapshot execution hooks are run on the appropriate containers.
+//. Any applicable NetApp-provided default pre-snapshot execution hooks are run on the appropriate containers.
+. Any applicable custom pre-operation execution hooks are run on the appropriate containers. You can create and run as many custom pre-operation hooks as you need, but the order of execution of these hooks before the operation is neither guaranteed nor configurable.
+. The data protection operation is performed.
+. Any applicable custom post-operation execution hooks are run on the appropriate containers. You can create and run as many custom post-operation hooks as you need, but the order of execution of these hooks after the operation is neither guaranteed nor configurable.
+//. Any applicable NetApp-provided default post-snapshot execution hooks are run on the appropriate containers.
 
-NOTE: You should always test your execution hook scripts before enabling them in a production environment. You can use the 'kubectl exec' command to conveniently test the scripts. After you enable the execution hooks in a production environment, test the resulting snapshots to ensure they are consistent. You can do this by cloning the app to a temporary namespace, restoring the snapshot, and then testing the app.
+NOTE: You should always test your execution hook scripts before enabling them in a production environment. You can use the 'kubectl exec' command to conveniently test the scripts. After you enable the execution hooks in a production environment, test the resulting snapshots and backups to ensure they are consistent. You can do this by cloning the app to a temporary namespace, restoring the snapshot or backup, and then testing the app.
+
+=== Determine whether a hook will run
+Use the following table to help determine if a custom execution hook will run for your app.
+
+|===
+|Scenario |Operation |Existing snapshot |Existing backup |Namespace |Cluster |Snapshot hooks run |Backup hooks run |Restore hooks run
+
+|1
+|Clone
+|N
+|N
+|New
+|Same
+|Y
+|N
+|Y
+
+|2
+|Clone
+|N
+|N
+|New
+|Different
+|Y
+|Y
+|Y
+
+|3
+|Clone or restore
+|Y
+|N
+|New
+|Same
+|N
+|N
+|Y
+
+|4
+|Clone or restore
+|N
+|Y
+|New
+|Same
+|N
+|N
+|Y
+
+|5
+|Clone or restore
+|Y
+|N
+|New
+|Different
+|N
+|Y
+|Y
+
+|6
+|Clone or restore
+|N
+|Y
+|New
+|Different
+|N
+|N
+|Y
+
+|7
+|Restore
+|Y
+|N
+|Existing
+|Same
+|N
+|N
+|Y
+
+|8
+|Restore
+|N
+|Y
+|Existing
+|Same
+|N
+|N
+|Y
+
+|9
+|Snapshot
+|N/A
+|N/A
+|N/A
+|N/A
+|Y
+|N/A
+|N/A
+
+|10
+|Backup
+|N
+|N/A
+|N/A
+|N/A
+|Y
+|Y
+|N/A
+
+|11
+|Backup
+|Y
+|N/A
+|N/A
+|N/A
+|N
+|Y
+|N/A
+
+|===
+
 
 == View existing execution hooks
-You can view existing custom or NetApp-provided default execution hooks for an app.
+You can view existing custom execution hooks for an app.
 
 .Steps
 
 . Go to *Applications* and then select the name of a managed app.
 . Select the *Execution hooks* tab.
 +
-You can view all enabled or disabled execution hooks in the resulting list. You can see a hook's status, source, and when it runs (pre- or post-snapshot). To view event logs surrounding execution hooks, go to the *Activity* page in the left-side navigation area.
+You can view all enabled or disabled execution hooks in the resulting list. You can see a hook's status, source, and when it runs (pre- or post-operation). To view event logs surrounding execution hooks, go to the *Activity* page in the left-side navigation area.
 
-== Create a custom execution hook
-You can create a custom execution hook for an app. See link:execution-hook-examples.html[Execution hook examples^] for hook examples. You need to have Owner, Admin, or Member permissions to create execution hooks.
-
-NOTE: When you create a custom shell script to use as an execution hook, remember to specify the appropriate shell at the beginning of the file, unless you are running linux commands or providing the full path to an executable.
+== View existing scripts
+You can view the existing uploaded scripts. You can also see which scripts are in use, and what hooks are using them, on this page.
 
 .Steps
 
-. Select *Applications* and then select the name of a managed app.
-. Select the *Execution hooks* tab.
-. Select *Add a new hook*.
-. In the *Hook Details* area, depending on when the hook should run, choose *Pre-Snapshot* or *Post-Snapshot*.
-. Enter a unique name for the hook.
-. (Optional) Enter any arguments to pass to the hook during execution, pressing the Enter key after each argument you enter to record each one.
-. In the *Container Images* area, if the hook should run against all container images contained within the application, enable the *Apply to all container images* check box. If instead the hook should act only on one or more specified container images, enter the container image names in the *Container image names to match* field.
-. In the *Script* area, do one of the following:
+. Go to *Account*.
+. Select the *Scripts* tab.
++
+You can see a list of existing uploaded scripts on this page. The *Used by* column shows which execution hooks are using each script.
+
+
+== Add a script
+You can add one or more scripts that execution hooks can reference. Many execution hooks can reference the same script; this enables you to update many execution hooks by only changing one script.
+
+.Steps
+
+. Go to *Account*.
+. Select the *Scripts* tab.
+. Select *Add*.
+. Do one of the following:
 * Upload a custom script.
 .. Select the *Upload file* option.
 .. Browse to a file and upload it.
 .. Give the script a unique name.
 .. (Optional) Enter any notes other administrators should know about the script.
+.. Select *Save script*.
 * Paste in a custom script from the clipboard.
-.. Select the *Paste from clipboard* option.
+.. Select the *Paste or type* option.
 .. Select the text field and paste the script text into the field.
 .. Give the script a unique name.
 .. (Optional) Enter any notes other administrators should know about the script.
+. Select *Save script*.
+
+.Result
+The new script appears in the list on the *Scripts* tab.
+
+
+== Delete a script
+You can remove a script from the system if it is no longer needed and not used by any execution hooks.
+
+.Steps
+
+. Go to *Account*.
+. Select the *Scripts* tab.
+. Choose a script you want to remove, and select the menu in the *Actions* column.
+. Select *Delete*.
+
+NOTE: If the script is associated with one or more execution hooks, the *Delete* action is unavailable. To delete the script, first edit the associated execution hooks and associate them with a different script.
+
+== Create a custom execution hook
+You can create a custom execution hook for an app. See link:execution-hook-examples.html[Execution hook examples^] for hook examples. You need to have Owner, Admin, or Member permissions to create execution hooks.
+
+NOTE: When you create a custom shell script to use as an execution hook, remember to specify the appropriate shell at the beginning of the file, unless you are running specific commands or providing the full path to an executable.
+
+.Steps
+
+. Select *Applications* and then select the name of a managed app.
+. Select the *Execution hooks* tab.
+. Select *Add*.
+. In the *Hook Details* area, determine when the hook should run by selecting an operation type from the *Operation* drop-down menu.
+. Enter a unique name for the hook.
+. (Optional) Enter any arguments to pass to the hook during execution, pressing the Enter key after each argument you enter to record each one.
+. In the *Container Images* area, if the hook should run against all container images contained within the application, enable the *Apply to all container images* check box. If instead the hook should act only on one or more specified container images, enter the container image names in the *Container image names to match* field.
+. In the *Script* area, do one of the following:
+* Add a new script.
+.. Select *Add*.
+.. Do one of the following:
+** Upload a custom script.
+... Select the *Upload file* option.
+... Browse to a file and upload it.
+... Give the script a unique name.
+... (Optional) Enter any notes other administrators should know about the script.
+... Select *Save script*.
+** Paste in a custom script from the clipboard.
+... Select the *Paste or type* option.
+... Select the text field and paste the script text into the field.
+... Give the script a unique name.
+... (Optional) Enter any notes other administrators should know about the script.
+* Select an existing script from the list.
++
+This instructs the execution hook to use this script.
 . Select *Add hook*.
+
+== Check the state of an execution hook
+During a running snapshot or backup operation, you can check the state of any execution hooks that are running as part of the operation.
+
+.Steps
+
+. Select *Applications* and then select the name of a managed app.
+. Select the *Data protection* tab.
+. Select *Snapshots* to see running snapshots, or *Backups* to see running backups.
++
+The *Hook state* shows the status of the execution hook run after the operation is complete. You can hover over the state for more details. For example, if there are execution hook failures during an operation, hovering over the hook state for that operation gives a list of failed execution hooks. To see reasons for each failure, you can check the *Activity* page in the left-side navigation area.
 
 == Disable an execution hook
 You can disable an execution hook if you want to temporarily prevent it from running before or after a snapshot of an app. You need to have Owner, Admin, or Member permissions to disable execution hooks.
@@ -95,7 +290,7 @@ You can disable an execution hook if you want to temporarily prevent it from run
 
 . Select *Applications* and then select the name of a managed app.
 . Select the *Execution hooks* tab.
-. Select the *Actions* dropdown for a hook that you wish to disable.
+. Select the Options menu in the *Actions* column for a hook that you wish to disable.
 . Select *Disable*.
 
 == Delete an execution hook
@@ -105,5 +300,5 @@ You can remove an execution hook entirely if you no longer need it. You need to 
 
 . Select *Applications* and then select the name of a managed app.
 . Select the *Execution hooks* tab.
-. Select the *Actions* dropdown for a hook that you wish to delete.
+. Select the Options menu in the *Actions* column for a hook that you wish to delete.
 . Select *Delete*.
