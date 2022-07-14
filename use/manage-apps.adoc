@@ -94,13 +94,14 @@ ifdef::azure[]
 * link:../learn/azure-storage.html[Learn about storage classes for AKS clusters]
 endif::azure[]
 
+////
 For help with deploying common applications from Helm charts, refer to the following:
 
 * link:../solutions/mariadb-deploy-from-helm-chart.html[Deploy MariaDB from a Helm chart]
 * link:../solutions/mysql-deploy-from-helm-chart.html[Deploy MySQL from a Helm chart]
 * link:../solutions/postgres-deploy-from-helm-chart.html[Deploy Postgres from a Helm chart]
 * link:../solutions/jenkins-deploy-from-helm-chart.html[Deploy Jenkins from a Helm chart]
-
+////
 == Manage apps
 
 When Astra Control discovers the apps running on your clusters, they are unmanaged until you choose how you want to manage them. A managed application in Astra Control can be any of the following:
