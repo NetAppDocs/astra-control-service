@@ -156,9 +156,9 @@ endif::gcp[]
 ifndef::azure[]
 Learn more about link:../learn/choose-class-and-size.html[storage classes for GKE clusters].
 endif::azure[]
-ifdef::gcp+azure[]
+ifdef::gcp+azure+aws[]
 Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web Services clusters], link:../learn/choose-class-and-size.html[storage classes for GKE clusters], and link:../learn/azure-storage.html[storage classes for AKS clusters].
-endif::gcp+azure[]
+endif::gcp+azure+aws[]
 //Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
 //+
 //* link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters].

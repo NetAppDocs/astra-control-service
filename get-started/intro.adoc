@@ -79,6 +79,10 @@ ifdef::azure[]
 +
 ** For AKS clusters, Astra Control Service uses https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^] or Azure Disk Storage as the storage backend for your persistent volumes.
 endif::azure[]
+ifdef::aws[]
++
+** For Amazon Web Services clusters, Astra Control Service uses https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^] or https://docs.aws.amazon.com/fsx/index.html[Amazon FSx^] as the storage backend for your persistent volumes.
+
 * You add your first Kubernetes compute to Astra Control Service. Astra Control Service then does the following:
 
 ** Creates an object store in your cloud provider account, which is where backup copies are stored.

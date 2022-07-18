@@ -25,10 +25,10 @@ image:astra-ads-architecture-diagram-v3.png[Astra Control architecture diagram a
 * *Astra Trident*: As a fully supported open source storage provisioner and orchestrator maintained by NetApp, Trident enables you to create storage volumes for containerized applications managed by Docker and Kubernetes. When deployed with Astra Control Center, Trident includes a configured ONTAP storage backend, and also supports Astra Data Store as a storage backend.
 
 * *Storage backend*:
-ifdef::gcp+azure[]
+ifdef::gcp+azure+aws[]
 ** Astra Control Service uses https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/[NetApp Cloud Volumes Service for Google Cloud^] as the storage backend for GKE clusters and https://www.netapp.com/cloud-services/azure-netapp-files/[Azure NetApp Files^] as the storage backend for AKS clusters.
 ** Astra Control Service also supports Azure Managed Disks and Google Persistent Disk as backend storage options.
-endif::gcp+azure[]
+endif::gcp+azure+aws[]
 ifndef::gcp[]
 ** Astra Control Service uses https://www.netapp.com/cloud-services/azure-netapp-files/[Azure NetApp Files^] as the storage backend for AKS clusters.
 ** Astra Control Service also supports Azure Managed Disks as a backend storage option.
