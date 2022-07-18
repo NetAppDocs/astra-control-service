@@ -114,18 +114,14 @@ Before you begin, you should also understand link:../use/manage-apps.html#what-a
 
 .App management options
 
-* <<Define individual app resources to manage>>
-* <<Define all applications in a namespace to be managed>>
+* <<Define resources to manage as an app>>
+* <<Define a namespace to manage as an app>>
 
-.Additional app options
-//*	<<Rename apps>>
-*	<<Unmanage apps>>
+=== Define resources to manage as an app
 
-=== Define individual app resources to manage
+You can specify the link:../learn/app-management.html[Kubernetes resources that make up an app] that you want to manage with Astra Control. Defining an app enables you to group elements of your Kubernetes cluster into a single app. This collection of Kubernetes resources is organized by namespace and a label.
 
-You can specify the Kubernetes resources that make up an app that you want to manage with Astra Control. Defining an app enables you to group elements of your Kubernetes cluster into a single app. This collection of Kubernetes resources is based on a namespace and a label.
-
-Defining a custom app gives you more granular control over what to include in an Astra Control operation, including clone, snapshot, backup, and protection policies.
+Defining an app gives you more granular control over what to include in an Astra Control operation, including clone, snapshot, backup, and protection policies.
 
 In most cases you will want to use Astra Control's protection functionality on your entire app. However, you can also use protection features according to the labels you assign to Kubernetes objects in a namespace.
 
@@ -150,9 +146,9 @@ NOTE: The app you just added might have a warning icon under the Protected colum
 
 TIP: To see details of a particular app, select the app name.
 
-=== Define all applications in a namespace to be managed
+=== Define a namespace to manage as an app
 
-You can add all Kubernetes resources in a namespace to Astra Control management by defining the resources of that namespace as an application. This method is preferable to defining apps individually if you intend to manage and protect all app resources in a particular namespace in a similar way and at common intervals.
+You can add all Kubernetes resources in a namespace to Astra Control management by defining the resources of that namespace as an application. This method is preferable to defining apps individually if you intend to manage and protect all resources in a particular namespace in a similar way and at common intervals.
 
 .Steps
 
@@ -161,6 +157,7 @@ You can add all Kubernetes resources in a namespace to Astra Control management 
 . Select the Actions menu for the namespace that contains the app resources you want to manage and select *Define as application*.
 +
 TIP: If you want to manage multiple namespaces, select the namespaces and select the *Actions* button in the upper-left corner and select *manage*.
+
 +
 NOTE: Select the *Show system namespaces* checkbox to reveal system namespaces that are usually not used in app management by default. link:../use/manage-apps.html#what-about-system-apps[Read more].
 
