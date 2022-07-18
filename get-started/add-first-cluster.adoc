@@ -120,6 +120,7 @@ endif::azure[]
 [NOTE]
 ====
 Each cloud provider storage service displays the following price, performance, and resilience information:
+
 ifdef::gcp[]
 * Cloud Volumes Service for Google Cloud: Price, performance, and resilience information
 * Google Persistent Disk: No price, performance, or resilience information available
@@ -134,6 +135,7 @@ ifdef::aws[]
 ====
 +
 Each storage class can utilize one of the following services:
+
 ifdef::gcp[]
 * https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
 * https://cloud.google.com/persistent-disk/[Google Persistent Disk^]
@@ -147,15 +149,15 @@ ifdef::aws[]
 * https://docs.aws.amazon.com/fsx/index.html[Amazon FSx^]
 endif::aws[]
 +
-ifdef::aws[]
+ifndef::gcp,azure[]
 Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web Services clusters].
-endif::aws[]
-ifndef::gcp[]
+endif::gcp,azure[]
+ifndef::gcp,aws[]
 Learn more about link:../learn/azure-storage.html[storage classes for AKS clusters].
-endif::gcp[]
-ifndef::azure[]
+endif::gcp,aws[]
+ifndef::azure,aws[]
 Learn more about link:../learn/choose-class-and-size.html[storage classes for GKE clusters].
-endif::azure[]
+endif::azure,aws[]
 ifdef::gcp+azure+aws[]
 Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web Services clusters], link:../learn/choose-class-and-size.html[storage classes for GKE clusters], and link:../learn/azure-storage.html[storage classes for AKS clusters].
 endif::gcp+azure+aws[]
