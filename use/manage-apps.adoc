@@ -125,7 +125,7 @@ Defining an app gives you more granular control over what to include in an Astra
 
 In most cases you will want to use Astra Control's protection functionality on your entire app. However, you can also use protection features according to the labels you assign to Kubernetes objects in a namespace.
 
-WARNING: Overlapping policies for the same resource under different names can cause data conflicts. If you create a custom app for a resource, be sure it's not being cloned or backed up under any other policies. <<Example: Separate Protection Policy for different releases, Read more about best practices.>>
+WARNING: Overlapping policies for the same resource under different names can cause data conflicts. If you create a custom app for a resource, be sure it's not being cloned or backed up under any other policies.
 
 
 .Steps
