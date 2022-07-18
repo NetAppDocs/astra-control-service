@@ -3,6 +3,9 @@ title: Concepts
 entries:
   - title: Architecture and components
     url: /learn/architecture.html
+  - title: Storage for AWS clusters
+    flavor: aws
+    url: /learn/aws-storage.html
   - title: Storage for AKS clusters
     flavor: azure
     url: /learn/azure-storage.html

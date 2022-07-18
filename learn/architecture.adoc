@@ -26,17 +26,20 @@ image:astra-ads-architecture-diagram-v3.png[Astra Control architecture diagram a
 
 * *Storage backend*:
 ifdef::gcp+azure+aws[]
-** Astra Control Service uses https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/[NetApp Cloud Volumes Service for Google Cloud^] as the storage backend for GKE clusters and https://www.netapp.com/cloud-services/azure-netapp-files/[Azure NetApp Files^] as the storage backend for AKS clusters.
-** Astra Control Service also supports Azure Managed Disks and Google Persistent Disk as backend storage options.
+** Astra Control Service uses the following storage backends:
+*** https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/[NetApp Cloud Volumes Service for Google Cloud^] or Google Persistent Disk as the storage backends for GKE clusters
+*** https://www.netapp.com/cloud-services/azure-netapp-files/[Azure NetApp Files^] or Azure Managed Disks as the storage backends for AKS clusters
+*** https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^] or https://docs.aws.amazon.com/fsx/[Amazon FSx] as the storage backends for AWS clusters
 endif::gcp+azure+aws[]
-ifndef::gcp[]
-** Astra Control Service uses https://www.netapp.com/cloud-services/azure-netapp-files/[Azure NetApp Files^] as the storage backend for AKS clusters.
-** Astra Control Service also supports Azure Managed Disks as a backend storage option.
-endif::gcp[]
-ifndef::azure[]
-** Astra Control Service uses https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/[NetApp Cloud Volumes Service for Google Cloud^] as the storage backend for GKE clusters.
-** Astra Control Service also supports Google Persistent Disk as a backend storage option.
-endif::azure[]
+ifndef::gcp,aws[]
+** Astra Control Service uses https://www.netapp.com/cloud-services/azure-netapp-files/[Azure NetApp Files^] or Azure Managed Disks as the storage backends for AKS clusters.
+endif::gcp,aws[]
+ifndef::azure,aws[]
+** Astra Control Service uses https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/[NetApp Cloud Volumes Service for Google Cloud^] or Google Persistent Disk as the storage backends for GKE clusters.
+endif::azure,aws[]
+ifndef::azure,gcp[]
+** Astra Control Service uses https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^] and https://docs.aws.amazon.com/fsx/[Amazon FSx] as the storage backends for AWS clusters.
+endif::azure,gcp[]
 +
 ** Astra Control Center uses the following storage backends:
 
