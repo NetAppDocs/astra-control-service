@@ -132,6 +132,7 @@ endif::azure[]
 ifdef::aws[]
 * Amazon Elastic Block Store: No price, performance, or resilience information available
 * Amazon FSx: No price, performance, or resilience information available
+endif::aws[]
 ====
 +
 Each storage class can utilize one of the following services:

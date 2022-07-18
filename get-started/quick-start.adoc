@@ -32,7 +32,7 @@ ifdef::aws[]
 ** Install the Amazon Web Services CLI.
 ** Create an IAM user.
 ** Create and attach a permissions policy.
-** Save the credentials for the IAM user
+** Save the credentials for the IAM user.
 endif::aws[]
 ifdef::azure[]
 .. Microsoft Azure:
