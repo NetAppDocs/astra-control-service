@@ -15,21 +15,24 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 == Create a Kubernetes cluster
 
-ifndef::azure[]
+ifndef::azure,gcp[]
+If you don't have a cluster yet, create one that meets link:set-up-amazon-web-services.html#eks-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)].
+endif::azure,gcp[]
+ifndef::azure,aws[]
 If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)].
-endif::azure[]
-ifndef::gcp[]
+endif::azure,aws[]
+ifndef::gcp,aws[]
 If you don't have a cluster yet, create one that meets link:set-up-microsoft-azure-with-anf.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure NetApp Files] or link:set-up-microsoft-azure-with-amd.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure managed disks].
 
 NOTE: Astra Control Service supports AKS clusters that use Azure Active Directory (Azure AD) for authentication and identity management. When you create the cluster, follow the instructions in the https://docs.microsoft.com/en-us/azure/aks/managed-aad[official documentation^] to configure the cluster to use Azure AD. You'll need to make sure your clusters meet the requirements for AKS-managed Azure AD integration.
-endif::gcp[]
+endif::gcp,aws[]
 
-ifdef::gcp+azure[]
+ifdef::gcp+azure+aws[]
 If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)], link:set-up-microsoft-azure-with-anf.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure NetApp Files], or link:set-up-microsoft-azure-with-amd.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure managed disks].
 
 NOTE: Astra Control Service supports AKS clusters that use Azure Active Directory (Azure AD) for authentication and identity management. When you create the cluster, follow the instructions in the https://docs.microsoft.com/en-us/azure/aks/managed-aad[official documentation^] to configure the cluster to use Azure AD. You'll need to make sure your clusters meet the requirements for AKS-managed Azure AD integration.
 
-endif::gcp+azure[]
+endif::gcp+azure+aws[]
 
 == Start managing Kubernetes clusters
 
@@ -45,6 +48,9 @@ When Astra Control manages a cluster, it keeps track of the cluster's default st
 
 .What you'll need
 
+ifdef::aws[]
+* For Amazon Web Services, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-amazon-web-services.html#create-a-service-account[Learn how to set up a service account].
+endif::aws[]
 ifdef::gcp[]
 * For GKE, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
 endif::gcp[]
@@ -65,7 +71,11 @@ endif::azure[]
 Follow the prompts to add the cluster.
 
 . *Provider*: Select your cloud provider and then provide the required credentials.
-
+ifdef::aws[]
+.. *Amazon Web Services*: Provide details about your Amazon Web Services account by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
++
+The JSON file should contain the output from the AWS CLI when you created the account. It can also include your subscription ID so it's automatically added to Astra Control. Otherwise, you need to manually enter the ID after providing the JSON.
+endif::aws[]
 ifdef::azure[]
 .. *Microsoft Azure*: Provide details about your Azure service principal by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
 +
@@ -78,30 +88,30 @@ Astra Control Service uses the service account to discover clusters running in G
 endif::gcp[]
 
 . *Cluster*: Select the cluster that you'd like to add.
-ifndef::azure[]
+ifndef::azure,aws[]
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
 +
 If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
-+
-If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, <<Manage a private cluster,follow these instructions>> to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
-endif::gcp[]
-ifndef::gcp[]
+endif::azure,aws[]
+ifndef::gcp,aws[]
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
 +
 If you select a cluster that has not been configured for Azure NetApp Files, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
 +
 If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, <<Manage a private cluster,follow these instructions>> to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
-endif::azure[]
-ifdef::gcp+azure[]
+endif::gcp,aws[]
+ifdef::gcp+azure+aws[]
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
 +
-If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud or Azure NetApp Files, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
+If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud, Azure NetApp Files, or Amazon Web Services, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
+endif::gcp+azure+aws[]
+ifdef::azure[]
 +
 If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, <<Manage a private cluster,follow these instructions>> to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
-endif::gcp+azure[]
+endif::azure[]
 //+
 //NOTE: Support for using Google Persistent Disk and Azure Managed Disks storage services is in initial preview status with this release.
 
@@ -118,6 +128,9 @@ ifdef::azure[]
 * Azure NetApp Files: Performance and resilience information
 * Azure Managed disks: No price, performance, or resilience information available
 endif::azure[]
+ifdef::aws[]
+* Amazon Elastic Block Store: No price, performance, or resilience information available
+* Amazon FSx: No price, performance, or resilience information available
 ====
 +
 Each storage class can utilize one of the following services:
@@ -129,7 +142,14 @@ ifdef::azure[]
 * https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^]
 * https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview[Azure managed disks^]
 endif::azure[]
+ifdef::aws[]
+* https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^]
+* https://docs.aws.amazon.com/fsx/index.html[Amazon FSx^]
+endif::aws[]
 +
+ifdef::aws[]
+Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web Services clusters].
+endif::aws[]
 ifndef::gcp[]
 Learn more about link:../learn/azure-storage.html[storage classes for AKS clusters].
 endif::gcp[]
@@ -137,7 +157,7 @@ ifndef::azure[]
 Learn more about link:../learn/choose-class-and-size.html[storage classes for GKE clusters].
 endif::azure[]
 ifdef::gcp+azure[]
-Learn more about link:../learn/choose-class-and-size.html[storage classes for GKE clusters] and link:../learn/azure-storage.html[storage classes for AKS clusters].
+Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web Services clusters], link:../learn/choose-class-and-size.html[storage classes for GKE clusters], and link:../learn/azure-storage.html[storage classes for AKS clusters].
 endif::gcp+azure[]
 //Each storage class utilizes https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^] or https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^].
 //+
