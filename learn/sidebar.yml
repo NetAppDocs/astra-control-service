@@ -11,7 +11,7 @@ entries:
     url: /learn/choose-class-and-size.html
   - title: Validated apps vs standard apps
     url: /learn/validated-vs-standard.html
-  - title: Defining a custom app
-    url: /learn/define-custom-app.html
+  - title: Understanding app management
+    url: /learn/app-management.html
   - title: User roles and namespaces
     url: /learn/user-roles-namespaces.html
