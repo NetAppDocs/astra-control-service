@@ -49,7 +49,7 @@ When Astra Control manages a cluster, it keeps track of the cluster's default st
 .What you'll need
 
 ifdef::aws[]
-* For Amazon Web Services, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-amazon-web-services.html#create-a-service-account[Learn how to set up a service account].
+* For Amazon Web Services, you should have the JSON file containing the credentials of the IAM user that created the cluster. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user[Learn how to create an IAM user].
 endif::aws[]
 ifdef::gcp[]
 * For GKE, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
@@ -72,9 +72,9 @@ Follow the prompts to add the cluster.
 
 . *Provider*: Select your cloud provider and then provide the required credentials.
 ifdef::aws[]
-.. *Amazon Web Services*: Provide details about your Amazon Web Services account by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
+.. *Amazon Web Services*: Provide details about your Amazon Web Services IAM user account by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
 +
-The JSON file should contain the output from the AWS CLI when you created the account. It can also include your subscription ID so it's automatically added to Astra Control. Otherwise, you need to manually enter the ID after providing the JSON.
+The JSON file should contain the credentials of the IAM user that created the cluster.
 endif::aws[]
 ifdef::azure[]
 .. *Microsoft Azure*: Provide details about your Azure service principal by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
@@ -94,6 +94,12 @@ Pay careful attention to the Eligible tab. If a warning appears, hover over the 
 +
 If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
 endif::azure,aws[]
+ifndef::azure,gcp[]
++
+Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
++
+If you select a cluster that has not been configured for Amazon Web Services, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
+endif::azure,gcp[]
 ifndef::gcp,aws[]
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
@@ -108,12 +114,7 @@ Pay careful attention to the Eligible tab. If a warning appears, hover over the 
 +
 If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud, Azure NetApp Files, or Amazon Web Services, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
 endif::gcp+azure+aws[]
-ifdef::azure[]
-+
-If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, <<Manage a private cluster,follow these instructions>> to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
-endif::azure[]
-//+
-//NOTE: Support for using Google Persistent Disk and Azure Managed Disks storage services is in initial preview status with this release.
+
 
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
@@ -131,7 +132,7 @@ ifdef::azure[]
 endif::azure[]
 ifdef::aws[]
 * Amazon Elastic Block Store: No price, performance, or resilience information available
-* Amazon FSx: No price, performance, or resilience information available
+* Amazon FSxN: No price, performance, or resilience information available
 endif::aws[]
 ====
 +
@@ -147,7 +148,7 @@ ifdef::azure[]
 endif::azure[]
 ifdef::aws[]
 * https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^]
-* https://docs.aws.amazon.com/fsx/index.html[Amazon FSx^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSxN^]
 endif::aws[]
 +
 ifndef::gcp,azure[]

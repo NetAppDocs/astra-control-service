@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: learn/aws-storage.html
 keywords: service level, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance
-summary: Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazon FSx as the storage backends for Elastic Kubernetes Service (EKS) clusters. You should understand how choosing a storage class and persistent volume size can help you meet your performance objectives.
+summary: Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazon FSxN as the storage backends for Elastic Kubernetes Service (EKS) clusters. You should understand how choosing a storage class and persistent volume size can help you meet your performance objectives.
 ---
 
 = Storage classes and PV size for AWS clusters
@@ -11,7 +11,7 @@ summary: Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazo
 :imagesdir: ../media/learn/
 
 [.lead]
-Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazon FSx as the storage backends for Elastic Kubernetes Service (EKS) clusters.
+Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazon FSxN as the storage backends for Elastic Kubernetes Service (EKS) clusters.
 
 == Service levels and storage classes
 

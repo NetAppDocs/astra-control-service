@@ -57,7 +57,7 @@ When you manage AKS clusters with Astra Control Service, persistent volumes are 
 endif::azure[]
 ifdef::aws[]
 === Amazon Web Services billing
-When you manage AWS clusters with Astra Control Service, persistent volumes are backed by EBS or FSx and backups of your apps are stored in an AWS bucket.
+When you manage AWS clusters with Astra Control Service, persistent volumes are backed by EBS or FSxN and backups of your apps are stored in an AWS bucket.
 
 * https://aws.amazon.com/eks/pricing/[Amazon EKS pricing calculator^]
 endif::aws[]
