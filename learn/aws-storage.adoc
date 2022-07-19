@@ -5,7 +5,7 @@ keywords: service level, storage class, storage classes, pv size, persistent vol
 summary: Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazon FSxN as the storage backends for Elastic Kubernetes Service (EKS) clusters. You should understand how choosing a storage class and persistent volume size can help you meet your performance objectives.
 ---
 
-= Storage classes and PV size for AWS clusters
+= Storage classes and performance for AWS clusters
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/learn/
@@ -13,20 +13,16 @@ summary: Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazo
 [.lead]
 Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazon FSxN as the storage backends for Elastic Kubernetes Service (EKS) clusters.
 
-== Service levels and storage classes
+== Elastic Block Store (EBS)
+When you use EBS as the storage backend for AWS clusters, you can configure some storage class parameters. For more information about what the parameters mean and how to configure them, see https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs[the Kubernetes documentation^].
 
-Azure NetApp Files supports three service levels: Ultra storage, Premium storage, and Standard storage. Each of these service levels are designed for different performance needs:
+You can use several different types of volumes with EBS:
 
-Ultra storage:: Provides up to 128 MiB/s of throughput per 1 TiB.
-Premium storage:: Provides up to 64 MiB/s of throughput per 1 TiB.
-Standard storage:: Provides up to 16 Mib/s of throughput per 1 TiB.
+* Solid state drives (SSD)
+* Hard disk drives (HDD)
+* Previous generation
 
-These service levels are an attribute of a capacity pool. You need to set up a capacity pool for each service level that you want to use with your Kubernetes clusters. link:../get-started/set-up-microsoft-azure-with-anf.html[Learn how to set up capacity pools].
+For more information on each type of volume and their performance, see https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html[the Amazon EBS documentation^]. For pricing information, see https://aws.amazon.com/ebs/pricing/[Amazon EBS pricing^].
 
-Astra Control Service uses these service levels as storage classes for your persistent volumes. When you add Kubernetes clusters to Astra Control Service, you're prompted to choose either Ultra, Premium, or Standard as the default storage class. The names of the storage classes are _netapp-anf-perf-ultra_, _netapp-anf-perf-premium_, and _netapp-anf-perf-standard_.
-
-https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Learn more about these service levels in the Azure NetApp Files docs^].
-
-=== Persistent volume size and performance
-
-As described above, the throughput for each service level is per 1 TiB of provisioned capacity. That means larger volumes provide better performance. So you should take both capacity and performance needs into consideration when provisioning volumes.
+== FSxN
+When you use FSxN as the storage backend for AWS clusters, I/O performance depends on the configuration of the filesystem and the characteristics of your workloads. For specific information on FSxN performance, see https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/performance.html[Amazon FSx for NetApp ONTAP performance^]. For pricing information, see https://aws.amazon.com/fsx/netapp-ontap/pricing/[Amazon FSx for NetApp ONTAP Pricing^].

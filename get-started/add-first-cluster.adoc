@@ -114,8 +114,6 @@ Pay careful attention to the Eligible tab. If a warning appears, hover over the 
 +
 If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud, Azure NetApp Files, or Amazon Web Services, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
 endif::gcp+azure+aws[]
-
-
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
 [NOTE]
