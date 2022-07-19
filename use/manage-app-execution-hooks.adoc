@@ -239,8 +239,7 @@ You can remove a script from the system if it is no longer needed and not used b
 NOTE: If the script is associated with one or more execution hooks, the *Delete* action is unavailable. To delete the script, first edit the associated execution hooks and associate them with a different script.
 
 == Create a custom execution hook
-You can create a custom execution hook for an app. You need to have Owner, Admin, or Member permissions to create execution hooks.
-// See link:execution-hook-examples.html[Execution hook examples^] for hook examples.
+You can create a custom execution hook for an app. See link:execution-hook-examples.html[Execution hook examples^] for hook examples. You need to have Owner, Admin, or Member permissions to create execution hooks.
 
 NOTE: When you create a custom shell script to use as an execution hook, remember to specify the appropriate shell at the beginning of the file, unless you are running specific commands or providing the full path to an executable.
 
