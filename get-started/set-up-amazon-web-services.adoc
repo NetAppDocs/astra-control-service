@@ -19,7 +19,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review Astra Control Service requirements for Amazon Web Services
 
 [role="quick-margin-para"]
-Ensure that clusters are healthy and running a supported Kubernetes version, that worker nodes are online and running Linxu or Windows, and more. <<EKS cluster requirements,Learn more about this step>>.
+Ensure that clusters are healthy and running a supported version of Kubernetes, that worker nodes are online and running Linux or Windows, and more. <<EKS cluster requirements,Learn more about this step>>.
 
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Create an Amazon account
 
@@ -70,9 +70,9 @@ Image type:: The image type for each worker node must be one of the following:
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
 
-Networking:: question
+//Networking:: question
 
-Private clusters:: question
+//Private clusters:: question
 
 
 == Create an Amazon account

@@ -21,7 +21,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review Astra Control Service requirements for Azure Kubernetes Service
 
 [role="quick-margin-para"]
-Ensure that clusters are healthy and running Kubernetes version 1.21.x to 1.23, that node pools are online and running *Linux*, and more. <<Azure Kubernetes Service cluster requirements,Learn more about this step>>.
+Ensure that clusters are healthy and running a supported version of Kubernetes, that node pools are online and running Linux, and more. <<Azure Kubernetes Service cluster requirements,Learn more about this step>>.
 
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Sign up for Microsoft Azure
 
@@ -47,7 +47,7 @@ By default, the buckets Astra Control Service uses to store Azure Kubernetes Ser
 
 A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service.
 
-Kubernetes version:: Clusters must be running Kubernetes version 1.21.x to 1.23.
+Kubernetes version:: Clusters must be running Kubernetes version 1.21 to 1.24.
 
 Image type:: The image type for all node pools must be Linux.
 
