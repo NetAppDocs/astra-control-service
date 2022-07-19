@@ -70,9 +70,9 @@ Image type:: The image type for each worker node must be one of the following:
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
 
-Networking::
+Networking:: question
 
-Private clusters::
+Private clusters:: question
 
 
 == Create an Amazon account
