@@ -114,7 +114,7 @@ TIP: As an example, you might want to set a backup policy for "maria" that has a
 +
 TIP: A label is a key/value pair you can assign to Kubernetes objects for identification. Labels make it easier to sort, organize, and find your Kubernetes objects. To learn more about Kubernetes labels, https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/[see the official Kubernetes documentation^].
 
-Before you begin, you should also understand link:../use/manage-apps.html#what-about-system-apps[managing standard and system apps]. For instructions on how to manage apps using the Astra Control API, see the link:https://docs.netapp.com/us-en/astra-automation/[Astra Automation and API information^].
+Before you begin, you should also understand link:../use/manage-apps.html#what-about-system-namespaces[managing standard and system namespaces]. For instructions on how to manage apps using the Astra Control API, see the link:https://docs.netapp.com/us-en/astra-automation/[Astra Automation and API information^].
 
 .App management options
 
@@ -167,12 +167,12 @@ NOTE: Select the *Show system namespaces* checkbox to reveal system namespaces t
 
 After the process completes, the application resources associated with the namespace appear in the namespace row.
 
-== What about system apps?
+== What about system namespaces?
 
-Astra Control also discovers the system apps running on a Kubernetes cluster. We don't show you these system apps by default because it's rare that you'd need to back them up.
+Astra Control also discovers system namespaces on a Kubernetes cluster. We don't show you these system namespaces by default because it's rare that you'd need to back up system app resources.
 
-You can display system apps from the Applications page by selecting the *Show system apps* check box under the Clusters filter in the toolbar.
+You can display system namespaces from the Namespaces tab for a selected cluster by selecting the *Show system namespaces* check box.
 
-image:acs_apps_system_apps3.png[A screenshot that shows the Show System Apps option that is available when you select All Clusters in the Applications screen.]
+image:acc_namespace_system.png[A screenshot that shows the *Show system namespaces* option that is available in the Namespaces tab.]
 
 TIP: Astra Control itself is not a standard app; it is a "system app." You should not try to manage Astra Control itself. Astra Control itself isn't shown by default for management.
