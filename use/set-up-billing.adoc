@@ -55,6 +55,13 @@ When you manage AKS clusters with Astra Control Service, persistent volumes are 
 
 * https://azure.microsoft.com/en-us/pricing/details/storage/blobs[View pricing details for Microsoft Azure Blob storage^].
 endif::azure[]
+ifdef::aws[]
+=== Amazon Web Services billing
+When you manage AWS clusters with Astra Control Service, persistent volumes are backed by EBS or FSxN and backups of your apps are stored in an AWS bucket.
+
+* https://aws.amazon.com/eks/pricing/[Amazon EKS pricing calculator^]
+endif::aws[]
+
 
 == Important notes
 

@@ -93,6 +93,10 @@ endif::gcp[]
 ifdef::azure[]
 * link:../learn/azure-storage.html[Learn about storage classes for AKS clusters]
 endif::azure[]
+ifdef::aws[]
+* link:../learn/aws-storage.html[Learn about storage classes for AWS clusters]
+endif::aws[]
+
 
 == Manage apps
 

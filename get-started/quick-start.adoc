@@ -25,6 +25,15 @@ ifdef::gcp[]
 +
 link:set-up-google-cloud.html[Learn more about Google Cloud requirements].
 endif::gcp[]
+ifdef::aws[]
+.. Amazon Web Services:
+** Review Amazon Web Services cluster requirements.
+** Create an Amazon account.
+** Install the Amazon Web Services CLI.
+** Create an IAM user.
+** Create and attach a permissions policy.
+** Save the credentials for the IAM user.
+endif::aws[]
 ifdef::azure[]
 .. Microsoft Azure:
 ** Review Azure Kubernetes Service cluster requirements for the storage backend you plan to use.
