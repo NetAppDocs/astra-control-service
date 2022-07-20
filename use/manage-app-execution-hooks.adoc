@@ -60,10 +60,7 @@ Since execution hooks often reduce or completely disable the functionality of th
 If you start a backup or snapshot operation with associated execution hooks but then cancel it, the hooks are still allowed to run if the backup or snapshot operation has already begun. This means that a post-backup execution hook cannot assume that the backup was completed.
 ====
 
-=== Execution hook interaction with canceled backups
-If you start a backup or snapshot operation with associated execution hooks but then cancel it, the hooks are still allowed to run if the backup or snapshot operation has already begun. This means that a post-backup execution hook cannot assume that the backup was completed.
-
-Depending on when a backup is cancelled and IF the backup operation includes a snapshot, determines which hooks will run and which will not.  The pre-backup and post-backup hooks will always run.  If the backup includes a new snapshot and the snapshot has started, the pre and post snapshots will be run.  If the backup is cancelled prior to the snapshot starting, the pre and post snapshot hooks will not run.
+//=== Execution hook interaction with canceled backups
 
 === Order of execution
 When a data protection operation is run, execution hook events take place in the following order:
@@ -89,6 +86,15 @@ Use the following table to help determine if a custom execution hook will run fo
 Note that all high-level app operations consist of running one of the basic operations of snapshot, backup, or restore. Depending on the scenario, a clone operation can consists of various combinations of these operations, so what execution hooks a clone operation runs will vary.
 
 In-place restore operations require an existing snapshot or backup, so these operations don't run snapshot or backup hooks.
+
+[NOTE]
+====
+If you start but then cancel a backup that includes a snapshot and there are associated execution hooks, some hooks might run, and others might not. This means that a post-backup execution hook cannot assume that the backup was completed. Keep in mind the following points for cancelled backups with associated execution hooks:
+
+* The pre-backup and post-backup hooks will always run.
+* If the backup includes a new snapshot and the snapshot has started, the pre and post snapshots will run.
+* If the backup is cancelled prior to the snapshot starting, the pre and post snapshot hooks will not run.
+====
 
 |===
 |Scenario |Operation |Existing snapshot |Existing backup |Namespace |Cluster |Snapshot hooks run |Backup hooks run |Restore hooks run
