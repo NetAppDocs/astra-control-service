@@ -91,9 +91,9 @@ In-place restore operations require an existing snapshot or backup, so these ope
 ====
 If you start but then cancel a backup that includes a snapshot and there are associated execution hooks, some hooks might run, and others might not. This means that a post-backup execution hook cannot assume that the backup was completed. Keep in mind the following points for cancelled backups with associated execution hooks:
 
-* The pre-backup and post-backup hooks will always run.
-* If the backup includes a new snapshot and the snapshot has started, the pre and post snapshots will run.
-* If the backup is cancelled prior to the snapshot starting, the pre and post snapshot hooks will not run.
+* The pre-backup and post-backup hooks are always run.
+* If the backup includes a new snapshot and the snapshot has started, the pre-snapshot and post-snapshot hooks are run.
+* If the backup is cancelled prior to the snapshot starting, the pre-snapshot and post-snapshot hooks are not run.
 ====
 
 |===
