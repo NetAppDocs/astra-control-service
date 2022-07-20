@@ -125,10 +125,6 @@ Astra Trident will not be uninstalled from a cluster when you remove it from Ast
 
 Astra Control doesn't deploy applications. Applications must be deployed outside of Astra Control.
 
-*My application is not showing up on the Discovered Apps list. What can I check to identify the problem?*
-
-When applications are not listed in *Discovered Apps*, check the status and health of the Kubernetes pod by running `kubectl get pod -A |grep [pod name]`. If the pods are healthy and running, check to see if the application is listed under *Ignored Apps*.
-
 *Can Astra Control manage an application that is on non-NetApp storage?*
 
 No. While Astra Control can discover applications that are using non-NetApp storage, it can't manage an application that's using non-NetApp storage.
