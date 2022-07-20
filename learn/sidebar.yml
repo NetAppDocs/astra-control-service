@@ -9,8 +9,8 @@ entries:
   - title: Storage for GKE clusters
     flavor: gcp
     url: /learn/choose-class-and-size.html
-  - title: Validated apps vs standard apps
-    url: /learn/validated-vs-standard.html
+  #- title: Validated apps vs standard apps
+  #  url: /learn/validated-vs-standard.html
   - title: Understanding app management
     url: /learn/app-management.html
   - title: User roles and namespaces
