@@ -27,15 +27,13 @@ link:../get-started/set-up-amazon-web-services.html[Set up Amazon Web Services].
 endif::aws[]
 
 === Enhanced execution hooks
-Astra Control now supports the following types of execution hooks:
+In addition to pre- and post-snapshot execution hooks, you can now configure the following types of execution hooks:
 
-* Pre-snapshot
-* Post-snapshot
 * Pre-backup
 * Post-backup
 * Post-restore
 
-You can also now assign the same script for many different hooks, and use the Astra Control web UI to determine which execution hooks are using a certain script. The Activity log now records more detailed information about hook failure events.
+You can also now assign the same script to many different hooks, and use the Astra Control web UI to determine which execution hooks are using a certain script. The Activity log now records more detailed information about hook failure events.
 
 link:../use/manage-app-execution-hooks.html[Manage app execution hooks].
 
