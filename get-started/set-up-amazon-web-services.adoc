@@ -74,6 +74,9 @@ Cluster state:: Clusters must be running in a healthy state and have at least on
 
 //Private clusters:: question
 
+External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.19 and 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
+
+CSI drivers:: Clusters must have the appropriate CSI drivers installed.
 
 == Create an Amazon account
 
