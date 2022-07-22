@@ -12,6 +12,39 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
+== 4 Aug 2022
+This release includes the following new features and enhancements.
+
+=== Flexible app data management
+
+
+ifdef::aws[]
+=== Support for Amazon Web Services clusters
+Astra Control Service can now manage apps that are running on managed clusters hosted in Amazon Elastic Kubernetes Service. You can configure the clusters to use Amazon Elastic Block Store or Amazon FSxN as the storage backend.
+
+link:../get-started/set-up-amazon-web-services.html[Set up Amazon Web Services].
+
+endif::aws[]
+
+=== Enhanced execution hooks
+Astra Control now supports the following types of execution hooks:
+
+* Pre-snapshot
+* Post-snapshot
+* Pre-backup
+* Post-backup
+* Post-restore
+
+You can also now assign the same script for many different hooks, and use the Astra Control web UI to determine which execution hooks are using a certain script. The Activity log now records more detailed information about hook failure events.
+
+link:../use/manage-app-execution-hooks.html[Manage app execution hooks].
+
+ifdef::azure[]
+=== Azure Marketplace support
+You can now upgrade your Astra Control Service payment plan using Azure Marketplace.
+endif::azure[]
+
+
 == 26 Apr 2022
 This release includes the following new features and enhancements.
 
