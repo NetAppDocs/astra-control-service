@@ -260,7 +260,7 @@ Otherwise, you'll need to enter the subscription ID in Astra Control Service whe
 az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
 az group list --subscription SUBSCRIPTION-ID
 az aks list --subscription SUBSCRIPTION-ID
-az storage container list --subscription SUBSCRIPTION-ID
+az storage container list --account-name STORAGE-ACCOUNT-NAME
 +
 .Resource group scope
 [source,azurecli]
