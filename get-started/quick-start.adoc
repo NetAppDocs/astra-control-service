@@ -33,6 +33,8 @@ ifdef::aws[]
 ** Create an IAM user.
 ** Create and attach a permissions policy.
 ** Save the credentials for the IAM user.
++
+link:set-up-amazon-web-services.html[Learn more about Amazon Web Services requirements].
 endif::aws[]
 ifdef::azure[]
 .. Microsoft Azure:
