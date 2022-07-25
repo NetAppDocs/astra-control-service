@@ -22,7 +22,7 @@ An operator and the app it deploys must use the same namespace; you might need t
 
 * <<App clones fail after an application is deployed with a set storage class>>
 //* <<App with user-defined label goes into "removed" state>>
-
+* <<Unable to define an app on a namespace that has been deleted and recreated>>
 .Backup, restore, and clone
 
 * <<Restore of an app results in PV size larger than original PV>>
@@ -56,6 +56,9 @@ Cloning an application with an explicitly set storage class to a cluster that do
 //== App with user-defined label goes into "removed" state
 //ASTRACTL-9643/DOC-3415/Q2
 //If you define an app with a non-existent k8s label, Astra Control Center will create, manage, and then immediately remove the app. To avoid this, add the k8s label to pods and resources after the app is managed by Astra Control Center.
+
+== Unable to define an app on a namespace that has been deleted and recreated
+If you define an application with a namespace, delete the namespace, and then reinstall the app in the same namespace, the operation fails with a 409 error code. To define the app using the recreated namespace, delete the old application instance first.
 
 == Restore of an app results in PV size larger than original PV
 // DOC-3562/ASTRACTL-9560/Q2 and PI4
