@@ -128,10 +128,13 @@ Create a policy with the required permissions for Astra Control Service to inter
                 "iam:SimulatePrincipalPolicy",
                 "s3:ListAllMyBuckets",
                 "eks:DescribeCluster",
+                "eks:ListNodegroups",
+                "eks:DescribeNodegroup",
                 "eks:ListClusters",
                 "iam:GetUser",
                 "s3:DeleteObject",
-                "s3:DeleteBucket"
+                "s3:DeleteBucket",
+                "autoscaling:DescribeAutoScalingGroups"
             ],
             "Resource": "*"
         }
