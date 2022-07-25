@@ -71,12 +71,15 @@ When a data protection operation is run, execution hook events take place in the
 . Any applicable custom post-operation execution hooks are run on the appropriate containers. You can create and run as many custom post-operation hooks as you need, but the order of execution of these hooks after the operation is neither guaranteed nor configurable.
 //. Any applicable NetApp-provided default post-snapshot execution hooks are run on the appropriate containers.
 
-If you create multiple pre-operation hooks of the same type (for example, snapshot), the order of execution of those hooks is not guaranteed. However, order of execution of hooks of different types is guaranteed. For example, the execution order of a configuration that has hooks of different types would look like this:
+If you create multiple execution hooks of the same type (for example, pre-snapshot), the order of execution of those hooks is not guaranteed. However, the order of execution of hooks of different types is guaranteed. For example, the order of execution of a configuration that has all five different types of hooks would look like this:
 
-. Pre-backup
-. Pre-snapshot
-. Post-snapshot
-. Post-backup
+. Pre-backup hooks executed
+. Pre-snapshot hooks executed
+. Post-snapshot hooks executed
+. Post-backup hooks executed
+. Post-restore hooks executed
+
+You can see an example of this configuration in scenario number 2 from the table in <<Determine whether a hook will run>>.
 
 NOTE: You should always test your execution hook scripts before enabling them in a production environment. You can use the 'kubectl exec' command to conveniently test the scripts. After you enable the execution hooks in a production environment, test the resulting snapshots and backups to ensure they are consistent. You can do this by cloning the app to a temporary namespace, restoring the snapshot or backup, and then testing the app.
 
