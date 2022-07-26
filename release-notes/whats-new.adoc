@@ -36,7 +36,7 @@ In addition to pre- and post-snapshot execution hooks, you can now configure the
 * Post-backup
 * Post-restore
 
-//You can also now assign the same script to many different hooks, and use the Astra Control web UI to determine which execution hooks are using a certain script. The Activity log now records more detailed information about hook failure events.
+Among other improvements, Astra Control now supports using the same script for multiple execution hooks.
 
 NOTE: The NetApp-provided default pre- and post-snapshot execution hooks for specific applications have been removed in this release. If you upgrade to this release and do not provide your own execution hooks for snapshots, Astra Control will take crash-consistent snapshots only.
 
