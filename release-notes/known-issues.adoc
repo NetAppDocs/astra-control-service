@@ -23,6 +23,7 @@ An operator and the app it deploys must use the same namespace; you might need t
 * <<App clones fail after an application is deployed with a set storage class>>
 //* <<App with user-defined label goes into "removed" state>>
 * <<Unable to define an app on a namespace that has been deleted and recreated>>
+
 .Backup, restore, and clone
 
 * <<Restore of an app results in PV size larger than original PV>>
