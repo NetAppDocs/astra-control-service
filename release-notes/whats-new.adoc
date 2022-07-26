@@ -15,7 +15,10 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 == 4 Aug 2022
 This release includes the following new features and enhancements.
 
-=== Flexible app data management
+=== Improved app management
+Improved app management enables you to directly define and manage the apps you care about.
+
+link:../use/manage-apps.html#manage-apps[Manage apps].
 
 
 ifdef::aws[]
@@ -33,7 +36,7 @@ In addition to pre- and post-snapshot execution hooks, you can now configure the
 * Post-backup
 * Post-restore
 
-You can also now assign the same script to many different hooks, and use the Astra Control web UI to determine which execution hooks are using a certain script. The Activity log now records more detailed information about hook failure events.
+//You can also now assign the same script to many different hooks, and use the Astra Control web UI to determine which execution hooks are using a certain script. The Activity log now records more detailed information about hook failure events.
 
 NOTE: The NetApp-provided default pre- and post-snapshot execution hooks for specific applications have been removed in this release. If you upgrade to this release and do not provide your own execution hooks for snapshots, Astra Control will take crash-consistent snapshots only.
 
