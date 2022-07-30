@@ -46,7 +46,7 @@ Consider the following when planning execution hooks for your apps.
 
 * An execution hook must use a script to perform actions. Many execution hooks can reference the same script.
 * Astra Control requires the scripts that execution hooks use to be written in the format of executable shell scripts.
-* Script size is limited to 128KB.
+* Script size is limited to 96KB.
 * Astra Control uses execution hook settings and any matching criteria to determine which hooks are applicable to a snapshot, backup, or restore operation.
 * All execution hook failures are soft failures; other hooks and the data protection operation are still attempted even if a hook fails. However, when a hook fails, a warning event is recorded in the *Activity* page event log.
 * To create, edit, or delete execution hooks, you must be a user with Owner, Admin, or Member permissions.
