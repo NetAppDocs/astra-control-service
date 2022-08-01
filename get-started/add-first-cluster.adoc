@@ -29,6 +29,7 @@ endif::gcp,aws[]
 
 ifdef::gcp+azure+aws[]
 If you don't have a cluster yet, create one that meets the requirements of one of the following providers:
+
 * link:set-up-microsoft-azure-with-anf.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure NetApp Files]
 * link:set-up-microsoft-azure-with-amd.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure managed disks]
 * link:set-up-google-cloud.html#gke-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)]
