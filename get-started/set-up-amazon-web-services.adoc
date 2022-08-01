@@ -58,7 +58,7 @@ Save the credentials for the IAM user so that you can import the credentials in 
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Optional: Configure Astra Trident for Amazon FSx for NetApp ONTAP
 
 [role="quick-margin-para"]
-Coinfigure Astra Trident if you plan to use the FSxN storage backend service.
+Astra Control Service does not install Astra Trident automatically for EKS clusters. Configure Astra Trident if you plan to use the FSxN storage backend service.
 
 [role="quick-margin-para"]
 <<Optional: Configure Astra Trident for Amazon FSx for NetApp ONTAP,Read step-by-step instructions>>.
