@@ -65,6 +65,7 @@ When Astra Control manages a cluster, it keeps track of the cluster's default st
 
 ifdef::aws[]
 * For Amazon Web Services, you should have the JSON file containing the credentials of the IAM user that created the cluster. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user[Learn how to create an IAM user].
+* Astra Trident is required for Amazon FSx for NetApp ONTAP. If you plan to use Amazon FSx for NetApp ONTAP as a storage backend for your EKS cluster, ensure you have completed link:set-up-amazon-web-services.html#optional-configure-astra-trident-for-amazon-fsx-for-netapp-ontap[step number 7] of the setup instructions.
 endif::aws[]
 ifdef::gcp[]
 * For GKE, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
