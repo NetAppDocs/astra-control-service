@@ -23,7 +23,7 @@ link:../use/manage-apps.html#manage-apps[Manage apps].
 
 ifdef::aws[]
 === Support for Amazon Web Services clusters
-Astra Control Service can now manage apps that are running on managed clusters hosted in Amazon Elastic Kubernetes Service. You can configure the clusters to use Amazon Elastic Block Store or Amazon FSxN as the storage backend.
+Astra Control Service can now manage apps that are running on managed clusters hosted in Amazon Elastic Kubernetes Service. You can configure the clusters to use Amazon Elastic Block Store or Amazon FSx for NetApp ONTAP as the storage backend.
 
 link:../get-started/set-up-amazon-web-services.html[Set up Amazon Web Services].
 

@@ -81,7 +81,7 @@ ifdef::azure[]
 endif::azure[]
 ifdef::aws[]
 +
-** For Amazon Web Services clusters, Astra Control Service uses https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^] or https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSxN^] as the storage backend for your persistent volumes.
+** For Amazon Web Services clusters, Astra Control Service uses https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^] or https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for NetApp ONTAP^] as the storage backend for your persistent volumes.
 
 * You add your first Kubernetes compute to Astra Control Service. Astra Control Service then does the following:
 

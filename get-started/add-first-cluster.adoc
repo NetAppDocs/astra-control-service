@@ -137,7 +137,7 @@ ifdef::azure[]
 endif::azure[]
 ifdef::aws[]
 * Amazon Elastic Block Store: No price, performance, or resilience information available
-* Amazon FSxN: No price, performance, or resilience information available
+* Amazon FSx for NetApp ONTAP: No price, performance, or resilience information available
 endif::aws[]
 ====
 +
@@ -153,7 +153,7 @@ ifdef::azure[]
 endif::azure[]
 ifdef::aws[]
 * https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^]
-* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSxN^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for NetApp ONTAP^]
 endif::aws[]
 +
 ifndef::gcp,azure[]
