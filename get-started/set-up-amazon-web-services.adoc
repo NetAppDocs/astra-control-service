@@ -55,6 +55,13 @@ Save the credentials for the IAM user so that you can import the credentials in 
 [role="quick-margin-para"]
 <<Save the credentials for the IAM user,Read step-by-step instructions>>.
 
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] Optional: Configure Astra Trident for Amazon FSx for NetApp ONTAP
+
+[role="quick-margin-para"]
+Coinfigure Astra Trident if you plan to use the FSxN storage backend service.
+
+[role="quick-margin-para"]
+<<Optional: Configure Astra Trident for Amazon FSx for NetApp ONTAP,Read step-by-step instructions>>.
 
 
 
@@ -64,9 +71,8 @@ A Kubernetes cluster must meet the following requirements so you can discover an
 
 Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.20 to 1.22.
 
-Image type:: The image type for each worker node must be one of the following:
-* Linux
-* Windows (self-managed)
+Image type:: The image type for each worker node must be Linux.
+//* Windows (self-managed)
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
 
@@ -74,9 +80,15 @@ Cluster state:: Clusters must be running in a healthy state and have at least on
 
 //Private clusters:: question
 
-External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.19 and 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
+External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. To check to see if a volume snapshot controller is installed, use the following command:
+----
+kubectl api-resources | grep VolumeSnapshot
+----
+If a controller is installed, the command returns a 3-line response. If no controller is installed, see
+https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^] for instructions.
 
-CSI drivers:: Clusters must have the appropriate CSI drivers installed.
+CSI drivers:: If you use the Amazon Elastic Block Store (EBS) storage backend, you need to install the CSI driver for EBS. For instructions, see https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html[Amazon EBS CSI driver^].
+
 
 == Create an Amazon account
 
@@ -165,3 +177,8 @@ aws iam create-access-key --user-name <IAM-USER-NAME> > credential.json
 
 .Result
 The `credential.json` file is created, and you can import the credentials in to Astra Control Service.
+
+== Optional: Configure Astra Trident for Amazon FSx for NetApp ONTAP
+If you use the Amazon FSx for NetApp ONTAP (FSxN) storage backend, you need to install Astra Trident. For instructions, see https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident deployment overview^].
+
+For details about using Astra Trident with FSxN, see https://docs.netapp.com/us-en/trident/trident-use/trident-fsx.html[Use Astra Trident with Amazon FSx for NetApp ONTAP^].
