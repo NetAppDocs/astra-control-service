@@ -71,14 +71,14 @@ homepage:
       links:
         - title: Astra Control Service videos
           url: /get-started/videos.html
-        - title: Deploy Jenkins
-          url: /solutions/jenkins-deploy-from-helm-chart.html
-        - title: Deploy MariaDB
-          url: /solutions/mariadb-deploy-from-helm-chart.html
-        - title: Deploy MySQL
-          url: /solutions/mysql-deploy-from-helm-chart.html
-        - title: Deploy Postgres
-          url: /solutions/postgres-deploy-from-helm-chart.html
+        # - title: Deploy Jenkins
+        #  url: /solutions/jenkins-deploy-from-helm-chart.html
+        #- title: Deploy MariaDB
+        #  url: /solutions/mariadb-deploy-from-helm-chart.html
+        #- title: Deploy MySQL
+        #  url: /solutions/mysql-deploy-from-helm-chart.html
+        #- title: Deploy Postgres
+        #  url: /solutions/postgres-deploy-from-helm-chart.html
     - title: Astra Control Center
       links:
         - title: Intro to Astra Control Center
