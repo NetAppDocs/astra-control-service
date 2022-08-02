@@ -53,6 +53,8 @@ endif::gcp+azure+aws[]
 
 After you log in to Astra Control Service, your first step is to start managing your clusters.
 
+If no volume snapshot class is configured on the cluster when you add it, Astra Control Service attempts to install one with a default configuration. 
+
 [NOTE]
 ======================
 When Astra Control manages a cluster, it keeps track of the cluster's default storage class. If you change the storage class using `kubectl` commands, Astra Control reverts the change. To change the default storage class in a cluster managed by Astra Control, use one of the following methods:
