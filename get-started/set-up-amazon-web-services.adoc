@@ -74,19 +74,20 @@ Kubernetes version:: A cluster must be running a Kubernetes version in the range
 Image type:: The image type for each worker node must be Linux.
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
-
+////
 External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. To check to see if a volume snapshot controller is installed, use the following command:
 ----
 kubectl api-resources | grep VolumeSnapshot
 ----
 If a controller is installed, the command returns a 3-line response. If no controller is installed, see
 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^] for instructions.
+////
 
 CSI drivers for Amazon Elastic Block Store (EBS):: If you use the Amazon EBS storage backend, you need to install the CSI driver for EBS (it is not installed automatically).
 //For instructions, see https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html[Amazon EBS CSI driver^].
 .Instructions
 [%collapsible]
-====
+========
 .Install the CSI driver
 
 . Create the Amazon EBS CSI driver IAM role for service accounts. Follow the instructions https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html[in the Amazon documentation^].
@@ -152,7 +153,33 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 ----
 --
 ====
-====
+
+.Configure the EBS storage class
+
+. Clone the Amazon EBS Container Storage Interface (CSI) driver GitHub repository to your system.
++
+----
+git clone https://github.com/kubernetes-sigs/aws-ebs-csi-driver.git
+----
+. Navigate to the dynamic-provisioning example directory.
++
+----
+cd aws-ebs-csi-driver/examples/kubernetes/dynamic-provisioning/
+----
+. Deploy the ebs-sc storage class, ebs-claim persistent volume claim, and app sample application from the manifests directory.
++
+----
+kubectl apply -f manifests/
+----
+. Describe the ebs-sc storage class.
++
+----
+kubectl describe storageclass ebs-sc
+----
++
+You should see output describing the storage class attributes.
+
+========
 
 Configure Astra Trident for Amazon FSx for NetApp ONTAP::
 If you use the Amazon FSx for NetApp ONTAP storage backend, you need to install Astra Trident. For instructions, see https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident deployment overview^].
