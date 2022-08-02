@@ -83,6 +83,11 @@ If a controller is installed, the command returns a 3-line response. If no contr
 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^] for instructions.
 ////
 
+Astra Trident for Amazon FSx for NetApp ONTAP::
+If you use the Amazon FSx for NetApp ONTAP storage backend, you need to install Astra Trident. For instructions, see https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident deployment overview^].
+
+For details about using Astra Trident with FSx for NetApp ONTAP, see https://docs.netapp.com/us-en/trident/trident-use/trident-fsx.html[Use Astra Trident with Amazon FSx for NetApp ONTAP^].
+
 CSI drivers for Amazon Elastic Block Store (EBS):: If you use the Amazon EBS storage backend, you need to install the CSI driver for EBS (it is not installed automatically).
 //For instructions, see https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html[Amazon EBS CSI driver^].
 //.Instructions
@@ -181,12 +186,6 @@ kubectl describe storageclass ebs-sc
 You should see output describing the storage class attributes.
 
 ========
-
-Configure Astra Trident for Amazon FSx for NetApp ONTAP::
-If you use the Amazon FSx for NetApp ONTAP storage backend, you need to install Astra Trident. For instructions, see https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident deployment overview^].
-
-For details about using Astra Trident with FSx for NetApp ONTAP, see https://docs.netapp.com/us-en/trident/trident-use/trident-fsx.html[Use Astra Trident with Amazon FSx for NetApp ONTAP^].
-
 
 == Create an Amazon account
 
