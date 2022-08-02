@@ -71,13 +71,8 @@ A Kubernetes cluster must meet the following requirements so you can discover an
 Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.20 to 1.22.
 
 Image type:: The image type for each worker node must be Linux.
-//* Windows (self-managed)
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
-
-//Networking:: question
-
-//Private clusters:: question
 
 External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. To check to see if a volume snapshot controller is installed, use the following command:
 ----
@@ -86,7 +81,96 @@ kubectl api-resources | grep VolumeSnapshot
 If a controller is installed, the command returns a 3-line response. If no controller is installed, see
 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^] for instructions.
 
-CSI drivers:: If you use the Amazon Elastic Block Store (EBS) storage backend, you need to install the CSI driver for EBS. For instructions, see https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html[Amazon EBS CSI driver^].
+CSI drivers for Amazon Elastic Block Store (EBS):: If you use the Amazon EBS storage backend, you need to install the CSI driver for EBS (it is not installed automatically).
+//For instructions, see https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html[Amazon EBS CSI driver^].
+.Instructions
+[%collapsible]
+====
+.Install the CSI driver
+
+. Create the Amazon EBS CSI driver IAM role for service accounts. Follow the instructions https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html[in the Amazon documentation^].
+. The Amazon EBS CSI driver isn't installed when you first create a cluster. To use the driver, you must add it as an Amazon EKS add-on or as a self-managed add-on. Do one of the following:
++
+* Add the driver as an Amazon EKS add-on. See https://docs.aws.amazon.com/eks/latest/userguide/managing-ebs-csi.html[Managing the Amazon EBS CSI driver as an Amazon EKS add-on^].
+* Add the driver as a self-managed add-on. See https://github.com/kubernetes-sigs/aws-ebs-csi-driver[Amazon EBS Container Storage Interface (CSI) driver^].
+
+.Install an external snapshotter
+
+. Create volume snapshot CRDs.
++
+For Kubernetes 1.20 and above, use v1 snapshot CRDs with snapshot components of v5.0 or above. For Kubernetes 1.19, use v1beta1 with v3.0.3 snapshot components.
++
+[role="tabbed-block"]
+====
+.v5.0 components
+--
+[source,yaml]
+----
+$ cat snapshot-setup.sh
+#!/bin/bash
+# Create volume snapshot CRDs
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+----
+--
+.v3.0.3 components
+--
+[source,yaml]
+----
+$ cat snapshot-setup.sh
+#!/bin/bash
+# Create volume snapshot CRDs
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+----
+--
+====
+
+. Create the snapshot controller in the desired namespace. Edit the YAML manifests below to modify namespace.
++
+For Kubernetes 1.20 and above use v5.0 or above. For Kubernetes version 1.19 use v3.0.3
++
+NOTE: Don’t create a snapshot controller if setting up on-demand volume snapshots in a GKE environment. GKE uses a built-in, hidden snapshot-controller.
+
++
+[role="tabbed-block"]
+====
+.v5.0 controller
+--
+[source,yaml]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+----
+--
+.v3.0.3 controller
+--
+[source,yaml]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+----
+--
+====
+
+
+
+.Install and run a sample application
+
+.
+
+
+
+
+
+====
+
+Configure Astra Trident for Amazon FSx for NetApp ONTAP::
+If you use the Amazon FSx for NetApp ONTAP storage backend, you need to install Astra Trident. For instructions, see https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident deployment overview^].
+
+For details about using Astra Trident with FSx for NetApp ONTAP, see https://docs.netapp.com/us-en/trident/trident-use/trident-fsx.html[Use Astra Trident with Amazon FSx for NetApp ONTAP^].
 
 
 == Create an Amazon account
@@ -177,8 +261,3 @@ aws iam create-access-key --user-name <IAM-USER-NAME> > credential.json
 
 .Result
 The `credential.json` file is created, and you can import the credentials in to Astra Control Service.
-
-== Optional: Configure Astra Trident for Amazon FSx for NetApp ONTAP
-If you use the Amazon FSx for NetApp ONTAP storage backend, you need to install Astra Trident. For instructions, see https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident deployment overview^].
-
-For details about using Astra Trident with FSx for NetApp ONTAP, see https://docs.netapp.com/us-en/trident/trident-use/trident-fsx.html[Use Astra Trident with Amazon FSx for NetApp ONTAP^].
