@@ -31,13 +31,13 @@ If you don't already have an Amazon account, you need to create one so that you 
 [role="quick-margin-para"]
 Install the AWS CLI so that you can manage AWS from the command line. <<Install the Amazon Web Services CLI,Follow step-by-step instructions>>.
 
-=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Create an IAM user
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Optional: Create an IAM user
 
 [role="quick-margin-para"]
-Create an Amazon Identity and Access Management (IAM) user.
+Create an Amazon Identity and Access Management (IAM) user. You can also skip this step and use an existing IAM user with Astra Control Service.
 
 [role="quick-margin-para"]
-<<Create an IAM user,Read step-by-step instructions>>.
+<<Optional: Create an IAM user,Read step-by-step instructions>>.
 
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Create and attach a permissions policy
 
@@ -106,8 +106,8 @@ Install the AWS CLI so that you can manage AWS resources from the command line.
 
 . Go to https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html[Getting started with the AWS CLI^] and follow the instructions to install the CLI.
 
-== Create an IAM user
-Create an IAM user so that you can use and manage AWS services and resources with increased security.
+== Optional: Create an IAM user
+Create an IAM user so that you can use and manage AWS services and resources with increased security. You can also skip this step, and use an existing IAM user with Astra Control Service.
 
 .Step
 
@@ -157,18 +157,19 @@ Create a policy with the required permissions for Astra Control Service to inter
 ----
 POLICY_ARN=$(aws iam create-policy  --policy-name <policy-name> --policy-document file://policy.json  --query='Policy.Arn' --output=text)
 ----
-. Attach the policy to the IAM user. Replace `<IAM-USER-NAME>` with the user name of the IAM user you created:
+. Attach the policy to the IAM user. Replace `<IAM-USER-NAME>` with either the user name of the IAM user you created, or an existing IAM user:
 +
 ----
 aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
 ----
 
 == Save the credentials for the IAM user
-Save the credentials for the IAM user so that you can make Astra Control Service aware of the new user. Make sure that the account whose credentials you save is the same account used to create the cluster.
+Save the credentials for the IAM user so that you can make Astra Control Service aware of the user.
+//Make sure that the account whose credentials you save is the same account used to create the cluster.
 
 .Steps
 
-. Download the credentials. Replace `<IAM-USER-NAME>` with the user name of the IAM user you created:
+. Download the credentials. Replace `<IAM-USER-NAME>` with the user name of the IAM user you want to use:
 +
 ----
 aws iam create-access-key --user-name <IAM-USER-NAME> > credential.json
