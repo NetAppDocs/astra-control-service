@@ -86,6 +86,7 @@ https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more 
 CSI drivers for Amazon Elastic Block Store (EBS):: If you use the Amazon EBS storage backend, you need to install the CSI driver for EBS (it is not installed automatically).
 //For instructions, see https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html[Amazon EBS CSI driver^].
 .Instructions
+
 [%collapsible]
 ========
 .Install the CSI driver
