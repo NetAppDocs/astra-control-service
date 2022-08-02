@@ -20,6 +20,8 @@ A _backup_ is stored on object storage in the cloud. A backup can be slower to t
 
 CAUTION: _You can't be fully protected until you have a recent backup_. This is important because backups are stored in an object store away from the persistent volumes. If a failure or accident damages the cluster and its persistent storage, then you need a backup to recover. A snapshot wouldn't enable you to recover.
 
+NOTE: If you perform a snapshot or backup, but the operation fails with the error "The resource wasn't created because of an internal server issue", check to make sure the storage backend you are using has the correct drivers installed. Some storage backends need Container Storage Interface (CSI) drivers, while others need an external snapshot controller.
+
 You can do the following tasks related to protecting your app data:
 
 * <<Configure a protection policy>>
