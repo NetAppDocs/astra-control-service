@@ -172,10 +172,11 @@ git clone https://github.com/kubernetes-sigs/aws-ebs-csi-driver.git
 ----
 cd aws-ebs-csi-driver/examples/kubernetes/dynamic-provisioning/
 ----
-. Deploy the ebs-sc storage class, ebs-claim persistent volume claim, and app sample application from the manifests directory.
+. Deploy the ebs-sc storage class and ebs-claim persistent volume claim from the manifests directory.
 +
 ----
-kubectl apply -f manifests/
+kubectl apply -f manifests/storageclass.yaml
+kubectl apply -f manifests/claim.yaml
 ----
 . Describe the ebs-sc storage class.
 +
