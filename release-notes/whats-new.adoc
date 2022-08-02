@@ -38,7 +38,7 @@ In addition to pre- and post-snapshot execution hooks, you can now configure the
 
 Among other improvements, Astra Control now supports using the same script for multiple execution hooks.
 
-NOTE: The NetApp-provided default pre- and post-snapshot execution hooks for specific applications have been removed in this release. If you upgrade to this release and do not provide your own execution hooks for snapshots, Astra Control will take crash-consistent snapshots only.
+NOTE: The NetApp-provided default pre- and post-snapshot execution hooks for specific applications have been removed in this release. If you upgrade to this release and do not provide your own execution hooks for snapshots, Astra Control will take crash-consistent snapshots only. Visit the https://github.com/NetApp/Verda[NetApp Verda GitHub repository^] for sample execution hook scripts that you can modify to fit your environment.
 
 link:../use/manage-app-execution-hooks.html[Manage app execution hooks].
 
