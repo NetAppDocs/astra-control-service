@@ -133,7 +133,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 .Install the CSI driver as an Amazon EKS add-on
 
 . Create the Amazon EBS CSI driver IAM role for service accounts. Follow the instructions https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html[in the Amazon documentation^].
-. Add the Amazon EBS CSI add-on using the following command, replacing information in brackets <> with values specific to your environment. Replace <DRIVER_ROLE> with the name of the EBS CSI driver role that you created in the previous step:
+. Add the Amazon EBS CSI add-on using the following AWS CLI command, replacing information in brackets <> with values specific to your environment. Replace <DRIVER_ROLE> with the name of the EBS CSI driver role that you created in the previous step:
 +
 ----
 aws eks create-addon \
