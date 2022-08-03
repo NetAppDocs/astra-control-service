@@ -15,15 +15,14 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 == 4 Aug 2022
 This release includes the following new features and enhancements.
 
-=== Improved app management
-Improved app management enables you to directly define and manage the apps you care about.
+=== Improved application management workflow
+Improved application management workflows provide increased flexibility when defining applications managed by Astra Control.
 
 link:../use/manage-apps.html#manage-apps[Manage apps].
 
-
 ifdef::aws[]
 === Support for Amazon Web Services clusters
-Astra Control Service can now manage apps that are running on managed clusters hosted in Amazon Elastic Kubernetes Service. You can configure the clusters to use Amazon Elastic Block Store or Amazon FSx for NetApp ONTAP as the storage backend.
+Astra Control Service can now manage apps that are running on clusters hosted in Amazon Elastic Kubernetes Service. You can configure the clusters to use Amazon Elastic Block Store or Amazon FSx for NetApp ONTAP as the storage backend.
 
 link:../get-started/set-up-amazon-web-services.html[Set up Amazon Web Services].
 
@@ -44,7 +43,7 @@ link:../use/manage-app-execution-hooks.html[Manage app execution hooks].
 
 ifdef::azure[]
 === Azure Marketplace support
-You can now upgrade your Astra Control Service payment plan using Azure Marketplace.
+You can now sign up to Astra Control Service via Azure Marketplace.
 endif::azure[]
 
 
