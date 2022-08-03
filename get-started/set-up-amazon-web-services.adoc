@@ -92,19 +92,11 @@ CSI drivers for Amazon Elastic Block Store (EBS):: If you use the Amazon EBS sto
 
 [%collapsible]
 ========
-.Install the CSI driver
-
-. Create the Amazon EBS CSI driver IAM role for service accounts. Follow the instructions https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html[in the Amazon documentation^].
-. The Amazon EBS CSI driver isn't installed when you first create a cluster. To use the driver, you must add it as an Amazon EKS add-on or as a self-managed add-on. Do one of the following:
-+
-* Add the driver as an Amazon EKS add-on. See https://docs.aws.amazon.com/eks/latest/userguide/managing-ebs-csi.html[Managing the Amazon EBS CSI driver as an Amazon EKS add-on^].
-* Add the driver as a self-managed add-on. See https://github.com/kubernetes-sigs/aws-ebs-csi-driver[Amazon EBS Container Storage Interface (CSI) driver^].
-
 .Install an external snapshotter
 
 . Create volume snapshot CRDs.
 +
-For Kubernetes 1.20 and above, use v1 snapshot CRDs with snapshot components of v5.0 or above. For Kubernetes 1.19, use v1beta1 with v3.0.3 snapshot components.
+For Kubernetes 1.20 and above, use v1 snapshot CRDs with snapshot components of v5.0 or above.
 +
 [role="tabbed-block"]
 ====
@@ -120,23 +112,11 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
 ----
 --
-.v3.0.3 components
---
-[source,yaml]
-----
-$ cat snapshot-setup.sh
-#!/bin/bash
-# Create volume snapshot CRDs
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
---
 ====
 
 . Create the snapshot controller in the desired namespace. Edit the YAML manifests below to modify namespace.
 +
-For Kubernetes 1.20 and above use v5.0 or above. For Kubernetes version 1.19 use v3.0.3
+For Kubernetes 1.20 and above use v5.0 or above.
 +
 [role="tabbed-block"]
 ====
@@ -148,15 +128,19 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
 ----
 --
-.v3.0.3 controller
---
-[source,yaml]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
---
 ====
+
+.Install the CSI driver as an Amazon EKS add-on
+
+. Create the Amazon EBS CSI driver IAM role for service accounts. Follow the instructions https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html[in the Amazon documentation^].
+. Add the Amazon EBS CSI add-on using the following command, replacing information in brackets <> with values specific to your environment. Replace <DRIVER_ROLE> with the name of the EBS CSI driver role that you created earlier:
++
+----
+aws eks create-addon \
+  --cluster-name <CLUSTER_NAME> \
+  --addon-name aws-ebs-csi-driver \
+  --service-account-role-arn arn:aws:iam::<ACCOUNT_ID>:role/<DRIVER_ROLE>
+----
 
 .Configure the EBS storage class
 
