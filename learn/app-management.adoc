@@ -17,7 +17,7 @@ When Astra Control discovers your clusters, the apps on those clusters are unman
 +
 image:diagram-managed-app1.png[A conceptual image that shows Astra managing all of the resources in a namespace.]
 
-* An individual application deployed within a namespace (helm3 is used in this example)
+* An individual application deployed within a namespace (Helm 3 is used in this example)
 +
 image:diagram-managed-app2.png[A conceptual image that shows Astra managing an individual application deployed in a namespace that includes other applications.]
 
