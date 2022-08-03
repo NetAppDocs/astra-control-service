@@ -96,7 +96,7 @@ CSI drivers for Amazon Elastic Block Store (EBS):: If you use the Amazon EBS sto
 
 . Create volume snapshot CRDs.
 +
-For Kubernetes 1.20 and above, use v1 snapshot CRDs with snapshot components of v5.0 or above.
+For Kubernetes 1.20 and above, use v1 snapshot CRDs with snapshot components of v5.0.
 +
 [role="tabbed-block"]
 ====
@@ -116,7 +116,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 . Create the snapshot controller in the desired namespace. Edit the YAML manifests below to modify namespace.
 +
-For Kubernetes 1.20 and above use v5.0 or above.
+For Kubernetes 1.20 and above use v5.0.
 +
 [role="tabbed-block"]
 ====
