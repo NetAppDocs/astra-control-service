@@ -28,7 +28,7 @@ Ensure that clusters are healthy and running a supported Kubernetes version, tha
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] (Optional): Purchase Cloud Volumes Service for Google Cloud
 
 [role="quick-margin-para"]
-If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and select Purchase. <<Purchase Cloud Volumes Service for Google Cloud (optional),Learn more about this step>>.
+If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, go to the NetApp Cloud Volumes Service page in the Google Cloud Marketplace and select Purchase. <<Optional: Purchase Cloud Volumes Service for Google Cloud,Learn more about this step>>.
 
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Enable APIs in your Google Cloud project
 
@@ -156,7 +156,7 @@ If you want the snapshot controller in a specific namespace, download and edit t
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
 ////
-== Purchase Cloud Volumes Service for Google Cloud (optional)
+== Optional: Purchase Cloud Volumes Service for Google Cloud
 
 Astra Control Service can use Cloud Volumes Service for Google Cloud as the storage backend for your persistent volumes. If you plan to use this service, you need to purchase Cloud Volumes Service for Google Cloud from the Google Cloud Marketplace to enable billing for persistent volumes.
 
