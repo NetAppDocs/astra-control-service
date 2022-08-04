@@ -76,7 +76,7 @@ Create a key for the service account and save the key file in a secure location.
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] (Optional): Set up network peering for your VPC
 
 [role="quick-margin-para"]
-If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, set up network peering from your VPC to Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC (optional),Follow step-by-step instructions>>.
+If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, set up network peering from your VPC to Cloud Volumes Service for Google Cloud. <<Optional: Set up network peering for your VPC,Follow step-by-step instructions>>.
 
 ////
 ==== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png[Seven] (Optional): Create a VolumeSnapshotClass object
@@ -104,7 +104,7 @@ Cluster state:: Clusters must be running in a healthy state and have at least on
 
 Google Cloud region:: If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, clusters must be running in a https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc[Google Cloud region where Cloud Volumes Service for Google Cloud is supported.] Note that Astra Control Service supports both service types: CVS and CVS-Performance. As a best practice, you should choose a region that supports Cloud Volumes Service for Google Cloud, even if you do not use it as a storage backend. This makes it easier to use Cloud Volumes Service for Google Cloud as a storage backend in the future if your performance requirements change.
 
-Networking:: If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, the cluster must reside in a VPC that is peered with Cloud Volumes Service for Google Cloud. <<Set up network peering for your VPC,This step is described below>>.
+Networking:: If you plan to use Cloud Volumes Service for Google Cloud as a storage backend, the cluster must reside in a VPC that is peered with Cloud Volumes Service for Google Cloud. <<Optional: Set up network peering for your VPC,This step is described below>>.
 
 Private clusters:: If the cluster is private, the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[authorized networks^] must allow the Astra Control Service IP address:
 +
@@ -253,7 +253,7 @@ The following video shows how to create the service account key from the Google 
 
 video::video-create-gcp-service-account-key.mp4[width=848, height=480]
 
-== Set up network peering for your VPC (optional)
+== Optional: Set up network peering for your VPC
 
 If you plan to use Cloud Volumes Service for Google Cloud as a storage backend service, the final step is to set up networking peering from your VPC to Cloud Volumes Service for Google Cloud.
 
