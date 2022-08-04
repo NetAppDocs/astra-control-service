@@ -89,9 +89,7 @@ If you use the Amazon FSx for NetApp ONTAP storage backend, you need to install 
 CSI drivers for Amazon Elastic Block Store (EBS):: If you use the Amazon EBS storage backend, you need to install the Container Storage Interface (CSI) driver for EBS (it is not installed automatically).
 +
 See the details for instructions on installing the CSI driver.
-//For instructions, see https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html[Amazon EBS CSI driver^].
-//.Instructions
-
++
 [%collapsible%open]
 ========
 .Install an external snapshotter
