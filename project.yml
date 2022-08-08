@@ -20,6 +20,8 @@ settings:
       - name: Microsoft Azure
         alias: Azure
         id: azure
+  rss_page: "release-notes/whats-new.html"
+
 sidebar:
   entries:
     - title: Astra Control Service docs
