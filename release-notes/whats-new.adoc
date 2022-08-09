@@ -46,6 +46,8 @@ ifdef::azure[]
 You can now sign up to Astra Control Service via Azure Marketplace.
 endif::azure[]
 
+=== Cloud provider selection
+While reading the Astra Control Service documentation, you can now select your cloud provider at the top right of the page. You will see documentation relevant only to the cloud provider you select.
 
 == 26 Apr 2022
 This release includes the following new features and enhancements.
