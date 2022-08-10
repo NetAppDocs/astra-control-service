@@ -29,6 +29,7 @@ An operator and the app it deploys must use the same namespace; you might need t
 
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
+* <<App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed>>
 ifdef::azure[]
 * <<Azure backup buckets use LRS redundancy by default>>
 endif::azure[]
@@ -72,6 +73,9 @@ If you resize a persistent volume after creating a backup and then restore from 
 == App clones fail using a specific version of PostgreSQL
 //DOC-3543/ASTRACTL-9408/Q2 and PI4
 App clones within the same cluster consistently fail with the Bitnami PostgreSQL 11.5.0 chart. To clone successfully, use an earlier or later version of the chart.
+
+== App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed
+Backups and snapshots fail with a UI 500 error in this scenario. As a workaround, refresh the app list.
 
 ifdef::azure[]
 == Azure backup buckets use LRS redundancy by default
