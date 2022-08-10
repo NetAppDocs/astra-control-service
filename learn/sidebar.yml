@@ -3,15 +3,18 @@ title: Concepts
 entries:
   - title: Architecture and components
     url: /learn/architecture.html
+  - title: Storage for AWS clusters
+    flavor: aws
+    url: /learn/aws-storage.html
   - title: Storage for AKS clusters
     flavor: azure
     url: /learn/azure-storage.html
   - title: Storage for GKE clusters
     flavor: gcp
     url: /learn/choose-class-and-size.html
-  - title: Validated apps vs standard apps
-    url: /learn/validated-vs-standard.html
-  - title: Defining a custom app
-    url: /learn/define-custom-app.html
+  #- title: Validated apps vs standard apps
+  #  url: /learn/validated-vs-standard.html
+  - title: Understanding app management
+    url: /learn/app-management.html
   - title: User roles and namespaces
     url: /learn/user-roles-namespaces.html

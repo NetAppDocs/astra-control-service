@@ -11,12 +11,17 @@ settings:
     label: Cloud provider
     default: All cloud providers
     options:
+      - name: Amazon Web Services
+        alias: Amazon Web Services
+        id: aws
       - name: Google Cloud
         alias: Google Cloud
         id: gcp
       - name: Microsoft Azure
         alias: Azure
         id: azure
+  rss_page: "release-notes/whats-new.html"
+
 sidebar:
   entries:
     - title: Astra Control Service docs
@@ -27,7 +32,7 @@ sidebar:
     - title: Automate with the Astra Control REST API
       url: /automation.html
     - section: learn
-    - section: solutions
+  #  - section: solutions (retired with DOC-4309)
     - section: support
     - title: Legal notices
       url: /legal-notices.html
@@ -68,14 +73,14 @@ homepage:
       links:
         - title: Astra Control Service videos
           url: /get-started/videos.html
-        - title: Deploy Jenkins
-          url: /solutions/jenkins-deploy-from-helm-chart.html
-        - title: Deploy MariaDB
-          url: /solutions/mariadb-deploy-from-helm-chart.html
-        - title: Deploy MySQL
-          url: /solutions/mysql-deploy-from-helm-chart.html
-        - title: Deploy Postgres
-          url: /solutions/postgres-deploy-from-helm-chart.html
+        # - title: Deploy Jenkins
+        #  url: /solutions/jenkins-deploy-from-helm-chart.html
+        #- title: Deploy MariaDB
+        #  url: /solutions/mariadb-deploy-from-helm-chart.html
+        #- title: Deploy MySQL
+        #  url: /solutions/mysql-deploy-from-helm-chart.html
+        #- title: Deploy Postgres
+        #  url: /solutions/postgres-deploy-from-helm-chart.html
     - title: Astra Control Center
       links:
         - title: Intro to Astra Control Center

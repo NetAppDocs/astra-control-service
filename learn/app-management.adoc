@@ -1,0 +1,26 @@
+---
+sidebar: sidebar
+permalink: learn/app-management.html
+keywords: custom app, labels, kubernetes labels, kubernetes resources, pods, define custom app
+summary: Describes the type of managed apps in Astra Control.
+---
+
+= Understanding app management
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/learn/
+
+[.lead]
+When Astra Control discovers your clusters, the apps on those clusters are unmanaged until you choose how you want to manage them. A managed application in Astra Control can be any of the following:
+
+* A namespace, including all resources in that namespace
++
+image:diagram-managed-app1.png[A conceptual image that shows Astra managing all of the resources in a namespace.]
+
+* An individual application deployed within a namespace (Helm 3 is used in this example)
++
+image:diagram-managed-app2.png[A conceptual image that shows Astra managing an individual application deployed in a namespace that includes other applications.]
+
+* A group of resources that are identified by a Kubernetes label within a namespace
++
+image:diagram-managed-app3.png[A conceptual image that shows Astra managing a custom app based on a Kubernetes label.]
