@@ -21,12 +21,15 @@ An operator and the app it deploys must use the same namespace; you might need t
 .Apps
 
 * <<App clones fail after an application is deployed with a set storage class>>
+* <<Applications page loads forever when trying to restore a deleted application>>
 //* <<App with user-defined label goes into "removed" state>>
+* <<Unable to define an app on a namespace that has been deleted and recreated>>
 
 .Backup, restore, and clone
 
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
+* <<App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed>>
 ifdef::azure[]
 * <<Azure backup buckets use LRS redundancy by default>>
 endif::azure[]
@@ -50,12 +53,18 @@ endif::azure[]
 
 == App clones fail after an application is deployed with a set storage class
 //DOC-3892/ASTRACTL-13183/PI4
-After an application is deployed with a storage class explicitly set (for example, `helm install ...-set global.storageClass=netapp-cvs-perf-extreme`), subsequent attempts to clone the application require that the target cluster have the originally specified storage class.
-Cloning an application with an explicitly set storage class to a cluster that does not have the same storage class will fail. There are no recovery steps in this scenario.
+After an application is deployed with a storage class explicitly set (for example, `helm install ...-set global.storageClass=netapp-cvs-perf-extreme`), subsequent attempts to clone the application require that the target cluster have the originally specified storage class. Cloning an application with an explicitly set storage class to a cluster that does not have the same storage class will fail. There are no recovery steps in this scenario.
 
 //== App with user-defined label goes into "removed" state
 //ASTRACTL-9643/DOC-3415/Q2
 //If you define an app with a non-existent k8s label, Astra Control Center will create, manage, and then immediately remove the app. To avoid this, add the k8s label to pods and resources after the app is managed by Astra Control Center.
+
+//ASTRACTL-20272 - PI6
+== Applications page loads forever when trying to restore a deleted application
+When you try to restore an app from a deleted cluster using the Applications page, the Applications page never finishes loading. As a workaround, restore the app from the app's Actions menu in the list of applications.
+
+== Unable to define an app on a namespace that has been deleted and recreated
+If you define an application with a namespace, delete the namespace, and then reinstall the app in the same namespace, the operation fails with a 409 error code. To define the app using the recreated namespace, delete the old application instance first.
 
 == Restore of an app results in PV size larger than original PV
 // DOC-3562/ASTRACTL-9560/Q2 and PI4
@@ -64,6 +73,9 @@ If you resize a persistent volume after creating a backup and then restore from 
 == App clones fail using a specific version of PostgreSQL
 //DOC-3543/ASTRACTL-9408/Q2 and PI4
 App clones within the same cluster consistently fail with the Bitnami PostgreSQL 11.5.0 chart. To clone successfully, use an earlier or later version of the chart.
+
+== App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed
+Backups and snapshots fail with a UI 500 error in this scenario. As a workaround, refresh the app list.
 
 ifdef::azure[]
 == Azure backup buckets use LRS redundancy by default

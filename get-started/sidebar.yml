@@ -9,6 +9,9 @@ entries:
     url: /get-started/quick-start.html
   - title: Set up your cloud provider
     entries:
+      - title: Set up Amazon Web Services
+        flavor: aws
+        url: /get-started/set-up-amazon-web-services.html
       - title: Set up Google Cloud
         flavor: gcp
         url: /get-started/set-up-google-cloud.html

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: use/view-dashboard.html
-keywords: dashboard, cluster health, unhealthy apps, protected apps, discovered apps
+keywords: dashboard, cluster health, unhealthy apps, protected apps, managed apps
 summary: Click Dashboard to see a high-level view of your apps, clusters, and their health.
 ---
 
@@ -20,9 +20,9 @@ The Apps tile helps you identify the following:
 * How many apps you're currently managing.
 * Whether those managed apps are healthy.
 * Whether the apps are fully protected (they're protected if recent backups are available).
-* The number of apps that were discovered, but are not yet managed.
-+
-Ideally, this number would be zero because you would either manage or ignore apps after they're discovered. And then you would monitor the number of discovered apps on the Dashboard to identify when developers add new apps to a cluster.
+//* The number of apps that were discovered, but are not yet managed.
+//+
+//Ideally, this number would be zero because you would either manage or ignore apps after they're discovered. And then you would monitor the number of discovered apps on the Dashboard to identify when developers add new apps to a cluster.
 
 Note that these aren't just numbers or statuses--you can drill down from each of these. For example, if apps aren't fully protected, you can hover over the icon to identify which apps aren't fully protected, which includes a reason why.
 

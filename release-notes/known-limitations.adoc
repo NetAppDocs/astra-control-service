@@ -56,6 +56,14 @@ endif::gcp[]
 == App management limitations
 The following limitations affect Astra Control Service's management of applications.
 
+=== In-place restore operations of apps that use a certificate manager are not supported
+This release of Astra Control Service does not support in-place restore of apps with certificate managers. Restore operations to a different namespace and clone operations are supported.
+
+=== App clones fail after an application is deployed with a set storage class
+//DOC-3892/ASTRACTL-13183/PI4/PI5
+After an application is deployed with a storage class explicitly set (for example, `helm install ...-set global.storageClass=netapp-cvs-perf-extreme`), subsequent attempts to clone the application require that the target cluster have the originally specified storage class.
+Cloning an application with an explicitly set storage class to a cluster that does not have the same storage class will fail. There are no recovery steps in this scenario.
+
 === Clones of apps installed using pass by reference operators can fail
 Astra Control supports apps installed with namespace-scoped operators. These operators are generally designed with a "pass-by-value" rather than "pass-by-reference" architecture. The following are some operator apps that follow these patterns:
 
@@ -68,9 +76,11 @@ NOTE: For K8ssandra, in-place restore operations are supported. A restore operat
 
 Note that Astra Control might not be able to clone an operator that is designed with a “pass-by-reference” architecture (for example, the CockroachDB operator). During these types of cloning operations, the cloned operator attempts to reference Kubernetes secrets from the source operator despite having its own new secret as part of the cloning process. The clone operation might fail because Astra Control is unaware of the Kubernetes secrets in the source operator.
 
+////
 == App backups that are in progress cannot be stopped
 // DOC-3552/ASTRACTL-9586/DOC-3894/ASTRACTL-13029/Q2 and PI4
 There is no way to cancel a running backup. If you need to delete the backup, wait until it has completed and then use the instructions in link:../use/protect-apps.html#delete-backups[Delete backups]. To delete a failed backup, use the link:https://docs.netapp.com/us-en/astra-automation/index.html[Astra API^].
+////
 
 == Role-based Access Control (RBAC) limitations
 The following limitations apply to the way Astra Control limits user access to resources or capabilities.
@@ -80,8 +90,8 @@ The following limitations apply to the way Astra Control limits user access to r
 A user with namespace RBAC constraints should not be allowed to add or unmanage clusters. Due to a current limitation, Astra does not prevent such users from unmanaging clusters.
 
 === A Member user with namespace constraints cannot access cloned or restored apps until an Admin user adds the namespace to the constraint
-//DOC-4137/ASTRACTL-16344/ASTRACTL-16131/PI5
-Any `member` user with RBAC constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the new namespace.
+//DOC-4137/ASTRACTL-16131/PI5
+Any `member` user with RBAC constraints by namespace name/ID can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the new namespace.
 
 //=== A member user with RBAC constraints can restore a deleted app but cannot access the restored app
 //DOC-4137/ASTRACTL-16274/PI5

@@ -12,6 +12,43 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
+== 10 Aug 2022
+This release includes the following new features and enhancements.
+
+=== Improved application management workflow
+Improved application management workflows provide increased flexibility when defining applications managed by Astra Control.
+
+link:../use/manage-apps.html#manage-apps[Manage apps].
+
+ifdef::aws[]
+=== Support for Amazon Web Services clusters
+Astra Control Service can now manage apps that are running on clusters hosted in Amazon Elastic Kubernetes Service. You can configure the clusters to use Amazon Elastic Block Store or Amazon FSx for NetApp ONTAP as the storage backend.
+
+link:../get-started/set-up-amazon-web-services.html[Set up Amazon Web Services].
+
+endif::aws[]
+
+=== Enhanced execution hooks
+In addition to pre- and post-snapshot execution hooks, you can now configure the following types of execution hooks:
+
+* Pre-backup
+* Post-backup
+* Post-restore
+
+Among other improvements, Astra Control now supports using the same script for multiple execution hooks.
+
+NOTE: The NetApp-provided default pre- and post-snapshot execution hooks for specific applications have been removed in this release. If you do not provide your own execution hooks for snapshots, Astra Control Service will take crash-consistent snapshots only beginning August 4, 2022. Visit the https://github.com/NetApp/Verda[NetApp Verda GitHub repository^] for sample execution hook scripts that you can modify to fit your environment.
+
+link:../use/manage-app-execution-hooks.html[Manage app execution hooks].
+
+ifdef::azure[]
+=== Azure Marketplace support
+You can now sign up to Astra Control Service via Azure Marketplace.
+endif::azure[]
+
+=== Cloud provider selection
+While reading the Astra Control Service documentation, you can now select your cloud provider at the top right of the page. You will see documentation relevant only to the cloud provider you select.
+
 == 26 Apr 2022
 This release includes the following new features and enhancements.
 
@@ -54,12 +91,12 @@ Astra Control Service now supports Google Persistent Disk as a storage backend o
 link:../get-started/set-up-google-cloud.html[Set up Google Cloud].
 endif::azure[]
 
-ifdef::gcp+azure[]
+ifdef::gcp+azure+aws[]
 Astra Control Service now supports Google Persistent Disk and Azure managed disks as storage backend options.
 
 link:../get-started/set-up-google-cloud.html[Set up Google Cloud].
 link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks].
-endif::gcp+azure[]
+endif::gcp+azure+aws[]
 
 === In-place app restore
 You can now restore a snapshot, clone, or backup of an app in place by restoring to the same cluster and namespace.
