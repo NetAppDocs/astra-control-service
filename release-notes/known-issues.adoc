@@ -21,7 +21,7 @@ An operator and the app it deploys must use the same namespace; you might need t
 .Apps
 
 * <<App clones fail after an application is deployed with a set storage class>>
-* <<Applications page loads forever when trying to restore a deleted application>>
+* <<Applications page loads forever when trying to restore an application belonging to a deleted cluster>>
 //* <<App with user-defined label goes into "removed" state>>
 * <<Unable to define an app on a namespace that has been deleted and recreated>>
 
@@ -60,8 +60,8 @@ After an application is deployed with a storage class explicitly set (for exampl
 //If you define an app with a non-existent k8s label, Astra Control Center will create, manage, and then immediately remove the app. To avoid this, add the k8s label to pods and resources after the app is managed by Astra Control Center.
 
 //ASTRACTL-20272 - PI6
-== Applications page loads forever when trying to restore a deleted application
-When you try to restore an app from a deleted cluster using the Applications page, the Applications page never finishes loading. As a workaround, restore the app from the app's Actions menu in the list of applications.
+== Applications page loads forever when trying to restore an application belonging to a deleted cluster
+When you try to restore an app from a deleted cluster from the Applications page, the Applications page never finishes loading. As a workaround, restore the app from the app's Actions menu in the Applications listing page.
 
 == Unable to define an app on a namespace that has been deleted and recreated
 If you define an application with a namespace, delete the namespace, and then reinstall the app in the same namespace, the operation fails with a 409 error code. To define the app using the recreated namespace, delete the old application instance first.
