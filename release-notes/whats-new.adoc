@@ -15,146 +15,140 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 == 10 Aug 2022
 This release includes the following new features and enhancements.
 
-=== Improved application management workflow
+* Improved application management workflow
 Improved application management workflows provide increased flexibility when defining applications managed by Astra Control.
-
-link:../use/manage-apps.html#manage-apps[Manage apps].
++
+link:../use/manage-apps.html#manage-apps[Manage apps]
 
 ifdef::aws[]
-=== Support for Amazon Web Services clusters
+* Support for Amazon Web Services clusters
 Astra Control Service can now manage apps that are running on clusters hosted in Amazon Elastic Kubernetes Service. You can configure the clusters to use Amazon Elastic Block Store or Amazon FSx for NetApp ONTAP as the storage backend.
-
-link:../get-started/set-up-amazon-web-services.html[Set up Amazon Web Services].
++
+link:../get-started/set-up-amazon-web-services.html[Set up Amazon Web Services]
 
 endif::aws[]
 
-=== Enhanced execution hooks
+* Enhanced execution hooks
 In addition to pre- and post-snapshot execution hooks, you can now configure the following types of execution hooks:
 
-* Pre-backup
-* Post-backup
-* Post-restore
-
+** Pre-backup
+** Post-backup
+** Post-restore
++
 Among other improvements, Astra Control now supports using the same script for multiple execution hooks.
-
++
 NOTE: The NetApp-provided default pre- and post-snapshot execution hooks for specific applications have been removed in this release. If you do not provide your own execution hooks for snapshots, Astra Control Service will take crash-consistent snapshots only beginning August 4, 2022. Visit the https://github.com/NetApp/Verda[NetApp Verda GitHub repository^] for sample execution hook scripts that you can modify to fit your environment.
-
-link:../use/manage-app-execution-hooks.html[Manage app execution hooks].
++
+link:../use/manage-app-execution-hooks.html[Manage app execution hooks]
 
 ifdef::azure[]
-=== Azure Marketplace support
+* Azure Marketplace support
 You can now sign up to Astra Control Service via Azure Marketplace.
 endif::azure[]
 
-=== Cloud provider selection
+* Cloud provider selection
 While reading the Astra Control Service documentation, you can now select your cloud provider at the top right of the page. You will see documentation relevant only to the cloud provider you select.
 
 == 26 Apr 2022
 This release includes the following new features and enhancements.
 
-=== Namespace role-based access control (RBAC)
+* Namespace role-based access control (RBAC)
 Astra Control Service now supports assigning namespace constraints to Member or Viewer users.
-
-link:../learn/user-roles-namespaces.html[Namespace role-based access control (RBAC)].
++
+link:../learn/user-roles-namespaces.html[Namespace role-based access control (RBAC)]
 
 ifdef::azure[]
-=== Azure Active Directory support
+* Azure Active Directory support
 Astra Control Service supports AKS clusters that use Azure Active Directory for authentication and identity management.
++
+link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service]
 
-link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
-
-=== Support for private AKS clusters
+* Support for private AKS clusters
 You can now manage AKS clusters that use private IP addresses.
-
-link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
++
+link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service]
 endif::azure[]
 
-=== Bucket removal from Astra Control
+* Bucket removal from Astra Control
 You can now remove a bucket from Astra Control Service.
-
-link:../use/manage-buckets.html[Remove a bucket].
++
+link:../use/manage-buckets.html[Remove a bucket]
 
 == 14 Dec 2021
 This release includes the following new features and enhancements.
 
+* New storage backend options
+//ifndef::gcp[]
+//** Astra Control Service now supports Azure managed disks as a storage backend option.
 
-=== New storage backend options
-ifndef::gcp[]
-Astra Control Service now supports Azure managed disks as a storage backend option.
+//link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks]
+//endif::gcp[]
 
-link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks].
-endif::gcp[]
+//ifndef::azure[]
+//** Astra Control Service now supports Google Persistent Disk as a storage backend option.
 
-ifndef::azure[]
-Astra Control Service now supports Google Persistent Disk as a storage backend option.
-
-link:../get-started/set-up-google-cloud.html[Set up Google Cloud].
-endif::azure[]
+//link:../get-started/set-up-google-cloud.html[Set up Google Cloud]
+//endif::azure[]
 
 ifdef::gcp+azure+aws[]
 Astra Control Service now supports Google Persistent Disk and Azure managed disks as storage backend options.
-
-link:../get-started/set-up-google-cloud.html[Set up Google Cloud].
-link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks].
++
+link:../get-started/set-up-google-cloud.html[Set up Google Cloud]
+link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks]
 endif::gcp+azure+aws[]
 
-=== In-place app restore
+* In-place app restore
 You can now restore a snapshot, clone, or backup of an app in place by restoring to the same cluster and namespace.
++
+link:../use/restore-apps.html[Restore apps]
 
-link:../use/restore-apps.html[Restore apps].
-
-=== Script events with execution hooks
+* Script events with execution hooks
 Astra Control supports custom scripts that you can run before or after you take a snapshot of an application. This enables you to perform tasks like suspending database transactions so that the snapshot of your database app is consistent.
++
+link:../use/manage-app-execution-hooks.html[Manage app execution hooks]
 
-link:../use/manage-app-execution-hooks.html[Manage app execution hooks].
-
-=== Operator-deployed apps
+* Operator-deployed apps
 Astra Control supports some apps when they are deployed with operators.
-
-link:../use/manage-apps.html#app-management-requirements[Start managing apps].
++
+link:../use/manage-apps.html#app-management-requirements[Start managing apps]
 
 ifdef::azure[]
-=== Service principals with resource group scope
+* Service principals with resource group scope
 Astra Control Service now supports service principals that use a resource group scope.
-
-link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Create an Azure service principal].
++
+link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Create an Azure service principal]
 endif::azure[]
 
 == 5 Aug 2021
 
 This release includes the following new features and enhancements.
 
-=== Astra Control Center
-
+* Astra Control Center
 Astra Control is now available in a new deployment model. _Astra Control Center_ is self-managed software that you install and operate in your data center so that you can manage Kubernetes application lifecycle management for on-premise Kubernetes clusters.
++
+To learn more, https://docs.netapp.com/us-en/astra-control-center[go to the Astra Control Center documentation^].
 
-https://docs.netapp.com/us-en/astra-control-center[Go to the Astra Control Center documentation to learn more^].
-
-=== Bring your own bucket
-
+* Bring your own bucket
 You can now manage the buckets that Astra uses for backups and clones by adding additional buckets and by changing the default bucket for the Kubernetes clusters in your cloud provider.
-
-link:../use/manage-buckets.html[Learn more about managing buckets].
++
+link:../use/manage-buckets.html[Manage buckets]
 
 == 2 June 2021
 
 ifdef::gcp[]
 This release includes bug fixes and the following enhancements to Google Cloud support.
 
-=== Support for shared VPCs
-
+* Support for shared VPCs
 You can now manage GKE clusters in GCP projects with a shared VPC network configuration.
 
-=== Persistent volume size for the CVS service type
-
+* Persistent volume size for the CVS service type
 Astra Control Service now creates persistent volumes with a minimum size of 300 GiB when using the CVS service type.
-
++
 link:../learn/choose-class-and-size.html[Learn how Astra Control Service uses Cloud Volumes Service for Google Cloud as the storage backend for persistent volumes].
 
-=== Support for Container-Optimized OS
-
+* Support for Container-Optimized OS
 Container-Optimized OS is now supported with GKE worker nodes. This is in addition to support for Ubuntu.
-
++
 link:../get-started/set-up-google-cloud.html#gke-cluster-requirements[Learn more about GKE cluster requirements].
 endif::gcp[]
 
@@ -163,51 +157,45 @@ endif::gcp[]
 This release includes the following new features and enhancements.
 ifdef::azure[]
 
-=== Support for AKS clusters
-
+* Support for AKS clusters
 Astra Control Service can now manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS).
-
++
 link:../get-started/set-up-microsoft-azure-with-anf.html[Learn how to get started].
 endif::azure[]
 
-=== REST API
-
+* REST API
 The Astra Control REST API is now available for use. The API is based on modern technologies and current best practices.
-
++
 https://docs.netapp.com/us-en/astra-automation[Learn how to automate application data lifecycle management using the REST API^].
 
-=== Annual subscription
-
+* Annual subscription
 Astra Control Service now offers a _Premium Subscription_.
-
++
 Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra Control Service.
-
++
 If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
-
++
 link:../get-started/intro.html#pricing[Learn more about Astra Control Service pricing].
 
-=== Namespace and app visualization
-
+* Namespace and app visualization
 We enhanced the Discovered Apps page to better show the hierarchy between namespaces and apps. Just expand a namespace to see the apps contained in that namespace.
-
++
 link:../use/manage-apps.html[Learn more about managing apps].
-
++
 image:screenshot-group.gif[A screenshot of the Apps page with the Discovered tab selected.]
 
-=== User interface enhancements
-
+* User interface enhancements
 Data protection wizards were enhanced for ease of use. For example, we refined the Protection Policy wizard to more easily view the protection schedule as you define it.
-
++
 image:screenshot-protection-policy.gif["A screenshot of the Configure Protection Policy dialog box where you can enable Hourly, Daily, Weekly, and Monthly schedules."]
 
-=== Activity enhancements
-
+* Activity enhancements
 We've made it easier to view details about the activities in your Astra Control account.
 
-* Filter the activity list by managed app, severity level, user, and time range.
-* Download your Astra Control account activity to a CSV file.
-* View activities directly from the Clusters page or the Apps page after selecting a cluster or an app.
-
+** Filter the activity list by managed app, severity level, user, and time range.
+** Download your Astra Control account activity to a CSV file.
+** View activities directly from the Clusters page or the Apps page after selecting a cluster or an app.
++
 link:../use/view-account-activity.html[Learn more about viewing your account activity].
 
 == 1 Mar 2021
