@@ -198,7 +198,7 @@ We've made it easier to view details about the activities in your Astra Control 
 ** Download your Astra Control account activity to a CSV file.
 ** View activities directly from the Clusters page or the Apps page after selecting a cluster or an app.
 +
-link:../use/view-account-activity.html[Learn more about viewing your account activity].
+link:../use/monitor-account-activity.html[Learn more about viewing your account activity].
 
 == 1 Mar 2021
 
