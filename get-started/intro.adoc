@@ -82,7 +82,7 @@ endif::azure[]
 ifdef::aws[]
 +
 ** For Amazon EKS clusters, Astra Control Service uses https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^] or https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for NetApp ONTAP^] as the storage backend for your persistent volumes.
-
+endif::aws[]
 * You add your first Kubernetes compute to Astra Control Service. Astra Control Service then does the following:
 
 ** Creates an object store in your cloud provider account, which is where backup copies are stored.
