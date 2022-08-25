@@ -43,7 +43,7 @@ endif::azure,gcp[]
 +
 ** Astra Control Center uses the following storage backends:
 
-//*** Astra Data Store storage backend
+*** Astra Data Store storage backend
 *** ONTAP AFF and FAS storage backend. As a storage software and hardware platform, ONTAP provides core storage services, support for multiple storage access protocols, and storage management functionality, such as snapshots and mirroring.
 //*** SolidFire storage backend. When you use a SolidFire storage backend, Astra Control Center doesn't report statistics and storage backend status as it does with other storage backends.
 *** Cloud Volumes ONTAP storage backend
