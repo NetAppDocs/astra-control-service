@@ -101,8 +101,8 @@ homepage:
           url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
     - title: Blogs & community
       links:
-        - title: Slack "containers" channel
-          url: https://netapp.io/slack
+        - title: Astra Discord channel
+          url: https://discord.gg/NetApp
         - title: Astra Control blog
           url: https://cloud.netapp.com/blog/topic/astra
         - title: Astra Control – Simplifying app data management for the hybrid cloud
