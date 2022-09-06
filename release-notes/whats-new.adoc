@@ -13,7 +13,7 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
 == 7 September 2022
-This release includes stability and bugfix enhancements for the Astra Control Service infrastructure.
+This release includes stability and resiliency enhancements for the Astra Control Service infrastructure.
 
 == 10 August 2022
 This release includes the following new features and enhancements.
