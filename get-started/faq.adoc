@@ -133,10 +133,6 @@ Astra Trident will not be uninstalled from a cluster when you remove the cluster
 
 Astra Control doesn't deploy applications. Applications must be deployed outside of Astra Control.
 
-*Can Astra Control manage an application that is on non-NetApp storage?*
-
-No. While Astra Control can discover applications that are using non-NetApp storage, it can't manage an application that's using non-NetApp storage.
-
 ifdef::gcp[]
 *I don’t see any of my application’s PVCs bound to GCP CVS. What's wrong?*
 
