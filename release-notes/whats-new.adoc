@@ -12,7 +12,10 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
-== 10 Aug 2022
+== 7 September 2022
+This release includes stability and bugfix enhancements for the Astra Control Service infrastructure.
+
+== 10 August 2022
 This release includes the following new features and enhancements.
 
 * Improved application management workflow
@@ -51,7 +54,7 @@ While reading the Astra Control Service documentation, you can now select your c
 +
 image:select-cloud-provider.png["A screenshot of Cloud provider dropdown menu where you can select your cloud provider for cloud-provider specific documentation."]
 
-== 26 Apr 2022
+== 26 April 2022
 This release includes the following new features and enhancements.
 
 * Namespace role-based access control (RBAC)
@@ -76,7 +79,7 @@ You can now remove a bucket from Astra Control Service.
 +
 link:../use/manage-buckets.html[Remove a bucket]
 
-== 14 Dec 2021
+== 14 December 2021
 This release includes the following new features and enhancements.
 
 * New storage backend options
@@ -121,7 +124,7 @@ Astra Control Service now supports service principals that use a resource group 
 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Create an Azure service principal]
 endif::azure[]
 
-== 5 Aug 2021
+== 5 August 2021
 
 This release includes the following new features and enhancements.
 
@@ -154,7 +157,7 @@ Container-Optimized OS is now supported with GKE worker nodes. This is in additi
 link:../get-started/set-up-google-cloud.html#gke-cluster-requirements[Learn more about GKE cluster requirements].
 endif::gcp[]
 
-== 15 Apr 2021
+== 15 April 2021
 
 This release includes the following new features and enhancements.
 ifdef::azure[]
@@ -200,7 +203,7 @@ We've made it easier to view details about the activities in your Astra Control 
 +
 link:../use/monitor-account-activity.html[Learn more about viewing your account activity].
 
-== 1 Mar 2021
+== 1 March 2021
 
 ifdef::gcp[]
 Astra Control Service now supports the https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[_CVS_ service type^] with Cloud Volumes Service for Google Cloud. This is in addition to already supporting the _CVS-Performance_ service type. Just as a reminder, Astra Control Service uses Cloud Volumes Service for Google Cloud as the storage backend for your persistent volumes.
@@ -210,7 +213,7 @@ This enhancement means that Astra Control Service can now manage app data for Ku
 If you have the flexibility to choose between Google Cloud regions, then you can pick either CVS or CVS-Performance, depending on your performance requirements. link:../learn/choose-class-and-size.html[Learn more about choosing a service type].
 endif::gcp[]
 
-== 25 Jan 2021
+== 25 January 2021
 
 We're pleased to announce that Astra Control Service is now Generally Available. We incorporated a lot of the feedback that we received from the Beta release and made a few other notable enhancements.
 
@@ -226,7 +229,7 @@ We're pleased to announce that Astra Control Service is now Generally Available.
 +
 These notifications are important because Astra Control Service can't manage apps for disconnected clusters.
 
-== 17 Dec 2020 (Beta update)
+== 17 December 2020 (Beta update)
 
 We primarily focused on bug fixes to improve your experience, but we made a few other notable enhancements:
 
