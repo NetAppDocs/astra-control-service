@@ -74,7 +74,12 @@ Your cloud provider is available only after Astra Control Service has started ma
 * *Existing bucket name*: Enter the name of the bucket.
 
 * *Description*: Optionally enter a description of the bucket.
-
+ifdef::azure[]
+* *Storage account* (Azure only): Enter the name of your Azure storage account. This bucket must belong to the resource group named _astra-backup-rg_.
+endif::azure[]
+ifdef::aws[]
+* *S3 server name or IP address* (AWS only): Enter the fully qualified domain name of the S3 endpoint that corresponds with your region, without `https://`. See https://docs.aws.amazon.com/general/latest/gr/s3.html[the Amazon documentation^] for more information.
+endif::aws[]
 * *Make this bucket the default bucket for this cloud*: Choose whether you would like to use this bucket as the default bucket for ad-hoc backups and clones.
 
 * *Select credentials*: Choose the credentials that provide Astra Control Service with the permissions that it needs to manage the bucket.
