@@ -25,6 +25,8 @@ entries:
     url: /get-started/register.html
   - title: Manage clusters
     url: /get-started/add-first-cluster.html
+  - title: Manage private clusters
+    url: /get-started/manage-private-cluster.adoc
   - title: What's next?
     url: /get-started/whats-next.html
   - title: Videos
