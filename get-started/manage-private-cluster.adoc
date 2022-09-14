@@ -14,17 +14,16 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 You can use Astra Control Service to manage private AKS clusters. To do so, you need to install the Astra Connector operator on the private AKS service cluster. You can complete this step before you add the cluster for management or during the process of adding it, when prompted.
 
 * <<Create a private AKS cluster>>
-* <<Create a bastion host>>
+* <<Provide access to the private AKS cluster>>
 * <<Install the Astra Connector operator>>
 * <<Create an Astra Connector object>>
 * <<Set up persistent storage>>
 * <<Add the private cluster to Astra Control Service>>
 
 == Create a private AKS cluster
-Follow the instructions at https://docs.microsoft.com/azure/aks/private-clusters to create a
-private azure cluster.
+Follow the instructions at https://docs.microsoft.com/azure/aks/private-clusters to create a private AKS cluster.
 
-== Provide a way to access the private AKS cluster
+== Provide access to the private AKS cluster
 Using a bastion host, you can enable remote access to the private cluster from external networks. You can create a bastion host by creating an Azure VM that has access to the VNet that is used by the private AKS cluster, and resides in the same Resource Group as the private cluster. Other options for accessing the private AKS cluster remotely include:
 
 * An Azure VM that is in a different VNet and is peered to the private AKS cluster VNet
