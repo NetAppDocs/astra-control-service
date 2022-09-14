@@ -15,9 +15,6 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 * <<Create a Kubernetes cluster>>
 * <<Start managing Kubernetes clusters>>
-ifdef::azure[]
-* <<Manage a private cluster>>
-endif::azure[]
 ifdef::aws[]
 * <<Provide cluster access to other users>>
 endif::aws[]
@@ -217,6 +214,8 @@ You can change the default storage class for a cluster.
 . Select *Set as default*.
 
 
+ifdef::azure[]
 == For more information
 
 * link:manage-private-cluster.html[Manage a private cluster]
+endif::azure[]
