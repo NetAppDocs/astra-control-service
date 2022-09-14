@@ -13,22 +13,24 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 [.lead]
 You can use Astra Control Service to manage private AKS clusters. To do so, you need to install the Astra Connector operator on the private AKS service cluster. You can complete this step before you add the cluster for management or during the process of adding it, when prompted.
 
-* <<Create a Kubernetes cluster>>
-* <<Start managing Kubernetes clusters>>
-ifdef::azure[]
-* <<Manage a private cluster>>
-endif::azure[]
-ifdef::aws[]
-* <<Provide cluster access to other users>>
-endif::aws[]
-* <<Change the default storage class>>
+* <<Create a private AKS cluster>>
+* <<Create a bastion host>>
+* <<Install the Astra Connector operator>>
+* <<Create an Astra Connector object>>
+* <<Set up persistent storage>>
+* <<Add the private cluster to Astra Control Service>>
 
-== Create a private Azure cluster
-Use the docs at https://docs.microsoft.com/azure/aks/private-clusters to create a
+== Create a private AKS cluster
+Follow the instructions at https://docs.microsoft.com/azure/aks/private-clusters to create a
 private azure cluster.
 
-== Create a bastion host
-Using a bastion host, you can enable remote access to the private cluster from external networks.
+== Provide a way to access the private AKS cluster
+Using a bastion host, you can enable remote access to the private cluster from external networks. You can create a bastion host by creating an Azure VM that has access to the VNet that is used by the private AKS cluster, and resides in the same Resource Group as the private cluster. Other options for accessing the private AKS cluster remotely include:
+
+* An Azure VM that is in a different VNet and is peered to the private AKS cluster VNet
+* A VPN connection
+* The AKS `az aks command invoke` command
+* A private endpoint
 
 == Install the Astra Connector operator
 You need to install the Astra Connector operator on the bastion host. 
@@ -80,16 +82,30 @@ astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 == Create an Astra Connector object
 You can create an Astra Connector object to facilitate communication between the private cluster and Astra Control Service. 
 
+.Steps
 
-    Use the Astra UI to generate an API token.
-    You can check the config/samples directory for a sample .yaml configuration file for
-    the Astra Connector operator, and modify this config for your needs.
-    Use the following commands (from blog) to create the AstraConnector namespace and apply
-    the configuration you created.
+. Generate an Astra Control API token using the instructions in the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^].
+
+. Modify the example configuration file in the config/samples directory of the Astra Connector operator repository to fit your needs.
+
+. Create a namespace and apply the Astra Connector configuration:
++
+----
+kubectl create ns astra-connector
+kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
+----
+. Check the status of the connector:
++
+----
+kubectl get astraconnector -n astra-connector
+----
 
 
 == Set up persistent storage
-Configure persistent storage for the cluster. You can use Azure NetApp Files or Azure managed disks. 
+Configure persistent storage for the cluster. You can use Azure NetApp Files or Azure managed disks. See the Get Started documentation for more information about configuring Azure with these options:
 
-== Add the private cluster
-Log in to Astra Control Service and add the private cluster.
+* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html[Set up Microsoft Azure with Azure NetApp Files]
+* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks]
+
+== Add the private cluster to Astra Control Service
+You can now add the private AKS cluster to Astra Control Service. Follow the standard workflow to add a cluster to Astra Control Service: https://docs.netapp.com/us-en/astra-control-service/get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service]. 
