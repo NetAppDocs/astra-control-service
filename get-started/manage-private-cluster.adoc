@@ -11,19 +11,15 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 :imagesdir: ../media/get-started/
 
 [.lead]
-You can use Astra Control Service to manage private AKS clusters. 
+You can use Astra Control Service to manage private AKS clusters. These instructions assume that you have already created a private AKS cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS clusters, see the https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation^].
 //To do so, you need to install the Astra Connector operator on the private AKS service cluster. You can complete this step before you add the cluster for management or during the process of adding it, when prompted.
 
-* <<Create a private AKS cluster>>
-* <<Provide access to the private AKS cluster>>
 * <<Install the Astra Connector operator>>
-* <<Create an Astra Connector object>>
+//* <<Create an Astra Connector object>>
 * <<Set up persistent storage>>
 * <<Add the private cluster to Astra Control Service>>
 
-== Create a private AKS cluster
-Follow the instructions at https://docs.microsoft.com/azure/aks/private-clusters to create a private AKS cluster.
-
+////
 == Provide access to the private AKS cluster
 Using a bastion host, you can enable remote access to the private cluster from external networks. You can create a bastion host by creating an Azure VM that has access to the VNet that is used by the private AKS cluster, and resides in the same Resource Group as the private cluster. Other options for accessing the private AKS cluster remotely include:
 
@@ -31,6 +27,7 @@ Using a bastion host, you can enable remote access to the private cluster from e
 * A VPN connection
 * The AKS `az aks command invoke` command
 * A private endpoint
+////
 
 == Install the Astra Connector operator
 You need to install the Astra Connector operator on private AKS cluster, if you are not using a bastion host. If you are using a bastion host for remote access, install the Astra Connector operator there instead. 
