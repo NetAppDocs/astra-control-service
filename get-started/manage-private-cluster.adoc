@@ -11,7 +11,8 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 :imagesdir: ../media/get-started/
 
 [.lead]
-You can use Astra Control Service to manage private AKS clusters. To do so, you need to install the Astra Connector operator on the private AKS service cluster. You can complete this step before you add the cluster for management or during the process of adding it, when prompted.
+You can use Astra Control Service to manage private AKS clusters. 
+//To do so, you need to install the Astra Connector operator on the private AKS service cluster. You can complete this step before you add the cluster for management or during the process of adding it, when prompted.
 
 * <<Create a private AKS cluster>>
 * <<Provide access to the private AKS cluster>>
@@ -32,15 +33,18 @@ Using a bastion host, you can enable remote access to the private cluster from e
 * A private endpoint
 
 == Install the Astra Connector operator
-You need to install the Astra Connector operator on the bastion host. 
+You need to install the Astra Connector operator on private AKS cluster, if you are not using a bastion host. If you are using a bastion host for remote access, install the Astra Connector operator there instead. 
 //You can complete this step before you add the cluster for management or during the process of adding it, when prompted.
 
 .Steps
-////
-. Download the Astra Connector operator from https://github.com/NetApp/astra-connector-operator and save it on the AKS service cluster.
-. Unpack the Astra Connector operator package.
+
+. Clone the Astra Connector operator GitHub repository:
++
+----
+git clone https://github.com/NetApp/astra-connector-operator.git
+----
 . Change directories to the top level of the unpacked operator package, so that you can see the `astraconnector_operator.yaml` file with the `ls` command.
-////
+
 . Create a namespace for the Astra Connector operator.
 +
 ----
@@ -58,6 +62,10 @@ kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
 ----
 kubectl create ns astra-connector
 ----
+
+. Generate an Astra Control API token using the instructions in the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^].
+
+. Modify the example configuration file in the config/samples directory of the Astra Connector operator repository to fit your needs.
 
 . Apply the Astra Connector Custom Resource Definition (CRD).
 +
@@ -78,6 +86,7 @@ NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 ----
 
+////
 == Create an Astra Connector object
 You can create an Astra Connector object to facilitate communication between the private cluster and Astra Control Service. 
 
@@ -98,7 +107,7 @@ kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 ----
 kubectl get astraconnector -n astra-connector
 ----
-
+////
 
 == Set up persistent storage
 Configure persistent storage for the cluster. You can use Azure NetApp Files or Azure managed disks. See the Get Started documentation for more information about configuring Azure with these options:
