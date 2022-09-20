@@ -30,7 +30,7 @@ Using a bastion host, you can enable remote access to the private cluster from e
 ////
 
 == Install the Astra Connector operator
-You need to install the Astra Connector operator on private AKS cluster, if you are not using a bastion host. If you are using a bastion host for remote access, install the Astra Connector operator there instead. 
+You need to install the Astra Connector operator on private AKS cluster. If you are using a bastion host, issue these commands from the command line of the bastion host. 
 //You can complete this step before you add the cluster for management or during the process of adding it, when prompted.
 
 .Steps
