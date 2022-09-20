@@ -77,7 +77,7 @@ ifdef::gcp[]
 endif::gcp[]
 ifdef::azure[]
 +
-** For AKS clusters, Astra Control Service uses https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^] or Azure Disk Storage as the storage backend for your persistent volumes.
+** For AKS clusters, Astra Control Service uses https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^] or Azure managed disks as the storage backend for your persistent volumes.
 endif::azure[]
 ifdef::aws[]
 +
