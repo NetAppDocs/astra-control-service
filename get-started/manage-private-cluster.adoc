@@ -5,7 +5,7 @@ keywords: discover private cluster, add cluster, add kubernetes cluster, private
 summary: After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
 ---
 
-= Manage a private cluster from Astra Control Service
+= Manage private clusters from Astra Control Service
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
