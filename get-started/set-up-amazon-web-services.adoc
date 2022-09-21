@@ -135,6 +135,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 . Create the Amazon EBS CSI driver IAM role for service accounts. Follow the instructions https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html[in the Amazon documentation^], using the AWS CLI commands in the instructions.
 . Add the Amazon EBS CSI add-on using the following AWS CLI command, replacing information in brackets <> with values specific to your environment. Replace <DRIVER_ROLE> with the name of the EBS CSI driver role that you created in the previous step:
 +
+[source,sh]
 ----
 aws eks create-addon \
   --cluster-name <CLUSTER_NAME> \
@@ -146,22 +147,26 @@ aws eks create-addon \
 
 . Clone the Amazon EBS CSI driver GitHub repository to your system.
 +
+[source,sh]
 ----
 git clone https://github.com/kubernetes-sigs/aws-ebs-csi-driver.git
 ----
 . Navigate to the dynamic-provisioning example directory.
 +
+[source,sh]
 ----
 cd aws-ebs-csi-driver/examples/kubernetes/dynamic-provisioning/
 ----
 . Deploy the ebs-sc storage class and ebs-claim persistent volume claim from the manifests directory.
 +
+[source,sh]
 ----
 kubectl apply -f manifests/storageclass.yaml
 kubectl apply -f manifests/claim.yaml
 ----
 . Describe the ebs-sc storage class.
 +
+[source,sh]
 ----
 kubectl describe storageclass ebs-sc
 ----
@@ -202,6 +207,7 @@ Create a policy with the required permissions for Astra Control Service to inter
 . Create a new file called `policy.json`.
 . Copy the following JSON content into the file:
 +
+[source,JSON]
 ----
 {
     "Version": "2012-10-17",
@@ -235,11 +241,13 @@ Create a policy with the required permissions for Astra Control Service to inter
 ----
 . Create the policy:
 +
+[source,sh]
 ----
 POLICY_ARN=$(aws iam create-policy  --policy-name <policy-name> --policy-document file://policy.json  --query='Policy.Arn' --output=text)
 ----
 . Attach the policy to the IAM user. Replace `<IAM-USER-NAME>` with either the user name of the IAM user you created, or an existing IAM user:
 +
+[source,sh]
 ----
 aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
 ----
@@ -252,6 +260,7 @@ Save the credentials for the IAM user so that you can make Astra Control Service
 
 . Download the credentials. Replace `<IAM-USER-NAME>` with the user name of the IAM user you want to use:
 +
+[source,sh]
 ----
 aws iam create-access-key --user-name <IAM-USER-NAME> --output json > credential.json
 ----

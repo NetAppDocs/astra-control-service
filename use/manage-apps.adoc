@@ -64,6 +64,7 @@ You can use the following methods to install apps that you want to manage with A
 
 * *Manifest file*: Astra Control supports apps installed from a manifest file using kubectl. For example:
 +
+[source,sh]
 ----
 kubectl apply -f myapp.yaml
 ----

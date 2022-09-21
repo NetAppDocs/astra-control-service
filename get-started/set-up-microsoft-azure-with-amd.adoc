@@ -189,13 +189,15 @@ Before you install the CSI drivers, you need to enable the CSI driver feature in
 . Open the Azure command line interface.
 . Run the following command to register the driver:
 +
+[source,sh]
 ----
 az feature register --namespace "Microsoft.ContainerService" --name "EnableAzureDiskFileCSIDriver"
 ----
 . Run the following command to ensure the change is propagated:
 +
+[source,sh]
 ----
-'az provider register -n Microsoft.ContainerService
+az provider register -n Microsoft.ContainerService
 ----
 +
 You should see output similar to the following:
