@@ -1,0 +1,12 @@
+---
+sidebar: sidebar
+permalink: use/manage-cloud-instances.html
+keywords: cloud, instance, manage, delete, remove, edit
+summary: Manage the cloud instances that you have added when you added new clusters. 
+---
+
+= Manage cloud instances
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
