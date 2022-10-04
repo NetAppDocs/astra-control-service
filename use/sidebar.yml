@@ -38,13 +38,13 @@ entries:
         url: /use/manage-roles.html
       - title: Manage cloud provider credentials
         url: /use/manage-credentials.html
-      - title: Manage cloud instances
-        url: /use/manage-cloud-instances.html 
       - title: Monitor account activity
         url: /use/monitor-account-activity.html
       - title: Manage notifications
         url: /use/manage-notifications.html
       - title: Close your account
         url: /use/close-account.html
+  - title: Manage cloud instances
+    url: /use/manage-cloud-instances.html 
   - title: Unmanage apps and clusters
     url: /use/unmanage.html
