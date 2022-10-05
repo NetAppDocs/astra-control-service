@@ -14,7 +14,14 @@ You can manage the cloud instances that exist in Astra Control.  You can edit de
 
 
 == Add a cloud instance
+You can add a new cloud instance when you add a new cluster to Astra Control.  See link:../add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service] for more information.
 
 == Edit a cloud instance
+You can modify an existing cloud instance for a cloud provider. 
+
+.Steps
+
+. 
 
 == Remove a cloud instance
+You can use the Astra Control API to remove a cloud instance from a cloud provider. To learn more, https://docs.netapp.com/us-en/astra-automation[go to the Astra automation docs^].
