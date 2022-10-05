@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/manage-cloud-instances.html
 keywords: cloud, instance, manage, delete, remove, edit
-summary: Manage the cloud instances that you have added when you added new clusters. 
+summary: Manage the cloud instances that you added when you added new clusters. 
 ---
 
 = Manage cloud instances
@@ -10,3 +10,11 @@ summary: Manage the cloud instances that you have added when you added new clust
 :icons: font
 :imagesdir: ../media/use/
 
+You can manage the cloud instances that exist in Astra Control.  You can edit default buckets for each cloud instance using the Astra Control UI, and perform other actions using the Astra Control API.
+
+
+== Add a cloud instance
+
+== Edit a cloud instance
+
+== Remove a cloud instance
