@@ -80,7 +80,7 @@ endif::azure[]
 ifdef::aws[]
 * *S3 server name or IP address* (AWS only): Enter the fully qualified domain name of the S3 endpoint that corresponds with your region, without `https://`. See https://docs.aws.amazon.com/general/latest/gr/s3.html[the Amazon documentation^] for more information.
 endif::aws[]
-* *Make this bucket the default bucket for this cloud*: Choose whether you would like to use this bucket as the default bucket for ad-hoc backups and clones.
+//* *Make this bucket the default bucket for this cloud*: Choose whether you would like to use this bucket as the default bucket for ad-hoc backups and clones. (removed in PI-7 as part of multi hyperscaler feature)
 
 * *Select credentials*: Choose the credentials that provide Astra Control Service with the permissions that it needs to manage the bucket.
 //+
