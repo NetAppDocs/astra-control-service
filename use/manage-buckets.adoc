@@ -10,7 +10,7 @@ summary: Manage the buckets that Astra uses for backups and clones by adding add
 :icons: font
 :imagesdir: ../media/use/
 
-Manage the buckets that Astra uses for backups and clones by adding additional buckets and by changing the default bucket for the Kubernetes clusters in your cloud provider.
+Manage the buckets that Astra uses for backups and clones by adding additional buckets and by changing the default bucket for the Kubernetes clusters in your cloud instance.
 
 Only Admins can add and modify buckets.
 
@@ -96,17 +96,21 @@ Astra Control Service adds the additional bucket. You can now choose the bucket 
 
 == Change the default bucket
 
-Change the default bucket that Astra Control Service should use for backups and clones. Each cloud provider has its own default bucket.
+Change the default bucket that Astra Control Service should use for backups and clones. Each cloud instance has its own default bucket.
 
-Astra Control Service uses the default bucket for a cloud provider for ad-hoc backups and for ad-hoc clones when you don't choose to clone from an existing backup.
+Astra Control Service uses the default bucket for a cloud instance for ad-hoc backups and for ad-hoc clones when you don't choose to clone from an existing backup.
 
 .Steps
 
-. Under *Manage your storage*, select *Buckets*.
+. Go to *Cloud instances*.
 
-. Select the drop-down list in the *Actions* column for the bucket that you want to edit.
+. Select the configuration menu in the *Actions* column for the cloud instance that you want to edit.
 
-. Select *Make this bucket the default bucket for this cloud*.
+. Select *Edit*.
+
+. In the list of buckets, select the bucket you want to make the default bucket for this cloud instance.
+
+// . Select *Make this bucket the default bucket for this cloud*. (Went away in PI-7)
 
 . Select *Update*.
 
