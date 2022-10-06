@@ -31,6 +31,10 @@ On this page, you can update the name and default bucket for the cloud instance.
 +
 NOTE: Each cloud instance in Astra Control must have a unique name.
 
+== Rotate the credentials for a cloud instance
+You can use the Astra Control API to rotate the credentials for a cloud instance.
+// Get with Nathan on how to rotate with API
+
 
 == Remove a cloud instance
 You can use the Astra Control API to remove a cloud instance from a cloud provider. To learn more, https://docs.netapp.com/us-en/astra-automation[go to the Astra automation docs^].

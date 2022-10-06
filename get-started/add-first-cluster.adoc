@@ -85,7 +85,7 @@ endif::azure[]
 +
 Follow the prompts to add the cluster.
 
-. *Provider*: Select your cloud provider and then provide the required credentials.
+. *Provider*: Select your cloud provider and then either provide the required credentials to create a new cloud instance, or select an existing cloud instance to use.
 ifdef::aws[]
 .. *Amazon Web Services*: Provide details about your Amazon Web Services IAM user account by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
 +
@@ -101,8 +101,12 @@ ifdef::gcp[]
 +
 Astra Control Service uses the service account to discover clusters running in Google Kubernetes Engine.
 endif::gcp[]
+.. *Other*: Provide details about your private cluster credentials by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
 
-. *Cluster*: Select the cluster that you'd like to add.
+. *Cloud name* (For Azure, Google Cloud Platform, and Amazon Web Services clusters): Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
+
+. *Credential name* (For clusters of type "Other"): Provide a name for the private cluster credential you are uploading to Astra Control.
+
 ifndef::azure,aws[]
 +
 Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
@@ -129,6 +133,7 @@ Pay careful attention to the Eligible tab. If a warning appears, hover over the 
 +
 If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud, Azure NetApp Files, or Amazon Web Services, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
 endif::gcp+azure+aws[]
+// Changes here to below storage class stuff as part of Trident work in PI-7
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
 [NOTE]
@@ -191,7 +196,7 @@ endif::gcp+azure+aws[]
 
 .Result
 
-Astra Control Service creates an object store for application backups on eligible clusters, creates an admin account on the cluster, and sets the default storage class that you specified. This process can take up to 5 minutes.
+If this is the first cluster that you have added for this cloud provider, Astra Control Service creates an object store for the cloud provider for application backups on eligible clusters. (When you add subsequent clusters for this cloud provider, no further object stores are created.) Astra Control Service also creates an admin account on the cluster and sets the default storage class that you specified. This process can take up to 5 minutes.
 
 ifdef::aws[]
 == Provide cluster access to other users
