@@ -12,6 +12,14 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
+== 17 November 2022
+This release includes the following new features and enhancements.
+
+* Support for multiple cloud instances per cloud provider
+You can now add multiple cloud instances within a single cloud provider, each with its own credentials and associated clusters.
++
+link:../use/manage-cloud-instances.html[Manage cloud instances]
+
 == 7 September 2022
 This release includes stability and resiliency enhancements for the Astra Control Service infrastructure.
 
