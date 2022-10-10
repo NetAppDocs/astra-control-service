@@ -11,42 +11,50 @@ summary: Clone an existing app to create a duplicate app on the same Kubernetes 
 :imagesdir: ../media/use/
 
 [.lead]
-Clone an existing app to create a duplicate app on the same Kubernetes cluster or on another cluster. Cloning can help if you need to move applications and storage from one Kubernetes cluster to another. For example, you might want to move workloads through a CI/CD pipeline and across Kubernetes namespaces.
+You can clone an existing app to create a duplicate app on the same Kubernetes cluster or on another cluster. When Astra Control clones an app, it creates a clone of your application configuration and persistent storage.
 
-When Astra Control clones an app, it creates a clone of your application configuration and persistent storage.
-
+Cloning can help if you need to move applications and storage from one Kubernetes cluster to another. For example, you might want to move workloads through a CI/CD pipeline and across Kubernetes namespaces.
 //DOC-3595/ASTRACTL-10071/Q2 and PI4
-[NOTE]
-===============================
-* If you clone an operator-deployed instance of Jenkins CI, you need to manually restore the persistent data. This is a limitation of the app's deployment model.
 
-* If you deploy an app with a StorageClass explicitly set and you need to clone the app, the target cluster must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
+.What you'll need
 
-* During an app backup or app restore, you can optionally specify a bucket ID. An app clone operation, however, always uses the default bucket that has been defined. There is no option to change buckets for a clone. If you want control over which bucket is used, you can either link:../use/manage-buckets.html#edit-a-bucket[change the bucket default] or do a link:../use/protect-apps.html#create-a-backup[backup] followed by a link:../use/restore-apps.html[restore] separately.
+To clone apps to a different cluster, you need a default bucket. When you add your first bucket, it becomes the default bucket.
 
-* Any member user with namespace constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization’s account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the member user account and update role constraints for the affected user to grant access to the new namespace.
-===============================
+.Clone limitations
+
+* *Explicit Storage classes*: If you deploy an app with a StorageClass explicitly set and you need to clone the app, the target cluster must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
+
+* *Clones use default buckets*: During an app backup or app restore, you can optionally specify a bucket ID. An app clone operation, however, always uses the default bucket that has been defined. There is no option to change buckets for a clone. If you want control over which bucket is used, you can either link:../use/manage-buckets.html#edit-a-bucket[change the bucket default] or do a link:../use/protect-apps.html#create-a-backup[backup] followed by a link:../use/restore-apps.html[restore] separately.
+
+* *With Jenkins CI*: If you clone an operator-deployed instance of Jenkins CI, you need to manually restore the persistent data. This is a limitation of the app's deployment model.
+
+* *Clones and user constraints*: Any member user with namespace constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the member user account and update role constraints for the affected user to grant access to the new namespace.
 
 .Steps
 
 . Select *Applications*.
-
-. Select the drop-down list in the *Action* column for the desired app.
-
+. Do one of the following:
++
+* Select the Options menu in the *Actions* column for the desired app.
+* Select the name of the desired app, and select the status drop-down list at the top right of the page.
 . Select *Clone*.
 //+
 //image:screenshot-create-clone.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Clone."]
 
-. *Clone details*: Specify details for the clone:
+. Specify details for the clone:
 +
-* Keep the default name and namespace, or edit them.
+* Enter a name.
 * Choose a destination cluster for the clone.
+* Enter destination namespaces for the clone. Each source namespace associated with the app maps to a destination namespace.
+* Select *Next*.
 * Choose whether you want to create the clone from an existing snapshot or backup. If you don't select this option, Astra Control creates the clone from the app's current state.
-
-. *Clone Summary*: Review the details about the clone and select *Clone App*.
+** If you chose to clone from an existing snapshot or backup, choose the snapshot or backup that you'd like to use.
+. Select *Next*.
+. Review the information about the clone and select *Clone*.
 +
 image:screenshot-clone-summary.gif[A screenshot of the Clone Summary dialog box which you can use to review clone information about the original app and the cloned app.]
 
 .Result
 
-Astra Control clones that app based on the information that you provided.
+Astra Control clones the app based on the information that you provided. The clone operation is successful when the new app clone is in `Healthy` state on the *Applications* page.
+
