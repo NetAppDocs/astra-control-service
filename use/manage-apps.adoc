@@ -19,7 +19,7 @@ Astra Control has the following app management requirements:
 * *Namespaces*: Astra Control requires that an app not span more than a single namespace, but a namespace can contain more than one app.
 * *StorageClass*: If you install an app with a StorageClass explicitly set and you need to clone the app, the target cluster for the clone operation must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
 * *Kubernetes resources*: Apps that use Kubernetes Resources not collected by Astra Control might not have full app data management capabilities. Astra Control collects the following Kubernetes resources:
-
++
 [cols="1,1,1"]
 |===
 |ClusterRole
@@ -80,6 +80,7 @@ NOTE: For K8ssandra, in-place restore operations are supported. A restore operat
 ** https://github.com/jenkinsci/kubernetes-operator[Jenkins CI^]
 ** https://github.com/percona/percona-xtradb-cluster-operator[Percona XtraDB Cluster^]
 
++
 Astra Control might not be able to clone an operator that is designed with a “pass-by-reference” architecture (for example, the CockroachDB operator). During these types of cloning operations, the cloned operator attempts to reference Kubernetes secrets from the source operator despite having its own new secret as part of the cloning process. The clone operation might fail because Astra Control is unaware of the Kubernetes secrets in the source operator.
 
 == Install apps on your cluster
@@ -134,6 +135,9 @@ Defining an app gives you more granular control over what to include in an Astra
 
 WARNING: When defining apps, ensure that you do not include a Kubernetes resource in multiple apps with protection policies. Overlapping protection policies on a Kubernetes resources can cause data conflicts.
 
+.*Read more* about adding cluster-scoped resources to your app namespaces.
+[%collapsible]
+====
 You can import cluster resources that are associated with the namespaced resources in addition to those Astra Control included automatically. You can add a rule that will include resources of a specific group, kind, version and optionally, label. You might want to do this if there are resources that Astra Control does not include automatically. 
 
 You cannot exclude any of the cluster-scoped resources that are automatically included by Astra Control.
@@ -152,7 +156,8 @@ You can add the following `apiVersions` (which are the groups combined with the 
 | `ValidatingWebhookConfiguration` | admissionregistration.k8s.io/v1
 
 |===
-
+====
+// End snippet
 .Steps
 
 . From the Applications page, select *Define*.
@@ -171,7 +176,7 @@ TIP: To learn more about Kubernetes labels, https://kubernetes.io/docs/concepts/
 +
 TIP: Two or more apps cannot manage the same namespace and label selector combination. Be sure that the combination you define is unique for the managed app.
 
-. To include cluster-scoped resources in addition to those that Astra Control automatically includes, check *Include additional cluster-scoped resources* and complete the following: 
+. (Optional) To include cluster-scoped resources in addition to those that Astra Control automatically includes, check *Include additional cluster-scoped resources* and complete the following: 
 
 .. Select *Add include rule*. 
 .. *Group*: From the drop-down list, select the API group of resources. 
