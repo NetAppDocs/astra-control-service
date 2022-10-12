@@ -1,0 +1,40 @@
+---
+sidebar: sidebar
+permalink: use/manage-cloud-instances.html
+keywords: cloud, instance, manage, delete, remove, edit
+summary: Manage the cloud instances that you added when you added new clusters. 
+---
+
+= Manage cloud instances
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+A cloud instance is a unique domain within a cloud provider. You can create multiple cloud providers for each cloud provider, and each cloud instance has its own name, credentials, and associated clusters.
+
+You create a cloud instance when you add a new cluster to Astra Control. You can edit a cloud instance to change its name or default bucket using the Astra Control UI, and perform other actions with the cloud instance using the Astra Control API.
+
+
+== Add a cloud instance
+You can add a new cloud instance when you add a new cluster to Astra Control.  See link:../add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service] for more information.
+
+== Edit a cloud instance
+You can modify an existing cloud instance for a cloud provider. 
+
+.Steps
+
+. Go to *Cloud instances*.
+. In the list of cloud instances, select the *Actions* menu for the cloud instance you want to edit.
+. Select *Edit*.
++
+On this page, you can update the name and default bucket for the cloud instance.
++
+NOTE: Each cloud instance in Astra Control must have a unique name.
+
+== Rotate the credentials for a cloud instance
+You can use the Astra Control API to rotate the credentials for a cloud instance. To learn more, https://docs.netapp.com/us-en/astra-automation[go to the Astra automation docs^].
+// Get with Nathan on how to rotate with API
+
+
+== Remove a cloud instance
+You can use the Astra Control API to remove a cloud instance from a cloud provider. To learn more, https://docs.netapp.com/us-en/astra-automation[go to the Astra automation docs^].

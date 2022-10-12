@@ -44,5 +44,7 @@ entries:
         url: /use/manage-notifications.html
       - title: Close your account
         url: /use/close-account.html
+  - title: Manage cloud instances
+    url: /use/manage-cloud-instances.html 
   - title: Unmanage apps and clusters
     url: /use/unmanage.html
