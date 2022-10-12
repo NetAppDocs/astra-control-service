@@ -93,7 +93,7 @@ If you plan to use Google Persistent Disk as a storage backend, you need to manu
 
 A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service. Note that some of these requirements only apply if you plan to use Cloud Volumes Service for Google Cloud as a storage backend.
 
-Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.20 to 1.23.
+Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.22 to 1.24.
 
 Image type:: The image type for each worker node must be one of the following:
 * Container-Optimized OS with Containerd
