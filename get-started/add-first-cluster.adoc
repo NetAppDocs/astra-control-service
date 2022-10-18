@@ -48,12 +48,12 @@ NOTE: Astra Control Service supports AKS clusters that use Azure Active Director
 endif::gcp+azure+aws[]
 
 == Add a cluster by uploading a kubeconfig file
-You can add an on-premises or cloud-hosted Kubernetes cluster by uploading the cluster kubeconfig file to Astra Control Service. You'll need to make sure the cluster meets certain requirements.
+You can add an on-premises or cloud-hosted Kubernetes cluster by uploading the cluster kubeconfig file to Astra Control Service. You'll need to make sure the cluster meets certain requirements and perform certain tasks to prepare the cluster before you add it.
 
-.What you'll need before you add the cluster
+.Cluster prerequisite steps
 [%collapsible]
 =======
-Make sure that your cluster meets the following requirements and that you perform eligibility checks before you add it to Astra Control Service by uploading a kubeconfig file.
+Your cluster needs to meet the following requirements:
 
 * The most recent version of the Kubernetes https://kubernetes-csi.github.io/docs/snapshot-controller.html[snapshot-controller component^] is installed
 * An Astra Trident https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[volumesnapshotclass object^] has been defined by an administrator
