@@ -23,19 +23,19 @@ endif::aws[]
 == Create a Kubernetes cluster
 
 ifndef::azure,gcp[]
-If you don't have a cluster yet, create one that meets link:set-up-amazon-web-services.html#eks-cluster-requirements[Astra Control Service requirements for Amazon Elastic Kubernetes Service (EKS)].
+If you don't have a cluster yet, you can <<Add a cluster by uploading a kubeconfig file>>, or create one that meets link:set-up-amazon-web-services.html#eks-cluster-requirements[Astra Control Service requirements for Amazon Elastic Kubernetes Service (EKS)].
 endif::azure,gcp[]
 ifndef::azure,aws[]
-If you don't have a cluster yet, create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)].
+If you don't have a cluster yet, you can <<Add a cluster by uploading a kubeconfig file>>, or create one that meets link:set-up-google-cloud.html#gke-cluster-requirements[Astra Control Service requirements for Google Kubernetes Engine (GKE)].
 endif::azure,aws[]
 ifndef::gcp,aws[]
-If you don't have a cluster yet, create one that meets link:set-up-microsoft-azure-with-anf.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure NetApp Files] or link:set-up-microsoft-azure-with-amd.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure managed disks].
+If you don't have a cluster yet, you can <<Add a cluster by uploading a kubeconfig file>>, or create one that meets link:set-up-microsoft-azure-with-anf.html#azure-kubernetes-service-cluster-requirements[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure NetApp Files] or link:set-up-microsoft-azure-with-amd.html#azure-kubernetes-service-cluster-requirements[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure managed disks].
 
 NOTE: Astra Control Service supports AKS clusters that use Azure Active Directory (Azure AD) for authentication and identity management. When you create the cluster, follow the instructions in the https://docs.microsoft.com/en-us/azure/aks/managed-aad[official documentation^] to configure the cluster to use Azure AD. You'll need to make sure your clusters meet the requirements for AKS-managed Azure AD integration.
 endif::gcp,aws[]
 
 ifdef::gcp+azure+aws[]
-If you don't have a cluster yet, create one that meets the requirements of one of the following providers:
+If you don't have a cluster yet, you can <<Add a cluster by uploading a kubeconfig file>>, or create one that meets the requirements of one of the following providers:
 
 * link:set-up-microsoft-azure-with-anf.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure NetApp Files]
 * link:set-up-microsoft-azure-with-amd.html[Astra Control Service requirements for Azure Kubernetes Service (AKS) with Azure managed disks]
@@ -45,6 +45,256 @@ If you don't have a cluster yet, create one that meets the requirements of one o
 NOTE: Astra Control Service supports AKS clusters that use Azure Active Directory (Azure AD) for authentication and identity management. When you create the cluster, follow the instructions in the https://docs.microsoft.com/en-us/azure/aks/managed-aad[official documentation^] to configure the cluster to use Azure AD. You'll need to make sure your clusters meet the requirements for AKS-managed Azure AD integration.
 
 endif::gcp+azure+aws[]
+
+== Add a cluster by uploading a kubeconfig file
+You can add an on-premises or cloud-hosted Kubernetes cluster by uploading the cluster kubeconfig file to Astra Control Service. You'll need to make sure the cluster meets certain requirements.
+
+=== What you'll need before you upload the kubeconfig file
+[%collapsible]
+====
+Make sure that your cluster meets the following requirements and that you perform eligibility checks before you add it to Astra Control Service by uploading a kubeconfig file.
+
+* The most recent version of the Kubernetes https://kubernetes-csi.github.io/docs/snapshot-controller.html[snapshot-controller component^] is installed
+* An Astra Trident https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[volumesnapshotclass object^] has been defined by an administrator
+* A default Kubernetes storage class exists on the cluster
+* At least one storage class is configured to use Astra Trident
+
+NOTE: Your application cluster should have a `kubeconfig.yaml` file that defines only one _context_ element. Visit the Kubernetes documentation for https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[information about creating kubeconfig files^].
+
+NOTE: When managing application clusters in a Rancher environment, modify the application cluster's default context in the `kubeconfig` file provided by Rancher to use a control plane context instead of the Rancher API server context. This reduces load on the Rancher API server and improves performance.
+====
+
+==== Run eligibility checks
+[%collapsible]
+====
+Run the following eligibility checks to ensure that your cluster is ready to be added to Astra Control Service.
+
+.Steps
+
+. Check the Trident version.
++
+[source,sh]
+----
+kubectl get tridentversions -n trident
+----
++
+If Trident exists, you see output similar to the following:
++
+----
+NAME      VERSION
+trident   21.04.0
+----
++
+If Trident does not exist, you see output similar to the following:
++
+----
+error: the server doesn't have a resource type "tridentversions"
+----
++
+NOTE: If Trident is not installed or the installed version is not the latest, you need to install the latest version of Trident before proceeding. See the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Trident documentation^] for instructions.
+
+. Check if the storage classes are using the supported Trident drivers. The provisioner name should be `csi.trident.netapp.io`. See the following example:
++
+[source,sh]
+----
+kubectl get sc
+----
++
+Sample response:
++
+----
+NAME                   PROVISIONER                    RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+ontap-gold (default)   csi.trident.netapp.io          Delete          Immediate           true                   5d23h
+thin                   kubernetes.io/vsphere-volume   Delete          Immediate           false                  6d
+----
+====
+
+==== Create an admin-role kubeconfig
+[%collapsible]
+====
+
+Ensure that you have the following on your machine before you do the steps:
+
+* kubectl v1.19 or later installed
+* An active kubeconfig with cluster admin rights for the active context
+
+.Steps
+. Create a service account as follows:
+.. Create a service account file called `astracontrol-service-account.yaml`.
++
+Adjust the name and namespace as needed. If changes are made here, you should apply the same changes in the following steps.
++
+[source]
+[subs="specialcharacters,quotes"]
+----
+*astracontrol-service-account.yaml*
+----
++
+[source,yaml]
+----
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: astracontrol-service-account
+  namespace: default
+----
+.. Apply the service account:
++
+[source,sh]
+----
+kubectl apply -f astracontrol-service-account.yaml
+----
+. (Optional) If your cluster uses a restrictive pod security policy that doesn't allow privileged pod creation or allow processes within the pod containers to run as the root user, create a custom pod security policy for the cluster that enables Astra Control to create and manage pods. For instructions, see link:acc-create-podsecuritypolicy.html[Create a custom pod security policy].
+. Grant cluster admin permissions as follows:
+.. Create a `ClusterRoleBinding` file called `astracontrol-clusterrolebinding.yaml`.
++
+Adjust any names and namespaces modified when creating the service account as needed.
++
+[source]
+[subs="specialcharacters,quotes"]
+----
+*astracontrol-clusterrolebinding.yaml*
+----
++
+[source,yaml]
+----
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: astracontrol-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: astracontrol-service-account
+  namespace: default
+----
+.. Apply the cluster role binding:
++
+[source,sh]
+----
+kubectl apply -f astracontrol-clusterrolebinding.yaml
+----
+. List the service account secrets, replacing `<context>` with the correct context for your installation:
++
+[source,sh]
+----
+kubectl get serviceaccount astracontrol-service-account --context <context> --namespace default -o json
+----
++
+The end of the output should look similar to the following:
++
+----
+"secrets": [
+{ "name": "astracontrol-service-account-dockercfg-vhz87"},
+{ "name": "astracontrol-service-account-token-r59kr"}
+]
+----
++
+The indices for each element in the `secrets` array begin with 0. In the above example, the index for `astracontrol-service-account-dockercfg-vhz87` would be 0 and the index for `astracontrol-service-account-token-r59kr` would be 1. In your output, make note of the index for the service account name that has the word "token" in it.
+. Generate the kubeconfig as follows:
+.. Create a `create-kubeconfig.sh` file. Replace `TOKEN_INDEX` in the beginning of the following script with the correct value.
++
+[source]
+[subs="specialcharacters,quotes"]
+----
+*create-kubeconfig.sh*
+----
++
+[source,sh]
+----
+# Update these to match your environment.
+# Replace TOKEN_INDEX with the correct value
+# from the output in the previous step. If you
+# didn't change anything else above, don't change
+# anything else here.
+
+SERVICE_ACCOUNT_NAME=astracontrol-service-account
+NAMESPACE=default
+NEW_CONTEXT=astracontrol
+KUBECONFIG_FILE='kubeconfig-sa'
+
+CONTEXT=$(kubectl config current-context)
+
+SECRET_NAME=$(kubectl get serviceaccount ${SERVICE_ACCOUNT_NAME} \
+  --context ${CONTEXT} \
+  --namespace ${NAMESPACE} \
+  -o jsonpath='{.secrets[TOKEN_INDEX].name}')
+TOKEN_DATA=$(kubectl get secret ${SECRET_NAME} \
+  --context ${CONTEXT} \
+  --namespace ${NAMESPACE} \
+  -o jsonpath='{.data.token}')
+
+TOKEN=$(echo ${TOKEN_DATA} | base64 -d)
+
+# Create dedicated kubeconfig
+# Create a full copy
+kubectl config view --raw > ${KUBECONFIG_FILE}.full.tmp
+
+# Switch working context to correct context
+kubectl --kubeconfig ${KUBECONFIG_FILE}.full.tmp config use-context ${CONTEXT}
+
+# Minify
+kubectl --kubeconfig ${KUBECONFIG_FILE}.full.tmp \
+  config view --flatten --minify > ${KUBECONFIG_FILE}.tmp
+
+# Rename context
+kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
+  rename-context ${CONTEXT} ${NEW_CONTEXT}
+
+# Create token user
+kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
+  set-credentials ${CONTEXT}-${NAMESPACE}-token-user \
+  --token ${TOKEN}
+
+# Set context to use token user
+kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
+  set-context ${NEW_CONTEXT} --user ${CONTEXT}-${NAMESPACE}-token-user
+
+# Set context to correct namespace
+kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
+  set-context ${NEW_CONTEXT} --namespace ${NAMESPACE}
+
+# Flatten/minify kubeconfig
+kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
+  view --flatten --minify > ${KUBECONFIG_FILE}
+
+# Remove tmp
+rm ${KUBECONFIG_FILE}.full.tmp
+rm ${KUBECONFIG_FILE}.tmp
+----
+.. Source the commands to apply them to your Kubernetes cluster.
++
+[source,sh]
+----
+source create-kubeconfig.sh
+----
+. (Optional) Rename the kubeconfig to a meaningful name for your cluster. Protect your cluster credential.
++
+----
+chmod 700 create-kubeconfig.sh
+mv kubeconfig-sa.txt YOUR_CLUSTER_NAME_kubeconfig
+----
+====
+
+.Steps
+
+. Go to *Clusters*.
+. Select *Add*.
+. Select the *Other* tab.
+. In the *Credentials* area, upload a `kubeconfig.yaml` file or paste the contents of a `kubeconfig.yaml` file.
++
+NOTE: The `kubeconfig.yaml` file should include *only the cluster credential for one cluster*.
+
++
+NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. See https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files. 
+
+. Provide a credential name. By default, the credential name is auto-populated as the name of the cluster.
+. Select *Next*.
+. Select the storage class to be used for this Kubernetes cluster, and select *Next*.
+. Review the information, and if everything looks good, select *Add*.
 
 == Start managing Kubernetes clusters
 
