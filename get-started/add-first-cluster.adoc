@@ -345,10 +345,10 @@ NOTE: If you select a cluster that has not been configured for a cloud provider,
 
 . *Credential name* (For clusters of type "Other"): Provide a name for the cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
 
-ifndef::gcp,aws[]
+ifdef::azure[]
 +
 If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, <<Manage a private cluster,follow these instructions>> to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
-endif::gcp,aws[]
+endif::azure[]
 
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
