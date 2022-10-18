@@ -50,7 +50,7 @@ endif::gcp+azure+aws[]
 == Add a cluster by uploading a kubeconfig file
 You can add an on-premises or cloud-hosted Kubernetes cluster by uploading the cluster kubeconfig file to Astra Control Service. You'll need to make sure the cluster meets certain requirements and perform certain tasks to prepare the cluster before you add it.
 
-.Cluster prerequisite steps
+.Prerequisite steps
 [%collapsible]
 =======
 Your cluster needs to meet the following requirements:
