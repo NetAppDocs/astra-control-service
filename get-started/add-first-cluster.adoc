@@ -52,7 +52,7 @@ You can add an on-premises or cloud-hosted Kubernetes cluster by uploading the c
 
 === What you'll need before you add the cluster
 [%collapsible]
-====
+=======
 Make sure that your cluster meets the following requirements and that you perform eligibility checks before you add it to Astra Control Service by uploading a kubeconfig file.
 
 * The most recent version of the Kubernetes https://kubernetes-csi.github.io/docs/snapshot-controller.html[snapshot-controller component^] is installed
@@ -275,7 +275,7 @@ source create-kubeconfig.sh
 chmod 700 create-kubeconfig.sh
 mv kubeconfig-sa.txt YOUR_CLUSTER_NAME_kubeconfig
 ----
-====
+=======
 
 .Steps
 
