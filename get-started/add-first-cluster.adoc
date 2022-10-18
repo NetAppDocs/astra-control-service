@@ -125,7 +125,7 @@ If Trident does not exist, you see output similar to the following:
 error: the server doesn't have a resource type "tridentversions"
 ----
 +
-NOTE: If Trident is not installed or the installed version is not the latest, you need to install the latest version of Trident before proceeding. See the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Trident documentation^] for instructions.
+NOTE: If Trident is not installed or the installed version is not the latest, you need to install the latest version of Trident before proceeding. See the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for instructions.
 
 . Check if the storage classes are using the supported Trident drivers. The provisioner name should be `csi.trident.netapp.io`. See the following example:
 +
@@ -175,7 +175,7 @@ metadata:
 ----
 kubectl apply -f astracontrol-service-account.yaml
 ----
-. (Optional) If your cluster uses a restrictive pod security policy that doesn't allow privileged pod creation or allow processes within the pod containers to run as the root user, create a custom pod security policy for the cluster that enables Astra Control to create and manage pods. For instructions, see link:acc-create-podsecuritypolicy.html[Create a custom pod security policy].
+//. (Optional) If your cluster uses a restrictive pod security policy that doesn't allow privileged pod creation or allow processes within the pod containers to run as the root user, create a custom pod security policy for the cluster that enables Astra Control to create and manage pods. For instructions, see link:acc-create-podsecuritypolicy.html[Create a custom pod security policy].
 . Grant cluster admin permissions as follows:
 .. Create a `ClusterRoleBinding` file called `astracontrol-clusterrolebinding.yaml`.
 +
@@ -337,36 +337,19 @@ endif::gcp[]
 NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. See https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files.
 
 . *Cloud name* (For cloud provider clusters): Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
++
+NOTE: When you are selecting from the list of clusters, pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
+
++
+NOTE: If you select a cluster that has not been configured for a cloud provider, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
+
+ifdef::azure[]
++
+NOTE: If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, <<Manage a private cluster,follow these instructions>> to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
+endif::azure[]
 
 . *Credential name* (For clusters of type "Other"): Provide a name for the cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
 
-ifndef::azure,aws[]
-+
-Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
-+
-If you select a cluster that has not been configured for Cloud Volumes Service for Google Cloud, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
-endif::azure,aws[]
-ifndef::azure,gcp[]
-+
-Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
-+
-If you select a cluster that has not been configured for Amazon Web Services, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
-endif::azure,gcp[]
-ifndef::gcp,aws[]
-+
-Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
-+
-If you select a cluster that has not been configured for Azure NetApp Files, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
-+
-If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, <<Manage a private cluster,follow these instructions>> to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
-endif::gcp,aws[]
-ifdef::gcp+azure+aws[]
-+
-Pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node.
-+
-If you select a cluster that has not been configured for a cloud provider, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
-endif::gcp+azure+aws[]
-// Changes here to below storage class stuff as part of Trident work in PI-7
 . *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
 [NOTE]
@@ -429,8 +412,11 @@ endif::gcp+azure+aws[]
 
 .Result
 
-For clusters added using a cloud provider credential:
+*For clusters added using a cloud provider credential*:
 If this is the first cluster that you have added for this cloud provider, Astra Control Service creates an object store for the cloud provider for application backups on eligible clusters. (When you add subsequent clusters for this cloud provider, no further object stores are created.) Astra Control Service also creates an admin account on the cluster and sets the default storage class that you specified. This process can take up to 5 minutes.
+
+*For clusters added using a `kubeconfig.yaml` file*:
+Astra Control Service creates an admin account on the cluster and sets the default storage class that you specified. This process can take up to 5 minutes.
 
 ////
 .Steps
