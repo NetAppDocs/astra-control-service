@@ -412,8 +412,11 @@ endif::gcp+azure+aws[]
 
 .Result
 
-For clusters added using a cloud provider credential:
+*For clusters added using a cloud provider credential*:
 If this is the first cluster that you have added for this cloud provider, Astra Control Service creates an object store for the cloud provider for application backups on eligible clusters. (When you add subsequent clusters for this cloud provider, no further object stores are created.) Astra Control Service also creates an admin account on the cluster and sets the default storage class that you specified. This process can take up to 5 minutes.
+
+*For clusters added using a `kubeconfig.yaml` file*:
+Astra Control Service creates an admin account on the cluster and sets the default storage class that you specified. This process can take up to 5 minutes.
 
 ////
 .Steps
