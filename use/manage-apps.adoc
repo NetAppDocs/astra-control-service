@@ -15,7 +15,7 @@ After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to
 == App management requirements
 Astra Control has the following app management requirements:
 
-* *Licensing*: To manage more than 10 namespaces, you need an ACS subscription.
+* *Licensing*: To manage more than 10 namespaces, you need an Astra Control Center subscription.
 * *Namespaces*: Apps can be defined within one or more specified namespaces on a single cluster using Astra Control. An app can contain resources spanning multiple namespaces within the same cluster. Astra Control does not support the ability for apps to be defined across multiple clusters.
 * *StorageClass*: If you install an app with a StorageClass explicitly set and you need to clone the app, the target cluster for the clone operation must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
 * *Kubernetes resources*: Apps that use Kubernetes Resources not collected by Astra Control might not have full app data management capabilities. Astra Control collects the following Kubernetes resources:
