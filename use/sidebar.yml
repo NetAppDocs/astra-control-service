@@ -28,6 +28,8 @@ entries:
         url: /use/view-apps.html
   - title: Manage buckets
     url: /use/manage-buckets.html
+  - title: Monitor running tasks
+    url: /use/monitor-running-tasks.html
   - title: Manage your account
     entries:
       - title: Set up billing
