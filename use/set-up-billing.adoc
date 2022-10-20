@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: use/set-up-billing.html
 keywords: billing, set up billing, payments, set up payments, credit card, update credit card, change credit card, free plan, free trial, premium, premium plan
-summary: Astra Control's Free Plan enables you to manage up to 10 apps in your account. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
+summary: Astra Control's Free Plan enables you to manage up to 10 apps in your account. If you want to manage more than 10 namespaces, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
 ---
 
 = Set up billing
@@ -10,7 +10,7 @@ summary: Astra Control's Free Plan enables you to manage up to 10 apps in your a
 :icons: font
 :imagesdir: ../media/use/
 
-Astra Control's Free Plan enables you to manage up to 10 apps in your account. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
+Astra Control's Free Plan enables you to manage up to 10 namespaces in your account. If you want to manage more than 10 namespaces, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
 
 == Billing overview
 
@@ -20,19 +20,19 @@ There are two types of costs associated with using Astra Control Service: charge
 
 Astra Control Service offers three plans:
 
-Free Plan:: Manage up to 10 apps for free.
-Premium PayGo:: Manage an unlimited amount of apps at a rate of $.005 per minute, per app.
-Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 apps per _application pack_. Contact NetApp Sales to purchase as many packs as needed for your organization--for example, purchase 3 packs to manage 30 apps from Astra Control Service. If you manage more apps than allowed by your annual subscription, then you'll be charged at the overage rate of $0.005 per minute, per application (the same as Premium PayGo).
+Free Plan:: Manage up to 10 namespaces for free.
+Premium PayGo:: Manage an unlimited amount of namespaces at a rate of $.005 per minute, per app.
+Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 namespaces per _namespace pack_. Contact NetApp Sales to purchase as many packs as needed for your organization. For example, purchase 3 packs to manage 30 namespaces from Astra Control Service. If you manage more namespaces than allowed by your annual subscription, then you'll be charged at the subscription-dependent overage rate per namespace.
 +
 If you don't have an Astra Control account yet, purchasing the Premium Subscription automatically creates an Astra Control account for you. If you have an existing Free Plan, then you're automatically converted to the Premium Subscription.
 
-When you create an Astra Control account, you're automatically signed up for the Free Plan. Astra Control's Dashboard shows you how many apps you're currently managing out of the 10 free apps that you're allowed.
+When you create an Astra Control account, you're automatically signed up for the Free Plan. Astra Control's Dashboard shows you how many namespaces you're currently managing out of the 10 free namespaces that you're allowed. Billing starts for a namespace when the first app containing the namespace is managed, and stops for that namespace when the last app containing the namespace is unmanaged.
 
 //image:screenshot-dashboard.gif["A screenshot that shows the Astra dashboard which provides a resources summary and links to get started."]
 
-If you try to manage an 11th app, Astra Control notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to a Premium Plan.
+If you try to manage an 11th namespace, Astra Control notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to a Premium Plan.
 
-You can upgrade to a Premium Plan at any time. After you upgrade, Astra Control starts charging you for _all_ managed apps in the account. The first 10 apps don't stay in the Free Plan.
+You can upgrade to a Premium Plan at any time. After you upgrade, Astra Control starts charging you for _all_ namespaces in the account. The first 10 namespaces don't stay in the Free Plan.
 
 ifdef::gcp[]
 === Google Cloud billing
@@ -69,7 +69,7 @@ endif::aws[]
 +
 If you have multiple accounts, then each has its own billing plan.
 
-* Your Astra Control bill includes charges for managing your Kubernetes apps. You’re charged separately by your cloud provider for the storage backend for persistent volumes.
+* Your Astra Control bill includes charges for managing your namespaces. You’re charged separately by your cloud provider for the storage backend for persistent volumes.
 +
 link:../get-started/intro.html[Learn more about Astra Control pricing].
 
@@ -79,7 +79,7 @@ link:../get-started/intro.html[Learn more about Astra Control pricing].
 
 == Upgrade from the Free Plan to the Premium PayGo Plan
 
-Upgrade your billing plan at any time to start managing more than 10 apps from Astra Control by paying as you go. All you need is a valid credit card.
+Upgrade your billing plan at any time to start managing more than 10 namespaces from Astra Control by paying as you go. All you need is a valid credit card.
 
 .Steps
 
@@ -93,7 +93,7 @@ NOTE: Astra Control will email you if the credit card is nearing expiration.
 
 .Result
 
-You can now manage more than 10 apps. Astra Control starts charging you for _all_ apps that you're currently managing.
+You can now manage more than 10 namespaces. Astra Control starts charging you for _all_ apps that you're currently managing.
 
 == Upgrade from the Free Plan to the Premium Subscription
 
@@ -109,7 +109,7 @@ Contact NetApp Sales to pre-pay at a discounted rate with an annual subscription
 
 .Result
 
-A NetApp Sales representative will contact you to process your purchase order. After the order is complete, Astra Control will reflect your current plan on the Billing tab.
+A NetApp Sales representative will contact you to process your purchase order. After the order is complete, Astra Control will reflect your current plan on the *Billing* tab.
 
 //image:screenshot-premium-subscription.gif[A screenshot that shows the Account tab and an account that is enabled for the Premium Subscription.]
 
@@ -123,9 +123,9 @@ Astra Control shows you your current monthly costs, as well as a detailed billin
 +
 Your current costs appear under the billing overview.
 
-. To view the billing history by app, select *Billing history*.
+. To view the billing history by namespace, select *Billing history*.
 +
-Astra Control shows you the usage minutes and cost for each app. A usage minute is how many minutes Astra Control managed your app during a billing period.
+Astra Control shows you the usage minutes and cost for each namespace. A usage minute is how many minutes Astra Control managed your namespace during a billing period.
 
 . Select the drop-down list to select a previous month.
 

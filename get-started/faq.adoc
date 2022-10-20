@@ -36,9 +36,9 @@ You can access Astra Control Service at https://astra.netapp.io.
 
 Ask them to check their spam folder for an email from do-not-reply@netapp.com, or search their inbox for "invitation." You can also remove the user and attempt to re-add them.
 
-*I upgraded to the Premium PayGO Plan from the Free Plan. Will I get charged for the first 10 applications?*
+*I upgraded to the Premium PayGO Plan from the Free Plan. Will I get charged for the first 10 namespaces?*
 
-Yes. After upgrading to the Premium Plan, Astra Control starts charging you for all managed applications in your account.
+Yes. After upgrading to the Premium Plan, Astra Control starts charging you for all managed namespaces in your account.
 
 *I upgraded to the Premium PayGO Plan in the middle of a month. Will I get charged for the entire month?*
 
