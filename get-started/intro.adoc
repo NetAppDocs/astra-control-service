@@ -103,7 +103,7 @@ endif::azure[]
 +
 Astra Control Service continually watches your compute for state changes, so it's aware of any new apps that you add along the way.
 
-Astra Control's Free Plan enables you to manage up to 10 apps in your account. If you want to manage more than 10 apps, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
+Astra Control's Free Plan enables you to manage up to 10 namespaces in your account. If you want to manage more than 10 namespaces, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan.
 
 
 == How Astra Control Center works
