@@ -22,7 +22,7 @@ Astra Control Service offers three plans:
 
 Free Plan:: Manage up to 10 namespaces for free.
 Premium PayGo:: Manage an unlimited amount of namespaces at a rate of $.005 per minute, per app.
-Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 namespaces per _namespace pack_. Contact NetApp Sales to purchase as many packs as needed for your organization. For example, purchase 3 packs to manage 30 namespaces from Astra Control Service. If you manage more namespaces than allowed by your annual subscription, then you'll be charged at the subscription-dependent overage rate per namespace.
+Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 namespaces per _namespace pack_. Contact NetApp Sales to purchase as many packs as needed for your organization. For example, purchase 3 packs to manage 30 namespaces from Astra Control Service. If you manage more namespaces than allowed by your annual subscription, then you'll be charged at the subscription-dependent overage rate per extra namespace.
 +
 If you don't have an Astra Control account yet, purchasing the Premium Subscription automatically creates an Astra Control account for you. If you have an existing Free Plan, then you're automatically converted to the Premium Subscription.
 
@@ -30,7 +30,7 @@ When you create an Astra Control account, you're automatically signed up for the
 
 //image:screenshot-dashboard.gif["A screenshot that shows the Astra dashboard which provides a resources summary and links to get started."]
 
-If you try to manage an 11th namespace, Astra Control notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to a Premium Plan.
+If you try to manage an 11th namespace, Astra Control notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to a Premium Plan. You'll be charged at the subscription-dependent overage rate per extra namespace.
 
 You can upgrade to a Premium Plan at any time. After you upgrade, Astra Control starts charging you for _all_ namespaces in the account. The first 10 namespaces don't stay in the Free Plan.
 
