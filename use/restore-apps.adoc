@@ -16,7 +16,7 @@ Astra Control can restore your application from a snapshot or backup. Restoring 
 .About this task
 
 * *Protect your apps first*: It is strongly recommended to take a snapshot of or back up your application before restoring it. This will enable you to clone from the snapshot or backup in the event that the restore is unsuccessful.
-* *Check destination volumes*: If you restore to a different cluster, ensure that the cluster is using the same persistent volume access mode (for example, ReadWriteMany). The restore operation will fail if the destination persistent volume access mode is different.
+* *Check destination storage class*: If you restore to a different cluster, ensure that the destination cluster's storage class is using the same persistent volume access mode (for example, ReadWriteMany) as the storage class on the source cluster. The restore operation will fail if the destination persistent volume access mode is different.
 
 .Steps
 
