@@ -22,6 +22,9 @@ To see more information about failed tasks, see link:monitor-account-activity.ht
 .Steps
 
 . While a task is running, go to *Applications*.
-. Select the *Tasks* tab.
+. Select the name of an application from the list.
+. In the details of the application, select the *Tasks* tab.
++
+You can view details of current or past tasks, and filter by task state.
 
 NOTE: Tasks are retained in the *Tasks* list for up to 24 hours.
