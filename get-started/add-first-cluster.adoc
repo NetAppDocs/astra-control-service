@@ -341,7 +341,7 @@ NOTE: If you create your own `kubeconfig` file, you should define only *one* con
 NOTE: When you are selecting from the list of clusters, pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
 
 +
-NOTE: If you select a cluster that has not been configured for a cloud provider, a warning appears. This cluster does not have NetApp Trident installed and configured. You can proceed with adding the cluster if you intend to use a different storage service.
+NOTE: If you select a cluster that does not have Astra Trident installed and configured, a warning appears. You can proceed with adding the cluster if you intend to use a different storage service.
 
 ifdef::azure[]
 +
@@ -412,10 +412,10 @@ endif::gcp+azure+aws[]
 
 .Result
 
-*For clusters added using a cloud provider credential*:
+*For provider-managed clusters*:
 If this is the first cluster that you have added for this cloud provider, Astra Control Service creates an object store for the cloud provider for application backups on eligible clusters. (When you add subsequent clusters for this cloud provider, no further object stores are created.) Astra Control Service also creates an admin account on the cluster and sets the default storage class that you specified. This process can take up to 5 minutes.
 
-*For clusters added using a `kubeconfig.yaml` file*:
+*For self-managed clusters*:
 Astra Control Service creates an admin account on the cluster and sets the default storage class that you specified. This process can take up to 5 minutes.
 
 ////
