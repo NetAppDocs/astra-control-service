@@ -11,7 +11,7 @@ summary: You can view details about running tasks in Astra Control. For example,
 :imagesdir: ../media/use/
 
 [.lead]
-You can view details about running tasks in Astra Control. For example, you can view the status of a running snapshot, backup, or clone operation. You can view the status of a running scheduled operation or an operation that you started manually. 
+You can view details about running tasks and tasks that have completed, failed, or been cancelled in the last 24 hours in Astra Control. For example, you can view the status of a running backup, restore, or clone operation. You can view the status of a scheduled operation that has run or an operation that you started manually. 
 
 While viewing a running or completed task, you can expand the task details to see the status of each of the subtasks. The task progress bar is green for ongoing or completed tasks, blue for cancelled tasks, and red for tasks that failed because of an error.
 
