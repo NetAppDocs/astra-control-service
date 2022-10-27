@@ -460,7 +460,7 @@ endif::aws[]
 You can change the default storage class for a cluster.
 
 === Change the default storage class using Astra Control
-You can change the default storage class for a cluster from within Astra Control. If your cluster uses a previously installed storage backend service, you might not be able to use this method to change the default storage class. In this case, see <<Change the default storage class using the command line>>.
+You can change the default storage class for a cluster from within Astra Control. If your cluster uses a previously installed storage backend service, you might not be able to use this method to change the default storage class (the *Set as default* action is not selectable). In this case, you can <<Change the default storage class using the command line>>.
 
 .Steps
 
