@@ -52,8 +52,11 @@ You can also create an on-premises or cloud-hosted cluster that you intend to ma
 
 After you log in to Astra Control Service, your first step is to start managing your clusters. You can add a cluster that is managed by a cloud provider, or a self-managed cluster. Before you add a cluster to Astra Control Service, you'll need to perform certain tasks and make sure the cluster meets certain requirements.
 
-If no volume snapshot class is configured on the cluster when you add it, Astra Control Service attempts to install one with a default configuration. 
+// Removed due to PI-7 Trident brownfield changes
+//If no volume snapshot class is configured on the cluster when you add it, Astra Control Service attempts to install one with a default configuration. 
 
+////
+Removed due to PI-7 Trident brownfield changes
 [NOTE]
 ======================
 When Astra Control manages a cluster, it keeps track of the cluster's default storage class. If you change the storage class using `kubectl` commands, Astra Control reverts the change. To change the default storage class in a cluster managed by Astra Control, use one of the following methods:
@@ -61,6 +64,8 @@ When Astra Control manages a cluster, it keeps track of the cluster's default st
 * Use the Astra Control API `PUT /managedClusters` endpoint, and assign a different default storage class with the `DefaultStorageClass` parameter.
 * Use the Astra Control web UI to assign a different default storage class. See <<Change the default storage class>>.
 ======================
+
+////
 
 .What you'll need for clusters that are managed by a cloud provider
 [%collapsible]
@@ -90,10 +95,11 @@ endif::azure[]
 =======
 Your cluster needs to meet the following requirements:
 
-* The most recent version of the Kubernetes https://kubernetes-csi.github.io/docs/snapshot-controller.html[snapshot-controller component^] is installed
-* An Astra Trident https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[volumesnapshotclass object^] has been defined by an administrator
+* The most recent version of the Kubernetes https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[snapshot-controller component^] is installed
+* An Astra Trident https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass[volumesnapshotclass object^] has been defined by an administrator
 * A default Kubernetes storage class exists on the cluster
-* At least one storage class is configured to use Astra Trident
+// As of PI-7, Trident is not necessary
+// * At least one storage class is configured to use Astra Trident
 
 NOTE: Your application cluster should have a `kubeconfig.yaml` file that defines only one _context_ element. Visit the Kubernetes documentation for https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[information about creating kubeconfig files^].
 
@@ -105,6 +111,8 @@ Run the following eligibility checks to ensure that your cluster is ready to be 
 
 .Steps
 
+////
+As of PI-7, Trident is no longer required.
 . Check the Trident version.
 +
 [source,sh]
@@ -141,6 +149,8 @@ NAME                   PROVISIONER                    RECLAIMPOLICY   VOLUMEBIND
 ontap-gold (default)   csi.trident.netapp.io          Delete          Immediate           true                   5d23h
 thin                   kubernetes.io/vsphere-volume   Delete          Immediate           false                  6d
 ----
+
+////
 
 .Create an admin-role kubeconfig
 
@@ -416,7 +426,7 @@ endif::gcp+azure+aws[]
 If this is the first cluster that you have added for this cloud provider, Astra Control Service creates an object store for the cloud provider for application backups on eligible clusters. (When you add subsequent clusters for this cloud provider, no further object stores are created.) Astra Control Service also creates an admin account on the cluster and sets the default storage class that you specified. This process can take up to 5 minutes.
 
 *For self-managed clusters*:
-Astra Control Service creates an admin account on the cluster and sets the default storage class that you specified. This process can take up to 5 minutes.
+Astra Control Service creates an admin account on the cluster. This process can take up to 5 minutes.
 
 ////
 .Steps
@@ -449,6 +459,9 @@ endif::aws[]
 == Change the default storage class
 You can change the default storage class for a cluster.
 
+=== Change the default storage class using Astra Control
+You can change the default storage class for a cluster from within Astra Control. If your cluster uses a previously installed storage backend service, you might not be able to use this method to change the default storage class. In this case, see <<Change the default storage class using the command line>>.
+
 .Steps
 
 . In the Astra Control Service UI, select *Clusters*.
@@ -457,6 +470,37 @@ You can change the default storage class for a cluster.
 . Select the *Storage classes* category.
 . Select the *Actions* menu for the storage class that you want to set as default.
 . Select *Set as default*.
+
+=== Change the default storage class using the command line
+You can change the default storage class for a cluster using Kubernetes commands. This method works regardless of your cluster's configuration.
+
+.Steps
+
+. Log in to your Kubernetes cluster. 
+. List the storage classes in your cluster:
++
+[source,sh]
+----
+kubectl get storageclass
+----
+. Remove the default designation from the default storage class. Replace <SC_NAME> with the name of the storage class: 
++
+[source,sh]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+----
+. Mark a different storage class as default. Replace <SC_NAME> with the name of the storage class:
++
+[source,sh]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+----
+. Confirm the new default storage class:
++
+[source,sh]
+----
+kubectl get storageclass
+----
 
 
 ifdef::azure[]
