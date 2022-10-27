@@ -11,7 +11,7 @@ summary: You can view details about running tasks in Astra Control. For example,
 :imagesdir: ../media/use/
 
 [.lead]
-You can view details about running tasks and tasks that have completed, failed, or been cancelled in the last 24 hours in Astra Control. For example, you can view the status of a running backup, restore, or clone operation. You can view the status of a scheduled operation that has run or an operation that you started manually. 
+You can view details about running tasks and tasks that have completed, failed, or been cancelled in the last 24 hours in Astra Control. For example, you can view the status of a running backup, restore, or clone operation, and see details like percentage completed and estimated time remaining. You can view the status of a scheduled operation that has run or an operation that you started manually. 
 
 While viewing a running or completed task, you can expand the task details to see the status of each of the subtasks. The task progress bar is green for ongoing or completed tasks, blue for cancelled tasks, and red for tasks that failed because of an error.
 
@@ -27,4 +27,4 @@ To see more information about failed tasks, see link:monitor-account-activity.ht
 +
 You can view details of current or past tasks, and filter by task state.
 
-NOTE: Tasks are retained in the *Tasks* list for up to 24 hours.
+NOTE: Tasks are retained in the *Tasks* list for up to 24 hours. You can configure this limit and other task monitor settings using the https://docs.netapp.com/us-en/astra-automation/[Astra Control API^]. 
