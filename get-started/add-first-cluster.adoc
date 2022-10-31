@@ -106,36 +106,34 @@ NOTE: Your application cluster should have a `kubeconfig.yaml` file that defines
 NOTE: When managing application clusters in a Rancher environment, modify the application cluster's default context in the `kubeconfig` file provided by Rancher to use a control plane context instead of the Rancher API server context. This reduces load on the Rancher API server and improves performance.
 
 
-.Run eligibility checks
-Run the following eligibility checks to ensure that your cluster is ready to be added to Astra Control Service.
+.(Optional) Check Astra Trident version
+If your cluster uses Astra Trident for storage services, ensure that the installed version of Astra Trident is the latest. 
 
 .Steps
 
-////
-As of PI-7, Trident is no longer required.
-. Check the Trident version.
+. Check the Astra Trident version.
 +
 [source,sh]
 ----
 kubectl get tridentversions -n trident
 ----
 +
-If Trident exists, you see output similar to the following:
+If Astra Trident is installed, you see output similar to the following:
 +
 ----
 NAME      VERSION
 trident   21.04.0
 ----
 +
-If Trident does not exist, you see output similar to the following:
+If Astra Trident is not installed, you see output similar to the following:
 +
 ----
 error: the server doesn't have a resource type "tridentversions"
 ----
 +
-NOTE: If Trident is not installed or the installed version is not the latest, you need to install the latest version of Trident before proceeding. See the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for instructions.
+NOTE: If Astra Trident is not installed or not current, and you want your cluster to use Astra Trident for storage services, you need to install the latest version of Astra Trident before proceeding. See the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for instructions.
 
-. Check if the storage classes are using the supported Trident drivers. The provisioner name should be `csi.trident.netapp.io`. See the following example:
+. Check if the storage classes are using the supported Astra Trident drivers. The provisioner name should be `csi.trident.netapp.io`. See the following example:
 +
 [source,sh]
 ----
@@ -149,8 +147,6 @@ NAME                   PROVISIONER                    RECLAIMPOLICY   VOLUMEBIND
 ontap-gold (default)   csi.trident.netapp.io          Delete          Immediate           true                   5d23h
 thin                   kubernetes.io/vsphere-volume   Delete          Immediate           false                  6d
 ----
-
-////
 
 .Create an admin-role kubeconfig
 
@@ -350,8 +346,8 @@ NOTE: If you create your own `kubeconfig` file, you should define only *one* con
 +
 NOTE: When you are selecting from the list of clusters, pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
 
-+
-NOTE: If you select a cluster that does not have Astra Trident installed and configured, a warning appears. You can proceed with adding the cluster if you intend to use a different storage service.
+//+
+//NOTE: If you select a cluster that does not have Astra Trident installed and configured, a warning appears. You can proceed with adding the cluster if you intend to use a different storage service.
 
 ifdef::azure[]
 +
@@ -423,10 +419,10 @@ endif::gcp+azure+aws[]
 .Result
 
 *For provider-managed clusters*:
-If this is the first cluster that you have added for this cloud provider, Astra Control Service creates an object store for the cloud provider for application backups on eligible clusters. (When you add subsequent clusters for this cloud provider, no further object stores are created.) Astra Control Service also creates an admin account on the cluster and sets the default storage class that you specified. This process can take up to 5 minutes.
+If this is the first cluster that you have added for this cloud provider, Astra Control Service creates an object store for the cloud provider for application backups on eligible clusters. (When you add subsequent clusters for this cloud provider, no further object stores are created.) Astra Control Service also sets the default storage class that you specified. For clusters managed in Amazon Web Services or Google Cloud Platform, Astra Control Service also creates an admin account on the cluster. These actions can take several minutes.
 
-*For self-managed clusters*:
-Astra Control Service creates an admin account on the cluster. This process can take up to 5 minutes.
+//*For self-managed clusters*:
+//Astra Control Service creates an admin account on the cluster. This process can take several minutes.
 
 ////
 .Steps
