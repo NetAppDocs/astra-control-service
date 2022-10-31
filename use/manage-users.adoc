@@ -10,6 +10,7 @@ summary: Invite users to join your Astra Control account and remove users that s
 :icons: font
 :imagesdir: ../media/use/
 
+[.lead]
 Invite users to join your Astra Control account and remove users that should no longer have access to the account.
 
 == Invite users

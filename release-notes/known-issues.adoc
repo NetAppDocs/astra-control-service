@@ -10,6 +10,7 @@ summary: Known issues identify problems that might prevent you from using this r
 :icons: font
 :imagesdir: ../media/release-notes/
 
+[.lead]
 Known issues identify problems that might prevent you from using this release of the product successfully.
 
 The following known issues affect the current release:

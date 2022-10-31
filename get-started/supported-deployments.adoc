@@ -10,6 +10,7 @@ summary: "Astra Control Service can manage apps that are running on a managed Ku
 :icons: font
 :imagesdir: ../media/get-started/
 
+[.lead]
 ifndef::azure,gcp[]
 Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Amazon Elastic Kubernetes Service (EKS).
 endif::azure,gcp[]

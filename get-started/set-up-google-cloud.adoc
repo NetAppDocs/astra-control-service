@@ -10,6 +10,7 @@ summary: A few steps are required to prepare your Google Cloud project before yo
 :icons: font
 :imagesdir: ../media/get-started/
 
+[.lead]
 A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with Astra Control Service.
 
 NOTE: If you do not start out using Google Cloud Volumes Service for Google Cloud as a storage backend but plan to use it at a later date, you should complete the necessary steps to configure Google Cloud Volumes Service for Google Cloud now. Creating a service account later means that you might lose access to your existing storage buckets.

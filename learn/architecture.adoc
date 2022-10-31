@@ -13,7 +13,7 @@ summary: Here's an overview of the various components of the Astra Control envir
 //Remote includes from ACC repo
 //include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-architecture.adoc[]
 
-
+[.lead]
 Here is an overview of the various components of the Astra Control environment.
 
 image:astra-architecture-diagram-v4.png[Astra Control architecture diagram and components]

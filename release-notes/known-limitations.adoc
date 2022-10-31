@@ -10,6 +10,7 @@ summary: Known limitations identify platforms, devices, or functions that are no
 :icons: font
 :imagesdir: ../media/release-notes/
 
+[.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
 == General limitations

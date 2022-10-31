@@ -10,6 +10,7 @@ summary: Manage the cloud instances that you added when you added new clusters.
 :icons: font
 :imagesdir: ../media/use/
 
+[.lead]
 A cloud instance is a unique domain within a cloud provider. You can create multiple cloud instances for each cloud provider, and each cloud instance has its own name, credentials, and associated clusters.
 
 You create a cloud instance when you add a new cluster to Astra Control. You can edit a cloud instance to change its name or default bucket using the Astra Control UI, and perform other actions with the cloud instance using the Astra Control API.

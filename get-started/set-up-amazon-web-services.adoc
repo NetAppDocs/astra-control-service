@@ -10,6 +10,7 @@ summary: A few steps are required to prepare your Amazon Web Services project be
 :icons: font
 :imagesdir: ../media/get-started/
 
+[.lead]
 A few steps are required to prepare your Amazon Web Services project before you can manage Amazon Elastic Kubernetes Service (EKS) clusters with Astra Control Service.
 
 == Quick start for setting up Amazon Web Services

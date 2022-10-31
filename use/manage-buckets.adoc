@@ -10,6 +10,7 @@ summary: Manage the buckets that Astra uses for backups and clones by adding add
 :icons: font
 :imagesdir: ../media/use/
 
+[.lead]
 Manage the buckets that Astra uses for backups and clones by adding additional buckets and by changing the default bucket for the Kubernetes clusters in your cloud instance.
 
 Only Admins can add and modify buckets.
