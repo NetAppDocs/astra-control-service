@@ -41,13 +41,9 @@ If a bucket is in the Removed state, you can still set it as the default bucket 
 
 .Step
 
-. Under *Manage your storage*, select *Buckets*.
+. Go to *Buckets*.
 +
 The list of buckets available to Astra Control Service displays.
-//+
-//As you can see from the following example, there is only one bucket available: the default bucket that Astra created.
-//+
-//image:screenshot_buckets_list.png[A screenshot that shows one bucket in the Buckets page.]
 
 == Add an additional bucket
 
@@ -64,7 +60,7 @@ endif::azure[]
 
 .Steps
 
-. Under *Manage your storage*, select *Buckets*.
+. Go to *Buckets*.
 
 . Select *Add* and follow the prompts to add the bucket.
 +
@@ -81,13 +77,8 @@ endif::azure[]
 ifdef::aws[]
 * *S3 server name or IP address* (AWS only): Enter the fully qualified domain name of the S3 endpoint that corresponds with your region, without `https://`. See https://docs.aws.amazon.com/general/latest/gr/s3.html[the Amazon documentation^] for more information.
 endif::aws[]
-//* *Make this bucket the default bucket for this cloud*: Choose whether you would like to use this bucket as the default bucket for ad-hoc backups and clones. (removed in PI-7 as part of multi hyperscaler feature)
 
 * *Select credentials*: Choose the credentials that provide Astra Control Service with the permissions that it needs to manage the bucket.
-//+
-//Here's an example that shows adding a new bucket in Google Cloud Platform.
-//+
-//image:screenshot_buckets_add.png[A screenshot that shows one bucket in the Buckets page.]
 
 . Select *Add* to add the bucket.
 
@@ -111,8 +102,6 @@ Astra Control Service uses the default bucket for a cloud instance for ad-hoc ba
 
 . In the list of buckets, select the bucket you want to make the default bucket for this cloud instance.
 
-// . Select *Make this bucket the default bucket for this cloud*. (Went away in PI-7)
-
 . Select *Update*.
 
 == Remove a bucket
@@ -130,7 +119,7 @@ If there are, you will not be able to continue.
 
 
 .Steps
-. From left navigation, select *Buckets*.
+. Go to *Buckets*.
 . From the *Actions* menu, select *Remove*.
 
 +
