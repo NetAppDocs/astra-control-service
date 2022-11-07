@@ -20,6 +20,27 @@ This release includes the following new features and enhancements.
 You can now add multiple cloud instances within a single cloud provider, each with its own credentials and associated clusters.
 +
 link:../use/manage-cloud-instances.html[Manage cloud instances]
+* Astra Control Service now supports apps defined across multiple namespaces.
++
+link:../use/manage-cloud-instances.html[Manage cloud instances]
+* Astra Control Service now supports adding cluster-scoped resources to your app namespaces. You can import cluster resources that are associated with namespaced resources in addition to those that Astra Control includes automatically.
++
+link:../use/manage-cloud-instances.html[Manage cloud instances]
+* Added the ability to dynamically preview your app.
++
+link:../use/manage-cloud-instances.html[Manage cloud instances]
+* You can use the built-in task monitor to see the status of backup, restore, and clone operations.
++
+link:../use/manage-cloud-instances.html[Manage cloud instances]
+* You can now add self-managed Kubernetes clusters to Astra Control Service.
++
+link:../use/manage-cloud-instances.html[Manage cloud instances]
+* Billing for Astra Control Service is now metered per namespace instead of per application.
++
+link:../use/manage-cloud-instances.html[Manage cloud instances]
+* You can sign up for term-based subscriptions to Astra Control Service through the Amazon Marketplace.
++
+link:../use/manage-cloud-instances.html[Manage cloud instances]
 
 == 7 September 2022
 This release includes stability and resiliency enhancements for the Astra Control Service infrastructure.
