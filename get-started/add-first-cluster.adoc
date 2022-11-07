@@ -348,7 +348,7 @@ NOTE: When you are selecting from the list of clusters, pay careful attention to
 ifdef::azure[]
 +
 
-NOTE: If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, <<Manage a private cluster,follow these instructions>> to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
+NOTE: If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, link:manage-private-cluster.html[see these instructions] to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
 endif::azure[]
 
 . *Credential name* (For self-managed clusters): Provide a name for the self-managed cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
