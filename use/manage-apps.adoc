@@ -83,6 +83,10 @@ NOTE: For K8ssandra, in-place restore operations are supported. A restore operat
 
 +
 Astra Control might not be able to clone an operator that is designed with a “pass-by-reference” architecture (for example, the CockroachDB operator). During these types of cloning operations, the cloned operator attempts to reference Kubernetes secrets from the source operator despite having its own new secret as part of the cloning process. The clone operation might fail because Astra Control is unaware of the Kubernetes secrets in the source operator.
++
+
+NOTE: During clone operations, apps that need an IngressClass resource or webhooks to function properly must not have those resources already defined on the destination cluster.
+
 
 == Install apps on your cluster
 
