@@ -5,7 +5,7 @@ entries:
     url: /use/log-in.html
   - title: Manage and protect apps
     entries:
-      - title: Start managing apps
+      - title: Define apps
         url: /use/manage-apps.html
       - title: Protect apps
         url: /use/protect-apps.html

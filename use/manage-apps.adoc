@@ -5,13 +5,13 @@ keywords: manage app, discover app, how to manage kubernetes apps, astra control
 summary: After you add Kubernetes clusters to Astra Control, you can install apps on that cluster (outside of Astra Control), and then go to the Applications page in Astra Control to start managing the apps.
 ---
 
-= Start managing apps
+= Define apps
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/use/
 
 [.lead]
-After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to Astra Control], you can install apps on the cluster (outside of Astra Control), and then go to the Apps page in Astra Control to start managing the apps.
+After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to Astra Control], you can install apps on the cluster (outside of Astra Control), and then go to the Apps page in Astra Control to define the apps.
 
 == App management requirements
 Astra Control has the following app management requirements:
@@ -180,14 +180,13 @@ TIP: To learn more about Kubernetes labels, https://kubernetes.io/docs/concepts/
 
 . (Optional) Add additional namespaces for the app by selecting *Add namespace* and choosing the namespace from the drop-down list.
 . (Optional) Enter single label or label selector criteria for any additional namespaces you add.
-+
-TIP: Two or more apps cannot manage the same namespace and label selector combination. Be sure that the combination you define is unique for the managed app.
+
 
 . (Optional) To include cluster-scoped resources in addition to those that Astra Control automatically includes, check *Include additional cluster-scoped resources* and complete the following: 
 
 .. Select *Add include rule*. 
 .. *Group*: From the drop-down list, select the API group of resources. 
-.. *Find*: From the drop-down list, select the name of the object schema.
+.. *Kind*: From the drop-down list, select the name of the object schema.
 .. *Version*: Enter the API version. 
 .. *Label selector*: Optionally, include a label to add to the rule. This label is used to retrieve only those resources matching this label. If you don't provide a label, Astra Control collects all instances of the resource kind specified for that cluster.  
 .. Review the rule that is created based on your entries. 
@@ -204,7 +203,7 @@ NOTE: The app you just added might have a warning icon under the Protected colum
 
 TIP: To see details of a particular app, select the app name.
 
-To see the resources added to this app, select the *Resources* tab. Select the number (for example, +6) after the resource name in the Resource column to see the additional cluster-scoped resources included. 
+To see the resources added to this app, select the *Resources* tab. Select the number after the resource name in the Resource column or enter the resource name in Search to see the additional cluster-scoped resources included. 
 
 === Define a namespace to manage as an app
 
