@@ -100,16 +100,14 @@ Astra Control's Free Plan enables you to manage up to 10 namespaces in your acco
 
 Astra Control Center runs locally in your own private cloud.
 
-Astra Control Center supports OpenShift Kubernetes clusters with:
+Astra Control Center supports Kubernetes clusters with Trident-based storage class with an ONTAP 9.5 and above storage backend.
 
-* Trident storage backends with ONTAP 9.5 and above
-* Astra Data Store storage backends
 
 In a cloud connected environment Astra Control Center uses Cloud Insights to provide advanced monitoring and telemetry. In the absence of a Cloud Insights connection, limited (7-days of metrics) monitoring and telemetry is available in Astra Control Center and also exported to Kubernetes native monitoring tools (such as Prometheus and Grafana) through open metrics end points.
 
 Astra Control Center is fully integrated into the AutoSupport and Active IQ ecosystem to provide users and NetApp Support with troubleshooting and usage information.
 
-You can try Astra Control Center out using a 90-day evaluation license. The evaluation version is supported through email and community (Slack channel) options. Additionally, you have access to Knowledgebase articles and documentation from the in-product support dashboard.
+You can try Astra Control Center out using a 90-day evaluation license. The evaluation version is supported through email and community options. Additionally, you have access to Knowledgebase articles and documentation from the in-product support dashboard.
 
 To install and use Astra Control Center, you'll need to meet certain https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html[requirements].
 
@@ -126,13 +124,8 @@ At a high level, Astra Control Center works like this:
 
 Learn more about how to https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html[set up Astra Control Center].
 
-Astra Control Center does this:
 
-* Discovers details about the managed Kubernetes clusters.
-* Discovers your Astra Trident or Astra Data Store configuration on the clusters that you choose to manage and lets you monitor the storage backends.
-* Discovers apps on those clusters and enables you to manage and protect the apps.
-
-You can add apps to your cluster. Or, if you have some apps already in the cluster being managed, you can use Astra Control Center to discover and manage them. Then, use Astra Control Center to create snapshots, backups, and clones.
+You can add apps to your cluster. Or, if you have some apps already in the cluster being managed, you can use Astra Control Center to manage them. Then, use Astra Control Center to create snapshots, backups, clones and replication relationships.
 
 
 == For more information
