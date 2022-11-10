@@ -13,6 +13,7 @@ summary: Describes the type of managed apps in Astra Control.
 [.lead]
 When Astra Control discovers your clusters, the apps on those clusters are unmanaged until you choose how you want to manage them. A managed application in Astra Control can be any of the following:
 
+
 * A namespace, including all resources in that namespace
 +
 image:diagram-managed-app1.png[A conceptual image that shows Astra managing all of the resources in a namespace.]
