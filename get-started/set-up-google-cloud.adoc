@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: get-started/set-up-google-cloud.html
-keywords: google cloud, google cloud platform, gcp, set up google cloud, set up gcp, set up service account, create service account, project, gcp project, permissions gcp permissions, service account permissions, key, service account key, json, key json, roles, service account roles, gcp roles, cvs, cvs for aws, cloud volumes service apis, apis, networking, cvs networking, cloud volumes service networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, google cloud regions, gcp regions, kubernetes version, ubuntu, image type, networking, container os
+keywords: google cloud, google cloud platform, gcp, set up google cloud, set up gcp, set up service account, create service account, project, gcp project, permissions gcp permissions, service account permissions, key, service account key, json, key json, roles, service account roles, gcp roles, cvs, cvs for aws, cloud volumes service apis, apis, networking, cvs networking, cloud volumes service networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, google cloud regions, gcp regions, kubernetes version, image type, networking, container os
 summary: A few steps are required to prepare your Google Cloud project before you can manage Google Kubernetes Engine clusters with Astra Control Service.
 ---
 
@@ -24,7 +24,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Review Astra Control Service requirements for Google Kubernetes Engine
 
 [role="quick-margin-para"]
-Ensure that clusters are healthy and running a supported Kubernetes version, that worker nodes are online and running Container-Optimized OS or Ubuntu, and more. <<GKE cluster requirements,Learn more about this step>>.
+Ensure that clusters are healthy and running a supported Kubernetes version, that worker nodes are online and running a supported image type, and more. <<GKE cluster requirements,Learn more about this step>>.
 
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] (Optional): Purchase Cloud Volumes Service for Google Cloud
 
@@ -96,10 +96,7 @@ A Kubernetes cluster must meet the following requirements so you can discover an
 
 Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.22 to 1.24.
 
-Image type:: The image type for each worker node must be one of the following:
-* Container-Optimized OS with Containerd
-* Container-Optimized OS with Docker
-* Ubuntu with Docker
+Image type:: The image type for each worker node must be `COS_CONTAINERD`.
 
 Cluster state:: Clusters must be running in a healthy state and have at least one online worker node with no worker nodes in a failed state.
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: get-started/set-up-amazon-web-services.html
-keywords: set up service account, create service account, project, permissions, service account permissions, key, service account key, json, key json, roles, service account roles, apis, networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, kubernetes version, ubuntu, image type, networking, container os
+keywords: set up service account, create service account, project, permissions, service account permissions, key, service account key, json, key json, roles, service account roles, apis, networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, kubernetes version, image type, networking, container os
 summary: A few steps are required to prepare your Amazon Web Services project before you can manage Amazon Elastic Kubernetes Service clusters with Astra Control Service.
 ---
 

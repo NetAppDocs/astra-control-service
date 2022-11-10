@@ -57,7 +57,7 @@ No. When your cluster is added to Astra Control, the service will automatically 
 
 *I need to add worker nodes to my cluster after adding to Astra Control Service. What should I do?*
 
-New worker nodes can be added to existing pools, or new pools can be created as long as they are the Ubuntu image type. These will be automatically discovered by Astra Control. If the new nodes are not visible in Astra Control, check if the new worker nodes are running the supported image type. You can also verify the health of the new worker nodes by using the `kubectl get nodes` command.
+New worker nodes can be added to existing pools, or new pools can be created as long as they are the `COS_CONTAINERD` image type. These will be automatically discovered by Astra Control. If the new nodes are not visible in Astra Control, check if the new worker nodes are running the supported image type. You can also verify the health of the new worker nodes by using the `kubectl get nodes` command.
 
 ifdef::aws[]
 == Registering Elastic Kubernetes Service (EKS) clusters
@@ -141,7 +141,7 @@ The Astra Trident operator sets the default storage class to `netapp-cvs-perf-pr
 
 * Run `kubectl get sc` and check the default storage class.
 * Check the yaml file or Helm chart that was used to deploy the application and see if a different storage class is defined.
-* Check to make sure that the worker node image type is Ubuntu and the NFS mount succeeded.
+* Check to make sure that the worker node image type is `COS_CONTAINERD` and the NFS mount succeeded.
 endif::gcp[]
 
 *What happens to applications after I stop managing them from Astra Control?*
