@@ -66,8 +66,8 @@ When you manage AWS clusters with Astra Control Service, persistent volumes are 
 * https://aws.amazon.com/eks/pricing/[View pricing details for Amazon Web Services^].
 endif::aws[]
 
-== Subscribe to a plan in the Azure Marketplace
-You can sign up for an Astra Control Service subscription using the Azure Marketplace. Your account and billing details are managed through the Marketplace.
+== Subscribe to Astra Control Service in the Azure Marketplace
+You can subscribe to Astra Control Service using the Azure Marketplace. Your account and billing details are managed through the Marketplace.
 
 .Steps
 
@@ -75,8 +75,8 @@ You can sign up for an Astra Control Service subscription using the Azure Market
 . Select *Get It Now*.
 . Follow the instructions to subscribe to a plan.
 
-== Subscribe to a plan in the AWS Marketplace
-You can sign up for an Astra Control Service subscription using the AWS Marketplace. Your account and billing details are managed through the Marketplace.
+== Subscribe to Astra Control Service in the AWS Marketplace
+You can subscribe to Astra Control Service using the AWS Marketplace. Your account and billing details are managed through the Marketplace.
 
 .Steps
 
@@ -84,8 +84,8 @@ You can sign up for an Astra Control Service subscription using the AWS Marketpl
 . Select *Continue to Subscribe*.
 . Follow the instructions to subscribe to a plan.
 
-== Subscribe to a plan directly with NetApp
-You can subscribe to a plan from within the Astra Control Service UI or by contacting NetApp Sales. 
+== Subscribe to Astra Control Service directly with NetApp
+You can subscribe to Astra Control Service from within the Astra Control Service UI or by contacting NetApp Sales. 
 
 === Upgrade from the Free Plan to the Premium PayGo Plan
 
