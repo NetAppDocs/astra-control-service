@@ -141,7 +141,7 @@ The Astra Trident operator sets the default storage class to `netapp-cvs-perf-pr
 
 * Run `kubectl get sc` and check the default storage class.
 * Check the yaml file or Helm chart that was used to deploy the application and see if a different storage class is defined.
-* Check to make sure that the worker node image type is `COS_CONTAINERD` and the NFS mount succeeded.
+* GKE version 1.24 and later does not support Docker-based node images. Check to make sure that the worker node image type in GKE is `COS_CONTAINERD` and that the NFS mount succeeded.
 endif::gcp[]
 
 *What happens to applications after I stop managing them from Astra Control?*
