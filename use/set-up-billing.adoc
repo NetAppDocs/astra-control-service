@@ -15,9 +15,6 @@ You can use more than one method to manage your Astra Control Service account bi
 
 The Astra Control Service Free Plan enables you to manage up to 10 namespaces in your account. If you want to manage more than 10 namespaces, then you'll need to set up billing by upgrading from the Free Plan to the Premium Plan, or subscribe through the Azure Marketplace or AWS Marketplace.
 
-NOTE: You can't upgrade the Astra Control Service account that you create through Astra Control Service to an Azure Marketplace PayGo or AWS Marketplace term-based offer account. When you subscribe to Astra Control Service through a Marketplace, you need to create a new Astra Control Service account (you can use the same e-mail address). The namespaces you managed through the initial Astra Control Service account can't be transferred to a Marketplace account.
-
-
 == Billing overview
 
 There are two types of costs associated with using Astra Control Service: charges from NetApp for the Astra Control Service and charges from your cloud provider for persistent volumes and object storage.
