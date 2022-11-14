@@ -92,7 +92,7 @@ NOTE: During clone operations, apps that need an IngressClass resource or webhoo
 
 After you've link:../get-started/add-first-cluster.html[added your cluster] to Astra Control, you can install apps or manage existing apps on the cluster. Any app that is scoped to one or more namespaces can be managed.
 
-Astra Control will manage stateful apps only if the storage is on a storage class supported by Astra Control.
+Astra Control will manage stateful apps only if the storage is on a storage class supported by Astra Control. Astra Control Service supports any storage class that is supported by Astra Trident or a generic CSI driver.
 
 ifdef::gcp[]
 * link:../learn/choose-class-and-size.html[Learn about storage classes for GKE clusters]
