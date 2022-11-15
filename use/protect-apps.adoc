@@ -135,8 +135,6 @@ The snapshots display by default.
 
 Delete the scheduled or on-demand snapshots that you no longer need.
 
-NOTE: You cannot delete a snapshot that currently is being replicated.
-
 .Steps
 
 . Select *Applications* and then select the name of a managed app.

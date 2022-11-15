@@ -54,7 +54,7 @@ This release includes the following new features and enhancements.
 * Improved application management workflow
 Improved application management workflows provide increased flexibility when defining applications managed by Astra Control.
 +
-link:../use/manage-apps.html#manage-apps[Manage apps]
+link:../use/manage-apps.html#define-apps[Manage apps]
 
 ifdef::aws[]
 * Support for Amazon Web Services clusters
