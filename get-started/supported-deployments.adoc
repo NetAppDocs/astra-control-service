@@ -39,3 +39,4 @@ ifdef::azure[]
 * link:set-up-microsoft-azure-with-anf.html[Learn how to set up Microsoft Azure with Azure NetApp Files for Astra Control Service].
 * link:set-up-microsoft-azure-with-amd.html[Learn how to set up Microsoft Azure with Azure managed disks for Astra Control Service].
 endif::azure[]
+* link:add-first-cluster.html#start-managing-kubernetes-clusters[Learn how to prepare self-managed clusters before adding them to Astra Control Service].
