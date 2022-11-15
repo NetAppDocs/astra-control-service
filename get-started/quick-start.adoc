@@ -53,7 +53,6 @@ endif::azure[]
 
 
 If you are managing your own cluster and it is not hosted by a cloud provider, review the requirements for self-managed clusters.
-+
 link:add-first-cluster.html#start-managing-kubernetes-clusters[Learn more about self-managed cluster requirements].
 
 == image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Complete the Astra Control registration
