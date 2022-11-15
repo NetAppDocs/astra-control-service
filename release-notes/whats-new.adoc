@@ -14,32 +14,36 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
 == 22 November 2022
-This release includes the following new features and enhancements.
 
-* Support for managing multiple cloud provider subscriptions in a single Astra Control Service account
-+
-link:../use/manage-cloud-instances.html[Manage cloud instances]
-* Support for managing applications that are defined across multiple namespaces
-+
-link:../use/manage-apps.html[Define apps]
-* Support for adding additional instances of cluster-scoped resources to your app definitions
+.New features and support
+
+
+* Support for apps that span across multiple namespaces and support for cluster resources that are associated with namespaced resources in addition to those that Astra Control includes automatically. 
 +
 link:../use/manage-apps.html[Define apps]
-* Support for managing clusters that already have a compatible version of Astra Trident installed
-+
-link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service]
-* Support for using the built-in task monitor to see the status of backup, restore, and clone operations
+* Enhanced progress reporting for your backup, restore, and clone operations.
 +
 link:../use/monitor-running-tasks.html[Monitor running tasks]
+* Support for managing clusters that already have a compatible version of Astra Trident installed.
++
+link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service] 
+* Support for managing multiple cloud provider subscriptions in a single Astra Control Service account.
++
+link:../use/manage-cloud-instances.html[Manage cloud instances]
 * Support for adding self-managed Kubernetes clusters to Astra Control Service.
 +
 link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service]
 * Billing for Astra Control Service is now metered per namespace instead of per application.
 +
 link:../use/set-up-billing.html[Set up billing]
-* Support for subscribing to Astra Control Service term-based offers through the AWS Marketplace
+* Support for subscribing to Astra Control Service term-based offers through the AWS Marketplace.
 +
 link:../use/set-up-billing.html[Set up billing]
+
+.Known issues and limitations
+
+* link:../release-notes/known-issues.html[Known issues for this release]
+* link:../release-notes/known-limitations.html[Known limitations for this release]
 
 == 7 September 2022
 This release includes stability and resiliency enhancements for the Astra Control Service infrastructure.
