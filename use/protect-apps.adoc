@@ -113,7 +113,7 @@ You can also back up an app at any time.
 
 Astra Control creates a backup of the app.
 
-NOTE: If you need to cancel a running backup, use the instructions in <<Cancel backups>>. To delete the backup, wait until it has completed and then use the instructions in <<Delete backups>>. To delete a failed backup, https://docs.netapp.com/us-en/astra-automation/workflows/wf_delete_backup.html[use the Astra Control API^].
+NOTE: If you need to cancel a running backup, use the instructions in <<Cancel backups>>. To delete the backup, wait until it has completed and then use the instructions in <<Delete backups>>.
 
 == View snapshots and backups
 
@@ -173,7 +173,7 @@ TIP: To cancel a backup, the backup must be in `Running` state. You cannot cance
 
 Delete the scheduled or on-demand backups that you no longer need.
 
-NOTE: If you need to cancel a running backup, use the instructions in <<Cancel backups>>. To delete the backup, wait until it has completed and then use these instructions. To delete a failed backup, https://docs.netapp.com/us-en/astra-automation/index.html[use the Astra Control API^].
+NOTE: If you need to cancel a running backup, use the instructions in <<Cancel backups>>. To delete the backup, wait until it has completed and then use these instructions.
 
 .Steps
 
