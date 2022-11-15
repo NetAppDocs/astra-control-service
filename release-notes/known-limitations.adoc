@@ -79,12 +79,6 @@ Note that Astra Control might not be able to clone an operator that is designed 
 
 NOTE: During clone operations, apps that need an IngressClass resource or webhooks to function properly must not have those resources already defined on the destination cluster.
 
-////
-== App backups that are in progress cannot be stopped
-// DOC-3552/ASTRACTL-9586/DOC-3894/ASTRACTL-13029/Q2 and PI4
-There is no way to cancel a running backup. If you need to delete the backup, wait until it has completed and then use the instructions in link:../use/protect-apps.html#delete-backups[Delete backups]. To delete a failed backup, use the link:https://docs.netapp.com/us-en/astra-automation/index.html[Astra API^].
-////
-
 == Role-based Access Control (RBAC) limitations
 The following limitations apply to the way Astra Control limits user access to resources or capabilities.
 
