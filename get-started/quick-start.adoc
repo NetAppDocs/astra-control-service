@@ -50,6 +50,8 @@ link:set-up-microsoft-azure-with-anf.html[Learn more about Microsoft Azure and A
 +
 link:set-up-microsoft-azure-with-amd.html[Learn more about Microsoft Azure and Azure managed disk requirements].
 endif::azure[]
+
+
 If you are managing your own cluster and it is not hosted by a cloud provider, review the requirements for self-managed clusters.
 +
 link:add-first-cluster.html#start-managing-kubernetes-clusters[Learn more about self-managed cluster requirements].
