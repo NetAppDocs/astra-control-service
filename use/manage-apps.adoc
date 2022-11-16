@@ -11,7 +11,7 @@ summary: After you add Kubernetes clusters to Astra Control, you can install app
 :imagesdir: ../media/use/
 
 [.lead]
-After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to Astra Control], you can install apps on the cluster (outside of Astra Control), and then go to the Apps page in Astra Control to define the apps.
+After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to Astra Control], you can install apps on the cluster (outside of Astra Control), and then go to the Applications page in Astra Control to define the apps.
 
 == App management requirements
 Astra Control has the following app management requirements:
@@ -27,23 +27,23 @@ Astra Control has the following app management requirements:
 |ClusterRoleBinding
 |ConfigMap
 
+|CronJob
 |CustomResourceDefinition
 |CustomResource
-|CronJob
 
 |DaemonSet
-|HorizontalPodAutoscaler
-|Ingress
-
 |DeploymentConfig
-|MutatingWebhook
-|PersistentVolumeClaim
+|HorizontalPodAutoscaler
 
+|Ingress
+|MutatingWebhook
+|NetworkPolicy
+
+|PersistentVolumeClaim
 |Pod
 |PodDisruptionBudget
-|PodTemplate
 
-|NetworkPolicy
+|PodTemplate
 |ReplicaSet
 |Role
 
@@ -61,7 +61,7 @@ Astra Control has the following app management requirements:
 |===
 
 == Supported app installation methods
-You can use the following methods to install apps that you want to manage with Astra Control:
+Astra Control supports the following application installation methods:
 
 * *Manifest file*: Astra Control supports apps installed from a manifest file using kubectl. For example:
 +
@@ -83,8 +83,8 @@ NOTE: For K8ssandra, in-place restore operations are supported. A restore operat
 
 +
 Astra Control might not be able to clone an operator that is designed with a “pass-by-reference” architecture (for example, the CockroachDB operator). During these types of cloning operations, the cloned operator attempts to reference Kubernetes secrets from the source operator despite having its own new secret as part of the cloning process. The clone operation might fail because Astra Control is unaware of the Kubernetes secrets in the source operator.
-+
 
++
 NOTE: During clone operations, apps that need an IngressClass resource or webhooks to function properly must not have those resources already defined on the destination cluster.
 
 
@@ -124,7 +124,8 @@ TIP: A label is a key/value pair you can assign to Kubernetes objects for identi
 
 .About this task
 
-* Before you begin, you should also understand link:../use/manage-apps.html#what-about-system-namespaces[managing standard and system namespaces]. 
+* Before you begin, you should also understand link:../use/manage-apps.html#what-about-system-namespaces[managing standard and system namespaces].
+* If you plan to use multiple namespaces with your apps in Astra Control, consider link:../use/manage-roles.html[modifying user roles with namespace constraints] before defining apps.
 * For instructions on how to manage apps using the Astra Control API, see the link:https://docs.netapp.com/us-en/astra-automation/[Astra Automation and API information^].
 
 .App management options
@@ -215,7 +216,7 @@ You can add all Kubernetes resources in a namespace to Astra Control management 
 . Select the *Namespaces* tab.
 . Select the Actions menu for the namespace that contains the app resources you want to manage and select *Define as application*.
 +
-TIP: If you want to manage multiple namespaces, select the namespaces and select the *Actions* button in the upper-left corner and select *manage*.
+TIP: If you want to define multiple applications, select from the namespaces list and select the *Actions* button in the upper-left corner and select *Define as application*. This will define multiple individual applications in their individual namespaces. For multi-namespace applications, see <<Define resources to manage as an app>>.
 
 +
 NOTE: Select the *Show system namespaces* checkbox to reveal system namespaces that are usually not used in app management by default. image:acc_namespace_system.png[A screenshot that shows the *Show system namespaces* option that is available in the Namespaces tab.]  link:../use/manage-apps.html#what-about-system-namespaces[Read more].
