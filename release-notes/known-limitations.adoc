@@ -36,7 +36,7 @@ The following limitations apply to the management of Kubernetes clusters in Goog
 
 === One GCP project and one service account are supported
 
-Astra Control Service supports one Google Cloud Platform project and one service account. You should not add more than one service account to Astra Control Service and you shouldn’t rotate service account credentials.
+Astra Control Service supports one Google Cloud Platform project and one service account. You should not add more than one service account to Astra Control Service and you shouldn't rotate service account credentials.
 
 === Google Marketplace apps haven't been validated
 
@@ -57,6 +57,9 @@ endif::gcp[]
 == App management limitations
 The following limitations affect Astra Control Service's management of applications.
 
+=== Astra Control does not automatically assign default buckets for cloud instances
+Astra Control does not automatically assign a default bucket for any cloud instance. You need to manually set a default bucket for a cloud instance before performing app clone operations between two clusters.
+
 === In-place restore operations of apps that use a certificate manager are not supported
 This release of Astra Control Service does not support in-place restore of apps with certificate managers. Restore operations to a different namespace and clone operations are supported.
 
@@ -75,7 +78,7 @@ NOTE: For K8ssandra, in-place restore operations are supported. A restore operat
 * https://github.com/jenkinsci/kubernetes-operator[Jenkins CI^]
 * https://github.com/percona/percona-xtradb-cluster-operator[Percona XtraDB Cluster^]
 
-Note that Astra Control might not be able to clone an operator that is designed with a “pass-by-reference” architecture (for example, the CockroachDB operator). During these types of cloning operations, the cloned operator attempts to reference Kubernetes secrets from the source operator despite having its own new secret as part of the cloning process. The clone operation might fail because Astra Control is unaware of the Kubernetes secrets in the source operator.
+Note that Astra Control might not be able to clone an operator that is designed with a "pass-by-reference" architecture (for example, the CockroachDB operator). During these types of cloning operations, the cloned operator attempts to reference Kubernetes secrets from the source operator despite having its own new secret as part of the cloning process. The clone operation might fail because Astra Control is unaware of the Kubernetes secrets in the source operator.
 
 NOTE: During clone operations, apps that need an IngressClass resource or webhooks to function properly must not have those resources already defined on the destination cluster.
 
