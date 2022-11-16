@@ -58,7 +58,7 @@ endif::gcp[]
 The following limitations affect Astra Control Service's management of applications.
 
 === Astra Control does not automatically assign default buckets for cloud instances
-Astra Control does not automatically assign a default bucket for any cloud instance. You need to manually set a default bucket for a cloud instance before performing app clone operations between two clusters.
+Astra Control does not automatically assign a default bucket for any cloud instance. You need to manually set a default bucket for a cloud instance. If a default bucket is not set, you won't be able to perform app clone operations between two clusters.
 
 === In-place restore operations of apps that use a certificate manager are not supported
 This release of Astra Control Service does not support in-place restore of apps with certificate managers. Restore operations to a different namespace and clone operations are supported.
