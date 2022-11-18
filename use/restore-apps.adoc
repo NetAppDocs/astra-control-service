@@ -48,6 +48,9 @@ NOTE: If you restore to a namespace that was previously deleted, a new namespace
 
 .. Choose the destination cluster for the app you intend to restore.
 .. Enter a destination namespace for each source namespace associated with the app.
++
+NOTE: Astra Control creates new destination namespaces as part of this restore option. Destination namespaces that you specify must not be already present on the destination cluster.
+
 .. Select *Next*.
 .. Select the snapshot to use to restore the app.
 .. Select *Next*.

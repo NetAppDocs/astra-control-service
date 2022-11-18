@@ -49,6 +49,9 @@ To clone apps to a different cluster, you need to make sure the cloud instances 
 * Enter a name.
 * Choose a destination cluster for the clone.
 * Enter destination namespaces for the clone. Each source namespace associated with the app maps to a destination namespace.
++
+NOTE: Astra Control creates new destination namespaces as part of the clone operation. Destination namespaces that you specify must not be already present on the destination cluster.
+
 * Select *Next*.
 * Choose whether you want to create the clone from an existing snapshot or backup. If you don't select this option, Astra Control creates the clone from the app's current state.
 ** If you chose to clone from an existing snapshot or backup, choose the snapshot or backup that you'd like to use.
