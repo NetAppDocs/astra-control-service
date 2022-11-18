@@ -12,19 +12,19 @@ summary: "Astra Control Service can manage apps that are running on a managed Ku
 
 [.lead]
 ifndef::azure,gcp[]
-Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Amazon Elastic Kubernetes Service (EKS).
+Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Amazon Elastic Kubernetes Service (EKS) as well as clusters that you manage on your own.
 endif::azure,gcp[]
 
 ifndef::azure,aws[]
-Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Google Kubernetes Engine (GKE).
+Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Google Kubernetes Engine (GKE) as well as clusters that you manage on your own.
 endif::azure,aws[]
 
 ifndef::gcp,aws[]
-Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS).
+Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Azure Kubernetes Service (AKS) as well as clusters that you manage on your own.
 endif::gcp,aws[]
 
 ifdef::gcp+azure+aws[]
-Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Google Kubernetes Engine (GKE), Amazon Elastic Kubernetes Service (EKS), and Azure Kubernetes Service (AKS).
+Astra Control Service can manage apps that are running on a managed Kubernetes cluster in Google Kubernetes Engine (GKE), Amazon Elastic Kubernetes Service (EKS), and Azure Kubernetes Service (AKS). Astra Control Service can also manage clusters that you manage on your own.
 endif::gcp+azure+aws[]
 
 ifdef::aws[]

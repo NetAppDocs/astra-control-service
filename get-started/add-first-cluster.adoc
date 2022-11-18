@@ -93,15 +93,24 @@ endif::azure[]
 =======
 Your cluster needs to meet the following requirements:
 
-* The most recent version of the Kubernetes https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[snapshot-controller component^] is installed
-* An Astra Trident https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass[volumesnapshotclass object^] has been defined by an administrator
-* A default Kubernetes storage class exists on the cluster
-// As of PI-7, Trident is not necessary
-// * At least one storage class is configured to use Astra Trident
+* The cluster must be accessible via the internet
+*	A version of Astra Trident that is link:../get-started/requirements.html#operational-environment-requirements[supported by Astra Control Center^] is installed:
++
+NOTE: You can https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method[deploy Astra Trident^] using either Trident operator (manually or using Helm chart) or `tridentctl`. Prior to installing or upgrading Astra Trident, review the https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html[supported frontends, backends, and host configurations^].
 
-NOTE: Your application cluster should have a `kubeconfig.yaml` file that defines only one _context_ element. Visit the Kubernetes documentation for https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[information about creating kubeconfig files^].
-
-NOTE: When managing application clusters in a Rancher environment, modify the application cluster's default context in the `kubeconfig` file provided by Rancher to use a control plane context instead of the Rancher API server context. This reduces load on the Rancher API server and improves performance.
+** *Trident storage backend configured*: At least one Astra Trident storage backend must be https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend[configured^] on the cluster.
+** *Trident storage classes configured*: At least one Astra Trident storage class must be https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html[configured^] on the cluster. If a default storage class is configured, ensure that only one storage class has that annotation.
+** *Astra Trident volume snapshot controller and volume snapshot class installed and configured*: The volume snapshot controller must be https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[installed^] so that snapshots can be created in Astra Control. At least one Astra Trident `VolumeSnapshotClass` has been https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass[set up^] by an administrator.
+* *Kubeconfig accessible*: You have access to the https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[cluster kubeconfig^] that includes only one context element.
+* *ONTAP credentials*: You need ONTAP credentials and a superuser and user ID set on the backing ONTAP system to back up and restore apps with Astra Control Center. 
++
+Run the following commands in the ONTAP command line:
++
+----
+export-policy rule modify -vserver <storage virtual machine name> -policyname <policy name> -ruleindex 1 -superuser sys
+export-policy rule modify -vserver <storage virtual machine name> -policyname <policy name> -ruleindex 1 -anon 65534
+----
+* *Rancher only*: When managing application clusters in a Rancher environment, modify the application cluster's default context in the kubeconfig file provided by Rancher to use a control plane context instead of the Rancher API server context. This reduces load on the Rancher API server and improves performance.
 
 
 .(Optional) Check Astra Trident version
