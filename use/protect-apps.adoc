@@ -78,8 +78,6 @@ You can create an on-demand snapshot at any time.
 . Select *Applications*.
 
 . From the Options menu in the *Actions* column for the desired app, select *Snapshot*.
-
-. Select *Snapshot*.
 //+
 //image:screenshot-create-snapshot.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Snapshot."]
 
@@ -89,7 +87,7 @@ You can create an on-demand snapshot at any time.
 
 .Result
 
-The snapshot process begins. A snapshot is successful when the status is *Available* in the *Actions* column on the *Data protection* > *Snapshots* page.
+The snapshot process begins. A snapshot is successful when the status is *Healthy* in the *State* column on the *Data protection* > *Snapshots* page.
 
 == Create a backup
 

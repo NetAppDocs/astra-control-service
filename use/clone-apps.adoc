@@ -66,3 +66,5 @@ NOTE: Astra Control creates new destination namespaces as part of the clone oper
 
 Astra Control clones the app based on the information that you provided. The clone operation is successful when the new app clone is in `Healthy` state on the *Applications* page.
 
+After a new namespace is created by a clone or restore operation, the account admin/owner can edit the member user account and update role constraints for the affected user to grant access to the new namespace.
+
