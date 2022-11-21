@@ -17,8 +17,10 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 
 .New features and support
 
-
-* Support for apps that span across multiple namespaces and support for cluster resources that are associated with namespaced resources in addition to those that Astra Control includes automatically. 
+* Support for applications that span across multiple namespaces.
++
+link:../use/manage-apps.html[Define apps]
+* Support for including cluster resources in an application definition.
 +
 link:../use/manage-apps.html[Define apps]
 * Enhanced progress reporting for your backup, restore, and clone operations.
