@@ -10,6 +10,7 @@ summary: Astra Control has a REST API that enables you to directly access the As
 :icons: font
 :imagesdir: ../media/get-started/
 
+[.lead]
 Astra Control has a REST API that enables you to directly access the Astra Control functionality using a programming language or utility such as Curl. You can also manage Astra Control deployments using Ansible and other automation technologies.
 
 To learn more, https://docs.netapp.com/us-en/astra-automation[go to the Astra automation docs^].

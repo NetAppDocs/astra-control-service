@@ -10,6 +10,7 @@ summary: A few steps are required to prepare your Microsoft Azure subscription b
 :icons: font
 :imagesdir: ../media/get-started/
 
+[.lead]
 A few steps are required to prepare your Microsoft Azure subscription before you can manage Azure Kubernetes Service clusters with Astra Control Service. Follow these instructions if you plan to use Azure NetApp Files as a storage backend.
 
 //NOTE: Support for using Azure Managed Disks as a storage backend service is in initial preview status with this release.
@@ -71,7 +72,7 @@ If you plan to use Azure Managed Disks as a storage backend, you need to manuall
 
 A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service.
 
-Kubernetes version:: Clusters must be running Kubernetes version 1.21 to 1.24.
+Kubernetes version:: Clusters must be running Kubernetes version 1.23 to 1.25.
 
 Image type:: The image type for all node pools must be Linux.
 
@@ -94,7 +95,9 @@ If you're close to the limit, you have two options:
 
 //Private networking:: Private networking must not be enabled on a cluster.
 
-External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.19 and 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
+//External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21, but you'll need to check on clusters running versions 1.19 and 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
+
+////
 
 === Install a CSI volume snapshot controller
 
@@ -133,6 +136,9 @@ If you want the snapshot controller in a specific namespace, download and edit t
 [source,kubectl]
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+
+////
+
 
 == Sign up for Microsoft Azure
 If you don't have a Microsoft Azure account, begin by signing up for Microsoft Azure.

@@ -28,6 +28,8 @@ entries:
         url: /use/view-apps.html
   - title: Manage buckets
     url: /use/manage-buckets.html
+  - title: Monitor running tasks
+    url: /use/monitor-running-tasks.html
   - title: Manage your account
     entries:
       - title: Set up billing
@@ -44,5 +46,7 @@ entries:
         url: /use/manage-notifications.html
       - title: Close your account
         url: /use/close-account.html
+  - title: Manage cloud instances
+    url: /use/manage-cloud-instances.html 
   - title: Unmanage apps and clusters
     url: /use/unmanage.html

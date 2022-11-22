@@ -32,11 +32,3 @@ You can view details about the activities in your Astra Control account. For exa
 . Select *Clusters* and then select the name of the cluster.
 
 . Select *Activity*.
-
-.View possible actions for events
-
-. Select *Activity*.
-. Select an event that requires attention.
-. Select the *Take action* drop-down option.
-+
-From this list, you can view possible corrective actions that you can take, view documentation related to the issue, and get support to help resolve the issue.

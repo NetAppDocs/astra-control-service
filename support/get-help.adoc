@@ -10,6 +10,7 @@ summary: NetApp provides support for Astra Control in a variety of ways. Extensi
 :icons: font
 :imagesdir: ../media/support/
 
+[.lead]
 NetApp provides support for Astra Control in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles and a Discord channel. Your Astra Control account includes remote technical support via web ticketing.
 
 You must first link:register-support.html[activate support for your NetApp serial number] in order to use these non self-service support options. A NetApp Support Site (NSS) SSO account is required for chat and web ticketing along with case management.

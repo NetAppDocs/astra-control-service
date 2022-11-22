@@ -10,6 +10,7 @@ summary: This FAQ can help if you're just looking for a quick answer to a questi
 :icons: font
 :imagesdir: ../media/
 
+[.lead]
 This FAQ can help if you're just looking for a quick answer to a question.
 
 == Overview
@@ -36,9 +37,9 @@ You can access Astra Control Service at https://astra.netapp.io.
 
 Ask them to check their spam folder for an email from do-not-reply@netapp.com, or search their inbox for "invitation." You can also remove the user and attempt to re-add them.
 
-*I upgraded to the Premium PayGO Plan from the Free Plan. Will I get charged for the first 10 applications?*
+*I upgraded to the Premium PayGO Plan from the Free Plan. Will I get charged for the first 10 namespaces?*
 
-Yes. After upgrading to the Premium Plan, Astra Control starts charging you for all managed applications in your account.
+Yes. After upgrading to the Premium Plan, Astra Control starts charging you for all managed namespaces in your account.
 
 *I upgraded to the Premium PayGO Plan in the middle of a month. Will I get charged for the entire month?*
 
@@ -56,7 +57,7 @@ No. When your cluster is added to Astra Control, the service will automatically 
 
 *I need to add worker nodes to my cluster after adding to Astra Control Service. What should I do?*
 
-New worker nodes can be added to existing pools, or new pools can be created as long as they are the Ubuntu image type. These will be automatically discovered by Astra Control. If the new nodes are not visible in Astra Control, check if the new worker nodes are running the supported image type. You can also verify the health of the new worker nodes by using the `kubectl get nodes` command.
+New worker nodes can be added to existing pools, or new pools can be created as long as they are the `COS_CONTAINERD` image type. These will be automatically discovered by Astra Control. If the new nodes are not visible in Astra Control, check if the new worker nodes are running the supported image type. You can also verify the health of the new worker nodes by using the `kubectl get nodes` command.
 
 ifdef::aws[]
 == Registering Elastic Kubernetes Service (EKS) clusters
@@ -140,7 +141,7 @@ The Astra Trident operator sets the default storage class to `netapp-cvs-perf-pr
 
 * Run `kubectl get sc` and check the default storage class.
 * Check the yaml file or Helm chart that was used to deploy the application and see if a different storage class is defined.
-* Check to make sure that the worker node image type is Ubuntu and the NFS mount succeeded.
+* GKE version 1.24 and later does not support Docker-based node images. Check to make sure that the worker node image type in GKE is `COS_CONTAINERD` and that the NFS mount succeeded.
 endif::gcp[]
 
 *What happens to applications after I stop managing them from Astra Control?*

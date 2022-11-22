@@ -10,7 +10,42 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 :icons: font
 :imagesdir: ../media/release-notes/
 
+[.lead]
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
+
+== 22 November 2022
+
+.New features and support
+
+* Support for applications that span across multiple namespaces.
++
+link:../use/manage-apps.html[Define apps]
+* Support for including cluster resources in an application definition.
++
+link:../use/manage-apps.html[Define apps]
+* Enhanced progress reporting for your backup, restore, and clone operations.
++
+link:../use/monitor-running-tasks.html[Monitor running tasks]
+* Support for managing clusters that already have a compatible version of Astra Trident installed.
++
+link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service] 
+* Support for managing multiple cloud provider subscriptions in a single Astra Control Service account.
++
+link:../use/manage-cloud-instances.html[Manage cloud instances]
+* Support for adding self-managed Kubernetes clusters to Astra Control Service.
++
+link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service]
+* Billing for Astra Control Service is now metered per namespace instead of per application.
++
+link:../use/set-up-billing.html[Set up billing]
+* Support for subscribing to Astra Control Service term-based offers through the AWS Marketplace.
++
+link:../use/set-up-billing.html[Set up billing]
+
+.Known issues and limitations
+
+* link:../release-notes/known-issues.html[Known issues for this release]
+* link:../release-notes/known-limitations.html[Known limitations for this release]
 
 == 7 September 2022
 This release includes stability and resiliency enhancements for the Astra Control Service infrastructure.
@@ -21,7 +56,7 @@ This release includes the following new features and enhancements.
 * Improved application management workflow
 Improved application management workflows provide increased flexibility when defining applications managed by Astra Control.
 +
-link:../use/manage-apps.html#manage-apps[Manage apps]
+link:../use/manage-apps.html#define-apps[Manage apps]
 
 ifdef::aws[]
 * Support for Amazon Web Services clusters
