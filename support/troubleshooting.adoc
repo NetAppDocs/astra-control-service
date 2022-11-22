@@ -10,6 +10,7 @@ summary: Find troubleshooting tips for common problems.
 :icons: font
 :imagesdir: ../media/support/
 
+[.lead]
 Learn how to work around some common problems you might encounter.
 
 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra

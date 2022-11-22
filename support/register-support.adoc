@@ -10,6 +10,7 @@ summary: Astra Control attempts to automatically register your account for suppo
 :icons: font
 :imagesdir: ../media/support/
 
+[.lead]
 Astra Control attempts to automatically register your account for support when you set up your account. If it can't, then you can manually register for support yourself. Support registration is required to obtain help from NetApp technical support.
 
 == Verify your support registration

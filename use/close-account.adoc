@@ -10,6 +10,7 @@ summary: If you no longer need an Astra Control account, you can close it at any
 :icons: font
 :imagesdir: ../media/use/
 
+[.lead]
 If you no longer need your Astra Control account, you can close it at any time.
 
 NOTE: Buckets that Astra Control automatically created will be automatically deleted when you close your account.

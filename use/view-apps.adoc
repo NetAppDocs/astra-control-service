@@ -19,7 +19,7 @@ After you start managing an app, Astra Control provides details about the app th
 
 . Select *Applications* and then select the name of an app.
 
-. Select around to find the information that you're looking for:
+. Find the information that you're looking for:
 +
 App Status:: Provides a status that reflects the app's state in Kubernetes.
 // For example, are pods and persistent volumes online? If an app is unhealthy, you'll need to go and troubleshoot the issue on the cluster by looking at Kubernetes logs. Astra Control doesn't provide information to help you fix a broken app.

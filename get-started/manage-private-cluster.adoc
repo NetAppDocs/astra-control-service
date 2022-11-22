@@ -37,7 +37,7 @@ You need to install the Astra Connector operator on private AKS cluster. If you 
 
 . Clone the Astra Connector operator GitHub repository:
 +
-[source,sh]
+[source,console]
 ----
 git clone https://github.com/NetApp/astra-connector-operator.git
 ----
@@ -45,21 +45,21 @@ git clone https://github.com/NetApp/astra-connector-operator.git
 
 . Create a namespace for the Astra Connector operator.
 +
-[source,sh]
+[source,console]
 ----
 kubectl create ns astra-connector-operator
 ----
 
 . Apply the `astraconnector_operator.yaml` file to the operator namespace.
 +
-[source,sh]
+[source,console]
 ----
 kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
 ----
 
 . Create a namespace for the private cluster components.
 +
-[source,sh]
+[source,console]
 ----
 kubectl create ns astra-connector
 ----
@@ -70,21 +70,21 @@ kubectl create ns astra-connector
 
 . Apply the Astra Connector Custom Resource Definition (CRD).
 +
-[source,sh]
+[source,console]
 ----
 kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 ----
 
 . Check the status of the Astra Connector.
 +
-[source,sh]
+[source,console]
 ----
 kubectl get astraconnector astra-connector -n astra-connector
 ----
 +
 You should see output similar to the following:
 +
-[source,sh]
+[source,console]
 ----
 NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19

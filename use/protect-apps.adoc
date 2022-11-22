@@ -10,6 +10,7 @@ summary: Protect your apps by taking snapshots and backups using an automated pr
 :icons: font
 :imagesdir: ../media/use/
 
+[.lead]
 Protect your apps by taking snapshots and backups using an automated protection policy or on an ad-hoc basis. You can use the Astra UI or https://docs.netapp.com/us-en/astra-automation/index.html[the Astra Control API^] to protect apps.
 
 == Snapshots and backups
@@ -58,11 +59,11 @@ image:screenshot-protection-policy.png["A screenshot of a sample configuration p
 
 . Select *Review*.
 
-. Select *Configure*.
-+
-Here's a video that shows each of these steps.
-+
-video::video-set-protection-policy.mp4[width=848, height=480]
+. Select *Set Protection Policy*.
+//+
+//Here's a video that shows each of these steps.
+//+
+//video::video-set-protection-policy.mp4[width=848, height=480]
 
 .Result
 
@@ -76,19 +77,17 @@ You can create an on-demand snapshot at any time.
 
 . Select *Applications*.
 
-. Select the drop-down list in the *Actions* column for the desired app.
-
-. Select *Snapshot*.
+. From the Options menu in the *Actions* column for the desired app, select *Snapshot*.
 //+
 //image:screenshot-create-snapshot.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Snapshot."]
 
-. Customize the name of the snapshot and then select *Review Information*.
+. Customize the name of the snapshot and then select *Next*.
 
-. Review the snapshot summary and select *Snapshot App*.
+. Review the snapshot summary and select *Snapshot*.
 
 .Result
 
-Astra Control creates a snapshot of the apps.
+The snapshot process begins. A snapshot is successful when the status is *Healthy* in the *State* column on the *Data protection* > *Snapshots* page.
 
 == Create a backup
 
@@ -98,19 +97,21 @@ You can also back up an app at any time.
 
 . Select *Applications*.
 
-. Select the drop-down list in the *Actions* column for the desired app.
-
-. Select *Backup*.
+. From the Options menu in the *Actions* column for the desired app, select *Back up*.
 //+
 //image:screenshot-create-backup.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Backup."]
 
-. Customize the name of the backup, choose whether to back up the app from an existing snapshot, and then select *Review Information*.
-
-. Review the backup summary and select *Backup App*.
+. Customize the name of the backup.
+. Choose whether to back up the app from an existing snapshot. If you select this option, you can choose from a list of existing snapshots.
+. Choose a destination bucket for the backup from the list of storage buckets.
+. Select *Next*.
+. Review the backup summary and select *Back up*.
 
 .Result
 
 Astra Control creates a backup of the app.
+
+NOTE: If you need to cancel a running backup, use the instructions in <<Cancel backups>>. To delete the backup, wait until it has completed and then use the instructions in <<Delete backups>>.
 
 == View snapshots and backups
 
@@ -138,13 +139,11 @@ Delete the scheduled or on-demand snapshots that you no longer need.
 
 . Select *Data Protection*.
 
-. Select the drop-down list in the *Actions* column for the desired snapshot.
-
-. Select *Delete snapshot*.
+. From the Options menu in the *Actions* column for the desired snapshot, select *Delete snapshot*.
 //+
 //image:screenshot-delete-snapshot.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
 
-. Type the name of the snapshot to confirm deletion and then select *Yes, Delete snapshot*.
+. Type the word "delete" to confirm deletion and then select *Yes, Delete snapshot*.
 
 .Result
 
@@ -154,7 +153,7 @@ Astra Control deletes the snapshot.
 
 You can cancel a backup that is in progress.
 
-TIP: To cancel a backup, the backup must be in a Running state. You cannot cancel a backup that is in a Pending state.
+TIP: To cancel a backup, the backup must be in `Running` state. You cannot cancel a backup that is in `Pending` state.
 
 .Steps
 
@@ -165,14 +164,18 @@ TIP: To cancel a backup, the backup must be in a Running state. You cannot cance
 //image:screenshot-data-protection-backups.gif[A screenshot of the Backups option that's available in the far right of the data protection tab.]
 
 . From the Options menu in the *Actions* column for the desired backup, select *Cancel*.
-. Type the word "cancel" to confirm deletion and then select *Yes, cancel backup*.
+. Type the word "cancel" to confirm the operation and then select *Yes, cancel backup*.
 
 
 == Delete backups
 
 Delete the scheduled or on-demand backups that you no longer need.
 
-. Select *Applications* and then select the name of a managed app.
+NOTE: If you need to cancel a running backup, use the instructions in <<Cancel backups>>. To delete the backup, wait until it has completed and then use these instructions.
+
+.Steps
+
+. Select *Applications* and then select the name of an app.
 
 . Select *Data Protection*.
 
@@ -180,13 +183,11 @@ Delete the scheduled or on-demand backups that you no longer need.
 //+
 //image:screenshot-data-protection-backups.gif[A screenshot of the Backups option that's available in the far right of the data protection tab.]
 
-. Select the drop-down list in the *Actions* column for the desired backup.
-
-. Select *Delete backup*.
+. From the Options menu in the *Actions* column for the desired backup, select *Delete backup*.
 //+
 //image:screenshot-delete-backup.gif[A screenshot of the Data protection tab for an app where you can delete a snapshot.]
 
-. Type the name of the backup to confirm deletion and then select *Yes, Delete backup*.
+. Type the word "delete" to confirm deletion and then select *Yes, Delete backup*.
 
 .Result
 

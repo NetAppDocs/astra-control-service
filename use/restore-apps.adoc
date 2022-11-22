@@ -13,11 +13,14 @@ summary: Astra Control can restore your application configuration and persistent
 [.lead]
 Astra Control can restore your application from a snapshot or backup. Restoring from an existing snapshot will be faster when restoring the application to the same cluster. You can use the Astra Control UI or https://docs.netapp.com/us-en/astra-automation/index.html[the Astra Control API^] to restore apps.
 
-NOTE: Any member user with namespace constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization’s account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the member user account and update role constraints for the affected user to grant access to the new namespace.
+.About this task
+
+* *Protect your apps first*: It is strongly recommended to take a snapshot of or back up your application before restoring it. This will enable you to clone from the snapshot or backup in the event that the restore is unsuccessful.
+* *Check destination storage class*: If you restore to a different cluster, ensure that the destination cluster's storage class is using the same persistent volume access mode (for example, ReadWriteMany) as the storage class on the source cluster. The restore operation will fail if the destination persistent volume access mode is different.
 
 .Steps
 
-. Select *Applications* and then select the name of a managed app.
+. Select *Applications* and then select the name of an app.
 
 . Select *Data protection*.
 
@@ -25,24 +28,38 @@ NOTE: Any member user with namespace constraints by namespace name/ID or by name
 //+
 //image:screenshot-restore-snapshot-or-backup.gif[A screenshot of the Data protection tab where you can view Snapshots or Backups.]
 
-. Select the drop-down list in the *Actions* column for the snapshot or backup from which you want to restore.
-
-. Select *Restore application*.
+. From the Options menu in the *Actions* column for the snapshot or backup from which you want to restore, select *Restore application*.
 //+
 //image:screenshot-restore-app.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Restore application."]
 
-. *Restore details*: Specify details for the restored app. To restore an app in-place (revert an app to an earlier version of itself), choose the same namespace and destination cluster that it is currently running in:
+. Choose the restore type:
+* *Restore to original namespaces*: Use this procedure to restore the app in-place to the original cluster.
 +
-* Enter a namespace for the app.
-* Choose the destination cluster for the app.
-* Click *Review*.
+CAUTION: Performing an in-place restore operation on an app that shares resources with another app can have unintended results.
+
+.. Select the snapshot to use to restore the app in-place, which reverts the app to an earlier version of itself.
+.. Select *Next*.
 +
 NOTE: If you restore to a namespace that was previously deleted, a new namespace with the same name is created as part of the restore process. Any users that had rights to manage apps in the previously deleted namespace need to manually restore rights to the newly re-created namespace.
 
-. *Restore Summary*: Review details about the restore action, type "restore", and select *Restore*.
+.. Review details about the restore action, type "restore", and select *Restore*.
+
+* *Restore to new namespaces*: Use this procedure to restore the app to another cluster or with different namespaces from the source.
+
+.. Choose the destination cluster for the app you intend to restore.
+.. Enter a destination namespace for each source namespace associated with the app.
++
+NOTE: Astra Control creates new destination namespaces as part of this restore option. Destination namespaces that you specify must not be already present on the destination cluster.
+
+.. Select *Next*.
+.. Select the snapshot to use to restore the app.
+.. Select *Next*.
+.. Review details about the restore action and select *Restore*.
 //+
 //image:screenshot-restore-summary.gif[A screenshot of the Restore Application page which enables you to review information about the restore action.]
 
 .Result
 
-Astra Control restores the app based on the information that you provided. If you restored the app in-place, the associated persistent volumes are deleted and recreated.
+Astra Control restores the app based on the information that you provided. If you restored the app in-place, the content of existing persistent volumes is replaced with the content of persistent volumes from the restored app.
+
+NOTE: Any member user with namespace constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the member user account and update role constraints for the affected user to grant access to the new namespace.

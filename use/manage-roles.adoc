@@ -10,6 +10,7 @@ summary: Learn how to manage user roles by adding a constraint to the role.
 :icons: font
 :imagesdir: ../media/use/
 
+[.lead]
 You can manage roles by adding namespace constraints and restricting user roles to those constraints. This enables you to control access to resources within your organization. You can use the Astra Control UI or https://docs.netapp.com/us-en/astra-automation/index.html[the Astra Control API^] to manage roles.
 
 == Add a namespace constraint to a role
