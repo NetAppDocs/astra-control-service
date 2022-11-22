@@ -49,7 +49,6 @@ Astra Control is available in two deployment models:
 | What is the storage backend support? | NetApp cloud service offerings |
 
 * NetApp ONTAP AFF and FAS systems
-* Astra Data Store as storage backend
 * Cloud Volumes ONTAP storage backend
 |===
 
@@ -133,7 +132,6 @@ You can add apps to your cluster. Or, if you have some apps already in the clust
 * https://docs.netapp.com/us-en/astra-family/[Documentation for the NetApp Astra product family^]
 * https://docs.netapp.com/us-en/astra/index.html[Astra Control Service documentation^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html[Astra Control Center documentation^]
-* https://docs.netapp.com/us-en/astra-data-store/index.html[Astra Data Store documentation]
 * https://docs.netapp.com/us-en/trident/index.html[Astra Trident documentation^]
 * https://docs.netapp.com/us-en/astra-automation/index.html[Use the Astra Control API^]
 * https://docs.netapp.com/us-en/cloudinsights/[Cloud Insights documentation^]
