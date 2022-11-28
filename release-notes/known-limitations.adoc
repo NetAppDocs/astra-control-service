@@ -34,10 +34,6 @@ ifdef::gcp[]
 
 The following limitations apply to the management of Kubernetes clusters in Google Kubernetes Engine (GKE).
 
-=== One GCP project and one service account are supported
-
-Astra Control Service supports one Google Cloud Platform project and one service account. You should not add more than one service account to Astra Control Service and you shouldn't rotate service account credentials.
-
 === Google Marketplace apps haven't been validated
 
 NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users report issues with discovery or back up of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
