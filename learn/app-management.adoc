@@ -5,7 +5,7 @@ keywords: custom app, labels, kubernetes labels, kubernetes resources, pods, def
 summary: Describes the type of managed apps in Astra Control.
 ---
 
-= Understanding app management
+= App management
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/learn/
