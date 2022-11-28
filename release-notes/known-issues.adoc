@@ -27,9 +27,6 @@ The following known issues affect the current release:
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
 * <<App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed>>
-ifdef::azure[]
-* <<Azure backup buckets use LRS redundancy by default>>
-endif::azure[]
 
 .Other issues
 
@@ -57,14 +54,6 @@ App clones within the same cluster consistently fail with the Bitnami PostgreSQL
 
 == App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed
 Backups and snapshots fail with a UI 500 error in this scenario. As a workaround, refresh the app list.
-
-ifdef::azure[]
-== Azure backup buckets use LRS redundancy by default
-By default, the buckets Astra Control Service uses to store Azure Kubernetes Service backups use the Locally Redundant Storage (LRS) redundancy option. To use a more durable redundancy option for Azure buckets, see the optional steps in the Azure cloud provider setup instructions:
-
-* link:../get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks]
-* link:../get-started/set-up-microsoft-azure-with-anf.html[Set up Microsoft Azure with Azure NetApp Files]
-endif::azure[]
 
 == Snapshots eventually begin to fail when using external-snapshotter version 4.2.0
 // DOC-3891 and ASTRACTL-12523
