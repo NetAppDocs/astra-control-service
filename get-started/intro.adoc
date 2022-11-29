@@ -92,7 +92,7 @@ endif::azure[]
 ** Uses that new admin role to install https://docs.netapp.com/us-en/trident/index.html[Astra Trident^] on the cluster and to create one or more storage classes.
 
 +
-** If you use a cloud provider storage service as your storage backend, Astra Control Service uses Astra Trident to provision persistent volumes for your apps.
+** If you use a NetApp cloud service storage offering as your storage backend, Astra Control Service uses Astra Trident to provision persistent volumes for your apps. If you use a cloud provider storage service as your storage backend, you need to install a provider-specific CSI driver (if CSI drivers are supported with your cloud provider, installation instructions are outlined in the set up steps for the cloud provider).
 
 * At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class.
 
