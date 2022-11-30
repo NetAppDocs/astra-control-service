@@ -52,11 +52,11 @@ a|
 * Amazon Web Services:
 ** Amazon EBS
 ** Amazon FSx for NetApp ONTAP
+* Google Cloud:
+** Google Persistent Disk
 * Microsoft Azure:
 ** Azure Managed Disks
 ** Azure NetApp Files
-* Google Cloud:
-** Google Persistent Disk
 |
 
 * NetApp ONTAP AFF and FAS systems
