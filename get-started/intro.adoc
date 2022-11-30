@@ -49,10 +49,13 @@ Astra Control is available in two deployment models:
 | What is the storage backend support?
 a|
 
-* NetApp cloud service offerings
-* Native cloud storage:
+* Amazon Web Services:
 ** Amazon EBS
+** Amazon FSx for NetApp ONTAP
+* Microsoft Azure:
 ** Azure Managed Disks
+** Azure NetApp Files
+* Google Cloud:
 ** Google Persistent Disk
 |
 
@@ -92,7 +95,7 @@ endif::azure[]
 ** Uses that new admin role to install https://docs.netapp.com/us-en/trident/index.html[Astra Trident^] on the cluster and to create one or more storage classes.
 
 +
-** If you use a NetApp cloud service storage offering as your storage backend, Astra Control Service uses Astra Trident to provision persistent volumes for your apps. If you use a cloud provider storage service as your storage backend, you need to install a provider-specific CSI driver. If Astra Control Service supports CSI drivers with your cloud provider, installation instructions are outlined in the set up steps for the cloud provider.
+** If you use a NetApp cloud service storage offering as your storage backend, Astra Control Service uses Astra Trident to provision persistent volumes for your apps. If you use the Azure or AWS storage service as your storage backend, you might need to install a provider-specific CSI driver. Installation instructions are outlined in the link:set-up-amazon-web-services.html[AWS^], link:set-up-microsoft-azure-with-amd.html[Azure with Azure Managed Disks^], and link:set-up-microsoft-azure-with-anf.html[Azure with Azure NetApp Files^]set up steps.
 
 * At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class.
 
