@@ -54,6 +54,7 @@ a|
 ** Amazon FSx for NetApp ONTAP
 * Google Cloud:
 ** Google Persistent Disk
+** NetApp Cloud Volumes Service
 * Microsoft Azure:
 ** Azure Managed Disks
 ** Azure NetApp Files
@@ -95,7 +96,7 @@ endif::azure[]
 ** Uses that new admin role to install https://docs.netapp.com/us-en/trident/index.html[Astra Trident^] on the cluster and to create one or more storage classes.
 
 +
-** If you use a NetApp cloud service storage offering as your storage backend, Astra Control Service uses Astra Trident to provision persistent volumes for your apps. If you use the AWS or Azure storage service as your storage backend, you need to install a provider-specific CSI driver. Installation instructions are outlined in the link:set-up-amazon-web-services.html[AWS^], link:set-up-microsoft-azure-with-amd.html[Azure with Azure Managed Disks^], and link:set-up-microsoft-azure-with-anf.html[Azure with Azure NetApp Files^]set up steps.
+** If you use a NetApp cloud service storage offering as your storage backend, Astra Control Service uses Astra Trident to provision persistent volumes for your apps. If you use Amazon EBS or Azure Managed Disks as your storage backend, you need to install a provider-specific CSI driver. Installation instructions are provided in link:set-up-amazon-web-services.html[Set up Amazon Web Services^] and link:set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks^].
 
 * At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class.
 
