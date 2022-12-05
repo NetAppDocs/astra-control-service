@@ -60,8 +60,6 @@ Since execution hooks often reduce or completely disable the functionality of th
 If you start a backup or snapshot operation with associated execution hooks but then cancel it, the hooks are still allowed to run if the backup or snapshot operation has already begun. This means that a post-backup execution hook cannot assume that the backup was completed.
 ====
 
-//=== Execution hook interaction with canceled backups
-
 === Order of execution
 When a data protection operation is run, execution hook events take place in the following order:
 
@@ -214,7 +212,6 @@ If you start but then cancel a backup that includes a snapshot and there are ass
 
 |===
 
-
 == View existing execution hooks
 You can view existing custom execution hooks for an app.
 
@@ -235,9 +232,8 @@ You can view the existing uploaded scripts. You can also see which scripts are i
 +
 You can see a list of existing uploaded scripts on this page. The *Used by* column shows which execution hooks are using each script.
 
-
 == Add a script
-You can add one or more scripts that execution hooks can reference. Many execution hooks can reference the same script; this enables you to update many execution hooks by only changing one script.
+Each execution hook must use a script to perform actions. You can add one or more scripts that execution hooks can reference. Many execution hooks can reference the same script; this enables you to update many execution hooks by only changing one script.
 
 .Steps
 
