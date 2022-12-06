@@ -347,3 +347,5 @@ You can remove an execution hook entirely if you no longer need it. You need to 
 . Select the *Execution hooks* tab.
 . Select the Options menu in the *Actions* column for a hook that you wish to delete.
 . Select *Delete*.
+. In the resulting dialog, type "delete" to confirm.
+. Select *Yes, delete execution hook*.
