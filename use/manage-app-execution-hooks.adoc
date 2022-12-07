@@ -11,7 +11,7 @@ summary: An execution hook is a custom script that you can run before or after a
 :imagesdir: ../media/use/
 
 [.lead]
-An execution hook is a custom action that you can configure to run in conjunction with a data protection operation of a managed app. For example, if you have a database app, you can use execution hooks to pause all database transactions before a snapshot, and resume transactions after the snapshot is complete. This ensures application-consistent snapshots.
+An execution hook is a custom action that you can configure to run in conjunction with a data protection operation of a managed app. For example, if you have a database app, you can use an execution hook to pause all database transactions before a snapshot, and resume transactions after the snapshot is complete. This ensures application-consistent snapshots.
 
 == Types of execution hooks
 Astra Control supports the following types of execution hooks, based on when they can be run:
@@ -21,6 +21,15 @@ Astra Control supports the following types of execution hooks, based on when the
 * Pre-backup
 * Post-backup
 * Post-restore
+
+== Execution hook filters
+When you add or edit an execution hook to an application, you can add filters to an execution hook to mange which containers the hook will match. Filters are useful for applications that use the same container image on all containers, but might use each image for a different purpose (such as Elasticsearch). Filters allow you to run execution hooks on some of those identical containers, but not necessarily all of them.
+
+Each filter you add to an execution hook uses a regular expression to match containers in your cluster. When a hook matches a container, the hook will run its associated script on that container.
+
+NOTE: Regular expressions for filters are only capable of including container matches. You can't use a regular expression to exclude containers from the list of matches.
+
+For information on the syntax that Astra Control supports for regular expressions in execution hook filters, see https://github.com/google/re2/wiki/Syntax[Google RE2 syntax support^].
 
 
 ////
@@ -220,7 +229,7 @@ You can view existing custom execution hooks for an app.
 . Go to *Applications* and then select the name of a managed app.
 . Select the *Execution hooks* tab.
 +
-You can view all enabled or disabled execution hooks in the resulting list. You can see a hook's status, source, and when it runs (pre- or post-operation). To view event logs surrounding execution hooks, go to the *Activity* page in the left-side navigation area.
+You can view all enabled or disabled execution hooks in the resulting list. You can see a hook's status, how many containers it matches, creation time, and when it runs (pre- or post-operation). You can select the `+` icon next to the hook name to expand the list of containers it will run on. To view event logs surrounding execution hooks for this application, go to the *Activity* tab.
 
 == View existing scripts
 You can view the existing uploaded scripts. You can also see which scripts are in use, and what hooks are using them, on this page.
@@ -280,10 +289,18 @@ NOTE: When you create a custom shell script to use as an execution hook, remembe
 . Select *Applications* and then select the name of a managed app.
 . Select the *Execution hooks* tab.
 . Select *Add*.
-. In the *Hook Details* area, determine when the hook should run by selecting an operation type from the *Operation* drop-down menu.
-. Enter a unique name for the hook.
-. (Optional) Enter any arguments to pass to the hook during execution, pressing the Enter key after each argument you enter to record each one.
-. In the *Container Images* area, if the hook should run against all container images contained within the application, enable the *Apply to all container images* check box. If instead the hook should act only on one or more specified container images, enter the container image names in the *Container image names to match* field.
+. In the *Hook Details* area:
+.. Determine when the hook should run by selecting an operation type from the *Operation* drop-down menu.
+.. Enter a unique name for the hook.
+.. (Optional) Enter any arguments to pass to the hook during execution, pressing the Enter key after each argument you enter to record each one.
+. (Optional) In the *Hook Filters* area, you can add filters to control which containers the execution hook runs on:
+.. Choose a hook filter type from the drop-down menu.
+.. Enter a regular expression to use as the filter. Astra Control uses the https://github.com/google/re2/wiki/Syntax[Google RE2 regex syntax^].
+.. To add more filters, select *Add filter*.
+. Select *Next*.
+. In the *Script* area, select a script from the list of existing scripts.
+. Select *Next*.
+//. In the *Container Images* area, if the hook should run against all container images contained within the application, enable the *Apply to all container images* check box. If instead the hook should act only on one or more specified container images, enter the container image names in the *Container image names to match* field.
 . In the *Script* area, do one of the following:
 * Add a new script.
 .. Select *Add*.
