@@ -298,8 +298,6 @@ NOTE: When you create a custom shell script to use as an execution hook, remembe
 .. Enter a regular expression to use as the filter. Astra Control uses the https://github.com/google/re2/wiki/Syntax[Google RE2 regex syntax^].
 .. To add more filters, select *Add filter*.
 . Select *Next*.
-. In the *Script* area, select a script from the list of existing scripts.
-. Select *Next*.
 //. In the *Container Images* area, if the hook should run against all container images contained within the application, enable the *Apply to all container images* check box. If instead the hook should act only on one or more specified container images, enter the container image names in the *Container image names to match* field.
 . In the *Script* area, do one of the following:
 * Add a new script.
@@ -319,7 +317,9 @@ NOTE: When you create a custom shell script to use as an execution hook, remembe
 * Select an existing script from the list.
 +
 This instructs the execution hook to use this script.
-. Select *Add hook*.
+. Select *Next*.
+. Review the execution hook configuration.
+. Select *Add*.
 
 == Check the state of an execution hook
 After a snapshot, backup, or restore operation finishes running, you can check the state of execution hooks that ran as part of the operation. You can use this status information to determine if you want to keep the execution hook, modify it, or delete it.
