@@ -127,7 +127,7 @@ The snapshots display by default.
 //+
 //image:screenshot-snapshots.gif[A screenshot of the data protection tab for an app where you can view the list of the current snapshots and backups.]
 
-. Select *Backups* to see the list of backups.
+. Select *Backups* to refer to the list of backups.
 
 == Delete snapshots
 

@@ -14,7 +14,7 @@ summary: Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazo
 Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazon FSx for NetApp ONTAP as the storage backends for Amazon Elastic Kubernetes Service (EKS) clusters.
 
 == Amazon Elastic Block Store (EBS)
-When you use EBS as the storage backend for EKS clusters, you can configure some storage class parameters. For more information about what the parameters mean and how to configure them, see https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs[the Kubernetes documentation^].
+When you use EBS as the storage backend for EKS clusters, you can configure some storage class parameters. For more information about what the parameters mean and how to configure them, refer to https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs[the Kubernetes documentation^].
 
 You can use several different types of volumes with EBS:
 
@@ -22,7 +22,7 @@ You can use several different types of volumes with EBS:
 * Hard disk drives (HDD)
 * Previous generation
 
-For more information on each type of volume and their performance, see https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html[the Amazon EBS documentation^]. For pricing information, see https://aws.amazon.com/ebs/pricing/[Amazon EBS pricing^].
+For more information on each type of volume and their performance, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html[the Amazon EBS documentation^]. For pricing information, refer to https://aws.amazon.com/ebs/pricing/[Amazon EBS pricing^].
 
 == Amazon FSx for NetApp ONTAP
-When you use FSx for NetApp ONTAP as the storage backend for AWS clusters, I/O performance depends on the configuration of the filesystem and the characteristics of your workloads. For specific information on FSx for NetApp ONTAP performance, see https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/performance.html[Amazon FSx for NetApp ONTAP performance^]. For pricing information, see https://aws.amazon.com/fsx/netapp-ontap/pricing/[Amazon FSx for NetApp ONTAP Pricing^].
+When you use FSx for NetApp ONTAP as the storage backend for AWS clusters, I/O performance depends on the configuration of the filesystem and the characteristics of your workloads. For specific information on FSx for NetApp ONTAP performance, refer to https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/performance.html[Amazon FSx for NetApp ONTAP performance^]. For pricing information, refer to https://aws.amazon.com/fsx/netapp-ontap/pricing/[Amazon FSx for NetApp ONTAP Pricing^].

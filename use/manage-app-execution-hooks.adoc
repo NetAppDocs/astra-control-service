@@ -214,6 +214,8 @@ If you start but then cancel a backup that includes a snapshot and there are ass
 
 |===
 
+== Execution hook examples
+Visit the https://github.com/NetApp/Verda[NetApp Verda GitHub project] to download real execution hooks for popular apps such as Apache Cassandra and Elasticsearch. You can also see examples and get ideas for structuring your own custom execution hooks.
 
 == View existing execution hooks
 You can view existing custom execution hooks for an app.
@@ -275,7 +277,7 @@ You can remove a script from the system if it is no longer needed and not used b
 NOTE: If the script is associated with one or more execution hooks, the *Delete* action is unavailable. To delete the script, first edit the associated execution hooks and associate them with a different script.
 
 == Create a custom execution hook
-You can create a custom execution hook for an app. See link:execution-hook-examples.html[Execution hook examples^] for hook examples. You need to have Owner, Admin, or Member permissions to create execution hooks.
+You can create a custom execution hook for an app. Refer to <<Execution hook examples>> for hook examples. You need to have Owner, Admin, or Member permissions to create execution hooks.
 
 NOTE: When you create a custom shell script to use as an execution hook, remember to specify the appropriate shell at the beginning of the file, unless you are running specific commands or providing the full path to an executable.
 
@@ -351,3 +353,7 @@ You can remove an execution hook entirely if you no longer need it. You need to 
 . Select the *Execution hooks* tab.
 . Select the Options menu in the *Actions* column for a hook that you wish to delete.
 . Select *Delete*.
+
+== For more information
+
+* https://github.com/NetApp/Verda[NetApp Verda GitHub project]

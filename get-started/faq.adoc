@@ -72,7 +72,7 @@ ifdef::azure[]
 
 *Can I add a private AKS cluster to Astra Control Service?*
 
-Yes, you can add private AKS clusters to Astra Control Service.  To add a private AKS cluster, see link:add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
+Yes, you can add private AKS clusters to Astra Control Service.  To add a private AKS cluster, refer to link:add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
 
 *Can I use Active Directory to manage authentication for my AKS clusters?*
 
@@ -135,7 +135,7 @@ Astra Trident will not be uninstalled from a cluster when you remove the cluster
 Astra Control doesn't deploy applications. Applications must be deployed outside of Astra Control.
 
 ifdef::gcp[]
-*I don’t see any of my application’s PVCs bound to GCP CVS. What's wrong?*
+*I don't see any of my application's PVCs bound to GCP CVS. What's wrong?*
 
 The Astra Trident operator sets the default storage class to `netapp-cvs-perf-premium` after it's successfully added to Astra Control. When an application's PVCs are not bound to Cloud Volumes Service for Google Cloud, there are a few steps that you can take:
 

@@ -62,7 +62,7 @@ Removed due to PI-7 Trident brownfield changes
 When Astra Control manages a cluster, it keeps track of the cluster's default storage class. If you change the storage class using `kubectl` commands, Astra Control reverts the change. To change the default storage class in a cluster managed by Astra Control, use one of the following methods:
 
 * Use the Astra Control API `PUT /managedClusters` endpoint, and assign a different default storage class with the `DefaultStorageClass` parameter.
-* Use the Astra Control web UI to assign a different default storage class. See <<Change the default storage class>>.
+* Use the Astra Control web UI to assign a different default storage class. refer to <<Change the default storage class>>.
 ======================
 
 ////
@@ -73,7 +73,7 @@ When Astra Control manages a cluster, it keeps track of the cluster's default st
 
 ifdef::aws[]
 * For Amazon Web Services, you should have the JSON file containing the credentials of the IAM user that created the cluster. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user[Learn how to create an IAM user].
-* Astra Trident is required for Amazon FSx for NetApp ONTAP. If you plan to use Amazon FSx for NetApp ONTAP as a storage backend for your EKS cluster, see the Astra Trident information in the link:set-up-amazon-web-services.html#eks-cluster-requirements[EKS cluster requirements].
+* Astra Trident is required for Amazon FSx for NetApp ONTAP. If you plan to use Amazon FSx for NetApp ONTAP as a storage backend for your EKS cluster, refer to the Astra Trident information in the link:set-up-amazon-web-services.html#eks-cluster-requirements[EKS cluster requirements].
 endif::aws[]
 ifdef::gcp[]
 * For GKE, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
@@ -83,7 +83,7 @@ ifdef::azure[]
 +
 You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
 
-* For private AKS clusters, see link:manage-private-cluster.html[Manage private clusters from Astra Control Service^].
+* For private AKS clusters, refer to link:manage-private-cluster.html[Manage private clusters from Astra Control Service^].
 endif::azure[]
 =======
 
@@ -138,7 +138,7 @@ If Astra Trident is not installed, you see output similar to the following:
 error: the server doesn't have a resource type "tridentversions"
 ----
 +
-NOTE: If Astra Trident is not installed or not current, and you want your cluster to use Astra Trident for storage services, you need to install the latest version of Astra Trident before proceeding. See the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for instructions.
+NOTE: If Astra Trident is not installed or not current, and you want your cluster to use Astra Trident for storage services, you need to install the latest version of Astra Trident before proceeding. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for instructions.
 
 . Ensure that the pods are running:
 +
@@ -147,7 +147,7 @@ NOTE: If Astra Trident is not installed or not current, and you want your cluste
 kubectl get pods -n trident
 ----
 
-. Check if the storage classes are using the supported Astra Trident drivers. The provisioner name should be `csi.trident.netapp.io`. See the following example:
+. Check if the storage classes are using the supported Astra Trident drivers. The provisioner name should be `csi.trident.netapp.io`. Refer to the following example:
 +
 [source,console]
 ----
@@ -353,7 +353,7 @@ Astra Control Service uses the service account to discover clusters running in G
 endif::gcp[]
 .. *Other*: Provide details about your self-managed cluster by uploading a `kubeconfig.yaml` file or by pasting the contents of the `kubeconfig.yaml` file from your clipboard.
 +
-NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. See https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files.
+NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. Refer to https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files.
 
 . *Cloud name* (For provider-managed clusters): Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
 +
@@ -363,7 +363,7 @@ NOTE: When you are selecting from the list of clusters, pay careful attention to
 ifdef::azure[]
 +
 
-NOTE: If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, link:manage-private-cluster.html[see these instructions] to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
+NOTE: If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, link:manage-private-cluster.html[refer to these instructions] to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
 endif::azure[]
 
 . *Credential name* (For self-managed clusters): Provide a name for the self-managed cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
@@ -448,7 +448,7 @@ If this is the first cluster that you have added for this cloud provider, Astra 
 NOTE: The `kubeconfig.yaml` file should include *only the cluster credential for one cluster*.
 
 +
-NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. See https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files. 
+NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. Refer to https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files. 
 
 . Provide a credential name. By default, the credential name is auto-populated as the name of the cluster.
 . Select *Next*.
@@ -461,7 +461,7 @@ ifdef::aws[]
 == Provide cluster access to other users
 You can optionally provide `kubectl` command access for a cluster to other IAM users that are not the cluster's creator.
 
-For instructions, see https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/[How do I provide access to other IAM users and roles after cluster creation in Amazon EKS?^].
+For instructions, refer to https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/[How do I provide access to other IAM users and roles after cluster creation in Amazon EKS?^].
 endif::aws[]
 
 
