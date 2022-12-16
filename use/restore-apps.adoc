@@ -35,7 +35,10 @@ Astra Control can restore your application from a snapshot or backup. Restoring 
 . Choose the restore type:
 * *Restore to original namespaces*: Use this procedure to restore the app in-place to the original cluster.
 +
-CAUTION: Performing an in-place restore operation on an app that shares resources with another app can have unintended results.
+[CAUTION]
+====
+Performing an in-place restore operation on an app that shares resources with another app can have unintended results. Any resources that are shared between the apps are replaced when an in-place restore is performed on one of the apps.
+====
 
 .. Select the snapshot to use to restore the app in-place, which reverts the app to an earlier version of itself.
 .. Select *Next*.
