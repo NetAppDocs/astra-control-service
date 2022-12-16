@@ -137,7 +137,11 @@ Defining an app gives you more granular control over what to include in an Astra
 
 WARNING: When defining apps, ensure that you do not include a Kubernetes resource in multiple apps with protection policies. Overlapping protection policies on a Kubernetes resources can cause data conflicts.
 
-CAUTION: Performing an in-place restore operation on an app that shares resources with another app can have unintended results.
+[CAUTION]
+====
+Performing an in-place restore operation on an app that shares resources with another app can have unintended results. Any resources that are shared between the apps are replaced when an in-place restore is performed on one of the apps.
+====
+
 
 .*Read more* about adding cluster-scoped resources to your app namespaces.
 [%collapsible]
