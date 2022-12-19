@@ -39,7 +39,7 @@ Note the following:
 //image:screenshot-invite-users.gif[A screenshot of the Invite Users screen where you enter a name, email address, and select a role.]
 . To add constraints to a user with a Member or Viewer role, enable the *Restrict role to constraints* check box.
 +
-For more information on adding constraints, see link:manage-roles.html[Manage roles].
+For more information on adding constraints, refer to link:manage-roles.html[Manage roles].
 . To invite another user, select *Add another user* and enter information for the new user.
 +
 You can invite up to 10 users at a time. You can navigate between the users you are inviting on the left side of the *Invite users* dialog.
@@ -61,7 +61,7 @@ An Account Owner can change the role of all users, while an Account Admin can ch
 . Select a new role.
 . To add constraints to a user with a Member or Viewer role, enable the *Restrict role to constraints* check box.
 +
-For more information on adding constraints, see link:manage-roles.html[Manage roles].
+For more information on adding constraints, refer to link:manage-roles.html[Manage roles].
 . Select *Confirm*.
 
 .Result

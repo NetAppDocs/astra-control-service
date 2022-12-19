@@ -11,7 +11,7 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 :imagesdir: ../media/get-started/
 
 [.lead]
-You can use Astra Control Service to manage private AKS clusters. These instructions assume that you have already created a private AKS cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS clusters, see the https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation^].
+You can use Astra Control Service to manage private AKS clusters. These instructions assume that you have already created a private AKS cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS clusters, refer to the https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation^].
 //To do so, you need to install the Astra Connector operator on the private AKS service cluster. You can complete this step before you add the cluster for management or during the process of adding it, when prompted.
 
 * <<Install the Astra Connector operator>>
@@ -82,7 +82,7 @@ kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 kubectl get astraconnector astra-connector -n astra-connector
 ----
 +
-You should see output similar to the following:
+You should refer to output similar to the following:
 +
 [source,console]
 ----
@@ -91,7 +91,7 @@ astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 ----
 
 == Set up persistent storage
-Configure persistent storage for the cluster. You can use Azure NetApp Files or Azure managed disks. See the Get Started documentation for more information about configuring Azure with these options:
+Configure persistent storage for the cluster. You can use Azure NetApp Files or Azure managed disks. Refer to the Get Started documentation for more information about configuring Azure with these options:
 
 * https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html[Set up Microsoft Azure with Azure NetApp Files]
 * https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks]

@@ -17,7 +17,7 @@ While viewing a running or completed task, you can expand the task details to se
 
 NOTE: For clone operations, the task subtasks consist of a snapshot and a snapshot restore operation.
 
-To see more information about failed tasks, see link:monitor-account-activity.html[Monitor account activity].
+To refer to more information about failed tasks, refer to link:monitor-account-activity.html[Monitor account activity].
 
 .Steps
 

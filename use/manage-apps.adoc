@@ -116,13 +116,13 @@ TIP: As an example, you might want to set a backup policy for "maria" that has a
 * Existing namespaces on the Kubernetes cluster that you added to Astra Control.
 * (Optional) A Kubernetes label on any link:../use/manage-apps.html#app-management-requirements[supported Kubernetes resources].
 +
-TIP: A label is a key/value pair you can assign to Kubernetes objects for identification. Labels make it easier to sort, organize, and find your Kubernetes objects. To learn more about Kubernetes labels, https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/[see the official Kubernetes documentation^].
+TIP: A label is a key/value pair you can assign to Kubernetes objects for identification. Labels make it easier to sort, organize, and find your Kubernetes objects. To learn more about Kubernetes labels, https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/[refer to the official Kubernetes documentation^].
 
 .About this task
 
 * Before you begin, you should also understand link:../use/manage-apps.html#what-about-system-namespaces[managing standard and system namespaces].
 * If you plan to use multiple namespaces with your apps in Astra Control, consider link:../use/manage-roles.html[modifying user roles with namespace constraints] before defining apps.
-* For instructions on how to manage apps using the Astra Control API, see the link:https://docs.netapp.com/us-en/astra-automation/[Astra Automation and API information^].
+* For instructions on how to manage apps using the Astra Control API, refer to the link:https://docs.netapp.com/us-en/astra-automation/[Astra Automation and API information^].
 
 .App management options
 
@@ -137,7 +137,11 @@ Defining an app gives you more granular control over what to include in an Astra
 
 WARNING: When defining apps, ensure that you do not include a Kubernetes resource in multiple apps with protection policies. Overlapping protection policies on a Kubernetes resources can cause data conflicts.
 
-CAUTION: Performing an in-place restore operation on an app that shares resources with another app can have unintended results.
+[CAUTION]
+====
+Performing an in-place restore operation on an app that shares resources with another app can have unintended results. Any resources that are shared between the apps are replaced when an in-place restore is performed on one of the apps.
+====
+
 
 .*Read more* about adding cluster-scoped resources to your app namespaces.
 [%collapsible]
@@ -173,7 +177,7 @@ NOTE: Apps can be defined within one or more specified namespaces on a single cl
 
 . (Optional) Enter a label for the Kubernetes resources in each namespace. You can specify a single label or label selector criteria (query).
 +
-TIP: To learn more about Kubernetes labels, https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/[see the official Kubernetes documentation^].
+TIP: To learn more about Kubernetes labels, https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/[refer to the official Kubernetes documentation^].
 
 . (Optional) Add additional namespaces for the app by selecting *Add namespace* and choosing the namespace from the drop-down list.
 . (Optional) Enter single label or label selector criteria for any additional namespaces you add.
@@ -212,7 +216,7 @@ You can add all Kubernetes resources in a namespace to Astra Control management 
 . Select the *Namespaces* tab.
 . Select the Actions menu for the namespace that contains the app resources you want to manage and select *Define as application*.
 +
-TIP: If you want to define multiple applications, select from the namespaces list and select the *Actions* button in the upper-left corner and select *Define as application*. This will define multiple individual applications in their individual namespaces. For multi-namespace applications, see <<Define resources to manage as an app>>.
+TIP: If you want to define multiple applications, select from the namespaces list and select the *Actions* button in the upper-left corner and select *Define as application*. This will define multiple individual applications in their individual namespaces. For multi-namespace applications, refer to <<Define resources to manage as an app>>.
 
 +
 NOTE: Select the *Show system namespaces* checkbox to reveal system namespaces that are usually not used in app management by default. image:acc_namespace_system.png[A screenshot that shows the *Show system namespaces* option that is available in the Namespaces tab.]  link:../use/manage-apps.html#what-about-system-namespaces[Read more].
