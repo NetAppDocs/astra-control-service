@@ -296,12 +296,18 @@ NOTE: When you create a custom shell script to use as an execution hook, remembe
 .. Determine when the hook should run by selecting an operation type from the *Operation* drop-down menu.
 .. Enter a unique name for the hook.
 .. (Optional) Enter any arguments to pass to the hook during execution, pressing the Enter key after each argument you enter to record each one.
-. (Optional) In the *Hook Filters* area, you can add filters to control which containers the execution hook runs on:
-.. Choose a hook filter type from the drop-down menu.
-.. Enter a regular expression to use as the filter. Astra Control uses the https://github.com/google/re2/wiki/Syntax[Google RE2 regex syntax^].
+. (Optional) In the *Hook Filter Details* area, you can add filters to control which containers the execution hook runs on:
+.. Select *Add filter* to add a filter line item.
+.. In the *Hook filter type* column, choose an attribute on which to filter from the drop-down menu.
+.. In the *Regex* column, enter a regular expression to use as the filter. Astra Control uses the https://github.com/google/re2/wiki/Syntax[Google RE2 regex syntax^].
++
+NOTE: If you enter the exact name of an entity, such as pod name, the RE2 syntax performs a substring match. To match an exact name and only that name, use the full string match syntax (for example, `^exact_podname$`).
+
 .. To add more filters, select *Add filter*.
-. Select *Next*.
-//. In the *Container Images* area, if the hook should run against all container images contained within the application, enable the *Apply to all container images* check box. If instead the hook should act only on one or more specified container images, enter the container image names in the *Container image names to match* field.
++
+NOTE: Multiple filters for an execution hook are combined with a logical AND operator. You can have up to 10 active filters for an execution hook.
+
+. When done, select *Next*.
 . In the *Script* area, do one of the following:
 * Add a new script.
 .. Select *Add*.
