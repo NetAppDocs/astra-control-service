@@ -301,7 +301,7 @@ NOTE: When you create a custom shell script to use as an execution hook, remembe
 .. In the *Hook filter type* column, choose an attribute on which to filter from the drop-down menu.
 .. In the *Regex* column, enter a regular expression to use as the filter. Astra Control uses the https://github.com/google/re2/wiki/Syntax[Google RE2 regex syntax^].
 +
-NOTE: If you filter on the exact name of an attribute, such as a pod name, the RE2 syntax performs a substring match. To match an exact name and only that name, use the full string match syntax (for example, `^exact_podname$`).
+NOTE: If you filter on the exact name of an attribute (such as a pod name) with  no other text in the regular expression field, a substring match is performed. To match an exact name and only that name, use the exact string match syntax (for example, `^exact_podname$`).
 
 .. To add more filters, select *Add filter*.
 +
