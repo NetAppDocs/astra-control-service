@@ -297,15 +297,15 @@ NOTE: When you create a custom shell script to use as an execution hook, remembe
 .. Enter a unique name for the hook.
 .. (Optional) Enter any arguments to pass to the hook during execution, pressing the Enter key after each argument you enter to record each one.
 . (Optional) In the *Hook Filter Details* area, you can add filters to control which containers the execution hook runs on:
-.. Select *Add filter* to add a filter line item.
+.. Select *Add filter*.
 .. In the *Hook filter type* column, choose an attribute on which to filter from the drop-down menu.
 .. In the *Regex* column, enter a regular expression to use as the filter. Astra Control uses the https://github.com/google/re2/wiki/Syntax[Google RE2 regex syntax^].
 +
-NOTE: If you enter the exact name of an entity, such as pod name, the RE2 syntax performs a substring match. To match an exact name and only that name, use the full string match syntax (for example, `^exact_podname$`).
+NOTE: If you filter on the exact name of an attribute, such as a pod name, the RE2 syntax performs a substring match. To match an exact name and only that name, use the full string match syntax (for example, `^exact_podname$`).
 
 .. To add more filters, select *Add filter*.
 +
-NOTE: Multiple filters for an execution hook are combined with a logical AND operator. You can have up to 10 active filters for an execution hook.
+NOTE: Multiple filters for an execution hook are combined with a logical AND operator. You can have up to 10 active filters per execution hook.
 
 . When done, select *Next*.
 . In the *Script* area, do one of the following:
