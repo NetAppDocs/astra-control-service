@@ -29,7 +29,7 @@ Each filter you add to an execution hook uses a regular expression to match cont
 
 NOTE: Regular expressions for filters are only capable of including container matches. You can't use a regular expression to exclude containers from the list of matches.
 
-For information on the syntax that Astra Control supports for regular expressions in execution hook filters, see https://github.com/google/re2/wiki/Syntax[Google RE2 syntax support^].
+For information on the syntax that Astra Control supports for regular expressions in execution hook filters, see https://github.com/google/re2/wiki/Syntax[Regular Expression 2 (RE2) syntax support^].
 
 
 ////
@@ -299,7 +299,7 @@ NOTE: When you create a custom shell script to use as an execution hook, remembe
 . (Optional) In the *Hook Filter Details* area, you can add filters to control which containers the execution hook runs on:
 .. Select *Add filter*.
 .. In the *Hook filter type* column, choose an attribute on which to filter from the drop-down menu.
-.. In the *Regex* column, enter a regular expression to use as the filter. Astra Control uses the https://github.com/google/re2/wiki/Syntax[Google RE2 regex syntax^].
+.. In the *Regex* column, enter a regular expression to use as the filter. Astra Control uses the https://github.com/google/re2/wiki/Syntax[Regular Expression 2 (RE2) regex syntax^].
 +
 NOTE: If you filter on the exact name of an attribute (such as a pod name) with  no other text in the regular expression field, a substring match is performed. To match an exact name and only that name, use the exact string match syntax (for example, `^exact_podname$`).
 
