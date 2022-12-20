@@ -354,6 +354,18 @@ The *Used by* column in the list of scripts contains details on which hooks are 
 +
 A more detailed list appears, with the names of hooks that are using the script and the type of operation they are configured to run with.
 
+== Edit an execution hook
+You can edit an execution hook if you want to change its attributes, filters, or the script that it uses. You need to have Owner, Admin, or Member permissions to edit execution hooks.
+
+.Steps
+
+. Select *Applications* and then select the name of a managed app.
+. Select the *Execution hooks* tab.
+. Select the Options menu in the *Actions* column for a hook that you wish to edit.
+. Select *Edit*.
+. Make any needed changes, selecting *Next* after you complete each section.
+. Select *Save*.
+
 == Disable an execution hook
 You can disable an execution hook if you want to temporarily prevent it from running before or after a snapshot of an app. You need to have Owner, Admin, or Member permissions to disable execution hooks.
 
