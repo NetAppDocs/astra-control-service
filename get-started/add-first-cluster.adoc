@@ -72,26 +72,35 @@ When Astra Control manages a cluster, it keeps track of the cluster's default st
 =======
 
 ifdef::aws[]
-* For Amazon Web Services, you should have the JSON file containing the credentials of the IAM user that created the cluster. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user[Learn how to create an IAM user].
+.Amazon Web Services
+* You should have the JSON file containing the credentials of the IAM user that created the cluster. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user[Learn how to create an IAM user].
 * Astra Trident is required for Amazon FSx for NetApp ONTAP. If you plan to use Amazon FSx for NetApp ONTAP as a storage backend for your EKS cluster, refer to the Astra Trident information in the link:set-up-amazon-web-services.html#eks-cluster-requirements[EKS cluster requirements].
 endif::aws[]
-ifdef::gcp[]
-* For GKE, you should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
-endif::gcp[]
+
 ifdef::azure[]
-* For AKS, you should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
+.Azure Kubernetes Service
+* You should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
 +
 You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
 
 * For private AKS clusters, refer to link:manage-private-cluster.html[Manage private clusters from Astra Control Service^].
 endif::azure[]
+
+ifdef::gcp[]
+.Google Cloud
+* You should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
+endif::gcp[]
 =======
 
 
 .What you'll need for self-managed clusters
 [%collapsible]
 =======
-Your cluster needs to meet the following requirements:
+Your self-managed cluster can use CSI drivers or it can use NetApp storage with Astra Trident. The below instructions give details surrounding an Astra Trident configuration for storage. For more information on using CSI drivers to integrate storage, refer to the documentation for your storage provider.
+
+NOTE: If there is no existing Astra Trident installation on your self-managed cluster that is hosted in either AKS or GCP, Astra Control Service automatically installs Astra Trident when you add the cluster.
+
+Your self-managed cluster needs to meet the following requirements:
 
 * The cluster must be accessible via the internet
 *	A version of Astra Trident that is link:../get-started/requirements.html#operational-environment-requirements[supported by Astra Control Service^] is installed:
