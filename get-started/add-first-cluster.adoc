@@ -96,9 +96,9 @@ endif::gcp[]
 .What you'll need for self-managed clusters
 [%collapsible]
 =======
-Your self-managed cluster can use CSI drivers or it can use NetApp storage with Astra Trident. The below instructions give details surrounding an Astra Trident configuration for storage. For more information on using CSI drivers to integrate storage, refer to the documentation for your storage provider.
+Your self-managed clusters can use Astra Trident to interface with NetApp storage services, or they can use Container Storage Interface (CSI) drivers to interface with other storage services. The below instructions apply to an Astra Trident configuration. For more information on using CSI drivers to integrate storage, refer to the documentation for your storage service.
 
-NOTE: If there is no existing Astra Trident installation on your self-managed cluster that is hosted in either AKS or GCP, Astra Control Service automatically installs Astra Trident when you add the cluster.
+NOTE: If there is no existing Astra Trident installation on your self-managed cluster that is hosted in either Azure Kubernetes Service or Google Cloud, Astra Control Service automatically installs Astra Trident when you add the cluster.
 
 Your self-managed cluster needs to meet the following requirements:
 
