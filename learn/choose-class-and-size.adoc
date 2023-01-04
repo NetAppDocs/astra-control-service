@@ -99,3 +99,4 @@ https://cloud.google.com/persistent-disk/[Learn more about Google Persistent Dis
 https://cloud.google.com/compute/docs/disks/performance[Learn more about different performance levels of Google Persistent Disks^].
 
 == NetApp Cloud Volumes ONTAP
+For specific information on configuring NetApp Cloud Volumes ONTAP, including performance recommendations, visit the https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[NetApp Cloud Volumes ONTAP documentation^].
