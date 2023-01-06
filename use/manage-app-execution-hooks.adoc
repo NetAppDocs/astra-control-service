@@ -27,7 +27,7 @@ When you add or edit an execution hook to an application, you can add filters to
 
 Each filter you add to an execution hook uses a regular expression to match containers in your cluster. When a hook matches a container, the hook will run its associated script on that container.
 
-NOTE: Regular expressions for filters are only capable of including container matches. You can't use a regular expression to exclude containers from the list of matches.
+NOTE: Regular expressions for filters use the Regular Expression 2 (RE2) syntax, which does not support creating a filter that excludes containers from the list of matches.
 
 For information on the syntax that Astra Control supports for regular expressions in execution hook filters, see https://github.com/google/re2/wiki/Syntax[Regular Expression 2 (RE2) syntax support^].
 
