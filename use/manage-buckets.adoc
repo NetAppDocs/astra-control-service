@@ -57,7 +57,7 @@ Note that Astra Control Service doesn't enable you to remove a bucket after you'
 ifdef::azure[]
 * If your bucket is in Azure: 
 ** The bucket must belong to the resource group named _astra-backup-rg_.
-** In your Azure storage account configuration, if the instance performance setting is set to "Premium", the "Premium account type" setting must be set to "Block blobs".
+** If the Azure storage account instance performance setting is set to "Premium", the "Premium account type" setting must be set to "Block blobs".
 endif::azure[]
 
 .Steps
