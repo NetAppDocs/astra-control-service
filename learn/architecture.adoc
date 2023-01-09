@@ -29,7 +29,7 @@ ifdef::gcp+azure+aws[]
 ** Astra Control Service uses the following storage backends:
 *** https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/[NetApp Cloud Volumes Service for Google Cloud^], Google Persistent Disk, and https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/[NetApp Cloud Volumes ONTAP] as the storage backends for GKE clusters
 *** https://www.netapp.com/cloud-services/azure-netapp-files/[Azure NetApp Files^], Azure Managed Disks, and https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/[NetApp Cloud Volumes ONTAP] as the storage backends for AKS clusters
-*** https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^], https://docs.aws.amazon.com/fsx/[Amazon FSx for NetApp ONTAP^], and https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/[NetApp Cloud Volumes ONTAP] as the storage backends for AWS clusters
+*** https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^] and https://docs.aws.amazon.com/fsx/[Amazon FSx for NetApp ONTAP^] as the storage backends for AWS clusters
 endif::gcp+azure+aws[]
 ifndef::gcp,aws[]
 ** Astra Control Service uses https://www.netapp.com/cloud-services/azure-netapp-files/[Azure NetApp Files^], Azure Managed Disks, and https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/[NetApp Cloud Volumes ONTAP] as the storage backends for AKS clusters.
@@ -38,7 +38,7 @@ ifndef::azure,aws[]
 ** Astra Control Service uses https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/[NetApp Cloud Volumes Service for Google Cloud^], Google Persistent Disk, and https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/[NetApp Cloud Volumes ONTAP] as the storage backends for GKE clusters.
 endif::azure,aws[]
 ifndef::azure,gcp[]
-** Astra Control Service uses https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^], https://docs.aws.amazon.com/fsx/[Amazon FSx for NetApp ONTAP^], and https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/[NetApp Cloud Volumes ONTAP] as the storage backends for EKS clusters.
+** Astra Control Service uses https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^] and https://docs.aws.amazon.com/fsx/[Amazon FSx for NetApp ONTAP^] as the storage backends for AWS clusters.
 endif::azure,gcp[]
 +
 ** Astra Control Center uses the following storage backends:

@@ -17,11 +17,11 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 
 .New features and support
 
-* Enhanced execution hook filtering
+* Enhanced execution hooks functionality with additional filtering options
 +
 link:../use/manage-app-execution-hooks.html[Manage app execution hooks]
 
-* Support for NetApp Cloud Volumes ONTAP as a storage backend
+* Support for NetApp Cloud Volumes ONTAP as a storage backend (Officially supported on Azure and Google Cloud Platforms)
 +
 link:../learn/architecture.html#astra-control-components[Architecture and components]
 
