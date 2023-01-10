@@ -49,8 +49,6 @@ The list of buckets available to Astra Control Service displays.
 
 After you start managing a cluster in your cloud provider, you can add additional buckets at any time. This enables you to choose between buckets when creating a protection policy and to change the default bucket for ad-hoc backups and clones.
 
-Note that Astra Control Service doesn't enable you to remove a bucket after you've added it.
-
 .What you'll need
 
 * The name of an existing bucket in your cloud provider.
