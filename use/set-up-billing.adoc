@@ -69,6 +69,8 @@ endif::aws[]
 == Subscribe to Astra Control Service in the Azure Marketplace
 You can subscribe to Astra Control Service using the Azure Marketplace. Your account and billing details are managed through the Marketplace.
 
+NOTE: To see a video walkthrough of the Azure Marketplace subscription process, visit https://www.netapp.tv/details/29979[NetApp TV^].
+
 .Steps
 
 . Go to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=Overview[Azure Marketplace^].
