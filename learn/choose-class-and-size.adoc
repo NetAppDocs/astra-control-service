@@ -12,7 +12,7 @@ summary: Astra Control Service uses Cloud Volumes Service for Google Cloud as th
 
 [.lead]
 
-Astra Control Service supports Cloud Volumes Service for Google Cloud or Google Persistent Disk as the storage backend options for persistent volumes.
+Astra Control Service supports Cloud Volumes Service for Google Cloud, Google Persistent Disk, or or NetApp Cloud Volumes ONTAP as the storage backend options for persistent volumes.
 
 == Cloud Volumes Service for Google Cloud
 Astra Control Service can use Cloud Volumes Service for Google Cloud as the storage backend for persistent volumes. You should understand how choosing a service type, storage class, and persistent volume size can help you meet your performance objectives.
@@ -97,3 +97,6 @@ Astra Control Service supports Google Persistent Disk as a storage backend optio
 https://cloud.google.com/persistent-disk/[Learn more about Google Persistent Disk^].
 
 https://cloud.google.com/compute/docs/disks/performance[Learn more about different performance levels of Google Persistent Disks^].
+
+== NetApp Cloud Volumes ONTAP
+For specific information on configuring NetApp Cloud Volumes ONTAP, including performance recommendations, visit the https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[NetApp Cloud Volumes ONTAP documentation^].

@@ -11,7 +11,7 @@ summary: An execution hook is a custom script that you can run before or after a
 :imagesdir: ../media/use/
 
 [.lead]
-An execution hook is a custom action that you can configure to run in conjunction with a data protection operation of a managed app. For example, if you have a database app, you can use execution hooks to pause all database transactions before a snapshot, and resume transactions after the snapshot is complete. This ensures application-consistent snapshots.
+An execution hook is a custom action that you can configure to run in conjunction with a data protection operation of a managed app. For example, if you have a database app, you can use an execution hook to pause all database transactions before a snapshot, and resume transactions after the snapshot is complete. This ensures application-consistent snapshots.
 
 == Types of execution hooks
 Astra Control supports the following types of execution hooks, based on when they can be run:
@@ -21,6 +21,15 @@ Astra Control supports the following types of execution hooks, based on when the
 * Pre-backup
 * Post-backup
 * Post-restore
+
+== Execution hook filters
+When you add or edit an execution hook to an application, you can add filters to an execution hook to mange which containers the hook will match. Filters are useful for applications that use the same container image on all containers, but might use each image for a different purpose (such as Elasticsearch). Filters enable you to create scenarios where execution hooks will run on some of those identical containers, but not necessarily all of them. If you create multiple filters for a single execution hook, they are combined with a logical AND operator. You can have up to 10 active filters per execution hook.
+
+Each filter you add to an execution hook uses a regular expression to match containers in your cluster. When a hook matches a container, the hook will run its associated script on that container.
+
+NOTE: Regular expressions for filters use the Regular Expression 2 (RE2) syntax, which does not support creating a filter that excludes containers from the list of matches.
+
+For information on the syntax that Astra Control supports for regular expressions in execution hook filters, see https://github.com/google/re2/wiki/Syntax[Regular Expression 2 (RE2) syntax support^].
 
 
 ////
@@ -57,10 +66,8 @@ Consider the following when planning execution hooks for your apps.
 [NOTE]
 ====
 Since execution hooks often reduce or completely disable the functionality of the application they are running against, you should always try to minimize the time your custom execution hooks take to run.
-If you start a backup or snapshot operation with associated execution hooks but then cancel it, the hooks are still allowed to run if the backup or snapshot operation has already begun. This means that a post-backup execution hook cannot assume that the backup was completed.
+If you start a backup or snapshot operation with associated execution hooks but then cancel it, the hooks are still allowed to run if the backup or snapshot operation has already begun. This means that the logic used in a post-backup execution hook cannot assume that the backup was completed.
 ====
-
-//=== Execution hook interaction with canceled backups
 
 === Order of execution
 When a data protection operation is run, execution hook events take place in the following order:
@@ -225,7 +232,7 @@ You can view existing custom execution hooks for an app.
 . Go to *Applications* and then select the name of a managed app.
 . Select the *Execution hooks* tab.
 +
-You can view all enabled or disabled execution hooks in the resulting list. You can see a hook's status, source, and when it runs (pre- or post-operation). To view event logs surrounding execution hooks, go to the *Activity* page in the left-side navigation area.
+You can view all enabled or disabled execution hooks in the resulting list. You can see a hook's status, how many containers it matches, creation time, and when it runs (pre- or post-operation). You can select the `+` icon next to the hook name to expand the list of containers it will run on. To view event logs surrounding execution hooks for this application, go to the *Activity* tab.
 
 == View existing scripts
 You can view the existing uploaded scripts. You can also see which scripts are in use, and what hooks are using them, on this page.
@@ -237,9 +244,8 @@ You can view the existing uploaded scripts. You can also see which scripts are i
 +
 You can see a list of existing uploaded scripts on this page. The *Used by* column shows which execution hooks are using each script.
 
-
 == Add a script
-You can add one or more scripts that execution hooks can reference. Many execution hooks can reference the same script; this enables you to update many execution hooks by only changing one script.
+Each execution hook must use a script to perform actions. You can add one or more scripts that execution hooks can reference. Many execution hooks can reference the same script; this enables you to update many execution hooks by only changing one script.
 
 .Steps
 
@@ -286,10 +292,22 @@ NOTE: When you create a custom shell script to use as an execution hook, remembe
 . Select *Applications* and then select the name of a managed app.
 . Select the *Execution hooks* tab.
 . Select *Add*.
-. In the *Hook Details* area, determine when the hook should run by selecting an operation type from the *Operation* drop-down menu.
-. Enter a unique name for the hook.
-. (Optional) Enter any arguments to pass to the hook during execution, pressing the Enter key after each argument you enter to record each one.
-. In the *Container Images* area, if the hook should run against all container images contained within the application, enable the *Apply to all container images* check box. If instead the hook should act only on one or more specified container images, enter the container image names in the *Container image names to match* field.
+. In the *Hook Details* area:
+.. Determine when the hook should run by selecting an operation type from the *Operation* drop-down menu.
+.. Enter a unique name for the hook.
+.. (Optional) Enter any arguments to pass to the hook during execution, pressing the Enter key after each argument you enter to record each one.
+. (Optional) In the *Hook Filter Details* area, you can add filters to control which containers the execution hook runs on:
+.. Select *Add filter*.
+.. In the *Hook filter type* column, choose an attribute on which to filter from the drop-down menu.
+.. In the *Regex* column, enter a regular expression to use as the filter. Astra Control uses the https://github.com/google/re2/wiki/Syntax[Regular Expression 2 (RE2) regex syntax^].
++
+NOTE: If you filter on the exact name of an attribute (such as a pod name) with  no other text in the regular expression field, a substring match is performed. To match an exact name and only that name, use the exact string match syntax (for example, `^exact_podname$`).
+
+.. To add more filters, select *Add filter*.
++
+NOTE: Multiple filters for an execution hook are combined with a logical AND operator. You can have up to 10 active filters per execution hook.
+
+. When done, select *Next*.
 . In the *Script* area, do one of the following:
 * Add a new script.
 .. Select *Add*.
@@ -308,7 +326,9 @@ NOTE: When you create a custom shell script to use as an execution hook, remembe
 * Select an existing script from the list.
 +
 This instructs the execution hook to use this script.
-. Select *Add hook*.
+. Select *Next*.
+. Review the execution hook configuration.
+. Select *Add*.
 
 == Check the state of an execution hook
 After a snapshot, backup, or restore operation finishes running, you can check the state of execution hooks that ran as part of the operation. You can use this status information to determine if you want to keep the execution hook, modify it, or delete it.
@@ -334,6 +354,18 @@ The *Used by* column in the list of scripts contains details on which hooks are 
 +
 A more detailed list appears, with the names of hooks that are using the script and the type of operation they are configured to run with.
 
+== Edit an execution hook
+You can edit an execution hook if you want to change its attributes, filters, or the script that it uses. You need to have Owner, Admin, or Member permissions to edit execution hooks.
+
+.Steps
+
+. Select *Applications* and then select the name of a managed app.
+. Select the *Execution hooks* tab.
+. Select the Options menu in the *Actions* column for a hook that you wish to edit.
+. Select *Edit*.
+. Make any needed changes, selecting *Next* after you complete each section.
+. Select *Save*.
+
 == Disable an execution hook
 You can disable an execution hook if you want to temporarily prevent it from running before or after a snapshot of an app. You need to have Owner, Admin, or Member permissions to disable execution hooks.
 
@@ -353,6 +385,8 @@ You can remove an execution hook entirely if you no longer need it. You need to 
 . Select the *Execution hooks* tab.
 . Select the Options menu in the *Actions* column for a hook that you wish to delete.
 . Select *Delete*.
+. In the resulting dialog, type "delete" to confirm.
+. Select *Yes, delete execution hook*.
 
 == For more information
 

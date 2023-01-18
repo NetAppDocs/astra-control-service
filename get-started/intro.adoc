@@ -61,7 +61,7 @@ a|
 |
 
 * NetApp ONTAP AFF and FAS systems
-* Cloud Volumes ONTAP storage backend
+* Cloud Volumes ONTAP storage backend (Officially supported on Azure and Google Cloud Platforms)
 |===
 
 == How Astra Control Service works
