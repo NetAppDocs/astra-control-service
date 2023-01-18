@@ -100,7 +100,7 @@ NOTE: You can https://docs.netapp.com/us-en/trident/trident-get-started/kubernet
 ** *Trident storage classes configured*: At least one Astra Trident storage class must be https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html[configured^] on the cluster. If a default storage class is configured, ensure that only one storage class has that annotation.
 ** *Astra Trident volume snapshot controller and volume snapshot class installed and configured*: The volume snapshot controller must be https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[installed^] so that snapshots can be created in Astra Control. At least one Astra Trident `VolumeSnapshotClass` has been https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass[set up^] by an administrator.
 * If you are using or plan to use storage enabled with CSI drivers, the appropriate CSI drivers must be installed on the cluster.
-* *Kubeconfig accessible*: You have access to the https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[cluster kubeconfig^] that includes only one context element.
+* *Kubeconfig accessible*: You have access to the https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[cluster kubeconfig^] <<Create an admin-role kubeconfig (applies to Rancher and Openshift clusters only), cluster kubeconfig>> that includes only one context element.
 * *ONTAP credentials*: You need ONTAP credentials and a superuser and user ID set on the backing ONTAP system to back up and restore apps with Astra Control Center. Run the following commands in the ONTAP command line:
 +
 ----
@@ -352,7 +352,7 @@ endif::gcp[]
 +
 NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. Refer to https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files.
 
-. *Cloud name* (For provider-managed clusters): Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
+. *Cloud instance name* (For provider-managed clusters): Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
 +
 
 NOTE: When you are selecting from the list of clusters, pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
@@ -365,7 +365,7 @@ endif::azure[]
 
 . *Credential name* (For self-managed clusters): Provide a name for the self-managed cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
 
-. *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
+. (Optional) *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
 
 [NOTE]
