@@ -13,32 +13,44 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 [.lead]
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
+== 17 January 2023
+
+.New features and support
+
+* Enhanced execution hooks functionality with additional filtering options
++
+link:../use/manage-app-execution-hooks.html[Manage app execution hooks]
+
+* Support for NetApp Cloud Volumes ONTAP as a storage backend (officially supported on Microsoft Azure and Google Cloud platforms)
++
+link:../learn/architecture.html#astra-control-components[Architecture and components]
+
 == 22 November 2022
 
 .New features and support
 
-* Support for applications that span across multiple namespaces.
+* Support for applications that span across multiple namespaces
 +
 link:../use/manage-apps.html[Define apps]
-* Support for including cluster resources in an application definition.
+* Support for including cluster resources in an application definition
 +
 link:../use/manage-apps.html[Define apps]
-* Enhanced progress reporting for your backup, restore, and clone operations.
+* Enhanced progress reporting for your backup, restore, and clone operations
 +
 link:../use/monitor-running-tasks.html[Monitor running tasks]
-* Support for managing clusters that already have a compatible version of Astra Trident installed.
+* Support for managing clusters that already have a compatible version of Astra Trident installed
 +
 link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service] 
-* Support for managing multiple cloud provider subscriptions in a single Astra Control Service account.
+* Support for managing multiple cloud provider subscriptions in a single Astra Control Service account
 +
 link:../use/manage-cloud-instances.html[Manage cloud instances]
-* Support for adding self-managed Kubernetes clusters to Astra Control Service.
+* Support for adding self-managed Kubernetes clusters to Astra Control Service
 +
 link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service]
-* Billing for Astra Control Service is now metered per namespace instead of per application.
+* Billing for Astra Control Service is now metered per namespace instead of per application
 +
 link:../use/set-up-billing.html[Set up billing]
-* Support for subscribing to Astra Control Service term-based offers through the AWS Marketplace.
+* Support for subscribing to Astra Control Service term-based offers through the AWS Marketplace
 +
 link:../use/set-up-billing.html[Set up billing]
 
