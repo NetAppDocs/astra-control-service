@@ -387,6 +387,7 @@ ifdef::aws[]
 * Amazon Elastic Block Store: No price, performance, or resilience information available
 * Amazon FSx for NetApp ONTAP: No price, performance, or resilience information available
 endif::aws[]
+* NetApp Cloud Volumes ONTAP: No price, performance, or resilience information available
 ====
 +
 Each storage class can utilize one of the following services:
@@ -403,6 +404,7 @@ ifdef::aws[]
 * https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^]
 * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for NetApp ONTAP^]
 endif::aws[]
+* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/[NetApp Cloud Volumes ONTAP^]
 +
 ifndef::gcp,azure[]
 Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web Services clusters].

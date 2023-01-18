@@ -26,3 +26,4 @@ For more information on each type of volume and their performance, refer to http
 
 == Amazon FSx for NetApp ONTAP
 When you use FSx for NetApp ONTAP as the storage backend for AWS clusters, I/O performance depends on the configuration of the filesystem and the characteristics of your workloads. For specific information on FSx for NetApp ONTAP performance, refer to https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/performance.html[Amazon FSx for NetApp ONTAP performance^]. For pricing information, refer to https://aws.amazon.com/fsx/netapp-ontap/pricing/[Amazon FSx for NetApp ONTAP Pricing^].
+
