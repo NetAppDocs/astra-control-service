@@ -15,9 +15,6 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 * <<Create a Kubernetes cluster>>
 * <<Start managing Kubernetes clusters>>
-ifdef::aws[]
-* <<Provide cluster access to other users>>
-endif::aws[]
 * <<Change the default storage class>>
 
 == Create a Kubernetes cluster
