@@ -27,13 +27,13 @@ Astra Control offers critical capabilities for Kubernetes application data lifec
 * Clone an application from staging to production
 * Replicate applications to a remote system using NetApp SnapMirror technology
 * Visualize application health and protection status
-* Work with a user interface or an API to implement your backup and migration workflows
+* Work with a web UI or an API to implement your backup and migration workflows
 
 == Deployment models
 Astra Control is available in two deployment models:
 
 * *Astra Control Service*: A NetApp-managed service that provides application-aware data management of Kubernetes clusters in multiple cloud provider environments, as well as self-managed Kubernetes clusters.
-* *Astra Control Center*: Self-managed software that provides application-aware data management of Kubernetes clusters running in your on-premises environment. Astra Control Center can also be installed with a NetApp Cloud Volumes ONTAP storage backend on multiple cloud provider environments.
+* *Astra Control Center*: Self-managed software that provides application-aware data management of Kubernetes clusters running in your on-premises environment. Astra Control Center can also be installed  on multiple cloud provider environments with a NetApp Cloud Volumes ONTAP storage backend.
 
 [cols=3*,options="header",cols="1h,2d,2a"]
 |===
@@ -43,8 +43,8 @@ Astra Control is available in two deployment models:
 | How is it offered? | As a fully managed cloud service from NetApp | As software that you can download, install, and manage
 | Where is it hosted? | On a public cloud of NetApp's choice | On your own Kubernetes cluster
 | How is it updated? | Managed by NetApp | You manage any updates
-| What are the app data management capabilities? | Same capabilities on both platforms with exceptions to storage backend or to external services | Same capabilities on both platforms with exceptions to storage backend or to external services
-| What is the storage backend support?
+| What are the app data management capabilities? | Same capabilities on both platforms with exceptions to storage backend or to external services (see <<Features>>) | Same capabilities on both platforms with exceptions to storage backend or to external services (see <<Features>>)
+| What are the supported storage backends?
 a|
 
 * Amazon Web Services:
@@ -97,7 +97,7 @@ endif::azure[]
 +
 ** If you use a NetApp cloud service storage offering as your storage backend, Astra Control Service uses Astra Trident to provision persistent volumes for your apps. If you use Amazon EBS or Azure managed disks as your storage backend, you need to install a provider-specific CSI driver. Installation instructions are provided in link:set-up-amazon-web-services.html[Set up Amazon Web Services^] and link:set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks^].
 
-* At this point, you can add apps to your cluster. Persistent volumes will be provisioned on the new default storage class.
+* At this point, you can define apps from your cluster. Persistent volumes will be provisioned on the storage backend through the new default storage class.
 
 * You then use Astra Control Service to manage these apps, and start creating snapshots, backups, and clones.
 +
