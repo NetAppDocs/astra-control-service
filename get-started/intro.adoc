@@ -47,17 +47,23 @@ Astra Control is available in two deployment models:
 | What are the supported storage backends?
 a|
 
+ifdef::aws[]
 * Amazon Web Services:
 ** Amazon EBS
 ** Amazon FSx for NetApp ONTAP
+endif::aws[]
+ifdef::gcp[]
 * Google Cloud:
 ** Google Persistent Disk
 ** NetApp Cloud Volumes Service
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
+endif::gcp[]
+ifdef::azure[]
 * Microsoft Azure:
 ** Azure Managed Disks
 ** Azure NetApp Files
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
+endif::azure[]
 * Self-managed clusters:
 ** NetApp ONTAP AFF and FAS systems
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
