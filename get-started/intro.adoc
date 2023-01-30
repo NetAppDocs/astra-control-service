@@ -53,15 +53,18 @@ a|
 * Google Cloud:
 ** Google Persistent Disk
 ** NetApp Cloud Volumes Service
-** Cloud Volumes ONTAP
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
 * Microsoft Azure:
 ** Azure Managed Disks
 ** Azure NetApp Files
-** Cloud Volumes ONTAP
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
+* Self-managed clusters:
+** NetApp ONTAP AFF and FAS systems
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
 |
 
 * NetApp ONTAP AFF and FAS systems
-* Cloud Volumes ONTAP
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
 |===
 
 == How Astra Control Service works
