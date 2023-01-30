@@ -56,13 +56,13 @@ ifdef::gcp[]
 * Google Cloud:
 ** Google Persistent Disk
 ** NetApp Cloud Volumes Service
-** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[Cloud Volumes ONTAP^]
 endif::gcp[]
 ifdef::azure[]
 * Microsoft Azure:
 ** Azure Managed Disks
 ** Azure NetApp Files
-** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[Cloud Volumes ONTAP^]
 endif::azure[]
 * Self-managed clusters:
 ** NetApp ONTAP AFF and FAS systems
