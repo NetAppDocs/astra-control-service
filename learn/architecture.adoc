@@ -24,6 +24,8 @@ image:astra-architecture-diagram-v5.png[Astra Control architecture diagram and c
 
 * *Astra Trident*: As a fully supported open source storage provisioner and orchestrator maintained by NetApp, Astra Trident enables you to create storage volumes for containerized applications managed by Docker and Kubernetes. When deployed with Astra Control Center, Astra Trident includes a configured ONTAP storage backend.
 
+////
+
 * *Storage backend*:
 ifdef::gcp+azure+aws[]
 ** Astra Control Service uses the following storage backends:
@@ -45,6 +47,7 @@ endif::azure,gcp[]
 *** ONTAP AFF and FAS storage backend. As a storage software and hardware platform, ONTAP provides core storage services, support for multiple storage access protocols, and storage management functionality, such as snapshots and mirroring.
 *** Cloud Volumes ONTAP storage backend
 
+////
 
 * *Cloud Insights*:  A NetApp cloud infrastructure monitoring tool, Cloud Insights enables you to monitor performance and utilization for your Kubernetes clusters managed by Astra Control Center. Cloud Insights correlates storage usage to workloads. When you enable the Cloud Insights connection in Astra Control Center, telemetry information shows in Astra Control Center UI pages.
 

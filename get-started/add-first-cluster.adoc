@@ -68,11 +68,13 @@ ifdef::azure[]
 You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
 
 * For private AKS clusters, refer to link:manage-private-cluster.html[Manage private clusters from Astra Control Service^].
+* If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Microsoft Azure. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[setup documentation^].
 endif::azure[]
 
 ifdef::gcp[]
 .Google Cloud
 * You should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
+* If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Google Cloud. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[setup documentation^].
 endif::gcp[]
 =======
 
