@@ -156,7 +156,7 @@ If you start but then cancel a backup that includes a snapshot and there are ass
 |New
 |Different
 |N
-|Y
+|N
 |Y
 
 |6
@@ -216,7 +216,7 @@ If you start but then cancel a backup that includes a snapshot and there are ass
 |N/A
 |N/A
 |N
-|Y
+|N
 |N/A
 
 |===
