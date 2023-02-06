@@ -43,11 +43,12 @@ NOTE: Astra Control Service supports AKS clusters that use Azure Active Director
 
 endif::gcp+azure+aws[]
 
-You can add a self-managed cluster to Astra Control Service by uploading a `kubeconfig.yaml` file. You'll need to ensure the cluster meets the requirements outlined in <<Start managing Kubernetes clusters>>.
+=== Self-managed clusters
+A self-managed cluster is a cluster that is hosted in a public cloud environment, but that you manage directly. You can add a self-managed cluster to Astra Control Service by uploading a `kubeconfig.yaml` file. You'll need to ensure the cluster meets the requirements outlined in <<Start managing Kubernetes clusters>>.
 
 == Start managing Kubernetes clusters
 
-After you log in to Astra Control Service, your first step is to start managing your clusters. You can add a cluster that is managed by a cloud provider, or a self-managed cluster. Before you add a cluster to Astra Control Service, you'll need to perform certain tasks and make sure the cluster meets certain requirements.
+After you log in to Astra Control Service, your first step is to start managing your clusters. You can add a cluster that is managed by a cloud provider, or a self-managed cluster. Before you add a cluster to Astra Control Service, you'll need to perform specific tasks and make sure the cluster meets certain requirements.
 
 .What you'll need for clusters that are managed by a cloud provider
 [%collapsible]
@@ -82,9 +83,9 @@ endif::gcp[]
 .What you'll need for self-managed clusters
 [%collapsible]
 =======
-Your self-managed clusters can use Astra Trident to interface with NetApp storage services, or they can use Container Storage Interface (CSI) drivers to interface with other storage services. 
+A self-managed cluster is a cluster that is hosted in a public cloud environment, but that you manage directly. Your self-managed clusters can use Astra Trident to interface with NetApp storage services, or they can use Container Storage Interface (CSI) drivers to interface with other storage services. 
 
-Astra Control Service supports self-managed clusters using the following Kubernetes distributions:
+Astra Control Service supports self-managed clusters that use the following Kubernetes distributions:
 
 * Red Hat OpenShift Container Platform
 * Rancher Kubernetes Engine
@@ -93,6 +94,7 @@ Astra Control Service supports self-managed clusters using the following Kuberne
 Your self-managed cluster needs to meet the following requirements:
 
 * The cluster must be accessible via the internet.
+* The cluster cannot be hosted within your on-premises network; it must be hosted in a public cloud environment.
 * If you are using or plan to use storage enabled with CSI drivers, the appropriate CSI drivers must be installed on the cluster. For more information on using CSI drivers to integrate storage, refer to the documentation for your storage service.
 *	If you are using or plan to use NetApp storage, ensure that you have installed a version of Astra Trident that is link:../get-started/requirements.html#operational-environment-requirements[supported by Astra Control Service^]:
 +
