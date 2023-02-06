@@ -13,6 +13,18 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 [.lead]
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
+== 17 March 2023
+
+.New features and support
+
+* Automatic capacity pool resizing for backups of applications hosted on Azure NetApp Files storage
++
+link:../use/protect-apps.html#create-a-backup[Create a backup]
+
+* Support for NetApp Cloud Volumes ONTAP as a storage backend (officially supported on Microsoft Azure and Google Cloud platforms)
++
+link:../learn/architecture.html#astra-control-components[Architecture and components]
+
 == 17 January 2023
 
 .New features and support

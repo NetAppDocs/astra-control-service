@@ -93,6 +93,16 @@ The snapshot process begins. A snapshot is successful when the status is *Health
 
 You can also back up an app at any time.
 
+ifdef::azure[]
+
+[NOTE]
+====
+If you back up an application that resides on Azure NetApp Files storage, Astra Control Service automatically temporarily expands the capacity pool if there is not enough capacity for Astra Control Service to use during the backup operation. After the backup is complete, Astra Control Service shrinks the capacity pool to its previous size. Depending on your Azure subscription, you might incur storage charges when this happens. You can see a history of capacity pool resize events in the *Activity* page event log.
+
+If the capacity pool exceeds the maximum size allowed by the Azure subscription during the resize operation, the backup operation fails, and a warning is triggered from the Azure API.
+====
+endif::azure[]
+
 .Steps
 
 . Select *Applications*.

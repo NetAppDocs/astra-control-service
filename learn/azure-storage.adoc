@@ -39,6 +39,11 @@ As described above, the throughput for each service level is per 1 TiB of provis
 
 Astra Control Service provisions persistent volumes using a minimum volume size of 100 GiB, even if the PVC asks for a smaller volume size. For example, if the PVC in a Helm chart asks for 6 GiB, Astra Control Service automatically provisions a 100 GiB volume.
 
+=== Application backups
+If you back up an application that resides on Azure NetApp Files storage, Astra Control Service automatically temporarily expands the capacity pool if there is not enough capacity for Astra Control Service to use during the backup operation. After the backup is complete, Astra Control Service shrinks the capacity pool to its previous size. Depending on your Azure subscription, you might incur storage charges when this happens. You can see a history of capacity pool resize events in the *Activity* page event log.
+
+If the capacity pool exceeds the maximum size allowed by the Azure subscription during the resize operation, the backup operation fails, and a warning is triggered from the Azure API.
+
 == Azure managed disks
 
 Astra Control Service supports Azure managed disks as a storage backend option. This service provides block-level storage that is managed by Azure.
