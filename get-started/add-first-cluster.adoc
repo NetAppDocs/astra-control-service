@@ -44,7 +44,7 @@ NOTE: Astra Control Service supports AKS clusters that use Azure Active Director
 endif::gcp+azure+aws[]
 
 === Self-managed clusters
-A self-managed cluster is a cluster that is hosted in a public cloud environment, but that you manage directly. You can add a self-managed cluster to Astra Control Service by uploading a `kubeconfig.yaml` file. You'll need to ensure the cluster meets the requirements outlined in <<Start managing Kubernetes clusters>>.
+A self-managed cluster is a cluster that you directly provision and manage. Astra Control Service supports self-managed clusters that run in a public cloud environment. You can add a self-managed cluster to Astra Control Service by uploading a `kubeconfig.yaml` file. You'll need to ensure the cluster meets the requirements outlined in <<Start managing Kubernetes clusters>>.
 
 == Start managing Kubernetes clusters
 
@@ -83,7 +83,7 @@ endif::gcp[]
 .What you'll need for self-managed clusters
 [%collapsible]
 =======
-A self-managed cluster is a cluster that is hosted in a public cloud environment, but that you manage directly. Your self-managed clusters can use Astra Trident to interface with NetApp storage services, or they can use Container Storage Interface (CSI) drivers to interface with other storage services. 
+A self-managed cluster is a cluster that you directly provision and manage. Astra Control Service supports self-managed clusters that run in a public cloud environment. Your self-managed clusters can use Astra Trident to interface with NetApp storage services, or they can use Container Storage Interface (CSI) drivers to interface with other storage services. 
 
 Astra Control Service supports self-managed clusters that use the following Kubernetes distributions:
 
