@@ -18,44 +18,44 @@ Astra Control has the following app management requirements:
 
 * *Licensing*: To manage more than 10 namespaces, you need an Astra Control Center subscription.
 * *Namespaces*: Apps can be defined within one or more specified namespaces on a single cluster using Astra Control. An app can contain resources spanning multiple namespaces within the same cluster. Astra Control does not support the ability for apps to be defined across multiple clusters.
-* *StorageClass*: If you install an app with a StorageClass explicitly set and you need to clone the app, the target cluster for the clone operation must have the originally specified StorageClass. Cloning an application with an explicitly set StorageClass to a cluster that does not have the same StorageClass will fail.
+* *Storage class*: If you install an app with a storage class explicitly set and you need to clone the app, the target cluster for the clone operation must have the originally specified storage class. Cloning an application with an explicitly set storage class to a cluster that does not have the same storage class will fail.
 * *Kubernetes resources*: Apps that use Kubernetes Resources not collected by Astra Control might not have full app data management capabilities. Astra Control collects the following Kubernetes resources:
 +
 [cols="1,1,1"]
 |===
-|ClusterRole
-|ClusterRoleBinding
-|ConfigMap
+|`ClusterRole`
+|`ClusterRoleBinding`
+|`ConfigMap`
 
-|CronJob
-|CustomResourceDefinition
-|CustomResource
+|`CronJob`
+|`CustomResourceDefinition`
+|`CustomResource`
 
-|DaemonSet
-|DeploymentConfig
-|HorizontalPodAutoscaler
+|`DaemonSet`
+|`DeploymentConfig`
+|`HorizontalPodAutoscaler`
 
-|Ingress
-|MutatingWebhook
-|NetworkPolicy
+|`Ingress`
+|`MutatingWebhook`
+|`NetworkPolicy`
 
-|PersistentVolumeClaim
-|Pod
-|PodDisruptionBudget
+|`PersistentVolumeClaim`
+|`Pod`
+|`PodDisruptionBudget`
 
-|PodTemplate
-|ReplicaSet
-|Role
+|`PodTemplate`
+|`ReplicaSet`
+|`Role`
 
-|RoleBinding
-|Route
-|Secret
+|`RoleBinding`
+|`Route`
+|`Secret`
 
-|Service
-|ServiceAccount
-|StatefulSet
+|`Service`
+|`ServiceAccount`
+|`StatefulSet`
 
-|ValidatingWebhook
+|`ValidatingWebhook`
 |
 |
 |===
@@ -143,10 +143,10 @@ Performing an in-place restore operation on an app that shares resources with an
 ====
 
 
-.*Read more* about adding cluster-scoped resources to your app namespaces.
+.Read more about adding cluster-scoped resources to your app namespaces.
 [%collapsible]
 ====
-You can import cluster resources that are associated with the namespaced resources in addition to those Astra Control included automatically. You can add a rule that will include resources of a specific group, kind, version and optionally, label. You might want to do this if there are resources that Astra Control does not include automatically. 
+You can import cluster resources that are associated with the namespace resources in addition to those Astra Control included automatically. You can add a rule that will include resources of a specific group, kind, version and optionally, label. You might want to do this if there are resources that Astra Control does not include automatically. 
 
 You cannot exclude any of the cluster-scoped resources that are automatically included by Astra Control.
 
