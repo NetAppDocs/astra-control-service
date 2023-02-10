@@ -29,13 +29,6 @@ When you unmanage a cluster from Astra Control Service, Astra Trident isn't auto
 
 When you perform operations on Postgres pods, you shouldn't connect directly within the pod to use the psql command. Astra Control Service requires psql access to freeze and thaw the databases. If there is a pre-existing connection, the snapshot, backup, or clone will fail.
 
-ifdef::aws[]
-
-=== NetApp Cloud Volumes ONTAP not officially supported for Amazon Web Services
-As of the January 17, 2023 release of Astra Control Service, NetApp Cloud Volumes ONTAP is not yet officially supported for Amazon Web Services.
-
-endif::aws[]
-
 ifdef::gcp[]
 
 == Limitations for management of GKE clusters
