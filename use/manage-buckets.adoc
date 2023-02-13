@@ -17,17 +17,17 @@ Only Admins can add and modify buckets.
 
 == How Astra Control uses buckets
 
-When you start managing your first Kubernetes cluster, Astra Control Service creates the default bucket for your cloud provider in the same geography as the managed cluster.
+When you start managing your first Kubernetes cluster for a cloud instance, Astra Control Service creates the initial bucket for that link:manage-cloud-instances.html[cloud instance^]. 
 
-Astra Control Service uses this default bucket for the backups and clones that you create. You can then use the backups to restore and clone apps between clusters.
+If you designate this bucket as the default, Astra Control Service uses this default bucket for the backups and clones that you create. You can then use the backups to restore and clone apps between clusters.
 
-If you add additional buckets to Astra Control Service, you can select from those buckets when you create a protection policy. You can also change the default bucket that Astra Control Service uses for ad-hoc backups and clones. You can not clone a bucket from one cloud provider to another cloud provider. To migrate data from one cloud provider to another, clone the associated application instead.
+If you add additional buckets to this cloud instance, you can select from those buckets when you create a protection policy. You can also change the default bucket that this cloud instance uses for ad-hoc backups and clones. You can not clone a bucket from one cloud provider to another cloud provider. To migrate data from one cloud provider to another, clone the associated application instead.
 
 TIP: Astra Control Service checks whether a destination bucket is accessible prior to starting a backup or a clone.
 
 == View existing buckets
 
-View the list of buckets that are available to Astra Control Service to determine their status and to identify the default bucket for your cloud provider.
+View the list of buckets that are available to Astra Control Service to determine their status and to identify the default bucket (if defined) for your cloud instance.
 
 A bucket can have any of the following states:
 
@@ -43,17 +43,26 @@ If a bucket is in the Removed state, you can still set it as the default bucket 
 
 . Go to *Buckets*.
 +
-The list of buckets available to Astra Control Service displays.
+The list of buckets available to Astra Control Service is displayed.
 
 == Add an additional bucket
 
-After you start managing a cluster in your cloud provider, you can add additional buckets at any time. This enables you to choose between buckets when creating a protection policy and to change the default bucket for ad-hoc backups and clones.
+After you start managing a cluster in your cloud instance, you can add additional buckets at any time. This enables you to choose between buckets when creating a protection policy and to change the default bucket this cloud instance uses for ad-hoc backups and clones.
+
+Astra Control Service supports the following types of buckets:
+
+* Amazon Web Services
+* Generic S3
+* Google Cloud Platform
+* Microsoft Azure
+* NetApp ONTAP S3
+* NetApp StorageGRID S3
 
 .What you'll need
 
-* The name of an existing bucket in your cloud provider.
+* The name of an existing bucket in your cloud instance.
 ifdef::azure[]
-* If your bucket is in Azure: 
+* If your bucket is in Microsoft Azure: 
 ** The bucket must belong to the resource group named _astra-backup-rg_.
 ** If the Azure storage account instance performance setting is set to "Premium", the "Premium account type" setting must be set to "Block blobs".
 endif::azure[]
