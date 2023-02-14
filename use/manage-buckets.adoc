@@ -84,10 +84,10 @@ ifdef::azure[]
 * *Storage account* (Azure only): Enter the name of your Azure storage account. This bucket must belong to the resource group named _astra-backup-rg_.
 endif::azure[]
 ifdef::aws[]
-* *S3 server name or IP address* (AWS only): Enter the fully qualified domain name of the S3 endpoint that corresponds with your region, without `https://`. Refer to https://docs.aws.amazon.com/general/latest/gr/s3.html[the Amazon documentation^] for more information.
+* *S3 server name or IP address* (AWS and S3 bucket types only): Enter the fully qualified domain name of the S3 endpoint that corresponds with your region, without `https://`. Refer to https://docs.aws.amazon.com/general/latest/gr/s3.html[the Amazon documentation^] for more information.
 endif::aws[]
 
-* *Select credentials*: Choose the credentials that provide Astra Control Service with the permissions that it needs to manage the bucket.
+* *Select credentials*: Choose the credentials that provide Astra Control Service with the permissions that it needs to manage the bucket. The information you need to provide varies depending on the bucket type.
 
 . Select *Add* to add the bucket.
 
