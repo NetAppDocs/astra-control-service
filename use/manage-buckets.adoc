@@ -49,7 +49,7 @@ The list of buckets available to Astra Control Service is displayed.
 
 After you start managing a cluster in your cloud instance, you can add additional buckets at any time. This enables you to choose between buckets when creating a protection policy and to change the default bucket this cloud instance uses for ad-hoc backups and clones.
 
-Astra Control Service supports the following types of buckets:
+You can add the following types of buckets:
 
 * Amazon Web Services
 * Generic S3
@@ -61,6 +61,7 @@ Astra Control Service supports the following types of buckets:
 .What you'll need
 
 * The name of an existing bucket in your cloud instance.
+* The credentials for the bucket that provide Astra Control Service with the permissions that it needs to manage the bucket.
 ifdef::azure[]
 * If your bucket is in Microsoft Azure: 
 ** The bucket must belong to the resource group named _astra-backup-rg_.
@@ -87,7 +88,7 @@ ifdef::aws[]
 * *S3 server name or IP address* (AWS and S3 bucket types only): Enter the fully qualified domain name of the S3 endpoint that corresponds with your region, without `https://`. Refer to https://docs.aws.amazon.com/general/latest/gr/s3.html[the Amazon documentation^] for more information.
 endif::aws[]
 
-* *Select credentials*: Choose the credentials that provide Astra Control Service with the permissions that it needs to manage the bucket. The information you need to provide varies depending on the bucket type.
+* *Select credentials*: Enter the credentials that provide Astra Control Service with the permissions that it needs to manage the bucket. The information you need to provide varies depending on the bucket type.
 
 . Select *Add* to add the bucket.
 
