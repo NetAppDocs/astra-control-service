@@ -319,7 +319,7 @@ source create-kubeconfig.sh
 +
 ----
 chmod 700 create-kubeconfig.sh
-mv kubeconfig-sa.txt YOUR_CLUSTER_NAME_kubeconfig
+mv kubeconfig-sa YOUR_CLUSTER_NAME_kubeconfig
 ----
 =======
 
