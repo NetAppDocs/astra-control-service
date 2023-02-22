@@ -13,7 +13,7 @@ summary: Manage the buckets that Astra uses for backups and clones by adding add
 [.lead]
 You can manage the buckets that Astra uses for backups and clones. You can add additional buckets, remove existing buckets, and change the default bucket for the Kubernetes clusters in a cloud instance.
 
-Only Owners and Admins can add and modify buckets.
+Only Owners and Admins can manage buckets.
 
 == How Astra Control uses buckets
 
