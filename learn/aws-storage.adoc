@@ -14,7 +14,7 @@ summary: Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazo
 Astra Control Service can use Amazon Elastic Block Store (EBS) or Amazon FSx for NetApp ONTAP as the storage backends for Amazon Elastic Kubernetes Service (EKS) clusters.
 
 == Amazon Elastic Block Store (EBS)
-When you use EBS as the storage backend for EKS clusters, you can configure some storage class parameters. For more information about what the parameters mean and how to configure them, refer to https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs[the Kubernetes documentation^].
+Your clusters can use Container Storage Interface (CSI) drivers to interface with EBS. When you use EBS as the storage backend for EKS clusters, you can configure some storage class parameters. For more information about what the parameters mean and how to configure them, refer to https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs[the Kubernetes documentation^].
 
 You can use several different types of volumes with EBS:
 

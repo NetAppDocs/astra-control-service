@@ -39,9 +39,9 @@ As described above, the throughput for each service level is per 1 TiB of provis
 
 Astra Control Service provisions persistent volumes using a minimum volume size of 100 GiB, even if the PVC asks for a smaller volume size. For example, if the PVC in a Helm chart asks for 6 GiB, Astra Control Service automatically provisions a 100 GiB volume.
 
-== Azure managed disks
+== Azure Managed Disks
 
-Astra Control Service supports Azure managed disks as a storage backend option. This service provides block-level storage that is managed by Azure.
+Astra Control Service can use Container Storage Interface (CSI) drivers to interface with Azure Managed Disks as a storage backend. This service provides block-level storage that is managed by Azure.
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview[Learn more about Azure managed disks^].
 

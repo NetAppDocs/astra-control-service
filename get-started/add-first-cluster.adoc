@@ -83,7 +83,7 @@ endif::gcp[]
 .What you'll need for self-managed clusters
 [%collapsible]
 =======
-Your self-managed clusters can use Astra Trident to interface with NetApp storage services, or they can use Container Storage Interface (CSI) drivers to interface with other storage services. 
+Your self-managed clusters can use Astra Trident to interface with NetApp storage services, or they can use Container Storage Interface (CSI) drivers to interface with Amazon Elastic Block Store (EBS), Azure Managed Disks, and Google Persistent Disk. 
 
 Astra Control Service supports self-managed clusters using the following Kubernetes distributions:
 
