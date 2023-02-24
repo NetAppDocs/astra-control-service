@@ -49,6 +49,7 @@ ifdef::aws[]
 * Amazon Web Services:
 ** Amazon EBS
 ** Amazon FSx for NetApp ONTAP
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html[Cloud Volumes ONTAP^]
 endif::aws[]
 ifdef::gcp[]
 * Google Cloud:
