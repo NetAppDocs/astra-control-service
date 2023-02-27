@@ -18,7 +18,7 @@ Cloning can help if you need to move applications and storage from one Kubernete
 
 .What you'll need
 
-* To clone apps to a different cluster, you need to make sure the cloud instances containing the source and destination clusters (if they are not the same) have a default bucket. You'll need to assign a default bucket for each cloud instance.
+* To clone apps to a different cluster, you need to make sure the cloud instances containing the source and destination clusters (if they are not the same) have a default bucket. You'll need to assign a default bucket for each cloud instance. If a default bucket is not set on one or both of the cloud instances, the clone operation will fail.
 
 * During clone operations, apps that need an IngressClass resource or webhooks to function properly must not have those resources already defined on the destination cluster.
 
