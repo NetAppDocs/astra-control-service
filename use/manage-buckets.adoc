@@ -105,8 +105,6 @@ Astra Control Service adds the bucket. You can now choose this bucket when creat
 
 You can change the default bucket for a cloud instance. Astra Control Service will use this bucket by default for backups and clones. Each cloud instance has its own default bucket.
 
-Astra Control Service automatically populates the cloud instance's default bucket as the bucket that will be used for ad-hoc backups and for ad-hoc clones when you don't choose to clone from an existing backup. You can choose a different bucket before starting the backup or clone operation.
-
 NOTE: Astra Control does not automatically assign a default bucket for any cloud instance. You need to manually set a default bucket for a cloud instance before performing app clone operations between two clusters.
 
 .Steps
