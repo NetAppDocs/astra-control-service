@@ -11,27 +11,32 @@ summary: Manage the buckets that Astra uses for backups and clones by adding add
 :imagesdir: ../media/use/
 
 [.lead]
-Manage the buckets that Astra uses for backups and clones by adding additional buckets and by changing the default bucket for the Kubernetes clusters in your cloud instance.
+You can manage the buckets that Astra uses for backups and clones. You can add additional buckets, remove existing buckets, and change the default bucket for the Kubernetes clusters in a cloud instance.
 
-Only Admins can add and modify buckets.
+Only Owners and Admins can manage buckets.
 
 == How Astra Control uses buckets
 
-When you start managing your first Kubernetes cluster, Astra Control Service creates the default bucket for your cloud provider in the same geography as the managed cluster.
+When you start managing your first Kubernetes cluster for a cloud instance, Astra Control Service creates the initial bucket for that link:manage-cloud-instances.html[cloud instance^]. 
 
-Astra Control Service uses this default bucket for the backups and clones that you create. You can then use the backups to restore and clone apps between clusters.
+You can manually designate a bucket as the default bucket for a cloud instance. If you do so, Astra Control Service uses this bucket by default for the backups and clones that you create on any managed cluster in that cloud instance (you can select a different bucket for backups). If you perform a live clone of an application from any of the managed clusters in a cloud instance to another cluster, Astra Control Service uses the default bucket for the source cloud instance to perform the clone operation.
 
-If you add additional buckets to Astra Control Service, you can select from those buckets when you create a protection policy. You can also change the default bucket that Astra Control Service uses for ad-hoc backups and clones. You can not clone a bucket from one cloud provider to another cloud provider. To migrate data from one cloud provider to another, clone the associated application instead.
+You can set the same bucket as the default bucket for multiple cloud instances.
+
+//You can then use the backups to restore and clone apps between clusters.
+// To migrate data from one cloud provider to another, clone the associated application.
+
+You can select from any buckets when you create a protection policy or start an ad-hoc backup. 
 
 TIP: Astra Control Service checks whether a destination bucket is accessible prior to starting a backup or a clone.
 
 == View existing buckets
 
-View the list of buckets that are available to Astra Control Service to determine their status and to identify the default bucket for your cloud provider.
+View the list of buckets that are available to Astra Control Service to determine their status and to identify the default bucket (if defined) for your cloud instance.
 
 A bucket can have any of the following states:
 
-Pending:: After you add a bucket, it starts in the pending state while Astra Control looks at it for the first time.
+Pending:: After you add a bucket, it starts in the pending state while Astra Control discovers it.
 
 Available:: The bucket is available for use by Astra Control.
 
@@ -43,17 +48,27 @@ If a bucket is in the Removed state, you can still set it as the default bucket 
 
 . Go to *Buckets*.
 +
-The list of buckets available to Astra Control Service displays.
+The list of buckets available to Astra Control Service is displayed.
 
 == Add an additional bucket
 
-After you start managing a cluster in your cloud provider, you can add additional buckets at any time. This enables you to choose between buckets when creating a protection policy and to change the default bucket for ad-hoc backups and clones.
+You can add additional buckets at any time. This enables you to choose between buckets when creating a protection policy or starting an ad-hoc backup, and enables you to change the default bucket that a cloud instance uses.
+
+You can add the following types of buckets:
+
+* Amazon Web Services
+* Generic S3
+* Google Cloud Platform
+* Microsoft Azure
+* NetApp ONTAP S3
+* NetApp StorageGRID S3
 
 .What you'll need
 
-* The name of an existing bucket in your cloud provider.
+* The name of an existing bucket.
+* The credentials for the bucket that provide Astra Control Service with the permissions that it needs to manage the bucket.
 ifdef::azure[]
-* If your bucket is in Azure: 
+* If your bucket is in Microsoft Azure: 
 ** The bucket must belong to the resource group named _astra-backup-rg_.
 ** If the Azure storage account instance performance setting is set to "Premium", the "Premium account type" setting must be set to "Block blobs".
 endif::azure[]
@@ -65,8 +80,8 @@ endif::azure[]
 . Select *Add* and follow the prompts to add the bucket.
 +
 * *Type*: Choose your cloud provider.
-+
-Your cloud provider is available only after Astra Control Service has started managing a cluster that's running in that cloud provider.
+// +
+// Your cloud provider is available only after Astra Control Service has started managing a cluster that's running in that cloud provider.
 
 * *Existing bucket name*: Enter the name of the bucket.
 
@@ -75,22 +90,20 @@ ifdef::azure[]
 * *Storage account* (Azure only): Enter the name of your Azure storage account. This bucket must belong to the resource group named _astra-backup-rg_.
 endif::azure[]
 ifdef::aws[]
-* *S3 server name or IP address* (AWS only): Enter the fully qualified domain name of the S3 endpoint that corresponds with your region, without `https://`. Refer to https://docs.aws.amazon.com/general/latest/gr/s3.html[the Amazon documentation^] for more information.
+* *S3 server name or IP address* (AWS and S3 bucket types only): Enter the fully qualified domain name of the S3 endpoint that corresponds with your region, without `https://`. Refer to https://docs.aws.amazon.com/general/latest/gr/s3.html[the Amazon documentation^] for more information.
 endif::aws[]
 
-* *Select credentials*: Choose the credentials that provide Astra Control Service with the permissions that it needs to manage the bucket.
+* *Select credentials*: Enter the credentials that provide Astra Control Service with the permissions that it needs to manage the bucket. The information you need to provide varies depending on the bucket type.
 
 . Select *Add* to add the bucket.
 
 .Result
 
-Astra Control Service adds the additional bucket. You can now choose the bucket when creating a protection policy.
+Astra Control Service adds the bucket. You can now choose this bucket when creating a protection policy or performing an ad-hoc backup. You can also set this bucket as the default bucket for a cloud instance.
 
 == Change the default bucket
 
-Change the default bucket that Astra Control Service should use for backups and clones. Each cloud instance has its own default bucket.
-
-Astra Control Service uses the default bucket for a cloud instance for ad-hoc backups and for ad-hoc clones when you don't choose to clone from an existing backup.
+You can change the default bucket for a cloud instance. Astra Control Service will use this bucket by default for backups and clones. Each cloud instance has its own default bucket.
 
 NOTE: Astra Control does not automatically assign a default bucket for any cloud instance. You need to manually set a default bucket for a cloud instance before performing app clone operations between two clusters.
 
