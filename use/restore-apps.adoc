@@ -15,6 +15,8 @@ Astra Control can restore your application from a snapshot or backup. Restoring 
 
 NOTE: When you perform an in-place restore of an application that uses NetApp ONTAP storage, the space used by the restored app can double. After performing an in-place restore, remove any unwanted snapshots from the restored application to free up storage space.
 
+NOTE: If you add a namespace filter to a hook that runs after a restore operation, and the restore source and destination are in different namespaces, the namespace filter is only applied to the destination namespace.
+
 .About this task
 
 * *Protect your apps first*: It is strongly recommended to take a snapshot of or back up your application before restoring it. This will enable you to clone from the snapshot or backup in the event that the restore is unsuccessful.
