@@ -16,7 +16,7 @@ You can clone an existing app to create a duplicate app on the same Kubernetes c
 Cloning can help if you need to move applications and storage from one Kubernetes cluster to another. For example, you might want to move workloads through a CI/CD pipeline and across Kubernetes namespaces.
 //DOC-3595/ASTRACTL-10071/Q2 and PI4
 
-NOTE: If you add a namespace filter to a hook that runs after a restore or clone operation and the restore or clone source and destination are in different namespaces, the namespace filter is only applied to the destination namespace.
+NOTE: If you add a namespace filter to an execution hook that runs after a restore or clone operation and the restore or clone source and destination are in different namespaces, the namespace filter is only applied to the destination namespace.
 
 .What you'll need
 
