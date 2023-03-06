@@ -93,6 +93,13 @@ The snapshot process begins. A snapshot is successful when the status is *Health
 
 You can also back up an app at any time.
 
+ifdef::azure[]
+[NOTE]
+====
+Be aware of how storage space is handled when you back up an application hosted on Azure NetApp Files storage. Refer to link:../learn/azure-storage.html#application-backups[Application backups] for more information.
+====
+endif::azure[]
+
 .Steps
 
 . Select *Applications*.
