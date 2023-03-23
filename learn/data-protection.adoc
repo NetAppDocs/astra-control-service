@@ -18,7 +18,6 @@ Learn about the available types of data protection in Astra Control Service, and
 Both snapshots and backups protect the following types of data:
 
 * The application itself
-* The Kubernetes resource configurations
 * Any persistent data volumes associated with the application
 * Any cluster-scoped resources defined in the application manifest files
 * Any resource artifacts belonging to the application
