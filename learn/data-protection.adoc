@@ -19,7 +19,7 @@ Both snapshots and backups protect the following types of data:
 
 * The application itself
 * Any persistent data volumes associated with the application
-* Any cluster-scoped resources defined in the application manifest files
+//* Any cluster-scoped resources defined in the application manifest files
 * Any resource artifacts belonging to the application
 
 A _snapshot_ is a point-in-time copy of an app that's stored on the same provisioned volume as the app. They are usually fast. You can use local snapshots to restore the application to an earlier point in time. Snapshots are useful for fast clones; snapshots include all of the Kubernetes objects for the app, including configuration files.
