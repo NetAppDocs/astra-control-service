@@ -1,0 +1,39 @@
+---
+sidebar: sidebar
+permalink: learn/data-protection.html
+keywords: backup, back up, backup apps, back up apps, snapshots, snapshot an app, take a snapshot, take a backup, view backups, view snapshots, set policy, set schedule, schedule backups, schedule snapshots
+summary: Learn about the available types of data protection in Astra Control Service, and how best to use them to protect your apps.
+---
+
+= Data protection
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/learn/
+
+[.lead]
+Learn about the available types of data protection in Astra Control Service, and how best to use them to protect your apps.
+
+== Snapshots, backups, and protection policies
+
+Both snapshots and backups protect the following data:
+
+* The application itself
+* The Kubernetes resource configurations
+* Any persistent data volumes associated with the application
+* Any cluster-scoped resources defined in the application manifest files
+* Any resource artifacts belonging to the application
+
+A _snapshot_ is a point-in-time copy of an app that's stored on the same provisioned volume as the app. They are usually fast. You can use local snapshots to restore the application to an earlier point in time. Snapshots are useful for fast clones; snapshots include all of the Kubernetes objects for the app, including configuration files.
+
+A _backup_ is stored in the external object store, and can be slower to take compared to local snapshots. You can restore an app backup to the same cluster, or you can migrate an app by restoring its backup to a different cluster. You can also choose a longer retention period for backups. Because they are stored in the external object store, backups generally offer you better protection than snapshots in cases of server failure or data loss.
+
+A _protection policy_ is a way to protect an app by automatically creating snapshots, backups, or both according to a schedule that you define for that app. A protection policy also enables you to choose how many snapshots and backups to retain in the schedule. Automating your backups and snapshots with a protection policy is the best way to ensure each app is protected according to the needs of your organization.
+
+CAUTION: _You can't be fully protected until you have a recent backup_. This is important because backups are stored in an object store away from the persistent volumes. If a failure or accident wipes out the cluster and its associated persistent storage, then you need a backup to recover. A snapshot would not enable you to recover.
+
+NOTE: If you perform a snapshot or backup, but the operation fails with the error "The resource wasn't created because of an internal server issue", check to make sure the storage backend you are using has the correct drivers installed. Some storage backends need Container Storage Interface (CSI) drivers, while others need an external snapshot controller.
+
+== Clones
+
+A _clone_ is an exact duplicate of an app, its configuration, and its persistent storage. You can manually create a clone on either the same Kubernetes cluster or on another cluster. Cloning an app can be useful if you need to move applications and storage from one Kubernetes cluster to another.
+
