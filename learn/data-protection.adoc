@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: learn/data-protection.html
-keywords: backup, back up, backup apps, back up apps, snapshots, snapshot an app, take a snapshot, take a backup, view backups, view snapshots, set policy, set schedule, schedule backups, schedule snapshots
+keywords: backup, back up, backup apps, back up apps, snapshots, snapshot an app, take a snapshot, take a backup, view backups, view snapshots, set policy, set schedule, schedule backups, schedule snapshots, protect data
 summary: Learn about the available types of data protection in Astra Control Service, and how best to use them to protect your apps.
 ---
 
