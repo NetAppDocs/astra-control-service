@@ -3,6 +3,8 @@ title: Concepts
 entries:
   - title: Architecture and components
     url: /learn/architecture.html
+  - title: Data protection
+    url: /learn/data-protection.html
   - title: Storage for AWS clusters
     flavor: aws
     url: /learn/aws-storage.html
