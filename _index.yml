@@ -43,7 +43,7 @@ indexpage:
     - title: Astra Control Center
       links:
         - title: Intro to Astra Control Center
-          url: https://docs.netapp.com/us-en/astra-control-center/concepts/intro.html
+          url: https://docs.netapp.com/us-en/astra-control-center/get-started/intro.html
         - title: What's new
           url: https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html
         - title: Quick start
