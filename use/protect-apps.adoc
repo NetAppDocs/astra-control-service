@@ -27,7 +27,11 @@ You can do the following tasks related to protecting your app data:
 
 == Configure a protection policy
 
-A protection policy protects an app by creating snapshots, backups, or both at a defined schedule. You can choose to create snapshots and backups hourly, daily, weekly, and monthly, and you can specify the number of copies to retain. If you need backups or snapshots to run more frequently than once per hour, you can https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html[use the Astra Control REST API to create snapshots and backups^].
+A protection policy protects an app by creating snapshots, backups, or both at a defined schedule. You can choose to create snapshots and backups hourly, daily, weekly, and monthly, and you can specify the number of copies to retain. 
+
+If you need backups or snapshots to run more frequently than once per hour, you can https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html[use the Astra Control REST API to create snapshots and backups^].
+
+IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, protection policies cannot be used. Use an alternate storage class if you want a protection policy. 
 
 .Steps
 
@@ -65,6 +69,8 @@ Astra Control implements the data protection policy by creating and retaining sn
 
 You can create an on-demand snapshot at any time.
 
+IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, snapshots cannot be used. Use an alternate storage class for snapshots. 
+
 .Steps
 
 . Select *Applications*.
@@ -84,6 +90,8 @@ The snapshot process begins. A snapshot is successful when the status is *Health
 == Create a backup
 
 You can also back up an app at any time.
+
+IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, backups are disruptive and the app will be unavailable until the backup operation has completed. 
 
 ifdef::azure[]
 [NOTE]
