@@ -31,9 +31,9 @@ endif::azure[]
 +
 link:../use/manage-app-execution-hooks.html[Manage app execution hooks]
 
-* Support for NetApp Cloud Volumes ONTAP as a storage backend (officially supported on Microsoft Azure and Google Cloud platforms)
+* Support for NetApp Cloud Volumes ONTAP as a storage backend
 +
-link:../learn/architecture.html#astra-control-components[Architecture and components]
+link:../get-started/intro.html[Learn about Astra Control]
 
 == 22 November 2022
 
@@ -54,7 +54,7 @@ link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters fr
 * Support for managing multiple cloud provider subscriptions in a single Astra Control Service account
 +
 link:../use/manage-cloud-instances.html[Manage cloud instances]
-* Support for adding self-managed Kubernetes clusters to Astra Control Service
+* Support for adding self-managed Kubernetes clusters that are hosted in public cloud environments to Astra Control Service
 +
 link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service]
 * Billing for Astra Control Service is now metered per namespace instead of per application

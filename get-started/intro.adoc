@@ -49,6 +49,7 @@ ifdef::aws[]
 * Amazon Web Services:
 ** Amazon EBS
 ** Amazon FSx for NetApp ONTAP
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html[Cloud Volumes ONTAP^]
 endif::aws[]
 ifdef::gcp[]
 * Google Cloud:
@@ -63,10 +64,11 @@ ifdef::azure[]
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[Cloud Volumes ONTAP^]
 endif::azure[]
 * Self-managed clusters:
-** NetApp ONTAP AFF and FAS systems
+** Amazon EBS
+** Google Persistent Disk
+** Azure Managed Disks
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
 |
-
 * NetApp ONTAP AFF and FAS systems
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
 |===

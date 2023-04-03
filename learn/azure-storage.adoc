@@ -46,7 +46,7 @@ If the capacity pool exceeds the maximum size allowed by the Azure subscription 
 
 == Azure managed disks
 
-Astra Control Service supports Azure managed disks as a storage backend option. This service provides block-level storage that is managed by Azure.
+Astra Control Service can use Container Storage Interface (CSI) drivers to interface with Azure Managed Disks as a storage backend. This service provides block-level storage that is managed by Azure.
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview[Learn more about Azure managed disks^].
 

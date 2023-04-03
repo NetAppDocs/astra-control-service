@@ -13,15 +13,7 @@ summary: Protect your apps by taking snapshots and backups using an automated pr
 [.lead]
 Protect your apps by taking snapshots and backups using an automated protection policy or on an ad-hoc basis. You can use the Astra UI or https://docs.netapp.com/us-en/astra-automation/index.html[the Astra Control API^] to protect apps.
 
-== Snapshots and backups
-
-A _snapshot_ is a point-in-time copy of an app that's stored on the same provisioned volume as the app. They are usually fast. Local snapshots are used to restore the application to an earlier point in time.
-
-A _backup_ is stored on object storage in the cloud. A backup can be slower to take compared to the local snapshots. But they can be accessed across regions in the cloud to enable app migrations. You can also choose a longer retention period for backups.
-
-CAUTION: _You can't be fully protected until you have a recent backup_. This is important because backups are stored in an object store away from the persistent volumes. If a failure or accident damages the cluster and its persistent storage, then you need a backup to recover. A snapshot wouldn't enable you to recover.
-
-NOTE: If you perform a snapshot or backup, but the operation fails with the error "The resource wasn't created because of an internal server issue", check to make sure the storage backend you are using has the correct drivers installed. Some storage backends need Container Storage Interface (CSI) drivers, while others need an external snapshot controller.
+Learn more about link:../learn/data-protection.html[data protection in Astra Control^].
 
 You can do the following tasks related to protecting your app data:
 
