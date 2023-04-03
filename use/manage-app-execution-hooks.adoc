@@ -53,6 +53,12 @@ If there is a match, the NetApp-provided default execution hooks for that app ap
 == Important notes about custom execution hooks
 Consider the following when planning execution hooks for your apps.
 
+[NOTE]
+====
+Since execution hooks often reduce or completely disable the functionality of the application they are running against, you should always try to minimize the time your custom execution hooks take to run.
+If you start a backup or snapshot operation with associated execution hooks but then cancel it, the hooks are still allowed to run if the backup or snapshot operation has already begun. This means that the logic used in a post-backup execution hook cannot assume that the backup was completed.
+====
+
 * An execution hook must use a script to perform actions. Many execution hooks can reference the same script.
 * Astra Control requires the scripts that execution hooks use to be written in the format of executable shell scripts.
 * Script size is limited to 96KB.
@@ -157,7 +163,7 @@ If you start but then cancel a backup that includes a snapshot and there are ass
 |New
 |Different
 |N
-|Y
+|N
 |Y
 
 |6
@@ -217,7 +223,7 @@ If you start but then cancel a backup that includes a snapshot and there are ass
 |N/A
 |N/A
 |N
-|Y
+|N
 |N/A
 
 |===

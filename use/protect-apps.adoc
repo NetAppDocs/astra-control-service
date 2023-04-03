@@ -93,6 +93,13 @@ You can also back up an app at any time.
 
 IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, backups are disruptive and the app will be unavailable until the backup operation has completed. 
 
+ifdef::azure[]
+[NOTE]
+====
+Be aware of how storage space is handled when you back up an application hosted on Azure NetApp Files storage. Refer to link:../learn/azure-storage.html#application-backups[Application backups] for more information.
+====
+endif::azure[]
+
 .Steps
 
 . Select *Applications*.
