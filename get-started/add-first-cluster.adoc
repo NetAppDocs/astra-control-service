@@ -365,6 +365,8 @@ endif::azure[]
 
 . *Credential name* (For self-managed clusters): Provide a name for the self-managed cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
 
+. (Optional) *Private route ID*: Enter the private route identifier, which you can obtain from the Connector. 
+
 . (Optional) *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 +
 
