@@ -53,7 +53,7 @@ Yes, you will be charged for the Persistent Volumes used by the clusters from yo
 
 *Do I need to install CSI drivers on my cluster before adding it to Astra Control Service?*
 
-No. When your cluster is added to Astra Control, the service will automatically install NetApp’s Trident Container Storage Interface (CSI) driver on the Kubernetes cluster. This CSI driver is used to provision persistent volumes for clusters backed by your cloud provider.
+No. When your cluster is added to Astra Control, the service will automatically install NetApp's Trident Container Storage Interface (CSI) driver on the Kubernetes cluster. This CSI driver is used to provision persistent volumes for clusters backed by your cloud provider.
 
 *I need to add worker nodes to my cluster after adding to Astra Control Service. What should I do?*
 
@@ -160,7 +160,7 @@ In some situations, Astra Control will automatically create a snapshot as part o
 
 *My application uses several PVs. Will Astra Control take snapshots and backups of all these PVCs?*
 
-Yes. A snapshot operation on an application by Astra Control includes snapshot of all the PVs that are bound to the application’s PVCs.
+Yes. A snapshot operation on an application by Astra Control includes snapshot of all the PVs that are bound to the application's PVCs.
 
 *Can I manage snapshots taken by Astra Control directly through my cloud provider?*
 
