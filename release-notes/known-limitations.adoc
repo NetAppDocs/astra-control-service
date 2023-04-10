@@ -25,6 +25,9 @@ When you unmanage a cluster from Astra Control Service, Astra Trident isn't auto
 
 When you perform operations on Postgres pods, you shouldn't connect directly within the pod to use the psql command. Astra Control Service requires psql access to freeze and thaw the databases. If there is a pre-existing connection, the snapshot, backup, or clone will fail.
 
+=== The Activity page displays up to 100,000 events
+The Astra Control Activity page can display up to 100,000 events. To view all logged events, retrieve the events using the link:../rest-api/api-intro.html[Astra Control REST API^].
+
 ifdef::gcp[]
 
 == Limitations for management of GKE clusters
