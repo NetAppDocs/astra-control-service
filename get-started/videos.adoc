@@ -11,18 +11,26 @@ summary: Many of the pages on this doc site include videos that show how to comp
 :imagesdir: ../media/
 
 [.lead]
-Many of the pages on this doc site include videos that show you how to complete a task for Astra Control Service. If you're just interested in videos, we've made it easy for you by collecting all of the videos on this single page (kind of like a playlist).
+Check out NetApp TV for the latest video content featuring Astra Control Service. NetApp TV includes videos that demonstrate certain features of Astra Control Service or show you how to complete certain common tasks.
+
+https://www.netapp.tv/search/astra%20control%20service[Astra Control Service videos^]
+
+////
+
 
 ifdef::gcp[]
-== Videos for setting up Google Cloud
+== Using Astra Control Service with Google Cloud
 
-The following videos show how to complete set up requirements in Google Cloud before you can discover Kubernetes clusters running in GCP.
+The following video demonstrates using Astra Control Service with Google Kubernetes Engine.
+link:https://www.netapp.tv/details/26019[Astra Control Service with Google Kubernetes Engine^]
 
-=== Enable APIs
+////
 
+
+////
 Your project needs permissions to access specific Google Cloud APIs. The following video shows how to enable the APIs from the Google Cloud console. link:set-up-google-cloud.html#enable-apis-in-your-project[Learn more about enabling APIs].
 
-video::get-started/video-enable-gcp-apis.mp4[width=848, height=480]
+
 
 === Create a service account
 
@@ -35,12 +43,18 @@ video::get-started/video-create-gcp-service-account.mp4[width=848, height=480]
 Astra Control Service uses a service account key to establish the identity of the service account that you just set up. The following video shows how to create the service account key from the Google Cloud console. link:set-up-google-cloud.html#create-a-service-account-key-2[Learn more about creating a service account key].
 
 video::get-started/video-create-gcp-service-account-key.mp4[width=848, height=480]
+
+////
 endif::gcp[]
 
-
+////
 == Videos for using Astra Control
 
 The following videos show how to complete common tasks using Astra Control.
+////
+
+
+////
 
 === Manage clusters from Astra Control
 
@@ -53,3 +67,4 @@ video::get-started/video-manage-cluster.mp4[width=848, height=480]
 A protection policy protects an app by creating snapshots, backups, or both at a defined schedule. You can choose to create snapshots and backups hourly, daily, weekly, and monthly, and you can specify the number of copies to retain. link:../use/protect-apps.html[Learn more about configuring protection policies].
 
 video::use/video-set-protection-policy.mp4[width=848, height=480]
+////
