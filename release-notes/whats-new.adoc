@@ -24,7 +24,7 @@ link:../use/protect-apps.html#create-a-backup[Create a backup]
 endif::azure[]
 * Support for including or excluding application resources during restore operations
 +
- link:../use/restore-apps.html#filter-resources-during-an-application-restore[Restore apps]
+link:../use/restore-apps.html#filter-resources-during-an-application-restore[Restore apps]
 
 == 17 January 2023
 
