@@ -80,7 +80,7 @@ metadata:
 spec:
   natssync-client:
     image: natssync-client:2.0
-    cloud-bridge-url: https://<your.acs.url>
+    cloud-bridge-url: https://<your.astra.control.service.url>
   nats:
     image: nats:2.6.1-alpine3.14
   httpproxy-client:
@@ -90,9 +90,9 @@ spec:
   imageRegistry:
     name: theotw
   astra:
-    token: <redacted astra api token>
+    token: <Astra Control API token>
     clusterName: <your-cluster-name>
-    accountId: <redacted astra account id>
+    accountId: <Astra Control account id>
     acceptEULA: yes
 ----
 
