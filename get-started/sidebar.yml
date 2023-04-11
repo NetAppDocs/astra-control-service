@@ -26,6 +26,7 @@ entries:
   - title: Manage clusters
     url: /get-started/add-first-cluster.html
   - title: Manage private clusters
+    flavor: azure,aws
     url: /get-started/manage-private-cluster.html
   - title: What's next?
     url: /get-started/whats-next.html
