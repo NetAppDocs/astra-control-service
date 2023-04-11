@@ -11,8 +11,19 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 :imagesdir: ../media/get-started/
 
 [.lead]
+ifdef::aws,azure[]
+You can use Astra Control Service to manage private Azure Kubernetes Service (AKS) clusters, private Red Hat OpenShift clusters in AKS, and private Amazon Elastic Kubernetes Service (EKS) clusters. These instructions assume that you have already created a private AKS, OpenShift, or EKS cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS or EKS clusters, refer to the following documentation:
+
+* https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^]
+* https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
+* https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html[Amazon EKS documentation^].
+endif::aws,azure[]
+
 ifndef::gcp,aws[]
-You can use Astra Control Service to manage private Azure Kubernetes Service (AKS) clusters as well as private Red Hat OpenShift clusters in AKS. These instructions assume that you have already created a private AKS or OpenShift cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS clusters, refer to the https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation^].
+You can use Astra Control Service to manage private Azure Kubernetes Service (AKS) clusters as well as private Red Hat OpenShift clusters in AKS. These instructions assume that you have already created a private AKS or OpenShift cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS clusters, refer to the following documentation:
+
+* https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^].
+* https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
 endif::gcp,aws[]
 
 ifndef::azure[]
