@@ -22,9 +22,16 @@ ifdef::azure[]
 +
 link:../use/protect-apps.html#create-a-backup[Create a backup]
 endif::azure[]
+* Enhanced support for private clusters
++
+link:../get-started/manage-private-cluster.html[Manage private clusters from Astra Control Service]
 * Support for including or excluding application resources during restore operations
 +
 link:../use/restore-apps.html#filter-resources-during-an-application-restore[Restore apps]
+* Support for managing data-only applications
++
+link:../use/manage-apps.html[Start managing apps]
+
 
 == 17 January 2023
 
