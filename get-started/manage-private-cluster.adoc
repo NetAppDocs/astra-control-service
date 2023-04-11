@@ -16,24 +16,24 @@ You can use Astra Control Service to manage private Azure Kubernetes Service (AK
 
 * https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^]
 * https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
-* https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html[Amazon EKS documentation^].
+* https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html[Amazon EKS documentation^]
 endif::aws,azure[]
 
 ifndef::gcp,aws[]
 You can use Astra Control Service to manage private Azure Kubernetes Service (AKS) clusters as well as private Red Hat OpenShift clusters in AKS. These instructions assume that you have already created a private AKS or OpenShift cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS clusters, refer to the following documentation:
 
-* https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^].
+* https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^]
 * https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
 endif::gcp,aws[]
 
 ifndef::azure[]
 You can use Astra Control Service to manage private Amazon Elastic Kubernetes Service (EKS) clusters. These instructions assume that you have already created a private EKS cluster and prepared a secure method to remotely access it; for more information about creating and accessing private EKS clusters, refer to the https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html[Amazon EKS documentation^].
 endif::azure[]
-
+////
 * <<Install the Astra Connector operator>>
 * <<Set up persistent storage>>
 * <<Add the private cluster to Astra Control Service>>
-
+////
 == Install the Astra Connector operator
 You need to install the Astra Connector operator on the private cluster. If you are using a bastion host, issue these commands from the command line of the bastion host. 
 
@@ -70,7 +70,31 @@ kubectl create ns astra-connector
 
 . Generate an Astra Control API token using the instructions in the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^].
 
-. Modify the example configuration file in the config/samples directory of the Astra Connector operator repository to fit your needs.
+. Modify the example configuration file in the config/samples directory of the Astra Connector operator repository to include the `spec.natssync-client.cloud-bridge-url` key. For example:
++
+----
+apiVersion: netapp.astraconnector.com/v1
+kind: AstraConnector
+metadata:
+  name: astra-connector
+spec:
+  natssync-client:
+    image: natssync-client:2.0
+    cloud-bridge-url: https://<your.acs.url>
+  nats:
+    image: nats:2.6.1-alpine3.14
+  httpproxy-client:
+    image: httpproxylet:2.0
+  echo-client:
+    image: echo-proxylet:2.0
+  imageRegistry:
+    name: theotw
+  astra:
+    token: <redacted astra api token>
+    clusterName: <your-cluster-name>
+    accountId: <redacted astra account id>
+    acceptEULA: yes
+----
 
 . Apply the Astra Connector Custom Resource Definition (CRD).
 +
