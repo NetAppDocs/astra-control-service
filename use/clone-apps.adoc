@@ -18,7 +18,7 @@ Cloning can help if you need to move applications and storage from one Kubernete
 
 NOTE: If you add a namespace filter to an execution hook that runs after a restore or clone operation and the restore or clone source and destination are in different namespaces, the namespace filter is only applied to the destination namespace.
 
-.What you'll need
+.Before you begin
 
 * To clone apps to a different cluster, you need to make sure that you have assigned a default bucket for the cloud instance containing the source cluster. If the source cloud instance does not have a default bucket set, the cross-cluster clone operation will fail.
 

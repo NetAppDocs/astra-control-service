@@ -109,7 +109,7 @@ Although Astra Control enables you to separately manage both levels of the hiera
 
 TIP: As an example, you might want to set a backup policy for "maria" that has a weekly cadence, but you might need to back up "mariadb" (which is in the same namespace) more frequently than that. Based on those needs, you would need to manage the apps separately and not as a single-namespace app.
 
-.What you'll need
+.Before you begin
 * A Kubernetes cluster added to Astra Control.
 * One or more installed apps on the cluster. <<Supported app installation methods,Read more about supported app installation methods>>.
 * Existing namespaces on the Kubernetes cluster that you added to Astra Control.
