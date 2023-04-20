@@ -22,7 +22,7 @@ ifdef::azure[]
 +
 link:../use/protect-apps.html#create-a-backup[Create a backup]
 endif::azure[]
-* Enhanced support for private clusters
+* Support for private Red Hat OpenShift clusters
 +
 link:../get-started/manage-private-cluster.html[Manage private clusters from Astra Control Service]
 * Support for including or excluding application resources during restore operations
