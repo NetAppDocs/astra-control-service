@@ -17,11 +17,11 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 
 .New features and support
 
-ifdef::azure[]
-* Automatic capacity pool resizing for backups of applications hosted on Azure NetApp Files storage
-+
-link:../use/protect-apps.html#create-a-backup[Create a backup]
-endif::azure[]
+//ifdef::azure[]
+//* Automatic capacity pool resizing for backups of applications hosted on Azure NetApp Files storage
+//+
+//link:../use/protect-apps.html#create-a-backup[Create a backup]
+//endif::azure[]
 * Support for private Red Hat OpenShift clusters
 +
 link:../get-started/manage-private-cluster.html[Manage private clusters from Astra Control Service]
