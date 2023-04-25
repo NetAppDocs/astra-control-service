@@ -17,10 +17,6 @@ Known limitations identify platforms, devices, or functions that are not support
 
 The following limitations affect Astra Control Service's management of Kubernetes clusters in any supported Kubernetes deployment.
 
-//=== Unhealthy pods affect app management
-
-//If a managed app has pods in an unhealthy state, Astra Control Service can't create new backups and clones.
-
 === Astra Trident isn't uninstalled from a cluster
 
 When you unmanage a cluster from Astra Control Service, Astra Trident isn't automatically uninstalled from the cluster. To uninstall Astra Trident, you'll need to https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html[follow these steps in the Astra Trident documentation^].
@@ -28,6 +24,9 @@ When you unmanage a cluster from Astra Control Service, Astra Trident isn't auto
 === Existing connections to a Postgres pod causes failures
 
 When you perform operations on Postgres pods, you shouldn't connect directly within the pod to use the psql command. Astra Control Service requires psql access to freeze and thaw the databases. If there is a pre-existing connection, the snapshot, backup, or clone will fail.
+
+=== The Activity page displays up to 100,000 events
+The Astra Control Activity page can display up to 100,000 events. To view all logged events, retrieve the events using the link:../rest-api/api-intro.html[Astra Control REST API^].
 
 ifdef::gcp[]
 
@@ -37,7 +36,7 @@ The following limitations apply to the management of Kubernetes clusters in Goog
 
 === Google Marketplace apps haven't been validated
 
-NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users report issues with discovery or back up of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
+NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users have reported issues with discovery or back up of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
 
 No matter which type of app that you use with Astra Control Service, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 endif::gcp[]

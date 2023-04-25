@@ -69,7 +69,7 @@ When you unmanage a cluster:
 
 .Result
 
-The status of the cluster changes to *Removing*. After that, the cluster will be removed from the *Clusters* page and it is no longer managed by Astra Control Center.
+The status of the cluster changes to *Removing*. After that, the cluster will be removed from the *Clusters* page and it is no longer managed by Astra Control.
 
 == Deleting clusters from your cloud provider
 

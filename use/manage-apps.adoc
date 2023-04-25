@@ -16,7 +16,7 @@ After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to
 == App management requirements
 Astra Control has the following app management requirements:
 
-* *Licensing*: To manage more than 10 namespaces, you need an Astra Control Center subscription.
+* *Licensing*: To manage more than 10 namespaces, you need an Astra Control subscription.
 * *Namespaces*: Apps can be defined within one or more specified namespaces on a single cluster using Astra Control. An app can contain resources spanning multiple namespaces within the same cluster. Astra Control does not support the ability for apps to be defined across multiple clusters.
 * *Storage class*: If you install an app with a storage class explicitly set and you need to clone the app, the target cluster for the clone operation must have the originally specified storage class. Cloning an application with an explicitly set storage class to a cluster that does not have the same storage class will fail.
 * *Kubernetes resources*: Apps that use Kubernetes Resources not collected by Astra Control might not have full app data management capabilities. Astra Control collects the following Kubernetes resources:
@@ -109,10 +109,9 @@ Although Astra Control enables you to separately manage both levels of the hiera
 
 TIP: As an example, you might want to set a backup policy for "maria" that has a weekly cadence, but you might need to back up "mariadb" (which is in the same namespace) more frequently than that. Based on those needs, you would need to manage the apps separately and not as a single-namespace app.
 
-.What you'll need
+.Before you begin
 * A Kubernetes cluster added to Astra Control.
 * One or more installed apps on the cluster. <<Supported app installation methods,Read more about supported app installation methods>>.
-* One or more active pods.
 * Existing namespaces on the Kubernetes cluster that you added to Astra Control.
 * (Optional) A Kubernetes label on any link:../use/manage-apps.html#app-management-requirements[supported Kubernetes resources].
 +
@@ -136,12 +135,6 @@ You can specify the link:../learn/app-management.html[Kubernetes resources that 
 Defining an app gives you more granular control over what to include in an Astra Control operation, including clone, snapshot, and backups.
 
 WARNING: When defining apps, ensure that you do not include a Kubernetes resource in multiple apps with protection policies. Overlapping protection policies on a Kubernetes resources can cause data conflicts.
-
-[CAUTION]
-====
-Performing an in-place restore operation on an app that shares resources with another app can have unintended results. Any resources that are shared between the apps are replaced when an in-place restore is performed on one of the apps.
-====
-
 
 .Read more about adding cluster-scoped resources to your app namespaces.
 [%collapsible]
