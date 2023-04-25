@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: use/restore-apps.html
-keywords: restore app, restoring an app, restore an app, restore
+keywords: restore app, restoring an app, restore an app, restore, migrate nas-economy
 summary: Astra Control can restore your application configuration and persistent storage from a snapshot or backup. Persistent storage backups are transferred from your object store, so restoring from an existing backup will complete the fastest.
 ---
 
@@ -13,55 +13,64 @@ summary: Astra Control can restore your application configuration and persistent
 [.lead]
 Astra Control can restore your application from a snapshot or backup. Restoring from an existing snapshot will be faster when restoring the application to the same cluster. You can use the Astra Control UI or https://docs.netapp.com/us-en/astra-automation/index.html[the Astra Control API^] to restore apps.
 
-NOTE: When you perform an in-place restore of an application that uses NetApp ONTAP storage, the space used by the restored app can double. After performing an in-place restore, remove any unwanted snapshots from the restored application to free up storage space.
-
 NOTE: If you add a namespace filter to an execution hook that runs after a restore or clone operation and the restore or clone source and destination are in different namespaces, the namespace filter is only applied to the destination namespace.
 
 .About this task
 
-* *Protect your apps first*: It is strongly recommended to take a snapshot of or back up your application before restoring it. This will enable you to clone from the snapshot or backup in the event that the restore is unsuccessful.
-* *Check destination storage class*: If you restore to a different cluster, ensure that the destination cluster's storage class is using the same persistent volume access mode (for example, ReadWriteMany) as the storage class on the source cluster. The restore operation will fail if the destination persistent volume access mode is different.
+//ASTRACTL-12847/DOC-4147
+* *Protect your apps first*: It is strongly recommended that you take a snapshot or backup of your application before restoring it. This will enable you to clone from the snapshot or backup in the event that the restore is unsuccessful.
+* *Check destination volumes*: If you restore to a different cluster, ensure that the cluster is using the same persistent volume access mode (for example, ReadWriteMany). The restore operation will fail if the destination persistent volume access mode is different.
+* *Plan for space needs*: When you perform an in-place restore of an application that uses NetApp ONTAP storage, the space used by the restored app can double. After performing an in-place restore, remove any unwanted snapshots from the restored application to free up storage space.
 
-.Steps
-
-. Select *Applications* and then select the name of an app.
-
-. Select *Data protection*.
-
-. If you want to restore from a snapshot, keep *Snapshots* selected. Otherwise, select *Backups* to restore from a backup.
-//+
-//image:screenshot-restore-snapshot-or-backup.gif[A screenshot of the Data protection tab where you can view Snapshots or Backups.]
-
-. From the Options menu in the *Actions* column for the snapshot or backup from which you want to restore, select *Restore application*.
-//+
-//image:screenshot-restore-app.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Restore application."]
-
-. Choose the restore type:
-* *Restore to original namespaces*: Use this procedure to restore the app in-place to the original cluster.
-+
 [CAUTION]
 ====
 Performing an in-place restore operation on an app that shares resources with another app can have unintended results. Any resources that are shared between the apps are replaced when an in-place restore is performed on one of the apps.
 ====
 
-.. Select the snapshot to use to restore the app in-place, which reverts the app to an earlier version of itself.
+.Steps
+
+. Select *Applications* and then select the name of an app.
+. From the Options menu in the Actions column, select *Restore*.
+. Choose the restore type:
+* *Restore to original namespaces*: Use this procedure to restore the app in-place to the original cluster.
++
+//astradoc-91 limitation
+//NOTE: If your app uses a storage class backed by the `ontap-nas-economy` driver, you must restore the app using the original storage classes. You cannot specify a different storage class if you are restoring the app to the same namespace.
+
+.. Select the snapshot or backup to use to restore the app in-place, which reverts the app to an earlier version of itself.
 .. Select *Next*.
 +
 NOTE: If you restore to a namespace that was previously deleted, a new namespace with the same name is created as part of the restore process. Any users that had rights to manage apps in the previously deleted namespace need to manually restore rights to the newly re-created namespace.
 
-.. Review details about the restore action, type "restore", and select *Restore*.
-
 * *Restore to new namespaces*: Use this procedure to restore the app to another cluster or with different namespaces from the source.
++
+//astradoc-91
+//NOTE: You can use this procedure to either <<Migrate from ontap-nas-economy storage to ontap-nas storage,migrate an app from a storage class backed by `ontap-nas-economy`>> to a storage class backed by `ontap-nas` on the same cluster *OR* copy the app to another cluster with a storage class backed by the `ontap-nas-economy` driver. 
 
+.. Specify the name for the restored app.
 .. Choose the destination cluster for the app you intend to restore.
 .. Enter a destination namespace for each source namespace associated with the app.
 +
 NOTE: Astra Control creates new destination namespaces as part of this restore option. Destination namespaces that you specify must not be already present on the destination cluster.
 
 .. Select *Next*.
-.. Select the snapshot to use to restore the app.
+.. Select the snapshot or backup to use to restore the app.
 .. Select *Next*.
-.. Review details about the restore action and select *Restore*.
+//.. Choose one of the following:
+//*** *Restore using original storage classes*: The application uses the originally associated storage class unless it does not exist on the target cluster. In this case, the default storage class for the cluster will be used.
+//*** *Restore using a different storage class*: Select a storage class that exists on the target cluster. All application volumes, regardless of their originally associated storage classes, will be migrated to this different storage class as part of the restore.
+//.. Select *Next*. 
+
+. Choose any resources to filter:
+** *Restore all resources*: Restore all resources associated with the original app.
+** *Filter resources*: Specify rules to restore a sub-set of the original application resources:
+... Choose to include or exclude resources from the restored application.
+... Select either *Add include rule* or *Add exclude rule* and configure the rule to filter the correct resources during application restore. You can edit a rule or remove it and create a rule again until the configuration is correct. 
++
+NOTE: To learn about configuring include and exclude rules, see <<Filter resources during an application restore>>.
+
+. Select *Next*.
+. Review details about the restore action carefully, type "restore" (if prompted), and select *Restore*.
 //+
 //image:screenshot-restore-summary.gif[A screenshot of the Restore Application page which enables you to review information about the restore action.]
 
@@ -69,4 +78,58 @@ NOTE: Astra Control creates new destination namespaces as part of this restore o
 
 Astra Control restores the app based on the information that you provided. If you restored the app in-place, the content of existing persistent volumes is replaced with the content of persistent volumes from the restored app.
 
+NOTE: After a data protection operation (clone, backup, or restore) and subsequent persistent volume resize, there is a delay of up to twenty minutes before the new volume size is shown in the web UI. The data protection operation is successful within minutes, and you can use the management software for the storage backend to confirm the change in volume size.
+
 NOTE: Any member user with namespace constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the member user account and update role constraints for the affected user to grant access to the new namespace.
+
+== Filter resources during an application restore
+
+You can add a filter rule to a link:../use/restore-apps.html[restore] operation that will specify existing application resources to be included or excluded from the restored application. You can include or exclude resources based on a specified namespace, label, or GVK (GroupVersionKind). 
+
+.Read more about include and exclude scenarios
+[%collapsible]
+====
+* *You select an include rule with original namespaces (in-place restore)*: Existing application resources that you define in the rule will be deleted and replaced by those from the selected snapshot or backup you are using for the restore. Any resources that you do not specify in the include rule will remain unchanged.
+
+* *You select an include rule with new namespaces*: Use the rule to select the specific resources you want in the restored application. Any resources that you do not specify in the include rule will not be included in the restored application.
+
+* *You select an exclude rule with original namespaces (in-place restore)*: The resources you specify to be excluded will not be restored and remain unchanged. Resources that you do not specify to exclude will be restored from the snapshot or backup. All data on persistent volumes will be deleted and recreated if the corresponding StatefulSet is part of the filtered resources.
+
+* *You select an exclude rule with new namespaces*: Use the rule to select the specific resources you want to remove from the restored application. Resources that you do not specify to exclude will be restored from the snapshot or backup.
+====
+// End snippet
+
+Rules are either include or exclude types. Rules combining resource inclusion and exclusion are not available.
+
+.Steps
+
+. After you have chosen to filter resources and selected an include or exclude option in the Restore App wizard, select *Add include rule* or *Add exclude rule*.
++
+NOTE: You cannot exclude any cluster-scoped resources that are automatically included by Astra Control.
+
+. Configure the filter rule:
++
+NOTE: You must specify at least one namespace, label, or GVK. Ensure that any resources you retain after the filter rules are applied are sufficient to keep the restored application in a healthy state.
+
+.. Select a specific namespace for the rule. If you don't make a selection, all namespaces will be used in the filter.
++
+NOTE: If your application originally contained multiple namespaces and you restore it to new namespaces, all namespaces will be created even if they don't contain resources.
+
+.. (Optional) Enter a resource name.
+.. (Optional) *Label selector*: Include a https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors[label selector^] to add to the rule. The label  selector is used to filter only those resources matching the selected label.
+.. (Optional) Select *Use GVK (GroupVersionKind) set to filter resources* for additional filtering options.
++
+NOTE: If you use a GVK filter, you must specify Version and Kind.
+
+... (Optional) *Group*: From the drop-down list, select the Kubernetes API group. 
+... *Kind*: From the drop-down list, select the object schema for the Kubernetes resource type to use in the filter.
+... *Version*: Select the Kubernetes API version.
+. Review the rule that is created based on your entries. 
+. Select *Add*. 
++
+TIP: You can create as many resource include and exclude rules as you want. The rules appear in the restore application summary before you initiate the operation. 
+
+//astradoc-91
+//== Migrate from ontap-nas-economy storage to ontap-nas storage
+
+//You can use an Astra Control link:../use/restore-apps.html[application restore] operation to migrate application volumes from a storage class backed by `ontap-nas-economy`, which permits limited application protection options, to a storage class backed by `ontap-nas` with its full range of Astra Control protection options. The restore operation migrates Qtree-based volumes that use an `ontap-nas-economy` backend to standard volumes backed by `ontap-nas`. Volumes, regardless of whether they are `ontap-nas-economy` backed only or mixed, will be migrated to the target storage class. After the migration is complete, protection options are no longer limited.
