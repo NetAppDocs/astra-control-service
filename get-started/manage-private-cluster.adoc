@@ -130,9 +130,13 @@ astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 == Set up persistent storage
 Configure persistent storage for the cluster. Refer to the Get Started documentation for more information about configuring persistent storage:
 
+ifdef::azure[]
 * https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html[Set up Microsoft Azure with Azure NetApp Files^]
 * https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks^]
+endif::azure[]
+ifdef::aws[]
 * https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-amazon-web-services.html[Set up Amazon Web Services^]
+endif::aws[]
 
 
 == Add the private cluster to Astra Control Service
