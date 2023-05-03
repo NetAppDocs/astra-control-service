@@ -25,6 +25,11 @@ entries:
     url: /get-started/register.html
   - title: Manage clusters
     url: /get-started/add-first-cluster.html
+    entries:
+      - title: Check the Astra Trident version
+        url: /get-started/check-astra-trident-version.html
+      - title: Create a limited cluster role kubeconfig
+        url: /get-started/create-kubeconfig.html
   - title: Manage private clusters
     url: /get-started/manage-private-cluster.html
   - title: What's next?
