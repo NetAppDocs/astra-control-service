@@ -119,7 +119,7 @@ kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 kubectl get astraconnector astra-connector -n astra-connector
 ----
 +
-You should refer to output similar to the following:
+You should see output similar to the following:
 +
 [source,console]
 ----
