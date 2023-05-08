@@ -57,6 +57,10 @@ When you manage AKS clusters with Astra Control Service, persistent volumes are 
 * https://azure.microsoft.com/en-us/pricing/details/netapp[View pricing details for Azure NetApp Files^].
 
 * https://azure.microsoft.com/en-us/pricing/details/storage/blobs[View pricing details for Microsoft Azure Blob storage^].
+
+* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=PlansAndPrice[View Astra Control Service plans and pricing in Azure Marketplace]
+
+NOTE: The Azure billing rate for Astra Control Service is per hour, and a new billing hour starts after 29 minutes of the usage hour has elapsed.
 endif::azure[]
 
 ifdef::aws[]
@@ -82,8 +86,9 @@ You can subscribe to Astra Control Service using the AWS Marketplace. Your accou
 
 .Steps
 
-. Go to the https://aws.amazon.com/marketplace/[AWS Marketplace^].
-. Select *Continue to Subscribe*.
+. Go to the https://aws.amazon.com/marketplace/pp/prodview-auupmqjoq43ey?sr=0-1&ref_=beagle&applicationId=AWSMPContessa[AWS Marketplace^].
+. Select *View purchase options*.
+. If prompted to do so, log in to your AWS account, or create a new account.
 . Follow the instructions to subscribe to a plan.
 
 == Subscribe to Astra Control Service directly with NetApp
