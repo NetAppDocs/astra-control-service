@@ -31,8 +31,8 @@ A protection policy protects an app by creating snapshots, backups, or both at a
 
 If you need backups or snapshots to run more frequently than once per hour, you can https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html[use the Astra Control REST API to create snapshots and backups^].
 
-//astradoc-91
-//IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, protection policies cannot be used. Use an alternate storage class if you want a protection policy. 
+//astradoc-91, astradoc-154
+IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, protection policies cannot be used. Use an alternate storage class if you want a protection policy. 
 
 .Steps
 
@@ -70,8 +70,8 @@ Astra Control implements the data protection policy by creating and retaining sn
 
 You can create an on-demand snapshot at any time.
 
-//astradoc-91
-//IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, snapshots cannot be used. Use an alternate storage class for snapshots. 
+//astradoc-91, astradoc-154
+IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, snapshots cannot be used. Use an alternate storage class for snapshots. 
 
 .Steps
 
@@ -93,8 +93,8 @@ The snapshot process begins. A snapshot is successful when the status is *Health
 
 You can also back up an app at any time.
 
-//astradoc-91
-//IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, backups are disruptive and the app will be unavailable until the backup operation has completed. 
+//astradoc-91, astradoc-154
+IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, backups are disruptive and the app will be unavailable until the backup operation has completed. 
 
 ifdef::azure[]
 [NOTE]
