@@ -29,6 +29,8 @@ But if you have the flexibility to choose between Google Cloud regions, then we 
 
 * For K8s applications that have low-to-medium storage performance needs (web apps, general purpose file storage, etc.), choose a Google Cloud region that supports either CVS or CVS-Performance, with the Standard storage class.
 
+NOTE: If you use the CVS service type with Astra Trident 23.01 or later, you need to configure your storage pools before you can provision volumes. If you provision volumes with no storage pools configured, volume provisioning will fail. Refer to https://cloud.google.com/architecture/partners/netapp-cloud-volumes/quickstart#create_a_volume_of_the_cvs_service_type[Cloud Volumes Service documentation^] for more information on creating volumes when using the CVS service type.
+
 The following table provides a quick comparison of the information described on this page.
 
 [cols=5*,options="header"]
