@@ -113,7 +113,7 @@ Private clusters:: If the cluster is private, the https://cloud.google.com/kuber
 
 Mode of operation for a GKE cluster:: You should use the Standard mode of operation. The Autopilot mode hasn't been tested at this time. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes[Learn more about modes of operation^].
 
-Storage pools:: If you use NetApp Cloud Volumes Service as a storage backend and plan on using the CVS service type, you need to configure storage pools before you can provision volumes. Refer to link:../learn/choose-class-and-size.html#overview[Service type, storage classes, and PV size for GKE clusters^] for more information.
+Storage pools:: If you use NetApp Cloud Volumes Service as a storage backend with the CVS service type, you need to configure storage pools before you can provision volumes. Refer to link:../learn/choose-class-and-size.html#overview[Service type, storage classes, and PV size for GKE clusters^] for more information.
 
 ////
 External volume snapshot controller:: Clusters must have a CSI volume snapshot controller installed. This controller is installed by default starting with K8s version 1.21.x, but you'll need to check on clusters running versions 1.19 and 1.20. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^].
