@@ -17,7 +17,7 @@ You create a cloud instance when you add a new cluster to Astra Control. You can
 
 
 == Add a cloud instance
-You can add a new cloud instance when you add a new cluster to Astra Control.  Refer to link:../add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service] for more information.
+You can add a new cloud instance when you add a new cluster to Astra Control.  Refer to link:../get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service] for more information.
 
 == Edit a cloud instance
 You can modify an existing cloud instance for a cloud provider. 
