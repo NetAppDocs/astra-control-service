@@ -102,7 +102,7 @@ Refer to the details for instructions for installing the CSI driver.
 ========
 .Install an external snapshotter
 
-If you have not already done so, https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[Install the snapshot CRDs and the snapshot controller^].
+If you haven't already done so, https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[install the snapshot CRDs and the snapshot controller^].
 
 .Install the CSI driver as an Amazon EKS add-on
 
