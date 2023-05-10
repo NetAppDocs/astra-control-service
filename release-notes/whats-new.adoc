@@ -13,6 +13,12 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 [.lead]
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
+== 12 May 2023
+
+.New features and support
+
+This is primarily a bugfix release.
+
 == 25 April 2023
 
 .New features and support
