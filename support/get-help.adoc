@@ -23,7 +23,7 @@ You can access support options from the Astra Control UI by selecting the *Suppo
 
 These options are available for free 24x7:
 
-* https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra[Knowledge base^]
+* https://kb.netapp.com/Cloud/Astra/Control[Knowledge base^]
 +
 Search for articles, FAQ’s, or Break Fix information related to Astra Control.
 
