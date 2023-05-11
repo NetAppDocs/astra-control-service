@@ -84,7 +84,7 @@ ifdef::gcp[]
 
 *Can I add a private GKE cluster to Astra Control Service?*
 
-Yes, you can add private GKE clusters to Astra Control Service. To create a private GKE cluster, https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra[follow the instructions in this knowledgebase article^].
+Yes, you can add private GKE clusters to Astra Control Service. To create a private GKE cluster, https://kb.netapp.com/Cloud/Astra/Control/How_to_create_a_private_GKE_cluster_to_work_with_Astra[follow the instructions in this Knowledge Base article^].
 
 Private clusters must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[authorized networks^] set to allow the Astra Control IP address:
 
