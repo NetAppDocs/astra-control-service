@@ -96,7 +96,7 @@ Astra Trident and an external snapshot controller are required for operations wi
 
 CSI drivers for Amazon Elastic Block Store (EBS):: If you use the Amazon EBS storage backend, you need to install the Container Storage Interface (CSI) driver for EBS (it is not installed automatically).
 +
-Refer to the details for instructions for installing the CSI driver.
+Refer to the steps for instructions for installing the CSI driver.
 +
 [%collapsible%open]
 ========
