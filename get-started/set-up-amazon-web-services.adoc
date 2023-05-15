@@ -84,52 +84,25 @@ If a controller is installed, the command returns a 3-line response. If no contr
 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^] for instructions.
 ////
 
-Astra Trident for Amazon FSx for NetApp ONTAP::
-If you use the Amazon FSx for NetApp ONTAP storage backend, you need to install Astra Trident. For instructions, refer to https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident deployment overview^]. For details about using Astra Trident with FSx for NetApp ONTAP, refer to https://docs.netapp.com/us-en/trident/trident-use/trident-fsx.html[Use Astra Trident with Amazon FSx for NetApp ONTAP^].
+Astra Trident::
+Astra Trident and an external snapshot controller are required for operations with storage backends. To install them, do the following:
+
+[%collapsible%open]
+=========
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[Install the snapshot CRDs and the snapshot controller^].
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Install the latest Astra Trident version^].
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass[Create a VolumeSnapshotClass^].
+=========
 
 CSI drivers for Amazon Elastic Block Store (EBS):: If you use the Amazon EBS storage backend, you need to install the Container Storage Interface (CSI) driver for EBS (it is not installed automatically).
 +
-Refer to the details for instructions on installing the CSI driver.
+Refer to the steps for instructions for installing the CSI driver.
 +
 [%collapsible%open]
 ========
 .Install an external snapshotter
 
-. Create volume snapshot CRDs.
-+
-For Kubernetes 1.20 and above, use v1 snapshot CRDs with snapshot components of v5.0.
-+
-[role="tabbed-block"]
-====
-.v5.0 components
---
-[source,yaml]
-----
-$ cat snapshot-setup.sh
-#!/bin/bash
-# Create volume snapshot CRDs
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
---
-====
-
-. Create the snapshot controller in the desired namespace. Edit the YAML manifests below to modify namespace.
-+
-For Kubernetes 1.20 and above use v5.0.
-+
-[role="tabbed-block"]
-====
-.v5.0 controller
---
-[source,yaml]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
---
-====
+If you haven't already done so, https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[install the snapshot CRDs and the snapshot controller^].
 
 .Install the CSI driver as an Amazon EKS add-on
 
