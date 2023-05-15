@@ -13,8 +13,8 @@ summary: Find troubleshooting tips for common problems.
 [.lead]
 Learn how to work around some common problems you might encounter.
 
-https://kb.netapp.com/Cloud/Astra/Control/Astra
+https://kb.netapp.com/Cloud/Astra/Control
 
 == For more information
 
-* https://kb.netapp.com/Cloud/Astra/Control/Astra[Troubleshooting^]
+* https://kb.netapp.com/Cloud/Astra/Control[Troubleshooting^]
