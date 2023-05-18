@@ -60,7 +60,9 @@ When you manage AKS clusters with Astra Control Service, persistent volumes are 
 
 * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=PlansAndPrice[View Astra Control Service plans and pricing in Azure Marketplace]
 
+////
 NOTE: The Azure billing rate for Astra Control Service is per hour, and a new billing hour starts after 29 minutes of the usage hour has elapsed.
+////
 endif::azure[]
 
 ifdef::aws[]
