@@ -28,7 +28,7 @@ entries:
     entries:
       - title: Check the Astra Trident version
         url: /get-started/check-astra-trident-version.html
-      - title: Create a limited cluster role kubeconfig
+      - title: Create an admin cluster role kubeconfig file
         url: /get-started/create-kubeconfig.html
   - title: Manage private clusters
     url: /get-started/manage-private-cluster.html
