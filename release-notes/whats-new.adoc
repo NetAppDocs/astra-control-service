@@ -20,9 +20,9 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 //* Enhancements to billing in Azure Marketplace
 //+
 //link:../use/set-up-billing.html[Set up billing]
-* Support for `ontap-nas-economy` storage class in backup and restore operations
-+
-link:../use/restore-apps.html[Restore apps]
+//* Support for `ontap-nas-economy` storage class in backup and restore operations
+//+
+//link:../use/restore-apps.html[Restore apps]
 * Support for private Amazon EKS clusters
 +
 link:../get-started/manage-private-cluster.html[Manage private clusters from Astra Control Service]
