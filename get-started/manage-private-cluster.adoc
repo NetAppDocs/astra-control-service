@@ -79,7 +79,14 @@ kubectl create ns astra-connector
 
 . Generate an Astra Control API token using the instructions in the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^].
 
-. Modify the example configuration file in the config/samples directory of the Astra Connector operator repository to include the `spec.natssync-client.cloud-bridge-url` key. For example:
+. Modify the example configuration file in the config/samples directory of the Astra Connector operator repository to include the following keys:
++
+* `spec.natssync-client.cloud-bridge-url`
+* `spec.astra.token`
+* `spec.astra.clusterName`
+* `spec.astra.accountId`
++
+For example:
 +
 ----
 apiVersion: netapp.astraconnector.com/v1
