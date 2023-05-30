@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: use/clone-apps.html
-keywords: clone app, clone storage, clone persistent storage, clone data, move workload, clone data, migrate data, data migration, move storage, move application, move data
+keywords: clone app, clone storage, clone persistent storage, clone data, move workload, clone data, migrate data, data migration, move storage, move application, move data, migrate storage class
 summary: Clone an existing app to create a duplicate app on the same Kubernetes cluster or on another cluster. Cloning can help if you need to move applications and storage from one Kubernetes cluster to another. For example, you might want to move workloads through a CI CD pipeline and across Kubernetes namespaces.
 ---
 
@@ -27,7 +27,7 @@ NOTE: If you add a namespace filter to an execution hook that runs after a resto
 .Clone limitations
 
 * *Explicit Storage classes*: If you deploy an app with a storage class explicitly set and you need to clone the app, the target cluster must have the originally specified storage class. Cloning an application with an explicitly set storage class to a cluster that does not have the same storage class will fail.
-//astradoc-91
+//astradoc-91, astradoc-154
 //* *ontap-nas-economy-backed storage class*: If your app uses a storage class backed by the `ontap-nas-economy` driver, the backup portion of a clone operation is disruptive. The source application is not available until the backup is complete. The restore portion of the clone operation is non-disruptive.
 * *Clones and user constraints*: Any member user with namespace constraints by namespace name/ID or by namespace labels can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the member user account and update role constraints for the affected user to grant access to the new namespace.
 * *Clones use default buckets*: 
@@ -59,7 +59,11 @@ NOTE: Astra Control creates new destination namespaces as part of the clone oper
 * Choose whether you want to create the clone from an existing snapshot or backup. If you don't select this option, Astra Control creates the clone from the app's current state.
 ** If you chose to clone from an existing snapshot or backup, choose the snapshot or backup that you'd like to use.
 * Select *Next*.
+//astradoc-91, astradoc-154
 * Choose to keep the original storage class associated with the app or select a different storage class.
++
+//astradoc-91, astradoc-154
+//NOTE: You can migrate an app's storage class to a native cloud provider storage class or other supported storage class, link:../use/restore-apps.html#migrate-from-ontap-nas-economy-storage-to-ontap-nas-storage[migrate an app from a storage class backed by `ontap-nas-economy`^] to a storage class backed by `ontap-nas` on the same cluster, or copy the app to another cluster with a storage class backed by the `ontap-nas-economy` driver.
 +
 NOTE: If you select a different storage class and this storage class doesn't exist at the moment of restore, an error will be returned.
 

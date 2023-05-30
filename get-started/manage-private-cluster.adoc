@@ -11,14 +11,14 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 :imagesdir: ../media/get-started/
 
 [.lead]
-// ifdef::aws+azure+gcp[]
-You can use Astra Control Service to manage private Azure Kubernetes Service (AKS) clusters as well as private Red Hat OpenShift clusters in AKS. These instructions assume that you have already created a private AKS or OpenShift cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS or OpenShift clusters, refer to the following documentation:
+ifdef::aws+azure+gcp[]
+You can use Astra Control Service to manage private Amazon Elastic Kubernetes Service (EKS) clusters, private Azure Kubernetes Service (AKS) clusters, and private AKS Red Hat OpenShift clusters that are hosted in AKS. These instructions assume that you have already created a private cluster and prepared a secure method to remotely access it; for more information about creating and accessing private clusters, refer to the following documentation:
 
 * https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^]
 * https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
-//* https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html[Amazon EKS documentation^]
-// endif::aws+azure+gcp[]
-////
+* https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html[Amazon EKS documentation^]
+endif::aws+azure+gcp[]
+
 ifndef::azure,aws[]
 You can use Astra Control Service to manage private Azure Kubernetes Service (AKS) and Red Hat OpenShift clusters in AKS. These instructions assume that you have already created a private AKS or OpenShift cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS or OpenShift clusters, refer to the following documentation:
 
@@ -33,12 +33,11 @@ You can use Astra Control Service to manage private Azure Kubernetes Service (AK
 * https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^]
 * https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
 endif::gcp,aws[]
-////
-////
+
 ifndef::azure,gcp[]
 You can use Astra Control Service to manage private Amazon Elastic Kubernetes Service (EKS) clusters. These instructions assume that you have already created a private EKS cluster and prepared a secure method to remotely access it; for more information about creating and accessing private EKS clusters, refer to the https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html[Amazon EKS documentation^].
 endif::azure,gcp[]
-////
+
 ////
 * <<Install the Astra Connector operator>>
 * <<Set up persistent storage>>
@@ -80,7 +79,14 @@ kubectl create ns astra-connector
 
 . Generate an Astra Control API token using the instructions in the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^].
 
-. Modify the example configuration file in the config/samples directory of the Astra Connector operator repository to include the `spec.natssync-client.cloud-bridge-url` key. For example:
+. Modify the example configuration file in the config/samples directory of the Astra Connector operator repository to include values specific to your environment for the following keys:
++
+* `spec.natssync-client.cloud-bridge-url`
+* `spec.astra.token`
+* `spec.astra.clusterName`
+* `spec.astra.accountId`
++
+For example:
 +
 ----
 apiVersion: netapp.astraconnector.com/v1
@@ -120,7 +126,7 @@ kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 kubectl get astraconnector astra-connector -n astra-connector
 ----
 +
-You should refer to output similar to the following:
+You should see output similar to the following:
 +
 [source,console]
 ----
@@ -129,10 +135,16 @@ astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 ----
 
 == Set up persistent storage
-Configure persistent storage for the cluster. You can use Azure NetApp Files or Azure managed disks. Refer to the Get Started documentation for more information about configuring Azure with these options:
+Configure persistent storage for the cluster. Refer to the Get Started documentation for more information about configuring persistent storage:
 
-* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html[Set up Microsoft Azure with Azure NetApp Files]
-* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks]
+ifdef::azure,gcp[]
+* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html[Set up Microsoft Azure with Azure NetApp Files^]
+* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks^]
+endif::azure,gcp[]
+ifdef::aws,gcp[]
+* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-amazon-web-services.html[Set up Amazon Web Services^]
+endif::aws,gcp[]
+
 
 == Add the private cluster to Astra Control Service
 You can now add the private cluster to Astra Control Service. Follow the standard workflow to add a cluster to Astra Control Service: https://docs.netapp.com/us-en/astra-control-service/get-started/add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service]. 
