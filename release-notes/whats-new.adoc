@@ -30,6 +30,12 @@ link:../get-started/manage-private-cluster.html[Manage private clusters from Ast
 +
 link:../use/restore-apps.html[Restore apps]
 
+== 15 May 2023
+
+.New features and support
+
+This is a minor bugfix release.
+
 == 25 April 2023
 
 .New features and support
