@@ -1,0 +1,14 @@
+---
+sidebar: sidebar
+permalink: get-started/add-private-provider-managed-cluster.html
+keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add cluster
+summary: After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
+---
+
+= Add a private provider-managed cluster to Astra Control Service
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+[.lead]
+After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
