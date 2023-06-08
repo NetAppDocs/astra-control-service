@@ -44,8 +44,8 @@ entries:
         url: /get-started/check-astra-trident-version.html
       - title: Create an admin cluster role kubeconfig file
         url: /get-started/create-kubeconfig.html
-  - title: Manage private clusters
-    url: /get-started/manage-private-cluster.html
+ # - title: Manage private clusters
+ #   url: /get-started/manage-private-cluster.html
   - title: What's next?
     url: /get-started/whats-next.html
   - title: Videos
