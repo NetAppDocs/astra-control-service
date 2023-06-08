@@ -155,7 +155,7 @@ endif::aws,gcp[]
 == Add the private cluster to Astra Control Service
 You can now add the private cluster to Astra Control Service. 
 
-.What you'll need for self-managed clusters
+.Before you begin
 [%collapsible]
 =======
 A self-managed cluster is a cluster that you directly provision and manage. Astra Control Service supports self-managed clusters that run in a public cloud environment. Your self-managed clusters can use Astra Trident to interface with NetApp storage services, or they can use Container Storage Interface (CSI) drivers to interface with Amazon Elastic Block Store (EBS), Azure Managed Disks, and Google Persistent Disk. 
@@ -272,8 +272,6 @@ Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web S
 endif::gcp+azure+aws[]
 
 . *Review & Approve*: Review the configuration details and select *Add cluster*.
-
-.Result
 
 == Change the default storage class
 You can change the default storage class for a cluster.

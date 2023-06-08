@@ -151,7 +151,7 @@ endif::aws,gcp[]
 == Add the private cluster to Astra Control Service
 You can now add the private cluster to Astra Control Service. 
 
-.What you'll need for clusters that are managed by a cloud provider
+.Before you begin
 [%collapsible]
 =======
 
@@ -271,7 +271,6 @@ endif::gcp+azure+aws[]
 
 .Result
 
-*For provider-managed clusters*:
 If this is the first cluster that you have added for this cloud provider, Astra Control Service creates an object store for the cloud provider for backups of applications running on eligible clusters. (When you add subsequent clusters for this cloud provider, no further object stores are created.) If you specified a default storage class, Astra Control Service sets the default storage class that you specified. For clusters managed in Amazon Web Services or Google Cloud Platform, Astra Control Service also creates an admin account on the cluster. These actions can take several minutes.
 
 == Change the default storage class
