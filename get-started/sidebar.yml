@@ -23,9 +23,23 @@ entries:
         url: /get-started/set-up-microsoft-azure-with-amd.html
   - title: Register for an account
     url: /get-started/register.html
-  - title: Manage clusters
-    url: /get-started/add-first-cluster.html
+  - title: Add a cluster
+    #url: /get-started/add-first-cluster.html
     entries:
+      - title: Add a provider-managed cluster
+        #url: /get-started/add-provider-managed-cluster.html
+        entries:
+          - title: Add a private provider-managed cluster
+            url: /get-started/add-private-provider-managed-cluster.html
+          - title: Add a public provider-managed cluster
+            url: /get-started/add-public-provider-managed-cluster.html
+      - title: Add a self-managed cluster
+        #url: /get-started/add-self-managed-cluster.html
+        entries:
+          - title: Add a private self-managed cluster
+            url: /get-started/add-private-self-managed-cluster.html
+          - title: Add a public provider-managed cluster
+            url: /get-started/add-public-self-managed-cluster.html
       - title: Check the Astra Trident version
         url: /get-started/check-astra-trident-version.html
       - title: Create an admin cluster role kubeconfig file
