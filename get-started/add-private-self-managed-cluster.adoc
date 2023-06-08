@@ -40,11 +40,15 @@ ifndef::azure,gcp[]
 You can use Astra Control Service to manage private Amazon Elastic Kubernetes Service (EKS) clusters. These instructions assume that you have already created a private EKS cluster and prepared a secure method to remotely access it; for more information about creating and accessing private EKS clusters, refer to the https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html[Amazon EKS documentation^].
 endif::azure,gcp[]
 
-////
+//=== Self-managed clusters
+A self-managed cluster is a cluster that you directly provision and manage. Astra Control Service supports self-managed clusters that run in a public cloud environment. You can add a self-managed cluster to Astra Control Service by uploading a `kubeconfig.yaml` file. You'll need to ensure the cluster meets the requirements outlined here.
+
+You need to perform the following tasks to add your private cluster to Astra Control Service:
+
 * <<Install the Astra Connector operator>>
 * <<Set up persistent storage>>
 * <<Add the private cluster to Astra Control Service>>
-////
+
 == Install the Astra Connector operator
 You need to install the Astra Connector operator on the private cluster. If you are using a bastion host, issue these commands from the command line of the bastion host. 
 
@@ -151,16 +155,6 @@ endif::aws,gcp[]
 == Add the private cluster to Astra Control Service
 You can now add the private cluster to Astra Control Service. 
 
-* <<Start managing Kubernetes clusters>>
-* <<Change the default storage class>>
-
-=== Self-managed clusters
-A self-managed cluster is a cluster that you directly provision and manage. Astra Control Service supports self-managed clusters that run in a public cloud environment. You can add a self-managed cluster to Astra Control Service by uploading a `kubeconfig.yaml` file. You'll need to ensure the cluster meets the requirements outlined in <<Start managing Kubernetes clusters>>.
-
-== Start managing Kubernetes clusters
-
-After you log in to Astra Control Service, your first step is to start managing your clusters. You can add a cluster that is managed by a cloud provider, or a self-managed cluster. Before you add a cluster to Astra Control Service, you'll need to perform specific tasks and make sure the cluster meets certain requirements.
-
 .What you'll need for self-managed clusters
 [%collapsible]
 =======
@@ -219,12 +213,6 @@ NOTE: If you create your own `kubeconfig` file, you should define only *one* con
 +
 
 NOTE: When you are selecting from the list of clusters, pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
-
-ifdef::azure[]
-+
-
-NOTE: If you select a cluster that is marked with a "Private" icon, it uses private IP addresses, and the Astra Connector is needed for Astra Control to manage the cluster. If you see a message stating that you need to install the Astra Connector, link:manage-private-cluster.html[refer to these instructions] to install the Astra Connector and enable management of the cluster. After you've installed the Astra Connector, the cluster should be eligible and you can proceed with adding the cluster.
-endif::azure[]
 
 . *Credential name* (For self-managed clusters): Provide a name for the self-managed cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
 
