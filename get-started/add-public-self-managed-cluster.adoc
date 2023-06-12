@@ -49,38 +49,6 @@ endif::gcp+azure+aws[]
 
 After you log in to Astra Control Service, your first step is to start managing your clusters. You can add a cluster that is managed by a cloud provider, or a self-managed cluster. Before you add a cluster to Astra Control Service, you'll need to perform specific tasks and make sure the cluster meets certain requirements.
 
-////
-.What you'll need for clusters that are managed by a cloud provider
-[%collapsible]
-=======
-
-ifdef::aws[]
-.Amazon Web Services
-* You should have the JSON file containing the credentials of the IAM user that created the cluster. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user[Learn how to create an IAM user].
-* Astra Trident is required for Amazon FSx for NetApp ONTAP. If you plan to use Amazon FSx for NetApp ONTAP as a storage backend for your EKS cluster, refer to the Astra Trident information in the link:set-up-amazon-web-services.html#eks-cluster-requirements[EKS cluster requirements].
-* (Optional) If you need to provide provide `kubectl` command access for a cluster to other IAM users that are not the cluster's creator, refer to the instructions in https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/[How do I provide access to other IAM users and roles after cluster creation in Amazon EKS?^].
-* If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Amazon Web Services. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html[setup documentation^].
-
-endif::aws[]
-
-ifdef::azure[]
-.Microsoft Azure
-* You should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
-+
-You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
-
-* For private AKS clusters, refer to link:manage-private-cluster.html[Manage private clusters from Astra Control Service^].
-* If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Microsoft Azure. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[setup documentation^].
-endif::azure[]
-
-ifdef::gcp[]
-.Google Cloud
-* You should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
-* If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Google Cloud. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[setup documentation^].
-endif::gcp[]
-=======
-////
-
 .Before you begin
 [%collapsible]
 =======
