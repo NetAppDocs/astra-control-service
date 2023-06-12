@@ -113,7 +113,6 @@ spec:
     name: theotw
   astra:
     token: <Astra Control API token>
-    clusterName: <your-cluster-name>
     accountId: <Astra Control account id>
     acceptEULA: yes
 ----
