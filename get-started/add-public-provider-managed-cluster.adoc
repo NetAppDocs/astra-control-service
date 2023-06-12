@@ -11,7 +11,7 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 :imagesdir: ../media/get-started/
 
 [.lead]
-After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
+After you set up your cloud environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
 
 * <<Create a Kubernetes cluster>>
 * <<Start managing Kubernetes clusters>>
