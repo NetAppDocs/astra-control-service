@@ -203,16 +203,16 @@ ifdef::gcp[]
 +
 Astra Control Service uses the service account to discover clusters running in Google Kubernetes Engine.
 endif::gcp[]
-.. *Other*: Provide details about your self-managed cluster by uploading a `kubeconfig.yaml` file or by pasting the contents of the `kubeconfig.yaml` file from your clipboard.
+.. *Other*: This tab is for use with self-managed clusters only.
 +
 NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. Refer to https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files.
 
-. *Cloud instance name* (For provider-managed clusters): Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
+. *Cloud instance name*: Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
 +
 
 NOTE: When you are selecting from the list of clusters, pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
 
-. *Credential name* (For self-managed clusters): Provide a name for the self-managed cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
+. *Credential name*: This field is for use with self-managed clusters only.
 
 . (Optional) *Private route ID*: Enter the private route identifier, which you can obtain from the Astra Connector. 
 +

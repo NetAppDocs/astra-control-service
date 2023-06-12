@@ -14,7 +14,7 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 After you set up your cloud environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
 
 * <<Create a Kubernetes cluster>>
-* <<Start managing Kubernetes clusters>>
+* <<Add the cluster to Astra Control Service>>
 * <<Change the default storage class>>
 
 == Create a Kubernetes cluster
@@ -43,7 +43,7 @@ NOTE: Astra Control Service supports AKS clusters that use Azure Active Director
 
 endif::gcp+azure+aws[]
 
-== Start managing Kubernetes clusters
+== Add the cluster to Astra Control Service
 
 After you log in to Astra Control Service, your first step is to start managing your clusters. You can add a cluster that is managed by a cloud provider, or a self-managed cluster. Before you add a cluster to Astra Control Service, you'll need to perform specific tasks and make sure the cluster meets certain requirements.
 
