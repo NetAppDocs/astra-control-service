@@ -188,34 +188,20 @@ NOTE: You can https://docs.netapp.com/us-en/trident/trident-get-started/kubernet
 +
 Follow the prompts to add the cluster.
 
-. *Provider*: Select your cloud provider and then either provide the required credentials to create a new cloud instance, or select an existing cloud instance to use.
-ifdef::aws[]
-.. *Amazon Web Services*: Provide details about your Amazon Web Services IAM user account by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
-+
-The JSON file should contain the credentials of the IAM user that created the cluster.
-endif::aws[]
-ifdef::azure[]
-.. *Microsoft Azure*: Provide details about your Azure service principal by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
-+
-The JSON file should contain the output from the Azure CLI when you created the service principal. It can also include your subscription ID so it's automatically added to Astra. Otherwise, you need to manually enter the ID after providing the JSON.
-endif::azure[]
-ifdef::gcp[]
-.. *Google Cloud Platform*: Provide the service account key file either by uploading the file or by pasting the contents from your clipboard.
-+
-Astra Control Service uses the service account to discover clusters running in Google Kubernetes Engine.
-endif::gcp[]
-.. *Other*: Provide details about your self-managed cluster by uploading a `kubeconfig.yaml` file or by pasting the contents of the `kubeconfig.yaml` file from your clipboard.
+. *Provider*: Select the *Other* tab to add details about your self-managed cluster.
+
+. *Other*: Provide details about your self-managed cluster by uploading a `kubeconfig.yaml` file or by pasting the contents of the `kubeconfig.yaml` file from your clipboard.
 +
 NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. Refer to https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files.
 
-. *Cloud instance name* (For provider-managed clusters): Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
-+
+//. *Cloud instance name* (For provider-managed clusters): Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
+//+
 
-NOTE: When you are selecting from the list of clusters, pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
+//NOTE: When you are selecting from the list of clusters, pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
 
-. *Credential name* (For self-managed clusters): Provide a name for the self-managed cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
+. *Credential name*: Provide a name for the self-managed cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
 
-. (Optional) *Private route ID*: Enter the private route identifier, which you can obtain from the Astra Connector. 
+. (Optional) *Private route identifier*: Enter the private route identifier, which you can obtain from the Astra Connector. 
 +
 NOTE: Private route ID is the name associated with the Astra Connector that enables a private Kubernetes cluster to be managed by Astra. In this context, a private cluster is a Kubernetes cluster that does not expose its API server to the internet.
 
