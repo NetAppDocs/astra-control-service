@@ -148,7 +148,7 @@ ifdef::gcp+azure+aws[]
 Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web Services clusters], link:../learn/choose-class-and-size.html[storage classes for GKE clusters], and link:../learn/azure-storage.html[storage classes for AKS clusters].
 endif::gcp+azure+aws[]
 
-. *Review & Approve*: Review the configuration details and select *Add cluster*.
+. *Review & Approve*: Review the configuration details and select *Add*.
 
 == Change the default storage class
 You can change the default storage class for a cluster.

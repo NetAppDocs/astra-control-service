@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: get-started/whats-next.html
 keywords: get started, manage apps, manage account
-summary: Now that you’ve logged in and added clusters to Astra Control, you're ready to start using Astra Control's application data management features.
+summary: Now that you've logged in and added clusters to Astra Control, you're ready to start using Astra Control's application data management features.
 ---
 
 = What's next?
@@ -11,7 +11,7 @@ summary: Now that you’ve logged in and added clusters to Astra Control, you're
 :imagesdir: ../media/get-started/
 
 [.lead]
-Now that you’ve logged in and added a cluster to Astra Control, you're ready to start using Astra Control's application data management features.
+Now that you've logged in and added a cluster to Astra Control, you're ready to start using Astra Control's application data management features.
 
 * link:../use/manage-apps.html[Start managing apps]
 * link:../use/protect-apps.html[Protect apps]

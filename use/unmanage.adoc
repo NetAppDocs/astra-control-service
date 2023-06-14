@@ -73,7 +73,7 @@ The status of the cluster changes to *Removing*. After that, the cluster will be
 
 == Deleting clusters from your cloud provider
 
-Before you delete a Kubernetes cluster that has persistent volumes (PV) residing on NetApp storage classes, you need to first delete the persistent volume claims (PVC) following one of the methods below. Deleting the PVC and PV before deleting the cluster ensures that you don’t receive unexpected bills from your cloud provider.
+Before you delete a Kubernetes cluster that has persistent volumes (PV) residing on NetApp storage classes, you need to first delete the persistent volume claims (PVC) following one of the methods below. Deleting the PVC and PV before deleting the cluster ensures that you don't receive unexpected bills from your cloud provider.
 
 * *Method #1*: Delete the application workload namespaces from the cluster. Do _not_ delete the Trident namespace.
 * *Method #2*: Delete the PVCs and the pods, or the deployment where the PVs are mounted.
@@ -82,4 +82,4 @@ When you manage a Kubernetes cluster from Astra Control, applications on that cl
 
 Using one of the above methods will delete the corresponding PVs from your cluster. Make sure that there are no PVs residing on NetApp storage classes on the cluster before you delete it.
 
-If you didn’t delete the persistent volumes before you deleted the cluster, then you’ll need to manually delete the backend volumes from your cloud provider.
+If you didn't delete the persistent volumes before you deleted the cluster, then you'll need to manually delete the backend volumes from your cloud provider.
