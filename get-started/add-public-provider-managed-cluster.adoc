@@ -105,7 +105,7 @@ endif::gcp[]
 . Select *Next*.
 +
 Astra Control Service displays a list of clusters that you can choose from.
-. Select a cluster from the list to add to Astra Control Service.
+. *Cluster*: Select a cluster from the list to add to Astra Control Service.
 +
 NOTE: When you are selecting from the list of clusters, pay careful attention to the *Eligiblity* column. tab. If a cluster is "Ineligible" or "Partially eligible". hover over the status to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
 
