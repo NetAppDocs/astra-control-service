@@ -99,19 +99,28 @@ ifdef::gcp[]
 +
 Astra Control Service uses the service account to discover clusters running in Google Kubernetes Engine.
 endif::gcp[]
-*Other*: This tab is for use with self-managed clusters only.
-+
-NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. Refer to https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files.
+.. *Other*: This tab is for use with self-managed clusters only.
 
 . *Cloud instance name*: Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
+. Select *Next*.
 +
-NOTE: When you are selecting from the list of clusters, pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
+Astra Control Service displays a list of clusters that you can choose from.
+. Select a cluster from the list to add to Astra Control Service.
++
+NOTE: When you are selecting from the list of clusters, pay careful attention to the *Eligiblity* column. tab. If a cluster is "Ineligible" or "Partially eligible". hover over the status to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
 
-. *Credential name*: This field is for use with self-managed clusters only.
+. Select *Next*.
 
-. *Private route ID*: This field is for use with private clusters only.
+// . *Credential name*: This field is for use with self-managed clusters only.
 
-. (Optional) *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
+// . *Private route ID*: This field is for use with private clusters only.
+
+. (Optional) *Storage*: Optionally, select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
+.. To select a new default storage class for the cluster, select the *Assign a new default storage class* check box.
+.. Select a new default storage class from the list.
+. Select *Next*.
+. *Review & Approve*: Review the configuration details.
+. Select *Add* to add the cluster to Astra Control Service.
 +
 
 [NOTE]
