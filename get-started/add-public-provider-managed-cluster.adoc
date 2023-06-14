@@ -118,9 +118,6 @@ NOTE: When you are selecting from the list of clusters, pay careful attention to
 . (Optional) *Storage*: Optionally, select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
 .. To select a new default storage class for the cluster, select the *Assign a new default storage class* check box.
 .. Select a new default storage class from the list.
-. Select *Next*.
-. *Review & Approve*: Review the configuration details.
-. Select *Add* to add the cluster to Astra Control Service.
 +
 
 [NOTE]
@@ -171,7 +168,9 @@ ifdef::gcp+azure+aws[]
 Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web Services clusters], link:../learn/choose-class-and-size.html[storage classes for GKE clusters], and link:../learn/azure-storage.html[storage classes for AKS clusters].
 endif::gcp+azure+aws[]
 
-. *Review & Approve*: Review the configuration details and select *Add cluster*.
+. Select *Next*.
+. *Review & Approve*: Review the configuration details.
+. Select *Add* to add the cluster to Astra Control Service.
 
 .Result
 
