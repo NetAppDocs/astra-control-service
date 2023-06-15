@@ -85,19 +85,19 @@ Follow the prompts to add the cluster.
 
 . *Provider*: Select the *Other* tab to add details about your self-managed cluster.
 
-. *Other*: Provide details about your self-managed cluster by uploading a `kubeconfig.yaml` file or by pasting the contents of the `kubeconfig.yaml` file from your clipboard.
+.. *Other*: Provide details about your self-managed cluster by uploading a `kubeconfig.yaml` file or by pasting the contents of the `kubeconfig.yaml` file from your clipboard.
 +
 NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. Refer to https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files.
-
-//. *Cloud instance name*: This field is for use with private clusters only.
-//+
-//NOTE: When you are selecting from the list of clusters, pay careful attention to the Eligible tab. If a warning appears, hover over the warning to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
 
 . *Credential name*: Provide a name for the self-managed cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
 
 . *Private route identifier*: This field is for use with private clusters only.
 
-. (Optional) *Storage*: Select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
+. Select *Next*.
+
+. (Optional) *Storage*: Optionally, select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
+.. To select a new default storage class for the cluster, enable the *Assign a new default storage class* check box.
+.. Select a new default storage class from the list.
 +
 
 [NOTE]
@@ -148,7 +148,9 @@ ifdef::gcp+azure+aws[]
 Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web Services clusters], link:../learn/choose-class-and-size.html[storage classes for GKE clusters], and link:../learn/azure-storage.html[storage classes for AKS clusters].
 endif::gcp+azure+aws[]
 
-. *Review & Approve*: Review the configuration details and select *Add*.
+. Select *Next*.
+. *Review & Approve*: Review the configuration details.
+. Select *Add* to add the cluster to Astra Control Service.
 
 == Change the default storage class
 You can change the default storage class for a cluster.

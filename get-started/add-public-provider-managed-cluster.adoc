@@ -107,16 +107,12 @@ endif::gcp[]
 Astra Control Service displays a list of clusters that you can choose from.
 . *Cluster*: Select a cluster from the list to add to Astra Control Service.
 +
-NOTE: When you are selecting from the list of clusters, pay careful attention to the *Eligiblity* column. tab. If a cluster is "Ineligible" or "Partially eligible". hover over the status to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
+NOTE: When you are selecting from the list of clusters, pay careful attention to the *Eligiblity* column. If a cluster is "Ineligible" or "Partially eligible", hover over the status to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
 
 . Select *Next*.
 
-// . *Credential name*: This field is for use with self-managed clusters only.
-
-// . *Private route ID*: This field is for use with private clusters only.
-
 . (Optional) *Storage*: Optionally, select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
-.. To select a new default storage class for the cluster, select the *Assign a new default storage class* check box.
+.. To select a new default storage class for the cluster, enable the *Assign a new default storage class* check box.
 .. Select a new default storage class from the list.
 +
 
