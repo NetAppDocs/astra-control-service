@@ -204,8 +204,6 @@ ifdef::gcp[]
 Astra Control Service uses the service account to discover clusters running in Google Kubernetes Engine.
 endif::gcp[]
 .. *Other*: This tab is for use with self-managed clusters only.
-+
-NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. Refer to https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files.
 
 . *Cloud instance name*: Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
 . Select *Next*.
@@ -215,9 +213,9 @@ Astra Control Service displays a list of clusters that you can choose from.
 +
 NOTE: When you are selecting from the list of clusters, pay careful attention to the *Eligiblity* column. If a cluster is "Ineligible" or "Partially eligible", hover over the status to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
 
-. (Optional) *Private route ID*: Enter the private route identifier, which you can obtain from the Astra Connector. 
+. (Optional) *Private route identifier*: Enter the private route identifier, which you can obtain from the Astra Connector. 
 +
-NOTE: Private route ID is the name associated with the Astra Connector that enables a private Kubernetes cluster to be managed by Astra. In this context, a private cluster is a Kubernetes cluster that does not expose its API server to the internet.
+NOTE: The private route identifier is the name associated with the Astra Connector that enables a private Kubernetes cluster to be managed by Astra Control Service. In this context, a private cluster is a Kubernetes cluster that does not expose its API server to the internet.
 
 . Select *Next*.
 

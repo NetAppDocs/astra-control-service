@@ -198,7 +198,7 @@ NOTE: If you create your own `kubeconfig` file, you should define only *one* con
 
 . (Optional) *Private route identifier*: Enter the private route identifier, which you can obtain from the Astra Connector. 
 +
-NOTE: Private route ID is the name associated with the Astra Connector that enables a private Kubernetes cluster to be managed by Astra. In this context, a private cluster is a Kubernetes cluster that does not expose its API server to the internet.
+NOTE: The private route identifier is the name associated with the Astra Connector that enables a private Kubernetes cluster to be managed by Astra. In this context, a private cluster is a Kubernetes cluster that does not expose its API server to the internet.
 
 . Select *Next*.
 . (Optional) *Storage*: Optionally, select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
