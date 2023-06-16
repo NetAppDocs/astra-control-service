@@ -13,7 +13,12 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 [.lead]
 
 ifdef::aws+azure+gcp[]
-You can use Astra Control Service to manage private Amazon Elastic Kubernetes Service (EKS) clusters, private Azure Kubernetes Service (AKS) clusters, and private AKS Red Hat OpenShift clusters that are hosted in AKS. These instructions assume that you have already created a private cluster and prepared a secure method to remotely access it; for more information about creating and accessing private clusters, refer to the following documentation:
+You can use Astra Control Service to manage the following types of private clusters:
+
+* Amazon Elastic Kubernetes Service (EKS)
+* Azure Kubernetes Service (AKS) (including Red Hat OpenShift)
+* Google Kubernetes Engine (GKE)
+These instructions assume that you have already created a private cluster and prepared a secure method to remotely access it; for more information about creating and accessing private clusters, refer to the following documentation:
 
 * https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^]
 * https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
@@ -21,7 +26,7 @@ You can use Astra Control Service to manage private Amazon Elastic Kubernetes Se
 endif::aws+azure+gcp[]
 
 ifndef::azure,aws[]
-You can use Astra Control Service to manage private Azure Kubernetes Service (AKS) and Red Hat OpenShift clusters in AKS. These instructions assume that you have already created a private AKS or OpenShift cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS or OpenShift clusters, refer to the following documentation:
+You can use Astra Control Service to manage private Google Kubernetes Engine (GKE) clusters. These instructions assume that you have already created a private AKS or OpenShift cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS or OpenShift clusters, refer to the following documentation:
 
 * https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^]
 * https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
@@ -177,6 +182,9 @@ endif::azure[]
 ifdef::gcp[]
 .Google Cloud
 * You should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
+* If the cluster is private, the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[authorized networks^] must allow the Astra Control Service IP address:
++
+52.188.218.166/32
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Google Cloud. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[setup documentation^].
 endif::gcp[]
 =======
@@ -213,7 +221,7 @@ Astra Control Service displays a list of clusters that you can choose from.
 +
 NOTE: When you are selecting from the list of clusters, pay careful attention to the *Eligiblity* column. If a cluster is "Ineligible" or "Partially eligible", hover over the status to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
 
-. (Optional) *Private route identifier*: Enter the private route identifier, which you can obtain from the Astra Connector. 
+. *Private route identifier*: Enter the private route identifier, which you can obtain from the Astra Connector. If you query the Astra Connector via the `kubectl get` command, the private route identifier is referred to as the `ASTRACONNECTORID`.
 +
 NOTE: The private route identifier is the name associated with the Astra Connector that enables a private Kubernetes cluster to be managed by Astra Control Service. In this context, a private cluster is a Kubernetes cluster that does not expose its API server to the internet.
 
