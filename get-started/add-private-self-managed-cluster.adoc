@@ -13,6 +13,10 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 [.lead]
 After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
 
+A self-managed cluster is a cluster that you directly provision and manage. Astra Control Service supports self-managed clusters that run in a public cloud environment. You can add a self-managed cluster to Astra Control Service by uploading a `kubeconfig.yaml` file. You'll need to ensure the cluster meets the requirements outlined here.
+
+== Supported Kubernetes distributions
+
 You can use Astra Control Service to manage the following types of private, self-managed clusters:
 
 |===
@@ -44,9 +48,6 @@ RKE 2 (v1.24.x) with Rancher 2.7
 |===
 
 These instructions assume that you have already created a private cluster and prepared a secure method to remotely access it.
-
-//=== Self-managed clusters
-A self-managed cluster is a cluster that you directly provision and manage. Astra Control Service supports self-managed clusters that run in a public cloud environment. You can add a self-managed cluster to Astra Control Service by uploading a `kubeconfig.yaml` file. You'll need to ensure the cluster meets the requirements outlined here.
 
 You need to perform the following tasks to add your private cluster to Astra Control Service:
 
