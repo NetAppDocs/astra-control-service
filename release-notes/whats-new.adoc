@@ -17,7 +17,8 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 
 .New features and support
 
-* Enhancements to billing in Azure Marketplace
+//* Enhancements to billing in Azure Marketplace
+* Azure Marketplace subscriptions are now billed per hour instead of per minute
 +
 link:../use/set-up-billing.html[Set up billing]
 
