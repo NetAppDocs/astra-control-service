@@ -31,8 +31,6 @@ If you don't have an Astra Control account yet, purchasing the Premium Subscript
 
 When you create an Astra Control account, you're automatically subscribed to the Free Plan. Astra Control's Dashboard shows you how many namespaces you're currently managing out of the 10 free namespaces that you're allowed. Billing starts for a namespace when the first app containing the namespace is managed, and stops for that namespace when the last app containing the namespace is unmanaged.
 
-//image:screenshot-dashboard.gif["A screenshot that shows the Astra dashboard which provides a resources summary and links to get started."]
-
 If you try to manage an 11th namespace, Astra Control notifies you that you've reached the limit of the Free Plan. It then prompts you to upgrade from the Free Plan to a Premium Plan. You'll be charged at the subscription-dependent overage rate per extra namespace.
 
 You can upgrade to a Premium Plan at any time. After you upgrade, Astra Control starts charging you for _all_ namespaces in the account. The first 10 namespaces don't stay in the Free Plan.
@@ -60,9 +58,8 @@ When you manage AKS clusters with Astra Control Service, persistent volumes are 
 
 * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=PlansAndPrice[View Astra Control Service plans and pricing in Azure Marketplace]
 
-////
 NOTE: The Azure billing rate for Astra Control Service is per hour, and a new billing hour starts after 29 minutes of the usage hour has elapsed.
-////
+
 endif::azure[]
 
 ifdef::aws[]
@@ -129,8 +126,6 @@ Contact NetApp Sales to pre-pay at a discounted rate with an annual subscription
 .Result
 
 A NetApp Sales representative will contact you to process your purchase order. After the order is complete, Astra Control will reflect your current plan on the *Billing* tab.
-
-//image:screenshot-premium-subscription.gif[A screenshot that shows the Account tab and an account that is enabled for the Premium Subscription.]
 
 == View your current costs and billing history
 
