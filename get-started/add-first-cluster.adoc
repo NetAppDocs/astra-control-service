@@ -5,13 +5,13 @@ keywords: discover cluster, add cluster, add kubernetes cluster, discover kubern
 summary: After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
 ---
 
-= Start managing Kubernetes clusters from Astra Control Service
+= Add a cluster to Astra Control Service
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
 [.lead]
-After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
+After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service. This enables you to use Astra Control Service to manage the cluster.
 
 * link:add-public-provider-managed-cluster.html[Add a public provider-managed cluster to Astra Control Service^]
 * link:add-public-self-managed-cluster.html[Add a public self-managed cluster to Astra Control Service^]
