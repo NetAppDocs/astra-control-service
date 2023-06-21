@@ -18,11 +18,13 @@ You can use Astra Control Service to manage the following types of private clust
 * Amazon Elastic Kubernetes Service (EKS)
 * Azure Kubernetes Service (AKS) (including Red Hat OpenShift)
 * Google Kubernetes Engine (GKE)
+
 These instructions assume that you have already created a private cluster and prepared a secure method to remotely access it; for more information about creating and accessing private clusters, refer to the following documentation:
 
 * https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^]
 * https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
 * https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html[Amazon EKS documentation^]
+* https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters[Google Kubernetes Engine (GKE) documentation^]
 endif::aws+azure+gcp[]
 
 ifndef::azure,aws[]
@@ -46,6 +48,7 @@ endif::azure,gcp[]
 
 You need to perform the following tasks to add your private cluster to Astra Control Service:
 
+//* link:check-astra-trident-version.html[Check the Astra Trident version^]
 * <<Install the Astra Connector operator>>
 * <<Set up persistent storage>>
 * <<Add the private cluster to Astra Control Service>>
@@ -144,20 +147,23 @@ astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 == Set up persistent storage
 Configure persistent storage for the cluster. Refer to the Get Started documentation for more information about configuring persistent storage:
 
-ifdef::azure,gcp[]
-* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html[Set up Microsoft Azure with Azure NetApp Files^]
-* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks^]
-endif::azure,gcp[]
-ifdef::aws,gcp[]
-* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-amazon-web-services.html[Set up Amazon Web Services^]
-endif::aws,gcp[]
+ifdef::azure[]
+* link:set-up-microsoft-azure-with-anf.html[Set up Microsoft Azure with Azure NetApp Files^]
+* link:set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks^]
+endif::azure[]
+ifdef::aws[]
+* link:set-up-amazon-web-services.html[Set up Amazon Web Services^]
+endif::aws[]
+ifdef::gcp[]
+* link:set-up-google-cloud.html[Set up Google Cloud^]
+endif::gcp[]
 
 
 == Add the private cluster to Astra Control Service
 You can now add the private cluster to Astra Control Service. 
 
 .Before you begin
-[%collapsible]
+[%collapsible%open]
 =======
 
 ifdef::aws[]

@@ -24,7 +24,7 @@ entries:
   - title: Register for an account
     url: /get-started/register.html
   - title: Add a cluster
-    #url: /get-started/add-first-cluster.html
+    url: /get-started/add-first-cluster.html
     entries:
       - title: Add a provider-managed cluster
         #url: /get-started/add-provider-managed-cluster.html
