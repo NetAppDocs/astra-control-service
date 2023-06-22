@@ -51,7 +51,7 @@ You need to perform the following tasks to add your private cluster to Astra Con
 //* link:check-astra-trident-version.html[Check the Astra Trident version^]
 * <<Install the Astra Connector operator>>
 * <<Set up persistent storage>>
-* <<Add the private cluster to Astra Control Service>>
+* <<Add the private provider-managed cluster to Astra Control Service>>
 
 == Install the Astra Connector operator
 You need to install the Astra Connector operator on the private cluster. If you are using a bastion host, issue these commands from the command line of the bastion host. 
@@ -159,7 +159,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 
-== Add the private cluster to Astra Control Service
+== Add the private provider-managed cluster to Astra Control Service
 You can now add the private cluster to Astra Control Service. 
 
 .Before you begin
