@@ -38,7 +38,7 @@ You can upgrade to a Premium Plan at any time. After you upgrade, Astra Control 
 ifdef::gcp[]
 === Google Cloud billing
 
-When you manage GKE clusters with Astra Control Service, persistent volumes are backed by NetApp Cloud Volumes Service and backups of your apps are stored in a Google Cloud Storage bucket.
+Persistent volumes are backed by NetApp Cloud Volumes Service and backups of your apps are stored in a Google Cloud Storage bucket.
 
 * https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs[View pricing details for Cloud Volumes Service^].
 +
@@ -50,7 +50,7 @@ endif::gcp[]
 ifdef::azure[]
 === Microsoft Azure billing
 
-When you manage AKS clusters with Astra Control Service, persistent volumes are backed by Azure NetApp Files and backups of your apps are stored in an Azure Blob container.
+Persistent volumes are backed by Azure NetApp Files and backups of your apps are stored in an Azure Blob container.
 
 * https://azure.microsoft.com/en-us/pricing/details/netapp[View pricing details for Azure NetApp Files^].
 
@@ -64,7 +64,7 @@ endif::azure[]
 
 ifdef::aws[]
 === Amazon Web Services billing
-When you manage AWS clusters with Astra Control Service, persistent volumes are backed by EBS or FSx for NetApp ONTAP and backups of your apps are stored in an AWS bucket.
+Persistent volumes are backed by EBS or FSx for NetApp ONTAP and backups of your apps are stored in an AWS bucket.
 
 * https://aws.amazon.com/eks/pricing/[View pricing details for Amazon Web Services^].
 endif::aws[]
