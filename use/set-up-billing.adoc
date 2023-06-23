@@ -24,7 +24,7 @@ There are two types of costs associated with using Astra Control Service: charge
 Astra Control Service offers three plans:
 
 Free Plan:: Manage up to 10 namespaces for free.
-Premium PayGo:: Manage an unlimited amount of namespaces at a specific rate per hour, per namespace.
+Premium PayGo:: Manage an unlimited amount of namespaces at a specific rate, per namespace.
 Premium Subscription:: Pre-pay at a discounted rate with an annual subscription that enables you to manage up to 10 namespaces per _namespace pack_. Contact NetApp Sales to purchase as many packs as needed for your organization. For example, purchase 3 packs to manage 30 namespaces from Astra Control Service. If you manage more namespaces than allowed by your annual subscription, then you'll be charged at the subscription-dependent overage rate per extra namespace.
 +
 If you don't have an Astra Control account yet, purchasing the Premium Subscription automatically creates an Astra Control account for you. If you have an existing Free Plan, then you're automatically converted to the Premium Subscription.
