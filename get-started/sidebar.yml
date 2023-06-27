@@ -42,7 +42,7 @@ entries:
             url: /get-started/add-private-self-managed-cluster.html
           - title: Check the Astra Trident version
             url: /get-started/check-astra-trident-version.html
-          - title: Create an admin cluster role kubeconfig file
+          - title: Create a kubeconfig file
             url: /get-started/create-kubeconfig.html
  # - title: Manage private clusters
  #   url: /get-started/manage-private-cluster.html
