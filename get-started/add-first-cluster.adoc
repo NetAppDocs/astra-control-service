@@ -13,7 +13,9 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 [.lead]
 After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service. This enables you to use Astra Control Service to manage the cluster.
 
-* link:add-public-provider-managed-cluster.html[Add a public provider-managed cluster to Astra Control Service^]
-* link:add-private-provider-managed-cluster.html[Add a private provider-managed cluster to Astra Control Service^]
-* link:add-public-self-managed-cluster.html[Add a public self-managed cluster to Astra Control Service^]
-* link:add-private-self-managed-cluster.html[Add a private self-managed cluster to Astra Control Service^]
+Depending on the type of cluster you need to add to Astra Control Service, you need to use different steps to add the cluster.
+
+* link:add-public-provider-managed-cluster.html[Add a public provider-managed cluster to Astra Control Service^]: Add a cluster that has a public IP address and is managed by a cloud provider by using the Service Principal account, service account, or user account.
+* link:add-private-provider-managed-cluster.html[Add a private provider-managed cluster to Astra Control Service^]: Add a cluster that has a private IP address and is managed by a cloud provider by using the Service Principal account, service account, or user account.
+* link:add-public-self-managed-cluster.html[Add a public self-managed cluster to Astra Control Service^]: Add a cluster that has a public IP address and is managed by your organization by using a kubeconfig file that you create.
+* link:add-private-self-managed-cluster.html[Add a private self-managed cluster to Astra Control Service^]: Add a cluster that has a private IP address and is managed by your organization by using a kubeconfig file that you create.
