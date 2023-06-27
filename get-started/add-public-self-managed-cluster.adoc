@@ -65,7 +65,7 @@ Your self-managed cluster needs to meet the following requirements:
 * The cluster must be accessible via the internet.
 * The cluster cannot be hosted within your on-premises network; it must be hosted in a public cloud environment.
 * If you are using or plan to use storage enabled with CSI drivers, the appropriate CSI drivers must be installed on the cluster. For more information on using CSI drivers to integrate storage, refer to the documentation for your storage service.
-* You have access to the cluster kubeconfig file that includes only one context element. Follow link:create-kubeconfig.html[these instructions^] to generate an admin cluster role kubeconfig file.
+* You have access to the cluster kubeconfig file that includes only one context element. Follow link:create-kubeconfig.html[these instructions^] to generate a kubeconfig file.
 * *Rancher only*: When managing application clusters in a Rancher environment, modify the application cluster's default context in the kubeconfig file provided by Rancher to use a control plane context instead of the Rancher API server context. This reduces load on the Rancher API server and improves performance.
 *	*Astra Trident*: If you are using or plan to use NetApp storage, ensure that you have installed the latest version of Astra Trident. If Astra Trident is already installed, link:check-astra-trident-version.html[check to make sure it is the latest version^].
 +
