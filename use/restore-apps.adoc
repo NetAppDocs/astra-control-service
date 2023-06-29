@@ -19,7 +19,7 @@ NOTE: If you add a namespace filter to an execution hook that runs after a resto
 
 //ASTRACTL-12847/DOC-4147
 * *Protect your apps first*: It is strongly recommended that you take a snapshot or backup of your application before restoring it. This will enable you to clone from the snapshot or backup in the event that the restore is unsuccessful.
-* *Check destination volumes*: If you restore to a different storage class, ensure that the storage class uses the same persistent volume access mode (for example, ReadWriteMany). The restore operation will fail if the destination persistent volume access mode is different.
+* *Check destination volumes*: If you restore to a different storage class, ensure that the storage class uses the same persistent volume access mode (for example, ReadWriteMany). The restore operation will fail if the destination persistent volume access mode is different. For example, if your source persistent volume uses the RWX access mode, selecting a destination storage class that is not able to provide RWX, such as Azure Managed Disks, AWS EBS, Google Persistent Disk or `ontap-san`, will cause the restore operation to fail. For more information about persistent volume access modes, refer to https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes[Kubernetes^] documentation.
 * *Plan for space needs*: When you perform an in-place restore of an application that uses NetApp ONTAP storage, the space used by the restored app can double. After performing an in-place restore, remove any unwanted snapshots from the restored application to free up storage space.
 
 [CAUTION]
