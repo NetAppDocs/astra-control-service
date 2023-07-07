@@ -65,8 +65,6 @@ ifdef::azure[]
 * You should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
 +
 You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
-
-* For private AKS clusters, refer to link:manage-private-cluster.html[Manage private clusters from Astra Control Service^].
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Microsoft Azure. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[setup documentation^].
 endif::azure[]
 

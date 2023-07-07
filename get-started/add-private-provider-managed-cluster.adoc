@@ -13,10 +13,10 @@ summary: After you set up your environment, you're ready to create a Kubernetes 
 [.lead]
 
 ifdef::aws+azure+gcp[]
-You can use Astra Control Service to manage the following types of private clusters:
+You can use Astra Control Service to manage the following types of private provider-managed clusters:
 
 * Amazon Elastic Kubernetes Service (EKS)
-* Azure Kubernetes Service (AKS) (including Red Hat OpenShift)
+* Azure Kubernetes Service (AKS)
 * Google Kubernetes Engine (GKE)
 
 These instructions assume that you have already created a private cluster and prepared a secure method to remotely access it; for more information about creating and accessing private clusters, refer to the following documentation:
@@ -94,6 +94,9 @@ kubectl create ns astra-connector
 * `spec.natssync-client.cloud-bridge-url`
 * `spec.astra.token`
 * `spec.astra.clusterName`
++
+NOTE: `spec.astra.clusterName` is only needed if you are importing a private AKS cluster and not providing the kubeconfig file to Astra Control Service. Remove this line if this is not the case.
+
 * `spec.astra.accountId`
 +
 For example:
@@ -117,7 +120,7 @@ spec:
     name: theotw
   astra:
     token: <Astra Control API token>
-    clusterName: <your-cluster-name>
+    clusterName: <your-private-AKS-cluster-name>
     accountId: <Astra Control account id>
     acceptEULA: yes
 ----
@@ -227,9 +230,9 @@ Astra Control Service displays a list of clusters that you can choose from.
 +
 NOTE: When you are selecting from the list of clusters, pay careful attention to the *Eligiblity* column. If a cluster is "Ineligible" or "Partially eligible", hover over the status to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
 
-. *Private route identifier*: Enter the private route identifier, which you can obtain from the Astra Connector. If you query the Astra Connector via the `kubectl get` command, the private route identifier is referred to as the `ASTRACONNECTORID`.
-+
-NOTE: The private route identifier is the name associated with the Astra Connector that enables a private Kubernetes cluster to be managed by Astra Control Service. In this context, a private cluster is a Kubernetes cluster that does not expose its API server to the internet.
+//. *Private route identifier*: Enter the private route identifier, which you can obtain from the Astra Connector. If you query the Astra Connector via the `kubectl get` command, the private route identifier is referred to as the `ASTRACONNECTORID`.
+//+
+//NOTE: The private route identifier is the name associated with the Astra Connector that enables a private Kubernetes cluster to be managed by Astra Control Service. In this context, a private cluster is a Kubernetes cluster that does not expose its API server to the internet.
 
 . Select *Next*.
 

@@ -15,10 +15,45 @@ After you set up your environment, you're ready to create a Kubernetes cluster a
 
 A self-managed cluster is a cluster that you directly provision and manage. Astra Control Service supports self-managed clusters that run in a public cloud environment. You can add a self-managed cluster to Astra Control Service by uploading a `kubeconfig.yaml` file. You'll need to ensure the cluster meets the requirements outlined here.
 
-* <<Create a Kubernetes cluster>>
+== Supported Kubernetes distributions
+
+You can use Astra Control Service to manage the following types of public, self-managed clusters:
+
+|===
+|Kubernetes distribution |Supported versions
+
+|Azure Kubernetes Service on Azure Stack HCI
+|Azure Stack HCI 21H2 and 22H2 with AKS 1.23 and 1.24
+
+|Google Anthos
+|1.12 through 1.14
+
+|Kubernetes (Upstream)
+|1.24 to 1.26 (Astra Trident 22.10 or newer is required for Kubernetes 1.25 or newer)
+
+|Rancher Kubernetes Engine (RKE)
+|RKE 1.3 with Rancher 2.6
+RKE 1.4 with Rancher 2.7
+RKE 2 (v1.23.x) with Rancher 2.6
+RKE 2 (v1.24.x) with Rancher 2.7
+
+|Red Hat OpenShift Container Platform
+|4.10 through 4.12
+
+|VMware Tanzu Kubernetes Grid
+|1.6
+
+|VMware Tanzu Kubernetes Grid Integrated Edition
+|1.14 and 1.15
+|===
+
+These instructions assume that you have already created a self-managed cluster.
+
+//* <<Create a Kubernetes cluster>>
 * <<Add the cluster to Astra Control Service>>
 * <<Change the default storage class>>
 
+////
 == Create a Kubernetes cluster
 
 ifndef::azure,gcp[]
@@ -44,7 +79,7 @@ If you don't have a cluster yet, you can create one that meets the requirements 
 NOTE: Astra Control Service supports AKS clusters that use Azure Active Directory (Azure AD) for authentication and identity management. When you create the cluster, follow the instructions in the https://docs.microsoft.com/en-us/azure/aks/managed-aad[official documentation^] to configure the cluster to use Azure AD. You'll need to make sure your clusters meet the requirements for AKS-managed Azure AD integration.
 
 endif::gcp+azure+aws[]
-
+////
 == Add the cluster to Astra Control Service
 
 After you log in to Astra Control Service, your first step is to start managing your clusters. Before you add a cluster to Astra Control Service, you'll need to perform specific tasks and make sure the cluster meets certain requirements.

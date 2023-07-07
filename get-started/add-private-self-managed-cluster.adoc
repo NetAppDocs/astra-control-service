@@ -96,6 +96,9 @@ kubectl create ns astra-connector
 * `spec.natssync-client.cloud-bridge-url`
 * `spec.astra.token`
 * `spec.astra.clusterName`
++
+NOTE: `spec.astra.clusterName` is only needed if you are importing a private AKS cluster and not providing the kubeconfig file to Astra Control Service. Remove this line if this is not the case.
+
 * `spec.astra.accountId`
 +
 For example:
@@ -119,6 +122,7 @@ spec:
     name: theotw
   astra:
     token: <Astra Control API token>
+    clusterName: <your-private-AKS-cluster-name>
     accountId: <Astra Control account id>
     acceptEULA: yes
 ----
