@@ -234,8 +234,8 @@ kubectl get storageclass
 ----
 
 
-ifdef::azure[]
-== For more information
+//ifdef::azure[]
+//== For more information
 
-* link:manage-private-cluster.html[Manage a private cluster]
-endif::azure[]
+//* link:manage-private-cluster.html[Manage a private cluster]
+//endif::azure[]
