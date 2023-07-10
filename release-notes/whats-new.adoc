@@ -13,6 +13,21 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 [.lead]
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
+== 26 July 2023
+
+.New features and support
+
+This is a minor bugfix release.
+
+//.New features and support
+
+//* Astra Control Service now supports migration from NAS economy to NAS for FSxN volumes
+//+
+//link:../use/set-up-billing.html[Set up billing]
+//* Astra Control Service now supports post-failover execution hooks
+//+
+//link:../use/manage-app-execution-hooks.html[Manage app execution hooks]
+
 == 26 June 2023
 
 .New features and support
