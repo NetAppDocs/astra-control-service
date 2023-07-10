@@ -1,0 +1,347 @@
+---
+sidebar: sidebar
+permalink: get-started/add-private-provider-managed-cluster.html
+keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add cluster
+summary: After you set up your environment, you're ready to create a Kubernetes cluster and then add it to Astra Control Service.
+---
+
+= Add a private provider-managed cluster to Astra Control Service
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+[.lead]
+
+ifdef::aws+azure+gcp[]
+You can use Astra Control Service to manage the following types of private provider-managed clusters:
+
+* Amazon Elastic Kubernetes Service (EKS)
+* Azure Kubernetes Service (AKS)
+* Google Kubernetes Engine (GKE)
+
+These instructions assume that you have already created a private cluster and prepared a secure method to remotely access it; for more information about creating and accessing private clusters, refer to the following documentation:
+
+* https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^]
+* https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
+* https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html[Amazon EKS documentation^]
+* https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters[Google Kubernetes Engine (GKE) documentation^]
+endif::aws+azure+gcp[]
+
+ifndef::azure,aws[]
+You can use Astra Control Service to manage private Google Kubernetes Engine (GKE) clusters. These instructions assume that you have already created a private AKS or OpenShift cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS or OpenShift clusters, refer to the following documentation:
+
+* https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^]
+* https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
+endif::azure,aws[]
+
+
+ifndef::gcp,aws[]
+You can use Astra Control Service to manage private Azure Kubernetes Service (AKS) clusters as well as private Red Hat OpenShift clusters in AKS. These instructions assume that you have already created a private AKS or OpenShift cluster and prepared a secure method to remotely access it; for more information about creating and accessing private AKS or OpenShift clusters, refer to the following documentation:
+
+* https://docs.microsoft.com/azure/aks/private-clusters[Azure documentation for private AKS clusters^]
+* https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x[Azure documentation for private OpenShift clusters^]
+endif::gcp,aws[]
+
+ifndef::azure,gcp[]
+You can use Astra Control Service to manage private Amazon Elastic Kubernetes Service (EKS) clusters. These instructions assume that you have already created a private EKS cluster and prepared a secure method to remotely access it; for more information about creating and accessing private EKS clusters, refer to the https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html[Amazon EKS documentation^].
+endif::azure,gcp[]
+
+You need to perform the following tasks to add your private cluster to Astra Control Service:
+
+//* link:check-astra-trident-version.html[Check the Astra Trident version^]
+* <<Install the Astra Connector operator>>
+* <<Set up persistent storage>>
+* <<Add the private provider-managed cluster to Astra Control Service>>
+
+== Install the Astra Connector operator
+You need to install the Astra Connector operator on the private cluster. If you are using a bastion host, issue these commands from the command line of the bastion host. 
+
+.Steps
+
+. Clone the Astra Connector operator GitHub repository:
++
+[source,console]
+----
+git clone https://github.com/NetApp/astra-connector-operator.git
+----
+. Change directories to the top level of the unpacked operator package, so that you can see the `astraconnector_operator.yaml` file with the `ls` command.
+
+. Create a namespace for the Astra Connector operator.
++
+[source,console]
+----
+kubectl create ns astra-connector-operator
+----
+
+. Apply the `astraconnector_operator.yaml` file to the operator namespace.
++
+[source,console]
+----
+kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
+----
+
+. Create a namespace for the private cluster components.
++
+[source,console]
+----
+kubectl create ns astra-connector
+----
+
+. Generate an Astra Control API token using the instructions in the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^].
+
+. Modify the example configuration file in the config/samples directory of the Astra Connector operator repository to include values specific to your environment for the following keys:
++
+* `spec.natssync-client.cloud-bridge-url`
+* `spec.astra.token`
+* `spec.astra.clusterName`
++
+NOTE: `spec.astra.clusterName` is only needed if you are importing a private AKS cluster and not providing the kubeconfig file to Astra Control Service. Remove this line if this is not the case.
+
+* `spec.astra.accountId`
++
+For example:
++
+----
+apiVersion: netapp.astraconnector.com/v1
+kind: AstraConnector
+metadata:
+  name: astra-connector
+spec:
+  natssync-client:
+    image: natssync-client:2.0
+    cloud-bridge-url: https://<your.astra.control.service.url>
+  nats:
+    image: nats:2.6.1-alpine3.14
+  httpproxy-client:
+    image: httpproxylet:2.0
+  echo-client:
+    image: echo-proxylet:2.0
+  imageRegistry:
+    name: theotw
+  astra:
+    token: <Astra Control API token>
+    clusterName: <your-private-AKS-cluster-name>
+    accountId: <Astra Control account id>
+    acceptEULA: yes
+----
+
+. Apply the Astra Connector Custom Resource Definition (CRD).
++
+[source,console]
+----
+kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
+----
+
+. Check the status of the Astra Connector.
++
+[source,console]
+----
+kubectl get astraconnector astra-connector -n astra-connector
+----
++
+You should see output similar to the following:
++
+[source,console]
+----
+NAME              REGISTERED   ASTRACONNECTORID
+astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
+----
+
+== Set up persistent storage
+Configure persistent storage for the cluster. Refer to the Get Started documentation for more information about configuring persistent storage:
+
+ifdef::azure[]
+* link:set-up-microsoft-azure-with-anf.html[Set up Microsoft Azure with Azure NetApp Files^]
+* link:set-up-microsoft-azure-with-amd.html[Set up Microsoft Azure with Azure managed disks^]
+endif::azure[]
+ifdef::aws[]
+* link:set-up-amazon-web-services.html[Set up Amazon Web Services^]
+endif::aws[]
+ifdef::gcp[]
+* link:set-up-google-cloud.html[Set up Google Cloud^]
+endif::gcp[]
+
+
+== Add the private provider-managed cluster to Astra Control Service
+You can now add the private cluster to Astra Control Service. 
+
+.Before you begin
+[%collapsible%open]
+=======
+
+ifdef::aws[]
+.Amazon Web Services
+* You should have the JSON file containing the credentials of the IAM user that created the cluster. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user[Learn how to create an IAM user].
+* Astra Trident is required for Amazon FSx for NetApp ONTAP. If you plan to use Amazon FSx for NetApp ONTAP as a storage backend for your EKS cluster, refer to the Astra Trident information in the link:set-up-amazon-web-services.html#eks-cluster-requirements[EKS cluster requirements].
+* (Optional) If you need to provide provide `kubectl` command access for a cluster to other IAM users that are not the cluster's creator, refer to the instructions in https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/[How do I provide access to other IAM users and roles after cluster creation in Amazon EKS?^].
+* If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Amazon Web Services. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html[setup documentation^].
+
+endif::aws[]
+
+ifdef::azure[]
+.Microsoft Azure
+* You should have the JSON file that contains the output from the Azure CLI when you created the service principal. link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2[Learn how to set up a service principal].
++
+You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
+
+//* For private AKS clusters, refer to link:manage-private-cluster.html[Manage private clusters from Astra Control Service^].
+* If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Microsoft Azure. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[setup documentation^].
+endif::azure[]
+
+ifdef::gcp[]
+.Google Cloud
+* You should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
+* If the cluster is private, the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[authorized networks^] must allow the Astra Control Service IP address:
++
+52.188.218.166/32
+* If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Google Cloud. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[setup documentation^].
+endif::gcp[]
+=======
+
+.Steps
+
+. On the Dashboard, select *Manage Kubernetes cluster*.
++
+Follow the prompts to add the cluster.
+
+. *Provider*: Select your cloud provider and then either provide the required credentials to create a new cloud instance, or select an existing cloud instance to use.
+ifdef::aws[]
+.. *Amazon Web Services*: Provide details about your Amazon Web Services IAM user account by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
++
+The JSON file should contain the credentials of the IAM user that created the cluster.
+endif::aws[]
+ifdef::azure[]
+.. *Microsoft Azure*: Provide details about your Azure service principal by uploading a JSON file or by pasting the contents of that JSON file from your clipboard.
++
+The JSON file should contain the output from the Azure CLI when you created the service principal. It can also include your subscription ID so it's automatically added to Astra. Otherwise, you need to manually enter the ID after providing the JSON.
+endif::azure[]
+ifdef::gcp[]
+.. *Google Cloud Platform*: Provide the service account key file either by uploading the file or by pasting the contents from your clipboard.
++
+Astra Control Service uses the service account to discover clusters running in Google Kubernetes Engine.
+endif::gcp[]
+.. *Other*: This tab is for use with self-managed clusters only.
+
+. *Cloud instance name*: Provide a name for the new cloud instance that will be created when you add this cluster. Learn more about link:../use/manage-cloud-instances.html[cloud instances].
+. Select *Next*.
++
+Astra Control Service displays a list of clusters that you can choose from.
+. *Cluster*: Select a cluster from the list to add to Astra Control Service.
++
+NOTE: When you are selecting from the list of clusters, pay careful attention to the *Eligiblity* column. If a cluster is "Ineligible" or "Partially eligible", hover over the status to determine if there's an issue with the cluster. For example, it might identify that the cluster doesn't have a worker node. 
+
+//. *Private route identifier*: Enter the private route identifier, which you can obtain from the Astra Connector. If you query the Astra Connector via the `kubectl get` command, the private route identifier is referred to as the `ASTRACONNECTORID`.
+//+
+//NOTE: The private route identifier is the name associated with the Astra Connector that enables a private Kubernetes cluster to be managed by Astra Control Service. In this context, a private cluster is a Kubernetes cluster that does not expose its API server to the internet.
+
+. Select *Next*.
+
+. (Optional) *Storage*: Optionally, select the storage class that you'd like Kubernetes applications deployed to this cluster to use by default.
+.. To select a new default storage class for the cluster, enable the *Assign a new default storage class* check box.
+.. Select a new default storage class from the list.
++
+
+[NOTE]
+====
+Each cloud provider storage service displays the following price, performance, and resilience information:
+
+ifdef::gcp[]
+* Cloud Volumes Service for Google Cloud: Price, performance, and resilience information
+* Google Persistent Disk: No price, performance, or resilience information available
+endif::gcp[]
+ifdef::azure[]
+* Azure NetApp Files: Performance and resilience information
+* Azure Managed disks: No price, performance, or resilience information available
+endif::azure[]
+ifdef::aws[]
+* Amazon Elastic Block Store: No price, performance, or resilience information available
+* Amazon FSx for NetApp ONTAP: No price, performance, or resilience information available
+endif::aws[]
+* NetApp Cloud Volumes ONTAP: No price, performance, or resilience information available
+====
++
+Each storage class can utilize one of the following services:
+
+ifdef::gcp[]
+* https://cloud.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
+* https://cloud.google.com/persistent-disk/[Google Persistent Disk^]
+endif::gcp[]
+ifdef::azure[]
+* https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview[Azure managed disks^]
+endif::azure[]
+ifdef::aws[]
+* https://docs.aws.amazon.com/ebs/[Amazon Elastic Block Store^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html[Amazon FSx for NetApp ONTAP^]
+endif::aws[]
+* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/[NetApp Cloud Volumes ONTAP^]
++
+ifndef::gcp,azure[]
+Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web Services clusters].
+endif::gcp,azure[]
+ifndef::gcp,aws[]
+Learn more about link:../learn/azure-storage.html[storage classes for AKS clusters].
+endif::gcp,aws[]
+ifndef::azure,aws[]
+Learn more about link:../learn/choose-class-and-size.html[storage classes for GKE clusters].
+endif::azure,aws[]
+ifdef::gcp+azure+aws[]
+Learn more about link:../learn/aws-storage.html[storage classes for Amazon Web Services clusters], link:../learn/choose-class-and-size.html[storage classes for GKE clusters], and link:../learn/azure-storage.html[storage classes for AKS clusters].
+endif::gcp+azure+aws[]
+
+. Select *Next*.
+. *Review & Approve*: Review the configuration details.
+. Select *Add* to add the cluster to Astra Control Service.
+
+.Result
+
+If this is the first cluster that you have added for this cloud provider, Astra Control Service creates an object store for the cloud provider for backups of applications running on eligible clusters. (When you add subsequent clusters for this cloud provider, no further object stores are created.) If you specified a default storage class, Astra Control Service sets the default storage class that you specified. For clusters managed in Amazon Web Services or Google Cloud Platform, Astra Control Service also creates an admin account on the cluster. These actions can take several minutes.
+
+== Change the default storage class
+You can change the default storage class for a cluster.
+
+=== Change the default storage class using Astra Control
+You can change the default storage class for a cluster from within Astra Control. If your cluster uses a previously installed storage backend service, you might not be able to use this method to change the default storage class (the *Set as default* action is not selectable). In this case, you can <<Change the default storage class using the command line>>.
+
+.Steps
+
+. In the Astra Control Service UI, select *Clusters*.
+. On the *Clusters* page, select the cluster that you want to change.
+. Select the *Storage* tab.
+. Select the *Storage classes* category.
+. Select the *Actions* menu for the storage class that you want to set as default.
+. Select *Set as default*.
+
+=== Change the default storage class using the command line
+You can change the default storage class for a cluster using Kubernetes commands. This method works regardless of your cluster's configuration.
+
+.Steps
+
+. Log in to your Kubernetes cluster. 
+. List the storage classes in your cluster:
++
+[source,console]
+----
+kubectl get storageclass
+----
+. Remove the default designation from the default storage class. Replace <SC_NAME> with the name of the storage class: 
++
+[source,console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+----
+. Mark a different storage class as default. Replace <SC_NAME> with the name of the storage class:
++
+[source,console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+----
+. Confirm the new default storage class:
++
+[source,console]
+----
+kubectl get storageclass
+----
+
+
+ifdef::azure[]
