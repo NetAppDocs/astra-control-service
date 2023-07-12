@@ -19,6 +19,10 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 
 This is a minor bugfix release.
 
+* Clone operations now only support live clones; cloning from a snapshot or backup is no longer supported
++
+link:../use/clone-apps.html[Clone apps]
+
 //.New features and support
 
 //* Astra Control Service now supports migration from NAS economy to NAS for FSxN volumes
