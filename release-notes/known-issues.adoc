@@ -18,8 +18,8 @@ The following known issues affect the current release:
 
 .Apps
 
-* <<App clones fail after an application is deployed with a set storage class>>
-* <<Applications page loads forever when trying to restore an application belonging to a deleted cluster>>
+//* <<App clones fail after an application is deployed with a set storage class>>
+//* <<Applications page loads forever when trying to restore an application belonging to a deleted cluster>>
 * <<Unable to define an app on a namespace that has been deleted and recreated>>
 
 .Backup, restore, and clone
@@ -30,16 +30,16 @@ The following known issues affect the current release:
 
 .Other issues
 
-* <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
+//* <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
 * <<App data management operations fail with Internal Service Error (500) when Astra Trident is offline>>
 
-== App clones fail after an application is deployed with a set storage class
+//== App clones fail after an application is deployed with a set storage class
 //DOC-3892/ASTRACTL-13183/PI4
-After an application is deployed with a storage class explicitly set (for example, `helm install ...-set global.storageClass=netapp-cvs-perf-extreme`), subsequent attempts to clone the application require that the target cluster have the originally specified storage class. Cloning an application with an explicitly set storage class to a cluster that does not have the same storage class will fail. There are no recovery steps in this scenario.
+//After an application is deployed with a storage class explicitly set (for example, `helm install ...-set global.storageClass=netapp-cvs-perf-extreme`), subsequent attempts to clone the application require that the target cluster have the originally specified storage class. Cloning an application with an explicitly set storage class to a cluster that does not have the same storage class will fail. There are no recovery steps in this scenario.
 
 //ASTRACTL-20272 - PI6
-== Applications page loads forever when trying to restore an application belonging to a deleted cluster
-When you try to restore an app from a deleted cluster from the Applications page, the Applications page never finishes loading. As a workaround, restore the app from the app's Actions menu in the Applications listing page.
+//== Applications page loads forever when trying to restore an application belonging to a deleted cluster
+//When you try to restore an app from a deleted cluster from the Applications page, the Applications page never finishes loading. As a workaround, restore the app from the app's Actions menu in the Applications listing page.
 
 == Unable to define an app on a namespace that has been deleted and recreated
 If you define an application with a namespace, delete the namespace, and then reinstall the app in the same namespace, the operation fails with a 409 error code. To define the app using the recreated namespace, delete the old application instance first.
@@ -55,10 +55,10 @@ App clones within the same cluster consistently fail with the Bitnami PostgreSQL
 == App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed
 Backups and snapshots fail with a UI 500 error in this scenario. As a workaround, refresh the app list.
 
-== Snapshots eventually begin to fail when using external-snapshotter version 4.2.0
+//== Snapshots eventually begin to fail when using external-snapshotter version 4.2.0
 // DOC-3891 and ASTRACTL-12523
-When you use Kubernetes snapshot-controller (also known as external-snapshotter) version 4.2.0 with Kubernetes 1.20 or 1.21, snapshots can eventually begin to fail. To prevent this, use a different https://kubernetes-csi.github.io/docs/snapshot-controller.html[supported version^] of external-snapshotter, such as version 4.2.1, with Kubernetes versions 1.20 or 1.21.
+//When you use Kubernetes snapshot-controller (also known as external-snapshotter) version 4.2.0 with Kubernetes 1.20 or 1.21, snapshots can eventually begin to fail. To prevent this, use a different https://kubernetes-csi.github.io/docs/snapshot-controller.html[supported version^] of external-snapshotter, such as version 4.2.1, with Kubernetes versions 1.20 or 1.21.
 
 == App data management operations fail with Internal Service Error (500) when Astra Trident is offline
-//DOC-3903/ASTRA-13162/PI4
+//DOC-3903/ASTRACTL-13162/PI4
 If Astra Trident on an app cluster goes offline (and is brought back online) and 500 internal service errors are encountered when attempting app data management, restart all of the Kubernetes nodes in the app cluster to restore functionality.
