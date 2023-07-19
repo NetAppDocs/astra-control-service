@@ -17,11 +17,9 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 
 .New features and support
 
-This is a minor bug fix release.
-
-* Clone operations now support live clones only; cloning from a snapshot or backup is no longer supported
+* Clone operations now support live clones only (current state of managed application). To clone from a snapshot or backup, use the restore workflow.
 +
-link:../use/clone-apps.html[Clone apps^]
+link:../use/restore-apps.html[Restore apps^]
 
 //.New features and support
 
