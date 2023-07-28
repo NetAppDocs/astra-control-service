@@ -48,7 +48,7 @@ endif::gcp+azure+aws[]
 After you log in to Astra Control Service, your first step is to start managing your clusters. Before you add a cluster to Astra Control Service, you'll need to perform specific tasks and make sure the cluster meets certain requirements.
 
 .Before you begin
-[%collapsible]
+[%collapsible%open]
 =======
 
 ifdef::aws[]

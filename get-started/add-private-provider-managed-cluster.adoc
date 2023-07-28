@@ -186,6 +186,7 @@ You'll also need your Azure subscription ID, if you didn't add it to the JSON fi
 
 //* For private AKS clusters, refer to link:manage-private-cluster.html[Manage private clusters from Astra Control Service^].
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Microsoft Azure. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[setup documentation^].
+* Note that if the cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
 endif::azure[]
 
 ifdef::gcp[]
@@ -195,6 +196,7 @@ ifdef::gcp[]
 +
 52.188.218.166/32
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Google Cloud. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[setup documentation^].
+* Note that if the cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
 endif::gcp[]
 =======
 
