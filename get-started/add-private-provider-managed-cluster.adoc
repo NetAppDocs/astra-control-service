@@ -172,7 +172,10 @@ You can now add the private cluster to Astra Control Service.
 ifdef::aws[]
 .Amazon Web Services
 * You should have the JSON file containing the credentials of the IAM user that created the cluster. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user[Learn how to create an IAM user].
-* Astra Trident is required for Amazon FSx for NetApp ONTAP. Astra Control Service does not install Astra Trident automatically for Amazon EKS clusters. If you plan to use Amazon FSx for NetApp ONTAP as a storage backend for your EKS cluster, refer to the Astra Trident information in the link:set-up-amazon-web-services.html#eks-cluster-requirements[EKS cluster requirements].
+* Astra Trident is required for Amazon FSx for NetApp ONTAP. If you plan to use Amazon FSx for NetApp ONTAP as a storage backend for your EKS cluster, refer to the Astra Trident information in the link:set-up-amazon-web-services.html#eks-cluster-requirements[EKS cluster requirements].
++
+NOTE: Astra Control Service does not install Astra Trident automatically for Amazon EKS clusters.
+
 * (Optional) If you need to provide provide `kubectl` command access for a cluster to other IAM users that are not the cluster's creator, refer to the instructions in https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/[How do I provide access to other IAM users and roles after cluster creation in Amazon EKS?^].
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Amazon Web Services. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html[setup documentation^].
 
@@ -186,7 +189,8 @@ You'll also need your Azure subscription ID, if you didn't add it to the JSON fi
 
 //* For private AKS clusters, refer to link:manage-private-cluster.html[Manage private clusters from Astra Control Service^].
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Microsoft Azure. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[setup documentation^].
-* Note that if the cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
+
+NOTE: If the cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
 endif::azure[]
 
 ifdef::gcp[]
@@ -196,7 +200,8 @@ ifdef::gcp[]
 +
 52.188.218.166/32
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Google Cloud. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[setup documentation^].
-* Note that if the cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
+
+NOTE: If the cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
 endif::gcp[]
 =======
 
