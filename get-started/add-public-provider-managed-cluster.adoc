@@ -70,7 +70,7 @@ ifdef::azure[]
 You'll also need your Azure subscription ID, if you didn't add it to the JSON file.
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Microsoft Azure. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[setup documentation^].
 
-NOTE: If the cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
+NOTE: If the Azure Kubernetes Service (AKS) cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
 endif::azure[]
 
 ifdef::gcp[]
@@ -78,7 +78,7 @@ ifdef::gcp[]
 * You should have the service account key file for a service account that has the required permissions. link:../get-started/set-up-google-cloud.html#create-a-service-account[Learn how to set up a service account].
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Google Cloud. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[setup documentation^].
 
-NOTE: If the cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
+NOTE: If the Google Kubernetes Engine (GKE) cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
 endif::gcp[]
 =======
 
