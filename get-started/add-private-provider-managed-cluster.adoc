@@ -170,7 +170,7 @@ When you manage Azure Kubernetes Service and Google Kubernetes Engine clusters, 
 * You can use Astra Control Service to automatically manage the lifecycle of Astra Trident. To do this, make sure that Astra Trident is not installed on the cluster that you want to manage with Astra Control Service. In this case, Astra Trident automatically installs Astra Trident when you begin managing the cluster, and Astra Trident upgrades are handled automatically.
 * You can manage the lifecycle of Astra Trident yourself. To do this, install Astra Trident on the cluster before managing the cluster with Astra Control Service. In this case, Astra Control Service detects that Astra Trident is already installed and does not reinstall it or manage Astra Trident upgrades. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for installation instructions.
 
-When you manage Amazon Web Services clusters with Astra Control Service, if you need storage backends that are enabled by Astra Trident, you must install Astra Trident manually on the cluster before you manage it with Astra Control Service. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for installation instructions.
+When you manage Amazon Web Services clusters with Astra Control Service, if you need storage backends that are enabled by Astra Trident, you need to install Astra Trident manually on the cluster before you manage it with Astra Control Service. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for installation instructions.
 
 .Before you begin
 [%collapsible%open]
