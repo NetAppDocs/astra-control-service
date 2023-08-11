@@ -92,6 +92,7 @@ endif::gcp[]
 .Steps
 
 . (Optional) If you are adding an Amazon EKS cluster or want to manage the installation and upgrades of Astra Trident yourself, install Astra Trident on the cluster. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for installation instructions.
+. Open the Astra Control Service web UI in a browser.
 . On the Dashboard, select *Manage Kubernetes cluster*.
 +
 Follow the prompts to add the cluster.
