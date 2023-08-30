@@ -165,6 +165,13 @@ endif::gcp[]
 == Add the private provider-managed cluster to Astra Control Service
 You can now add the private cluster to Astra Control Service. 
 
+When you manage Azure Kubernetes Service and Google Kubernetes Engine clusters, note that you have two options for Astra Trident installation and lifecycle management:
+
+* You can use Astra Control Service to automatically manage the lifecycle of Astra Trident. To do this, make sure that Astra Trident is not installed on the cluster that you want to manage with Astra Control Service. In this case, Astra Trident automatically installs Astra Trident when you begin managing the cluster, and Astra Trident upgrades are handled automatically.
+* You can manage the lifecycle of Astra Trident yourself. To do this, install Astra Trident on the cluster before managing the cluster with Astra Control Service. In this case, Astra Control Service detects that Astra Trident is already installed and does not reinstall it or manage Astra Trident upgrades. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for installation instructions.
+
+When you manage Amazon Web Services clusters with Astra Control Service, if you need storage backends that are enabled by Astra Trident, you need to install Astra Trident manually on the cluster before you manage it with Astra Control Service. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for installation instructions.
+
 .Before you begin
 [%collapsible%open]
 =======
@@ -173,6 +180,9 @@ ifdef::aws[]
 .Amazon Web Services
 * You should have the JSON file containing the credentials of the IAM user that created the cluster. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user[Learn how to create an IAM user].
 * Astra Trident is required for Amazon FSx for NetApp ONTAP. If you plan to use Amazon FSx for NetApp ONTAP as a storage backend for your EKS cluster, refer to the Astra Trident information in the link:set-up-amazon-web-services.html#eks-cluster-requirements[EKS cluster requirements].
+//+
+//NOTE: Astra Control Service does not install Astra Trident automatically for Amazon EKS clusters.
+
 * (Optional) If you need to provide provide `kubectl` command access for a cluster to other IAM users that are not the cluster's creator, refer to the instructions in https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/[How do I provide access to other IAM users and roles after cluster creation in Amazon EKS?^].
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Amazon Web Services. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html[setup documentation^].
 
@@ -186,6 +196,8 @@ You'll also need your Azure subscription ID, if you didn't add it to the JSON fi
 
 //* For private AKS clusters, refer to link:manage-private-cluster.html[Manage private clusters from Astra Control Service^].
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Microsoft Azure. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html[setup documentation^].
+
+//NOTE: If the Azure Kubernetes Service (AKS) cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
 endif::azure[]
 
 ifdef::gcp[]
@@ -195,11 +207,15 @@ ifdef::gcp[]
 +
 52.188.218.166/32
 * If you plan to use NetApp Cloud Volumes ONTAP as a storage backend, you need to configure Cloud Volumes ONTAP to work with Google Cloud. Refer to the Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[setup documentation^].
+
+//NOTE: If the Google Kubernetes Engine (GKE) cluster supports Astra Trident but it is not installed, Astra Control Service automatically installs Astra Trident when you begin managing the cluster. If Astra Trident is already installed, Astra Control Service does not reinstall it. 
 endif::gcp[]
 =======
 
 .Steps
 
+. (Optional) If you are adding an Amazon EKS cluster or want to manage the installation and upgrades of Astra Trident yourself, install Astra Trident on the cluster. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for installation instructions.
+. Open the Astra Control Service web UI in a browser.
 . On the Dashboard, select *Manage Kubernetes cluster*.
 +
 Follow the prompts to add the cluster.
