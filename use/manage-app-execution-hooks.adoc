@@ -107,7 +107,7 @@ If you start but then cancel a backup that includes a snapshot and there are ass
 ====
 
 |===
-|Scenario |Operation |Existing snapshot |Existing backup |Namespace |Cluster |Snapshot hooks run |Backup hooks run |Restore hooks run|
+|Scenario |Operation |Existing snapshot |Existing backup |Namespace |Cluster |Snapshot hooks run |Backup hooks run |Restore hooks run
 
 |1
 |Clone
