@@ -96,6 +96,15 @@ You can also back up an app at any time.
 //astradoc-91, astradoc-154
 //IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, backups are disruptive and the app will be unavailable until the backup operation has completed. 
 
+You can back up applications to immutable buckets. Astra Control Service supports immutable backups with the following platforms and immutable bucket types:
+
+* Amazon Elastic Kubernetes Service (EKS) using an immutable Amazon S3 bucket
+* Microsoft Azure Kubernetes Service (AKS) using an immutable Microsoft azure bucket
+* Google Kubernetes Engine (GKE) using an immutable Google Cloud Storage bucket
+* NetApp StorageGRID using an immutable NetApp bucket
+
+If you back up to an immutable bucket in an unsupported platform or bucket type, you might get unpredictable results, such as backup deletion failing even if the retention time elapses.
+
 ifdef::azure[]
 [NOTE]
 ====
