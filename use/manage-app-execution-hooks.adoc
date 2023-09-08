@@ -56,7 +56,10 @@ Because execution hooks often reduce or completely disable the functionality of 
 If you start a backup or snapshot operation with associated execution hooks but then cancel it, the hooks are still allowed to run if the backup or snapshot operation has already begun. This means that the logic used in a post-backup execution hook cannot assume that the backup was completed.
 ====
 
-* The execution hooks feature is disabled by default for new Astra Control deployments. Owner or Admin users can enable or disable the execution hooks feature for all accounts. The feature must be enabled before it can be used. The enablement status is preserved during Astra Control upgrades. Refer to <<Enable the execution hooks feature>> and <<Disable the execution hooks feature>> for instructions.
+* The execution hooks feature is disabled by default for new Astra Control deployments.
+** You need to enable the execution hooks feature before you can use execution hooks.
+** Owner or Admin users can enable or disable the execution hooks feature for all accounts. Refer to <<Enable the execution hooks feature>> and <<Disable the execution hooks feature>> for instructions.
+** The feature enablement status is preserved during Astra Control upgrades.
 * An execution hook must use a script to perform actions. Many execution hooks can reference the same script.
 * Astra Control requires the scripts that execution hooks use to be written in the format of executable shell scripts.
 * Script size is limited to 96KB.
