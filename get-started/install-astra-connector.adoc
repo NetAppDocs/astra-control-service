@@ -11,7 +11,7 @@ summary: You can install the Astra Connector to help with managing private clust
 :imagesdir: ../media/get-started/
 
 [.lead]
-The Astra Connector is required to be installed on the cluster you want to manage if the cluster is private. The version of the Astra Connector that you need to install depends on your environment. Install the latest version of the Astra Connector on Red Hat OpenShift clusters, and the older version on clusters that are not based on Red Hat OpenShift.
+The Astra Connector is required to be installed on the cluster you want to manage if the cluster is private. The version of the Astra Connector that you need to install depends on your environment. Install the latest version of the Astra Connector on Red Hat OpenShift clusters that are on-premises or hosted in Amazon EKS, and the older version on other types of private clusters.
 
 <<Install the Astra Connector for on-premises or private EKS OpenShift clusters>>
 <<Install the Astra Connector for all other private clusters>>
