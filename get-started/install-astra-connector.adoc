@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: get-started/install-astra-connector.html
 keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage
-summary: You can install the Astra Connector to help with managing clusters.
+summary: You can install the Astra Connector to help with managing private clusters.
 ---
 
 = Install the Astra Connector
@@ -11,7 +11,7 @@ summary: You can install the Astra Connector to help with managing clusters.
 :imagesdir: ../media/get-started/
 
 [.lead]
-You can install the Astra Connector to facilitate cluster management. The version of the Astra Connector that you need to install depends on your environment.
+The Astra Connector is required to be installed on the cluster you want to manage if the cluster is private. The version of the Astra Connector that you need to install depends on your environment. Install the latest version of the Astra Connector on Red Hat OpenShift clusters, and the older version on clusters that are not based on Red Hat OpenShift.
 
 <<Install the Astra Connector for OpenShift clusters>>
 <<Install the Astra Connector for non-OpenShift clusters>>
