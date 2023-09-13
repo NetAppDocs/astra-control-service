@@ -5,7 +5,7 @@ keywords: what's new, bugs, bug fixes, new features, enhancements
 summary: NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 ---
 
-= What's new with Astra Control Service
+= What\'s new with Astra Control Service
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/release-notes/
