@@ -13,15 +13,15 @@ summary: You can install the Astra Connector to help with managing private clust
 [.lead]
 The Astra Connector is required to be installed on the cluster you want to manage if the cluster is private. The version of the Astra Connector that you need to install depends on your environment. Install the latest version of the Astra Connector on Red Hat OpenShift clusters that are on-premises or hosted in Amazon EKS, and the older version on other types of private clusters.
 
-* <<Install the Astra Connector for on-premises or private EKS OpenShift clusters>>
+* <<Install the Astra Connector for on-premises or EKS OpenShift clusters>>
 * <<Install the Astra Connector for all other private clusters>>
 
-== Install the Astra Connector for on-premises or private EKS OpenShift clusters
-If your private cluster is based on Red Hat OpenShift and is hosted on-premesis or in Amazon EKS, you need to install the latest version of the Astra Connector on the cluster. (For all other clusters, <<Install the Astra Connector for all other private clusters,install the older version of the Astra Connector>>). If you are using a bastion host, issue these commands from the command line of the bastion host. 
+== Install the Astra Connector for on-premises or EKS OpenShift clusters
+If your private cluster is based on Red Hat OpenShift and is hosted on-premesis or in Amazon EKS, you need to install the latest version of the Astra Connector on the cluster. (For all other private clusters, <<Install the Astra Connector for all other private clusters,install the older version of the Astra Connector>>). If you are using a bastion host, issue these commands from the command line of the bastion host. 
 
 .Steps
 
-. Apply the Astra Connector Operator:
+. Apply the Astra Connector operator:
 +
 [source,console]
 ----
@@ -96,7 +96,7 @@ neptune-system   astra-connector   true         00a821c8-2cef-41ac-8777-ed05a417
 ----
 
 == Install the Astra Connector for all other private clusters
-You need to install the older version of the Astra Connector on the private cluster if your cluster is not based on Red Hat OpenShift and either on-premises or hosted in Amazon EKS. (For on-premises or EKS-hosted OpenShift clusters, <<Install the Astra Connector for on-premises or private EKS OpenShift clusters,install the latest version of the Astra Connector>>). If you are using a bastion host, issue these commands from the command line of the bastion host. 
+You need to install the older version of the Astra Connector on your private cluster if the cluster is not based on Red Hat OpenShift and either on-premises or hosted in Amazon EKS. (For on-premises or EKS-hosted OpenShift clusters, <<Install the Astra Connector for on-premises or EKS OpenShift clusters,install the latest version of the Astra Connector>>). If you are using a bastion host, issue these commands from the command line of the bastion host. 
 
 .Steps
 
