@@ -47,7 +47,7 @@ secret/astra-token created
 ----
 kubectl create secret docker-registry regcred --docker-username=astra-control-downloaders-staging --docker-password=<DOCKER_PASSWORD> -n neptune-system --docker-server=netappdownloads.jfrog.io
 ----
-. Create the Astra Connector CR file and name it `astra-connector-cr.yaml`. Update the values to match your Astra Control environment and cluster configuration:
+. Create the Astra Connector CR file and name it `astra-connector-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
 +
 [source,yaml]
 ----
@@ -108,18 +108,18 @@ git clone https://github.com/NetApp/astra-connector-operator.git
 ----
 . Change directories to the top level of the unpacked operator package, so that you can see the `astraconnector_operator.yaml` file with the `ls` command.
 
-. Create a namespace for the Astra Connector operator.
-+
-[source,console]
-----
-kubectl create ns astra-connector-operator
-----
+//. Create a namespace for the Astra Connector operator.
+//+
+//[source,console]
+//----
+//kubectl create ns astra-connector-operator
+//----
 
-. Apply the `astraconnector_operator.yaml` file to the operator namespace.
+. Apply the `astraconnector_operator.yaml` file. When you run this command, the correct namespace for the Astra Connector is created and the configuration is applied to the namespace.
 +
 [source,console]
 ----
-kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
+kubectl apply -f astraconnector_operator.yaml
 ----
 
 . Create a namespace for the private cluster components.
