@@ -68,21 +68,14 @@ git clone https://github.com/NetApp/astra-connector-operator.git
 ----
 . Change directories to the top level of the unpacked operator package, so that you can see the `astraconnector_operator.yaml` file with the `ls` command.
 
-. Create a namespace for the Astra Connector operator.
+. Apply the `astraconnector_operator.yaml` file. When you run this command, the correct namespace for the Astra Connector operator is created and the configuration is applied to the namespace:
 +
 [source,console]
 ----
-kubectl create ns astra-connector-operator
+kubectl apply -f astraconnector_operator.yaml
 ----
 
-. Apply the `astraconnector_operator.yaml` file to the operator namespace.
-+
-[source,console]
-----
-kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
-----
-
-. Create a namespace for the private cluster components.
+. Create a namespace for the private cluster components:
 +
 [source,console]
 ----
@@ -127,14 +120,14 @@ spec:
     acceptEULA: yes
 ----
 
-. Apply the Astra Connector Custom Resource Definition (CRD).
+. Apply the Astra Connector Custom Resource Definition (CRD):
 +
 [source,console]
 ----
 kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 ----
 
-. Check the status of the Astra Connector.
+. Check the status of the Astra Connector:
 +
 [source,console]
 ----
