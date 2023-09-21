@@ -32,6 +32,21 @@ CAUTION: _You can't be fully protected until you have a recent backup_. This is 
 
 NOTE: If you perform a snapshot or backup, but the operation fails with the error "The resource wasn't created because of an internal server issue", check to make sure the storage backend you are using has the correct drivers installed. Some storage backends need Container Storage Interface (CSI) drivers, while others need an external snapshot controller.
 
+=== Immutable backups
+Astra Control Service supports creating immutable backups with the following platforms and immutable bucket types:
+
+* Amazon Elastic Kubernetes Service (EKS) using an immutable Amazon S3 bucket
+* Microsoft Azure Kubernetes Service (AKS) using an immutable Microsoft azure bucket
+* Google Kubernetes Engine (GKE) using an immutable Google Cloud Storage bucket
+* NetApp StorageGRID using an immutable NetApp bucket
+
+If you back up to an immutable bucket in an unsupported platform or bucket type, you might get unpredictable results, such as backup deletion failing even if the retention time elapses.
+
+Note the following when working with immutable backups:
+
+* Astra Control does not support Lifecycle management policies on the buckets you use with immutable backups.
+* In Azure, the terms "bucket level" and "container level" have the same meaning when you configure a time-based retention policy.
+
 == Clones
 
 A _clone_ is an exact duplicate of an app, its configuration, and its persistent data volumes. You can manually create a clone on either the same Kubernetes cluster or on another cluster. Cloning an app can be useful if you need to move applications and storage from one Kubernetes cluster to another.
