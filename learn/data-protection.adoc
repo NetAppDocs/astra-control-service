@@ -40,10 +40,10 @@ Astra Control Service supports creating immutable backups with the following pla
 * Google Kubernetes Engine (GKE) using an immutable Google Cloud Storage bucket
 * NetApp StorageGRID using an immutable NetApp bucket
 
-If you back up to an immutable bucket in an unsupported platform or bucket type, you might get unpredictable results, such as backup deletion failing even if the retention time elapses.
 
 Note the following when working with immutable backups:
 
+* If you back up to an immutable bucket in an unsupported platform or bucket type, you might get unpredictable results, such as backup deletion failing even if the retention time elapses.
 * Astra Control does not support Lifecycle management policies on the buckets you use with immutable backups.
 * In Azure, the terms "bucket level" and "container level" have the same meaning when you configure a time-based retention policy.
 
