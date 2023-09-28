@@ -40,8 +40,9 @@ kubectl get all -n astra-connector-operator
 +
 [source,console]
 ----
-kubectl create secret generic astra-token --from-literal=apiToken=<API_TOKEN> -n neptune-system
-secret/astra-token created
+kubectl create secret generic astra-token \
+--from-literal=apiToken=<API_TOKEN> \
+-n neptune-system
 ----
 . Create a Docker secret to use to pull the Astra Connector image. Replace values in brackets <> with information from your environment:
 +
