@@ -43,11 +43,15 @@ kubectl get all -n astra-connector-operator
 kubectl create secret generic astra-token --from-literal=apiToken=<API_TOKEN> -n neptune-system
 secret/astra-token created
 ----
-. Create a Docker secret to use to pull the Astra Connector image. Replace <DOCKER_PASSWORD> with your Docker password:
+. Create a Docker secret to use to pull the Astra Connector image. Replace values in brackets <> with information from your environment:
 +
 [source,console]
 ----
-kubectl create secret docker-registry regcred --docker-username=astra-control-downloaders-staging --docker-password=<DOCKER_PASSWORD> -n neptune-system --docker-server=netappdownloads.jfrog.io
+kubectl create secret docker-registry regcred \
+--docker-username=<ASTRA_ACCOUNT_ID> \
+--docker-password=<API_TOKEN> \
+-n neptune-system \
+--docker-server=cr.astra.netapp.io
 ----
 . Create the Astra Connector CR file and name it `astra-connector-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
 +
@@ -61,14 +65,14 @@ metadata:
 spec:
   astra:
     accountId: <ASTRA_ACCOUNT_ID>
-    clusterName: <CLUSTER_NAME_YOU_WANT_TO_USE>
+    clusterName: <CLUSTER_NAME>
     skipTLSValidation: true
     tokenRef: astra-token
   natsSyncClient:
     cloudBridgeURL: <ASTRA_HOST_URL>
-    hostAliasIP: <ASTRA_HOST_ALIAS_IP>
+    hostAliasIP: <ASTRA_HOST_ALIAS_IP_ADDRESS>
   imageRegistry:
-    name: netappdownloads.jfrog.io/docker-astra-control-staging/arch30/neptune
+    name: cr.astra.netapp.io/astra
     secret: regcred
 ----
 . Apply the `astra-connector-cr.yaml` file after you populate it with the correct values:
