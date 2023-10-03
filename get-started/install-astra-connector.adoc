@@ -23,11 +23,11 @@ NOTE: After you install the Astra Connector on your ROSA cluster, the cluster is
 
 .Steps
 
-. Apply the Astra Connector operator:
+. Apply the Astra Connector operator. When you run this command, the correct namespace for the Astra Connector is created and the configuration is applied to the namespace:
 +
 [source,console]
 ----
-kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/latest/download/astraconnector_operator.yaml
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.10/download/astraconnector_operator.yaml
 ----
 . Verify that the operator is installed and ready:
 +
@@ -70,7 +70,7 @@ spec:
     skipTLSValidation: true
     tokenRef: astra-token
   natsSyncClient:
-    cloudBridgeURL: <ASTRA_HOST_URL>
+    cloudBridgeURL: <ASTRA_CONTROL_HOST_URL>
     hostAliasIP: <ASTRA_HOST_ALIAS_IP_ADDRESS>
   imageRegistry:
     name: cr.astra.netapp.io/astra
@@ -107,26 +107,17 @@ You need to install the older version of the Astra Connector on your private clu
 
 .Steps
 
-. Clone the Astra Connector operator GitHub repository:
+. Apply the Astra Connector operator. When you run this command, the correct namespace for the Astra Connector is created and the configuration is applied to the namespace:
 +
 [source,console]
 ----
-git clone https://github.com/NetApp/astra-connector-operator.git
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.07/download/astraconnector_operator.yaml
 ----
-. Change directories to the top level of the unpacked operator package, so that you can see the `astraconnector_operator.yaml` file with the `ls` command.
-
-//. Create a namespace for the Astra Connector operator.
-//+
-//[source,console]
-//----
-//kubectl create ns astra-connector-operator
-//----
-
-. Apply the `astraconnector_operator.yaml` file. When you run this command, the correct namespace for the Astra Connector is created and the configuration is applied to the namespace.
+. Verify that the operator is installed and ready:
 +
 [source,console]
 ----
-kubectl apply -f astraconnector_operator.yaml
+kubectl get all -n astra-connector-operator
 ----
 
 . Create a namespace for the private cluster components.
@@ -143,6 +134,7 @@ kubectl create ns astra-connector
 * `spec.natssync-client.cloud-bridge-url`
 * `spec.astra.token`
 * `spec.astra.clusterName`
+* `spec.astra.accountId`
 +
 NOTE: `spec.astra.clusterName` is only needed if you are importing a private AKS cluster and not providing the kubeconfig file to Astra Control Service. Remove this line if this is not the case.
 
@@ -150,6 +142,7 @@ NOTE: `spec.astra.clusterName` is only needed if you are importing a private AKS
 +
 For example:
 +
+[source,yaml]
 ----
 apiVersion: netapp.astraconnector.com/v1
 kind: AstraConnector
@@ -158,7 +151,7 @@ metadata:
 spec:
   natssync-client:
     image: natssync-client:2.0
-    cloud-bridge-url: https://<your.astra.control.service.url>
+    cloud-bridge-url: <ASTRA_CONTROL_SERVICE_URL>
   nats:
     image: nats:2.6.1-alpine3.14
   httpproxy-client:
@@ -167,10 +160,11 @@ spec:
     image: echo-proxylet:2.0
   imageRegistry:
     name: theotw
+    secret: otw-secret
   astra:
-    token: <Astra Control API token>
-    clusterName: <your-private-AKS-cluster-name>
-    accountId: <Astra Control account id>
+    token: <ASTRA_CONTROL_SERVICE_API_TOKEN>
+    clusterName: <PRIVATE_AKS_CLUSTER_NAME>
+    accountId: <ASTRA_CONTROL_ACCOUNT_ID>
     acceptEULA: yes
 ----
 
