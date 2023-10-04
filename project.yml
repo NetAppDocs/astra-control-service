@@ -30,6 +30,7 @@ sidebar:
     - section: get-started
     - section: learn
     - section: use
+    - section: use-acp
     - title: Automate with the Astra Control REST API
       url: /automation.html
   #  - section: solutions (retired with DOC-4309)
