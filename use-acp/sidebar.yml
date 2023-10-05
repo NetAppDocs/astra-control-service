@@ -1,2 +1,5 @@
 section: use-acp
 title: Use Astra Control Provisioner
+entries:
+  - title: Recover volume data using a snapshot
+    url: /use-acp/acp-snap-restore.html
