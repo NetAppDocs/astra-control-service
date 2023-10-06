@@ -1,0 +1,172 @@
+---
+sidebar: sidebar
+permalink: use-acp/configure-storage-backend-encryption.html
+keywords: astra control center, acp, astra control provisioner, backend, storage, encryption, kerberos
+summary: You can configure encryption to protect the traffic between Astra Control and your storage backend.
+---
+
+= Configure storage backend encryption
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use-acp/
+
+[.lead]
+Using Astra Control Provisioner, you can improve storage security by enabling encryption for the traffic between your managed cluster and the storage backend. 
+
+Astra Control Provisioner supports Kerberos 5 encryption over NFSv4.1 connections from Red Hat OpenShift clusters to Azure NetApp Files volumes. You can create, delete, resize, snapshot, clone, read-only clone, and import volumes that use NFS encryption.
+
+== Configure Kerberos encryption with Azure NetApp Files volumes
+You can enable Kerberos encryption on the storage traffic between your managed cluster and a single Azure NetApp Files storage backend or a virtual pool of Azure NetApp Files storage backends. 
+
+.Before you begin
+
+* Ensure that you have enabled Astra Control Provisioner on the managed Red Hat OpenShift cluster. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for instructions.
+* Ensure that you have prepared the Azure NetApp Files storage backend for Kerberos encryption by noting the requirements and following the instructions in https://learn.microsoft.com/en-us/azure/azure-netapp-files/configure-kerberos-encryption[Azure NetApp Files documentation^].
+
+=== Create a storage backend
+You can create an Azure NetApp Files storage backend configuration that includes Kerberos encryption capability. 
+
+.About this task
+You can create a configuration file that should be applied at the storage backend level, using the `kerberos` key, or at the virtual pool level, using the `storage` key. When you define the configuration at the virtual pool level, the pool is selected using the label in the storage class.
+
+.Steps
+
+. On the managed cluster, create a storage backend configuration file using the following examples, depending on where you need to define the storage backend (storage backend level, or virtual pool level). Replace values in brackets <> with information from your environment:
++
+[role="tabbed-block"]
+====
+
+.Storage backend level example
+--
+[source,yaml]
+----
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backend-tbc-anf-secret
+type: Opaque
+stringData:
+  clientID: <CLIENT_ID>
+  clientSecret: <CLIENT_SECRET>
+---
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: backend-tbc-anf
+spec:
+  version: 1
+  storageDriverName: azure-netapp-files
+  subscriptionID: <SUBSCRIPTION_ID>
+  tenantID: <TENANT_ID>
+  location: <AZURE_REGION_LOCATION>
+  serviceLevel: Standard
+  networkFeatures: Standard
+  capacityPools: <CAPACITY_POOL>
+  resourceGroups: <RESOURCE_GROUP>
+  netappAccounts: <NETAPP_ACCOUNT>
+  virtualNetwork: <VIRTUAL_NETWORK>
+  subnet: <SUBNET>
+  nasType: nfs
+  kerberos: sec=krb5i
+  credentials:
+    name: backend-tbc-anf-secret
+----
+--
+
+.Virtual pool level example
+--
+[source,yaml]
+----
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backend-tbc-anf-secret
+type: Opaque
+stringData:
+  clientID: <CLIENT_ID>
+  clientSecret: <CLIENT_SECRET>
+---
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: backend-tbc-anf
+spec:
+  version: 1
+  storageDriverName: azure-netapp-files
+  subscriptionID: <SUBSCRIPTION_ID>
+  tenantID: <TENANT_ID>
+  location: <AZURE_REGION_LOCATION>
+  serviceLevel: Standard
+  networkFeatures: Standard
+  capacityPools: <CAPACITY_POOL>
+  resourceGroups: <RESOURCE_GROUP>
+  netappAccounts: <NETAPP_ACCOUNT>
+  virtualNetwork: <VIRTUAL_NETWORK>
+  subnet: <SUBNET>
+  nasType: nfs
+  storage:
+    - labels:
+        type: encryption
+      kerberos: sec=krb5i
+  credentials:
+    name: backend-tbc-anf-secret
+----
+--
+====
+
+. Use the configuration file to create the backend:
++
+[source,console]
+----
+tridentctl create backend -f <backend-file>
+----
++
+If the backend creation fails, something is wrong with the backend configuration. You can view the logs to determine the cause by running the following command:
++
+tridentctl logs
++
+After you identify and correct the problem with the configuration file, you can run the create command again.
+
+=== Create a storage class
+You can create a storage class to provision volumes with Kerberos encryption.
+
+.Steps
+
+. Create a StorageClass Kubernetes object, using the following example:
++
+[source,yaml]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: anf-sc-nfs
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "azure-netapp-files"
+  trident.netapp.io/nasType: "nfs"
+  selector: "type=encryption"                   
+----
+
+. Create the storage class:
++
+[source,console]
+----
+kubectl create -f sample-input/storage-class-basic-csi.yaml
+----
+. Make sure that the storage class has been created:
++
+[source,console]
+----
+kubectl get sc basic-csi
+----
++
+You should see output similar to the following:
++
+----
+NAME         PROVISIONER             AGE
+basic-csi    csi.trident.netapp.io   15h
+----
+
+=== Provision volumes
+After you create a storage backend and a storage class, you can now provision a volume. For instructions, refer to https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html[Provision a volume^].
+
