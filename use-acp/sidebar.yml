@@ -1,2 +1,5 @@
 section: use-acp
 title: Use Astra Control Provisioner
+entries:
+  - title: Configure storage backend encryption 
+    url: /use-acp/configure-storage-backend-encryption.html
