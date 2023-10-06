@@ -15,19 +15,40 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 
 == 2 November 2023
 
+* *Introducing Astra Control Provisioner*
++
+With the 23.10 release, Astra Control introduces a new software component called Astra Control Provisioner that will be available to all licensed Astra Control users. Astra Control Provisioner provides access to a superset of advanced management and storage provisioning features beyond those that Astra Trident provides today. These features are available to all Astra Control customers at no additional cost.
+
+** *Get started with Astra Control Provisioner*
+You can link:../use/enable-acp.html[enable Astra Control Provisioner^] if you have installed and configured your environment to use Astra Trident 23.10.
+
+** *Astra Control Provisioner functionality*
++
+The following features are available with the Astra Control Provisioner 23.10 release:
+
+*** *Enhanced storage backend security with Kerberos 5 encryption*: You can improve storage security by link:../use-acp/configure-storage-backend-encryption.html[enabling encryption^] for the traffic between your managed cluster and the storage backend. Astra Control Provisioner provides Kerberos 5 encryption over NFSv4.1 connections from Red Hat OpenShift clusters to Azure NetApp Files volumes.
+
+*** *Recover data using a snapshot*: Astra Control Provisioner provides rapid, in-place volume restoration from a snapshot using the `TridentActionSnapshotRestore` (TASR) CR.
+
+*** *SnapMirror enhancements*: Use the app replication feature in environments where Astra Control does not have direct connectivity to an ONTAP cluster or access to ONTAP credentials. 
+//You can also explicitly trigger SnapMirror updates for a particular snapshot and monitor snapshot destination transfer and protection.
+
+*** Read-only clones
+???
+
 .New features and support
 
 * Astra Control now supports immutable backups. You can store backups on immutable buckets.
 +
 link:../use/protect-apps.html[Protect apps^]
 
-* You can now enable and disable Execution hooks for an Astra Control instance. Execution hooks are disabled by default with new Astra Control deployments.
+* You can now backup and restore `ontap-nas-economy`-backed applications with some link:../use/restore-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[simple setup steps^].
+
+* Beginning with this release, execution hooks functionality can be enabled or disabled and is disabled by default. If you have not yet created execution hooks for use with Astra Control, you need to link:../use/execution-hooks.html#enable-the-execution-hooks-feature[enable the execution hooks feature^] to begin creating hooks. If you created execution hooks prior to this release, the execution hooks functionality stays enabled and you can use hooks as you would normally.
 +
 link:../use/manage-app-execution-hooks.html[Manage app execution hooks^]
 
-* Astra Control has a new public image Docker registry. You can use this registry to pull Astra Control Center images during installation and install other software.
-+
-https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html[Install Astra Control Center^]
+* Astra Control has a new public image Docker registry. You can use this registry to pull Astra Control Provisioner images and other software.
 
 == 27 July 2023
 
