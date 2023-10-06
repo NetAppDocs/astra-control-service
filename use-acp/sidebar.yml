@@ -3,3 +3,5 @@ title: Use Astra Control Provisioner
 entries:
   - title: Configure storage backend encryption 
     url: /use-acp/configure-storage-backend-encryption.html
+  - title: Recover volume data using a snapshot
+    url: /use-acp/acp-snap-restore.html
