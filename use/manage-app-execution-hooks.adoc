@@ -14,7 +14,7 @@ summary: An execution hook is a custom script that you can run before or after a
 An execution hook is a custom action that you can configure to run in conjunction with a data protection operation of a managed app. For example, if you have a database app, you can use an execution hook to pause all database transactions before a snapshot, and resume transactions after the snapshot is complete. This ensures application-consistent snapshots.
 
 == Types of execution hooks
-Astra Control supports the following types of execution hooks, based on when they can be run:
+Astra Control Service supports the following types of execution hooks, based on when they can be run:
 
 * Pre-snapshot
 * Post-snapshot
@@ -23,14 +23,11 @@ Astra Control supports the following types of execution hooks, based on when the
 * Post-restore
 
 == Execution hook filters
-When you add or edit an execution hook to an application, you can add filters to an execution hook to mange which containers the hook will match. Filters are useful for applications that use the same container image on all containers, but might use each image for a different purpose (such as Elasticsearch). Filters enable you to create scenarios where execution hooks will run on some of those identical containers, but not necessarily all of them. If you create multiple filters for a single execution hook, they are combined with a logical AND operator. You can have up to 10 active filters per execution hook.
+When you add or edit an execution hook to an application, you can add filters to an execution hook to manage which containers the hook will match. Filters are useful for applications that use the same container image on all containers, but might use each image for a different purpose (such as Elasticsearch). Filters allow you to create scenarios where execution hooks run on some but not necessarily all identical containers. If you create multiple filters for a single execution hook, they are combined with a logical AND operator. You can have up to 10 active filters per execution hook.
 
-Each filter you add to an execution hook uses a regular expression to match containers in your cluster. When a hook matches a container, the hook will run its associated script on that container.
+Each filter you add to an execution hook uses a regular expression to match containers in your cluster. When a hook matches a container, the hook will run its associated script on that container. Regular expressions for filters use the Regular Expression 2 (RE2) syntax, which does not support creating a filter that excludes containers from the list of matches. For information on the syntax that Astra Control supports for regular expressions in execution hook filters, see https://github.com/google/re2/wiki/Syntax[Regular Expression 2 (RE2) syntax support^].
 
-NOTE: Regular expressions for filters use the Regular Expression 2 (RE2) syntax, which does not support creating a filter that excludes containers from the list of matches.
-
-For information on the syntax that Astra Control supports for regular expressions in execution hook filters, see https://github.com/google/re2/wiki/Syntax[Regular Expression 2 (RE2) syntax support^].
-
+NOTE: If you add a namespace filter to an execution hook that runs after a restore or clone operation and the restore or clone source and destination are in different namespaces, the namespace filter is only applied to the destination namespace.
 
 ////
 == Default execution hooks and regular expressions
@@ -55,10 +52,14 @@ Consider the following when planning execution hooks for your apps.
 
 [NOTE]
 ====
-Since execution hooks often reduce or completely disable the functionality of the application they are running against, you should always try to minimize the time your custom execution hooks take to run.
+Because execution hooks often reduce or completely disable the functionality of the application they are running against, you should always try to minimize the time your custom execution hooks take to run.
 If you start a backup or snapshot operation with associated execution hooks but then cancel it, the hooks are still allowed to run if the backup or snapshot operation has already begun. This means that the logic used in a post-backup execution hook cannot assume that the backup was completed.
 ====
 
+* The execution hooks feature is disabled by default for new Astra Control deployments.
+** You need to enable the execution hooks feature before you can use execution hooks.
+** Owner or Admin users can enable or disable the execution hooks feature for all accounts. Refer to <<Enable the execution hooks feature>> and <<Disable the execution hooks feature>> for instructions.
+** The feature enablement status is preserved during Astra Control upgrades.
 * An execution hook must use a script to perform actions. Many execution hooks can reference the same script.
 * Astra Control requires the scripts that execution hooks use to be written in the format of executable shell scripts.
 * Script size is limited to 96KB.
@@ -66,8 +67,10 @@ If you start a backup or snapshot operation with associated execution hooks but 
 * All execution hook failures are soft failures; other hooks and the data protection operation are still attempted even if a hook fails. However, when a hook fails, a warning event is recorded in the *Activity* page event log.
 * To create, edit, or delete execution hooks, you must be a user with Owner, Admin, or Member permissions.
 * If an execution hook takes longer than 25 minutes to run, the hook will fail, creating an event log entry with a return code of "N/A". Any affected snapshot will time out and be marked as failed, with a resulting event log entry noting the timeout.
-* For adhoc data protection operations, all hook events are generated and saved in the *Activity* page event log. However, for scheduled data protection operations, only hook failure events are recorded in the event log (events generated by the scheduled data protection operations themselves are still recorded).
-* If you add a namespace filter to an execution hook that runs after a restore or clone operation and the restore or clone source and destination are in different namespaces, the namespace filter is only applied to the destination namespace.
+* For ad hoc data protection operations, all hook events are generated and saved in the *Activity* page event log. However, for scheduled data protection operations, only hook failure events are recorded in the event log (events generated by the scheduled data protection operations themselves are still recorded).
+//* If Astra Control Center fails over a replicated source app to the destination app, any post-failover execution hooks that are enabled for the source app are run for the destination app after the failover is complete.
+//+
+//NOTE: If you have been running post-restore hooks with Astra Control Center 23.04 and upgraded your Astra Control Center to 23.07, post-restore execution hooks will no longer be executed after a failover replication. You need to create new post-failover execution hooks for your apps. Alternatively, you can change the operation type of existing post-restore hooks intended for failovers from "post-restore" to "post-failover".
 
 === Order of execution
 When a data protection operation is run, execution hook events take place in the following order:
@@ -78,7 +81,7 @@ When a data protection operation is run, execution hook events take place in the
 . Any applicable custom post-operation execution hooks are run on the appropriate containers. You can create and run as many custom post-operation hooks as you need, but the order of execution of these hooks after the operation is neither guaranteed nor configurable.
 //. Any applicable NetApp-provided default post-snapshot execution hooks are run on the appropriate containers.
 
-If you create multiple execution hooks of the same type (for example, pre-snapshot), the order of execution of those hooks is not guaranteed. However, the order of execution of hooks of different types is guaranteed. For example, the order of execution of a configuration that has all five different types of hooks would look like this:
+If you create multiple execution hooks of the same type (for example, pre-snapshot), the order of execution of those hooks is not guaranteed. However, the order of execution of hooks of different types is guaranteed. For example, the order of execution of a configuration that has all of the different types of hooks would look like this:
 
 . Pre-backup hooks executed
 . Pre-snapshot hooks executed
@@ -224,6 +227,35 @@ If you start but then cancel a backup that includes a snapshot and there are ass
 == Execution hook examples
 Visit the https://github.com/NetApp/Verda[NetApp Verda GitHub project] to download real execution hooks for popular apps such as Apache Cassandra and Elasticsearch. You can also see examples and get ideas for structuring your own custom execution hooks.
 
+== Enable the execution hooks feature
+If you are an Owner or Admin user, you can enable the execution hooks feature. When you enable the feature, all Owner and Admin users can use execution hooks and all users can view existing execution hooks and hook scripts.
+
+.Steps
+
+. Go to *Applications* and then select the name of a managed app.
+. Select the *Execution hooks* tab.
+. Select *Enable execution hooks*.
++
+The *Account* > *Feature settings* tab appears.
+. In the *Execution hooks* pane, select the settings menu.
+. Select *Enable*.
+. Note the security warning that appears.
+. Select *Yes, enable execution hooks*.
+
+== Disable the execution hooks feature
+If you are an Owner or Admin user, you can disable the execution hooks feature. You must delete all existing execution hooks before you can disable the execution hooks feature. Refer to <<Delete an execution hook>> for instructions on deleting an existing execution hook.
+
+.Steps
+
+. Go to *Account* and then select the *Feature settings* tab.
+
+. Select the *Execution hooks* tab.
+. In the *Execution hooks* pane, select the settings menu.
+. Select *Disable*.
+. Note the warning that appears.
+. Type `disable` to confirm that you want to disable the feature for all users.
+. Select *Yes, disable*.
+
 == View existing execution hooks
 You can view existing custom execution hooks for an app.
 
@@ -245,10 +277,11 @@ You can view the existing uploaded scripts. You can also see which scripts are i
 You can see a list of existing uploaded scripts on this page. The *Used by* column shows which execution hooks are using each script.
 
 == Add a script
-Each execution hook must use a script to perform actions. You can add one or more scripts that execution hooks can reference. Many execution hooks can reference the same script; this enables you to update many execution hooks by only changing one script.
+Each execution hook must use a script to perform actions. You can add one or more scripts that execution hooks can reference. Many execution hooks can reference the same script; this allows you to update many execution hooks by only changing one script.
 
 .Steps
 
+. Ensure that the execution hooks feature is <<Enable the execution hooks feature,enabled>>.
 . Go to *Account*.
 . Select the *Scripts* tab.
 . Select *Add*.
@@ -283,12 +316,13 @@ You can remove a script from the system if it is no longer needed and not used b
 NOTE: If the script is associated with one or more execution hooks, the *Delete* action is unavailable. To delete the script, first edit the associated execution hooks and associate them with a different script.
 
 == Create a custom execution hook
-You can create a custom execution hook for an app. Refer to <<Execution hook examples>> for hook examples. You need to have Owner, Admin, or Member permissions to create execution hooks.
+You can create a custom execution hook for an app and add it to Astra Control. Refer to <<Execution hook examples>> for hook examples. You need to have Owner, Admin, or Member permissions to create execution hooks.
 
 NOTE: When you create a custom shell script to use as an execution hook, remember to specify the appropriate shell at the beginning of the file, unless you are running specific commands or providing the full path to an executable.
 
 .Steps
 
+. Ensure that the execution hooks feature is <<Enable the execution hooks feature,enabled>>.
 . Select *Applications* and then select the name of a managed app.
 . Select the *Execution hooks* tab.
 . Select *Add*.

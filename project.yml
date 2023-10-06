@@ -39,6 +39,4 @@ sidebar:
       url: /legal-notices.html
 product-family:
   name: Astra
-  repo: astra-family
-  sidebar_label: All Astra documentation
-    
+  repo: astra-family    
