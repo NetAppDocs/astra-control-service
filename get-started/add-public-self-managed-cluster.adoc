@@ -117,6 +117,8 @@ NOTE: You can https://docs.netapp.com/us-en/trident/trident-get-started/kubernet
 // Removed ONTAP credentials commands from ACC as Vijitha said they are not needed - ASTRADOC-21
 =======
 
+* *Astra Control Provisioner*: To use Astra Control Provisioner advanced management and storage provisioning features that are only accessible to Astra Control users, you must install Astra Trident 23.10 or later and enable link:../use/enable-acp.html[Astra Control Provisioner functionality].
+
 .Steps
 
 . On the Dashboard, select *Manage Kubernetes cluster*.

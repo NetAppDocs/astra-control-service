@@ -161,3 +161,26 @@ Yes. A snapshot operation on an application by Astra Control includes snapshot o
 *Can I manage snapshots taken by Astra Control directly through my cloud provider?*
 
 No. Snapshots and backups taken by Astra Control can only be managed with Astra Control.
+
+== Astra Control Provisioner
+
+*How are Astra Control Provisioner's storage provisioning features different from those in Astra Trident?*
+
+Astra Control Provisioner, as part of Astra Control, supports a superset of storage provisioning features that are unavailable in open-source Astra Trident. These features are in addition to all features that are available to the open-source Trident.
+
+*Is Astra Control Provisioner replacing Astra Trident?*
+
+In coming Astra Control releases, Astra Control Provisioner will replace Astra Trident as storage provisioner and orchestrator in the Astra Control architecture. As such, it's highly recommended that Astra Control users link:../use/enable-acp.html[enable Astra Control Provisioner]. Astra Trident will continue to remain open source and be released, maintained, supported, and updated with new CSI and other features from NetApp.
+
+*Do I have to pay for Astra Trident?*
+
+No, Astra Trident will continue to be open source and free to download.
+
+*Can I use the storage management and provisioning features in Astra Control without installing and using all of Astra Control?*
+
+Yes, you can upgrade to Astra Trident 23.10 or later and enable Astra Control Provisioner functionality even if you do not want to consume the complete feature set of Astra Control data management functionality. 
+//You can download and install an Astra Control Provisioner bundle from the NetApp Support Site and use the Astra Control Provisioner tooling developed for automating Trident setup and install.
+
+*How can I transition from being an existing Trident user to Astra Control to use advanced storage management and provisioning functionality?*
+
+If you are an existing Trident user (this includes users of Astra Trident in the public cloud), you need to acquire an Astra Control license first. After you do, you can download the Astra Control Provisioner bundle, upgrade Astra Trident, and enable Astra Control Provisioner functionality.
