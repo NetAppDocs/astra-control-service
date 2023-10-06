@@ -5,13 +5,29 @@ keywords: what's new, bugs, bug fixes, new features, enhancements
 summary: NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 ---
 
-= What’s new with Astra Control Service
+= What\'s new with Astra Control Service
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/release-notes/
 
 [.lead]
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
+
+== 2 November 2023
+
+.New features and support
+
+* Astra Control now supports immutable backups. You can store backups on immutable buckets.
++
+link:../use/protect-apps.html[Protect apps^]
+
+* You can now enable and disable Execution hooks for an Astra Control instance. Execution hooks are disabled by default with new Astra Control deployments.
++
+link:../use/manage-app-execution-hooks.html[Manage app execution hooks^]
+
+* Astra Control has a new public image Docker registry. You can use this registry to pull Astra Control Center images during installation and install other software.
++
+https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html[Install Astra Control Center^]
 
 == 27 July 2023
 
