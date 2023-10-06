@@ -13,7 +13,7 @@ summary: NetApp periodically updates Astra Control Service to bring you new feat
 [.lead]
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 
-== 26 October 2023
+== 2 November 2023
 
 .New features and support
 
@@ -21,7 +21,7 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 +
 link:../use/protect-apps.html[Protect apps^]
 
-* You can now enable and disable Execution hooks for an Astra Control instance. Execution hooks is disabled by default with new Astra Control deployments.
+* You can now enable and disable Execution hooks for an Astra Control instance. Execution hooks are disabled by default with new Astra Control deployments.
 +
 link:../use/manage-app-execution-hooks.html[Manage app execution hooks^]
 
