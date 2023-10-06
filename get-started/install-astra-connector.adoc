@@ -5,13 +5,13 @@ keywords: connector, install, astra connector, manage cluster, add cluster, clus
 summary: You can install the Astra Connector to help with managing private clusters.
 ---
 
-= Install the Astra Connector
+= Install the Astra Connector for private clusters
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
 [.lead]
-The Astra Connector is required to be installed on the cluster you want to manage if the cluster is private. The version of the Astra Connector that you need to install depends on your environment. Install the latest version of the Astra Connector on private Red Hat OpenShift Service on AWS (ROSA) clusters, and the older version on other types of private clusters and self-managed clusters.
+The Astra Connector is required to be installed on private clusters that you want to manage. The version of the Astra Connector that you need to install depends on the type of cluster. Install the latest version of the Astra Connector on private Red Hat OpenShift Service on AWS (ROSA) clusters, and the older version on other types of private clusters and self-managed clusters.
 
 To add private ROSA clusters, you need to install the latest version of the Astra Connector on the cluster. (For all other private clusters, including self-managed clusters, <<Install the Astra Connector for all other private clusters,install the older version of the Astra Connector>>). If you are using a bastion host, issue these commands from the command line of the bastion host. 
 

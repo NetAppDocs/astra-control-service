@@ -26,7 +26,7 @@ entries:
   - title: Add a cluster
     url: /get-started/add-first-cluster.html
     entries:
-      - title: Install the Astra Connector
+      - title: Install the Astra Connector for private clusters
         url: /get-started/install-astra-connector.html
       - title: Add a provider-managed cluster
         #url: /get-started/add-provider-managed-cluster.html
