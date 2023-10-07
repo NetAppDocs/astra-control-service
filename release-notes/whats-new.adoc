@@ -44,7 +44,7 @@ link:../use/protect-apps.html[Protect apps^]
 
 * You can now backup and restore `ontap-nas-economy`-backed applications with some link:../use/restore-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[simple setup steps^].
 
-* Beginning with this release, execution hooks functionality can be enabled or disabled and is disabled by default. If you have not yet created execution hooks for use with Astra Control, you need to link:../use/execution-hooks.html#enable-the-execution-hooks-feature[enable the execution hooks feature^] to begin creating hooks. If you created execution hooks prior to this release, the execution hooks functionality stays enabled and you can use hooks as you would normally.
+* Beginning with this release, execution hooks functionality can be enabled or disabled and is disabled by default. If you have not yet created execution hooks for use with Astra Control, you need to link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature[enable the execution hooks feature^] to begin creating hooks. If you created execution hooks prior to this release, the execution hooks functionality stays enabled and you can use hooks as you would normally.
 +
 link:../use/manage-app-execution-hooks.html[Manage app execution hooks^]
 

@@ -24,15 +24,16 @@ If you are enabling the Astra Control Provisioner, you need the following:
 NOTE: Refer to https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html[Astra Trident documentation^] for these procedures.
 
 * An Astra Control license to use Astra Control Provisioner and the functionality it provides.
-* Access to the Astra Control Center area of the NetApp Support Site to obtain the bundle containing Astra Control Provisioner.
 
 .Upgrade to Astra Control Provisioner 23.10
 
 If you upgraded your Astra Trident to version 23.10, you can use one of these procedures to install and enable Astra Control Provisioner. The Astra Control Provisioner enables access to advanced storage provisioning and management functionality that is available to all licensed Astra Control users beginning with Astra Trident 23.10.
 
-. Download the bundle containing Astra Control Center (`astra-control-center-[version].tar.gz`) from the the https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab[Astra Control Center downloads page^].
+. Log in to Astra Control Service.
 
-. Extract the bundle and locate the `trident-acp:v23.10` image.
+. On the Dashboard, select *Deploy a self-managed instance of Astra Control*.
+
+. Follow the instructions to log in to the Astra Control Service image registry, pull the Astra Control Center installation image, and extract the image.
 
 . Push the image to your local registry.
 
