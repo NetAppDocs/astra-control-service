@@ -15,6 +15,8 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 
 == 2 November 2023
 
+.New features and support
+
 * *Introducing Astra Control Provisioner*
 +
 With the 23.10 release, Astra Control introduces a new software component called Astra Control Provisioner that will be available to all licensed Astra Control users. Astra Control Provisioner provides access to a superset of advanced management and storage provisioning features beyond those that Astra Trident provides today. These features are available to all Astra Control customers at no additional cost.
@@ -35,8 +37,6 @@ The following features are available with the Astra Control Provisioner 23.10 re
 
 *** Read-only clones
 ???
-
-.New features and support
 
 * Astra Control now supports immutable backups. You can store backups on immutable buckets.
 +

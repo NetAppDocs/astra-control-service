@@ -93,9 +93,6 @@ The snapshot process begins. A snapshot is successful when the status is *Health
 
 You can also back up an app at any time.
 
-//astradoc-91, astradoc-154
-//IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, backups are disruptive and the app will be unavailable until the backup operation has completed. 
-
 You can create immutable backups by backing up applications to immutable buckets. Refer to link:../learn/data-protection.html#immutable-backups[Data protection^] for important information about working with immutable backups.
 
 ifdef::azure[]
