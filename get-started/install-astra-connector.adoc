@@ -20,7 +20,7 @@ Astra Connector supports the following types of private clusters:
 * Google Kubernetes Engine (GKE)
 * Red Hat OpenShift Service on AWS (ROSA)
 * ROSA with AWS PrivateLink
-* Red Hat OpenShift Container Platform on premise
+* Red Hat OpenShift Container Platform on-premise
 
 //The Astra Connector is required to be installed on private clusters that you want to manage. The version of the Astra Connector that you need to install depends on the type of cluster. Install Astra Connector version 23.10 on private Red Hat OpenShift Service on AWS (ROSA) clusters, and Astra Connector version 23.07 on other types of private clusters and self-managed clusters.
 
