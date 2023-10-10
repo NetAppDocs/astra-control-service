@@ -19,6 +19,7 @@ You can use Astra Control Service to manage the following types of private provi
 * Azure Kubernetes Service (AKS)
 * Google Kubernetes Engine (GKE)
 * Red Hat OpenShift Service on AWS (ROSA)
+* ROSA with AWS PrivateLink
 
 These instructions assume that you have already created a private cluster and prepared a secure method to remotely access it; for more information about creating and accessing private clusters, refer to the following documentation:
 

@@ -11,7 +11,16 @@ summary: You can install the Astra Connector to help with managing private clust
 :imagesdir: ../media/get-started/
 
 [.lead]
-Astra Control Service uses the Astra Connector to enable communication between Astra Control Service and private clusters. You need to install the Astra Connector on private clusters that you want to manage. The Astra Connector supports private Red Hat OpenShift Service on AWS (ROSA) clusters as well as other types of private and self-managed clusters.
+Astra Control Service uses the Astra Connector to enable communication between Astra Control Service and private clusters. You need to install the Astra Connector on private clusters that you want to manage.
+
+The Astra Connector supports the following types of private clusters:
+
+* Amazon Elastic Kubernetes Service (EKS)
+* Azure Kubernetes Service (AKS)
+* Google Kubernetes Engine (GKE)
+* Red Hat OpenShift Service on AWS (ROSA)
+* ROSA with AWS PrivateLink
+* Red Hat OpenShift Container Platform on premise
 
 //The Astra Connector is required to be installed on private clusters that you want to manage. The version of the Astra Connector that you need to install depends on the type of cluster. Install Astra Connector version 23.10 on private Red Hat OpenShift Service on AWS (ROSA) clusters, and Astra Connector version 23.07 on other types of private clusters and self-managed clusters.
 
@@ -22,7 +31,7 @@ Astra Control Service uses the Astra Connector to enable communication between A
 .About this task
 
 * If you are using a bastion host, issue these commands from the command line of the bastion host. 
-* After you install the Astra Connector on your ROSA cluster, the cluster is automatically added to Astra Control Service.
+* *ROSA clusters only*: After you install the Astra Connector on your ROSA cluster, the cluster is automatically added to Astra Control Service.
 
 .Steps
 
