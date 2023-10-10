@@ -75,14 +75,14 @@ kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.0
 kubectl get all -n astra-connector-operator
 ----
 . Get an API token from Astra Control. Refer to the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation docs^] for instructions.
-. (Astra Connector 23.10 only) Create a secret using the token. Replace <API_TOKEN> with the token you received from Astra Control:
-+
-[source,console]
-----
-kubectl create secret generic astra-token \
---from-literal=apiToken=<API_TOKEN> \
--n astra-connector
-----
+//. (Astra Connector 23.10 only) Create a secret using the token. Replace <API_TOKEN> with the token you received from Astra Control:
+//+
+//[source,console]
+//----
+//kubectl create secret generic astra-token \
+//--from-literal=apiToken=<API_TOKEN> \
+//-n astra-connector
+//----
 . Create the Astra Connector CR file and name it `astra-connector-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
 +
 [source,yaml]
