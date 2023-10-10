@@ -5,7 +5,7 @@ keywords: connector, install, astra connector, manage cluster, add cluster, clus
 summary: You can install the Astra Connector to help with managing private clusters.
 ---
 
-= Install the Astra Connector for private clusters
+= Install Astra Connector for private clusters
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
