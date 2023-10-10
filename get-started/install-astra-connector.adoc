@@ -11,7 +11,9 @@ summary: You can install the Astra Connector to help with managing private clust
 :imagesdir: ../media/get-started/
 
 [.lead]
-The Astra Connector is required to be installed on private clusters that you want to manage. The version of the Astra Connector that you need to install depends on the type of cluster. Install Astra Connector version 23.10 on private Red Hat OpenShift Service on AWS (ROSA) clusters, and Astra Connector version 23.07 on other types of private clusters and self-managed clusters.
+Astra Control Service uses the Astra Connector to enable communication between Astra Control Service and private clusters. You need to install the Astra Connector on private clusters that you want to manage. The Astra Connector supports private Red Hat OpenShift Service on AWS (ROSA) clusters as well as other types of private and self-managed clusters.
+
+//The Astra Connector is required to be installed on private clusters that you want to manage. The version of the Astra Connector that you need to install depends on the type of cluster. Install Astra Connector version 23.10 on private Red Hat OpenShift Service on AWS (ROSA) clusters, and Astra Connector version 23.07 on other types of private clusters and self-managed clusters.
 
 //To add private ROSA clusters, you need to install version 23.10 of the Astra Connector on the cluster. For all other private clusters, including self-managed clusters, install Astra Connector version 23.07.  
 
@@ -23,6 +25,8 @@ The Astra Connector is required to be installed on private clusters that you wan
 * After you install the Astra Connector on your ROSA cluster, the cluster is automatically added to Astra Control Service.
 
 .Steps
+
+////
 
 . Apply the correct Astra Connector operator for your cluster type. When you run this command, the correct namespace for the Astra Connector is created and the configuration is applied to the namespace:
 +
@@ -45,6 +49,16 @@ kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.0
 ----
 --
 ====
+
+////
+
+. Install the Astra Connector operator. When you run this command, the correct namespace for the Astra Connector is created and the configuration is applied to the namespace:
++
+[source,console]
+----
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.07/download/astraconnector_operator.yaml
+----
+
 . Verify that the operator is installed and ready:
 +
 [source,console]
@@ -60,45 +74,8 @@ kubectl create secret generic astra-token \
 --from-literal=apiToken=<API_TOKEN> \
 -n astra-connector
 ----
-. (Astra Connector 23.10 only) Create a Docker secret to use to pull the Astra Connector image. Replace values in brackets <> with information from your environment:
+. Create the Astra Connector CR file and name it `astra-connector-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
 +
-[source,console]
-----
-kubectl create secret docker-registry regcred \
---docker-username=<ASTRA_ACCOUNT_ID> \
---docker-password=<API_TOKEN> \
--n astra-connector \
---docker-server=cr.astra.netapp.io
-----
-. Create the correct Astra Connector CR file for the version of the Astra Connector you downloaded and name it `astra-connector-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
-+
-[role="tabbed-block"]
-====
-.23.10 (Private ROSA clusters)
---
-[source,yaml]
-----
-apiVersion: astra.netapp.io/v1
-kind: AstraConnector
-metadata:
-  name: astra-connector
-  namespace: astra-connector
-spec:
-  astra:
-    accountId: <ASTRA_ACCOUNT_ID>
-    clusterName: <CLUSTER_NAME>
-    skipTLSValidation: true
-    tokenRef: astra-token
-  natsSyncClient:
-    cloudBridgeURL: <ASTRA_CONTROL_HOST_URL>
-    hostAliasIP: <ASTRA_HOST_ALIAS_IP_ADDRESS>
-  imageRegistry:
-    name: cr.astra.netapp.io/astra
-    secret: regcred
-----
---
-.23.07 (All other private clusters)
---
 [source,yaml]
 ----
 apiVersion: netapp.astraconnector.com/v1
@@ -125,9 +102,7 @@ spec:
     accountId: <ASTRA_CONTROL_ACCOUNT_ID>
     acceptEULA: yes
 ----
---
-====
-. Apply the `astra-connector-cr.yaml` file after you populate it with the correct values:
+. After you populate the `astra-connector-cr.yaml` file with the correct values, apply the CR:
 +
 [source,console]
 ----
@@ -152,9 +127,6 @@ You should see output similar to the following:
 NAMESPACE         NAME              REGISTERED   ASTRACONNECTORID                       STATUS
 neptune-system   astra-connector   true         00a821c8-2cef-41ac-8777-ed05a417883e   Registered with Astra
 ----
-
-
-
 
 ////
 
@@ -221,5 +193,78 @@ You should see output similar to the following:
 NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 ----
+
+////
+
+
+////
+. (Astra Connector 23.10 only) Create a Docker secret to use to pull the Astra Connector image. Replace values in brackets <> with information from your environment:
++
+[source,console]
+----
+kubectl create secret docker-registry regcred \
+--docker-username=<ASTRA_ACCOUNT_ID> \
+--docker-password=<API_TOKEN> \
+-n astra-connector \
+--docker-server=cr.astra.netapp.io
+----
+
+. Create the correct Astra Connector CR file for the version of the Astra Connector you downloaded and name it `astra-connector-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
++
+[role="tabbed-block"]
+====
+.23.10 (Private ROSA clusters)
+--
+[source,yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: AstraConnector
+metadata:
+  name: astra-connector
+  namespace: astra-connector
+spec:
+  astra:
+    accountId: <ASTRA_ACCOUNT_ID>
+    clusterName: <CLUSTER_NAME>
+    skipTLSValidation: true
+    tokenRef: astra-token
+  natsSyncClient:
+    cloudBridgeURL: <ASTRA_CONTROL_HOST_URL>
+    hostAliasIP: <ASTRA_HOST_ALIAS_IP_ADDRESS>
+  imageRegistry:
+    name: cr.astra.netapp.io/astra
+    secret: regcred
+----
+--
+.23.07 (All other private clusters)
+--
+[source,yaml]
+----
+apiVersion: netapp.astraconnector.com/v1
+kind: AstraConnector
+metadata:
+  name: astra-connector
+  namespace: astra-connector
+spec:
+  natssync-client:
+    image: natssync-client:2.0
+    cloud-bridge-url: <ASTRA_CONTROL_SERVICE_URL>
+  nats:
+    image: nats:2.6.1-alpine3.14
+  httpproxy-client:
+    image: httpproxylet:2.0
+  echo-client:
+    image: echo-proxylet:2.0
+  imageRegistry:
+    name: theotw
+    secret: otw-secret
+  astra:
+    token: <ASTRA_CONTROL_SERVICE_API_TOKEN>
+    clusterName: <PRIVATE_AKS_CLUSTER_NAME>
+    accountId: <ASTRA_CONTROL_ACCOUNT_ID>
+    acceptEULA: yes
+----
+--
+====
 
 ////
