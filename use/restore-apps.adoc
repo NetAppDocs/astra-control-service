@@ -137,6 +137,18 @@ Astra Control Provisioner provides backup and restore functionality that can be 
 .Expand for configuration steps
 [%collapsible]
 ====
+. Do the following on the ONTAP storage backend:
+.. Find the SVM hosting the volumes for the application.
+.. Log in to a terminal connected to ONTAP where the volumes are created.
+.. Hide the enabled snapshot directory:
++
+NOTE: The enabled directory will continue to be accessible. 
++
+[source,console]
+----
+nfs modify -vserver <svm name> -v3-hide-snapshot enabled
+----
+
 . Do the following in Astra Trident: 
 .. Enable the snapshot directory for the PV associated with the application:
 +
@@ -156,18 +168,9 @@ Response:
 ----
 SnapshotDirectory: "true"
 ----
-. Do the following on the ONTAP storage backend:
-.. Find the SVM hosting the volumes for the application.
-.. Log in to a terminal connected to ONTAP where the volumes are created.
-.. Hide the enabled snapshot directory:
-+
-NOTE: The enabled directory will continue to be accessible. 
-+
-[source,console]
-----
-nfs modify -vserver <svm name> -v3-hide-snapshot enabled
-----
-. In Astra Control, refresh the application after enabling the snapshot directory so that Astra Control recognizes the changed value. 
+
+. In Astra Control, refresh the application after enabling the snapshot directory so that Astra Control recognizes the changed value.
+
 .Result
 The application is ready to backup and restore using Astra Control. The PVC is also available to be used by other applications for backups and restores.
 ====
