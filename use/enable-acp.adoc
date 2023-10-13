@@ -1,0 +1,107 @@
+---
+sidebar: sidebar
+permalink: use/enable-acp.html
+keywords: Astra Control Provisioner install, acp, enable, astra trident upgrade, upgrade trident
+summary: Enable Astra Control Provisioner to access advanced storage provisioning and management functionality.
+---
+
+= Enable Astra Control Provisioner
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+[.lead]
+23.10 and later versions of Astra Trident include the option to enable Astra Control Provisioner, which allows licensed Astra users access to advanced storage provisioning and management functionality in addition to standard Astra Trident CSI-based functionality. The provisioner is not enabled by default in Astra Trident 23.10 but can be enabled using this process.
+
+link:../get-started/requirements.html[Learn more^] about supported Astra Trident versions and other Astra Control Center requirements.
+
+.Before you begin
+
+If you are enabling the Astra Control Provisioner, you need the following:
+
+* Astra Trident 23.10.
++
+NOTE: Refer to https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html[Astra Trident documentation^] for these procedures.
+
+* An Astra Control license to use Astra Control Provisioner and the functionality it provides.
+
+.Upgrade to Astra Control Provisioner 23.10
+
+If you upgraded your Astra Trident to version 23.10, you can use one of these procedures to install and enable Astra Control Provisioner. The Astra Control Provisioner enables access to advanced storage provisioning and management functionality that is available to all licensed Astra Control users beginning with Astra Trident 23.10.
+
+. Log in to Astra Control Service.
+
+. On the Dashboard, select *Deploy a self-managed instance of Astra Control*.
+
+. Follow the instructions to log in to the Astra Control Service image registry, pull the Astra Control Center installation image, and extract the image.
+
+. Push the image to your local registry.
+
+. Determine if the original installation method used an https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#determine-the-original-installation-method[operator (either manually or with Helm) or `tridentctl`^].
++
+NOTE: If you used Helm for the original install and you are upgrading to 23.10, you'll need to use either the Trident operator or tridentctl to perform Astra Control Provisioner enablement.
+
+[role="tabbed-block"]
+====
+.Astra Trident operator
+--
+//. Delete the Trident operator that was used to install the current Astra Trident instance. For example, if you are upgrading from Astra Trident 23.07, run the following command:
+//+
+//----
+//kubectl delete -f 23.07/trident-installer/deploy/<bundle-name.yaml> -n trident
+//----
+. Edit the TridentOrchestrator CR to enable Astra Control Provisioner (`enable-acp=true`) and set the registry location for the Astra Control Provisioner image:
++
+[subs=+quotes]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  imagePullPolicy: IfNotPresent
+  windows: false
+  *enableACP: true*
+  *acpImage: mycustomregistry/trident-acp:v23.10.0*
+----
+. Apply the changes:
++
+----
+kubectl -n trident apply -f tridentorchestrator_cr.yaml
+----
+. Update the Astra Trident configuration so that the new `trident-acp` container is deployed:
++
+NOTE: For clusters running Kubernetes 1.24 or earlier, use `bundle_pre_1_25.yaml`. For clusters running Kubernetes 1.25 or later, use `bundle_post_1_25.yaml`.
++
+----
+kubectl -n trident apply -f trident-installer-23.10.0/deploy/<bundle-name.yaml>
+----
+. Verify the operator, deployment, and replicasets were created.
++
+----
+kubectl get all -n <operator-namespace>
+----
++
+IMPORTANT: There should only be *one instance* of the operator in a Kubernetes cluster. Do not create multiple deployments of the Trident operator.
+. Verify the `trident-acp` container is running:
++
+----
+kubectl get pod -n trident trident-controller-<uuid> -o yaml/json
+----
+--
+.tridentctl
+--
+. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html[Uninstall Astra Trident^].
+. Install Astra Trident again with Astra Control Provisioner enabled (`--enable-acp=true`):
++
+----
+./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:v23.10
+----
+====
+// end tabbed block
+
+.For more information
+
+* https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-operator-overview.html[Astra Trident upgrades documentation^]

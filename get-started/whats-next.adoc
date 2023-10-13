@@ -5,7 +5,7 @@ keywords: get started, manage apps, manage account
 summary: Now that you've logged in and added clusters to Astra Control, you're ready to start using Astra Control's application data management features.
 ---
 
-= What's next?
+= What\'s next?
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/

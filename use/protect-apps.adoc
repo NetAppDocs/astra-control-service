@@ -93,8 +93,7 @@ The snapshot process begins. A snapshot is successful when the status is *Health
 
 You can also back up an app at any time.
 
-//astradoc-91, astradoc-154
-//IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, backups are disruptive and the app will be unavailable until the backup operation has completed. 
+You can create immutable backups by backing up applications to immutable buckets. Refer to link:../learn/data-protection.html#immutable-backups[Data protection^] for important information about working with immutable backups.
 
 ifdef::azure[]
 [NOTE]
@@ -108,9 +107,6 @@ endif::azure[]
 . Select *Applications*.
 
 . From the Options menu in the *Actions* column for the desired app, select *Back up*.
-//+
-//image:screenshot-create-backup.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Backup."]
-
 . Customize the name of the backup.
 . Choose whether to back up the app from an existing snapshot. If you select this option, you can choose from a list of existing snapshots.
 . Choose a destination bucket for the backup from the list of storage buckets.

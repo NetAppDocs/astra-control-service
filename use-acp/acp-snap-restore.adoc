@@ -1,0 +1,90 @@
+---
+sidebar: sidebar
+permalink: use-acp/acp-snap-restore.html
+keywords: snapshot restore, snapshot, astra control provisioner, TridentActionSnapshotRestore,
+summary: Astra Control Provisioner provides rapid, in-place volume restoration from a snapshot using the `TridentActionSnapshotRestore` (TASR) CR. This CR functions as an imperative Kubernetes action and does not persist after the operation completes. 
+---
+
+= Recover volume data using a snapshot
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+[.lead]
+Astra Control Provisioner provides rapid, in-place volume restoration from a snapshot using the `TridentActionSnapshotRestore` (TASR) CR. This CR functions as an imperative Kubernetes action and does not persist after the operation completes. 
+
+Astra Control Provisioner supports snapshot restore on the `ontap-san`, `ontap-san-economy`, `ontap-nas`, `ontap-nas-flexgroup`, `azure-netapp-files`, `gcp-cvs`, and `solidfire-san` drivers. 
+
+.Before you begin
+You must have a bound PVC and available volume snapshot. 
+
+* Verify the PVC status is bound.
++
+----
+kubectl get pvc
+----
+
+* Verify the volume snapshot is ready to use.
++
+----
+kubectl get vs
+----
+
+.Steps
+
+. Create the TASR CR. This example creates a CR for PVC `pvc1` and volume snapshot `pvc1-snapshot`.
++
+----
+cat tasr-pvc1-snapshot.yaml
+
+apiVersion: v1
+kind: TridentActionSnapshotRestore
+metadata:
+  name: this-doesnt-matter
+  namespace: trident
+spec:
+  pvcName: pvc1
+  volumeSnapshotName: pvc1-snapshot
+----
+
+. Apply the CR to restore from the snapshot. This example restores from snapshot `pvc1`.
++
+----
+kubectl create -f tasr-pvc1-snapshot.yaml
+
+tridentactionsnapshotrestore.trident.netapp.io/this-doesnt-matter created
+----
+
+.Results 
+Astra Control Provisioner restores the data from the snapshot. You can verify the snapshot restore status.  
+----
+kubectl get tasr -o yaml
+
+apiVersion: v1
+items:
+- apiVersion: trident.netapp.io/v1
+  kind: TridentActionSnapshotRestore
+  metadata:
+    creationTimestamp: "2023-04-14T00:20:33Z"
+    generation: 3
+    name: this-doesnt-matter
+    namespace: trident
+    resourceVersion: "3453847"
+    uid: <uid>
+  spec:
+    pvcName: pvc1
+    volumeSnapshotName: pvc1-snapshot
+  status:
+    startTime: "2023-04-14T00:20:34Z"
+    completionTime: "2023-04-14T00:20:37Z"
+    state: Succeeded
+kind: List
+metadata:
+  resourceVersion: ""
+----
+
+[NOTE]
+====
+* In most cases, Astra Control Provisioner will not automatically retry the operation in case of failure. You will need to perform the operation again. 
+* Kubernetes users without admin access might have to be granted permission by the admin to create a TASR CR in their application namespace.
+====

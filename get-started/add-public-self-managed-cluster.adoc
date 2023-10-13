@@ -101,6 +101,11 @@ Your self-managed cluster needs to meet the following requirements:
 * The cluster cannot be hosted within your on-premises network; it must be hosted in a public cloud environment.
 * If you are using or plan to use storage enabled with CSI drivers, the appropriate CSI drivers must be installed on the cluster. For more information on using CSI drivers to integrate storage, refer to the documentation for your storage service.
 * You have access to the cluster kubeconfig file that includes only one context element. Follow link:create-kubeconfig.html[these instructions^] to generate a kubeconfig file.
+* If you are adding the cluster using a kubeconfig file that references a private Certificate Authority (CA), add the following line to the `cluster` section of the kubeconfig file. This enables Astra Control to add the cluster:
++
+----
+insecure-skip-tls-verify: true
+----
 * *Rancher only*: When managing application clusters in a Rancher environment, modify the application cluster's default context in the kubeconfig file provided by Rancher to use a control plane context instead of the Rancher API server context. This reduces load on the Rancher API server and improves performance.
 *	*Astra Trident*: If you are using or plan to use NetApp storage, ensure that you have installed the latest version of Astra Trident. If Astra Trident is already installed, link:check-astra-trident-version.html[check to make sure it is the latest version^].
 +
@@ -111,6 +116,8 @@ NOTE: You can https://docs.netapp.com/us-en/trident/trident-get-started/kubernet
 ** *Astra Trident volume snapshot controller and volume snapshot class installed and configured*: The volume snapshot controller must be https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[installed^] so that snapshots can be created in Astra Control. At least one Astra Trident `VolumeSnapshotClass` has been https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass[set up^] by an administrator.
 // Removed ONTAP credentials commands from ACC as Vijitha said they are not needed - ASTRADOC-21
 =======
+
+* *Astra Control Provisioner*: To use Astra Control Provisioner advanced management and storage provisioning features that are only accessible to Astra Control users, you must install Astra Trident 23.10 or later and enable link:../use/enable-acp.html[Astra Control Provisioner functionality].
 
 .Steps
 

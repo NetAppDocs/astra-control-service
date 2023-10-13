@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: use/restore-apps.html
-keywords: restore app, restoring an app, restore an app, restore, migrate storage class
+keywords: restore app, restoring an app, restore an app, restore, ontap-nas-economy, disruptive, migration
 summary: Astra Control can restore your application configuration and persistent storage from a snapshot or backup. Persistent storage backups are transferred from your object store, so restoring from an existing backup will complete the fastest.
 ---
 
@@ -15,12 +15,13 @@ Astra Control can restore your application from a snapshot or backup. Restoring 
 
 NOTE: If you add a namespace filter to an execution hook that runs after a restore or clone operation and the restore or clone source and destination are in different namespaces, the namespace filter is only applied to the destination namespace.
 
-.About this task
+.Before you begin
 
 //ASTRACTL-12847/DOC-4147
 * *Protect your apps first*: It is strongly recommended that you take a snapshot or backup of your application before restoring it. This will enable you to clone from the snapshot or backup in the event that the restore is unsuccessful.
 * *Check destination volumes*: If you restore to a different storage class, ensure that the storage class uses the same persistent volume access mode (for example, ReadWriteMany). The restore operation will fail if the destination persistent volume access mode is different. For example, if your source persistent volume uses the RWX access mode, selecting a destination storage class that is not able to provide RWX, such as Azure Managed Disks, AWS EBS, Google Persistent Disk or `ontap-san`, will cause the restore operation to fail. For more information about persistent volume access modes, refer to the https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes[Kubernetes^] documentation.
 * *Plan for space needs*: When you perform an in-place restore of an application that uses NetApp ONTAP storage, the space used by the restored app can double. After performing an in-place restore, remove any unwanted snapshots from the restored application to free up storage space.
+* *(ontap-nas-economy driver only) Backups and restores*: Before backing up or restoring an app that uses a storage class backed by the `ontap-nas-economy` driver, verify that the <<Enable backup and restore for ontap-nas-economy operations,snapshot directory on the ONTAP storage backend is hidden>>. Failure to hide this directory might lead to loss of access to your application, especially if it is using NFSv3.
 
 [CAUTION]
 ====
@@ -33,9 +34,6 @@ Performing an in-place restore operation on an app that shares resources with an
 . From the Options menu in the Actions column, select *Restore*.
 . Choose the restore type:
 * *Restore to original namespaces*: Use this procedure to restore the app in-place to the original cluster.
-+
-//astradoc-91, astradoc-154 limitation
-//NOTE: If your app uses a storage class backed by the `ontap-nas-economy` driver, you must restore the app using the original storage classes. You cannot specify a different storage class if you are restoring the app to the same namespace.
 
 .. Select the snapshot or backup to use to restore the app in-place, which reverts the app to an earlier version of itself.
 .. Select *Next*.
@@ -43,9 +41,6 @@ Performing an in-place restore operation on an app that shares resources with an
 NOTE: If you restore to a namespace that was previously deleted, a new namespace with the same name is created as part of the restore process. Any users that had rights to manage apps in the previously deleted namespace need to manually restore rights to the newly re-created namespace.
 
 * *Restore to new namespaces*: Use this procedure to restore the app to another cluster or with different namespaces from the source. You can also use this procedure to migrate an app to a different storage class.
-+
-//astradoc-91, astradoc-154, acs sc migration 23.05
-//NOTE: You can use this procedure to migrate an app's storage class to a native cloud provider storage class or other supported storage class, <<Migrate from ontap-nas-economy storage to ontap-nas storage,migrate an app from a storage class backed by `ontap-nas-economy`>> to a storage class backed by `ontap-nas` on the same cluster, or copy the app to another cluster with a storage class backed by the `ontap-nas-economy` driver.
 
 .. Specify the name for the restored app.
 .. Choose the destination cluster for the app you intend to restore.
@@ -129,7 +124,54 @@ NOTE: If you use a GVK filter, you must specify Version and Kind.
 +
 TIP: You can create as many resource include and exclude rules as you want. The rules appear in the restore application summary before you initiate the operation. 
 
-//astradoc-91, astradoc-154
-//== Migrate from ontap-nas-economy storage to ontap-nas storage
+== Enable backup and restore for ontap-nas-economy operations
 
-//You can use an Astra Control link:../use/restore-apps.html[application restore] or link:../use/clone-apps.html[application clone^] operation to migrate application volumes from a storage class backed by `ontap-nas-economy`, which permits limited application protection options, to a storage class backed by `ontap-nas` with its full range of Astra Control protection options. The clone or restore operation migrates Qtree-based volumes that use an `ontap-nas-economy` backend to standard volumes backed by `ontap-nas`. Volumes, regardless of whether they are `ontap-nas-economy` backed only or mixed, will be migrated to the target storage class. After the migration is complete, protection options are no longer limited.
+Astra Control Provisioner provides backup and restore functionality that can be enabled for storage backends that are using the `ontap-nas-economy` storage class.
+
+.Before you begin
+
+* You have enabled Astra Control Provisioner.
+* You have defined an application in Astra Control. This application will have limited protection functionality until you complete this procedure.
+* You have `ontap-nas-economy` selected as the default storage class for your storage backend.
+
+.Expand for configuration steps
+[%collapsible]
+====
+. Do the following on the ONTAP storage backend:
+.. Find the SVM hosting the volumes for the application.
+.. Log in to a terminal connected to ONTAP where the volumes are created.
+.. Hide the enabled snapshot directory:
++
+NOTE: The enabled directory will continue to be accessible. 
++
+[source,console]
+----
+nfs modify -vserver <svm name> -v3-hide-snapshot enabled
+----
+
+. Do the following in Astra Trident: 
+.. Enable the snapshot directory for the PV associated with the application:
++
+[source,console]
+----
+tridentctl update volume <pv name> --snapshot-dir=true --pool-level=true -n trident
+----
+.. Confirm that the change has been made:
++
+[source,console]
+----
+tridentctl get volume <pv name> -n trident -o yaml | grep snapshotDir
+----
++
+Response:
++
+----
+SnapshotDirectory: "true"
+----
+
+. In Astra Control, refresh the application after enabling the snapshot directory so that Astra Control recognizes the changed value.
+
+.Result
+The application is ready to backup and restore using Astra Control. The PVC is also available to be used by other applications for backups and restores.
+====
+// End snippet
