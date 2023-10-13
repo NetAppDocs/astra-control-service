@@ -33,18 +33,18 @@ CAUTION: _You can't be fully protected until you have a recent backup_. This is 
 NOTE: If you perform a snapshot or backup, but the operation fails with the error "The resource wasn't created because of an internal server issue", check to make sure the storage backend you are using has the correct drivers installed. Some storage backends need Container Storage Interface (CSI) drivers, while others need an external snapshot controller.
 
 === Immutable backups
-Astra Control Service supports creating immutable backups with the following platforms and immutable bucket types:
+Astra Control Service supports creating immutable backups with the following platforms and bucket types:
 
-* Amazon Elastic Kubernetes Service (EKS) using an immutable Amazon S3 bucket
-* Microsoft Azure Kubernetes Service (AKS) using an immutable Microsoft azure bucket
-* Google Kubernetes Engine (GKE) using an immutable Google Cloud Storage bucket
-* NetApp StorageGRID using an immutable NetApp bucket
+* Amazon Elastic Kubernetes Service (EKS) using an Amazon S3 bucket with Object Lock configured
+* Microsoft Azure Kubernetes Service (AKS) using an immutable Microsoft azure bucket with a retention policy configured
+* Google Kubernetes Engine (GKE) using an Google Cloud Storage bucket with a retention policy configured
+* NetApp StorageGRID using an S3 bucket with Object Lock configured
 
 Note the following when working with immutable backups:
 
-* If you back up to an immutable bucket in an unsupported platform or to an unsupported bucket type, you might get unpredictable results, such as backup deletion failing even if the retention time elapses.
+* If you back up to a write once read many (WORM) bucket in an unsupported platform or to an unsupported bucket type, you might get unpredictable results, such as backup deletion failing even if the retention time has elapsed.
 * Astra Control does not support Lifecycle management policies on the buckets you use with immutable backups.
-* In Azure, the terms "bucket level" and "container level" have the same meaning when you configure a time-based retention policy.
+// * In Azure, the terms "bucket level" and "container level" have the same meaning when you configure a time-based retention policy.
 
 == Clones
 
