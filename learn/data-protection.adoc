@@ -35,10 +35,10 @@ NOTE: If you perform a snapshot or backup, but the operation fails with the erro
 === Immutable backups
 Astra Control Service supports creating immutable backups with the following platforms and bucket types:
 
-* Amazon Elastic Kubernetes Service (EKS) using an Amazon S3 bucket with Object Lock configured
+* Amazon Elastic Kubernetes Service (EKS) using an Amazon S3 bucket with S3 Object Lock configured
 * Microsoft Azure Kubernetes Service (AKS) using an immutable Microsoft azure bucket with a retention policy configured
 * Google Kubernetes Engine (GKE) using an Google Cloud Storage bucket with a retention policy configured
-* NetApp StorageGRID using an S3 bucket with Object Lock configured
+* NetApp StorageGRID using an S3 bucket with S3 Object Lock configured
 
 Note the following when working with immutable backups:
 
