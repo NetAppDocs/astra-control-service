@@ -101,6 +101,10 @@ Be aware of how storage space is handled when you back up an application hosted 
 ====
 endif::azure[]
 
+NOTE: Buckets in Astra Control do not report available capacity. Before backing up or cloning apps managed by Astra Control, check bucket information in the appropriate storage management system.
+
+IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, be sure that you have defined a `backendType` parameter in your https://docs.netapp.com/us-en/trident/trident-reference/objects.html#kubernetes-storageclass-objects[Kubernetes storage object^] with a value of `ontap-nas-economy` before performing any protection operations.
+
 .Steps
 
 . Select *Applications*.
@@ -126,9 +130,7 @@ Astra Control creates a backup of the app.
 ===============================
 
 == Create an immutable backup
-You can create immutable backups by backing up applications to buckets that have a retention policy configured. Refer to link:../learn/data-protection.html#immutable-backups[Data protection^] for important information about working with immutable backups.
-
-IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, be sure that you have defined a `backendType` parameter in your https://docs.netapp.com/us-en/trident/trident-reference/objects.html#kubernetes-storageclass-objects[Kubernetes storage object^] with a value of `ontap-nas-economy` before performing any protection operations.
+An immutable backup cannot be modified, deleted, or overwritten as long as the retention policy on the bucket that stores the backup forbids it. You can create immutable backups by backing up applications to buckets that have a retention policy configured. Refer to link:../learn/data-protection.html#immutable-backups[Data protection^] for important information about working with immutable backups.
 
 .Before you begin
 You need to configure the destination bucket with a retention policy. How you do this will differ depending on which storage provider you use. Refer to the storage provider documentation for more information:
@@ -138,7 +140,9 @@ You need to configure the destination bucket with a retention policy. How you do
 * *Microsoft Azure*: https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-policy-configure-container-scope?tabs=azure-portal[Configure a blob storage bucket with a time-based retention policy on container-level scope^].
 * *NetApp StorageGRID*: https://docs.netapp.com/us-en/storagegrid-117/tenant/creating-s3-bucket.html[Enable S3 Object Lock when creating the bucket and set a default retention mode of "compliance" with a default retention period^].
 
-NOTE: Buckets in Astra Control Center do not report available capacity. Before backing up or cloning apps managed by Astra Control Center, check bucket information in the appropriate storage management system.
+NOTE: Buckets in Astra Control do not report available capacity. Before backing up or cloning apps managed by Astra Control, check bucket information in the appropriate storage management system.
+
+IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, be sure that you have defined a `backendType` parameter in your https://docs.netapp.com/us-en/trident/trident-reference/objects.html#kubernetes-storageclass-objects[Kubernetes storage object^] with a value of `ontap-nas-economy` before performing any protection operations.
 
 .Steps
 
