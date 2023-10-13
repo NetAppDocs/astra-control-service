@@ -133,8 +133,8 @@ IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` dr
 .Before you begin
 You need to configure the destination bucket with a retention policy. How you do this will differ depending on which storage provider you use. Refer to the storage provider documentation for more information:
 
-* *Microsoft Azure*: https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-policy-configure-container-scope?tabs=azure-portal[Configure a blob storage bucket with a time-based retention policy on container-level scope.^].
-* *Google Cloud*: https://cloud.google.com/storage/docs/using-bucket-lock[Configure a bucket with a retention policy and specify a retention period.^].
+* *Microsoft Azure*: https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-policy-configure-container-scope?tabs=azure-portal[Configure a blob storage bucket with a time-based retention policy on container-level scope^].
+* *Google Cloud*: https://cloud.google.com/storage/docs/using-bucket-lock[Configure a bucket with a retention policy and specify a retention period^].
 * *Amazon Web Services*: https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-console.html[Enable S3 Object Lock when creating the bucket and set a default retention mode of "governance" with a default retention period^].
 * *NetApp StorageGRID*: https://docs.netapp.com/us-en/storagegrid-117/tenant/creating-s3-bucket.html[Enable S3 Object Lock when creating the bucket and set a default retention mode of "compliance" with a default retention period^].
 
