@@ -28,21 +28,22 @@ You can link:../use/enable-acp.html[enable Astra Control Provisioner^] if you ha
 +
 The following features are available with the Astra Control Provisioner 23.10 release:
 
-*** *Enhanced storage backend security with Kerberos 5 encryption*: You can improve storage security by link:../use-acp/configure-storage-backend-encryption.html[enabling encryption^] for the traffic between your managed cluster and the storage backend. Astra Control Provisioner provides Kerberos 5 encryption over NFSv4.1 connections from Red Hat OpenShift clusters to Azure NetApp Files volumes.
+*** *Enhanced storage backend security with Kerberos 5 encryption*: You can improve storage security by enabling encryption for the traffic between your managed cluster and the storage backend. Astra Control Provisioner provides Kerberos 5 encryption over NFSv4.1 connections from Red Hat OpenShift clusters to Azure NetApp Files volumes.
++
+link:../use-acp/configure-storage-backend-encryption.html[Enable encryption^]
 
 *** *Recover data using a snapshot*: Astra Control Provisioner provides rapid, in-place volume restoration from a snapshot using the `TridentActionSnapshotRestore` (TASR) CR.
 
 *** *SnapMirror enhancements*: Use the app replication feature in environments where Astra Control does not have direct connectivity to an ONTAP cluster or access to ONTAP credentials. 
 //You can also explicitly trigger SnapMirror updates for a particular snapshot and monitor snapshot destination transfer and protection.
 
-*** Read-only clones
-???
-
-* Astra Control now supports immutable backups. You can store backups on immutable buckets.
+*** *Backup and restore capabilities for applications with `ontap-nas-economy` driver-backed storage backends*: Enable backup and restore operations for `ontap-nas-economy` with some simple steps.
 +
-link:../use/protect-apps.html[Protect apps^]
+link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[Enable backup and restore^]
 
-* You can now backup and restore `ontap-nas-economy`-backed applications with some link:../use/restore-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[simple setup steps^].
+* Astra Control now supports link:../concepts/data-protection.html#immutable-backups[unalterable, read-only backups^] as an additional security layer against malware and other threats.
++
+link:../concepts/data-protection.html#immutable-backups[Immutable backups^]
 
 * Beginning with this release, execution hooks functionality can be enabled or disabled and is disabled by default. If you have not yet created execution hooks for use with Astra Control, you need to link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature[enable the execution hooks feature^] to begin creating hooks. If you created execution hooks prior to this release, the execution hooks functionality stays enabled and you can use hooks as you would normally.
 +
