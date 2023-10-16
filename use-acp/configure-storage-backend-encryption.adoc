@@ -31,7 +31,7 @@ You can create a configuration file that should be applied at the storage backen
 
 .Steps
 
-. On the managed cluster, create a storage backend configuration file using the following examples, depending on where you need to define the storage backend (storage backend level, or virtual pool level). Note that you can specify one of three values for the `spec.kerberos` (storage backend level) or `spec.storage.kerberos` (virtual pool level) field:
+. On the managed cluster, create a storage backend configuration file using the following examples, depending on where you need to define the storage backend (storage backend level or virtual pool level). Note that you can specify one of three values for the `spec.kerberos` (storage backend level) or `spec.storage.kerberos` (virtual pool level) field:
 
 * kerberos: sec=krb5
 * kerberos: sec=krb5i
