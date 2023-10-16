@@ -27,9 +27,14 @@ You can enable Kerberos encryption on the storage traffic between your managed c
 You can create an Azure NetApp Files storage backend configuration that includes Kerberos encryption capability. 
 
 .About this task
-You can create a configuration file that should be applied at the storage backend level using the `spec.kerberos` field, or at the virtual pool level using the `spec.storage.kerberos` field. When you define the configuration at the virtual pool level, the pool is selected using the label in the storage class.
+When you create a storage backend configuration file that configures Kerberos encryption, you can define it so that it should be applied at one of two possible levels:
 
-Note that you can specify one of three different versions of encryption at either level:
+* The *storage backend level* using the `spec.kerberos` field
+* The *virtual pool level* using the `spec.storage.kerberos` field
+
+When you define the configuration at the virtual pool level, the pool is selected using the label in the storage class.
+
+At either level, you can specify one of three different versions of Kerberos encryption:
 
 * `kerberos: sec=krb5` (authentication and encryption)
 * `kerberos: sec=krb5i` (authentication and encryption with identity protection)
@@ -37,8 +42,7 @@ Note that you can specify one of three different versions of encryption at eithe
 
 .Steps
 
-. On the managed cluster, create a storage backend configuration file using one of the following examples, depending on where you need to define the storage backend (storage backend level or virtual pool level). 
-Replace values in brackets <> with information from your environment:
+. On the managed cluster, create a storage backend configuration file using one of the following examples, depending on where you need to define the storage backend (storage backend level or virtual pool level). Replace values in brackets <> with information from your environment:
 +
 [role="tabbed-block"]
 ====
