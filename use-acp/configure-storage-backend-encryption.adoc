@@ -29,7 +29,7 @@ You can create an Azure NetApp Files storage backend configuration that includes
 .About this task
 You can create a configuration file that should be applied at the storage backend level using the `spec.kerberos` field, or at the virtual pool level using the `spec.storage.kerberos` field. When you define the configuration at the virtual pool level, the pool is selected using the label in the storage class.
 
-Note that you can specify one of three different levels of encryption at either level:
+Note that you can specify one of three different versions of encryption at either level:
 
 * `kerberos: sec=krb5` (authentication and encryption)
 * `kerberos: sec=krb5i` (authentication and encryption with identity protection)
