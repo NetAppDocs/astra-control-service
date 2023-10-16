@@ -31,7 +31,13 @@ You can create a configuration file that should be applied at the storage backen
 
 .Steps
 
-. On the managed cluster, create a storage backend configuration file using the following examples, depending on where you need to define the storage backend (storage backend level, or virtual pool level). Replace values in brackets <> with information from your environment:
+. On the managed cluster, create a storage backend configuration file using the following examples, depending on where you need to define the storage backend (storage backend level, or virtual pool level). Note that you can specify one of three values for the `spec.kerberos` (storage backend level) or `spec.storage.kerberos` (virtual pool level) field:
+
+* kerberos: sec=krb5
+* kerberos: sec=krb5i
+* kerberos: sec=krb5p
+
+Replace values in brackets <> with information from your environment:
 +
 [role="tabbed-block"]
 ====
@@ -67,7 +73,7 @@ spec:
   virtualNetwork: <VIRTUAL_NETWORK>
   subnet: <SUBNET>
   nasType: nfs
-  kerberos: sec=krb5i
+  kerberos: sec=krb5i #can be krb, krb5i, or krb5p
   credentials:
     name: backend-tbc-anf-secret
 ----
@@ -107,7 +113,7 @@ spec:
   storage:
     - labels:
         type: encryption
-      kerberos: sec=krb5i
+      kerberos: sec=krb5i #can be krb, krb5i, or krb5p
   credentials:
     name: backend-tbc-anf-secret
 ----
