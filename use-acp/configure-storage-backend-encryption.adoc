@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: use-acp/configure-storage-backend-encryption.html
-keywords: astra control center, acp, astra control provisioner, backend, storage, encryption, kerberos
+keywords: astra control, acp, astra control provisioner, backend, storage, encryption, kerberos
 summary: You can configure encryption to protect the traffic between Astra Control and your storage backend.
 ---
 
@@ -11,7 +11,7 @@ summary: You can configure encryption to protect the traffic between Astra Contr
 :imagesdir: ../media/use-acp/
 
 [.lead]
-Using Astra Control Provisioner, you can improve storage security by enabling encryption for the traffic between your managed cluster and the storage backend. 
+Using Astra Control Provisioner, you can improve data access security by enabling encryption for the traffic between your managed cluster and the storage backend. 
 
 Astra Control Provisioner supports Kerberos 5 encryption over NFSv4.1 connections from Red Hat OpenShift clusters to Azure NetApp Files volumes. You can create, delete, resize, snapshot, clone, read-only clone, and import volumes that use NFS encryption.
 
@@ -78,7 +78,7 @@ spec:
   virtualNetwork: <VIRTUAL_NETWORK>
   subnet: <SUBNET>
   nasType: nfs
-  kerberos: sec=krb5i #can be krb, krb5i, or krb5p
+  kerberos: sec=krb5i #can be krb5, krb5i, or krb5p
   credentials:
     name: backend-tbc-anf-secret
 ----
@@ -118,7 +118,7 @@ spec:
   storage:
     - labels:
         type: encryption
-      kerberos: sec=krb5i #can be krb, krb5i, or krb5p
+      kerberos: sec=krb5i #can be krb5, krb5i, or krb5p
   credentials:
     name: backend-tbc-anf-secret
 ----
