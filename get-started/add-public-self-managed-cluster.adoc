@@ -98,7 +98,7 @@ Astra Control Service supports self-managed clusters that use the following Kube
 Your self-managed cluster needs to meet the following requirements:
 
 * The cluster must be accessible via the internet.
-* The cluster cannot be hosted within your on-premises network; it must be hosted in a public cloud environment.
+//* The cluster cannot be hosted within your on-premises network; it must be hosted in a public cloud environment.
 * If you are using or plan to use storage enabled with CSI drivers, the appropriate CSI drivers must be installed on the cluster. For more information on using CSI drivers to integrate storage, refer to the documentation for your storage service.
 * You have access to the cluster kubeconfig file that includes only one context element. Follow link:create-kubeconfig.html[these instructions^] to generate a kubeconfig file.
 * If you are adding the cluster using a kubeconfig file that references a private Certificate Authority (CA), add the following line to the `cluster` section of the kubeconfig file. This enables Astra Control to add the cluster:

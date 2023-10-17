@@ -30,8 +30,14 @@ Astra Connector supports the following types of private clusters:
 
 .About this task
 
+* When you perform these steps, execute these commands against the private cluster that you want to manage with Astra Control Service.
 * If you are using a bastion host, issue these commands from the command line of the bastion host. 
 * *ROSA clusters only*: After you install Astra Connector on your ROSA cluster, the cluster is automatically added to Astra Control Service.
+
+.Before you begin
+
+* You need access to the private cluster you want to manage with Astra Control Service.
+* You need Kubernetes administrator permissions.
 
 .Steps
 
@@ -61,7 +67,7 @@ kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.0
 
 ////
 
-. Install the Astra Connector operator. When you run this command, the correct namespace for the Astra Connector is created and the configuration is applied to the namespace:
+. Install the Astra Connector operator on the private cluster you want to manage with Astra Control Service. When you run this command, the namespace `astra-connector-operator` is created and the configuration is applied to the namespace:
 +
 [source,console]
 ----
