@@ -62,7 +62,7 @@ NOTE: Astra Control creates new destination namespaces as part of the clone oper
 * Choose to keep the original storage class associated with the app or select a different storage class.
 +
 //astradoc-91, astradoc-154
-NOTE: You can migrate an app's storage class to a native cloud provider storage class or other supported storage class, link:../use/restore-apps.html#migrate-from-ontap-nas-economy-storage-to-ontap-nas-storage[migrate an app from a storage class backed by `ontap-nas-economy`^] to a storage class backed by `ontap-nas` on the same cluster, or copy the app to another cluster with a storage class backed by the `ontap-nas-economy` driver.
+NOTE: You can migrate an app's storage class to a native cloud provider storage class or other supported storage class, migrate an app from a storage class backed by `ontap-nas-economy` to a storage class backed by `ontap-nas` on the same cluster, or copy the app to another cluster with a storage class backed by the `ontap-nas-economy` driver.
 +
 NOTE: If you select a different storage class and this storage class doesn't exist at the moment of restore, an error will be returned.
 
