@@ -58,7 +58,7 @@ If you start a backup or snapshot operation with associated execution hooks but 
 
 * The execution hooks feature is disabled by default for new Astra Control deployments.
 ** You need to enable the execution hooks feature before you can use execution hooks.
-** Owner or Admin users can enable or disable the execution hooks feature for all accounts. Refer to <<Enable the execution hooks feature>> and <<Disable the execution hooks feature>> for instructions.
+** Owner or Admin users can enable or disable the execution hooks feature for all users defined in the current Astra Control account. Refer to <<Enable the execution hooks feature>> and <<Disable the execution hooks feature>> for instructions.
 ** The feature enablement status is preserved during Astra Control upgrades.
 * An execution hook must use a script to perform actions. Many execution hooks can reference the same script.
 * Astra Control requires the scripts that execution hooks use to be written in the format of executable shell scripts.
@@ -228,7 +228,7 @@ If you start but then cancel a backup that includes a snapshot and there are ass
 Visit the https://github.com/NetApp/Verda[NetApp Verda GitHub project] to download real execution hooks for popular apps such as Apache Cassandra and Elasticsearch. You can also see examples and get ideas for structuring your own custom execution hooks.
 
 == Enable the execution hooks feature
-If you are an Owner or Admin user, you can enable the execution hooks feature. When you enable the feature, all Owner and Admin users can use execution hooks and all users can view existing execution hooks and hook scripts.
+If you are an Owner or Admin user, you can enable the execution hooks feature. When you enable the feature, all users defined in this Astra Control account can use execution hooks and view existing execution hooks and hook scripts.
 
 .Steps
 
@@ -243,7 +243,7 @@ The *Account* > *Feature settings* tab appears.
 . Select *Yes, enable execution hooks*.
 
 == Disable the execution hooks feature
-If you are an Owner or Admin user, you can disable the execution hooks feature. You must delete all existing execution hooks before you can disable the execution hooks feature. Refer to <<Delete an execution hook>> for instructions on deleting an existing execution hook.
+If you are an Owner or Admin user, you can disable the execution hooks feature for all users defined in this Astra Control account. You must delete all existing execution hooks before you can disable the execution hooks feature. Refer to <<Delete an execution hook>> for instructions on deleting an existing execution hook.
 
 .Steps
 
