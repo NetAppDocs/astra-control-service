@@ -156,13 +156,14 @@ nfs modify -vserver <svm name> -v3-hide-snapshot enabled
 ----
 
 . Do the following in Astra Trident: 
-.. Enable the snapshot directory for the PV associated with the application:
+.. Enable the snapshot directory for each PV that is ontap-nas-economy based and associated with the application:
 +
 [source,console]
 ----
 tridentctl update volume <pv name> --snapshot-dir=true --pool-level=true -n trident
 ----
-.. Confirm that the change has been made:
+
+.. Confirm that the snapshot directory has been enabled for each associated PV:
 +
 [source,console]
 ----
@@ -175,10 +176,11 @@ Response:
 SnapshotDirectory: "true"
 ----
 
-. In Astra Control, refresh the application after enabling the snapshot directory so that Astra Control recognizes the changed value.
+. In Astra Control, refresh the application after enabling all associated snapshot directories so that Astra Control recognizes the changed value. 
 
 .Result
-The application is ready to backup and restore using Astra Control. The PVC is also available to be used by other applications for backups and restores.
+
+The application is ready to backup and restore using Astra Control. Each PVC is also available to be used by other applications for backups and restores.
 ====
 // End snippet
 
