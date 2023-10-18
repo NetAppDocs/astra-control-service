@@ -102,6 +102,11 @@ kubectl get pod -n trident trident-controller-<uuid> -o yaml/json
 ====
 // end tabbed block
 
+.Result
+After Astra Control Provisioner is installed, the host cluster in the Astra Control Center UI will show an `ACP version` rather than `Trident version` field and current installed version number.
+
+image:ac-acp-version.png[A screenshot depicting the ACP version location in UI]
+
 .For more information
 
 * https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-operator-overview.html[Astra Trident upgrades documentation^]
