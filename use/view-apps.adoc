@@ -11,7 +11,7 @@ summary: After you start managing an app, Astra Control provides details about t
 :imagesdir: ../media/use/
 
 [.lead]
-After you start managing an app, Astra Control provides details about the app that enables you to identify its status (whether it's healthy), its protection status (whether it's fully protected in case of failure), the pods, persistent storage, and more.
+After you start managing an app, Astra Control provides details about the app that enables you to identify its communication status (whether Astra Control can communicate with the app), its protection status (whether it's fully protected in case of failure), the pods, persistent storage, and more.
 
 //image:screenshot-app-overview.gif["A screenshot of the Overview page for an app where you can view details such as the app status, app protection status, protection schedule, and more."]
 
@@ -21,7 +21,7 @@ After you start managing an app, Astra Control provides details about the app th
 
 . Find the information that you're looking for:
 +
-App Status:: Provides a status that reflects the app's state in Kubernetes.
+App Status:: Provides a status that reflects whether Astra Control can communicate with the application.
 // For example, are pods and persistent volumes online? If an app is unhealthy, you'll need to go and troubleshoot the issue on the cluster by looking at Kubernetes logs. Astra Control doesn't provide information to help you fix a broken app.
 
 App Protection Status:: Provides a status of how well the app is protected:
