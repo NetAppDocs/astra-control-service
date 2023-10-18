@@ -51,6 +51,11 @@ link:../use/manage-app-execution-hooks.html[Manage app execution hooks^]
 
 * Astra Control has a new public image Docker registry. You can use this registry to pull Astra Control Provisioner images and other software.
 
+* Astra Control now supports on-premise Red Hat OpenShift Container Platform clusters.
++
+link:../get-started/add-first-cluster.html[Add a cluster^]
+
+
 == 27 July 2023
 
 .New features and support
