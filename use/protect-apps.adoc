@@ -206,7 +206,7 @@ IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` dr
 . From the Options menu in the *Actions* column for the desired app, select *Back up*.
 . Customize the name of the backup.
 . Choose whether to back up the app from an existing snapshot. If you select this option, you can choose from a list of existing snapshots.
-. Choose a destination bucket for the backup from the list of storage buckets. A write once read many (WORM) bucket is shown with a status of "Locked" when you hover over or select the bucket.
+. Choose a destination bucket for the backup from the list of storage buckets. A write once read many (WORM) bucket is indicated with a status of "Locked" next to the bucket name.
 +
 NOTE: If the bucket is an unsupported type, this is indicated when you hover over or select the bucket.
 . Select *Next*.
@@ -231,7 +231,7 @@ Astra Control creates an immutable backup of the app.
 
 You can view the snapshots and backups of an app from the Data Protection tab.
 
-NOTE: If a backup is immutable, its status is "Locked" in the Astra Control web UI.
+NOTE: An immutable backup is indicated with a status of "Locked" next to the bucket it is using.
 
 .Steps
 

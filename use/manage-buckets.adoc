@@ -126,7 +126,7 @@ You can remove a bucket that is no longer in use or is not healthy. You might wa
 [NOTE]
 ===============================
 * You cannot remove a default bucket. If you want to remove that bucket, first select another bucket as the default.
-* You cannot remove a write once read many (WORM) bucket before the bucket's cloud provider retention period has expired.
+* You cannot remove a write once read many (WORM) bucket before the bucket's cloud provider retention period has expired. WORM buckets are denoted with "Locked" next to the bucket name.
 ===============================
 
 .Before you begin
