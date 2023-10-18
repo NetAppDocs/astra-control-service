@@ -231,6 +231,8 @@ Astra Control creates an immutable backup of the app.
 
 You can view the snapshots and backups of an app from the Data Protection tab.
 
+NOTE: If a backup is immutable, its status is "Locked" in the Astra Control web UI.
+
 .Steps
 
 . Select *Applications* and then select the name of a managed app.
