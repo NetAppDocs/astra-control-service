@@ -125,11 +125,11 @@ spec:
 --
 ====
 
-. Use the configuration file to create the backend:
+. Use the configuration file you created in the previous step to create the backend:
 +
 [source,console]
 ----
-tridentctl create backend -f <backend-file>
+tridentctl create backend -f <backend-configuration-file>
 ----
 +
 If the backend creation fails, something is wrong with the backend configuration. You can view the logs to determine the cause by running the following command:
@@ -162,20 +162,20 @@ parameters:
 +
 [source,console]
 ----
-kubectl create -f sample-input/storage-class-basic-csi.yaml
+kubectl create -f sample-input/storage-class-anf-sc-nfs.yaml
 ----
 . Make sure that the storage class has been created:
 +
 [source,console]
 ----
-kubectl get sc basic-csi
+kubectl get sc anf-sc-nfs
 ----
 +
 You should see output similar to the following:
 +
 ----
 NAME         PROVISIONER             AGE
-basic-csi    csi.trident.netapp.io   15h
+anf-sc-nfs    csi.trident.netapp.io   15h
 ----
 
 === Provision volumes
