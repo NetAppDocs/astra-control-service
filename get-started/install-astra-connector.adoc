@@ -105,12 +105,12 @@ metadata:
   namespace: astra-connector
 spec:
   natssync-client:
-    image: natssync-client:2.0
+    image: natssync-client:2.0.202302011758
     cloud-bridge-url: <ASTRA_CONTROL_SERVICE_URL>
   nats:
     image: nats:2.6.1-alpine3.14
   httpproxy-client:
-    image: httpproxylet:2.0
+    image: httpproxylet:2.2.202310111117
   echo-client:
     image: echo-proxylet:2.0
   imageRegistry:
