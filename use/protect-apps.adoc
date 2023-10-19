@@ -147,11 +147,11 @@ Astra Control Provisioner provides backup and restore functionality that can be 
 [%collapsible]
 ====
 . Do the following on the ONTAP storage backend:
-.. Find the SVM hosting the volumes for the application.
+.. Find the SVM that is hosting the `ontap-nas-economy`-based volumes of the application.
 .. Log in to a terminal connected to ONTAP where the volumes are created.
-.. Hide the enabled snapshot directory:
+.. Hide the snapshot directory for the SVM:
 +
-NOTE: The enabled directory will continue to be accessible. 
+NOTE: The hidden directory will continue to be accessible. 
 +
 [source,console]
 ----
@@ -176,7 +176,7 @@ tridentctl get volume <pv name> -n trident -o yaml | grep snapshotDir
 Response:
 +
 ----
-SnapshotDirectory: "true"
+snapshotDirectory: "true"
 ----
 
 . In Astra Control, refresh the application after enabling all associated snapshot directories so that Astra Control recognizes the changed value. 
