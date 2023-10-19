@@ -20,7 +20,7 @@ You can do the following tasks related to protecting your app data:
 * <<Configure a protection policy>>
 * <<Create a snapshot>>
 * <<Create a backup>>
-* <<Enable backup and restore for ontap-nas-economy operations>.
+* <<Enable backup and restore for ontap-nas-economy operations>>
 * <<Create an immutable backup>>
 * <<View snapshots and backups>>
 * <<Delete snapshots>>
@@ -32,6 +32,8 @@ You can do the following tasks related to protecting your app data:
 A protection policy protects an app by creating snapshots, backups, or both at a defined schedule. You can choose to create snapshots and backups hourly, daily, weekly, and monthly, and you can specify the number of copies to retain. 
 
 If you need backups or snapshots to run more frequently than once per hour, you can https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html[use the Astra Control REST API to create snapshots and backups^].
+
+NOTE: If you are defining a protection policy that creates immutable backups to write once read many (WORM) buckets, ensure that the retention time for the backups is not shorter than the retention period configured for the bucket.
 
 //astradoc-91, astradoc-154
 //IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, protection policies cannot be used. Migrate to a storage class supported by Astra Control if you want to schedule backups and snapshots. 
