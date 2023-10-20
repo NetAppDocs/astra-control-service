@@ -34,9 +34,6 @@ link:../use-acp/configure-storage-backend-encryption.html[Enable encryption^]
 
 *** *Recover data using a snapshot*: Astra Control Provisioner provides rapid, in-place volume restoration from a snapshot using the `TridentActionSnapshotRestore` (TASR) CR.
 
-*** *SnapMirror enhancements*: Use the app replication feature in environments where Astra Control does not have direct connectivity to an ONTAP cluster or access to ONTAP credentials. 
-//You can also explicitly trigger SnapMirror updates for a particular snapshot and monitor snapshot destination transfer and protection.
-
 *** *Backup and restore capabilities for applications with `ontap-nas-economy` driver-backed storage backends*: Enable backup and restore operations for `ontap-nas-economy` with some simple steps.
 +
 link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[Enable backup and restore^]
