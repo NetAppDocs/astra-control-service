@@ -39,7 +39,7 @@ If you upgraded your Astra Trident to version 23.10, you can use one of these pr
 
 . Determine if the original installation method used an https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#determine-the-original-installation-method[operator (either manually or with Helm) or `tridentctl`^].
 +
-NOTE: If you used Helm for the original install and you are upgrading to 23.10, you'll need to use either the Trident operator or tridentctl to perform Astra Control Provisioner enablement.
+NOTE: If you used Helm for the original install and you are upgrading to 23.10, you'll need to use either the Trident operator or tridentctl to perform Astra Control Provisioner enablement. Do not use Helm to enable Astra Control Provisioner.
 
 [role="tabbed-block"]
 ====
