@@ -183,4 +183,4 @@ Yes, you can upgrade to Astra Trident 23.10 or later and enable Astra Control Pr
 
 *How can I transition from being an existing Trident user to Astra Control to use advanced storage management and provisioning functionality?*
 
-If you are an existing Trident user (this includes users of Astra Trident in the public cloud), you need to acquire an Astra Control license first. After you do, you can download the Astra Control Provisioner bundle, upgrade Astra Trident, and enable Astra Control Provisioner functionality.
+If you are an existing Trident user (this includes users of Astra Trident in the public cloud), you need to acquire an Astra Control license first. After you do, you can download the Astra Control Provisioner bundle, upgrade Astra Trident, and link:../use/enable-acp.html[enable Astra Control Provisioner functionality].
