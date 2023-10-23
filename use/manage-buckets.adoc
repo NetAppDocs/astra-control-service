@@ -65,8 +65,8 @@ You can add the following types of buckets:
 
 .Before you begin
 
-* The name of an existing bucket.
-* The credentials for the bucket that provide Astra Control Service with the permissions that it needs to manage the bucket.
+* Ensure you know the name of an existing bucket.
+* Ensure you have credentials for the bucket that provide Astra Control with the permissions that it needs to manage the bucket.
 ifdef::azure[]
 * If your bucket is in Microsoft Azure: 
 ** The bucket must belong to the resource group named _astra-backup-rg_.
