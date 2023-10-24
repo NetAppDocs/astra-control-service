@@ -41,7 +41,7 @@ The following features are available with the Astra Control Provisioner 23.10 re
 
 * *Immutable Backups*: Astra Control now support link:../concepts/data-protection.html#immutable-backups[unalterable, read-only backups^] as an additional security layer against malware and other threats.
 
-* *Execution hooks turned off by default*: Beginning with this release, execution hooks functionality can be link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature[enabled] or disabled and is disabled by default. If you have not yet created execution hooks for use with Astra Control, you need to link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature[enable the execution hooks feature^] to begin creating hooks. If you created execution hooks prior to this release, the execution hooks functionality stays enabled and you can use hooks as you would normally.
+* *Execution hooks turned off by default*: Beginning with this release, execution hooks functionality can be link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature[enabled] or disabled for additional security (it is disabled by default). If you have not yet created execution hooks for use with Astra Control, you need to link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature[enable the execution hooks feature^] to begin creating hooks. If you created execution hooks prior to this release, the execution hooks functionality stays enabled and you can use hooks as you would normally.
 
 == 27 July 2023
 

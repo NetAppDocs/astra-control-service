@@ -15,21 +15,23 @@ summary: Enable Astra Control Provisioner to access advanced storage provisionin
 
 Your Astra Control Service subscription automatically includes the license for Astra Control Provisioner use.
 
+In coming Astra Control updates, Astra Control Provisioner will replace Astra Trident as storage provisioner and orchestrator in the Astra Control architecture. As such, it's highly recommended that Astra Control users enable Astra Control Provisioner. Astra Trident will continue to remain open source and be released, maintained, supported, and updated with new CSI and other features from NetApp.
+
 .How do I know if I need to enable Astra Control Provisioner?
 
 If you add a cluster to Astra Control Service that does not have Astra Trident previously installed, the cluster will be marked as `Eligible`. After you add the cluster to Astra Control, Astra Control Provisioner will be automatically enabled. 
 
-If your cluster is marked `Partially eligible` because it's using an older version of Astra Trident or Astra Trident 23.10 without the provisioner option enabled, use these instructions to manually enable the Astra Control Provisioner for your cluster. 
+If your cluster is marked `Partially eligible` because it's using an older version of Astra Trident or Astra Trident 23.10 without the provisioner option enabled, use these instructions to manually enable the Astra Control Provisioner for your cluster.
 
 image:ac-acp-eligibility.png[A screenshot depicting cluster eligibility in the Add cluster workflow]
 
 .Before you enable Astra Control Provisioner
 
-If you are enabling the Astra Control Provisioner, you need the following:
+If you have an existing Astra Trident without Astra Control Provisioner and want to enable Astra Control Provisioner, you need the following first:
 
-* Astra Trident 23.10.
+* Astra Trident 23.10
 +
-NOTE: Refer to https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html[Astra Trident documentation^] for these procedures.
+NOTE: Refer to https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html[Astra Trident documentation^] for these upgrade procedures.
 
 .Upgrade to Astra Control Provisioner 23.10
 
@@ -109,7 +111,7 @@ kubectl get pod -n trident trident-controller-<uuid> -o yaml/json
 // end tabbed block
 
 .Result
-After Astra Control Provisioner is installed, the host cluster in the Astra Control UI will show an `ACP version` rather than `Trident version` field and current installed version number.
+After Astra Control Provisioner is installed, the cluster hosting the provisioner in the Astra Control UI will show an `ACP version` rather than `Trident version` field and current installed version number.
 
 image:ac-acp-version.png[A screenshot depicting the ACP version location in UI]
 

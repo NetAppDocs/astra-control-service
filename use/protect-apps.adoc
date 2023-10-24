@@ -35,9 +35,6 @@ If you need backups or snapshots to run more frequently than once per hour, you 
 
 NOTE: If you are defining a protection policy that creates immutable backups to write once read many (WORM) buckets, ensure that the retention time for the backups is not shorter than the retention period configured for the bucket.
 
-//astradoc-91, astradoc-154
-//IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, protection policies cannot be used. Migrate to a storage class supported by Astra Control if you want to schedule backups and snapshots. 
-
 .Steps
 
 . Select *Applications* and then select the name of a managed app.
