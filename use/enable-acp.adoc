@@ -11,11 +11,19 @@ summary: Enable Astra Control Provisioner to access advanced storage provisionin
 :imagesdir: ../media/use/
 
 [.lead]
-23.10 and later versions of Astra Trident include the option to enable Astra Control Provisioner, which allows licensed Astra users access to advanced storage provisioning and management functionality in addition to standard Astra Trident CSI-based functionality. Your Astra Control Service subscription automatically includes the license for Astra Control Provisioner use. 
+23.10 and later versions of Astra Trident include the option to enable Astra Control Provisioner, which allows licensed Astra users access to advanced storage provisioning and management functionality that is available only to licensed Astra Control users. This extended functionality is provided in addition to the standard Astra Trident CSI-based functionality that Astra Control Provisioner also provides. 
 
-The provisioner is not enabled by default in Astra Trident 23.10 but can be enabled using this process.
+Your Astra Control Service subscription automatically includes the license for Astra Control Provisioner use.
 
-.Before you begin
+.How do I know if I need to enable Astra Control Provisioner?
+
+If you add a cluster to Astra Control Service that does not have Astra Trident previously installed, the cluster will be marked as `Eligible`. After you add the cluster to Astra Control, Astra Control Provisioner will be automatically enabled. 
+
+If your cluster is marked `Partially eligible` because it's using an older version of Astra Trident or Astra Trident 23.10 without the provisioner option enabled, use these instructions to manually enable the Astra Control Provisioner for your cluster. 
+
+image:ac-acp-eligibility.png[A screenshot depicting cluster eligibility in the Add cluster workflow]
+
+.Before you enable Astra Control Provisioner
 
 If you are enabling the Astra Control Provisioner, you need the following:
 
@@ -23,11 +31,11 @@ If you are enabling the Astra Control Provisioner, you need the following:
 +
 NOTE: Refer to https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html[Astra Trident documentation^] for these procedures.
 
-* An Astra Control license to use Astra Control Provisioner and the functionality it provides. 
+* An AMD 64 system architecture. The Astra Control Provisioner image is limited to this architecture type.
 
 .Upgrade to Astra Control Provisioner 23.10
 
-If you upgraded your Astra Trident to version 23.10, you can use one of these procedures to install and enable Astra Control Provisioner. The Astra Control Provisioner enables access to advanced storage provisioning and management functionality that is available to all licensed Astra Control users beginning with Astra Trident 23.10.
+If you upgraded your Astra Trident to version 23.10, you can use this procedure to enable and install Astra Control Provisioner.
 
 . Log in to Astra Control Service.
 
@@ -37,9 +45,9 @@ If you upgraded your Astra Trident to version 23.10, you can use one of these pr
 
 . Push the image to your local registry.
 
-. Determine if the original installation method used an https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#determine-the-original-installation-method[operator (either manually or with Helm) or `tridentctl`^].
+. Determine if the original Astra Trident installation method used an https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#determine-the-original-installation-method[operator (either manually or with Helm) or `tridentctl`^].
 +
-NOTE: If you used Helm for the original install and you are upgrading to 23.10, you'll need to use either the Trident operator or tridentctl to perform Astra Control Provisioner enablement. Do not use Helm to enable Astra Control Provisioner.
+NOTE: If you used Helm for the original install, you'll need to use either the Trident operator or tridentctl to perform Astra Control Provisioner enablement. Do not use Helm to enable Astra Control Provisioner.
 
 [role="tabbed-block"]
 ====
