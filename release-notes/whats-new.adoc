@@ -18,9 +18,9 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 .New features and support
 
 [[nas-eco-backup-restore]]
-* *Backup and restore capabilities for applications with `ontap-nas-economy` driver-backed storage backends*: Enable backup and restore operations for `ontap-nas-economy` with some link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[simple steps^].
+* *Backup and restore capabilities for applications with ontap-nas-economy driver-backed storage backends*: Enable backup and restore operations for `ontap-nas-economy` with some link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[simple steps^].
 
-* Astra Control now supports link:../get-started/add-first-cluster.html[on-premise Red Hat OpenShift Container Platform clusters^].
+* Astra Control Service now supports link:../get-started/add-first-cluster.html[on-premise Red Hat OpenShift Container Platform clusters^] as well as private link:../get-started/install-astra-connector.html[Red Hat OpenShift Service on AWS (ROSA) clusters^].
 
 * *Introducing Astra Control Provisioner*
 +
