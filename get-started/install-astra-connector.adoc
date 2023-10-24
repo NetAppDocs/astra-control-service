@@ -71,7 +71,7 @@ kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.0
 +
 [source,console]
 ----
-kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.07/download/astraconnector_operator.yaml
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/23.07.0-202310181956/astraconnector_operator.yaml
 ----
 
 . Verify that the operator is installed and ready:
@@ -110,7 +110,7 @@ spec:
   nats:
     image: nats:2.6.1-alpine3.14
   httpproxy-client:
-    image: httpproxylet:2.2.202310111117
+    image: httpproxylet:2.2.202310101619
   echo-client:
     image: echo-proxylet:2.0
   imageRegistry:
