@@ -28,30 +28,19 @@ You can link:../use/enable-acp.html[enable Astra Control Provisioner^] if you ha
 +
 The following features are available with the Astra Control Provisioner 23.10 release:
 
-*** *Enhanced storage backend security with Kerberos 5 encryption*: You can improve storage security by enabling encryption for the traffic between your managed cluster and the storage backend. Astra Control Provisioner provides Kerberos 5 encryption over NFSv4.1 connections from Red Hat OpenShift clusters to Azure NetApp Files volumes.
-+
-link:../use-acp/configure-storage-backend-encryption.html[Enable encryption^]
+*** *Enhanced storage backend security with Kerberos 5 encryption*: You can improve storage security by link:../use-acp/configure-storage-backend-encryption.html[enabling encryption^] for the traffic between your managed cluster and the storage backend. Astra Control Provisioner provides Kerberos 5 encryption over NFSv4.1 connections from Red Hat OpenShift clusters to Azure NetApp Files volumes.
 
 *** *Recover data using a snapshot*: Astra Control Provisioner provides rapid, in-place volume restoration from a snapshot using the `TridentActionSnapshotRestore` (TASR) CR.
 
-*** *Backup and restore capabilities for applications with `ontap-nas-economy` driver-backed storage backends*: Enable backup and restore operations for `ontap-nas-economy` with some simple steps.
-+
-link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[Enable backup and restore^]
+*** *Backup and restore capabilities for applications with `ontap-nas-economy` driver-backed storage backends*: link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[Enable backup and restore operations for `ontap-nas-economy`^] with some simple steps.
 
 * Astra Control now supports link:../concepts/data-protection.html#immutable-backups[unalterable, read-only backups^] as an additional security layer against malware and other threats.
-+
-link:../concepts/data-protection.html#immutable-backups[Immutable backups^]
 
-* Beginning with this release, execution hooks functionality can be enabled or disabled and is disabled by default. If you have not yet created execution hooks for use with Astra Control, you need to link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature[enable the execution hooks feature^] to begin creating hooks. If you created execution hooks prior to this release, the execution hooks functionality stays enabled and you can use hooks as you would normally.
-+
-link:../use/manage-app-execution-hooks.html[Manage app execution hooks^]
+* Beginning with this release, execution hooks functionality can be enabled or disabled and is disabled by default. If you have not yet created execution hooks for use with Astra Control, you need to link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature[enable the execution hooks feature^] to begin creating hooks. If you created execution hooks prior to this release, the execution hooks functionality stays enabled and you can link:../use/manage-app-execution-hooks.html[use hooks^] as you would normally.
 
 * Astra Control has a new public image Docker registry. You can use this registry to pull Astra Control Provisioner images and other software.
 
-* Astra Control now supports on-premise Red Hat OpenShift Container Platform clusters.
-+
-link:../get-started/add-first-cluster.html[Add a cluster^]
-
+* Astra Control now supports link:../get-started/add-first-cluster.html[on-premise Red Hat OpenShift Container Platform clusters^].
 
 == 27 July 2023
 

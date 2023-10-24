@@ -31,8 +31,6 @@ If you are enabling the Astra Control Provisioner, you need the following:
 +
 NOTE: Refer to https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html[Astra Trident documentation^] for these procedures.
 
-* An AMD 64 system architecture. The Astra Control Provisioner image is limited to this architecture type.
-
 .Upgrade to Astra Control Provisioner 23.10
 
 If you upgraded your Astra Trident to version 23.10, you can use this procedure to enable and install Astra Control Provisioner.
