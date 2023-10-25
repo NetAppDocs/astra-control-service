@@ -13,14 +13,190 @@ summary: You can configure encryption to protect the traffic between Astra Contr
 [.lead]
 Using Astra Control Provisioner, you can improve data access security by enabling encryption for the traffic between your managed cluster and the storage backend. 
 
-Astra Control Provisioner supports Kerberos 5 encryption over NFSv4.1 connections from Red Hat OpenShift clusters to Azure NetApp Files volumes. You can create, delete, resize, snapshot, clone, read-only clone, and import volumes that use NFS encryption.
+Astra Control Provisioner supports Kerberos encryption for two types of storage backends:
 
-== Configure Kerberos encryption with Azure NetApp Files volumes
+* *On-premise ONTAP* - Astra Control Provisioner supports Kerberos encryption over NFSv3 and NFSv4 connections from Red Hat OpenShift and upstream Kubernetes clusters to on-premise ONTAP volumes.
+* *Azure NetApp Files* - Astra Control Provisioner supports Kerberos encryption over NFSv4.1 connections from upstream Kubernetes clusters to Azure NetApp Files volumes.
+
+You can create, delete, resize, snapshot, clone, read-only clone, and import volumes that use NFS encryption.
+
+== Configure in-flight Kerberos encryption with on-premise ONTAP volumes
+You can enable Kerberos encryption on the storage traffic between your managed cluster and an on-premise ONTAP storage backend.
+
+NOTE: Kerberos encryption for NFS traffic with on-premise ONTAP storage backends is only supported using the `ontap-nas` storage driver.
+
+.Before you begin
+
+* Ensure that you have enabled Astra Control Provisioner on the managed cluster. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for instructions.
+* Ensure that you have access to the `tridentctl` utility.
+* Ensure you have administrator access to the ONTAP storage backend.
+* Ensure you know the name of the volume or volumes you will be sharing from the ONTAP storage backend.
+* Ensure that you have prepared the ONTAP storage VM to support Kerberos encryption for NFS volumes. Refer to https://docs.netapp.com/us-en/ontap/nfs-config/create-kerberos-config-task.html[Enable Kerberos on a data LIF^] for instructions.
+
+=== Add or modify ONTAP export policies
+You need to add rules to existing ONTAP export policies or create new export polices that support Kerberos encryption for the ONTAP storage VM root volume as well as any ONTAP volumes shared with the upstream Kubernetes cluster. The export policy rules you add, or new export policies you create, need to support the following access protocols and access permissions:
+
+.Access protocols
+Configure the export policy with NFS, NFSv3, and NFSv4 access protocols.
+
+.Access details
+You can configure one of three different versions of Kerberos encryption, depending on your needs for the volume:
+
+* *Kerberos 5* - (authentication and encryption)
+* *Kerberos 5i* - (authentication and encryption with identity protection)
+* *Kerberos 5p* - (authentication and encryption with identity and privacy protection)
+
+Configure the ONTAP export policy rule with the appropriate access permissions. For example, if clusters will be mounting the NFS volumes with a mixture of Kerberos 5i and Kerberos 5p encryption, use the following access settings:
+
+|===
+|Type |Read-only access |Read/Write access |Superuser access
+
+|UNIX
+|Enabled
+|Enabled
+|Enabled
+
+|Kerberos 5i 
+|Enabled
+|Enabled
+|Enabled
+
+|Kerberos 5p 
+|Enabled
+|Enabled
+|Enabled
+
+|===
+
+Refer to the following documentation for how to create ONTAP export policies and export policy rules:
+
+* https://docs.netapp.com/us-en/ontap/nfs-config/create-export-policy-task.html[Create an export policy^]
+* https://docs.netapp.com/us-en/ontap/nfs-config/add-rule-export-policy-task.html[Add a rule to an export policy^]
+
+=== Create a storage backend
+You can create an Astra Control Provisioner storage backend configuration that includes Kerberos encryption capability. 
+
+.About this task
+When you create a storage backend configuration file that configures Kerberos encryption, you can specify one of three different versions of Kerberos encryption using the `spec.nfsMountOptions` parameter:
+
+* `spec.nfsMountOptions: sec=krb5` (authentication and encryption)
+* `spec.nfsMountOptions: sec=krb5i` (authentication and encryption with identity protection)
+* `spec.nfsMountOptions: sec=krb5p` (authentication and encryption with identity and privacy protection)
+
+Specify only one Kerberos level. If you specify more than one Kerberos encryption level in the parameter list, only the first option is used.
+
+.Steps
+
+. On the managed cluster, create a storage backend configuration file using the following example. Replace values in brackets <> with information from your environment:
++
+[source,yaml]
+----
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backend-ontap-nas-secret
+type: Opaque
+stringData:
+  clientID: <CLIENT_ID>
+  clientSecret: <CLIENT_SECRET>
+---
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: backend-ontap-nas
+spec:
+  version: 1
+  storageDriverName: "ontap-nas"
+  managementLIF: <STORAGE_VM_MGMT_LIF_IP_ADDRESS>
+  dataLIF: <PROTOCOL_LIF_FQDN_OR_IP_ADDRESS>
+  svm: <STORAGE_VM_NAME>
+  username: <STORAGE_VM_USERNAME_CREDENTIAL>
+  password: <STORAGE_VM_PASSWORD_CREDENTIAL>
+  nasType: nfs
+  nfsMountOptions: ["sec=krb5i"] #can be krb5, krb5i, or krb5p
+  qtreesPerFlexvol:
+  credentials:
+    name: backend-ontap-nas-secret
+----
+
+. Use the configuration file you created in the previous step to create the backend:
++
+[source,console]
+----
+tridentctl create backend -f <backend-configuration-file>
+----
++
+If the backend creation fails, something is wrong with the backend configuration. You can view the logs to determine the cause by running the following command:
++
+[source,console]
+----
+tridentctl logs
+----
++
+After you identify and correct the problem with the configuration file, you can run the create command again.
+
+=== Create a storage class
+You can create a storage class to provision volumes with Kerberos encryption.
+
+.About this task
+When you create a storage class object, you can specify one of three different versions of Kerberos encryption using the `mountOptions` parameter:
+
+* `mountOptions: sec=krb5` (authentication and encryption)
+* `mountOptions: sec=krb5i` (authentication and encryption with identity protection)
+* `mountOptions: sec=krb5p` (authentication and encryption with identity and privacy protection)
+
+Specify only one Kerberos level. If you specify more than one Kerberos encryption level in the parameter list, only the first option is used. If the level of encryption you specified in the storage backend configuration is different than the level you specify in the storage class object, the storage class object takes precedence.
+
+.Steps
+
+. Create a StorageClass Kubernetes object, using the following example:
++
+[source,yaml]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-nas-sc
+provisioner: csi.trident.netapp.io
+mountOptions: ["sec=krb5i"] #can be krb5, krb5i, or krb5p
+parameters:
+  backendType: "ontap-nas"
+  storagePools: "ontapnas_pool"
+  trident.netapp.io/nasType: "nfs"
+allowVolumeExpansion: True                  
+----
+
+. Create the storage class:
++
+[source,console]
+----
+kubectl create -f sample-input/storage-class-ontap-nas-sc.yaml
+----
+. Make sure that the storage class has been created:
++
+[source,console]
+----
+kubectl get sc ontap-nas-sc
+----
++
+You should see output similar to the following:
++
+----
+NAME         PROVISIONER             AGE
+ontap-nas-sc    csi.trident.netapp.io   15h
+----
+
+=== Provision volumes
+After you create a storage backend and a storage class, you can now provision a volume. For instructions, refer to https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html[Provision a volume^].
+
+
+== Configure in-flight Kerberos encryption with Azure NetApp Files volumes
 You can enable Kerberos encryption on the storage traffic between your managed cluster and a single Azure NetApp Files storage backend or a virtual pool of Azure NetApp Files storage backends. 
 
 .Before you begin
 
 * Ensure that you have enabled Astra Control Provisioner on the managed Red Hat OpenShift cluster. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for instructions.
+* Ensure that you have access to the `tridentctl` utility.
 * Ensure that you have prepared the Azure NetApp Files storage backend for Kerberos encryption by noting the requirements and following the instructions in https://learn.microsoft.com/en-us/azure/azure-netapp-files/configure-kerberos-encryption[Azure NetApp Files documentation^].
 
 === Create a storage backend
@@ -39,6 +215,7 @@ At either level, you can specify one of three different versions of Kerberos enc
 * `kerberos: sec=krb5` (authentication and encryption)
 * `kerberos: sec=krb5i` (authentication and encryption with identity protection)
 * `kerberos: sec=krb5p` (authentication and encryption with identity and privacy protection)
+
 
 .Steps
 
@@ -134,7 +311,10 @@ tridentctl create backend -f <backend-configuration-file>
 +
 If the backend creation fails, something is wrong with the backend configuration. You can view the logs to determine the cause by running the following command:
 +
+[source,console]
+----
 tridentctl logs
+----
 +
 After you identify and correct the problem with the configuration file, you can run the create command again.
 
