@@ -8,7 +8,7 @@ summary: This FAQ can help if you're just looking for a quick answer to a questi
 = Frequently asked questions for Astra Control Service
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ../media/use/
 
 [.lead]
 This FAQ can help if you're just looking for a quick answer to a question.

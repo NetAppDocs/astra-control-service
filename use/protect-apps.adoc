@@ -154,6 +154,8 @@ NOTE: The hidden directory will continue to be accessible.
 ----
 nfs modify -vserver <svm name> -v3-hide-snapshot enabled
 ----
++
+IMPORTANT: Verify that the snapshot directory on the ONTAP storage backend is hidden. Failure to hide this directory might lead to loss of access to your application, especially if it is using NFSv3.
 
 . Do the following in Astra Trident: 
 .. Enable the snapshot directory for each PV that is ontap-nas-economy based and associated with the application:
