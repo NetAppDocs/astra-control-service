@@ -43,11 +43,11 @@ Yes. After upgrading to the Premium Plan, Astra Control starts charging you for 
 
 *I upgraded to the Premium PayGO Plan in the middle of a month. Will I get charged for the entire month?*
 
-No, billing starts from the time that you upgraded to the Premium Plan.
+No. Billing starts from the time that you upgraded to the Premium Plan.
 
 *I am using the Free Plan, will I get charged for the Persistent Volume Claims?*
 
-Yes, you will be charged for the Persistent Volumes used by the clusters from your cloud provider.
+Yes, you will be charged for the persistent volumes used by the clusters from your cloud provider.
 
 == Registering Kubernetes clusters
 
@@ -72,7 +72,7 @@ ifdef::azure[]
 
 *Can I add a private AKS cluster to Astra Control Service?*
 
-Yes, you can add private AKS clusters to Astra Control Service.  To add a private AKS cluster, refer to link:add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
+Yes, you can add private AKS clusters to Astra Control Service. To add a private AKS cluster, refer to link:add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
 
 *Can I use Active Directory to manage authentication for my AKS clusters?*
 
@@ -84,7 +84,7 @@ ifdef::gcp[]
 
 *Can I add a private GKE cluster to Astra Control Service?*
 
-Yes, you can add private GKE clusters to Astra Control Service.  To add a private GKE cluster, refer to link:add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
+Yes, you can add private GKE clusters to Astra Control Service. To add a private GKE cluster, refer to link:add-first-cluster.html[Start managing Kubernetes clusters from Astra Control Service].
 
 Private GKE clusters must have the https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept[authorized networks^] set to allow the Astra Control IP address:
 
@@ -92,7 +92,7 @@ Private GKE clusters must have the https://cloud.google.com/kubernetes-engine/do
 
 *Can my GKE cluster reside on a shared VPC?*
 
-Yes, Astra Control can manage clusters that reside in a shared VPC. link:set-up-google-cloud.html[Learn how to set up the Astra service account for a shared VPC configuration].
+Yes. Astra Control can manage clusters that reside in a shared VPC. link:set-up-google-cloud.html[Learn how to set up the Astra service account for a shared VPC configuration].
 
 *Where can I find my service account credentials on GCP?*
 
@@ -160,7 +160,7 @@ Yes. A snapshot operation on an application by Astra Control includes snapshot o
 
 *Can I manage snapshots taken by Astra Control directly through my cloud provider?*
 
-No. Snapshots and backups taken by Astra Control can only be managed with Astra Control.
+No. Snapshots and backups taken by Astra Control can be managed only with Astra Control.
 
 == Astra Control Provisioner
 
@@ -174,7 +174,7 @@ In coming Astra Control updates, Astra Control Provisioner will replace Astra Tr
 
 *Do I have to pay for Astra Trident?*
 
-No, Astra Trident will continue to be open source and free to download.
+No. Astra Trident will continue to be open source and free to download.
 
 *Can I use the storage management and provisioning features in Astra Control without installing and using all of Astra Control?*
 

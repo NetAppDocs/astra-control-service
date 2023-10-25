@@ -11,7 +11,7 @@ summary: Enable Astra Control Provisioner to access advanced storage provisionin
 :imagesdir: ../media/use/
 
 [.lead]
-23.10 and later versions of Astra Trident include the option to enable Astra Control Provisioner, which allows licensed Astra users access to advanced storage provisioning and management functionality that is available only to licensed Astra Control users. This extended functionality is provided in addition to the standard Astra Trident CSI-based functionality that Astra Control Provisioner also provides. 
+23.10 and later versions of Astra Trident include the option to enable Astra Control Provisioner, which allows licensed Astra users access to advanced storage provisioning and management functionality that is available only to licensed Astra Control users. Astra Control Provisioner provides this extended functionality in addition to standard Astra Trident CSI-based functionality. 
 
 Your Astra Control Service subscription automatically includes the license for Astra Control Provisioner use.
 
