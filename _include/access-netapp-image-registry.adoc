@@ -1,0 +1,17 @@
+* *Access the NetApp Astra Control image registry*
+You have the option to obtain installation images and functionality enhancements for Astra Control, such as Astra Control Provisioner, from the NetApp image registry.
+
+.Expand for details
+[%collapsible]
+=====
+. Record your Astra Control account ID.
++
+You can see your account ID in the Astra Control web UI. Select the figure icon at the top right of the page and select *API access*.
+. Get an API token from Astra Control. Refer to the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^] for instructions.
+. Log into the NetApp registry:
++
+[source,console]
+----
+docker login cr.astra.netapp.io -u <account-id> -p <api-token>
+----
+=====
