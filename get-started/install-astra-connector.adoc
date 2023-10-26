@@ -81,6 +81,13 @@ kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/dow
 kubectl get all -n astra-connector-operator
 ----
 . Get an API token from Astra Control. Refer to the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^] for instructions.
+
+. Create the astra-connector namespace:
++
+[source,console]
+----
+kubectl create ns astra-connector
+----
 //. (Astra Connector 23.10 only) Create a secret using the token. Replace <API_TOKEN> with the token you received from Astra Control:
 //+
 //[source,console]
@@ -105,17 +112,10 @@ metadata:
   namespace: astra-connector
 spec:
   natssync-client:
-    image: natssync-client:2.0.202302011758
     cloud-bridge-url: <ASTRA_CONTROL_SERVICE_URL>
-  nats:
-    image: nats:2.6.1-alpine3.14
-  httpproxy-client:
-    image: httpproxylet:2.2.202310101619
-  echo-client:
-    image: echo-proxylet:2.0
   imageRegistry:
     name: theotw
-    secret: otw-secret
+    secret: ""
   astra:
     token: <ASTRA_CONTROL_SERVICE_API_TOKEN>
     #clusterName: <PRIVATE_AKS_CLUSTER_NAME>
@@ -145,7 +145,7 @@ You should see output similar to the following:
 +
 ----
 NAMESPACE         NAME              REGISTERED   ASTRACONNECTORID                       STATUS
-neptune-system   astra-connector   true         00a821c8-2cef-41ac-8777-ed05a417883e   Registered with Astra
+astra-connector   astra-connector   true         00a821c8-2cef-41ac-8777-ed05a417883e   Registered with Astra
 ----
 
 ////
