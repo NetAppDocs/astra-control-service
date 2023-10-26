@@ -80,7 +80,7 @@ spec:
 ----
 kubectl -n trident apply -f tridentorchestrator_cr.yaml
 ----
-. Update the Astra Trident configuration so that the new `trident-acp` container is deployed:
+. Update Astra Trident configuration so that the new `trident-acp` container is deployed:
 +
 NOTE: For clusters running Kubernetes 1.24 or earlier, use `bundle_pre_1_25.yaml`. For clusters running Kubernetes 1.25 or later, use `bundle_post_1_25.yaml`.
 +
