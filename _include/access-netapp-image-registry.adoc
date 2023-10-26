@@ -1,6 +1,6 @@
-* *Access the NetApp Astra Control image registry*
+* *Access the NetApp Astra Control image registry*:
 You have the option to obtain installation images and functionality enhancements for Astra Control, such as Astra Control Provisioner, from the NetApp image registry.
-
++
 .Expand for steps
 [%collapsible]
 =====
