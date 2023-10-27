@@ -48,8 +48,8 @@ If you upgraded your Astra Trident to version 23.10, you can use this procedure 
 
 . Determine if the original Astra Trident installation method used an https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#determine-the-original-installation-method[operator (either manually or with Helm) or `tridentctl`^].
 +
-NOTE: If you used Helm for the original installation, you'll need to use either the Trident operator or tridentctl to perform Astra Control Provisioner enablement. Do not use Helm to enable Astra Control Provisioner.
-
+WARNING: Do not use Helm to enable Astra Control Provisioner. If you used Helm for the original installation and you are upgrading to 23.10, you'll need to use either the Trident operator or tridentctl to perform Astra Control Provisioner enablement.
++
 [role="tabbed-block"]
 ====
 .Astra Trident operator
@@ -112,6 +112,7 @@ kubectl get pod -n trident trident-controller-<uuid> -o yaml/json
 // end tabbed block
 
 .Result
+
 After Astra Control Provisioner is installed, the cluster hosting the provisioner in the Astra Control UI will show an `ACP version` rather than `Trident version` field and current installed version number.
 
 image:ac-acp-version.png[A screenshot depicting the ACP version location in UI]
