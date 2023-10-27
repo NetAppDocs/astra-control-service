@@ -138,14 +138,14 @@ kubectl get all -n astra-connector
 +
 [source,console]
 ----
-kubectl get astraconnectors.astra.netapp.io -A
+kubectl get astraconnector -n astra-connector
 ----
 +
 You should see output similar to the following:
 +
 ----
-NAMESPACE         NAME              REGISTERED   ASTRACONNECTORID                       STATUS
-astra-connector   astra-connector   true         00a821c8-2cef-41ac-8777-ed05a417883e   Registered with Astra
+NAME              REGISTERED   ASTRACONNECTORID                       STATUS
+astra-connector   true         be475ae5-1511-4eaa-9b9e-712f09b0d065   Registered with Astra
 ----
 
 ////
