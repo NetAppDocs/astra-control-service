@@ -149,6 +149,8 @@ You should see output similar to the following:
 NAME              REGISTERED   ASTRACONNECTORID                       STATUS
 astra-connector   true         be475ae5-1511-4eaa-9b9e-712f09b0d065   Registered with Astra
 ----
++
+TIP: Make note of the ASTRACONNECTORID so that you can use it when you add the cluster.
 
 ////
 
