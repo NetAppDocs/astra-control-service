@@ -51,9 +51,9 @@ These instructions assume that you have already created a private cluster and pr
 
 You need to perform the following tasks to add your private cluster to Astra Control Service:
 
-* <<Install Astra Connector>>
-* <<Set up persistent storage>>
-* <<Add the private self-managed cluster to Astra Control Service>>
+. <<Install Astra Connector>>
+. <<Set up persistent storage>>
+. <<Add the private self-managed cluster to Astra Control Service>>
 
 == Install Astra Connector
 Before you add a private cluster, you need to install Astra Connector on the cluster so that Astra Control can communicate with it. Refer to link:install-astra-connector.html[Install Astra Connector for private clusters] for instructions.
