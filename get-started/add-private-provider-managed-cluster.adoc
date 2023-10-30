@@ -52,9 +52,9 @@ endif::azure,gcp[]
 You need to perform the following tasks to add your private cluster to Astra Control Service:
 
 //* link:check-astra-trident-version.html[Check the Astra Trident version^]
-* <<Install Astra Connector>>
-* <<Set up persistent storage>>
-* <<Add the private provider-managed cluster to Astra Control Service>>
+. <<Install Astra Connector>>
+. <<Set up persistent storage>>
+. <<Add the private provider-managed cluster to Astra Control Service>>
 
 == Install Astra Connector
 Before you add a private cluster, you need to install Astra Connector on the cluster so that Astra Control can communicate with it. Refer to link:install-astra-connector.html[Install Astra Connector for private clusters] for instructions.
