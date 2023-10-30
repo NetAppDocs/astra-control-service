@@ -38,13 +38,49 @@ include::../_include/access-netapp-image-registry.adoc[]
 
 If you upgraded your Astra Trident to version 23.10, you can use this procedure to enable and install Astra Control Provisioner.
 
-. Log in to Astra Control Service.
+//. Log in to Astra Control Service.
 
-. On the Dashboard, select *Deploy a self-managed instance of Astra Control*.
+//. On the Dashboard, select *Deploy a self-managed instance of Astra Control*.
 
-. Follow the instructions to log in to the Astra Control image registry, pull the Astra Control Provisioner installation bundle, and extract the image.
+//. Follow the instructions to log in to the Astra Control image registry, pull the Astra Control Provisioner installation bundle, and extract the image.
 
-. Push the image to your custom registry.
+. Get an API token from Astra Control. Refer to the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^] for instructions.
+
+. Log into the Astra Control Center registry:
++
+NOTE: Docker commands are used in these examples. Podman commands can also be used.
++
+----
+docker login <FQDN of Astra Control Service> -u <API token>
+----
+
+. Pull the Astra Control Provisioner image from the registry:
++
+----
+docker pull <FQDN of Astra Control Service>/acp-image:latest
+----
+. Run the image. This extracts the contents into your current working directory:
++
+----
+docker run --rm -v "$(pwd):/package" <FQDN of Astra Control Service>/acp-image:latest
+----
+
+. Add the Astra Control Provisioner image to your custom registry:
+
+.. Change to the root directory of the tarball.
+
+.. Push the Astra Control Provisioner image to your custom registry. Make the following substitutions before running the `push-images` command:
++
+
+* Replace <BUNDLE_FILE> with the name of the Astra Control Provisioner bundle file (`acp.manifest.bundle.yaml`).
+* Replace <MY_FULL_REGISTRY_PATH> with the URL of the Docker repository; for example, "https://<docker-registry>".
+* Replace <MY_REGISTRY_USER> with the user name.
+* Replace <MY_REGISTRY_TOKEN> with an authorized token for the registry.
++
+[source,console]
+----
+kubectl astra packages push-images -m <BUNDLE_FILE> -r <MY_FULL_REGISTRY_PATH> -u <MY_REGISTRY_USER> -p <MY_REGISTRY_TOKEN>
+----
 
 . Determine if the original Astra Trident installation method used an https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#determine-the-original-installation-method[operator (either manually or with Helm) or `tridentctl`^].
 +
