@@ -32,7 +32,7 @@ Astra Connector supports the following types of private clusters:
 
 * When you perform these steps, execute these commands against the private cluster that you want to manage with Astra Control Service.
 * If you are using a bastion host, issue these commands from the command line of the bastion host. 
-* *ROSA clusters only*: After you install Astra Connector on your ROSA cluster, the cluster is automatically added to Astra Control Service.
+//* *ROSA clusters only*: After you install Astra Connector on your ROSA cluster, the cluster is automatically added to Astra Control Service.
 
 .Before you begin
 
@@ -288,3 +288,17 @@ spec:
 ====
 
 ////
+
+
+== What's next?
+
+Now that you've installed Astra Connector, you're ready to add your private cluster to Astra Control Service.
+
+* link:add-private-provider-managed-cluster.html[Add a private provider-managed cluster to Astra Control Service^]: Use these steps to add a cluster that has a private IP address and is managed by a cloud provider. You will need the Service Principal account, service account, or user account for the cloud provider.
+* link:add-private-self-managed-cluster.html[Add a private self-managed cluster to Astra Control Service^]: Use these steps to add a cluster that has a private IP address and is managed by your organization. You will need to create a kubeconfig file for the cluster you want to add.
+
+== For more information
+
+* link:add-first-cluster.html[Add a cluster^]
+
+
