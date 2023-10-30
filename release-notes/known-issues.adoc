@@ -27,7 +27,7 @@ The following known issues affect the current release:
 //* <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
 * <<App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed>>
-* <<In-place restore operations to nas-economy storage backends fail>>
+* <<In-place restore operations to ontap-nas-economy storage classes fail>>
 
 .Other issues
 
