@@ -31,7 +31,7 @@ If you have an existing Astra Trident without Astra Control Provisioner and want
 
 * *Confirm that your Astra Trident version is within a four-release window*: You can perform a direct upgrade to Astra Trident 23.10 with Astra Control Provisioner if your Astra Trident is within a four-release window of version 23.10. For example, you can directly upgrade from Astra Trident 22.10 to 23.10.
 
-* *Confirm that your cluster has an AMD 64 system architecture*: The Astra Control Provisioner image is provided in both AMD and ARM CPU architectures, but only AMD is supported by Astra Control Service.
+* *Confirm that your cluster has an AMD64 system architecture*: The Astra Control Provisioner image is provided in both AMD64 and ARM64 CPU architectures, but only AMD64 is supported by Astra Control Center.
 
 .Upgrade to Astra Control Provisioner 23.10
 
@@ -48,9 +48,10 @@ If you upgraded your Astra Trident to version 23.10, you can use this procedure 
 .Expand for steps
 [%collapsible]
 =====
+
 .. Record your Astra Control account ID.
 +
-You can see your account ID in the Astra Control web UI. Select the figure icon at the top right of the page and select *API access*.
+You can see your account ID in the Astra Control Service web UI. Select the figure icon at the top right of the page and select *API access*.
 
 .. Get an API token from Astra Control. Refer to the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^] for instructions.
 
@@ -66,14 +67,14 @@ docker login cr.astra.netapp.io -u <account-id> -p <api-token>
 +
 [source,console]
 ----
-docker pull cr.astra.netapp.io/trident-acp/:23.10
+docker pull cr.astra.netapp.io/trident-acp:23.10
 ----
 
 . Run the image. This extracts the contents into your current working directory:
 +
 [source,console]
 ----
-docker run --rm -v "<my_custom_registry>:/package" cr.astra.netapp.io/trident-acp/:23.10
+docker run --rm -v "<my_custom_registry>:/package" cr.astra.netapp.io/trident-acp:23.10
 ----
 //kubectl plugin required for next step? Where does user get it?
 
