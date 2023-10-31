@@ -29,7 +29,7 @@ image:ac-acp-eligibility.png[A screenshot depicting cluster eligibility in the A
 
 If you have an existing Astra Trident without Astra Control Provisioner and want to enable Astra Control Provisioner, do the following first:
 
-* *Your Astra Trident version is within a four-release window*: You can perform a direct upgrade to Astra Trident 23.10 with Astra Control Provisioner if your Astra Trident is within a four-release window of version 23.10. For example, you can directly upgrade from Astra Trident 22.10 to 23.10.
+* *Confirm that your Astra Trident version is within a four-release window*: You can perform a direct upgrade to Astra Trident 23.10 with Astra Control Provisioner if your Astra Trident is within a four-release window of version 23.10. For example, you can directly upgrade from Astra Trident 22.10 to 23.10.
 
 * *Confirm that your cluster has an AMD 64 system architecture*: The Astra Control Provisioner image is provided in both AMD and ARM CPU architectures, but only AMD is supported by Astra Control Service.
 
