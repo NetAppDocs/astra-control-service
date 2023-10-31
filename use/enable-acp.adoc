@@ -32,7 +32,6 @@ If you have an existing Astra Trident without Astra Control Provisioner and want
 * *Upgrade to Astra Trident 23.10*: Refer to https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html[Astra Trident documentation^] for these upgrade procedures.
 
 * *Confirm that your cluster has an AMD 64 system architecture*: The Astra Control Provisioner image is provided in both AMD and ARM CPU architectures, but only AMD is supported by Astra Control Service.
-include::../_include/access-netapp-image-registry.adoc[]
 
 .Upgrade to Astra Control Provisioner 23.10
 
@@ -44,28 +43,39 @@ If you upgraded your Astra Trident to version 23.10, you can use this procedure 
 
 //. Follow the instructions to log in to the Astra Control image registry, pull the Astra Control Provisioner installation bundle, and extract the image.
 
-. Get an API token from Astra Control. Refer to the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^] for instructions.
-
-. Log into the Astra Control Center registry:
+. Access the NetApp Astra Control image registry:
 +
-NOTE: Docker commands are used in these examples. Podman commands can also be used.
+.Expand for steps
+[%collapsible]
+=====
+.. Record your Astra Control account ID.
 +
+You can see your account ID in the Astra Control web UI. Select the figure icon at the top right of the page and select *API access*.
+.. Get an API token from Astra Control. Refer to the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^] for instructions.
+.. Log into the Astra Control registry:
++
+[source,console]
 ----
-docker login <FQDN of Astra Control Service> -u <API token>
+docker login cr.astra.netapp.io -u <account-id> -p <api-token>
 ----
+=====
 
 . Pull the Astra Control Provisioner image from the registry:
 +
 ----
-docker pull <FQDN of Astra Control Service>/acp-image:latest
+docker pull cr.astra.netapp.io/trident-acp/:23.10
 ----
 . Run the image. This extracts the contents into your current working directory:
 +
 ----
-docker run --rm -v "$(pwd):/package" <FQDN of Astra Control Service>/acp-image:latest
+docker run --rm -v "<my_custom_registry>:/package" cr.astra.netapp.io/trident-acp/:23.10
 ----
 
 . Add the Astra Control Provisioner image to your custom registry:
++
+.Expand for steps
+[%collapsible]
+=====
 
 .. Change to the root directory of the tarball.
 
@@ -81,6 +91,7 @@ docker run --rm -v "$(pwd):/package" <FQDN of Astra Control Service>/acp-image:l
 ----
 kubectl astra packages push-images -m <BUNDLE_FILE> -r <MY_FULL_REGISTRY_PATH> -u <MY_REGISTRY_USER> -p <MY_REGISTRY_TOKEN>
 ----
+=====
 
 . Determine if the original Astra Trident installation method used an https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#determine-the-original-installation-method[operator (either manually or with Helm) or `tridentctl`^].
 +
