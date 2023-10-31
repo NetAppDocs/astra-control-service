@@ -62,7 +62,7 @@ Backups and snapshots fail with a UI 500 error in this scenario. As a workaround
 
 == In-place restore operations to ontap-nas-economy storage classes fail
 // ASTRADOC-318 / ASTRACTL-29463
-If you perform an in-place restore of an application (restore the app to the original namespace it was backed up from), and the app's storage class uses the `ontap-nas-economy` driver, the restore operation fails. As a workaround, restore to a different namespace.
+If you perform an in-place restore of an application (restore the app to its original namespace), and the app's storage class uses the `ontap-nas-economy` driver, the restore operation can fail if the snapshot directory is not hidden. As a workaround, follow the instructions in link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[Enable backup and restore for ontap-nas-economy operations^] to hide the snapshot directory.
 
 == App data management operations fail with Internal Service Error (500) when Astra Trident is offline
 //DOC-3903/ASTRACTL-13162/PI4
