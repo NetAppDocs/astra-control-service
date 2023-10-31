@@ -170,7 +170,7 @@ Astra Control Provisioner, as part of Astra Control, supports a superset of stor
 
 *Is Astra Control Provisioner replacing Astra Trident?*
 
-In coming Astra Control updates, Astra Control Provisioner will replace Astra Trident as storage provisioner and orchestrator in the Astra Control architecture. As such, it's highly recommended that Astra Control users link:../use/enable-acp.html[enable Astra Control Provisioner]. Astra Trident will continue to remain open source and be released, maintained, supported, and updated with new CSI and other features from NetApp.
+In coming Astra Control updates, Astra Control Provisioner will replace Astra Trident as storage provisioner and orchestrator in the Astra Control architecture. Because of this, it's highly recommended that Astra Control users link:../use/enable-acp.html[enable Astra Control Provisioner]. Astra Trident will continue to remain open source and be released, maintained, supported, and updated with new CSI and other features from NetApp.
 
 *Do I have to pay for Astra Trident?*
 

@@ -15,11 +15,11 @@ Astra Trident versions 23.10 and later include the option to use Astra Control P
 
 Your Astra Control Service subscription automatically includes the license for Astra Control Provisioner use.
 
-In coming Astra Control updates, Astra Control Provisioner will replace Astra Trident as storage provisioner and orchestrator in the Astra Control architecture. As such, it's highly recommended that Astra Control users enable Astra Control Provisioner. Astra Trident will continue to remain open source and be released, maintained, supported, and updated with new CSI and other features from NetApp.
+In coming Astra Control updates, Astra Control Provisioner will replace Astra Trident as storage provisioner and orchestrator in the Astra Control architecture. Because of this, it's highly recommended that Astra Control users enable Astra Control Provisioner. Astra Trident will continue to remain open source and be released, maintained, supported, and updated with new CSI and other features from NetApp.
 
 .How do I know if I need to enable Astra Control Provisioner?
 
-If you add a cluster to Astra Control Service that does not have Astra Trident previously installed, the cluster will be marked as `Eligible`. After you add the cluster to Astra Control, Astra Control Provisioner will be automatically enabled. 
+If you add a cluster to Astra Control Service that does not have Astra Trident previously installed, the cluster will be marked as `Eligible`. After you link:../get-started/add-first-cluster.html[add the cluster to Astra Control], Astra Control Provisioner will be automatically enabled. 
 
 If your cluster is marked `Partially eligible` because it's using an older version of Astra Trident or Astra Trident 23.10 without the provisioner option enabled, use these instructions to manually enable Astra Control Provisioner for your cluster.
 
@@ -29,7 +29,7 @@ image:ac-acp-eligibility.png[A screenshot depicting cluster eligibility in the A
 
 If you have an existing Astra Trident without Astra Control Provisioner and want to enable Astra Control Provisioner, do the following first:
 
-* *Upgrade to Astra Trident 23.10*: Refer to https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html[Astra Trident documentation^] for these upgrade procedures.
+* *Your Astra Trident version is within a four-release window*: You can perform a direct upgrade to Astra Trident 23.10 with Astra Control Provisioner if your Astra Trident is within a four-release window of version 23.10. For example, you can directly upgrade from Astra Trident 22.10 to 23.10.
 
 * *Confirm that your cluster has an AMD 64 system architecture*: The Astra Control Provisioner image is provided in both AMD and ARM CPU architectures, but only AMD is supported by Astra Control Service.
 
@@ -51,7 +51,9 @@ If you upgraded your Astra Trident to version 23.10, you can use this procedure 
 .. Record your Astra Control account ID.
 +
 You can see your account ID in the Astra Control web UI. Select the figure icon at the top right of the page and select *API access*.
+
 .. Get an API token from Astra Control. Refer to the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^] for instructions.
+
 .. Log into the Astra Control registry:
 +
 [source,console]
@@ -62,14 +64,18 @@ docker login cr.astra.netapp.io -u <account-id> -p <api-token>
 
 . Pull the Astra Control Provisioner image from the registry:
 +
+[source,console]
 ----
 docker pull cr.astra.netapp.io/trident-acp/:23.10
 ----
+
 . Run the image. This extracts the contents into your current working directory:
 +
+[source,console]
 ----
 docker run --rm -v "<my_custom_registry>:/package" cr.astra.netapp.io/trident-acp/:23.10
 ----
+//kubectl plugin required for next step? Where does user get it?
 
 . Add the Astra Control Provisioner image to your custom registry:
 +
@@ -127,6 +133,7 @@ spec:
 ----
 kubectl -n trident apply -f tridentorchestrator_cr.yaml
 ----
+
 . Update Astra Trident configuration so that the new `trident-acp` container is deployed:
 +
 NOTE: For clusters running Kubernetes 1.24 or earlier, use `bundle_pre_1_25.yaml`. For clusters running Kubernetes 1.25 or later, use `bundle_post_1_25.yaml`.
@@ -134,11 +141,13 @@ NOTE: For clusters running Kubernetes 1.24 or earlier, use `bundle_pre_1_25.yaml
 ----
 kubectl -n trident apply -f trident-installer-23.10.0/deploy/<bundle-name.yaml>
 ----
+
 . Verify the operator, deployment, and replicasets were created.
 +
 ----
 kubectl get all -n <operator-namespace>
 ----
+
 +
 IMPORTANT: There should only be *one instance* of the operator in a Kubernetes cluster. Do not create multiple deployments of the Trident operator.
 . Verify the `trident-acp` container is running:
@@ -147,6 +156,7 @@ IMPORTANT: There should only be *one instance* of the operator in a Kubernetes c
 kubectl get pod -n trident trident-controller-<uuid> -o yaml/json
 ----
 --
+
 .tridentctl
 --
 . https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html[Uninstall Astra Trident^].
