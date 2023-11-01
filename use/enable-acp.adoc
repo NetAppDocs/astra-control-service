@@ -37,6 +37,8 @@ If you have an existing Astra Trident without Astra Control Provisioner and want
 
 If you upgraded your Astra Trident to version 23.10, you can use this procedure to enable and install Astra Control Provisioner.
 
+NOTE: You can use Podman instead of Docker for the following commands. If you are using a Windows environment, PowerShell is recommended.
+
 //. Log in to Astra Control Service.
 
 //. On the Dashboard, select *Deploy a self-managed instance of Astra Control*.
