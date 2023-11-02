@@ -21,7 +21,7 @@ In coming Astra Control updates, Astra Control Provisioner will replace Astra Tr
 
 If you add a cluster to Astra Control Service that does not have Astra Trident previously installed, the cluster will be marked as `Eligible`. After you link:../get-started/add-first-cluster.html[add the cluster to Astra Control], Astra Control Provisioner will be automatically enabled. 
 
-If your cluster is marked `Partially eligible` because it's using an older version of Astra Trident or Astra Trident 23.10 without the provisioner option enabled, use these instructions to manually enable Astra Control Provisioner for your cluster.
+If your cluster is marked `Partially eligible` because it's using an older version of Astra Trident or Astra Trident 23.10 that does not yet have the provisioner option enabled, use these instructions to manually enable Astra Control Provisioner for your cluster.
 
 image:ac-acp-eligibility.png[A screenshot depicting cluster eligibility in the Add cluster workflow]
 
@@ -31,7 +31,7 @@ If you have an existing Astra Trident without Astra Control Provisioner and want
 
 * *Confirm that your Astra Trident version is within a four-release window*: You can perform a direct upgrade to Astra Trident 23.10 with Astra Control Provisioner if your Astra Trident is within a four-release window of version 23.10. For example, you can directly upgrade from Astra Trident 22.10 to 23.10.
 
-* *Confirm that your cluster has an AMD64 system architecture*: The Astra Control Provisioner image is provided in both AMD64 and ARM64 CPU architectures, but only AMD64 is supported by Astra Control Center.
+* *Confirm that your cluster has an AMD64 system architecture*: The Astra Control Provisioner image is provided in both AMD64 and ARM64 CPU architectures, but only AMD64 is supported by Astra Control.
 
 .Upgrade to Astra Control Provisioner 23.10
 
@@ -39,11 +39,7 @@ If you upgraded your Astra Trident to version 23.10, you can use this procedure 
 
 NOTE: You can use Podman instead of Docker for the following commands. If you are using a Windows environment, PowerShell is recommended.
 
-//. Log in to Astra Control Service.
-
-//. On the Dashboard, select *Deploy a self-managed instance of Astra Control*.
-
-//. Follow the instructions to log in to the Astra Control image registry, pull the Astra Control Provisioner installation bundle, and extract the image.
+.Steps
 
 . Access the NetApp Astra Control image registry:
 +
@@ -51,9 +47,11 @@ NOTE: You can use Podman instead of Docker for the following commands. If you ar
 [%collapsible]
 =====
 
-.. Record your Astra Control account ID.
-+
-You can see your account ID in the Astra Control Service web UI. Select the figure icon at the top right of the page, select *API access*, and write down your account ID.
+.. Log on to the Astra Control Service UI and record your Astra Control account ID.
+
+... Select the figure icon at the top right of the page. 
+... Select *API access*. 
+... Write down your account ID.
 
 .. From the same page, select *Generate API token* and copy the API token string to the clipboard and save it in your editor.
 
@@ -72,15 +70,21 @@ docker login cr.astra.netapp.io -u <account-id> -p <api-token>
 docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0
 ----
 
-. Run the image. This extracts the contents into your current working directory:
+. Tag the image:
 +
 [source,console]
 ----
-docker run --rm -v "<my_custom_registry>:/package" cr.astra.netapp.io/trident-acp:23.10.0
+docker tag cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/trident-acp:23.10.0
+----
+
+. Push the image to your custom registry:
++
+[source,console]
+----
+docker push <my_custom_registry>/trident-acp:23.10.0
 ----
 //kubectl plugin required for next step? Where does user get it?
-
-. Push the Astra Control Provisioner image to your custom registry:
+//. Push the Astra Control Provisioner image to your custom registry:
 //+
 //.Expand for steps
 //[%collapsible]
@@ -115,7 +119,11 @@ WARNING: Do not use Helm to enable Astra Control Provisioner. If you used Helm f
 //----
 //kubectl delete -f 23.07/trident-installer/deploy/<bundle-name.yaml> -n trident
 //----
-. Edit the TridentOrchestrator CR to enable Astra Control Provisioner (`enable-acp=true`) and set the registry location for the Astra Control Provisioner image:
+. Edit the TridentOrchestrator CR and make the following edits:
++
+* Enable Astra Control Provisioner (`enableACP: true`)
+* Set the registry location for the Astra Control Provisioner image (`acpImage: <my_custom_registry>/trident-acp:v23.10.0`):
+
 +
 [subs=+quotes]
 ----
@@ -129,7 +137,7 @@ spec:
   imagePullPolicy: IfNotPresent
   windows: false
   *enableACP: true*
-  *acpImage: mycustomregistry/trident-acp:v23.10.0*
+  *acpImage: <my_custom_registry>/trident-acp:v23.10.0*
 ----
 . Apply the changes:
 +
