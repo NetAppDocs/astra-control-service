@@ -190,3 +190,35 @@ If you are an existing Trident user (this includes users of Astra Trident in the
 After Astra Control Provisioner is installed, the host cluster in the Astra Control UI will show an `ACP version` rather than `Trident version` field and current installed version number.
 
 image:ac-acp-version.png[A screenshot depicting the ACP version location in UI]
+
+If you don't have access to the UI, you can confirm successful installation using the following methods:
+
+[role="tabbed-block"]
+====
+.Astra Trident operator
+--
+
+Verify the `trident-acp` container is running:
+
+----
+kubectl get pod -n trident trident-controller-<uuid> -o yaml/json
+----
+--
+
+.tridentctl
+--
+
+Confirm that Astra Control Provisioner has been enabled:
+
+----
+./tridentctl -n trident version
+----
+
+Response:
+
+----
++----------------+----------------+-------------+ | SERVER VERSION | CLIENT VERSION | ACP VERSION | +----------------+----------------+-------------+ | 23.10.0 | 23.10.0 | 23.10.0. | +----------------+----------------+-------------+
+----
+
+====
+// end tabbed block

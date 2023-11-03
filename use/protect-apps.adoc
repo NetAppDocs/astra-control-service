@@ -148,7 +148,7 @@ Astra Control Provisioner provides backup and restore functionality that can be 
 .. Log in to a terminal connected to ONTAP where the volumes are created.
 .. Hide the snapshot directory for the SVM:
 +
-NOTE: The hidden directory will continue to be accessible. 
+NOTE: This change affects the entire SVM. The hidden directory will continue to be accessible. 
 +
 [source,console]
 ----

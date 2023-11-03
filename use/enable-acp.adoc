@@ -180,6 +180,19 @@ kubectl get pod -n trident trident-controller-<uuid> -o yaml/json
 ----
 ./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:v23.10
 ----
+
+. Confirm that Astra Control Provisioner has been enabled:
++
+----
+./tridentctl -n trident version
+----
++
+Response:
++
+----
++----------------+----------------+-------------+ | SERVER VERSION | CLIENT VERSION | ACP VERSION | +----------------+----------------+-------------+ | 23.10.0 | 23.10.0 | 23.10.0. | +----------------+----------------+-------------+
+----
+
 ====
 // end tabbed block
 
