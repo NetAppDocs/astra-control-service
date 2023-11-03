@@ -28,7 +28,7 @@ The following known issues affect the current release:
 * <<App clones fail using a specific version of PostgreSQL>>
 * <<App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed>>
 * <<In-place restore operations to ontap-nas-economy storage classes fail>>
-* <<Restore operations when using Kerberos in-flight encryption can fail>>
+* <<Restoring from a backup when using Kerberos in-flight encryption can fail>>
 
 .Other issues
 
@@ -65,9 +65,9 @@ Backups and snapshots fail with a UI 500 error in this scenario. As a workaround
 // ASTRADOC-318 / ASTRACTL-29463
 If you perform an in-place restore of an application (restore the app to its original namespace), and the app's storage class uses the `ontap-nas-economy` driver, the restore operation can fail if the snapshot directory is not hidden. As a workaround, follow the instructions in link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[Enable backup and restore for ontap-nas-economy operations^] to hide the snapshot directory.
 
-== Restore operations when using Kerberos in-flight encryption can fail
+== Restoring from a backup when using Kerberos in-flight encryption can fail
 // ASTRADOC-316 / ASTRACTL-29854
-When you restore an application from backup to a storage backend that is using Kerberos in-flight encryption, the restore operation can fail. This issue does not affect restoring from a snapshot or replicating the application data using NetApp SnapMirror.
+When you restore an application from a backup to a storage backend that is using Kerberos in-flight encryption, the restore operation can fail. This issue does not affect restoring from a snapshot or replicating the application data using NetApp SnapMirror.
 
 To avoid this, when you install an application that you plan to protect with Kerberos in-flight encryption, ensure the application runs with superuser permissions. You can do so by configuring the app to use the following securityContext settings:
 ----
