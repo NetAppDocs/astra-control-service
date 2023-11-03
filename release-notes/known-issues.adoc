@@ -30,7 +30,7 @@ The following known issues affect the current release:
 * <<In-place restore operations to ontap-nas-economy storage classes fail>>
 * <<Restoring from a backup when using Kerberos in-flight encryption can fail>>
 * <<Backup data remains in bucket after deletion for buckets with expired retention policy>>
-* <<Retention time for immutable backups is longer than expected>>
+//* <<Retention time for immutable backups is longer than expected>>
 
 .Other issues
 
@@ -71,23 +71,23 @@ If you perform an in-place restore of an application (restore the app to its ori
 // ASTRADOC-316 / ASTRACTL-29854
 When you restore an application from a backup to a storage backend that is using Kerberos in-flight encryption, the restore operation can fail. This issue does not affect restoring from a snapshot or replicating the application data using NetApp SnapMirror.
 
-To avoid this, when you install an application that you plan to protect with Kerberos in-flight encryption, ensure the application runs with superuser permissions. You can do so by configuring the app to use the following securityContext settings:
-----
-securityContext:
-  runAsUser: 0
-  runAsGroup: 0
-----
+//To avoid this, when you install an application that you plan to protect with Kerberos in-flight encryption, ensure the application runs with superuser permissions. You can do so by configuring the app to use the following securityContext settings:
+//----
+//securityContext:
+//  runAsUser: 0
+//  runAsGroup: 0
+//----
 NOTE: When using Kerberos in-flight encryption with NFSv4 volumes, ensure that the NFSv4 volumes are using the correct settings. Refer to the NetApp NFSv4 Domain Configuration section (page 13) of the https://www.netapp.com/media/16398-tr-3580.pdf[NetApp NFSv4 Enhancements and Best Practices Guide^]. 
 
 == Backup data remains in bucket after deletion for buckets with expired retention policy
 //ASTRADOC-319 / ASTRACTL-30000
 If you delete an app's immutable backup after the bucket's retention policy has expired, the backup is deleted from Astra Control but not from the bucket. As a workaround, if you need to delete the most recent backups or all backups for an application, remove the backups manually from the storage backend.
 
-NOTE: If you have more than one backup for an app, only delete the most recent backups or all backups for an application. Otherwise, you will not be able to recover the app from a backup.
+NOTE: If you have more than one backup for an app, either remove the most recent backups or all of the backups for the app. If you remove any middle incremental backups, you will not be able to recover the app from the latest backup.
 
-== Retention time for immutable backups is longer than expected
+//== Retention time for immutable backups is longer than expected
 // ASTRADOC-320 / ASTRACTL-30098
-The retention time for an immutable backup in Astra Control is calculated from the starting time of the backup instead of the completion time. This means you cannot delete the backup for a longer period than expected. For example, if you configure a 24 hour retention policy and start a backup that takes 12 hours to complete, you cannot delete the backup for 36 hours.
+//The retention time for an immutable backup in Astra Control is calculated from the starting time of the backup instead of the completion time. This means you cannot delete the backup for a longer period than expected. For example, if you configure a 24 hour retention policy and start a backup that takes 12 hours to complete, you cannot delete the backup for 36 hours.
 
 == App data management operations fail with Internal Service Error (500) when Astra Trident is offline
 //DOC-3903/ASTRACTL-13162/PI4
