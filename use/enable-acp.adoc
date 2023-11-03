@@ -21,7 +21,13 @@ In coming Astra Control updates, Astra Control Provisioner will replace Astra Tr
 
 If you add a cluster to Astra Control Service that does not have Astra Trident previously installed, the cluster will be marked as `Eligible`. After you link:../get-started/add-first-cluster.html[add the cluster to Astra Control], Astra Control Provisioner will be automatically enabled. 
 
-If your cluster is marked `Partially eligible` because it's using an older version of Astra Trident or Astra Trident 23.10 that does not yet have the provisioner option enabled, use these instructions to manually enable Astra Control Provisioner for your cluster.
+If your cluster is not marked `Eligible`, it will be marked `Partially eligible` because of one of the following:
+
+* It's using an older version of Astra Trident
+* It's using an Astra Trident 23.10 that does not yet have the provisioner option enabled
+* It's a cluster type that does not allow automatic enablement
+
+For `Partially eligible` cases, use these instructions to manually enable Astra Control Provisioner for your cluster.
 
 image:ac-acp-eligibility.png[A screenshot depicting cluster eligibility in the Add cluster workflow]
 
@@ -134,8 +140,6 @@ metadata:
 spec:
   debug: true
   namespace: trident
-  imagePullPolicy: IfNotPresent
-  windows: false
   *enableACP: true*
   *acpImage: <my_custom_registry>/trident-acp:v23.10.0*
 ----

@@ -26,7 +26,7 @@ link:../use/restore-apps.html[Add a cluster^]
 
 * *Introducing Astra Control Provisioner*
 +
-With the 23.10 release, Astra Control introduces a new software component called Astra Control Provisioner that will be available to all licensed Astra Control users. Astra Control Provisioner provides access to a superset of advanced management and storage provisioning features beyond those that Astra Trident provides today. These features are available to all Astra Control customers at no additional cost.
+With the 23.10 release, Astra Control introduces a new software component called Astra Control Provisioner that will be available to all licensed Astra Control users. Astra Control Provisioner provides access to a superset of advanced management and storage provisioning features beyond those that Astra Trident provides. These features are available to all Astra Control customers at no additional cost.
 
 ** *Get started with Astra Control Provisioner*
 You can link:../use/enable-acp.html[enable Astra Control Provisioner^] if you have installed and configured your environment to use Astra Trident 23.10.
