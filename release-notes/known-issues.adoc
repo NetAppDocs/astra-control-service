@@ -29,6 +29,7 @@ The following known issues affect the current release:
 * <<App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed>>
 * <<In-place restore operations to ontap-nas-economy storage classes fail>>
 * <<Restoring from a backup when using Kerberos in-flight encryption can fail>>
+* <<Backup data remains in bucket after deletion for buckets with expired retention policy>>
 
 .Other issues
 
@@ -76,6 +77,12 @@ securityContext:
   runAsGroup: 0
 ----
 NOTE: When using Kerberos in-flight encryption with NFSv4 volumes, ensure that the NFSv4 volumes are using the correct settings. Refer to the NetApp NFSv4 Domain Configuration section (page 13) of the https://www.netapp.com/media/16398-tr-3580.pdf[NetApp NFSv4 Enhancements and Best Practices Guide^]. 
+
+== Backup data remains in bucket after deletion for buckets with expired retention policy
+//ASTRADOC-319 / ASTRACTL-30000
+If you delete an app's immutable backup after the bucket's retention policy has expired, the backup is deleted from Astra Control but not from the bucket. As a workaround, if you need to delete the most recent backups or all backups for an application, remove the backups manually from the storage backend.
+
+NOTE: If you have more than one backup for an app, only delete the most recent backups or all backups for an application. Otherwise, you will not be able to recover the app from a backup.
 
 == App data management operations fail with Internal Service Error (500) when Astra Trident is offline
 //DOC-3903/ASTRACTL-13162/PI4
