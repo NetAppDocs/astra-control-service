@@ -83,7 +83,7 @@ NOTE: When using Kerberos in-flight encryption with NFSv4 volumes, ensure that t
 //ASTRADOC-319 / ASTRACTL-30000
 If you delete an app's immutable backup after the bucket's retention policy has expired, the backup is deleted from Astra Control but not from the bucket. As a workaround, if you need to delete the most recent backups or all backups for an application, remove the backups manually from the storage backend.
 
-NOTE: If you have more than one backup for an app, only delete the most recent backups or all backups for an application. Otherwise, you will not be able to recover the app from a backup.
+NOTE: If you have more than one backup for an app, either remove the most recent backups or all of the backups for the app. If you remove any middle incremental backups, you will not be able to recover the app from the latest backup.
 
 //== Retention time for immutable backups is longer than expected
 // ASTRADOC-320 / ASTRACTL-30098
