@@ -67,7 +67,7 @@ If you perform an in-place restore of an application (restore the app to its ori
 
 == Restore operations when using Kerberos in-flight encryption can fail
 // ASTRADOC-316 / ASTRACTL-29854
-When you restore an application from backup to a storage backend that is using Kerberos in-flight encryption, the restore operation can fail. As a workaround, restore the application from a snapshot or replicate the application data using NetApp SnapMirror.
+When you restore an application from backup to a storage backend that is using Kerberos in-flight encryption, the restore operation can fail. This issue does not affect restoring from a snapshot or replicating the application data using NetApp SnapMirror.
 
 To avoid this, when you install an application that you plan to protect with Kerberos in-flight encryption, ensure the application runs with superuser permissions. You can do so by configuring the app to use the following securityContext settings:
 ----
