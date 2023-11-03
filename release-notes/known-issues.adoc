@@ -71,12 +71,12 @@ If you perform an in-place restore of an application (restore the app to its ori
 // ASTRADOC-316 / ASTRACTL-29854
 When you restore an application from a backup to a storage backend that is using Kerberos in-flight encryption, the restore operation can fail. This issue does not affect restoring from a snapshot or replicating the application data using NetApp SnapMirror.
 
-To avoid this, when you install an application that you plan to protect with Kerberos in-flight encryption, ensure the application runs with superuser permissions. You can do so by configuring the app to use the following securityContext settings:
-----
-securityContext:
-  runAsUser: 0
-  runAsGroup: 0
-----
+//To avoid this, when you install an application that you plan to protect with Kerberos in-flight encryption, ensure the application runs with superuser permissions. You can do so by configuring the app to use the following securityContext settings:
+//----
+//securityContext:
+//  runAsUser: 0
+//  runAsGroup: 0
+//----
 NOTE: When using Kerberos in-flight encryption with NFSv4 volumes, ensure that the NFSv4 volumes are using the correct settings. Refer to the NetApp NFSv4 Domain Configuration section (page 13) of the https://www.netapp.com/media/16398-tr-3580.pdf[NetApp NFSv4 Enhancements and Best Practices Guide^]. 
 
 == Backup data remains in bucket after deletion for buckets with expired retention policy
