@@ -198,10 +198,25 @@ If you don't have access to the UI, you can confirm successful installation usin
 .Astra Trident operator
 --
 
-Verify the `trident-acp` container is running:
+Verify the `trident-acp` container is running and that `acpVersion` is `23.10.0` with a status of `Installed`:
 
 ----
-kubectl get pod -n trident trident-controller-<uuid> -o yaml/json
+kubectl get torc -o yaml
+----
+
+Response:
+
+----
+status:
+  acpVersion: 23.10.0
+  currentInstallationParams:
+    ...
+    acpImage: <my_custom_registry>/trident-acp:v23.10.0
+    enableACP: "true"
+    ...
+  ,,,
+  ...
+  status: Installed
 ----
 --
 
