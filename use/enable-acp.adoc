@@ -117,7 +117,7 @@ crane copy cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/tri
 --
 // end crane tab block
 
-.Trident Operator
+.Astra Trident operator
 --
 
 . Ensure this block is present in your Docker configuration:
@@ -199,7 +199,7 @@ WARNING: Do not use Helm to enable Astra Control Provisioner. If you used Helm f
 * Enable Astra Control Provisioner (`enableACP: true`)
 * Set the registry location for the Astra Control Provisioner image (`acpImage: <my_custom_registry>/trident-acp:v23.10.0`). 
 +
-NOTE: If you established <<pull-secrets,image pull secrets>> earlier in this procedure, you can use them here (`cr.astra.netapp.io/astra/trident-acp:23.10.0 imagePullSecrets: - <secret-name>`)
+NOTE: If you established <<pull-secrets,image pull secrets>> earlier in this procedure, you can use them here (`cr.astra.netapp.io/astra/trident-acp:23.10.0 imagePullSecrets: - <secret name>`)
 
 +
 [subs=+quotes]
