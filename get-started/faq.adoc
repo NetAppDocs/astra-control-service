@@ -214,7 +214,6 @@ status:
     acpImage: <my_custom_registry>/trident-acp:v23.10.0
     enableACP: "true"
     ...
-  ,,,
   ...
   status: Installed
 ----
