@@ -5,13 +5,49 @@ keywords: what's new, bugs, bug fixes, new features, enhancements
 summary: NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
 ---
 
-= What’s new with Astra Control Service
+= What\'s new with Astra Control Service
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/release-notes/
 
 [.lead]
 NetApp periodically updates Astra Control Service to bring you new features, enhancements, and bug fixes.
+
+== 7 November 2023
+
+.New features and support
+
+[[nas-eco-backup-restore]]
+* *Backup and restore capabilities for applications with ontap-nas-economy driver-backed storage backends*: Enable backup and restore operations for `ontap-nas-economy` with some link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[simple steps^].
+
+* *Astra Control Service support for on-premises Red Hat OpenShift Container Platform clusters*
++
+link:../use/restore-apps.html[Add a cluster^]
+
+* *Immutable Backups*: Astra Control now supports link:../concepts/data-protection.html#immutable-backups[unalterable, read-only backups^] as an additional security layer against malware and other threats.
+
+* *Introducing Astra Control Provisioner*
++
+With the 23.10 release, Astra Control introduces a new software component called Astra Control Provisioner that will be available to all licensed Astra Control users. Astra Control Provisioner provides access to a superset of advanced management and storage provisioning features beyond those that Astra Trident provides. These features are available to all Astra Control customers at no additional cost.
+
+** *Get started with Astra Control Provisioner*
+You can link:../use/enable-acp.html[enable Astra Control Provisioner^] if you have installed and configured your environment to use Astra Trident 23.10.
+
+** *Astra Control Provisioner functionality*
++
+The following features are available with the Astra Control Provisioner 23.10 release:
+
+*** *Enhanced storage backend security with Kerberos 5 encryption*: You can improve storage security by link:../use-acp/configure-storage-backend-encryption.html[enabling encryption^] for the traffic between your managed cluster and the storage backend. Astra Control Provisioner supports Kerberos 5 encryption over NFSv4.1 connections from Red Hat OpenShift clusters to Azure NetApp Files and on-premise ONTAP volumes.
+
+*** *Recover data using a snapshot*: Astra Control Provisioner provides rapid, in-place volume restoration from a snapshot using the `TridentActionSnapshotRestore` (TASR) CR.
+
+*** *Backup and restore capabilities for applications with `ontap-nas-economy` driver-backed storage backends*: As described <<nas-eco-backup-restore,above>>.
+
+* *Astra Control Service support for Red Hat OpenShift Service on AWS (ROSA) clusters*
++
+link:../use/restore-apps.html[Add a cluster^]
+
+* *Execution hooks turned off by default*: Beginning with this release, execution hooks functionality can be link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature[enabled] or disabled for additional security (it is disabled by default). If you have not yet created execution hooks for use with Astra Control, you need to link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature[enable the execution hooks feature^] to begin creating hooks. If you created execution hooks prior to this release, the execution hooks functionality stays enabled and you can use hooks as you would normally.
 
 == 2 October 2023
 

@@ -44,6 +44,8 @@ entries:
       - title: Close your account
         url: /use/close-account.html
   - title: Manage cloud instances
-    url: /use/manage-cloud-instances.html 
+    url: /use/manage-cloud-instances.html
+  - title: Enable Astra Control Provisioner
+    url: /use/enable-acp.html 
   - title: Unmanage apps and clusters
     url: /use/unmanage.html
