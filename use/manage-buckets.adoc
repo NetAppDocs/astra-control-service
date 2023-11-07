@@ -65,8 +65,8 @@ You can add the following types of buckets:
 
 .Before you begin
 
-* The name of an existing bucket.
-* The credentials for the bucket that provide Astra Control Service with the permissions that it needs to manage the bucket.
+* Ensure you know the name of an existing bucket.
+* Ensure you have credentials for the bucket that provide Astra Control with the permissions that it needs to manage the bucket.
 ifdef::azure[]
 * If your bucket is in Microsoft Azure: 
 ** The bucket must belong to the resource group named _astra-backup-rg_.
@@ -123,7 +123,11 @@ NOTE: Astra Control does not automatically assign a default bucket for any cloud
 
 You can remove a bucket that is no longer in use or is not healthy. You might want to do this to keep your object store configuration simple and up-to-date.
 
-You cannot remove a default bucket. If you want to remove that bucket, first select another bucket as the default.
+[NOTE]
+===============================
+* You cannot remove a default bucket. If you want to remove that bucket, first select another bucket as the default.
+* You cannot remove a write once read many (WORM) bucket before the bucket's cloud provider retention period has expired. WORM buckets are denoted with "Locked" next to the bucket name.
+===============================
 
 .Before you begin
 

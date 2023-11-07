@@ -17,9 +17,9 @@ Known limitations identify platforms, devices, or functions that are not support
 
 The following limitations affect Astra Control Service's management of Kubernetes clusters in any supported Kubernetes deployment.
 
-=== Astra Trident isn't uninstalled from a cluster
+//=== Astra Trident isn't uninstalled from a cluster
 
-When you unmanage a cluster from Astra Control Service, Astra Trident isn't automatically uninstalled from the cluster. To uninstall Astra Trident, you'll need to https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html[follow these steps in the Astra Trident documentation^].
+//When you unmanage a cluster from Astra Control Service, Astra Trident isn't automatically uninstalled from the cluster. To uninstall Astra Trident, you'll need to https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html[follow these steps in the Astra Trident documentation^].
 
 === Existing connections to a Postgres pod causes failures
 
@@ -34,11 +34,11 @@ ifdef::gcp[]
 
 The following limitations apply to the management of Kubernetes clusters in Google Kubernetes Engine (GKE).
 
-=== Google Marketplace apps haven't been validated
+//== Google Marketplace apps haven't been validated
 
-NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users have reported issues with discovery or back up of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
+//NetApp hasn't validated apps that were deployed from the Google Marketplace. Some users have reported issues with discovery or back up of Postgres, MariaDB, and MySQL apps that were deployed from the Google Marketplace.
 
-No matter which type of app that you use with Astra Control Service, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
+//No matter which type of app that you use with Astra Control Service, you should always test the backup and restore workflow yourself to ensure that you can meet your disaster recovery requirements.
 endif::gcp[]
 
 //=== Persistent volume limit
@@ -90,7 +90,7 @@ A user with namespace RBAC constraints should not be allowed to add or unmanage 
 
 === A Member user with namespace constraints cannot access cloned or restored apps until an Admin user adds the namespace to the constraint
 //DOC-4137/ASTRACTL-16131/PI5
-Any `member` user with RBAC constraints by namespace name/ID can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. After a new namespace is created by a clone or restore operation, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the new namespace.
+Any `member` user with RBAC constraints by namespace name/ID can clone or restore an app to a new namespace on the same cluster or to any other cluster in their organization's account. However, the same user cannot access the cloned or restored app in the new namespace. After a clone or restore operation creates a new namespace, the account admin/owner can edit the `member` user account and update role constraints for the affected user to grant access to the new namespace.
 
 === Snapshots might fail for Kubernetes 1.25 or later clusters with certain snapshot controller versions
 Snapshots for Kubernetes clusters running version 1.25 or later can fail if version v1beta1 of the snapshot controller APIs are installed on the cluster.
