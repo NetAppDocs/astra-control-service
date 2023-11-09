@@ -22,9 +22,9 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 
 * *Astra Control Service support for on-premises Red Hat OpenShift Container Platform clusters*
 +
-link:../use/restore-apps.html[Add a cluster^]
+link:../get-started/add-first-cluster.html[Add a cluster^]
 
-* *Immutable Backups*: Astra Control now supports link:../concepts/data-protection.html#immutable-backups[unalterable, read-only backups^] as an additional security layer against malware and other threats.
+* *Immutable Backups*: Astra Control now supports link:../learn/data-protection.html#immutable-backups[unalterable, read-only backups^] as an additional security layer against malware and other threats.
 
 * *Introducing Astra Control Provisioner*
 +
@@ -45,7 +45,7 @@ The following features are available with the Astra Control Provisioner 23.10 re
 
 * *Astra Control Service support for Red Hat OpenShift Service on AWS (ROSA) clusters*
 +
-link:../use/restore-apps.html[Add a cluster^]
+link:../get-started/add-first-cluster.html[Add a cluster^]
 
 * *Support for managing applications that use NVMe/TCP storage*
 Astra Control can now manage applications backed by persistent volumes that are connected using NVMe/TCP.
