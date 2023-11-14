@@ -11,7 +11,7 @@ summary: Enable Astra Control Provisioner to access advanced storage provisionin
 :imagesdir: ../media/use/
 
 [.lead]
-Astra Trident versions 23.10 and later include the option to use Astra Control Provisioner, which enables licensed Astra Control users to access advanced storage provisioning functionality. Astra Control Provisioner provides this extended functionality in addition to standard Astra Trident CSI-based functionality. 
+Astra Trident versions 23.10 and later include the option to use Astra Control Provisioner, which enables licensed Astra Control users to access advanced storage provisioning functionality. Astra Control Provisioner provides this extended functionality in addition to standard Astra Trident CSI-based functionality. You can use this procedure to enable and install Astra Control Provisioner.
 
 Your Astra Control Service subscription automatically includes the license for Astra Control Provisioner use.
 
@@ -38,10 +38,6 @@ If you have an existing Astra Trident without Astra Control Provisioner and want
 * *Confirm that your Astra Trident version is within a four-release window*: You can perform a direct upgrade to Astra Trident 23.10 with Astra Control Provisioner if your Astra Trident is within a four-release window of version 23.10. For example, you can directly upgrade from Astra Trident 22.10 to 23.10.
 
 * *Confirm that your cluster has an AMD64 system architecture*: The Astra Control Provisioner image is provided in both AMD64 and ARM64 CPU architectures, but only AMD64 is supported by Astra Control.
-
-.Upgrade to Astra Control Provisioner 23.10
-
-If you upgraded your Astra Trident to version 23.10, you can use this procedure to enable and install Astra Control Provisioner.
 
 .Steps
 
