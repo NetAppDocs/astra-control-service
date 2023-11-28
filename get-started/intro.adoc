@@ -71,7 +71,7 @@ endif::azure[]
 * On-premise clusters:
 ** NetApp ONTAP AFF and FAS systems
 ** NetApp ONTAP Select
-** Cloud Volumes ONTAP
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
 |
 * NetApp ONTAP AFF and FAS systems
 * NetApp ONTAP Select
