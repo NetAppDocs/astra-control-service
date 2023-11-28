@@ -7,19 +7,19 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: true
-#  filter:
-#    label: Cloud provider
-#    default: All cloud providers
-#    options:
-#      - name: Amazon Web Services
-#        alias: Amazon Web Services
-#        id: aws
-#      - name: Google Cloud
-#        alias: Google Cloud
-#        id: gcp
-#      - name: Microsoft Azure
-#        alias: Azure
-#        id: azure
+  filter:
+    label: Cloud provider
+    default: All cloud providers
+    options:
+      - name: Amazon Web Services
+        alias: Amazon Web Services
+        id: aws
+      - name: Google Cloud
+        alias: Google Cloud
+        id: gcp
+      - name: Microsoft Azure
+        alias: Azure
+        id: azure
   rss_page: "release-notes/whats-new.html"
 
 sidebar:
