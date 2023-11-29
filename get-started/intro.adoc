@@ -65,13 +65,17 @@ ifdef::azure[]
 endif::azure[]
 * Self-managed clusters:
 ** Amazon EBS
-** Google Persistent Disk
 ** Azure Managed Disks
+** Google Persistent Disk
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
+** NetApp MetroCluster
+** https://longhorn.io/[Longhorn^]
 * On-premise clusters:
+** NetApp MetroCluster
 ** NetApp ONTAP AFF and FAS systems
 ** NetApp ONTAP Select
-** Cloud Volumes ONTAP
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
+** https://longhorn.io/[Longhorn^]
 |
 * NetApp ONTAP AFF and FAS systems
 * NetApp ONTAP Select
