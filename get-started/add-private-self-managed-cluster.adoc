@@ -120,7 +120,7 @@ Follow the prompts to add the cluster.
 
 . *Other*: Provide details about your self-managed cluster by uploading a `kubeconfig.yaml` file or by pasting the contents of the `kubeconfig.yaml` file from your clipboard.
 +
-NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. Refer to https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/[Kubernetes documentation^] for information about creating `kubeconfig` files.
+NOTE: If you create your own `kubeconfig` file, you should define only *one* context element in it. Refer to link:create-kubeconfig.html[these instructions^] for information about creating `kubeconfig` files.
 
 . *Credential name*: Provide a name for the self-managed cluster credential you are uploading to Astra Control. By default, the credential name is auto-populated as the name of the cluster.
 
