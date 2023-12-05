@@ -84,7 +84,7 @@ NOTE: The image pulled will not support multiple platforms and will only support
 +
 [source,console]
 ----
-docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0
+docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform_string <cluster platform>
 ----
 
 . Tag the image:
@@ -161,7 +161,7 @@ kubectl create secret docker-registry <secret_name> -n trident --docker-server=<
 . Edit the TridentOrchestrator CR and make the following edits:
 +
 ----
-kubectl edit torc trident -n trident
+kubectl edit torc trident
 ----
 +
 .. Set a custom registry location for the Astra Trident image or pull it from the Astra Control registry (`tridentImage: <my_custom_registry>/trident:23.10.0` or `tridentImage: netapp/trident:23.10.0`).
@@ -191,7 +191,7 @@ spec:
 . Verify the operator, deployment, and replicasets were created.
 +
 ----
-kubectl get all -n <operator-namespace>
+kubectl get all -n trident
 ----
 
 +
