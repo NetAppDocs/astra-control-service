@@ -13,6 +13,8 @@ summary: After you add Kubernetes clusters to Astra Control, you can install app
 [.lead]
 After you link:../get-started/add-first-cluster.html[add a Kubernetes cluster to Astra Control], you can install apps on the cluster (outside of Astra Control), and then go to the Applications page in Astra Control to define the apps.
 
+You can define and manage apps that include storage resources with running pods, or apps that include storage resources without any running pods. Apps that have no running pods are known as data-only applications.
+
 == App management requirements
 Astra Control has the following app management requirements:
 
