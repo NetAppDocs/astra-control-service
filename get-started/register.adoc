@@ -46,7 +46,7 @@ A few important things to note as you fill out the form:
 
 If you don't already have a NetApp BlueXP account, sign up to BlueXP so you can access Astra Control Service and NetApp's other cloud services. Astra Control Service is integrated within NetApp BlueXP's authentication service. If you already have a BlueXP account and have completed registration, you can access https://astra.netapp.io[Astra Control Service^] directly using your BlueXP credentials.
 
-TIP: You can use single sign-on to log in to BlueXP using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[BlueXP Help Center^] and then select *Cloud Central sign-in options*.
+TIP: You can use single sign-on to log in to BlueXP using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[BlueXP Help Center^] and then select *BlueXP sign-in options*.
 
 .Steps
 
