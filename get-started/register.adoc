@@ -23,13 +23,7 @@ When you use Astra Control Service, you'll manage your apps from within an accou
 .Steps
 
 . https://cloud.netapp.com/astra[Go to the Astra Control page on BlueXP^].
-
 . Select *Get started now*.
-
-//. Select the *FREE PLAN* tab.
-//+
-//image:acs-registration-free-plan.png["A screenshot of the registration form plan selection tab where you need to select the FREE PLAN option."]
-
 . Provide the required information in the form.
 +
 A few important things to note as you fill out the form:
@@ -37,10 +31,11 @@ A few important things to note as you fill out the form:
 * Your business name and address must be accurate because we verify them to meet the requirements of Global Trade Compliance.
 * The *Astra Account Name* is the name of your business's Astra Control Service account. You'll see this name in the Astra Control Service user interface. Note that you can create additional accounts (up to 5), if needed.
 * In the *Business Email Address* field, if you have a NetApp BlueXP account, enter the email you use for that account here. If you don't yet have a NetApp BlueXP account, use the email address you enter here when you sign up to BlueXP.
-
 . Select *Create Account*.
-//+
+
 //If you're logged in to BlueXP already, you'll see a registration status and then you'll be redirected to the Astra Control Dashboard. Otherwise, you'll be prompted to log in first.
+
+//image:acs-registration-free-plan.png["A screenshot of the registration form plan selection tab where you need to select the FREE PLAN option."]
 
 == Sign up to BlueXP
 
@@ -51,21 +46,16 @@ TIP: You can use single sign-on to log in to BlueXP using credentials from your 
 .Steps
 
 . Go to https://cloud.netapp.com[NetApp BlueXP^].
-
 . In the top right, select *Get Started*.
-
 . Select *Sign up*.
-
 . Fill out the form.
 +
 Ensure that the phone number and email address you enter here are the same that you used in the preceding Astra Control registration form.
-
 . Select *Sign up*.
 +
 TIP: The email address that you enter in these forms is for your NetApp BlueXP user ID. Use this BlueXP user ID when you sign up for a new Astra Control account, or when an Astra Control admin invites you to an existing Astra Control account.
 
 . Wait for an email from NetApp BlueXP. The email comes from the address saas.support@netapp.com, and might take several minutes to arrive. Be sure to check your spam folder.
-
 . When the email arrives, select the link in the email to verify your email address.
 
 .Result
