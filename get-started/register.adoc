@@ -66,7 +66,7 @@ TIP: The email address that you enter in these forms is for your NetApp BlueXP u
 
 //+
 //image:screenshot-cloud-central-signup.gif["A screenshot of the BlueXP sign up page where you need to enter your email address, password, name, company, and your phone number, which is optional."]
-+
+
 . Wait for an email from NetApp BlueXP. The email comes from the address saas.support@netapp.com, and might take several minutes to arrive. Be sure to check your spam folder.
 
 . When the email arrives, select the link in the email to verify your email address.
