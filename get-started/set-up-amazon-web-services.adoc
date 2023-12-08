@@ -84,8 +84,8 @@ If a controller is installed, the command returns a 3-line response. If no contr
 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more about an external snapshot controller for on-demand volume snapshots^] for instructions.
 ////
 
-Astra Trident::
-Astra Trident and an external snapshot controller are required for operations with storage backends. To install them, do the following:
+Astra Control Provisioner::
+Astra Control Provisioner and an external snapshot controller are required for operations with storage backends. To install them, do the following:
 
 [%collapsible%open]
 =========
