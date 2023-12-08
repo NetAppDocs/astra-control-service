@@ -19,7 +19,7 @@ An Admin or Owner user can add namespace constraints.
 
 .Steps
 
-//. Make sure that the user has an invitation link:../get-started/register.html[Cloud Central login].
+//. Make sure that the user has an invitation link:../get-started/register.html[BlueXP login].
 . In the *Manage Your Account* navigation area, select *Account*.
 . Select the *Users* tab.
 . In the *Actions* column, select the menu button for a user with the Member or Viewer role.
@@ -47,7 +47,7 @@ An Admin or Owner user can remove a namespace constraint from a role.
 
 .Steps
 
-//. Make sure that the user has an invitation link:../get-started/register.html[Cloud Central login].
+//. Make sure that the user has an invitation link:../get-started/register.html[BlueXP login].
 . In the *Manage Your Account* navigation area, select *Account*.
 . Select the *Users* tab.
 . In the *Actions* column, select the menu button for a user with the Member or Viewer role that has active constraints.
