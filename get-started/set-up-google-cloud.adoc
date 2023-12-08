@@ -261,7 +261,7 @@ The easiest way to set up network peering is by obtaining the gcloud commands di
 
 .Steps
 
-. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Go to NetApp Cloud Central's Global Regions Maps^] and identify the service type that you'll be using in the Google Cloud region where your cluster resides.
+. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp[Go to NetApp BlueXP Global Regions Maps^] and identify the service type that you'll be using in the Google Cloud region where your cluster resides.
 +
 Cloud Volumes Service provides two service types: CVS and CVS-Performance. https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types[Learn more about these service types^].
 
