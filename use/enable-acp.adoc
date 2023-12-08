@@ -131,25 +131,21 @@ WARNING: Do not use Helm to enable Astra Control Provisioner. If you used Helm f
 .Astra Trident operator
 --
 
-.Before you begin
+. If you removed the operator from your original deployment, create the Astra Trident orchestrator CRD again:
 
-If you removed the operator from your original deployment, create the Astra Trident orchestrator CRD again:
+.. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package[Download the installer and extract it^].
 
-. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package[Download the installer and extract it^].
-
-. Create the CRD again:
+.. Create the CRD again:
 +
 ----
 kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
 ----
 
-. Create the `trident` namespace again, if needed:
+.. Create the `trident` namespace again, if needed:
 +
 ----
 kubectl create namespace trident
 ----
-
-.Steps
 
 . Update Astra Trident to 23.10.0:
 +
