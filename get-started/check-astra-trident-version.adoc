@@ -11,7 +11,7 @@ summary: For self-managed clusters, you might need to make sure you are using th
 :imagesdir: ../media/get-started/
 
 [.lead]
-To add a self-managed cluster that uses Astra Trident for storage services, ensure that the installed version of Astra Trident is the latest. 
+To add a self-managed cluster that uses Astra Control Provisioner for storage services, ensure that the installed version of Astra Trident is the latest. 
 
 .Steps
 
@@ -26,7 +26,7 @@ If Astra Trident is installed, you see output similar to the following:
 +
 ----
 NAME      VERSION
-trident   22.10.0
+trident   23.10.0
 ----
 +
 If Astra Trident is not installed, you see output similar to the following:
@@ -35,7 +35,7 @@ If Astra Trident is not installed, you see output similar to the following:
 error: the server doesn't have a resource type "tridentversions"
 ----
 +
-NOTE: If Astra Trident is not installed or not current, and you want your cluster to use Astra Trident for storage services, you need to install the latest version of Astra Trident before proceeding. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for instructions.
+NOTE: If Astra Trident is not installed or not current, and you want your cluster to use Astra Control Provisioner for storage services, you need to enable the latest version of Astra Control Provisioner before proceeding. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for instructions.
 
 . Ensure that the pods are running:
 +
