@@ -85,12 +85,12 @@ https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html[Learn more 
 ////
 
 Astra Control Provisioner::
-Astra Control Provisioner and an external snapshot controller are required for operations with storage backends. To install them, do the following:
+Astra Control Provisioner and an external snapshot controller are required for operations with storage backends. To enable these operations, do the following:
 
 [%collapsible%open]
 =========
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[Install the snapshot CRDs and the snapshot controller^].
-. link:../use/enable-acp.html[Install the latest Astra Trident version and enable Astra Control Provisioner^].
+. link:../use/enable-acp.html[Enable Astra Control Provisioner^].
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass[Create a VolumeSnapshotClass^].
 =========
 
