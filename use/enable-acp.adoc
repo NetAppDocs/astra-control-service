@@ -84,7 +84,13 @@ NOTE: The image pulled will not support multiple platforms and will only support
 +
 [source,console]
 ----
-docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform_string <cluster platform>
+docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform <cluster platform>
+----
++
+Example:
++
+----
+docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform linux/amd64
 ----
 
 . Tag the image:
@@ -125,31 +131,25 @@ WARNING: Do not use Helm to enable Astra Control Provisioner. If you used Helm f
 .Astra Trident operator
 --
 
-. If you removed the operator from your original deployment, create the Astra Trident orchestrator CRD again:
-+
-.. Download the installer:
-+
----- 
-wget https://github.com/NetApp/trident/releases/download/v23.10.0/trident-installer-23.10.0.tar.gz
-----
+.Before you begin
 
-.. Extract the installer:
-+
-----
-tar -xf trident-installer-23.10.0.tar.gz
-----
+If you removed the operator from your original deployment, create the Astra Trident orchestrator CRD again:
 
-.. Change the directory:
-+
-----
-cd trident-installer
-----
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package[Download the installer and extract it^].
 
-.. Create the CRD:
+. Create the CRD again:
 +
 ----
 kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
 ----
+
+. Create the `trident` namespace again, if needed:
++
+----
+kubectl create namespace trident
+----
+
+.Steps
 
 . Update Astra Trident to 23.10.0:
 +
