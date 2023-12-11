@@ -22,7 +22,7 @@ image:astra-architecture-diagram-v5.png[Astra Control architecture diagram and c
 
 * *Kubernetes clusters*: Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. Astra provides management services for applications hosted in a Kubernetes cluster.
 
-* *Astra Trident*: As a fully supported open source storage provisioner and orchestrator maintained by NetApp, Astra Trident enables you to create storage volumes for containerized applications managed by Docker and Kubernetes. When deployed with Astra Control Center, Astra Trident includes a configured ONTAP storage backend.
+* *Astra Control Provisioner*: Based on Astra Trident, Astra Control Provisioner enables you to create storage volumes for containerized applications managed by Docker and Kubernetes. When deployed with Astra Control Center, Astra Control Provisioner includes a configured ONTAP storage backend.
 
 ////
 
@@ -65,7 +65,7 @@ Astra Control Center also enables you to manage, migrate, and protect Kubernetes
 
 * https://docs.netapp.com/us-en/astra/index.html[Astra Control Service documentation^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html[Astra Control Center documentation^]
-* https://docs.netapp.com/us-en/trident/index.html[Astra Trident documentation^]
+//* https://docs.netapp.com/us-en/trident/index.html[Astra Trident documentation^]
 * https://docs.netapp.com/us-en/astra-automation/index.html[Use the Astra Control API^]
 * https://docs.netapp.com/us-en/cloudinsights/[Cloud Insights documentation^]
 * https://docs.netapp.com/us-en/ontap/index.html[ONTAP documentation^]
