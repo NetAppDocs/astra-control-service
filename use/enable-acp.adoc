@@ -68,7 +68,7 @@ crane auth login cr.astra.netapp.io -u <account-id> -p <api-token>
 ----
 =====
 
-. If you have a custom registry, follow these steps for your preferred method to move the image to your custom registry. If you aren't using a registry, follow the Trident operator steps in the link:../use/enable-acp.html#step-2-enable-astra-control-provisioner-in-astra-trident[next section].
+. If you have a custom registry, follow these steps for your preferred method to move the image to your custom registry. If you aren't using a registry, follow the Trident operator steps in the <<no-registry,next section>>.
 +
 NOTE: You can use Podman instead of Docker for the following commands. If you are using a Windows environment, PowerShell is recommended.
 +
@@ -132,7 +132,7 @@ WARNING: Do not use Helm to enable Astra Control Provisioner. If you used Helm f
 .Astra Trident operator
 --
 
-. If you removed the operator from your original deployment, create the Astra Trident orchestrator CRD again:
+. [[no-registry]]If you removed the operator from your original deployment, create the Astra Trident orchestrator CRD again:
 
 .. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package[Download the installer and extract it^].
 
