@@ -19,7 +19,7 @@ Account Owners and Admins can invite other users to join the Astra Control accou
 
 .Steps
 
-. Make sure that the user has a link:../get-started/register.html[Cloud Central login].
+. Make sure that the user has a link:../get-started/register.html[BlueXP login].
 
 . Select *Account*.
 
@@ -29,7 +29,7 @@ Account Owners and Admins can invite other users to join the Astra Control accou
 +
 Note the following:
 +
-* The email address must match the email address that the user used to sign up to Cloud Central.
+* The email address must match the email address that the user used to sign up to BlueXP.
 * Each role provides the following permissions:
 ** An *Owner* has Admin permissions and can delete accounts.
 ** An *Admin* has Member permissions and can invite other users.

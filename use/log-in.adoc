@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: use/log-in.html
-keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account
+keywords: logging in, log in, sign in, signing in, BlueXP, netapp BlueXP, user account
 summary: Astra Control Service is accessible through a SaaS-based user interface by going to astra.netapp.io.
 ---
 
@@ -15,11 +15,11 @@ summary: Astra Control Service is accessible through a SaaS-based user interface
 [.lead]
 Astra Control Service is accessible through a SaaS-based user interface by going to https://astra.netapp.io.
 
-TIP: You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[Cloud Central Help Center^] and then select *Cloud Central sign-in options*.
+TIP: You can use single sign-on to log in using credentials from your corporate directory (federated identity). To learn more, go to the https://cloud.netapp.com/help-center[Help Center^] and then select *Cloud Central sign-in options*.
 
 .Before you begin
 
-* link:../get-started/register.html[A Cloud Central user ID].
+* link:../get-started/register.html[A BlueXP user ID].
 * link:../get-started/register.html[A new Astra Control account] or link:manage-users.html[an invitation to an existing account].
 * A supported web browser.
 +
@@ -29,4 +29,4 @@ Astra Control Service supports recent versions of Firefox, Safari, and Chrome wi
 
 . Open a web browser and go to https://astra.netapp.io.
 
-. Log in using your NetApp Cloud Central credentials.
+. Log in using your NetApp BlueXP credentials.
