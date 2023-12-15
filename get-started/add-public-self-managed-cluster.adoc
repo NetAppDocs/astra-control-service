@@ -22,8 +22,8 @@ You can use Astra Control Service to manage the following types of public, self-
 |===
 |Kubernetes distribution |Supported versions
 
-|Azure Kubernetes Service on Azure Stack HCI
-|Azure Stack HCI 21H2 and 22H2 with AKS 1.23 and 1.24
+// |Azure Kubernetes Service on Azure Stack HCI
+// |Azure Stack HCI 21H2 and 22H2 with AKS 1.23 and 1.24
 
 // |Google Anthos
 // |1.12 through 1.14
