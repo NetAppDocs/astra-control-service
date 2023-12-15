@@ -25,8 +25,8 @@ You can use Astra Control Service to manage the following types of public, self-
 |Azure Kubernetes Service on Azure Stack HCI
 |Azure Stack HCI 21H2 and 22H2 with AKS 1.23 and 1.24
 
-|Google Anthos
-|1.12 through 1.14
+// |Google Anthos
+// |1.12 through 1.14
 
 |Kubernetes (Upstream)
 |1.24 to 1.26 (Astra Trident 22.10 or newer is required for Kubernetes 1.25 or newer)
@@ -40,11 +40,11 @@ RKE 2 (v1.24.x) with Rancher 2.7
 |Red Hat OpenShift Container Platform
 |4.10 through 4.12
 
-|VMware Tanzu Kubernetes Grid
-|1.6
+// |VMware Tanzu Kubernetes Grid
+// |1.6
 
-|VMware Tanzu Kubernetes Grid Integrated Edition
-|1.14 and 1.15
+// |VMware Tanzu Kubernetes Grid Integrated Edition
+// |1.14 and 1.15
 |===
 
 These instructions assume that you have already created a self-managed cluster.
