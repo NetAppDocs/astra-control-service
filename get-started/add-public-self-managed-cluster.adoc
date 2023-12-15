@@ -29,7 +29,7 @@ You can use Astra Control Service to manage the following types of public, self-
 // |1.12 through 1.14
 
 |Kubernetes (Upstream)
-|1.27 to 1.29 (Astra Trident 22.10 or newer is required for Kubernetes 1.25 or newer)
+|1.27 to 1.29
 
 |Rancher Kubernetes Engine (RKE)
 |RKE 1: Versions 1.24.17, 1.25.13, 1.26.8 with Rancher Manager 2.7.9
