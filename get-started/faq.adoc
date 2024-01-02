@@ -53,7 +53,7 @@ Yes, you will be charged for the persistent volumes used by the clusters from yo
 
 *Do I need to install CSI drivers on my cluster before adding it to Astra Control Service?*
 
-No. When your cluster is added to Astra Control, the service will automatically install NetApp's Trident Container Storage Interface (CSI) driver on the Kubernetes cluster. This CSI driver is used to provision persistent volumes for clusters backed by your cloud provider.
+No. When your cluster is added to Astra Control, the service will automatically install the Astra Trident Container Storage Interface (CSI) driver on the Kubernetes cluster. This CSI driver is used to provision persistent volumes for clusters backed by your cloud provider.
 
 *I need to add worker nodes to my cluster after adding to Astra Control Service. What should I do?*
 
@@ -120,9 +120,9 @@ ifdef::gcp[]
 WARNING: Always remove a cluster from Astra Control before you delete it through GCP. Deleting a cluster from GCP while it's still being managed by Astra Control can cause problems for your Astra Control account.
 endif::gcp[]
 
-*Will Astra Trident be uninstalled when I remove a cluster from Astra Control?*
+*Is Astra Control Provisioner automatically uninstalled from a cluster when I unmanage it?*
 
-Astra Trident will not be uninstalled from a cluster when you remove the cluster from Astra Control.
+When you unmanage a cluster from Astra Control Service, Astra Control Provisioner isn't automatically uninstalled from the cluster. To uninstall Astra Control Provisioner and its components, you'll need to https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html[follow these steps to uninstall the Astra Trident instance that contains the Astra Control Provisioner service^].
 
 == Managing applications
 
@@ -170,20 +170,19 @@ Astra Control Provisioner, as part of Astra Control, supports a superset of stor
 
 *Is Astra Control Provisioner replacing Astra Trident?*
 
-In coming Astra Control updates, Astra Control Provisioner will replace Astra Trident as storage provisioner and orchestrator in the Astra Control architecture. Because of this, it's highly recommended that Astra Control users link:../use/enable-acp.html[enable Astra Control Provisioner]. Astra Trident will continue to remain open source and be released, maintained, supported, and updated with new CSI and other features from NetApp.
+Astra Control Provisioner has replaced Astra Trident as storage provisioner and orchestrator in the Astra Control architecture. Astra Control users need to link:../use/enable-acp.html[enable Astra Control Provisioner] to use Astra Control. Astra Trident will continue to remain open source and be released, maintained, supported, and updated with new CSI and other features from NetApp. Only Astra Control Provisioner, however, that contains Astra Trident CSI functionality along with extended storage management capabilities can be used with Astra Control Service. 
 
 *Do I have to pay for Astra Trident?*
 
-No. Astra Trident will continue to be open source and free to download.
+No. Astra Trident will continue to be open source and free to download. Astra Control Provisioner functionality use now requires an Astra Control license.
 
 *Can I use the storage management and provisioning features in Astra Control without installing and using all of Astra Control?*
 
-Yes, you can upgrade to Astra Trident 23.10 or later and enable Astra Control Provisioner functionality even if you do not want to consume the complete feature set of Astra Control data management functionality. 
-//You can download and install an Astra Control Provisioner bundle from the NetApp Support Site and use the Astra Control Provisioner tooling developed for automating Trident setup and install.
+Yes, you can upgrade to Astra Control Provisioner and use its functionality even if you do not want to consume the complete feature set of Astra Control data management functionality.
 
-*How can I transition from being an existing Trident user to Astra Control to use advanced storage management and provisioning functionality?*
+*How can I transition from being an existing Astra Trident user to Astra Control to use the advanced storage management and provisioning functionality?*
 
-If you are an existing Trident user (this includes users of Astra Trident in the public cloud), you need to acquire an Astra Control license first. After you do, you can download the Astra Control Provisioner bundle, upgrade Astra Trident, and link:../use/enable-acp.html[enable Astra Control Provisioner functionality].
+If you are an existing Astra Trident user (this includes users of Astra Trident in the public cloud), you need to acquire an Astra Control license first. After you do, you can download the Astra Control Provisioner bundle, upgrade Astra Trident, and link:../use/enable-acp.html[enable Astra Control Provisioner functionality].
 
 *How do I know if Astra Control Provisioner has replaced Astra Trident on my cluster?*
 
@@ -198,7 +197,7 @@ If you don't have access to the UI, you can confirm successful installation usin
 .Astra Trident operator
 --
 
-Verify the `trident-acp` container is running and that `acpVersion` is `23.10.0` with a status of `Installed`:
+Verify the `trident-acp` container is running and that `acpVersion` is `23.10.0` or later with a status of `Installed`:
 
 ----
 kubectl get torc -o yaml

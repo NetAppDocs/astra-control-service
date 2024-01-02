@@ -107,18 +107,20 @@ Your self-managed cluster needs to meet the following requirements:
 insecure-skip-tls-verify: true
 ----
 * *Rancher only*: When managing application clusters in a Rancher environment, modify the application cluster's default context in the kubeconfig file provided by Rancher to use a control plane context instead of the Rancher API server context. This reduces load on the Rancher API server and improves performance.
-* *Astra Control Provisioner*: Ensure that you have enabled the latest version of Astra Control Provisioner. If Astra Control Provisioner is already installed, link:check-astra-trident-version.html[check to make sure it is the latest version^].
-+
-NOTE: You can link:../use/enable-acp.html[enable Astra Control Provisioner^] using either Trident operator (manually or using Helm chart) or `tridentctl`. Prior to enabling or upgrading Astra Control Provisioner, review the https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html[supported frontends, backends, and host configurations^].
 
-** *Storage backend configured*: At least one storage backend must be https://docs.netapp.com/us-en/trident/trident-use/backends.html[configured^] on the cluster.
-** *Storage classes configured*: At least one storage class must be https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html[configured^] on the cluster. If a default storage class is configured, ensure that only one storage class has that annotation.
-** *Volume snapshot controller and volume snapshot class installed and configured*: The volume snapshot controller must be https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[installed^] so that snapshots can be created in Astra Control. At least one `VolumeSnapshotClass` has been https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass[set up^] by an administrator.
+* *Astra Control Provisioner requirements*: 
+
+** *Review Astra Trident environment requirements*: Prior to installing or upgrading Astra Control Provisioner, review the https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html[supported frontends, backends, and host configurations^].
+
+**	*Enable Astra Control Provisioner functionality*: You'll need to install Astra Trident 23.10 or later and enable link:../use/enable-acp.html[Astra Control Provisioner advanced storage functionality]. Astra Control does not support Astra Trident if the Astra Control Provisioner is not also enabled.
+
+** *Configure a storage backend*: At least one storage backend must be https://docs.netapp.com/us-en/trident/trident-use/backends.html[configured in Astra Trident^] on the cluster.
+
+** *Configure a storage class*: At least one storage class must be https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html[configured in Astra Trident^] on the cluster. If a default storage class is configured, ensure that it is the *only* storage class that has the default annotation.
+
+** *Configure a volume snapshot controller and install a volume snapshot class*: https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller[Install a volume snapshot controller] so that snapshots can be created in Astra Control. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#create-a-volume-snapshot[Create^] at least one `VolumeSnapshotClass` using Astra Trident.
 // Removed ONTAP credentials commands from ACC as Vijitha said they are not needed - ASTRADOC-21
 =======
-
-// Removed with ASTRADOC-362
-//* *Astra Control Provisioner*: To use Astra Control Provisioner advanced management and storage provisioning features that are only accessible to Astra Control users, you must install Astra Trident 23.10 or later and enable link:../use/enable-acp.html[Astra Control Provisioner functionality].
 
 .Steps
 

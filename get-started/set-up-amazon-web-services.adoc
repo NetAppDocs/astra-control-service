@@ -89,7 +89,7 @@ Astra Control Provisioner and an external snapshot controller are required for o
 
 [%collapsible%open]
 =========
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[Install the snapshot CRDs and the snapshot controller^].
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller[Install the snapshot CRDs and the snapshot controller^].
 . link:../use/enable-acp.html[Enable Astra Control Provisioner^].
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass[Create a VolumeSnapshotClass^].
 =========
@@ -102,7 +102,7 @@ Refer to the steps for instructions for installing the CSI driver.
 ========
 .Install an external snapshotter
 
-If you haven't already done so, https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[install the snapshot CRDs and the snapshot controller^].
+If you haven't already done so, https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller[install the snapshot CRDs and the snapshot controller^].
 
 .Install the CSI driver as an Amazon EKS add-on
 

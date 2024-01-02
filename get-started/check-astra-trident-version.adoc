@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: get-started/check-astra-trident-version.html
-keywords: astra trident, check, version
+keywords: astra trident, check, version, astra control provisioner
 summary: For self-managed clusters, you might need to make sure you are using the correct Astra Trident version.
 ---
 
@@ -11,11 +11,11 @@ summary: For self-managed clusters, you might need to make sure you are using th
 :imagesdir: ../media/get-started/
 
 [.lead]
-To add a self-managed cluster that uses Astra Control Provisioner for storage services, ensure that the installed version of Astra Trident is the latest. 
+To add a self-managed cluster that uses Astra Control Provisioner for storage services, ensure that the installed version of Astra Trident is 23.10 or latest. 
 
 .Steps
 
-. Check the Astra Trident version.
+. Determine the Astra Trident version you are running:
 +
 [source,console]
 ----
@@ -35,7 +35,7 @@ If Astra Trident is not installed, you see output similar to the following:
 error: the server doesn't have a resource type "tridentversions"
 ----
 +
-NOTE: If Astra Trident is not installed or not current, and you want your cluster to use Astra Control Provisioner for storage services, you need to enable the latest version of Astra Control Provisioner before proceeding. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for instructions.
+NOTE: If Astra Trident is not installed or running version 23.10 or later, you need to enable Astra Control Provisioner before proceeding. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for instructions.
 
 . Ensure that the pods are running:
 +

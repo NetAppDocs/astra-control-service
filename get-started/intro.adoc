@@ -157,10 +157,9 @@ You can add applications to your cluster. Or, if you have some applications alre
 
 == For more information
 
-* https://docs.netapp.com/us-en/astra-family/[Documentation for the NetApp Astra product family^]
-* https://docs.netapp.com/us-en/astra/index.html[Astra Control Service documentation^]
+* https://docs.netapp.com/us-en/astra-family/[NetApp Astra product family documentation^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html[Astra Control Center documentation^]
+* https://docs.netapp.com/us-en/astra-automation/index.html[Astra Control API documentation^]
 * https://docs.netapp.com/us-en/trident/index.html[Astra Trident documentation^]
-* https://docs.netapp.com/us-en/astra-automation/index.html[Use the Astra Control API^]
 * https://docs.netapp.com/us-en/cloudinsights/[Cloud Insights documentation^]
 * https://docs.netapp.com/us-en/ontap/index.html[ONTAP documentation^]
