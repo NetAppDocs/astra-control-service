@@ -33,6 +33,7 @@ CAUTION: _You can't be fully protected until you have a recent backup_. This is 
 NOTE: If you perform a snapshot or backup, but the operation fails with the error "The resource wasn't created because of an internal server issue", check to make sure the storage backend you are using has the correct drivers installed. Some storage backends need Container Storage Interface (CSI) drivers, while others need an external snapshot controller.
 
 === Immutable backups
+An immutable backup is a backup that cannot be changed or deleted during a specified period. When you create an immutable backup, Astra Control checks to ensure that the bucket you are using is a write once read many (WORM) bucket, and if so, ensures that the backup is immutable from within Astra Control. 
 Astra Control Service supports creating immutable backups with the following platforms and bucket types:
 
 * Amazon Web Services using an Amazon S3 bucket with S3 Object Lock configured
@@ -42,7 +43,7 @@ Astra Control Service supports creating immutable backups with the following pla
 
 Note the following when working with immutable backups:
 
-* If you back up to a write once read many (WORM) bucket in an unsupported platform or to an unsupported bucket type, you might get unpredictable results, such as backup deletion failing even if the retention time has elapsed.
+* If you back up to a WORM bucket in an unsupported platform or to an unsupported bucket type, you might get unpredictable results, such as backup deletion failing even if the retention time has elapsed.
 * Astra Control does not support data lifecycle management policies or manual deletion of objects on the buckets you use with immutable backups. Make sure that your storage backend is not configured to manage the lifecycle of Astra Control snapshots or backed up data.
 // * In Azure, the terms "bucket level" and "container level" have the same meaning when you configure a time-based retention policy.
 
