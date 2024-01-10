@@ -23,7 +23,7 @@ NOTE: If you add a namespace filter to an execution hook that runs after a resto
 * *Plan for space needs*: When you perform an in-place restore of an application that uses NetApp ONTAP storage, the space used by the restored app can double. After performing an in-place restore, remove any unwanted snapshots from the restored application to free up storage space.
 * *Supported storage class drivers*: Astra Control supports restoring backups using storage classes backed by the following drivers:
 ** `ontap-nas`
-** `ontap-nas-economy` (Refer to the following note)
+** `ontap-nas-economy`
 ** `ontap-san`
 ** `ontap-san-economy`
 * *(ontap-nas-economy driver only) Backups and restores*: Before backing up or restoring an app that uses a storage class backed by the `ontap-nas-economy` driver, verify that the link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[snapshot directory on the ONTAP storage backend is hidden]. Failure to hide this directory might lead to loss of access to your application, especially if it is using NFSv3.
