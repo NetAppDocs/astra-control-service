@@ -1,5 +1,7 @@
 indexpage:
+  title: Astra Control Service documentation
   lead: "Astra Control Service is a NetApp-managed service that provides application-aware data management of Kubernetes clusters in multiple cloud environments. Go to the docs for Astra Control Center if you need to manage Kubernetes apps running in your on-premises environment."
+  summary: "Astra Control Service is a NetApp-managed service that provides application-aware data management of Kubernetes clusters in multiple cloud environments. Go to the docs for Astra Control Center if you need to manage Kubernetes apps running in your on-premises environment."
   tiles:
     - title: Get started
       #image: ./media/outline_directions_run_black_18dp.png
