@@ -71,6 +71,13 @@ Astra Control implements the data protection policy by creating and retaining sn
 
 You can create an on-demand snapshot at any time.
 
+.About this task
+Astra Control supports snapshot creation using storage classes backed by the following drivers:
+
+* `ontap-nas`
+* `ontap-san`
+* `ontap-san-economy`
+
 //astradoc-91, astradoc-154
 IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, snapshots can't be created. Use an alternate storage class for snapshots. 
 
@@ -100,6 +107,16 @@ ifdef::azure[]
 Be aware of how storage space is handled when you back up an application hosted on Azure NetApp Files storage. Refer to link:../learn/azure-storage.html#application-backups[Application backups] for more information.
 ====
 endif::azure[]
+
+[NOTE]
+=====
+Astra Control supports backup creation using storage classes backed by the following drivers:
+
+* `ontap-nas`
+* `ontap-nas-economy`
+* `ontap-san`
+* `ontap-san-economy`
+=====
 
 .About this task
 Buckets in Astra Control do not report available capacity. Before backing up or cloning apps managed by Astra Control, check bucket information in the appropriate storage management system.
