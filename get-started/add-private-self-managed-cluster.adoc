@@ -39,6 +39,7 @@ RKE 2: Versions 1.24.17, 1.25.14, 1.26.9 with Rancher Manager 2.7.9
 |Red Hat OpenShift Container Platform
 |4.12 through 4.14
 
+
 // |VMware Tanzu Kubernetes Grid
 // |1.6
 
