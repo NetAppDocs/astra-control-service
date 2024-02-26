@@ -70,7 +70,7 @@ Astra Control Service does not install Astra Trident automatically for EKS clust
 
 A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service.
 
-Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.23 to 1.25.
+Kubernetes version:: A cluster must be running a Kubernetes version in the range of 1.25 to 1.28.
 
 Image type:: The image type for each worker node must be Linux.
 
