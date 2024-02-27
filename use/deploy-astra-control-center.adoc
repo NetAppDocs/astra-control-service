@@ -17,8 +17,8 @@ If you want a self-managed instance of Astra Control that resides inside your ne
 
 . In the Getting Started area of the Dashboard, select *Deploy a self-managed instance of Astra Control*.
 . Do one of the following:
-    * Get an API token from Astra Control. Refer to the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^] for instructions.
     * Generate a new API token by selecting *Generate*.
+    * Paste in an existing Astra Control REST API token. Refer to the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^] for guidance on generating an API token.
 . Follow the instructions in the *Deploy Astra Control Center* window.
 
 
