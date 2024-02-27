@@ -35,7 +35,7 @@ If Astra Trident is not installed, you see output similar to the following:
 error: the server doesn't have a resource type "tridentversions"
 ----
 +
-NOTE: If Astra Trident is not installed or running version 23.10 or later, you need to enable Astra Control Provisioner before proceeding. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for instructions.
+NOTE: If Astra Trident is not installed or running version 23.10 or later, you can optionally enable Astra Control Provisioner before proceeding. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for instructions.
 
 . Ensure that the pods are running:
 +
