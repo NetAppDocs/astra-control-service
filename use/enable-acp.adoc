@@ -287,20 +287,19 @@ helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
 * Images without a registry
 +
 ----
-helm install <name> netapp-trident/trident-operator --version <24.2.0> --set acpImage=<acp image> --set enableACP=true --create-namespace --namespace <trident-namespace>
+helm install trident netapp-trident/trident-operator --version <24.2.0> --set acpImage=<acp image> --set enableACP=true --create-namespace --namespace trident
 ----
+
 * Images in one registry
 +
 ----
-helm install <name> netapp-trident/trident-operator --version <24.2.0> --set acpImage=<acp image> --set enableACP=true --set imageRegistry=<your-registry> --create-namespace --namespace <trident-namespace>
+helm install trident netapp-trident/trident-operator --version <24.2.0> --set acpImage=<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --create-namespace --namespace trident
 ----
 
 * Images in different registries
 +
-You must append `sig-storage` to the `imageRegistry` to use different registry locations.
-+
 ----
-helm install <name> netapp-trident/trident-operator --version <24.2.0> --set acpImage=<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --set operatorImage=<your-registry>/netapp/trident-operator:24.02.0 --set tridentAutosupportImage=<your-registry>/netapp/trident-autosupport:24.02 --set tridentImage=<your-registry>/netapp/trident:24.02.0 --create-namespace --namespace <trident-namespace>
+helm install trident netapp-trident/trident-operator --version <24.2.0> --set acpImage=<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --set operatorImage=<your-registry>/netapp/trident-operator:24.02.0 --set tridentAutosupportImage=<your-registry>/netapp/trident-autosupport:24.02 --set tridentImage=<your-registry>/netapp/trident:24.02.0 --create-namespace --namespace trident
 ----
 
 NOTE: If you already created a namespace for Trident, the `--create-namespace` parameter will not create an additional namespace.
