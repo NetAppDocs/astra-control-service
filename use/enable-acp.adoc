@@ -15,7 +15,7 @@ Astra Trident versions 23.10 and later include the option to use Astra Control P
 
 Your Astra Control Service subscription automatically includes the license for Astra Control Provisioner use.
 
-In coming Astra Control updates, Astra Control Provisioner will replace Astra Trident as storage provisioner and orchestrator in the Astra Control architecture. Because of this, it's highly recommended that Astra Control users enable Astra Control Provisioner. Astra Trident will continue to remain open source and be released, maintained, supported, and updated with new CSI and other features from NetApp.
+In coming Astra Control updates, Astra Control Provisioner will replace Astra Trident as storage provisioner and orchestrator and be mandatory for Astra Control use. Because of this, it's strongly recommended that Astra Control users enable Astra Control Provisioner. Astra Trident will continue to remain open source and be released, maintained, supported, and updated with new CSI and other features from NetApp.
 
 .How do I know if I need to enable Astra Control Provisioner?
 
@@ -35,7 +35,7 @@ image:ac-acp-eligibility.png[A screenshot depicting cluster eligibility in the A
 
 If you have an existing Astra Trident without Astra Control Provisioner and want to enable Astra Control Provisioner, do the following first:
 
-* *If you have Astra Trident installed, confirm that its version is within a four-release window*: You can perform a direct upgrade to Astra Trident 23.10 with Astra Control Provisioner if your Astra Trident is within a four-release window of version 23.10. For example, you can directly upgrade from Astra Trident 22.10 to 23.10.
+* *If you have Astra Trident installed, confirm that its version is within a four-release window*: You can perform a direct upgrade to Astra Trident 24.02 with Astra Control Provisioner if your Astra Trident is within a four-release window of version 24.02. For example, you can directly upgrade from Astra Trident 23.04 to 24.02.
 
 * *Confirm that your cluster has an AMD64 system architecture*: The Astra Control Provisioner image is provided in both AMD64 and ARM64 CPU architectures, but only AMD64 is supported by Astra Control.
 
@@ -68,11 +68,11 @@ crane auth login cr.astra.netapp.io -u <account-id> -p <api-token>
 ----
 =====
 
-. If you have a custom registry, follow these steps for your preferred method to move the image to your custom registry. If you aren't using a registry, follow the Trident operator steps in the <<no-registry,next section>>.
+. (Custom registries only) Follow these steps to move the image to your custom registry. If you aren't using a registry, follow the Trident operator steps in the <<no-registry,next section>>.
 +
 NOTE: You can use Podman instead of Docker for the following commands. If you are using a Windows environment, PowerShell is recommended.
 +
-[role="tabbed-block"]
+[%collapsible,role="tabbed-block"]
 ====
 
 .Docker
@@ -84,27 +84,27 @@ NOTE: The image pulled will not support multiple platforms and will only support
 +
 [source,console]
 ----
-docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform <cluster platform>
+docker pull cr.astra.netapp.io/astra/trident-acp:24.02.0 --platform <cluster platform>
 ----
 +
 Example:
 +
 ----
-docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform linux/amd64
+docker pull cr.astra.netapp.io/astra/trident-acp:24.02.0 --platform linux/amd64
 ----
 
 . Tag the image:
 +
 [source,console]
 ----
-docker tag cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/trident-acp:23.10.0
+docker tag cr.astra.netapp.io/astra/trident-acp:24.02.0 <my_custom_registry>/trident-acp:24.02.0
 ----
 
 . Push the image to your custom registry:
 +
 [source,console]
 ----
-docker push <my_custom_registry>/trident-acp:23.10.0
+docker push <my_custom_registry>/trident-acp:24.02.0
 ----
 --
 // end docker tab block
@@ -116,15 +116,15 @@ docker push <my_custom_registry>/trident-acp:23.10.0
 +
 [source,crane]
 ----
-crane copy cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/trident-acp:23.10.0
+crane copy cr.astra.netapp.io/astra/trident-acp:24.02.0 <my_custom_registry>/trident-acp:24.02.0
 ----
 --
 // end crane tab block
 ====
 
 . Determine if the original Astra Trident installation method used an https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#determine-the-original-installation-method[operator (either manually or with Helm) or `tridentctl`^].
-+
-WARNING: Do not use Helm to enable Astra Control Provisioner. If you used Helm for the original installation and you are upgrading to 23.10, you'll need to use either the Trident operator or tridentctl to perform Astra Control Provisioner enablement.
+
+. Enable Astra Control Provisioner in Astra Trident using the installation method you used originally:
 +
 [role="tabbed-block"]
 ====
@@ -145,13 +145,13 @@ kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.1
 
 .. Create the trident namespace (`kubectl create namespace trident`) or confirm that the trident namespace still exists (`kubectl get all -n trident`). If the namespace has been removed, create it again.
 
-. Update Astra Trident to 23.10.0:
+. Update Astra Trident to 24.02.0:
 +
 NOTE: For clusters running Kubernetes 1.24 or earlier, use `bundle_pre_1_25.yaml`. For clusters running Kubernetes 1.25 or later, use `bundle_post_1_25.yaml`.
 +
 [source,console]
 ----
-kubectl -n trident apply -f trident-installer-23.10.0/deploy/<bundle-name.yaml>
+kubectl -n trident apply -f trident-installer-24.02.0/deploy/<bundle-name.yaml>
 ----
 
 . Verify Astra Trident is running:
@@ -179,12 +179,12 @@ kubectl create secret docker-registry <secret_name> -n trident --docker-server=<
 +
 [source,console]
 ----
-kubectl edit torc trident
+kubectl edit torc trident -n trident
 ----
 +
-.. Set a custom registry location for the Astra Trident image or pull it from the Astra Control registry (`tridentImage: <my_custom_registry>/trident:23.10.0` or `tridentImage: netapp/trident:23.10.0`).
+.. Set a custom registry location for the Astra Trident image or pull it from the Astra Control registry (`tridentImage: <my_custom_registry>/trident:24.02.0` or `tridentImage: netapp/trident:24.02.0`).
 .. Enable Astra Control Provisioner (`enableACP: true`).
-.. Set the custom registry location for the Astra Control Provisioner image or pull it from the Astra Control registry (`acpImage: <my_custom_registry>/trident-acp:23.10.0` or `acpImage: cr.astra.netapp.io/astra/trident-acp:23.10.0`).
+.. Set the custom registry location for the Astra Control Provisioner image or pull it from the Astra Control registry (`acpImage: <my_custom_registry>/trident-acp:24.02.0` or `acpImage: cr.astra.netapp.io/astra/trident-acp:24.02.0`).
 .. If you established <<pull-secrets,image pull secrets>> earlier in this procedure, you can set them here (`imagePullSecrets: - <secret_name>`). Use the same name secret name you established in the previous steps.
 
 +
@@ -197,9 +197,9 @@ metadata:
 spec:
   debug: true
   namespace: trident
-  *tridentImage: <registry>/trident:23.10.0*
+  *tridentImage: <registry>/trident:24.02.0*
   *enableACP: true*
-  *acpImage: <registry>/trident-acp:23.10.0*
+  *acpImage: <registry>/trident-acp:24.02.0*
   *imagePullSecrets:
   - <secret_name>*
 ----
@@ -216,7 +216,7 @@ kubectl get all -n trident
 +
 IMPORTANT: There should only be *one instance* of the operator in a Kubernetes cluster. Do not create multiple deployments of the Trident operator.
 
-. Verify the `trident-acp` container is running and that `acpVersion` is `23.10.0` with a status of `Installed`:
+. Verify the `trident-acp` container is running and that `acpVersion` is `24.02.0` with a status of `Installed`:
 +
 [source,console]
 ----
@@ -227,10 +227,10 @@ Response:
 +
 ----
 status:
-  acpVersion: 23.10.0
+  acpVersion: 24.02.0
   currentInstallationParams:
     ...
-    acpImage: <registry>/trident-acp:v23.10.0
+    acpImage: <registry>/trident-acp:v24.02.0
     enableACP: "true"
     ...
   ...
@@ -260,13 +260,60 @@ status:
 Response:
 +
 ----
-+----------------+----------------+-------------+ | SERVER VERSION | CLIENT VERSION | ACP VERSION | +----------------+----------------+-------------+ | 23.10.0 | 23.10.0 | 23.10.0. | +----------------+----------------+-------------+
++----------------+----------------+-------------+ | SERVER VERSION | CLIENT VERSION | ACP VERSION | +----------------+----------------+-------------+ | 24.02.0 | 24.02.0 | 24.02.0. | +----------------+----------------+-------------+
+----
+--
+
+.Helm
+--
+
+. Add the Astra Trident Helm repository:
++
+----
+helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
 ----
 
+. Use `helm install` and run one of the following options that include these settings: 
++
+** A name for your deployment location
+** The Astra Trident version
+** The name of the Astra Control Provisioner image
+** The flag to enable the provisioner
+** (Optional) A local registry path. If you are using a local registry, your https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html#container-images-and-corresponding-kubernetes-versions[Trident images^] can be located in one registry or different registries, but all CSI images must be located in the same registry.
+** The Trident namespace
+
+.Options
+
+* Images without a registry
++
+----
+helm install <name> netapp-trident/trident-operator --version <24.2.0> --set acpImage=<acp image> --set enableACP=true --create-namespace --namespace <trident-namespace>
+----
+* Images in one registry
++
+----
+helm install <name> netapp-trident/trident-operator --version <24.2.0> --set acpImage=<acp image> --set enableACP=true --set imageRegistry=<your-registry> --create-namespace --namespace <trident-namespace>
+----
+
+* Images in different registries
++
+You must append `sig-storage` to the `imageRegistry` to use different registry locations.
++
+----
+helm install <name> netapp-trident/trident-operator --version <24.2.0> --set acpImage=<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --set operatorImage=<your-registry>/netapp/trident-operator:24.02.0 --set tridentAutosupportImage=<your-registry>/netapp/trident-autosupport:24.02 --set tridentImage=<your-registry>/netapp/trident:24.02.0 --create-namespace --namespace <trident-namespace>
+----
+
+NOTE: If you already created a namespace for Trident, the `--create-namespace` parameter will not create an additional namespace.
+
+You can use `helm list` to review installation details such as name, namespace, chart, status, app version, and revision number.
+
+--
 ====
 // end tabbed block
 
 .Result
+
+Astra Control Provisioner functionality is enabled and you can use any features available for the version you are running.
 
 After Astra Control Provisioner is installed, the cluster hosting the provisioner in the Astra Control UI will show an `ACP version` rather than `Trident version` field and current installed version number.
 
