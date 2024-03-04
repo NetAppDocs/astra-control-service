@@ -16,6 +16,7 @@ Astra Trident versions 23.10 and later include the option to use Astra Control P
 Your Astra Control Service subscription automatically includes the license for Astra Control Provisioner use.
 
 In coming Astra Control updates, Astra Control Provisioner will replace Astra Trident as storage provisioner and orchestrator and be mandatory for Astra Control use. Because of this, it's strongly recommended that Astra Control users enable Astra Control Provisioner. Astra Trident will continue to remain open source and be released, maintained, supported, and updated with new CSI and other features from NetApp.
+//acp to trident revert
 
 .How do I know if I need to enable Astra Control Provisioner?
 

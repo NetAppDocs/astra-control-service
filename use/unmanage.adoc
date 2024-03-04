@@ -54,8 +54,9 @@ endif::gcp[]
 When you unmanage a cluster:
 
 * This action stops your cluster from being managed by Astra Control. It doesn't make any changes to the cluster's configuration and it doesn't delete the cluster.
+//acp to trident revert
 
-* Astra Control Provisioner won't be uninstalled from the cluster. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html[Learn how to uninstall Astra Trident^].
+* Astra Control Provisioner or Astra Trident won't be uninstalled from the cluster. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html[Learn how to uninstall Astra Trident^].
 
 .Steps
 

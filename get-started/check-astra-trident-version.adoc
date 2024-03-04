@@ -11,7 +11,8 @@ summary: For self-managed clusters, you might need to make sure you are using th
 :imagesdir: ../media/get-started/
 
 [.lead]
-To add a self-managed cluster that uses Astra Control Provisioner for storage services, ensure that the installed version of Astra Trident is 23.10 or latest. 
+To add a self-managed cluster that uses Astra Control Provisioner or Astra Trident for storage services, ensure that the installed version of Astra Trident is 23.10 or latest. 
+//acp to trident revert
 
 .Steps
 
@@ -26,7 +27,7 @@ If Astra Trident is installed, you see output similar to the following:
 +
 ----
 NAME      VERSION
-trident   23.10.0
+trident   24.02.0
 ----
 +
 If Astra Trident is not installed, you see output similar to the following:
@@ -34,8 +35,12 @@ If Astra Trident is not installed, you see output similar to the following:
 ----
 error: the server doesn't have a resource type "tridentversions"
 ----
-+
-NOTE: If Astra Trident is not installed or running version 23.10 or later, you can optionally enable Astra Control Provisioner before proceeding. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for instructions.
+
+. Do one of the following:
+
+* If you are running Astra Trident 23.01 or earlier, use these https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html[instructions^] to upgrade to a more recent version of Astra Trident before upgrading to the Astra Control Provisioner. You can link:../use/enable-acp.html[perform a direct upgrade] to Astra Control Provisioner 24.02 if your Astra Trident is within a four-release window of version 24.02. For example, you can directly upgrade from Astra Trident 23.04 to Astra Control Provisioner 24.02.
+
+* If you are running Astra Trident 23.10 or later, verify that Astra Control Provisioner has been link:../use/faq.html#running-acp-check[enabled]. Astra Control Provisioner will not work with releases of Astra Control Center earlier than 23.10. link:../get-started/enable-acp.html[Upgrade your Astra Control Provisioner] so that it has the same version as the Astra Control Center you are upgrading to access the latest functionality.
 
 . Ensure that the pods are running:
 +

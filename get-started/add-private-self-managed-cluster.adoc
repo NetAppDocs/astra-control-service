@@ -99,11 +99,13 @@ insecure-skip-tls-verify: true
 ----
 * *Rancher only*: When managing application clusters in a Rancher environment, modify the application cluster's default context in the kubeconfig file provided by Rancher to use a control plane context instead of the Rancher API server context. This reduces load on the Rancher API server and improves performance.
 
-* *Astra Control Provisioner requirements*: 
+* *Astra Control Provisioner requirements*: You should have a properly configured Astra Control Provisioner, including its Astra Trident components, to manage clusters.
+//acp to trident revert
 
 ** *Review Astra Trident environment requirements*: Prior to installing or upgrading Astra Control Provisioner, review the https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html[supported frontends, backends, and host configurations^].
 
-**	*Enable Astra Control Provisioner functionality*: You'll need to install Astra Trident 23.10 or later and enable link:../use/enable-acp.html[Astra Control Provisioner advanced storage functionality]. Astra Control does not support Astra Trident if the Astra Control Provisioner is not also enabled.
+**	*Enable Astra Control Provisioner functionality*: It's highly recommended that you install Astra Trident 23.10 or later and enable link:../use/enable-acp.html[Astra Control Provisioner advanced storage functionality]. In coming releases, Astra Control will not support Astra Trident if the Astra Control Provisioner is not also enabled.
+//acp to trident revert
 
 ** *Configure a storage backend*: At least one storage backend must be https://docs.netapp.com/us-en/trident/trident-use/backends.html[configured in Astra Trident^] on the cluster.
 
