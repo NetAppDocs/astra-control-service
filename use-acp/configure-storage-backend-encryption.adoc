@@ -49,6 +49,7 @@ You can configure one of three different versions of Kerberos encryption, depend
 
 Configure the ONTAP export policy rule with the appropriate access permissions. For example, if clusters will be mounting the NFS volumes with a mixture of Kerberos 5i and Kerberos 5p encryption, use the following access settings:
 
+[cols="4*",options="header"]
 |===
 |Type |Read-only access |Read/Write access |Superuser access
 

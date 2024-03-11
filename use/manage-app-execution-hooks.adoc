@@ -109,6 +109,7 @@ If you start but then cancel a backup that includes a snapshot and there are ass
 * If the backup is cancelled prior to the snapshot starting, the pre-snapshot and post-snapshot hooks are not run.
 ====
 
+[cols="9*",options="header"]
 |===
 |Scenario |Operation |Existing snapshot |Existing backup |Namespace |Cluster |Snapshot hooks run |Backup hooks run |Restore hooks run
 
