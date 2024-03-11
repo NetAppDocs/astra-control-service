@@ -19,6 +19,7 @@ A self-managed cluster is a cluster that you directly provision and manage. Astr
 
 You can use Astra Control Service to manage the following types of private, self-managed clusters:
 
+[cols="2*",options="header"]
 |===
 |Kubernetes distribution |Supported versions
 
