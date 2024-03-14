@@ -73,7 +73,7 @@ kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.0
 +
 [source,console]
 ----
-kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/24.02.0-202403131411/astraconnector_operator.yaml
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/23.07.0-202310251519/astraconnector_operator.yaml
 ----
 
 . Verify that the operator is installed and ready:
