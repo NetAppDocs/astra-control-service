@@ -49,3 +49,5 @@ entries:
     url: /use/enable-acp.html 
   - title: Unmanage apps and clusters
     url: /use/unmanage.html
+  - title: Deploy a self-managed instance of Astra Control
+    url: /use/deploy-astra-control-center.html

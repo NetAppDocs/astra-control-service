@@ -260,7 +260,7 @@ spec:
     cloudBridgeURL: <ASTRA_CONTROL_HOST_URL>
     hostAliasIP: <ASTRA_HOST_ALIAS_IP_ADDRESS>
   imageRegistry:
-    name: cr.astra.netapp.io/astra
+    name: cr.astra.netapp.io
     secret: regcred
 ----
 --

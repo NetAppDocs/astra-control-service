@@ -47,12 +47,12 @@ endif::gcp+azure+aws[]
 
 After you log in to Astra Control Service, your first step is to start managing your clusters. Before you add a cluster to Astra Control Service, you'll need to perform specific tasks and make sure the cluster meets certain requirements.
 
-When you manage Azure Kubernetes Service and Google Kubernetes Engine clusters, note that you have two options for Astra Trident installation and lifecycle management:
+When you manage Azure Kubernetes Service and Google Kubernetes Engine clusters, note that you have two options for Astra Control Provisioner installation and lifecycle management:
 
-* You can use Astra Control Service to automatically manage the lifecycle of Astra Trident. To do this, make sure that Astra Trident is not installed on the cluster that you want to manage with Astra Control Service. In this case, Astra Trident automatically installs Astra Trident when you begin managing the cluster, and Astra Trident upgrades are handled automatically.
-* You can manage the lifecycle of Astra Trident yourself. To do this, install Astra Trident on the cluster before managing the cluster with Astra Control Service. In this case, Astra Control Service detects that Astra Trident is already installed and does not reinstall it or manage Astra Trident upgrades. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for installation instructions.
+* You can use Astra Control Service to automatically manage the lifecycle of Astra Control Provisioner. To do this, make sure that Astra Trident is not installed and Astra Control Provisioner is not enabled on the cluster that you want to manage with Astra Control Service. In this case, Astra Control Service automatically enables Astra Control Provisioner when you begin managing the cluster, and Astra Control Provisioner upgrades are handled automatically.
+* You can manage the lifecycle of Astra Control Provisioner yourself. To do this, enable Astra Control Provisioner on the cluster before managing the cluster with Astra Control Service. In this case, Astra Control Service detects that Astra Control Provisioner is already enabled and does not reinstall it or manage Astra Control Provisioner upgrades. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for steps enable Astra Control Provisioner.
 
-When you manage Amazon Web Services clusters with Astra Control Service, if you need storage backends that are enabled by Astra Trident, you need to install Astra Trident manually on the cluster before you manage it with Astra Control Service. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for installation instructions.
+When you manage Amazon Web Services clusters with Astra Control Service, if you need storage backends that can only be used with Astra Control Provisioner, you need to enable Astra Control Provisioner manually on the cluster before you manage it with Astra Control Service. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for steps to enable Astra Control Provisioner.
 
 .Before you begin
 [%collapsible%open]
@@ -61,7 +61,7 @@ When you manage Amazon Web Services clusters with Astra Control Service, if you 
 ifdef::aws[]
 .Amazon Web Services
 * You should have the JSON file containing the credentials of the IAM user that created the cluster. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user[Learn how to create an IAM user].
-* Astra Trident is required for Amazon FSx for NetApp ONTAP. If you plan to use Amazon FSx for NetApp ONTAP as a storage backend for your EKS cluster, refer to the Astra Trident information in the link:set-up-amazon-web-services.html#eks-cluster-requirements[EKS cluster requirements].
+* Astra Control Provisioner is required for Amazon FSx for NetApp ONTAP. If you plan to use Amazon FSx for NetApp ONTAP as a storage backend for your EKS cluster, refer to the Astra Control Provisioner information in the link:set-up-amazon-web-services.html#eks-cluster-requirements[EKS cluster requirements].
 //+
 //NOTE: Astra Control Service does not install Astra Trident automatically for Amazon EKS clusters.
 
@@ -91,7 +91,7 @@ endif::gcp[]
 
 .Steps
 
-. (Optional) If you are adding an Amazon EKS cluster or want to manage the installation and upgrades of Astra Trident yourself, install Astra Trident on the cluster. Refer to the https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Astra Trident documentation^] for installation instructions.
+. (Optional) If you are adding an Amazon EKS cluster or want to manage the installation and upgrades of Astra Control Provisioner yourself, enable Astra Control Provisioner on the cluster. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for enablement steps.
 . Open the Astra Control Service web UI in a browser.
 . On the Dashboard, select *Manage Kubernetes cluster*.
 +

@@ -23,7 +23,7 @@ When you use Astra Control Service, you'll manage your apps from within an accou
 .Steps
 
 . https://cloud.netapp.com/astra[Go to the Astra Control page on BlueXP^].
-. Select *Get started now*.
+. Select *Signup for the free plan*.
 . Provide the required information in the form.
 +
 A few important things to note as you fill out the form:

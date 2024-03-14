@@ -27,7 +27,7 @@ NOTE: Kerberos encryption for NFS traffic with on-premise ONTAP storage backends
 
 .Before you begin
 
-* Ensure that you have enabled Astra Control Provisioner on the managed cluster. Refer to link:../use/enable-acp.html[Enable Astra Control Provisioner^] for instructions.
+* Ensure that you have link:../use/enable-acp.html[enabled Astra Control Provisioner^] on the managed cluster.
 * Ensure that you have access to the `tridentctl` utility.
 * Ensure you have administrator access to the ONTAP storage backend.
 * Ensure you know the name of the volume or volumes you will be sharing from the ONTAP storage backend.
@@ -184,12 +184,12 @@ kubectl get sc ontap-nas-sc
 You should see output similar to the following:
 +
 ----
-NAME         PROVISIONER             AGE
+NAME            PROVISIONER             AGE
 ontap-nas-sc    csi.trident.netapp.io   15h
 ----
 
 === Provision volumes
-After you create a storage backend and a storage class, you can now provision a volume. For instructions, refer to https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html[Provision a volume^].
+After you create a storage backend and a storage class, you can now provision a volume. Refer to these instructions for https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html[provisioning a volume^].
 
 
 == Configure in-flight Kerberos encryption with Azure NetApp Files volumes
@@ -362,5 +362,5 @@ anf-sc-nfs    csi.trident.netapp.io   15h
 ----
 
 === Provision volumes
-After you create a storage backend and a storage class, you can now provision a volume. For instructions, refer to https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html[Provision a volume^].
+After you create a storage backend and a storage class, you can now provision a volume. Refer to these instructions for https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html[provisioning a volume^].
 
