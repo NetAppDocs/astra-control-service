@@ -99,7 +99,7 @@ As a workaround, do the following when upgrading existing Kubernetes 1.25 or lat
 
 . Remove any existing Snapshot CRDs and any existing snapshot controller.
 . https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html[Uninstall Astra Trident^].
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller[Install the snapshot CRDs and the snapshot controller^].
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller[Install the snapshot CRDs and the snapshot controller^].
 . https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html[Install the latest Astra Trident version^].
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass[Create a VolumeSnapshotClass^].
 

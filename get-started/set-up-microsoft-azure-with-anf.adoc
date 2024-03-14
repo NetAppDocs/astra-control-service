@@ -72,7 +72,7 @@ If you plan to use Azure Managed Disks as a storage backend, you need to manuall
 
 A Kubernetes cluster must meet the following requirements so you can discover and manage it from Astra Control Service.
 
-Kubernetes version:: Clusters must be running Kubernetes version 1.23 to 1.25.
+Kubernetes version:: Clusters must be running Kubernetes version 1.26 to 1.28.
 
 Image type:: The image type for all node pools must be Linux.
 

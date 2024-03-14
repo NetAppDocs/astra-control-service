@@ -1,0 +1,24 @@
+---
+sidebar: sidebar
+permalink: use/deploy-astra-control-center.html
+keywords: get started, manage apps, manage account
+summary: Deploy a standalone, self-managed instance of Astra Control.
+---
+
+= Deploy a self-managed instance of Astra Control
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+[.lead]
+If you want a self-managed instance of Astra Control that resides inside your network, you can deploy Astra Control Center directly from Astra Control Service.
+
+.Steps
+
+. In the Getting Started area of the Dashboard, select *Deploy a self-managed instance of Astra Control*.
+. Do one of the following:
+    * Generate a new API token by selecting *Generate*.
+    * Paste in an existing Astra Control REST API token. Refer to the https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html[Astra Automation documentation^] for guidance on generating an API token.
+. Follow the instructions in the *Deploy Astra Control Center* window.
+
+

@@ -20,3 +20,4 @@ Now that you've logged in and added a cluster to Astra Control, you're ready to 
 * link:../use/manage-users.html[Invite and manage users]
 * link:../use/manage-credentials.html[Manage cloud provider credentials]
 * link:../use/manage-notifications.html[Manage notifications]
+* link:../use/deploy-astra-control-center.html[Deploy a self-managed instance of Astra Control]
