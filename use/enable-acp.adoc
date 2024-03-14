@@ -43,10 +43,6 @@ If you have an existing Astra Trident without Astra Control Provisioner and want
 .Steps
 
 . Access the NetApp Astra Control image registry:
-+
-.Expand for steps
-[%collapsible]
-=====
 
 .. Log on to the Astra Control Service UI and record your Astra Control account ID.
 
@@ -67,13 +63,12 @@ docker login cr.astra.netapp.io -u <account-id> -p <api-token>
 ----
 crane auth login cr.astra.netapp.io -u <account-id> -p <api-token>
 ----
-=====
 
 . (Custom registries only) Follow these steps to move the image to your custom registry. If you aren't using a registry, follow the Trident operator steps in the <<no-registry,next section>>.
 +
 NOTE: You can use Podman instead of Docker for the following commands. If you are using a Windows environment, PowerShell is recommended.
 +
-[%collapsible,role="tabbed-block"]
+[role="tabbed-block"]
 ====
 
 .Docker
