@@ -1,0 +1,274 @@
+---
+sidebar: sidebar
+permalink: use-acp/acp-volume-replicate.html
+keywords: snapmirror update, volume replication, astra control provisioner, TridentMirrorRelationship, TridentActionMirrorUpdate
+summary: Astra Control Provisioner supports creation of mirror relationships between source and destination volumes to replicate volumes for disaster recovery.
+---
+
+= Replicate volumes using SnapMirror
+
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+[.lead]
+Using Astra Control Provisioner, you can create mirror relationships between a source volume on one cluster and the destination volume on the peered cluster for replicating data for disaster recovery. You can use a namespaced Custom Resource Definition (CRD) to perform the following operations:
+
+* Create mirror relationships between volumes (PVCs)	
+* Remove mirror relationships between volumes
+* Break the mirror relationships
+* Promote the secondary volume during disaster conditions (failovers)
+* Perform lossless transition of applications from cluster to cluster (during planned failovers or migrations)
+
+== Replication prerequisites
+
+Ensure that the following prerequisites are met before you begin:
+
+.ONTAP clusters 
+* *Astra Control Provisioner*: Astra Control Provisioner version 23.10 or later or a link:../get-started/requirements.html[supported Astra Trident] must exist on both the source and destination Kubernetes clusters that utilize ONTAP as a backend.
+//acp to trident revert
+* *Licenses*: ONTAP SnapMirror asynchronous licenses using the Data Protection bundle must be enabled on both the source and destination ONTAP clusters. Refer to https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html[SnapMirror licensing overview in ONTAP^] for more information.
+
+.Peering 
+* *Cluster and SVM*: The ONTAP storage backends must be peered. Refer to https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html[Cluster and SVM peering overview^] for more information.
++
+IMPORTANT: Ensure that the SVM names used in the replication relationship between two ONTAP clusters are unique.
+
+* *Astra Control Provisioner and SVM*: The peered remote SVMs must be available to Astra Control Provisioner on the destination cluster. 
+
+.Supported drivers
+
+* Volume replication is supported for the ontap-nas and ontap-san drivers.
+
+== Create a mirrored PVC
+
+Follow these steps and use the CRD examples to create mirror relationship between primary and secondary volumes.
+
+.Steps
+
+. Perform the following steps on the primary Kubernetes cluster: 
+.. Create a StorageClass object with the `trident.netapp.io/replication: true` parameter.
++
+.Example
++
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: csi-nas
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-nas"
+  fsType: "nfs"
+  trident.netapp.io/replication: "true"
+----
+
+.. Create a PVC with previously created StorageClass.
++
+.Example
++
+----
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: csi-nas
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: csi-nas
+----
+
+.. Create a MirrorRelationship CR with local information.
++
+.Example
++
+----
+kind: TridentMirrorRelationship
+apiVersion: trident.netapp.io/v1
+metadata:
+  name: csi-nas
+spec:
+  state: promoted
+  volumeMappings:
+  - localPVCName: csi-nas
+----
+Astra Control Provisioner fetches the internal information for the volume and the volume’s current data protection (DP) state, then populates the status field of the MirrorRelationship.
+
+.. Get the TridentMirrorRelationship CR to obtain the internal name and SVM of the PVC.
++
+----
+kubectl get tmr csi-nas
+----
++
+----
+kind: TridentMirrorRelationship
+apiVersion: trident.netapp.io/v1
+metadata:
+  name: csi-nas
+  generation: 1
+spec:
+  state: promoted
+  volumeMappings:
+  - localPVCName: csi-nas
+status:
+  conditions:
+  - state: promoted
+    localVolumeHandle: "datavserver:trident_pvc_3bedd23c_46a8_4384_b12b_3c38b313c1e1"
+    localPVCName: csi-nas
+    observedGeneration: 1
+----
+. Perform the following steps on the secondary Kubernetes cluster:
+.. Create a StorageClass with the trident.netapp.io/replication: true parameter.
++
+.Example
++
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: csi-nas
+provisioner: csi.trident.netapp.io
+parameters:
+  trident.netapp.io/replication: true
+----
+
+.. Create a MirrorRelationship CR with destination and source information.
++
+.Example
++
+----
+kind: TridentMirrorRelationship
+apiVersion: trident.netapp.io/v1
+metadata:
+  name: csi-nas
+spec:
+  state: established
+  volumeMappings:
+  - localPVCName: csi-nas
+    remoteVolumeHandle: "datavserver:trident_pvc_3bedd23c_46a8_4384_b12b_3c38b313c1e1"
+----
+Astra Control Provisioner  will create a SnapMirror relationship with the configured relationship policy name (or default for ONTAP) and initialize it.
+
+.. Create a PVC with previously created StorageClass to act as the secondary (SnapMirror destination).
++
+.Example
++
+----
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: csi-nas
+  annotations:
+    trident.netapp.io/mirrorRelationship: csi-nas
+spec:
+  accessModes:
+  - ReadWriteMany
+resources:
+  requests:
+    storage: 1Gi
+storageClassName: csi-nas
+----
+Astra Control Provisioner will check for the TridentMirrorRelationship CRD and fail to create the volume if the relationship does not exist. If the relationship exists, Astra Control Provisioner will ensure the new FlexVol volume is placed onto an SVM that is peered with the remote SVM defined in the MirrorRelationship. 
+
+== Volume Replication States
+
+A Trident Mirror Relationship (TMR) is a CRD that represents one end of a replication relationship between PVCs. The destination TMR has a state, which tells Astra Control Provisioner what the desired state is. The destination TMR has the following states:
+
+* *Established*: the local PVC is the destination volume of a mirror relationship, and this is a new relationship.
+* *Promoted*: the local PVC is ReadWrite and mountable, with no mirror relationship currently in effect.
+* *Reestablished*: the local PVC is the destination volume of a mirror relationship and was also previously in that mirror relationship.
+** The reestablished state must be used if the destination volume was ever in a relationship with the source volume because it overwrites the destination volume contents.
+** The reestablished state will fail if the volume was not previously in a relationship with the source.
+
+== Promote secondary PVC during an unplanned failover
+
+Perform the following step on the secondary Kubernetes cluster:
+
+* Update the _spec.state_ field of TridentMirrorRelationship to `promoted`.
+
+== Promote secondary PVC during a planned failover
+
+During a planned failover (migration), perform the following steps to promote the secondary PVC:
+
+
+.Steps
+
+
+. On the primary Kubernetes cluster, create a snapshot of the PVC and wait until the snapshot is created.
+. On the primary Kubernetes cluster, create the SnapshotInfo CR to obtain internal details.
++
+.Example
++
+----
+kind: SnapshotInfo
+apiVersion: trident.netapp.io/v1
+metadata:
+  name: csi-nas
+spec:
+  snapshot-name: csi-nas-snapshot
+----
+
+. On secondary Kubernetes cluster, update the _spec.state_ field of the _TridentMirrorRelationship_ CR to _promoted_ and _spec.promotedSnapshotHandle_ to be the internalName of the snapshot.
+. On secondary Kubernetes cluster, confirm the status (status.state field) of TridentMirrorRelationship to promoted.
+
+== Restore a mirror relationship after a failover
+
+Before restoring a mirror relationship, choose the side that you want to make as the new primary.
+
+.Steps
+. On the secondary Kubernetes cluster, ensure that the values for the _spec.remoteVolumeHandle_ field on the TridentMirrorRelationship is updated.
+. On secondary Kubernetes cluster, update the _spec.mirror_ field of TridentMirrorRelationship to `reestablished`.
+
+== Additional operations
+
+Astra Control Provisioner supports the following operations on the primary and secondary volumes:
+
+=== Replicate primary PVC to a new secondary PVC
+Ensure that you already have a primary PVC and a secondary PVC.
+
+.Steps
+. Delete the PersistentVolumeClaim and TridentMirrorRelationship CRDs from the established secondary (destination) cluster.
+. Delete the TridentMirrorRelationship CRD from the primary (source) cluster.
+. Create a new TridentMirrorRelationship CRD on the primary (source) cluster for the new secondary (destination) PVC you want to establish.
+
+=== Resize a mirrored, primary or secondary PVC
+
+The PVC can be resized as normal, ONTAP will automatically expand any destination flevxols if the amount of data exceeds the current size.
+
+=== Remove replication from a PVC
+To remove replication, perform one of the following operations on the current secondary volume:
+
+* Delete the MirrorRelationship on the secondary PVC. This breaks the replication relationship. 
+* Or, update the spec.state field to _promoted_.
+
+=== Delete a PVC (that was previously mirrored)
+
+Astra Control Provisioner checks for replicated PVCs, and releases the replication relationship before attempting to delete the volume.
+
+=== Delete a TMR
+
+Deleting a TMR on one side of a mirrored relationship causes the remaining TMR to transition to _promoted_ state before Astra Control Provisioner completes the deletion. If the TMR selected for deletion is already in _promoted_ state, there is no existing mirror relationship and the TMR will be removed and Astra Control Provisioner will promote the local PVC to _ReadWrite_. This deletion releases SnapMirror metadata for the local volume in ONTAP. If this volume is used in a mirror relationship in the future, it must use a new TMR with an _established_ volume replication state when creating the new mirror relationship.
+
+==  Update mirror relationships when ONTAP is online
+
+Mirror relationships can be updated any time after they are established. You can use the `state: promoted` or `state: reestablished` fields to update the relationships.
+When promoting a destination volume to a regular ReadWrite volume, you can use _promotedSnapshotHandle_ to specify a specific snapshot to restore the current volume to.
+
+== Update mirror relationships when ONTAP is offline
+
+You can use a CRD to perform a SnapMirror update without Astra Control having direct connectivity to the ONTAP cluster. Refer to the following example format of the TridentActionMirrorUpdate:
+
+.Example
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentActionMirrorUpdate
+metadata:
+  name: update-mirror-b
+spec:
+  snapshotHandle: "pvc-1234/snapshot-1234"
+  tridentMirrorRelationshipName: mirror-b
+----
+`status.state` reflects the state of the TridentActionMirrorUpdate CRD. It can take a value from _Succeeded_, _In Progress_, or _Failed_.
