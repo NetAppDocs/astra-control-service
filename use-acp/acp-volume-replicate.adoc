@@ -25,7 +25,7 @@ Using Astra Control Provisioner, you can create mirror relationships between a s
 Ensure that the following prerequisites are met before you begin:
 
 .ONTAP clusters 
-* *Astra Control Provisioner*: Astra Control Provisioner version 23.10 or later or a link:../get-started/requirements.html[supported Astra Trident] must exist on both the source and destination Kubernetes clusters that utilize ONTAP as a backend.
+* *Astra Control Provisioner*: Astra Control Provisioner version 23.10 or later or a https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html[supported Astra Trident] must exist on both the source and destination Kubernetes clusters that utilize ONTAP as a backend.
 //acp to trident revert
 * *Licenses*: ONTAP SnapMirror asynchronous licenses using the Data Protection bundle must be enabled on both the source and destination ONTAP clusters. Refer to https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html[SnapMirror licensing overview in ONTAP^] for more information.
 
