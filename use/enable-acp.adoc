@@ -342,7 +342,7 @@ netapp-trident/trident-operator 100.2402.0      24.02.0         A
 helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=cr.astra.netapp.io/trident-acp:24.02.0 --set enableACP=true --set operatorImage=netapp/trident-operator:24.02.0 --set tridentAutosupportImage=docker.io/netapp/trident-autosupport:24.02 --set tridentImage=netapp/trident:24.02.0 --namespace trident
 ----
 
-* Images in one registry
+* Images in one or more registries
 +
 //----
 //helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --create-namespace --namespace trident
@@ -350,15 +350,15 @@ helm install trident netapp-trident/trident-operator --version 100.2402.0 --set 
 ----
 helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=<your-registry>:<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --set operatorImage=netapp/trident-operator:24.02.0 --set tridentAutosupportImage=docker.io/netapp/trident-autosupport:24.02 --set tridentImage=netapp/trident:24.02.0 --namespace trident
 ----
-
-* Images in different registries
-+
+//
+//* Images in different registries
+//+
 //----
 //helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --set operatorImage=<your-registry>/netapp/trident-operator:24.02.0 --set tridentAutosupportImage=<your-registry>/netapp/trident-autosupport:24.02 --set tridentImage=<your-registry>/netapp/trident:24.02.0 --create-namespace --namespace trident
 //----
-----
-helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=<your-registry>:<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --set operatorImage=netapp/trident-operator:24.02.0 --set tridentAutosupportImage=docker.io/netapp/trident-autosupport:24.02 --set tridentImage=netapp/trident:24.02.0 --namespace trident
-----
+//----
+//helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=<your-registry>:<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --set operatorImage=netapp/trident-operator:24.02.0 --set tridentAutosupportImage=docker.io/netapp/trident-autosupport:24.02 --set tridentImage=netapp/trident:24.02.0 --namespace trident
+//----
 
 You can use `helm list` to review installation details such as name, namespace, chart, status, app version, and revision number.
 
