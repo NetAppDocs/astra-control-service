@@ -22,7 +22,7 @@ This Astra Control Center release contains declarative Kubernetes functionality 
 
 This functionality is only available in the Astra Control Service Early Adopter Program (EAP) instance. Contact your NetApp sales representative for information about joining the EAP.
 
-After you install the link:../get-started/install-astra-connector.html[Astra Connector] on the cluster you want to manage, you'll be able to perform the following CR-based cluster operations in the UI or from a CR:
+After you install the link:../get-started/install-astra-connector-declarative.html[Astra Connector] on the cluster you want to manage, you'll be able to perform the following CR-based cluster operations in the UI or from a CR:
 
 * link:../use/manage-apps.html#tech-preview-define-an-application-using-a-kubernetes-custom-resource[Define an application using a custom resource]
 * link:../use/manage-buckets.html#tech-preview-manage-a-bucket-using-a-custom-resource[Define the bucket]
