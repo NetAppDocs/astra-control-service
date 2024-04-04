@@ -71,8 +71,173 @@ NOTE: To learn about configuring include and exclude rules, see <<Filter resourc
 
 . Select *Next*.
 . Review details about the restore action carefully, type "restore" (if prompted), and select *Restore*.
-//+
-//image:screenshot-restore-summary.gif[A screenshot of the Restore Application page which enables you to review information about the restore action.]
+
+== [Tech preview] Restore from backup using a custom resource (CR)
+You can restore data from a backup using a custom resource (CR) file either to a different namespace or the original source namespace.
+
+[role="tabbed-block"]
+====
+
+.Restore from backup using a CR
+--
+.Steps
+
+. Create the custom resource (CR) file and name it `astra-control-backup-restore-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
++
+* <CR_NAME>: The name of this CR operation; choose a sensible name for your environment.
+//* <ASTRA_CONNECTOR_NAMESPACE>: The namespace where Astra Connector is installed. By default, this is `astra-connector`.
+* <APPVAULT_NAME>: The name of the AppVault where the backup contents are stored.
+* <BACKUP_PATH>: The path inside AppVault where the backup contents are stored. For example:
++
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
+* <SOURCE_NAMESPACE>: The source namespace of the restore operation.
+* <DESTINATION_NAMESPACE>: The destination namespace of the restore operation.
++
+[source,yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: BackupRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appVaultRef: <APPVAULT_NAME>
+  appArchivePath: <BACKUP_PATH>
+  namespaceMapping: [{"source": "<SOURCE_NAMESPACE>", "destination": "<DESTINATION_NAMESPACE>"}] 
+----
+
+include::../_include/selective-restore-cr.adoc[]
+
+. After you populate the `astra-control-backup-restore-cr.yaml` file with the correct values, apply the CR:
++
+[source,console]
+----
+kubectl apply -f astra-control-backup-restore-cr.yaml
+----
+--
+
+.Restore from backup to the original namespace using a CR
+--
+.Steps
+
+. Create the custom resource (CR) file and name it `astra-control-backup-ipr-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
++
+* <CR_NAME>: The name of this CR operation; choose a sensible name for your environment.
+//* <ASTRA_CONNECTOR_NAMESPACE>: The namespace where Astra Connector is installed. This should be the namespace where the backup was created.
+* <APPVAULT_NAME>: The name of the AppVault where the backup contents are stored.
+* <BACKUP_PATH>: The path inside AppVault where the backup contents are stored. For example:
++
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
++
+[source,yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: BackupInplaceRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appVaultRef: <APPVAULT_NAME>
+  appArchivePath: <BACKUP_PATH> 
+----
+
+include::../_include/selective-restore-cr.adoc[]
+
+. After you populate the `astra-control-backup-ipr-cr.yaml` file with the correct values, apply the CR:
++
+[source,console]
+----
+kubectl apply -f astra-control-backup-ipr-cr.yaml
+----
+--
+====
+
+== [Tech preview] Restore from snapshot using a custom resource (CR)
+You can restore data from a snapshot using a custom resource (CR) file either to a different namespace or the original source namespace.
+
+[role="tabbed-block"]
+====
+.Restore from snapshot using a CR
+--
+.Steps
+
+. Create the custom resource (CR) file and name it `astra-control-snapshot-restore-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
++
+* <CR_NAME>: The name of this CR operation; choose a sensible name for your environment.
+//* <ASTRA_CONNECTOR_NAMESPACE>: The namespace where Astra Connector is installed.
+* <APPVAULT_NAME>: The name of the AppVault where the backup contents are stored.
+* <BACKUP_PATH>: The path inside AppVault where the backup contents are stored. For example:
++
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
+* <SOURCE_NAMESPACE>: The source namespace of the restore operation.
+* <DESTINATION_NAMESPACE>: The destination namespace of the restore operation.
++
+[source,yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: SnapshotRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appArchivePath: <BACKUP_PATH>
+  appVaultRef: <APPVAULT_NAME>
+  namespaceMapping: [{"source": "<SOURCE_NAMESPACE>", "destination": "<DESTINATION_NAMESPACE>"}] 
+----
+
+include::../_include/selective-restore-cr.adoc[]
+
+. After you populate the `astra-control-snapshot-restore-cr.yaml` file with the correct values, apply the CR:
++
+[source,console]
+----
+kubectl apply -f astra-control-snapshot-restore-cr.yaml
+----
+--
+
+.Restore from snapshot to the original namespace using a CR
+--
+.Steps
+
+. Create the custom resource (CR) file and name it `astra-control-snapshot-ipr-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
++
+* <CR_NAME>: The name of this CR operation; choose a sensible name for your environment.
+//* <ASTRA_CONNECTOR_NAMESPACE>: The namespace where Astra Connector is installed. This should be the namespace where the snapshot was created.
+* <APPVAULT_NAME>: The name of the AppVault where the backup contents are stored.
+* <BACKUP_PATH>: The path inside AppVault where the backup contents are stored. For example:
++
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
++
+[source,yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: SnapshotInplaceRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appArchivePath: <BACKUP_PATH>
+  appVaultRef: <APPVAULT_NAME> 
+----
+
+include::../_include/selective-restore-cr.adoc[]
+
+. After you populate the `astra-control-snapshot-ipr-cr.yaml` file with the correct values, apply the CR:
++
+[source,console]
+----
+kubectl apply -f astra-control-snapshot-ipr-cr.yaml
+----
+--
+====
 
 .Result
 
