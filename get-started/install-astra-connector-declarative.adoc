@@ -11,7 +11,7 @@ summary: You can install the Astra Connector to help with managing private clust
 :imagesdir: ../media/get-started/
 
 [.lead]
-Declarative Kubernetes clusters managed by Astra Control Service use Astra Connector to enable communication between the managed cluster and Astra Control Service. You need to install Astra Connector on all clusters that you want to manage.
+Declarative Kubernetes clusters managed by Astra Control Service use Astra Connector to enable communication between the managed cluster and Astra Control Service. You need to install Astra Connector on all declarative clusters that you want to manage.
 
 ////
 Astra Connector supports the following types of private clusters:
