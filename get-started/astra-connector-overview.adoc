@@ -12,6 +12,7 @@ summary: You need to install the Astra Connector on private clusters managed by 
 
 [.lead]
 Astra Connector is software that resides on your managed clusters and facilitates communication between the managed cluster and Astra Control. For clusters managed using Astra Control Service, there are two avalable versions of Astra Connector:
+
 * *Legacy Astra Connector*: Install the legacy Astra Connector on your managed cluster if you plan to manage the cluster using the legacy architecture of Astra Control.
 * *Current Astra Connector* [Tech preview]: Install the current Astra Connector on your managed cluster if you plan to manage the cluster using the new architecture of Astra Control. After you install the current Astra Connector on your cluster, the cluster is automatically added to Astra Control.
 
