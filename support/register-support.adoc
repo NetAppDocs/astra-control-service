@@ -25,7 +25,7 @@ Astra Control includes a Support Status field that enables you to confirm your s
 +
 The Support Status starts off as "Not Registered" but then moves to "In-Progress" and finally to "Registered" once complete.
 +
-This support registration status is polled every 15 minutes. New NetApp customers could take up to next business day to complete onboarding and support registration. If the serial number doesn't show "Registered" within 48 hours, you can reach out to NetApp using astra.feedback@netapp.com or register manually from https://register.netapp.com.
+This support registration status is polled every 15 minutes. New NetApp customers could take up to the next business day to complete onboarding and support registration. If the serial number doesn't show "Registered" within 48 hours, you can reach out to NetApp using astra.feedback@netapp.com or register manually from https://register.netapp.com.
 
 == Obtain your serial number
 
@@ -48,25 +48,27 @@ If Astra Control was unable to automatically register your account for support, 
 
 .Steps
 
-. Navigate to the https://register.netapp.com[Cloud Data Services Support Registration^] page to create an NSS account.
+. Navigate to the https://register.netapp.com[Cloud Data Services Support Registration^] page.
 
 . Select *I am already registered as a NetApp customer*.
 
 . Enter your NetApp Support Site credentials to log in.
 +
-The Existing Customer Registration page displays.
-+
-image:screenshot-existing-registration.gif[Existing Customer Registration Form]
+The Existing Customer Registration page appears.
+//+
+//image:screenshot-existing-registration.gif[Existing Customer Registration Form]
 
 . Complete the required information on the form:
 
 .. Enter your name, company, and email address.
 
-.. Select *Astra* as the product line.
+.. Select *Astra Control Service* as the product line.
+
+.. Select a billing provider.
 
 .. Enter your serial number.
 
-.. Select *Submit Registration*.
+.. Select *Submit*.
 
 .Result
 
@@ -78,23 +80,29 @@ This is a one-time support registration for the applicable serial number.
 
 .Steps
 
-. Navigate to the https://register.netapp.com[Cloud Data Services Support Registration^] page to create an NSS account.
+. Navigate to the https://register.netapp.com[Cloud Data Services Support Registration^] page.
 
 . Select *I am not a registered NetApp Customer*.
 +
-The New Customer Registration page displays.
-+
-image:screenshot-new-registration.gif[New Customer Registration Form]
+The New Customer Registration page appears.
+//+
+//image:screenshot-new-registration.gif[New Customer Registration Form]
 
 . Complete the required information on the form:
 
-.. Enter your name and company information.
+.. Enter your name, company information, and contact details.
 
-.. Select *Astra* as the Product Line.
+.. Select *Astra Control Service* as the Product Line.
+
+.. Select a billing provider.
 
 .. Enter your serial number.
 
-.. Select *Submit Registration*.
+.. Enter the captcha value.
+
+.. Select the check box to confirm that you have read the NetApp Privacy Policy.
+
+.. Select *Submit*.
 +
 You will receive a confirmation email from your submitted registration. If no errors occur, you will be re-directed to a "Registration Submitted Successfully" page. You will also receive an email within an hour stating that "your product is now eligible for support".
 +
