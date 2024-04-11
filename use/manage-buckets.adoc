@@ -172,18 +172,18 @@ NOTE: Although Astra Control Center supports Amazon S3 as a Generic S3 bucket pr
 
 .Steps
 
-. Create the custom resource (CR) file and name it (for example, `astra_appvault.yaml`).
+. Create the custom resource (CR) file and name it (for example, `astra-appvault.yaml`).
 
 . Configure the following attributes:
 +
 * *metadata.name*: _(Required)_ The name of the AppVault custom resource.
 * *spec.prefix*: _(Optional)_ A path that is prefixed to the names of all entities stored in the AppVault.
 * *spec.providerConfig*: _(Required)_ Stores the configuration necessary to access the AppVault using the specified provider.
-* *spec.providerCredentials*: _(Optional)_ Stores references to any credential required to access the AppVault using the specified provider.
+* *spec.providerCredentials*: Stores references to any credential required to access the AppVault using the specified provider.
 ** *spec.providerCredentials.valueFromSecret*: _(Optional)_ Indicates that the credential value should come from a secret.
 *** *key*: _(Required if valueFromSecret is used)_ The valid key of the secret to select from.
 *** *name*: _(Required if valueFromSecret is used)_ Name of the secret containing the value for this field. Must be in the same namespace.
-* *spec.providerType*: _(Required)_ Determines what provides the backup; for example, S3 or FileSystem.
+* *spec.providerType*: _(Required)_ Determines what provides the backup; for example, NetApp ONTAP S3 or Microsoft Azure.
 +
 Example YAML:
 +
@@ -192,7 +192,7 @@ Example YAML:
 apiVersion: astra.netapp.io/v1
 kind: AppVault
 metadata:
-  name: astra_appvault
+  name: astra-appvault
 spec:
   providerType: generic-s3
   providerConfig:
@@ -211,11 +211,11 @@ spec:
         key: secretAccessKey
 ----
 
-. After you populate the `astra_appvault.yaml` file with the correct values, apply the CR:
+. After you populate the `astra-appvault.yaml` file with the correct values, apply the CR:
 +
 [source,console]
 ----
-kubectl apply -f astra_appvault.yaml -n astra-connector
+kubectl apply -f astra-appvault.yaml -n astra-connector
 ----
 +
 NOTE: When you add a bucket, Astra Control marks one bucket with the default bucket indicator. The first bucket that you create becomes the default bucket. As you add buckets, you can later decide to link:../use/manage-buckets.html#set-the-default-bucket[set another default bucket^].
