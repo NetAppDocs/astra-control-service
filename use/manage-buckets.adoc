@@ -179,7 +179,7 @@ NOTE: Although Astra Control Center supports Amazon S3 as a Generic S3 bucket pr
 * *metadata.name*: _(Required)_ The name of the AppVault custom resource.
 * *spec.prefix*: _(Optional)_ A path that is prefixed to the names of all entities stored in the AppVault.
 * *spec.providerConfig*: _(Required)_ Stores the configuration necessary to access the AppVault using the specified provider.
-* *spec.providerCredentials*: Stores references to any credential required to access the AppVault using the specified provider.
+* *spec.providerCredentials*: _(Required)_ Stores references to any credential required to access the AppVault using the specified provider.
 ** *spec.providerCredentials.valueFromSecret*: _(Optional)_ Indicates that the credential value should come from a secret.
 *** *key*: _(Required if valueFromSecret is used)_ The valid key of the secret to select from.
 *** *name*: _(Required if valueFromSecret is used)_ Name of the secret containing the value for this field. Must be in the same namespace.
