@@ -42,8 +42,6 @@ NOTE: If you are defining a protection policy that creates immutable backups to 
 . Select *Data Protection*.
 
 . Select *Configure Protection Policy*.
-//+
-//image:screenshot-configure-protection-policy.gif[A screenshot of the Data protection tab for an app which enables you to configure a protection policy.]
 
 . Define a protection schedule by choosing the number of snapshots and backups to keep for the hourly, daily, weekly, and monthly schedules.
 +
