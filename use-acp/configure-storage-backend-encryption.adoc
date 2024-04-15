@@ -15,15 +15,15 @@ Using Astra Control Provisioner, you can improve data access security by enablin
 
 Astra Control Provisioner supports Kerberos encryption for two types of storage backends:
 
-* *On-premise ONTAP* - Astra Control Provisioner supports Kerberos encryption over NFSv3 and NFSv4 connections from Red Hat OpenShift and upstream Kubernetes clusters to on-premise ONTAP volumes.
+* *On-premises ONTAP* - Astra Control Provisioner supports Kerberos encryption over NFSv3 and NFSv4 connections from Red Hat OpenShift and upstream Kubernetes clusters to on-premises ONTAP volumes.
 * *Azure NetApp Files* - Astra Control Provisioner supports Kerberos encryption over NFSv4.1 connections from upstream Kubernetes clusters to Azure NetApp Files volumes.
 
 You can create, delete, resize, snapshot, clone, read-only clone, and import volumes that use NFS encryption.
 
-== Configure in-flight Kerberos encryption with on-premise ONTAP volumes
-You can enable Kerberos encryption on the storage traffic between your managed cluster and an on-premise ONTAP storage backend.
+== Configure in-flight Kerberos encryption with on-premises ONTAP volumes
+You can enable Kerberos encryption on the storage traffic between your managed cluster and an on-premises ONTAP storage backend.
 
-NOTE: Kerberos encryption for NFS traffic with on-premise ONTAP storage backends is only supported using the `ontap-nas` storage driver.
+NOTE: Kerberos encryption for NFS traffic with on-premises ONTAP storage backends is only supported using the `ontap-nas` storage driver.
 
 .Before you begin
 

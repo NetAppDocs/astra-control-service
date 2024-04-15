@@ -56,8 +56,8 @@ a|
 ** Kubernetes (Upstream)
 ** Rancher Kubernetes Engine (RKE)
 ** Red Hat OpenShift Container Platform
-* *On-premise clusters*
-** Red Hat OpenShift Container Platform on-premise
+* *On-premises clusters*
+** Red Hat OpenShift Container Platform on-premises
 a|
 * Azure Kubernetes Service on Azure Stack HCI
 * Google Anthos
@@ -86,7 +86,7 @@ a|
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/[Cloud Volumes ONTAP^]
 ** NetApp MetroCluster
 ** https://longhorn.io/[Longhorn^]
-* *On-premise clusters*
+* *On-premises clusters*
 ** NetApp MetroCluster
 ** NetApp ONTAP AFF and FAS systems
 ** NetApp ONTAP Select
