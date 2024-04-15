@@ -43,7 +43,7 @@ You can link:../use/enable-acp.html[enable Astra Control Provisioner^] if you ha
 +
 The following features are available with the Astra Control Provisioner 23.10 release:
 
-*** *Enhanced storage backend security with Kerberos 5 encryption*: You can improve storage security by link:../use-acp/configure-storage-backend-encryption.html[enabling encryption^] for the traffic between your managed cluster and the storage backend. Astra Control Provisioner supports Kerberos 5 encryption over NFSv4.1 connections from Red Hat OpenShift clusters to Azure NetApp Files and on-premise ONTAP volumes.
+*** *Enhanced storage backend security with Kerberos 5 encryption*: You can improve storage security by link:../use-acp/configure-storage-backend-encryption.html[enabling encryption^] for the traffic between your managed cluster and the storage backend. Astra Control Provisioner supports Kerberos 5 encryption over NFSv4.1 connections from Red Hat OpenShift clusters to Azure NetApp Files and on-premises ONTAP volumes.
 
 *** *Recover data using a snapshot*: Astra Control Provisioner provides rapid, in-place volume restoration from a snapshot using the `TridentActionSnapshotRestore` (TASR) CR.
 
@@ -296,7 +296,7 @@ endif::azure[]
 This release includes the following new features and enhancements.
 
 * Astra Control Center
-Astra Control is now available in a new deployment model. _Astra Control Center_ is self-managed software that you install and operate in your data center so that you can manage Kubernetes application lifecycle management for on-premise Kubernetes clusters.
+Astra Control is now available in a new deployment model. _Astra Control Center_ is self-managed software that you install and operate in your data center so that you can manage Kubernetes application lifecycle management for on-premises Kubernetes clusters.
 +
 To learn more, https://docs.netapp.com/us-en/astra-control-center[go to the Astra Control Center documentation^].
 
