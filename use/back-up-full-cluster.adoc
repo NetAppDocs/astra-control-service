@@ -1,0 +1,52 @@
+---
+sidebar: sidebar
+permalink: use/back-up-full-cluster.html
+keywords: backup, back up, backup apps, back up apps, take a backup, schedule backups, full, full backup, cluster backup, cluster, namespace, label, labels, namespaces
+summary: Protect your apps by scheduling a full-cluster backup so that all namespaces on the cluster are protected.
+---
+
+= [Tech preview] Protect an entire cluster
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+[.lead]
+
+You can create a scheduled, automatic backup of any or all unmanaged namespaces on a cluster. These workflows are provided by NetApp as a Kubernetes service account, role bindings, and a cron job, orchestrated with a Python script. 
+
+== How it works
+
+When you configure and install the full-cluster backup workflow, a cron job runs periodically and protects any namespace that is not already managed, automatically creating protection policies based on schedules that you choose during installation. 
+
+If you don't want to protect every unmanaged namespace on the cluster with the full cluster backup workflow, you can instead utilize the label-based backup workflow. The label-based backup workflow also uses a cron task, but instead of protecting all unmanaged namespaces, it identifies namespaces by labels you provide to optionally protect the namespaces based on bronze, silver, or gold backup policies. 
+
+When a new namespace is created that falls within the scope of your chosen workflow, it is automatically protected, without any administrator action. These workflows are implemented on a per-cluster basis, so different clusters can make use of either workflow with unique protection levels, depending on cluster importance.
+
+.Example: Full cluster backup
+As an example, when you configure and install the full cluster backup workflow, any apps in any namespace are periodically managed and protected without further effort by the administrator. The namespace doesn't have to exist at the time you install the workflow; if a namespace is added in the future, it will be protected. 
+
+.Example: Label-based backup
+For more granularity, you can use the label-based workflow. For example, you can install this workflow and tell your users to apply one of several labels to any namespaces they want to protect, depending on the level of protection they need. This enables users to create the namespace with one of those labels, and they don't have to notify an administrator. Their new namespace and all apps within it are automatically protected.
+
+== Create a scheduled backup of all namespaces
+You can create a scheduled backup of all namespaces on a cluster using the full cluster backup workflow.
+
+.Steps
+. Download the following files to a machine that has network access to your cluster:
++
+* https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/fullcluster-backup/components.yaml[components.yaml CRD file]
+* https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/fullcluster-backup/protectCluster.py[protectCluster.py Python script]
+
+. To configure and install the toolkit, https://github.com/NetApp/netapp-astra-toolkits/blob/main/examples/fullcluster-backup/README.md[follow the included instructions^].
+
+== Create a scheduled backup of specific namespaces
+You can create a scheduled backup of specific namespaces by their labels using the label-based backup workflow.
+
+.Steps
+. Download the following files to a machine that has network access to your cluster:
++
+* https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/labelbased-backup/components.yaml[components.yaml CRD file]
+* https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/labelbased-backup/protectCluster.py[protectCluster.py Python script]
+
+. To configure and install the toolkit, https://github.com/NetApp/netapp-astra-toolkits/blob/main/examples/labelbased-backup/README.md[follow the included instructions^].
+
