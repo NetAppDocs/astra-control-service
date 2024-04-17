@@ -146,7 +146,7 @@ Astra Control Center runs locally in your own private cloud.
 Astra Control Center supports Kubernetes clusters with an Astra Control Provisioner-configured storage class with an ONTAP storage backend.
 
 
-In a cloud connected environment Astra Control Center uses Cloud Insights to provide advanced monitoring and telemetry. In the absence of a Cloud Insights connection, limited (7 days of metrics) monitoring and telemetry is available in Astra Control Center and also exported to Kubernetes native monitoring tools (such as Prometheus and Grafana) through open metrics end points.
+In a cloud connected environment Astra Control Center uses Cloud Insights to provide advanced monitoring and telemetry. In the absence of a Cloud Insights connection, limited (7 days of metrics) monitoring and telemetry is available in Astra Control Center and also exported to Kubernetes-native monitoring tools (such as Prometheus and Grafana) through open metrics end points.
 
 Astra Control Center is fully integrated into the AutoSupport and Active IQ ecosystem to provide users and NetApp Support with troubleshooting and usage information.
 
