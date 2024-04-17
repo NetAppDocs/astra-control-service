@@ -22,10 +22,10 @@ If you don't want to protect every unmanaged namespace on the cluster with the f
 
 When a new namespace is created that falls within the scope of your chosen workflow, it is automatically protected, without any administrator action. These workflows are implemented on a per-cluster basis, so different clusters can make use of either workflow with unique protection levels, depending on cluster importance.
 
-.Example: Full cluster backup
+.Example: Full cluster protection
 As an example, when you configure and install the full cluster backup workflow, any apps in any namespace are periodically managed and protected without further effort by the administrator. The namespace doesn't have to exist at the time you install the workflow; if a namespace is added in the future, it will be protected. 
 
-.Example: Label-based backup
+.Example: Label-based protection
 For more granularity, you can use the label-based workflow. For example, you can install this workflow and tell your users to apply one of several labels to any namespaces they want to protect, depending on the level of protection they need. This enables users to create the namespace with one of those labels, and they don't have to notify an administrator. Their new namespace and all apps within it are automatically protected.
 
 == Create a scheduled backup of all namespaces
