@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: get-started/astra-connector-overview.html
 keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage
-summary: You need to install the Astra Connector on private clusters managed by the legacy Astra Control architecture and all clusters that are managed by the new Astra Control architecture.
+summary: You need to install the Astra Connector to manage clusters with Astra Control.
 ---
 
 = Install Astra Connector to manage clusters
@@ -13,7 +13,7 @@ summary: You need to install the Astra Connector on private clusters managed by 
 [.lead]
 Astra Connector is software that resides on your managed clusters and facilitates communication between the managed cluster and Astra Control. For clusters managed using Astra Control Service, there are two available versions of Astra Connector:
 
-* *Previous version of Astra Connector*: link:install-astra-connector-non-native.html[Install the previous version of Astra Connector] on your managed cluster if you plan to manage the cluster with non-Kubernetes-native workflows.
-* [Tech preview] *Declarative Kubernetes Astra Connector*: link:install-astra-connector-declarative.html[Install Astra Connector for clusters managed with declarative Kubernetes workflows] on your managed cluster if you plan to manage the cluster using declarative Kubernetes workflows. After you install the Astra Connector on your cluster, the cluster is automatically added to Astra Control.
+* *Previous version of Astra Connector*: link:install-astra-connector-previous.html[Install the previous version of Astra Connector] on your cluster if you plan to manage the cluster with non-Kubernetes-native workflows.
+* [Tech preview] *Declarative Kubernetes Astra Connector*: link:install-astra-connector-declarative.html[Install Astra Connector for clusters managed with declarative Kubernetes workflows] on your cluster if you plan to manage the cluster using declarative Kubernetes workflows. After you install the Astra Connector on your cluster, the cluster is automatically added to Astra Control.
 
 NOTE: The declarative Kubernetes Astra Connector is available only as part of the Astra Control Early Adopter Program (EAP). Contact your NetApp sales representative for information about joining the EAP.

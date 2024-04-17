@@ -5,7 +5,7 @@ keywords: connector, install, astra connector, manage cluster, add cluster, clus
 summary: You can install the Astra Connector to help with managing private clusters.
 ---
 
-= (Tech preview) Install the current Astra Connector for declarative managed clusters
+= (Tech preview) Install the declarative Kubernetes Astra Connector
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/

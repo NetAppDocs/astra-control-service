@@ -5,13 +5,13 @@ keywords: connector, install, astra connector, manage cluster, add cluster, clus
 summary: You can install the Astra Connector to help with managing private clusters.
 ---
 
-= Install previous Astra Connector for non-Kubernetes-native private clusters
+= Install the previous version of Astra Connector
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
 [.lead]
-Astra Control Service uses the previous version of Astra Connector to enable communication between Astra Control Service and clusters managed with non-Kubernetes-native workflows. You need to install Astra Connector on private clusters that you want to manage with non-Kubernetes-native workflows.
+Astra Control Service uses the previous version of Astra Connector to enable communication between Astra Control Service and private clusters managed with non-Kubernetes-native workflows. You need to install Astra Connector on private clusters that you want to manage with non-Kubernetes-native workflows.
 
 The previous version of Astra Connector supports the following types of private clusters managed with non-Kubernetes-native workflows:
 
