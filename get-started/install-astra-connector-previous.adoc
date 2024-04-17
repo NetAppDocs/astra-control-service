@@ -22,19 +22,10 @@ The previous version of Astra Connector supports the following types of private 
 * ROSA with AWS PrivateLink
 * Red Hat OpenShift Container Platform on-premise
 
-//The Astra Connector is required to be installed on private clusters that you want to manage. The version of the Astra Connector that you need to install depends on the type of cluster. Install Astra Connector version 23.10 on private Red Hat OpenShift Service on AWS (ROSA) clusters, and Astra Connector version 23.07 on other types of private clusters and self-managed clusters.
-
-//To add private ROSA clusters, you need to install version 23.10 of the Astra Connector on the cluster. For all other private clusters, including self-managed clusters, install Astra Connector version 23.07.  
-
-//You need to install the older version of the Astra Connector on your private cluster if the cluster is not a ROSA cluster, or is a self-managed cluster. (For ROSA clusters, <<Install the Astra Connector for private ROSA clusters,install the latest version of the Astra Connector>>). 
-
-== Install the previous version of Astra Connector
-
 .About this task
 
 * When you perform these steps, execute these commands against the private cluster that you want to manage with Astra Control Service.
 * If you are using a bastion host, issue these commands from the command line of the bastion host. 
-//* *ROSA clusters only*: After you install Astra Connector on your ROSA cluster, the cluster is automatically added to Astra Control Service.
 
 .Before you begin
 
@@ -42,32 +33,6 @@ The previous version of Astra Connector supports the following types of private 
 * You need Kubernetes administrator permissions to install the Astra Connector operator on the cluster.
 
 .Steps
-
-////
-
-. Apply the correct Astra Connector operator for your cluster type. When you run this command, the correct namespace for the Astra Connector is created and the configuration is applied to the namespace:
-+
-[role="tabbed-block"]
-====
-
-.23.10 (Private ROSA clusters)
---
-[source,console]
-----
-kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.10/download/astraconnector_operator.yaml
-----
---
-
-.23.07 (All other private clusters)
---
-[source,console]
-----
-kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.07/download/astraconnector_operator.yaml
-----
---
-====
-
-////
 
 . Install the previous Astra Connector operator on the private cluster you want to manage with non-Kubernetes-native workflows. When you run this command, the namespace `astra-connector-operator` is created and the configuration is applied to the namespace:
 +
@@ -90,14 +55,6 @@ kubectl get all -n astra-connector-operator
 ----
 kubectl create ns astra-connector
 ----
-//. (Astra Connector 23.10 only) Create a secret using the token. Replace <API_TOKEN> with the token you received from Astra Control:
-//+
-//[source,console]
-//----
-//kubectl create secret generic astra-token \
-//--from-literal=apiToken=<API_TOKEN> \
-//-n astra-connector
-//----
 . Create the Astra Connector CR file and name it `astra-connector-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
 +
 * *<ASTRA_CONTROL_SERVICE_URL>*: The web UI URL of Astra Control Service. For example:
