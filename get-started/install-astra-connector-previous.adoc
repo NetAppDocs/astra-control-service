@@ -1,19 +1,19 @@
 ---
 sidebar: sidebar
-permalink: get-started/install-astra-connector-legacy.html
+permalink: get-started/install-astra-connector-previous.html
 keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage
 summary: You can install the Astra Connector to help with managing private clusters.
 ---
 
-= Install legacy Astra Connector for legacy private clusters
+= Install previous Astra Connector for non-Kubernetes-native private clusters
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
 [.lead]
-Astra Control Service uses the legacy version of Astra Connector to enable communication between Astra Control Service and clusters managed with the legacy architecture. You need to install Astra Connector on legacy private clusters that you want to manage.
+Astra Control Service uses the previous version of Astra Connector to enable communication between Astra Control Service and clusters managed with non-Kubernetes-native workflows. You need to install Astra Connector on private clusters that you want to manage with non-Kubernetes-native workflows.
 
-The legacy version of Astra Connector supports the following types of legacy private clusters:
+The previous version of Astra Connector supports the following types of private clusters managed with non-Kubernetes-native workflows:
 
 * Amazon Elastic Kubernetes Service (EKS)
 * Azure Kubernetes Service (AKS)
@@ -28,7 +28,7 @@ The legacy version of Astra Connector supports the following types of legacy pri
 
 //You need to install the older version of the Astra Connector on your private cluster if the cluster is not a ROSA cluster, or is a self-managed cluster. (For ROSA clusters, <<Install the Astra Connector for private ROSA clusters,install the latest version of the Astra Connector>>). 
 
-== Install the legacy version of Astra Connector
+== Install the previous version of Astra Connector
 
 .About this task
 
@@ -69,7 +69,7 @@ kubectl apply -f https://github.com/NetApp/astra-connector-operator/release-23.0
 
 ////
 
-. Install the legacy Astra Connector operator on the legacy private cluster you want to manage with Astra Control Service. When you run this command, the namespace `astra-connector-operator` is created and the configuration is applied to the namespace:
+. Install the previous Astra Connector operator on the private cluster you want to manage with non-Kubernetes-native workflows. When you run this command, the namespace `astra-connector-operator` is created and the configuration is applied to the namespace:
 +
 [source,console]
 ----
