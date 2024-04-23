@@ -17,7 +17,20 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 
 .New features and support
 
-This is a minor bug fix release.
+.(Tech preview) Declarative Kubernetes workflows
+This Astra Control Center release contains declarative Kubernetes functionality that enables you to perform data management from a native Kubernetes custom resource (CR). 
+
+This functionality is only available in the Astra Control Service Early Adopter Program (EAP) instance. Contact your NetApp sales representative for information about joining the EAP.
+
+After you install the link:../get-started/install-astra-connector-declarative.html[Astra Connector] on the cluster you want to manage, you'll be able to perform the following CR-based cluster operations in the UI or from a CR:
+
+* link:../use/manage-apps.html#tech-preview-define-an-application-using-a-kubernetes-custom-resource[Define an application using a custom resource]
+* link:../use/manage-buckets.html#tech-preview-manage-a-bucket-using-a-custom-resource[Define the bucket]
+* link:../use/back-up-full-cluster.html[Protect an entire cluster]
+* link:../use/protect-apps.html#create-a-backup[Back up your application]
+* link:../use/protect-apps.html#create-a-snapshot[Create a snapshot]
+* link:../use/protect-apps.html#configure-a-protection-policy[Create schedules for snapshots or backups]
+* link:../use/restore-apps.html[Restore an application from a snapshot or backup]
 
 == 7 November 2023
 
