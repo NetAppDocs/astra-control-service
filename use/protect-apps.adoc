@@ -29,37 +29,87 @@ You can do the following tasks related to protecting your app data:
 
 == Configure a protection policy
 
-A protection policy protects an app by creating snapshots, backups, or both at a defined schedule. You can choose to create snapshots and backups hourly, daily, weekly, and monthly, and you can specify the number of copies to retain. 
+A protection policy protects an app by creating snapshots, backups, or both at a defined schedule. You can choose to create snapshots and backups hourly, daily, weekly, and monthly, and you can specify the number of copies to retain. You can define a protection policy using either the Astra Control web UI or a custom resource (CR) file.
 
 If you need backups or snapshots to run more frequently than once per hour, you can https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html[use the Astra Control REST API to create snapshots and backups^].
 
 NOTE: If you are defining a protection policy that creates immutable backups to write once read many (WORM) buckets, ensure that the retention time for the backups is not shorter than the retention period configured for the bucket.
 
+//ASTRADOC-150
+TIP: Offset backup and replication schedules to avoid schedule overlaps. For example, perform backups at the top of the hour every hour and schedule replication to start with a 5-minute offset and a 10-minute interval.
+
+[role="tabbed-block"]
+====
+.Configure a protection policy using the Web UI
+--
 .Steps
 
-. Select *Applications* and then select the name of a managed app.
-
+. Select *Applications* and then select the name of an app.
 . Select *Data Protection*.
-
 . Select *Configure Protection Policy*.
 
 . Define a protection schedule by choosing the number of snapshots and backups to keep for the hourly, daily, weekly, and monthly schedules.
 +
-You can define the hourly, daily, weekly, and monthly schedules concurrently. A schedule won't turn active until you set a retention level for snapshots and backups.
+You can define the hourly, daily, weekly, and monthly schedules concurrently. A schedule won't turn active until you set a retention level.
 +
 When you set a retention level for backups, you can choose the bucket where you'd like to store the backups.
 +
 The following example sets four protection schedules: hourly, daily, weekly, and monthly for snapshots and backups.
 +
-image:screenshot-protection-policy.png["A screenshot of a sample configuration policy where you can choose to take snapshots and backups on an hourly, daily, weekly, or monthly basis."]
+image:screenshot-config-protection-policy.png[A screenshot of a sample configuration policy where you can choose to take snapshots and backups on an hourly, daily, weekly, or monthly basis.]
 
+. [*Tech preview*] Choose a destination bucket for the backups or snapshots from the list of storage buckets.
 . Select *Review*.
+. Select *Set Protection Policy.*
+--
 
-. Select *Set Protection Policy*.
-//+
-//Here's a video that shows each of these steps.
-//+
-//video::video-set-protection-policy.mp4[width=848, height=480]
+.[Tech preview] Configure a protection policy using a CR
+--
+.Steps
+
+. Create the custom resource (CR) file and name it `astra-control-schedule-cr.yaml`. Update the values in brackets <> to match your Astra Control environment, cluster configuration, and data protection needs:
++
+* <CR_NAME>: The name of this custom resource; choose a unique and sensible name for your environment.
+* <APPLICATION_NAME>: The Kubernetes name of the application to back up.
+* <APPVAULT_NAME>: The name of the AppVault where the backup contents should be stored.
+* <BACKUPS_RETAINED>: The number of backups to retain. Zero indicates that no backups should be created.
+* <SNAPSHOTS_RETAINED>: The number of snapshots to retain. Zero indicates that no snapshots should be created.
+* <GRANULARITY>: The frequency at which the schedule should run. Possible values, along with required associated fields:
+** `hourly` (requires that you specify `spec.minute`)
+** `daily` (requires that you specify `spec.minute` and `spec.hour`)
+** `weekly` (requires that you specify `spec.minute`, `spec.hour`, and `spec.dayOfWeek`)
+** `monthly` (requires that you specify `spec.minute`, `spec.hour`, and `spec.dayOfMonth`)
+* <DAY_OF_MONTH>: _(Optional)_ The day of the month (1 - 31) that the schedule should run. This field is required if the granularity is set to `monthly`.
+* <DAY_OF_WEEK>: _(Optional)_ The day of the week (0 - 7) that the schedule should run. Values of 0 or 7 indicate Sunday. This field is required if the granularity is set to `weekly`.
+* <HOUR_OF_DAY>: _(Optional)_ The hour of the day (0 - 23) that the schedule should run. This field is required if the granularity is set to `daily`, `weekly`, or `monthly`.
+* <MINUTE_OF_HOUR>: _(Optional)_ The minute of the hour (0 - 59) that the schedule should run. This field is required if the granularity is set to `hourly`, `daily`, `weekly`, or `monthly`.
++
+[source,yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: Schedule
+metadata:
+  namespace: astra-connector
+  name: <CR_NAME>
+spec:
+  applicationRef: <APPLICATION_NAME>
+  appVaultRef: <APPVAULT_NAME>
+  backupRetention: "<BACKUPS_RETAINED>"
+  snapshotRetention: "<SNAPSHOTS_RETAINED>"
+  granularity: <GRANULARITY>
+  dayOfMonth: "<DAY_OF_MONTH>"
+  dayOfWeek: "<DAY_OF_WEEK>"
+  hour: "<HOUR_OF_DAY>"
+  minute: "<MINUTE_OF_HOUR>"
+----
+. After you populate the `astra-control-schedule-cr.yaml` file with the correct values, apply the CR:
++
+[source,console]
+----
+kubectl apply -f astra-control-schedule-cr.yaml
+----
+--
+====
 
 .Result
 
@@ -79,17 +129,52 @@ Astra Control supports snapshot creation using storage classes backed by the fol
 //astradoc-91, astradoc-154
 IMPORTANT: If your app uses a storage class backed by the `ontap-nas-economy` driver, snapshots can't be created. Use an alternate storage class for snapshots. 
 
+[role="tabbed-block"]
+====
+.Create a snapshot using the Web UI
+--
 .Steps
 
 . Select *Applications*.
-
 . From the Options menu in the *Actions* column for the desired app, select *Snapshot*.
-//+
-//image:screenshot-create-snapshot.gif["A screenshot of the app page where you can select the drop-down list in the actions column and select Snapshot."]
-
 . Customize the name of the snapshot and then select *Next*.
-
+. [*Tech preview*] Choose a destination bucket for the snapshot from the list of storage buckets.
 . Review the snapshot summary and select *Snapshot*.
+--
+
+.[Tech preview] Create a snapshot using a CR
+--
+.Steps
+
+. Create the custom resource (CR) file and name it `astra-control-snapshot-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
++
+* <CR_NAME>: The name of this custom resource; choose a unique and sensible name for your environment.
+* <APPLICATION_NAME>: The Kubernetes name of the application to snapshot.
+* <APPVAULT_NAME>: The name of the AppVault where the snapshot contents should be stored.
+* <RECLAIM_POLICY>: _(Optional)_ Defines what happens to a snapshot when the snapshot CR is deleted. Valid options:
+** `Retain`
+** `Delete` (default)
++
+[source,yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: Snapshot
+metadata:
+  namespace: astra-connector
+  name: <CR_NAME>
+spec: 
+  applicationRef: <APPLICATION_NAME>
+  appVaultRef: <APPVAULT_NAME>
+  reclaimPolicy: <RECLAIM_POLICY>
+----
+. After you populate the `astra-control-snapshot-cr.yaml` file with the correct values, apply the CR:
++
+[source,console]
+----
+kubectl apply -f astra-control-snapshot-cr.yaml
+----
+--
+====
 
 .Result
 
@@ -121,6 +206,10 @@ Buckets in Astra Control do not report available capacity. Before backing up or 
 
 If your app uses a storage class backed by the `ontap-nas-economy` driver, you need to <<Enable backup and restore for ontap-nas-economy operations,enable backup and restore>> functionality. Be sure that you have defined a `backendType` parameter in your https://docs.netapp.com/us-en/trident/trident-reference/objects.html#kubernetes-storageclass-objects[Kubernetes storage object^] with a value of `ontap-nas-economy` before performing any protection operations.
 
+[role="tabbed-block"]
+====
+.Create a backup using the Web UI
+--
 .Steps
 
 . Select *Applications*.
@@ -128,9 +217,40 @@ If your app uses a storage class backed by the `ontap-nas-economy` driver, you n
 . From the Options menu in the *Actions* column for the desired app, select *Back up*.
 . Customize the name of the backup.
 . Choose whether to back up the app from an existing snapshot. If you select this option, you can choose from a list of existing snapshots.
-. Choose a destination bucket for the backup from the list of storage buckets.
+. [*Tech preview*] Choose a destination bucket for the backup from the list of storage buckets.
 . Select *Next*.
 . Review the backup summary and select *Back up*.
+--
+
+.[Tech preview] Create a backup using a CR
+--
+.Steps
+
+. Create the custom resource (CR) file and name it `astra-control-backup-cr.yaml`. Update the values in brackets <> to match your Astra Control environment and cluster configuration:
++
+* <CR_NAME>: The name of this custom resource; choose a unique and sensible name for your environment.
+* <APPLICATION_NAME>: The Kubernetes name of the application to back up.
+* <APPVAULT_NAME>: The name of the AppVault where the backup contents should be stored.
++
+[source,yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: Backup
+metadata:
+  namespace: astra-connector
+  name: <CR_NAME>
+spec: 
+  applicationRef: <APPLICATION_NAME>
+  appVaultRef: <APPVAULT_NAME>
+----
+. After you populate the `astra-control-backup-cr.yaml` file with the correct values, apply the CR:
++
+[source,console]
+----
+kubectl apply -f astra-control-backup-cr.yaml
+----
+--
+====
 
 .Result
 
