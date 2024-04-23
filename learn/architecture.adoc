@@ -16,7 +16,7 @@ summary: Here's an overview of the various components of the Astra Control envir
 [.lead]
 Here is an overview of the various components of the Astra Control environment.
 
-image:astra-architecture-diagram-v5.png[Astra Control architecture diagram and components]
+image:astra-architecture-diagram-v7.png[Astra Control architecture diagram and components]
 
 == Astra Control components
 
@@ -49,8 +49,6 @@ endif::azure,gcp[]
 
 ////
 
-* *Cloud Insights*:  A NetApp cloud infrastructure monitoring tool, Cloud Insights enables you to monitor performance and utilization for your Kubernetes clusters managed by Astra Control Center. Cloud Insights correlates storage usage to workloads. When you enable the Cloud Insights connection in Astra Control Center, telemetry information shows in Astra Control Center UI pages.
-
 == Astra Control interfaces
 
 You can complete tasks using different interfaces:
@@ -66,5 +64,4 @@ Astra Control Center also enables you to manage, migrate, and protect Kubernetes
 * https://docs.netapp.com/us-en/astra-control-center/index.html[Astra Control Center documentation^]
 * https://docs.netapp.com/us-en/astra-automation/index.html[Astra Control API documentation^]
 * https://docs.netapp.com/us-en/trident/index.html[Astra Trident documentation^]
-* https://docs.netapp.com/us-en/cloudinsights/[Cloud Insights documentation^]
 * https://docs.netapp.com/us-en/ontap/index.html[ONTAP documentation^]

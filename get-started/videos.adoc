@@ -44,8 +44,9 @@ Astra Control Service uses a service account key to establish the identity of th
 
 video::get-started/video-create-gcp-service-account-key.mp4[width=848, height=480]
 
-////
 endif::gcp[]
+////
+
 
 ////
 == Videos for using Astra Control

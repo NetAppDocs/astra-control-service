@@ -47,7 +47,8 @@ TIP: Offset backup and replication schedules to avoid schedule overlaps. For exa
 . Select *Applications* and then select the name of an app.
 . Select *Data Protection*.
 . Select *Configure Protection Policy*.
-. Define a protection schedule by choosing the number of snapshots and backups to keep hourly, daily, weekly, and monthly.
+
+. Define a protection schedule by choosing the number of snapshots and backups to keep for the hourly, daily, weekly, and monthly schedules.
 +
 You can define the hourly, daily, weekly, and monthly schedules concurrently. A schedule won't turn active until you set a retention level.
 +
