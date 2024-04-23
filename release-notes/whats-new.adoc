@@ -26,6 +26,7 @@ After you install the link:../get-started/install-astra-connector-declarative.ht
 
 * link:../use/manage-apps.html#tech-preview-define-an-application-using-a-kubernetes-custom-resource[Define an application using a custom resource]
 * link:../use/manage-buckets.html#tech-preview-manage-a-bucket-using-a-custom-resource[Define the bucket]
+* link:../use/back-up-full-cluster.html[Protect an entire cluster]
 * link:../use/protect-apps.html#create-a-backup[Back up your application]
 * link:../use/protect-apps.html#create-a-snapshot[Create a snapshot]
 * link:../use/protect-apps.html#configure-a-protection-policy[Create schedules for snapshots or backups]

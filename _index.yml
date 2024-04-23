@@ -18,6 +18,8 @@ indexpage:
           url: /use/manage-apps.html
         - title: Protect your apps
           url: /use/protect-apps.html
+        - title: Protect an entire cluster
+          url: /use/back-up-full-cluster.html        
         - title: Migrate an app
           url: /use/clone-apps.html
         - title: Set up billing
