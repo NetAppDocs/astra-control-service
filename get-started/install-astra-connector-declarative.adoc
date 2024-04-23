@@ -13,7 +13,7 @@ summary: You can install the Astra Connector to help with managing private clust
 [.lead]
 Clusters managed using declarative Kubernetes workflows use Astra Connector to enable communication between the managed cluster and Astra Control. You need to install Astra Connector on all clusters that you will manage with declarative Kubernetes workflows.
 
-You install Astra Connector using Kubernetes commands and Custom Resource (CR) files.
+You install the declarative Kubernetes Astra Connector using Kubernetes commands and Custom Resource (CR) files.
 
 .About this task
 
