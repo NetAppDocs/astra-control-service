@@ -11,7 +11,10 @@ summary: Here's an overview of the various components of the Astra Control envir
 :imagesdir: ../media/learn/
 
 //Remote includes from ACC repo
-//include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-architecture.adoc[]
+include::https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-architecture-v2.adoc[]
+
+////
+
 
 [.lead]
 Here is an overview of the various components of the Astra Control environment.
@@ -24,7 +27,7 @@ image:astra-architecture-diagram-v7.png[Astra Control architecture diagram and c
 
 * *Astra Control Provisioner*: As a fully supported storage provisioner and orchestrator maintained by NetApp that contains Astra Trident CSI functionality along with extended storage management capabilities, Astra Control Provisioner enables you to create storage volumes for containerized applications managed by Docker and Kubernetes. When deployed with Astra Control, Astra Control Provisioner includes a configured ONTAP storage backend.
 
-////
+
 
 * *Storage backend*:
 ifdef::gcp+azure+aws[]
@@ -47,7 +50,7 @@ endif::azure,gcp[]
 *** ONTAP AFF and FAS storage backend. As a storage software and hardware platform, ONTAP provides core storage services, support for multiple storage access protocols, and storage management functionality, such as snapshots and mirroring.
 *** Cloud Volumes ONTAP storage backend
 
-////
+
 
 == Astra Control interfaces
 
@@ -65,3 +68,5 @@ Astra Control Center also enables you to manage, migrate, and protect Kubernetes
 * https://docs.netapp.com/us-en/astra-automation/index.html[Astra Control API documentation^]
 * https://docs.netapp.com/us-en/trident/index.html[Astra Trident documentation^]
 * https://docs.netapp.com/us-en/ontap/index.html[ONTAP documentation^]
+
+////
