@@ -53,6 +53,10 @@ endif::gcp[]
 == App management limitations
 The following limitations affect Astra Control Service's management of applications.
 
+=== In-place restore operations to ontap-nas-economy storage classes fail
+// ASTRADOC-318 / ASTRACTL-29463 / ASTRADOC-509
+If you perform an in-place restore of an application (restore the app to its original namespace), and the app's storage class uses the `ontap-nas-economy` driver, the restore operation can fail if the snapshot directory is not hidden. Before restoring in-place, follow the instructions in link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations[Enable backup and restore for ontap-nas-economy operations^] to hide the snapshot directory.
+
 === Multiple applications that use the same namespace cannot be restored collectively to a different namespace
 If you manage multiple applications that use the same namespace (by creating multiple app definitions in Astra Control), you cannot restore all of the applications to a different single namespace. You need to restore each application to its own separate namespace.
 
