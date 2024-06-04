@@ -18,7 +18,7 @@ NetApp periodically updates Astra Control Service to bring you new features, enh
 .New features and support
 
 .(Tech preview) Declarative Kubernetes workflows
-This Astra Control Center release contains declarative Kubernetes functionality that enables you to perform data management from a native Kubernetes custom resource (CR). 
+This Astra Control Service release contains declarative Kubernetes functionality that enables you to perform data management from a native Kubernetes custom resource (CR). 
 
 This functionality is only available in the Astra Control Service Early Adopter Program (EAP) instance. Contact your NetApp sales representative for information about joining the EAP.
 
