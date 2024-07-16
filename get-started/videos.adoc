@@ -22,7 +22,7 @@ ifdef::gcp[]
 == Using Astra Control Service with Google Cloud
 
 The following video demonstrates using Astra Control Service with Google Kubernetes Engine.
-link:https://www.netapp.tv/details/26019[Astra Control Service with Google Kubernetes Engine^]
+link:https://media.netapp.com/video-detail/da7d6041-bcdf-5507-b070-8493c06b0d92/astra-control-service-on-google-kubernetes-engine[Astra Control Service with Google Kubernetes Engine^]
 
 ////
 
