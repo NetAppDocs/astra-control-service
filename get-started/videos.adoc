@@ -13,7 +13,7 @@ summary: Many of the pages on this doc site include videos that show how to comp
 [.lead]
 Check out NetApp TV for the latest video content featuring Astra Control Service. NetApp TV includes videos that demonstrate certain features of Astra Control Service or show you how to complete certain common tasks.
 
-https://www.netapp.tv/search/astra%20control%20service[Astra Control Service videos^]
+https://media.netapp.com/search?q=astra%20control%20service[Astra Control Service videos^]
 
 ////
 
@@ -22,7 +22,7 @@ ifdef::gcp[]
 == Using Astra Control Service with Google Cloud
 
 The following video demonstrates using Astra Control Service with Google Kubernetes Engine.
-link:https://www.netapp.tv/details/26019[Astra Control Service with Google Kubernetes Engine^]
+link:https://media.netapp.com/video-detail/da7d6041-bcdf-5507-b070-8493c06b0d92/astra-control-service-on-google-kubernetes-engine[Astra Control Service with Google Kubernetes Engine^]
 
 ////
 
