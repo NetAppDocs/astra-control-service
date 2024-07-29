@@ -13,7 +13,7 @@ summary: Many of the pages on this doc site include videos that show how to comp
 [.lead]
 Check out NetApp TV for the latest video content featuring Astra Control Service. NetApp TV includes videos that demonstrate certain features of Astra Control Service or show you how to complete certain common tasks.
 
-https://www.netapp.tv/search/astra%20control%20service[Astra Control Service videos^]
+https://media.netapp.com/search?q=astra%20control%20service[Astra Control Service videos^]
 
 ////
 
